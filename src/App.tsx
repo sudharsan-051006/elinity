@@ -20,6 +20,7 @@ import GetStarted from './pages/GetStarted';
 import PaymentPage from './pages/PaymentPage';
 import Sitemap from './pages/Sitemap';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Stories from './pages/Stories';
 
 function App() {
   // This effect runs once on component mount to set up global configurations.
@@ -60,6 +61,7 @@ function App() {
               </main>
             } />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/stories" element={<Stories />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
