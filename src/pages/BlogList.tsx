@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import BlogCategoryTabs from './BlogCategoryTabs';
 import FeaturedBlogCarousel from './FeaturedBlogCarousel';
 import BlogGrid from './BlogGrid';
@@ -30,7 +30,7 @@ const BlogList = () => {
         </h2>
         <BlogGrid />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
