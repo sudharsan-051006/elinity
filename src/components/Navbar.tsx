@@ -12,6 +12,7 @@ const Navbar = () => {
 
   // Determine if we're on the About Us page
   const isAboutPage = location.pathname === '/about';
+  const isHomePage = location.pathname === '/';
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -41,31 +42,35 @@ const Navbar = () => {
     <div
       className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-13"
       style={{
-        ...(isAboutPage 
-          ? {
-            backgroundImage: 'linear-gradient(90deg, #1d005f 0%, #8a00c2 50%, rgb(164, 22, 133) 100%)',
-            minHeight: '60px',
-            paddingTop: '0.5rem',
-            paddingBottom: '0.5rem',
-            boxShadow: '0 0 15px rgba(255, 0, 255, 0.2)',
-            borderBottom: '1px solid rgba(255, 0, 255, 0.1)',
-          }
-          : {
-            backgroundImage: `url(${heroimg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '60px',
-            paddingTop: '0.5rem',
-            paddingBottom: '0.5rem',
-            boxShadow: '0 0 15px rgba(123, 77, 255, 0.2), 0 0 30px rgba(186, 71, 252, 0.1)',
-            borderBottom: '1px solid rgba(123, 77, 255, 0.1)',
-          }
-        ),
-      }}
+  ...(isAboutPage 
+    ? {
+      backgroundImage: 'linear-gradient(90deg, #1d005f 0%, #8a00c2 50%, rgb(164, 22, 133) 100%)',
+      minHeight: '60px',
+      paddingTop: '0.5rem',
+      paddingBottom: '0.5rem',
+      boxShadow: '0 0 15px rgba(255, 0, 255, 0.2)',
+      borderBottom: '1px solid rgba(255, 0, 255, 0.1)',
+    }
+    : isHomePage
+    ? {
+      backgroundColor: 'transparent',
+      minHeight: '60px',
+      paddingTop: '0.5rem',
+      paddingBottom: '0.5rem',
+    }
+    : {
+      backgroundColor: '#0f0225',
+      minHeight: '60px',
+      paddingTop: '0.5rem',
+      paddingBottom: '0.5rem',
+      boxShadow: '0 0 15px rgba(123, 77, 255, 0.2), 0 0 30px rgba(186, 71, 252, 0.1)',
+      borderBottom: '1px solid rgba(123, 77, 255, 0.1)',
+    }
+  ),
+}}
     >
       {/* Background overlay - only show on non-About pages */}
-      {!isAboutPage && <div className="absolute inset-0 bg-black/20"></div>}
+     {!isAboutPage && !isHomePage && <div className="absolute inset-0 bg-black/20"></div>}
 
       <nav className="relative z-10 flex items-center justify-between h-full px-2 md:px-4">
         {/* Logo */}
@@ -90,34 +95,34 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Nav Links */}
-<div
- className="hidden bg-[#050c9c] md:flex ml-28 px-7 py-2 rounded-lg space-x-4 shadow-md border border-[rgba(255,255,255,0.3)] shadow-purple-800/30 text-sm"
- style={{
-   boxShadow: '0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05)',
-   fontFamily: "'Plus Jakarta Sans', sans-serif",
-   fontWeight: '500',
- }}
->
- {navItems.map((item) => (
-   <button
-     key={item.name}
-     className={`px-3 py-1 rounded-full relative transition-all duration-300 ease-in-out ${
-       isActive(item.name) ? 'text-white bg-white/10' : 'text-gray-400'
-     } hover:text-white hover:bg-white/10 hover:scale-105`}
-     onMouseEnter={() => setHoveredItem(item.name as string)}
-     onMouseLeave={() => setHoveredItem(null)}
-     onClick={() => handleNavClick(item)}
-   >
-     {isActive(item.name) && (
-       <span className="absolute left-0 -translate-x-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-white"></span>
-     )}
-     {item.name}
-     {hoveredItem === item.name && !isActive(item.name) && (
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#f18950] to-[#8a5ce0] rounded-full transition-all duration-300 ease-in-out"></div>
-     )}
-   </button>
- ))}
-</div>
+            <div
+            className="hidden bg-[#050c9c] md:flex ml-28 px-7 py-2 rounded-lg space-x-4 shadow-md border-[0.25px] border-blue-400 shadow-purple-800/30 text-sm"
+            style={{
+              boxShadow: '0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05)',
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: '500',
+            }}
+            >
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                className={`px-3 py-1 rounded-full relative transition-all duration-300 ease-in-out ${
+                  isActive(item.name) ? 'text-white bg-white/10' : 'text-gray-400'
+                } hover:text-white hover:bg-white/10 hover:scale-105`}
+                onMouseEnter={() => setHoveredItem(item.name as string)}
+                onMouseLeave={() => setHoveredItem(null)}
+                onClick={() => handleNavClick(item)}
+              >
+                {isActive(item.name) && (
+                  <span className="absolute left-0 -translate-x-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-white"></span>
+                )}
+                {item.name}
+                {hoveredItem === item.name && !isActive(item.name) && (
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#f18950] to-[#8a5ce0] rounded-full transition-all duration-300 ease-in-out"></div>
+                )}
+              </button>
+            ))}
+            </div>
 
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
