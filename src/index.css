@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -174,3 +175,4 @@
 .stagger-container .stagger-item:nth-child(3) { transition-delay: 200ms; }
 .stagger-container .stagger-item:nth-child(4) { transition-delay: 300ms; }
 .stagger-container .stagger-item:nth-child(5) { transition-delay: 400ms; }
+

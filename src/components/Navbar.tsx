@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-10"
+      className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-13"
       style={{
         ...(isAboutPage 
           ? {
@@ -70,13 +70,10 @@ const Navbar = () => {
       <nav className="relative z-10 flex items-center justify-between h-full px-2 md:px-4">
         {/* Logo */}
         <div onClick={() => handleNavClick({ name: 'Home', path: '/' })} className="flex items-center cursor-pointer">
-          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-14 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" />
+          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" />
           <span
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#f18950] to-[#ba47fc] bg-clip-text text-transparent font-comfortaa ml-2"
-            style={{
-              filter: 'drop-shadow(0 0 2px rgba(241, 137, 80, 0.1)) drop-shadow(0 0 6px rgba(241, 137, 80, 0.3)) drop-shadow(0 0 10px rgba(186, 71, 252, 0.1))',
-              textShadow: '0 0 10px rgba(241, 137, 80, 0.9), 0 0 20px rgba(186, 71, 252, 0.9)',
-            }}
+            className="text-xl  md:text-3xl font-bold bg-gradient-to-r from-[#d9d3fe] to-[#7759fd] bg-clip-text text-transparent font-comfortaa ml-3"
+          
           >
             Elinity
           </span>
@@ -93,49 +90,55 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Nav Links */}
-        <div
-          className="hidden md:flex px-4 py-1 rounded-full space-x-4 shadow-md border border-[rgba(255,255,255,0.3)] shadow-purple-800/30 font-verdana text-sm"
-          style={{
-            boxShadow: '0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05)',
-          }}
-        >
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              className={`px-3 py-1 rounded-full relative transition-colors duration-200 ${
-                isActive(item.name) ? 'text-white bg-white/10' : 'text-gray-400'
-              } hover:text-white hover:bg-white/10`}
-              onMouseEnter={() => setHoveredItem(item.name as string)}
-              onMouseLeave={() => setHoveredItem(null)}
-              onClick={() => handleNavClick(item)}
-            >
-              {isActive(item.name) && (
-                <span className="absolute left-0 -translate-x-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-white"></span>
-              )}
-              {item.name}
-              {hoveredItem === item.name && !isActive(item.name) && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#f18950] to-[#8a5ce0] rounded-full"></div>
-              )}
-            </button>
-          ))}
-        </div>
+<div
+ className="hidden bg-[#050c9c] md:flex ml-28 px-7 py-2 rounded-lg space-x-4 shadow-md border border-[rgba(255,255,255,0.3)] shadow-purple-800/30 text-sm"
+ style={{
+   boxShadow: '0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05)',
+   fontFamily: "'Plus Jakarta Sans', sans-serif",
+   fontWeight: '500',
+ }}
+>
+ {navItems.map((item) => (
+   <button
+     key={item.name}
+     className={`px-3 py-1 rounded-full relative transition-all duration-300 ease-in-out ${
+       isActive(item.name) ? 'text-white bg-white/10' : 'text-gray-400'
+     } hover:text-white hover:bg-white/10 hover:scale-105`}
+     onMouseEnter={() => setHoveredItem(item.name as string)}
+     onMouseLeave={() => setHoveredItem(null)}
+     onClick={() => handleNavClick(item)}
+   >
+     {isActive(item.name) && (
+       <span className="absolute left-0 -translate-x-1 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-white"></span>
+     )}
+     {item.name}
+     {hoveredItem === item.name && !isActive(item.name) && (
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#f18950] to-[#8a5ce0] rounded-full transition-all duration-300 ease-in-out"></div>
+     )}
+   </button>
+ ))}
+</div>
 
         {/* Desktop CTA Buttons */}
-        <div className="hidden md:flex items-center space-x-2 lg:space-x-3 font-century">
+        <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
           <a
             href="/login"
-            className="px-3 py-1 lg:px-4 lg:py-1.5 border border-[#7c4dff] text-white rounded-lg hover:bg-[#1f0e3e] transition-all duration-200 shadow-sm shadow-purple-700/30 text-sm"
+            className="px-3 py-1 lg:px-4 lg:py-2 border border-[#7c4dff] text-white rounded-lg hover:bg-[#1f0e3e] transition-all duration-200 shadow-sm shadow-purple-700/30 text-sm"
             style={{
               boxShadow: '0 0 10px rgba(123, 77, 255, 0.2)',
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: '500',
             }}
           >
             Login
           </a>
           <button
             onClick={() => navigate('/get-started')}
-            className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-lg text-white bg-gradient-to-r from-[#a155e7] to-[#7c4dff] hover:shadow-lg hover:shadow-purple-500/40 transition-all duration-200 text-sm"
+            className="px-3 py-1 lg:px-4 lg:py-2 rounded-lg text-white bg-gradient-to-r from-[#a155e7] to-[#7c4dff] hover:shadow-lg hover:shadow-purple-500/40 transition-all duration-200 text-sm"
             style={{
               boxShadow: '0 0 15px rgba(123, 77, 255, 0.3)',
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: '500',
             }}
           >
             Get Started
@@ -153,6 +156,10 @@ const Navbar = () => {
                     isActive(item.name) ? 'text-white bg-white/10' : 'text-gray-300'
                   } hover:text-white hover:bg-white/10`}
                   onClick={() => handleNavClick(item)}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: '500',
+                  }}
                 >
                   {item.name}
                 </button>
@@ -161,12 +168,20 @@ const Navbar = () => {
                 <a
                   href="/login"
                   className="px-3 py-2 border border-[#7c4dff] text-white rounded-lg text-center hover:bg-[#1f0e3e] transition-all duration-200"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: '500',
+                  }}
                 >
                   Login
                 </a>
                 <button
                   onClick={() => { setMobileMenuOpen(false); navigate('/get-started'); }}
                   className="px-3 py-2 rounded-lg text-white bg-gradient-to-r from-[#a155e7] to-[#7c4dff] text-center hover:opacity-90 transition-all duration-200"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: '500',
+                  }}
                 >
                   Get Started
                 </button>
