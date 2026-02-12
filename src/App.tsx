@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
+import ElinityDiscovery from './components/ElinityDiscovery'; 
 import Features from './components/Features';
+import ElinityHowToUse from './components/ElinityHowToUse';
 import Testimonials from './components/Testimonials';
+import WaitlistSection from './components/JoinWaitList';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatIsElinity from './components/WhatIsElinity';
@@ -21,8 +24,21 @@ import PaymentPage from './pages/PaymentPage';
 import Sitemap from './pages/Sitemap';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Stories from './pages/Stories';
+import JoinUs from './pages/JoinUs';
+import Ellaris from './pages/Ellaris';
+
 
 function App() {
+
+  // 1. Declare the ref at the TOP LEVEL (not inside useEffect)
+  const waitlistRef = useRef<HTMLDivElement>(null);
+
+  // 2. Declare the scroll function at the TOP LEVEL
+  const handleScrollToWaitlist = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    waitlistRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   // This effect runs once on component mount to set up global configurations.
   useEffect(() => {
     document.title = 'Nova | Experience Excellence';
@@ -50,16 +66,22 @@ function App() {
           <Routes>
             <Route path="/" element={
               <main className="flex flex-col">
-                <Hero />
+                <Hero onJoinClick={handleScrollToWaitlist} />
                 <WhatIsElinity />
                 <Features />
+                <ElinityDiscovery />
                 <WhoIsElinityFor />
+                <ElinityHowToUse />
                 <WhatMakesElinitySpecial />
                 <HowElinityWorks />
+                <Testimonials />
+                <WaitlistSection ref={waitlistRef} />
                 <FAQ />
                
               </main>
             } />
+            <Route path='/ellaris' element={<Ellaris />} />
+            <Route path='/join-us' element={<JoinUs />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/stories" element={<Stories />} />
             <Route path="/blog" element={<BlogList />} />

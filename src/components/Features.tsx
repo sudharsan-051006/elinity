@@ -1,137 +1,211 @@
 import { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function FeaturesPage() {
   const backgroundGradient = {
     background: 'linear-gradient(to bottom, #060014, #0c0024)',
   };
 
-  const [activeTab, setActiveTab] = useState('Connection');
-  const tabs = ['Connection', 'Relationship', 'Self Relationship'];
-
+  const [isExpanded, setIsExpanded] = useState(false);
+  
   const featureCards = [
     {
-      title: '🧭 Find Your People – Across Love, Leisure & Purpose',
+      title: 'curated recommendations (no browsing fatigue)',
       features: [
-        `Not just dating. Not just friends. Not just collaborations. Elinity is your compass for all meaningful human connection:
-🔥 Romantic matches for long-term, intentional relationships
-🌈 Friends, travel companions, hobby buddies, adventure mates
-🚀 Co-founders, collaborators, creators, researchers, builders`,
-        `With natural language search, AI-curated matches, and deep user modeling, Elinity doesn’t flood you with options. It shows you only the people who truly align—with your vibe, values, and vision.`
+          `we connect you in a radically different way.
+          you don’t scroll endlessly.
+          you don’t swipe aimlessly. \n `,
+          `we only show you people who cross your bar.
+          if no one crosses it, we show you no one. simple.\n`,
+          `every recommendation is vetted by our hand-designed matching system
+          powered by ai that understands you deeply, 
+          your personality, values, goals, preferences, and direction of life\n
+          lumi also helps with vibe checks and ice breakers\n`,
+          `so you never waste time meeting someone you wouldn’t actually gel with
+          starting conversations won’t feel awkward or boring again`,
+        ]
+    },
+    {
+      title: 'prompt your way to people',
+      features: [
+        `sometimes you don’t want “suggestions”.
+          you want someone specific.`,
+         `just tell elinity what you’re looking for.\n
+“i just moved to nyc. find me my kind of people. \n
+ into ai/ml, tennis, hiking, astrophysics, art, late-night conversations.”
+done. \n
+`,`elinity translates human intent into matching logic
+and lumi helps narrow, refine, and sense-check the results`
       ]
     },
     {
-      title: 'Relationship Building Suite – Grow Deeper, Together',
+      title: 'voice journaling (solo or together)',
       features: [
-        `Meeting is just the beginning.
-Now build the relationship your heart craves.
-• Connection Rituals & Streaks – daily nudges to stay present and connected
-• Relationship Dashboard – intentions, memories, growth markers, health visualizations
-• Conversation Guides – from fun daily questions to deep, healing dialogues
-• Therapy & Coaching Modes – voice or text sessions, personalized insights, action points
-• AI Mediation & Relationship Ally – an AI that knows both of you, evolves with you, and helps you thrive
-
-Whether you’re in love, rebuilding trust, or just want to keep the spark alive, Elinity gives you the tools to go deeper—every single day.`
-      ]
+        `this is one of our core experiences.
+        `,`talk it out. don’t type it out.`,
+        `voice journaling makes reflection:
+• easier
+• more natural
+• more emotionally honest
+`,`you can:
+• journal solo
+• journal as a couple
+• journal about relationships, moods, patterns, growth
+`,`lumi listens, reflects, and offers action items and insights,
+ without judgment. without therapy-speak
+ `      ]
     },
     {
-      title: 'Connection Games Suite – Play Your Way into Bonding',
+      title: 'your life book',
       features: [
-        `Forget small talk.
-Build connection through curated games, spontaneous fun, and shared joy.
-• Voice-based or chat-based games
-• Icebreakers that actually work
-• Customizable experiences for romantic dates, friend nights, or group play
-• Design your own games and share with others
-
-Laughter. Vulnerability. Surprise. Joy.
-Games in Elinity aren’t distractions.
-They’re the magic glue that makes people fall in love with life—and each other.`
+        `think of this as your:
+          • visual journal
+          • highlights book
+          • private instagram
+          • personal memory garden
+          all in one.
+          `,`you can add:
+          • add photos, videos, thoughts, voice notes.
+          • keep some entries just for you.
+          • share others with friends, family, or your partner
+          `,`they can respond. reflect. add their thoughts.
+          your life, but richer. deeper. intentional.
+          `
       ]
-    },
+    }, 
     {
-      title: 'Self-Connection Suite – Know Yourself, Grow Yourself',
+      title: 'connection games (yes, actually good ones)',
       features: [
-        `Every great relationship starts with the one you have with yourself.
-• Smart Journal & Voice Journal – AI-supported reflection, insight, and growth
-• Guided Socratic Dialogues – voice chat modules for self-awareness and skill-building
-• Meditations, visualizations, moodboards – tools to integrate and celebrate your inner world
-• Your Personal AI Coach/Therapist – always present, always evolving with you
-
-Your Elinity AI is a lifelong companion—one that learns you, grows with you, and helps you become who you’re meant to be.`
+        `connection doesn’t have to be serious all the time.
+          it can be playful. curious. surprising.
+          `,`we’ve built a growing suite of connection games:
+          • some deep and long-form.
+          • some light and funny.
+          • some for self-exploration.
+          • some for couples.
+          • some for friendships and families.
+          `,`they’re designed to create:
+          • laughter.
+          • some light and funny.
+          • emotional closeness.
+          • unexpected conversations.
+          • real moments.
+          `
+      ]
+    }, 
+    {
+      title: 'relationship home (your relationship os)',
+      features: [
+        `this is where everything comes together.
+          `,`your relationship home includes:
+          • streaks and gentle nudges.
+          • reminders and rituals.
+          • daily relationship cards.
+          • shared life book.
+          • connection games.
+          • skill-building sessions
+          • prompt-based experiences, like couples visualization.
+          it’s a living space for your relationships.
+          `
+      ]
+    }, 
+    {
+      title: 'skill learning + growth sessions',
+      features: [
+        `relationships are deepened with skills and skills can be learned.
+          `,`lumi currently offers 90 guided skill modules with more already on the way.`,
+          `these help you build skills like:
+          • listening.
+          • emotional awareness.
+          • boundaries.
+          • communication.
+          • intimacy.
+          • self-understanding.
+          • reslience. 
+          `,`sessions adapt to you over timeand evolve as you do`
+      ]
+    }, 
+    {
+      title: 'matching beyond romance',
+      features: [
+        `elinity isn’t just for love..
+          `,`we offer high-quality curated matching for:
+          • leisure, travel, hobbies and friendships.
+          • collaborations, passion projects and creative projects. 
+          `,`each with different matching logic
+          because there is so much flavour and richness we can add with platonic relationships.
+          `
       ]
     }
   ];
 
-  const getCardGradient = (index) => {
-    return [1, 5].includes(index)
-      ? 'from-[#28004d] via-[#3e005c] to-[#00001a]'
-      : 'from-[#1e2d5c] via-[#0f1a3c] to-[#00051c]';
-  };
+  const visibleCards = isExpanded ? featureCards : featureCards.slice(0, 4);
 
   return (
-    <div style={backgroundGradient} className="min-h-screen text-white p-8">
+    <div style={backgroundGradient} className="min-h-screen text-white p-8 lowercase">
       <div className="max-w-[1380px] mx-auto">
-        {/* Heading */}
         <div className="flex items-center justify-between mb-12 flex-col lg:flex-row gap-6">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text text-center lg:text-left">
-            ✨ Core Highlights{' '}
-            <span className="bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text">
-              Why Elinity is Unlike Anything Else
-            </span>
-          </h1>
-
-          {/* Tabs */}
-          <div className="bg-[#0f1a3c] rounded-full p-1 flex border border-[#1e2d5c]">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`px-4 py-2 rounded-full transition-colors duration-300 text-sm font-medium ${
-                  activeTab === tab
-                    ? 'bg-gradient-to-r from-[#1e2d5c] via-[#0f1a3c] to-[#00051c] text-white'
-                    : 'text-indigo-200 hover:bg-[#1e2d5c]'
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
+          <div className="space-y-4 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text">
+                how we help you live your best social life
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl font-light">
+              some core experiences, modes, and features of 
+              <span className="bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text font-semibold"> elinity v1.0</span>
+            </p>
           </div>
         </div>
 
-        {/* Render 8 Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 4 }, (_, index) => {
-            const card = featureCards[index % featureCards.length];
-            return (
-              <div
-                key={index}
-                className={`bg-gradient-to-br ${getCardGradient(index)} rounded-2xl p-6 flex flex-col shadow-lg hover:shadow-indigo-400/30 transition-shadow duration-300`}
-              >
-                <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-lg font-semibold text-white">{card.title}</h2>
-                  <ChevronRight className="text-indigo-200" />
+          {visibleCards.map((card, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 flex flex-col shadow-xl transition-all duration-500 hover:bg-white/10 hover:border-white/20"
+            >
+              <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-fuchsia-500/10 blur-2xl group-hover:bg-fuchsia-500/20 transition-all duration-500" />
+              
+              <div className="flex justify-between items-start mb-6">
+                {/* --- card headline with brand gradient --- */}
+                <h2 className="text-lg font-bold pr-2">
+                  <span className="bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text">
+                    {card.title}
+                  </span>
+                </h2>
+                <div className="shrink-0 p-1 rounded-md bg-white/5 border border-white/10">
+                  <ChevronRight size={16} className="text-fuchsia-400" />
                 </div>
-
-                {/* Features */}
-                <div className="flex-grow">
-                  {card.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex mb-4 last:mb-0">
-                      <div className="mr-2 mt-1.5">
-                        <div className="h-2 w-2 rounded-full bg-white"></div>
-                      </div>
-                      <p className="text-sm text-indigo-100 whitespace-pre-line">{feature}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Button */}
-                <button className="mt-4 bg-white text-[#1e2d5c] hover:bg-indigo-100 px-4 py-2 rounded-md text-sm font-semibold self-end transition duration-300 shadow-md hover:shadow-indigo-300">
-                  Explore More
-                </button>
               </div>
-            );
-          })}
+
+              <div className="flex-grow space-y-4">
+                {card.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-start">
+                    <div className="mr-3 mt-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-fuchsia-500 shadow-[0_0_8px_rgba(217,70,239,0.8)]"></div>
+                    </div>
+                    <p className="text-sm text-indigo-100/80 font-light leading-relaxed whitespace-pre-line">
+                      {feature}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg hover:bg-white/10 hover:border-fuchsia-500/40 transition-all duration-300 text-sm font-medium shadow-xl"
+          >
+            <span className="bg-gradient-to-r from-white via-fuchsia-400 to-purple-700 text-transparent bg-clip-text">
+                {isExpanded ? 'show less' : 'explore all experiences'}
+            </span>
+            <div className="text-fuchsia-400">
+                {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </div>
+          </button>
         </div>
       </div>
     </div>

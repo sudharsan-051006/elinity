@@ -8,106 +8,161 @@ export default function ElinityWorks() {
   const steps = [
     {
       number: "01",
-      title: "Create Your Deep Profile",
-      description: `Elinity guides you through a beautifully designed, emotionally intelligent onboarding journey.
-You’ll share:
-- Your goals — love, friendship, collaboration, or all
-- Your values, beliefs, rhythms, and lifestyle
-- Your passions, quirks, emotional landscape
-- Your attachment style, communication style, and more
+      title: "create your deep profile",
+      description: `elinity begins by helping you express who you really are.
+it’s an onboarding journey, not a form.
+      
+you’ll share things like:
 
-The result: a living, breathing profile that evolves with you.
-Not just what you do. But who you are.`,
+- what you’re here for right now: love, friendship, collaboration, growth, or a mix
+- your values, beliefs, rhythms, and lifestyle
+- your passions, curiosities, quirks, and edges
+- how you communicate, connect, and attach
+- what makes you feel safe, excited, seen, and alive
+
+the result:
+a living, breathing profile that evolves with you.
+not just what you do. but who you are.
+representing not just what you do.
+but who you are becoming.`,
       image: "/workimg1.png",
     },
     {
       number: "02",
-      title: "Let Elinity's AI Understand You",
-      description: `Our Emotionally Intelligent AI isn’t just a search engine.
-It becomes your personal matcher, social coach, and growth ally.
+      title: "let elinity's ai understand you",
+      description: `behind elinity is lumi, your emotionally intelligent ai companion.
+lumi doesn’t rush to match. it listens first.
 
-Elinity uses a fusion of:
-- Psychometrics
-- Behavioral modeling
-- Psychological and emotional profiling
-- AI-powered self and relationship insight tools
+by combining:
+- psychometrics
+- behavioral modeling
+- psychological and emotional profiling
+- ai-powered self and relationship insight tools
 
-To help you connect with people who truly resonate with you—and yourself.
-You don’t just match. You align.`,
+to help you connect with people who truly resonate with you—and yourself.
+you don’t just match. you align.`,
       image: "/workimg2.png",
     },
     {
       number: "03",
-      title: "Find Who You're Meant to Meet",
-      description: `Choose your intention:
-💕 Romantic relationship
-🧩 Leisure & friendship
-🚀 Collaboration & projects
-🌱 Relationship deepening
-🪞 Self-relationship and growth
+      title: "choose your intention",
+      description: `connection looks different in different seasons.
+      
+so you choose the mode you’re in:
+💕 romantic connection
+🧩 leisure & friendship
+🚀 collaboration & projects
+🌱 relationship deepening
+🪞 self-relationship and growth
 
-Elinity then introduces you to people based on true compatibility—not just looks or location.
-
-Filter by:
-- Depth of alignment
-- Shared values and goals
-- Emotional and energetic compatibility
-- Availability, personality, communication preferences
-
-You’ll be shocked at how seen and excited you feel.`,
+you can toggle modes on or off anytime.
+romantic mode can be paused once you’ve found your person.
+leisure and collaboration can run alongside everything else.
+your life isn’t one-dimensional. elinity isn’t either.
+`,
       image: "/workimg3.png",
     },
     {
       number: "04",
-      title: "Connect Through Games, Rituals & Prompts",
-      description: `Trust our deep social tech (our secret sauce!)
-From what you learned and who you are—enjoy the easy next steps.`,
+      title: "meet only the people who cross your bar",
+      description: `this is again where elinity is radically different.
+we don’t show you endless profiles.
+we don’t ask you to swipe through noise.
+lumi only introduces someone if they cross your compatibility threshold.
+by default, that bar is high. you can raise or lower it.
+
+if no one crosses the bar, you see no one.
+simple. respectful. intentional.
+
+when a match happens:
+
+- both people are told they’ve been intentionally recommended
+- alignment exists on both sides
+- consent and readiness matter
+
+this alone changes how connection feels.`,
       image: "/workimg4.png",
     },
-    {
+    { 
       number: "05",
-      title: "Grow Yourself & Your Relationships",
-      description: `Elinity isn’t just a matching app.
-It’s a growth engine for everything human.`,
+      title: "connect with ease and intention",
+      description: `once, there’s a mutual yes, elinity helps you take the next step naturally.
+
+through:
+- gentle icebreakers
+- vibe checks
+- prompts that actually spark conversation
+- games and rituals that remove awkwardness
+
+no forced small talk.
+no guessing what to say.
+      
+just momentum, with care.`,
+      image: "/workimg3.png",
+    },
+    { 
+      number: "06",
+      title: "grow yourself and your relationships",
+      description: `elinity doesn’t disappear once you meet someone.
+
+this is where it really begins.
+
+you get access to a rich suite of tools for:
+- deepening romantic relationships
+- strengthening friendships and family bonds
+- building emotional intelligence and communication skills
+- reflection, journaling, and self-exploration
+- playful connection through games and shared experiences
+
+because great relationships don’t run on autopilot.
+they’re designed, tended, repaired, and celebrated.
+elinity is not just about meeting the right people.
+it’s about becoming the kind of person who builds beautiful relationships, again and again.`,
       image: "/workimg5.png",
     },
   ];
 
   return (
     <div
-      className="min-h-screen text-white py-20 px-4 md:px-12 lg:px-20"
+      className="min-h-screen text-white py-20 px-4 md:px-12 lg:px-20 lowercase"
       style={purpleGradient}
     >
-      {/* Header */}
+      {/* header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-3">
-          <span className="text-white">How </span>
+          <span className="text-white">how </span>
           <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
-            Elinity Works
+            elinity works
           </span>
         </h1>
-        <p className="text-sm md:text-base max-w-3xl mx-auto text-gray-300">
-          From finding your purpose or your people, to building boundless relationships —
-          here's how
-          <span> Elinity becomes your home for deep human connection, play, growth, and joy.</span>
-        </p>
+        <div className="text-sm md:text-base max-w-3xl mx-auto text-gray-300">
+          <p>
+            from finding your purpose or your people, to building boundless relationships —
+            that actually grows, elinity is designed to move with you through every phase of connection.
+          </p>
+          <div className="max-w-md mx-auto p-5">
+            <p style={{ color: "white", fontSize: "20px", fontWeight: "600", letterSpacing: "1px", marginBottom: "8px" }}> not in a rush.</p>
+            <p style={{ color: "#e0e0e0", fontSize: "20px", fontWeight: "600", letterSpacing: "1px", marginBottom: "8px" }}> not randomly.</p>
+            <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700", letterSpacing: "1.2px", marginTop: "10px" }}>and never below your bar.</p>
+          </div>
+        </div>
       </div>
 
-      {/* Steps Cards */}
+      {/* steps cards */}
       <div className="max-w-6xl mx-auto space-y-16">
         {steps.map((step, index) => (
           <div key={index} className="space-y-8">
             <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl bg-gradient-to-r from-[#1a0040]/90 via-[#0d003f]/85 to-[#001a4d]/80 backdrop-blur-xl border border-gray-700">
-              {/* Image Section */}
+              {/* image section */}
               <div className="md:w-1/2 p-4 md:p-6 lg:p-8 flex items-center justify-center">
                 <img
                   src={step.image}
-                  alt={`Step ${step.number}`}
+                  alt={`step ${step.number}`}
                   className="rounded-xl w-[90%] max-h-[300px] object-contain"
                 />
               </div>
 
-              {/* Text Section */}
+              {/* text section */}
               <div className="md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
                 <div className="text-lg text-white mb-2 font-semibold">{step.number}</div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
@@ -119,7 +174,7 @@ It’s a growth engine for everything human.`,
               </div>
             </div>
 
-            {/* Divider Line */}
+            {/* divider line */}
             {index !== steps.length - 1 && (
               <div className="border-t border-gray-600 w-full" />
             )}

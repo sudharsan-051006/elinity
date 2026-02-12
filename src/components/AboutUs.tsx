@@ -19,344 +19,659 @@ export default function AboutUs() {
     generateStars();
   }, []);
 
+  const starPositions = [
+    { top: '10%', left: '15%', delay: 0.5 },
+    { top: '25%', left: '80%', delay: 1.2 },
+    { top: '40%', left: '50%', delay: 2.0 },
+    { top: '65%', left: '10%', delay: 0.8 },
+    { top: '85%', left: '75%', delay: 1.5 },
+    { top: '15%', left: '45%', delay: 2.2 },
+    { top: '55%', left: '90%', delay: 0.3 },
+    { top: '75%', left: '30%', delay: 1.8 },
+  ];
+
+  const missionPoints = [
+    "Find partners, friends, and collaborators who truly fit them",
+    "Understand themselves better, so they can show up more honestly",
+    "Build skills for communication, vulnerability, and repair",
+    "Maintain and deepen relationships across years, not just moments",
+    "Create shared meaning, projects, and lives together"
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0B0A12] px-0 pb-16 space-y-16 overflow-x-hidden">
       {/* About Us Card */}
       <div 
-        className="w-full p-12 mb-8 rounded-none text-center shadow-xl relative overflow-hidden"
-        style={{ 
-          background: 'radial-gradient(ellipse at 80% 0%, #d946ef 0%, #9d1bb2 35%, #43167a 70%, #140d29 100%)'
-        }}>
-        {/* Decorative dots */}
-        {stars.map((star, index) => (
-          <div 
-            key={index}
-            className="absolute w-1 h-1 bg-white rounded-full"
-            style={{ 
-              top: star.top, 
-              left: star.left, 
-              opacity: star.opacity,
-              animation: `twinkle ${2 + star.delay}s infinite ease-in-out`
-            }}
-          />
-        ))}
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 pt-10">About Us</h1>
-        <p className="text-xl sm:text-2xl text-white font-medium mb-2">
-          The Future of Connection. Rooted in Who We Are, And
-        </p>
-        <p className="text-xl sm:text-2xl text-white font-medium mb-6">
-          Who We Are Becoming.
-        </p>
-        <p className="text-white text-base sm:text-lg mb-4 max-w-4xl mx-auto">
-          At Etinity, we believe that the most important thing in life is who we walk it with. The people we love, create with, grow
-          alongside. The people who see us, truly. And so, we built Etinity for them—for your people. For the ones you're meant
-          to find. For the ones you already have, and want to deepen with. For the you that you are still becoming.
-        </p>
-        <p className="text-white text-base sm:text-lg max-w-4xl mx-auto">
-          Etinity is more than a matchmaking platform. It's a lifelong social connection ecosystem, powered by emotionally
-          intelligent, deeply personalized AI, designed to help you build the best relationships of your life—romantic, platonic,
-          and collaborative. It's a mirror, a companion, a catalyst. It learns who you are, what you value, where you're headed,
-          and helps you find and nurture the people who matter most along the way.
-        </p>
+          className="w-full relative overflow-hidden text-center shadow-xl"
+          style={{ 
+            padding: 'clamp(60px, 12vw, 120px) 24px',
+            background: 'radial-gradient(ellipse at 80% 0%, #d946ef 0%, #9d1bb2 15%, #43167a 40%, #0f0a1e 80%)',
+            borderRadius: '0px'
+          }}
+      >
+        {/* Twinkling Stars Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {stars.map((star, index) => (
+            <div 
+              key={index}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ 
+                top: star.top, 
+                left: star.left, 
+                opacity: star.opacity,
+                animation: `twinkle ${2 + star.delay}s infinite ease-in-out`
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+
+          {/* Main Title */}
+          <h1 className="text-5xl sm:text-7xl font-bold text-white mb-8 tracking-tight">
+            About Us
+          </h1>
+
+          {/* Intro Slogan */}
+          <div className="mb-12">
+            <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
+              The Future of Connection. Rooted in Who We Are,
+            </p>
+            <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
+              And Who We Are Becoming.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            {/* Primary Narrative */}
+            <p className="text-white text-lg sm:text-xl font-light leading-relaxed mb-8">
+              At Elinity, we believe that the most important thing in life is <strong className="font-semibold text-white">who we walk it with.</strong>
+            </p>
+
+            {/* Structured List */}
+            <div className="text-white/90 text-base sm:text-lg mb-10 space-y-2">
+              <p>The people we love.</p>
+              <p style={{paddingLeft:'15px'}}>The people we grow alongside.</p>
+              <p style={{paddingLeft:'15px'}}>The people we create with, struggle with, and build with.</p>
+              <p className="italic text-white" style={{paddingLeft:'15px'}}>The people who see us clearly, and choose us anyway.</p>
+            </div>
+
+            {/* The Context/Problem */}
+            <p className="text-gray-400 text-base leading-relaxed mb-12">
+              And yet, most of us are left to chance. We rely on luck, proximity, and tools that optimize for <span className="text-white">engagement rather than outcomes</span>. The result is a world that is more connected on the surface, and more fragmented underneath.
+            </p>
+
+            {/* Punchy Transition */}
+            <p 
+              className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-12"
+              style={{ 
+                background: 'linear-gradient(to right, #7759fd, #d946ef)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              Elinity exists to change that.
+            </p>
+
+            {/* Final Highlight Box */}
+            <div 
+              className="p-8 border border-white/10 bg-white/5 rounded-2xl"
+              style={{ backdropFilter: 'blur(10px)' }}
+            >
+              <p className="text-white text-lg leading-relaxed font-medium mb-2">
+                We are building Elinity <span className="text-[#7759fd]">for your people.</span>
+              </p>
+              <p className="text-gray-300">For the ones you are meant to find.</p>
+              <p className="text-gray-300">For the ones you already have.</p>
+              <p className="text-gray-500 italic mt-4 text-sm">And for the version of you that is still unfolding.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Our Mission Card */}
-      <div
-        className="w-full p-10 sm:p-16 shadow-xl relative overflow-hidden"
-        style={{
-          background: 'radial-gradient(circle at 85% 50%, rgba(119,0,255,0.4), #170537 60%)',
-        }}>
-        <div className="max-w-4xl text-left">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Our Mission</h2>
-          <p className="text-white text-base sm:text-lg mb-4">
-            We exist to help every person experience meaningful, aligned, and extraordinary human connection—across love and intimacy,
-            friendship and play, and purpose and collaboration.
+      <section style={{ 
+        padding: '0px 0', 
+        color: '#ffffff', 
+        background: 'linear-gradient(180deg, #0a0516 0%, #150a2e 50%, #0a0516 100%)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Subtle background glow effect */}
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          right: '-10%',
+          width: '100%',
+          height: '400px',
+          background: 'radial-gradient(circle, rgba(119, 89, 253, 0.15) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+          zIndex: 0
+        }} />
+
+        <div style={{ width:'50%', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
+          
+          {/* TITLE */}
+          <h2 style={{ 
+            fontSize: 'clamp(32px, 8vw, 48px)', 
+            fontWeight: '800', 
+            letterSpacing: '-0.04em', 
+            marginBottom: '32px',
+            lineHeight: '1.1',
+            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            What Elinity Is
+          </h2>
+
+          {/* THE DEFINITION CARD */}
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            padding: '32px',
+            borderRadius: '24px',
+            backdropFilter: 'blur(10px)',
+            marginBottom: '40px'
+          }}>
+            <p style={{ 
+              fontSize: '18px', 
+              lineHeight: '1.7', 
+              margin: 0, 
+              color: 'rgba(255,255,255,0.9)',
+              fontWeight: '400'
+            }}>
+              Elinity is not just a matchmaking app. It is a <span style={{ color: '#7759fd', fontWeight: '600' }}>lifelong social connection ecosystem</span>, 
+              designed to help you build the best relationships of your life across romance, friendship, collaboration, and shared purpose.
+            </p>
+          </div>
+
+          {/* THE CORE MECHANIC */}
+          <p style={{ 
+            fontSize: '16px', 
+            lineHeight: '1.8', 
+            marginBottom: '56px', 
+            color: 'rgba(255,255,255,0.7)',
+            padding: '0 8px'
+          }}>
+            At its core, Elinity is powered by emotionally intelligent, deeply personalized AI that learns who you are, what you value, how you relate, and where you are headed. It helps you find people who are aligned with you at a deeper level, and then helps you <span style={{ color: '#ffffff', fontWeight: '500' }}>actually build something real with them over time.</span>
           </p>
-          <p className="text-white text-base sm:text-lg">
-            We're here to change the way we find each other, see each other, and stay connected. Not through dopamine-driven swipes and empty
-            encounters, but through depth, resonance, and intelligent relational design—powered by a new kind of AI that understands who you are and
-            who you're becoming.
+
+          {/* THE FOUR IDENTITIES - Styled as "Floating Cards" on Mobile */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+            gap: '20px', 
+            marginBottom: '64px'
+          }}>
+            {[
+              { label: "A mirror", context: "when you need clarity." },
+              { label: "A guide", context: "when you feel stuck." },
+              { label: "A companion", context: "when relationships get complex." },
+              { label: "A catalyst", context: "when something meaningful wants to begin." }
+            ].map((item, i) => (
+              <div key={i} style={{
+                padding: '24px',
+                background: 'rgba(119, 89, 253, 0.05)',
+                borderLeft: '3px solid #7759fd',
+                borderRadius: '4px 16px 16px 4px'
+              }}>
+                <p style={{ margin: 0, fontSize: '18px', fontWeight: '700', color: '#ffffff' }}>{item.label}</p>
+                <p style={{ margin: '4px 0 0 0', fontSize: '15px', color: 'rgba(255,255,255,0.5)' }}>{item.context}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* THE PHILOSOPHY FOOTER */}
+          <p style={{ 
+            fontSize: '20px', 
+            fontWeight: '500', 
+            lineHeight: '1.5', 
+            color: '#ffffff',
+            textAlign: 'center',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+            paddingTop: '48px'
+          }}>
+            We believe technology should not replace human connection. <br />
+            It should <span style={{ color: '#7759fd', fontWeight: '700' }}>amplify it</span>, protect it, and help it flourish.
           </p>
         </div>
+      </section>  
+
+    <div className="w-full max-w-4xl mx-auto px-4 py-12">
+          <div 
+            className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/10"
+            style={{ backgroundColor: '#140d29' }}
+          >
+            {/* Subtle accent glow in the corner */}
+            <div 
+              className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[100px] opacity-20"
+              style={{ backgroundColor: '#d946ef' }}
+            />
+
+            <div className="relative z-10 p-8 sm:p-16">
+              {/* Header */}
+              <div className="mb-10">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                  Why We Exist
+                </h1>
+              </div>
+
+              {/* Core Problem Section */}
+              <div className="space-y-8">
+                <p className="text-xl sm:text-2xl text-white font-semibold leading-snug">
+                  Modern relationship tools are fundamentally misaligned.
+                </p>
+
+                <div className="grid gap-6 text-white/70 text-lg leading-relaxed font-light">
+                  <p>
+                    They optimize for swipes, novelty, and short-term engagement. They fragment attention, 
+                    commodify people, and leave the hardest parts of connection entirely unsupported. 
+                    Even when we meet someone compatible, we are given almost no help in navigating 
+                    communication, repair, growth, or the long arc of being close to another human being.
+                  </p>
+                  
+                  <p className="italic border-l-2 border-fuchsia-500/40 pl-6 py-2">
+                    At the same time, loneliness, relational burnout, and disconnection are quietly 
+                    becoming the default state for millions.
+                  </p>
+                </div>
+
+                {/* The Pivot Statement */}
+                <div className="bg-white/5 rounded-2xl p-8 border border-white/5 backdrop-blur-sm">
+                  <p className="text-xl text-white/90 mb-4">
+                    We don’t believe this is a human failure.
+                  </p>
+                  <p className="text-3xl sm:text-4xl font-black text-white tracking-tighter">
+                    We believe it is a <span className="text-[#7759fd]">design failure.</span>
+                  </p>
+                </div>
+
+                {/* Closing */}
+                <p className="text-xl text-white font-medium pt-4 border-t border-white/10">
+                  Elinity exists because we believe relationships are too important to leave to chance, 
+                  and too complex to be handled by shallow tools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {/* Our Mission Card */}
+      <div
+        className=" relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+      <div className="max-w-3xl">
+        {/* Subheader */}
+
+        {/* Main Title */}
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+          Our Mission
+        </h2>
+
+        {/* Primary Bold Statement */}
+        <p className="text-white text-xl font-bold mb-6">
+          Our mission is to help every person experience meaningful, aligned, and extraordinary human connection.
+        </p>
+
+        {/* Secondary Description */}
+        <p className="text-gray-400 text-lg leading-relaxed mb-10">
+          We believe that the current tools for connection are fragmented. We are here to redesign how people find each other, see each other, and stay connected, using intelligence that is patient and humane.
+        </p>
+
+        {/* Accent Quote / Sidebar Block */}
+        <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
+          <p className="text-gray-300 text-lg italic leading-relaxed">
+            Helping people build skills for communication, vulnerability, and repair while deepening relationships across years, not just moments.
+          </p>
+        </div>
+
+        {/* Highlighted Card Block */}
+        <div 
+          className="p-8 mb-12"
+          style={{
+            background: 'rgba(255, 255, 255, 0.03)',
+            borderRadius: '16px',
+            border: '1px solid rgba(255, 255, 255, 0.05)'
+          }}
+        >
+          <p className="text-gray-300 text-lg mb-2">That means helping people:</p>
+          <h3 className="text-2xl sm:text-3xl font-bold text-white">
+            Create <span className="text-[#7759fd]">shared meaning</span> and lives together.
+          </h3>
+        </div>
+
+        {/* Horizontal Divider */}
+        <hr className="border-white/10 mb-10" />
+
+        {/* Final Footer Statement */}
+        <p className="text-white text-lg font-medium leading-relaxed">
+          Elinity exists because we believe relationships are too important to leave to chance, and too complex to be handled by shallow tools.
+        </p>
+      </div>
       </div>
 
       {/* Our Vision Card */}
       <div
-        className="w-full p-10 sm:p-16 rounded-none text-center shadow-xl relative overflow-hidden"
-        style={{ 
-          background: 'radial-gradient(circle at center, #4b0c6b 0%, #2e084a 40%, #150423 100%)'
-        }}>
-        {/* Heading with radial highlight */}
-        <div className="relative inline-block mb-6">
-          {/* Glowing radial gradient behind the heading */}
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{
-              background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(129,34,199,0.15) 40%, transparent 80%)',
-              filter: 'blur(40px)',
-              zIndex: 0,
-              borderRadius: '50%',
-            }}
-          />
-          {/* Heading text */}
-          <h2 className="relative z-10 text-4xl sm:text-5xl font-bold text-white">
+        className="relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+        <div className="max-w-3xl">
+          {/* Main Title */}
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
             Our Vision
           </h2>
+
+          {/* Primary Bold Statement */}
+          <p className="text-white text-xl font-bold mb-6">
+            We imagine a world where no one has to navigate relationships alone.
+          </p>
+
+          {/* Narrative text with specific line breaks */}
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+            A world where loneliness is not normalized. Where depth is not rare. 
+            Where people are seen in their full complexity, not reduced to profiles or metrics.
+          </p>
+
+          {/* Accent Quote / Sidebar Block */}
+          <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Our long-term vision is an ecosystem of AI-powered relationship tools that walk with you through the seasons of your life. From finding love and building friendships to navigating the everyday realities of being close to someone.
+            </p>
+          </div>
+
+          {/* Highlighted Card Block (Matching the "Design Failure" style) */}
+          <div 
+            className="p-8 mb-12"
+            style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}
+          >
+            <p className="text-gray-300 text-lg mb-4">Access to emotionally attuned guides that help you:</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-white font-bold text-xl sm:text-2xl">
+              {["Reflect", "Grow", "Repair", "Choose better", "Love better", "Create more", "Explore deeper"].map((item, i, arr) => (
+                <span key={i}>
+                  <span className={i % 2 === 0 ? "text-white" : "text-[#7759fd]"}>{item}</span>
+                  {i !== arr.length - 1 && <span className="ml-4 opacity-20 text-white font-light">|</span>}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Horizontal Divider */}
+          <hr className="border-white/10 mb-10" />
+
+          {/* Final Footer Statement */}
+          <p className="text-white text-lg font-medium leading-relaxed italic">
+            Not by telling people what to do, but by helping them understand themselves and each other more clearly.
+          </p>
         </div>
-        {/* Description paragraphs */}
-        <p className="text-white text-base sm:text-lg mb-4 max-w-4xl mx-auto">
-          We imagine a world where everyone has the relationships they need to flourish. Where loneliness is no longer the default. Where every person is seen in their full complexity,
-          and where technology helps us become more human, not less.
-        </p>
-        <p className="text-white text-base sm:text-lg mb-4 max-w-4xl mx-auto">
-          Our vision is an ecosystem of AI-powered relationship tools that walk with you through the seasons of your life—from finding love, to starting passion projects,
-          to growing communities, to navigating the everyday challenges of being close to someone.
-        </p>
-        <p className="text-white text-base sm:text-lg max-w-4xl mx-auto">
-          A world where every person is supported by emotionally attuned AI companions, coaches, and guides—who help them build, maintain, and deepen the relationships that
-          define a life well lived.
-        </p>
       </div>
 
-      {/* What Makes Elinity Different Section */}
-      <div className="w-full px-4">
-        <h2 className="text-4xl sm:text-5xl font-bold text-purple-400 mb-12 text-center">What makes Elinity Different</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
+      <div
+        className="relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+        <div className="max-w-3xl">
+          {/* Main Title */}
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+            Our Philosophy on AI
+          </h2>
+
+          {/* Primary Bold Statement */}
+          <p className="text-white text-xl font-bold mb-6">
+            We believe AI is one of the most powerful tools humanity has ever created. What matters now is how we choose to use it.
+          </p>
+
+          {/* Narrative Paragraph */}
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+            At Elinity, we believe AI is at its best when it amplifies the human spirit rather than replacing it. It should support our drives to connect, create, and grow—helping us become more conscious, not more distracted.
+          </p>
+
+          {/* Accent Quote / Sidebar Block */}
+          <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Our core meta-directives involve building aligned AI that is emotionally intelligent, 
+              focused on long-term wellbeing, and designed for depth rather than dependency.
+            </p>
           </div>
 
-          {/* Card 2 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
+          {/* Highlighted Card Block (The "Design Failure" style box) */}
+          <div 
+            className="p-8 mb-12"
+            style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}
           >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
+            <p className="text-gray-300 text-lg mb-4">AI shouldn't be a substitute.</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+              It is <span className="text-[#7759fd]">scaffolding</span> for better, deeper human-to-human connection.
+            </h3>
           </div>
 
-          {/* Card 3 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* Horizontal Divider */}
+          <hr className="border-white/10 mb-10" />
 
-          {/* Card 4 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
+          {/* Detailed List */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              "Emotionally intelligent",
+              "Aligned with long-term human wellbeing",
+              "Designed for depth rather than dependency",
+              "Built to reinforce human-to-human connection"
+            ].map((text, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#a855f7] mt-2.5 shrink-0" />
+                <p className="text-gray-300 text-base leading-snug">{text}</p>
               </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 5 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 6 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 7 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 8 */}
-          <div
-            className="bg-[#1e0a37] rounded-lg p-8 shadow-xl relative overflow-hidden"
-          >
-            <div 
-              className="absolute bottom-0 right-0 w-full h-full rounded-lg opacity-70"
-              style={{
-                background: 'radial-gradient(circle at bottom right, rgba(186, 104, 255, 0.4) 0%, rgba(107, 33, 168, 0.1) 50%, transparent 80%)'
-              }}
-            ></div>
-            <div className="relative z-10">
-              <div className="flex items-start mb-2">
-                <span className="text-white text-xl mr-2">✦</span>
-                <h3 className="text-xl font-bold text-white">Emotionally Intelligent AI,</h3>
-              </div>
-              <p className="text-white text-lg ml-6 mb-4">Built for Relationships</p>
-              <p className="text-white text-sm">
-                Our proprietary architecture combines advanced LLMs, deep user modeling, and contextual personalization engines.
-              </p>
-              <div className="mt-6 text-right">
-                <a href="#" className="text-purple-300 inline-flex items-center">
-                  Learn More 
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* CSS for star animation */}
-      <style jsx>{`
-        @keyframes twinkle {
-          0% { opacity: 0; }
-          50% { opacity: 0.7; }
-          100% { opacity: 0; }
-        }
-      `}</style>
+
+
+      <div
+        className="relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+        <div className="max-w-3xl">
+          {/* Main Title */}
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+            What We’re Building Toward
+          </h2>
+
+          {/* Primary Bold Statement */}
+          <p className="text-white text-xl font-bold mb-6">
+            Elinity is being built as a long-term company, not a short-term product.
+          </p>
+
+          {/* Narrative Paragraph */}
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+            We are not optimizing for quick wins or surface-level engagement. We are building relationship infrastructure for the future, with the belief that strong relationships are the foundation of individual flourishing and collective wellbeing.
+          </p>
+
+          {/* Highlighted Card Block (The "Design Failure" style box) */}
+          <div 
+            className="p-8 mb-12"
+            style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}
+          >
+            <p className="text-gray-300 text-lg mb-6">We believe:</p>
+            
+            <div className="space-y-4">
+              {[
+                "Everyone deserves to find their people",
+                "Everyone deserves to be understood",
+                "Everyone deserves a life rich in love, friendship, purpose, and belonging"
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="h-px w-6 bg-[#7759fd]" />
+                  <p className="text-white text-lg sm:text-xl font-semibold">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Horizontal Divider */}
+          <hr className="border-white/10 mb-10" />
+
+          {/* Final Footer Statement */}
+          <p className="text-white text-lg font-medium leading-relaxed">
+            Connecting the right people, at the right time, with the right support, is <span className="text-[#a855f7]">one of the greatest unlocks</span> available to humanity.
+          </p>
+        </div>
+      </div>
+
+
+      <div
+        className="relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+        <div className="max-w-3xl">
+          {/* Main Title */}
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+            Who We’re For
+          </h2>
+
+          {/* Primary Bold Statement */}
+          <p className="text-white text-xl font-bold mb-6">
+            Elinity is for people who care about depth.
+          </p>
+
+          {/* Narrative Paragraph */}
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+          People who want real connection, not endless choice.<br/>
+      People who want to grow, not perform.<br/>
+      People who believe relationships are a craft worth learning, not a gamble to endure.<br/>
+          </p>
+
+          {/* Highlighted Card Block (The "Design Failure" style box) */}
+          <div 
+            className="p-8 mb-12"
+            style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}
+          >
+            <p className="text-gray-300 text-lg mb-6">It is for:</p>
+            
+            <div className="flex flex-wrap gap-3">
+              {["Users", "Builders", "Researchers", "Designers", "Investors"].map((role, i) => (
+                <span 
+                  key={i} 
+                  className="px-4 py-2 rounded-full border border-white/10 text-white text-sm font-medium bg-white/5"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
+            
+            <h3 className="text-xl sm:text-2xl font-bold text-white mt-8 leading-tight">
+              Who believe technology can still be used to make us <span className="text-[#7759fd]">more human</span>, not less.
+            </h3>
+          </div>
+
+          {/* Horizontal Divider */}
+          <hr className="border-white/10 mb-10" />
+        </div>
+      </div>
+
+      <div
+        className="relative overflow-hidden text-left"
+        style={{
+          padding: 'clamp(40px, 8vw, 64px)',
+          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '24px',
+          border: '1px solid rgba(255, 255, 255, 0.05)'
+        }}
+      >
+        <div className="max-w-3xl">
+          {/* Main Title */}
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+            Where We’re Going
+          </h2>
+
+          {/* Primary Bold Statement */}
+          <p className="text-white text-xl font-bold mb-6 italic">
+            We are early. Intentionally so.
+          </p>
+
+          {/* Narrative Paragraph */}
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+            We are building something that will take time, care, and courage. Something that will evolve as people evolve. Something that aims to last decades, not cycles.
+          </p>
+
+          {/* Highlighted Card Block (The Impact Point) */}
+          <div 
+            className="p-8 mb-12"
+            style={{
+              background: 'rgba(255, 255, 255, 0.03)',
+              borderRadius: '16px',
+              border: '1px solid rgba(255, 255, 255, 0.05)'
+            }}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+              Elinity is our attempt to contribute to a <span className="text-[#7759fd]">better relational future.</span>
+            </h3>
+            <p className="text-gray-300 text-lg">
+              One where technology helps us find each other, choose each other, and keep choosing each other,  and keep choosing each other, with clarity, care, and intention.
+            </p>
+          </div>
+
+          {/* Horizontal Divider */}
+          <hr className="border-white/10 mb-10" />
+
+          {/* Final Footer Sign-off */}
+          <div className="space-y-2">
+            <p className="text-white text-lg font-medium">This is the future of connection we are working toward.</p>
+            <div className="flex flex-col sm:flex-row sm:gap-6">
+              <p className="text-[#a855f7] font-semibold tracking-wide">Rooted in who we are.</p>
+              <p className="text-gray-400 font-light italic">Guided by who we are becoming.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

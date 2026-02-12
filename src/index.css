@@ -176,3 +176,10 @@
 .stagger-container .stagger-item:nth-child(4) { transition-delay: 300ms; }
 .stagger-container .stagger-item:nth-child(5) { transition-delay: 400ms; }
 
+
+
+/* globals.css */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

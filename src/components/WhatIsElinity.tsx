@@ -21,55 +21,29 @@ export default function ElinityLandingPage() {
         </h1>
         
         <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-200">
-         Elinity is not just an app. It’s your emotionally intelligent AI platform 
-          for connecting with amazing people and building great relationships.
-        Your social connector and matchmaker, your relationship ally, your playful guide.
-        Here, you don’t just swipe. You discover people who make your world feel bigger, warmer, richer, 
-          more exciting, more fun-filled, more meaningful.  
-        People to build with. Laugh with. Learn with. Play with. Grow with.
-        People to live your most fulfilling life with.
-
+        elinity exists for people who believe connection is the foundation of a good life.
+        it’s an emotionally intelligent ai platform that helps you meet deeply aligned people and build meaningful relationships over time.
+        whether you’re looking for love, friendship, collaborators, or simply richer human connection, elinity brings everything into one coherent space. it understands who you are, what you’re seeking, and how you connect, then introduces you to people who feel like a natural yes.
+        this isn’t about more matches. it’s about better ones, and the tools to turn connection into something real.
         </p>
         
-        <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white">
-           Find your people. Build incredible relationships. <br /> Grow a life you love, a life you can’t get enough of. Let Elinity be the beginning of everything beautiful.
-        </h2>
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            What Elinity actually helps you do.
+          </h2>
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
+            elinity is about <span className="text-white font-medium">people our people.</span> It’s about 
+            <span className="text-white"> better matches</span>, not more. it’s about 
+            <span className="text-white"> better conversations</span>, not more. It’s about 
+            <span className="text-blue-400"> more signal</span>, not noise.
+          </p>
+        </div>
         
         <p className="text-sm md:text-base leading-relaxed mb-8 text-gray-200">
-         Elinity is your emotionally intelligent, AI-powered social connection universe.
-It’s the world’s first platform designed not just to help you meet people—
- but to help you meet the right people,
- and build truly amazing relationships with them—romantic, platonic, creative, or collaborative.
-        </p>
-        
-        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-4">
-         🧠 It’s your personal AI matchmaker.
- 💖 It’s your relationship coach and therapist.
- 🧑‍🤝‍🧑 It’s your fun-loving social guide and conversation buddy.
- 🌱 It’s your deep self-reflection partner.
-        </p>
-        
-        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-4">
-          Elinity helps find you your special someone, find you your people, your tribe - friends, leisure
-          buddies, travel companions, cofounders, research and creative collaborators, etc
-        </p>
-        
-        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-6">
-          We help you build amazing relationships with our relationship suite and
-          our connection games suite is designed to help you infuse your relationships and friendships
-          with more fun, delight, and all of the good stuff
-        </p>
-
-
-        <p className="text-sm md:text-base leading-relaxed text-gray-200 mb-4">
-           Elinity understands your values, dreams, relational patterns, strengths, and edges—
-           and helps you connect with people who truly resonate with your spirit, your vibe, your purpose.
-           Find the people who are meant to be in your life.
-           Build the relationships you’ve always longed for.
-           Live a life of connection, joy, and depth—with others and with yourself.
-        </p>
-
-        
+         we help you find people you can build incredible relationships with
+         for love, friendship, leisure, collaboration, creativity, and life
+         and then we help you actually nurture those relationships over time
+        </p>  
 {/*         <button className="text-sm font-medium text-purple-300 hover:text-purple-200 transition-colors">
           Read More…
         </button> */}

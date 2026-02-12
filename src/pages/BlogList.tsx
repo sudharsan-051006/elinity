@@ -16,8 +16,9 @@ const BlogList = () => {
       <Navbar />
       <main className="flex-1 max-w-7xl mx-auto px-4 pt-32 pb-16">
         {/* Renders the category filter tabs */}
-        <BlogCategoryTabs />
-        
+        <div className="relative z-[1000]"> 
+          <BlogCategoryTabs />
+        </div>
         {/* Section for featured blog posts */}
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-left text-white">
           Featured <span className="text-purple-400">Blogs</span>

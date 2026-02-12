@@ -16,10 +16,12 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
+    { name: 'Ellaris', path: '/ellaris' },
     { name: 'Stories', path: '/stories' },
     { name: 'Blog', path: '/blog' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
+    { name: 'Join Us', path: '/join-us'},
   ];
 
   const handleNavClick = (item: { name: string; path: string }) => {
@@ -83,6 +85,8 @@ const Navbar = () => {
             Elinity
           </span>
         </div>
+
+
 
         {/* Mobile menu button */}
         <button 
