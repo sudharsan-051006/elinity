@@ -64,7 +64,7 @@ export default function AboutUs() {
             />
           ))}
         </div>
-
+<br></br>
         <div className="relative z-10 max-w-4xl mx-auto">
 
           {/* Main Title */}
@@ -129,26 +129,15 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <section style={{ 
-        padding: '0px 0', 
-        color: '#ffffff', 
-        background: 'linear-gradient(180deg, #0a0516 0%, #150a2e 50%, #0a0516 100%)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Subtle background glow effect */}
-        <div style={{
-          position: 'absolute',
-          top: '20%',
-          right: '-10%',
-          width: '100%',
-          height: '400px',
-          background: 'radial-gradient(circle, rgba(119, 89, 253, 0.15) 0%, transparent 70%)',
-          filter: 'blur(60px)',
-          zIndex: 0
-        }} />
-
-        <div style={{ width:'50%', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
+      <section style={{ padding: '60px 0', overflow: 'hidden' }}>
+        <div style={{ 
+          width: '90%',           // Uses most of the screen on mobile
+          maxWidth: '800px',      // Limits width on desktop (replaces the 50%)
+          margin: '0 auto', 
+          padding: '0 10px', 
+          position: 'relative', 
+          zIndex: 1 
+        }}>
           
           {/* TITLE */}
           <h2 style={{ 
@@ -159,7 +148,8 @@ export default function AboutUs() {
             lineHeight: '1.1',
             background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            textAlign: 'left' // Kept left for better mobile flow
           }}>
             What Elinity Is
           </h2>
@@ -168,14 +158,14 @@ export default function AboutUs() {
           <div style={{
             background: 'rgba(255, 255, 255, 0.03)',
             border: '1px solid rgba(255, 255, 255, 0.08)',
-            padding: '32px',
+            padding: '24px',      // Reduced padding slightly for mobile
             borderRadius: '24px',
             backdropFilter: 'blur(10px)',
             marginBottom: '40px'
           }}>
             <p style={{ 
-              fontSize: '18px', 
-              lineHeight: '1.7', 
+              fontSize: 'clamp(16px, 4vw, 18px)', // Responsive font size
+              lineHeight: '1.6', 
               margin: 0, 
               color: 'rgba(255,255,255,0.9)',
               fontWeight: '400'
@@ -187,21 +177,22 @@ export default function AboutUs() {
 
           {/* THE CORE MECHANIC */}
           <p style={{ 
-            fontSize: '16px', 
+            fontSize: 'clamp(14px, 3.5vw, 16px)', 
             lineHeight: '1.8', 
-            marginBottom: '56px', 
+            marginBottom: '48px', 
             color: 'rgba(255,255,255,0.7)',
-            padding: '0 8px'
+            padding: '0 4px'
           }}>
             At its core, Elinity is powered by emotionally intelligent, deeply personalized AI that learns who you are, what you value, how you relate, and where you are headed. It helps you find people who are aligned with you at a deeper level, and then helps you <span style={{ color: '#ffffff', fontWeight: '500' }}>actually build something real with them over time.</span>
           </p>
 
-          {/* THE FOUR IDENTITIES - Styled as "Floating Cards" on Mobile */}
+          {/* THE FOUR IDENTITIES */}
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-            gap: '20px', 
-            marginBottom: '64px'
+            // This ensures 1 column on mobile, 2 columns on tablet/desktop
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+            gap: '16px', 
+            marginBottom: '56px'
           }}>
             {[
               { label: "A mirror", context: "when you need clarity." },
@@ -210,33 +201,36 @@ export default function AboutUs() {
               { label: "A catalyst", context: "when something meaningful wants to begin." }
             ].map((item, i) => (
               <div key={i} style={{
-                padding: '24px',
+                padding: '20px',
                 background: 'rgba(119, 89, 253, 0.05)',
                 borderLeft: '3px solid #7759fd',
                 borderRadius: '4px 16px 16px 4px'
               }}>
-                <p style={{ margin: 0, fontSize: '18px', fontWeight: '700', color: '#ffffff' }}>{item.label}</p>
-                <p style={{ margin: '4px 0 0 0', fontSize: '15px', color: 'rgba(255,255,255,0.5)' }}>{item.context}</p>
+                <p style={{ margin: 0, fontSize: '17px', fontWeight: '700', color: '#ffffff' }}>{item.label}</p>
+                <p style={{ margin: '4px 0 0 0', fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>{item.context}</p>
               </div>
             ))}
           </div>
 
           {/* THE PHILOSOPHY FOOTER */}
-          <p style={{ 
-            fontSize: '20px', 
-            fontWeight: '500', 
-            lineHeight: '1.5', 
-            color: '#ffffff',
-            textAlign: 'center',
+          <div style={{
             borderTop: '1px solid rgba(255,255,255,0.1)',
-            paddingTop: '48px'
+            paddingTop: '40px',
+            textAlign: 'center'
           }}>
-            We believe technology should not replace human connection. <br />
-            It should <span style={{ color: '#7759fd', fontWeight: '700' }}>amplify it</span>, protect it, and help it flourish.
-          </p>
+            <p style={{ 
+              fontSize: 'clamp(18px, 5vw, 20px)', 
+              fontWeight: '500', 
+              lineHeight: '1.5', 
+              color: '#ffffff',
+              margin: 0
+            }}>
+              We believe technology should not replace human connection. <br style={{ display: 'none' }} className="mobile-break-hidden" />
+              It should <span style={{ color: '#7759fd', fontWeight: '700' }}>amplify it</span>, protect it, and help it flourish.
+            </p>
+          </div>
         </div>
-      </section>  
-
+      </section>
     <div className="w-full max-w-4xl mx-auto px-4 py-12">
           <div 
             className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/10"
@@ -251,7 +245,10 @@ export default function AboutUs() {
             <div className="relative z-10 p-8 sm:p-16">
               {/* Header */}
               <div className="mb-10">
-                <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
                   Why We Exist
                 </h1>
               </div>
@@ -299,184 +296,202 @@ export default function AboutUs() {
 
         {/* Our Mission Card */}
       <div
-        className=" relative overflow-hidden text-left"
-        style={{
-          padding: 'clamp(40px, 8vw, 64px)',
-          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-          borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
-        }}
-      >
-      <div className="max-w-3xl">
-        {/* Subheader */}
-
-        {/* Main Title */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
-          Our Mission
-        </h2>
-
-        {/* Primary Bold Statement */}
-        <p className="text-white text-xl font-bold mb-6">
-          Our mission is to help every person experience meaningful, aligned, and extraordinary human connection.
-        </p>
-
-        {/* Secondary Description */}
-        <p className="text-gray-400 text-lg leading-relaxed mb-10">
-          We believe that the current tools for connection are fragmented. We are here to redesign how people find each other, see each other, and stay connected, using intelligence that is patient and humane.
-        </p>
-
-        {/* Accent Quote / Sidebar Block */}
-        <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
-          <p className="text-gray-300 text-lg italic leading-relaxed">
-            Helping people build skills for communication, vulnerability, and repair while deepening relationships across years, not just moments.
-          </p>
-        </div>
-
-        {/* Highlighted Card Block */}
-        <div 
-          className="p-8 mb-12"
+          className="relative overflow-hidden text-left sm:text-left"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
-            borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            // Mobile: 24px padding | Desktop: scales up to 64px
+            padding: 'clamp(24px, 5vw, 64px)',
+            background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+            borderRadius: '24px',
+            border: '1px solid rgba(255, 255, 255, 0.05)',
+            margin: '0 12px' // Added small margin so the card doesn't touch screen edges
           }}
         >
-          <p className="text-gray-300 text-lg mb-2">That means helping people:</p>
-          <h3 className="text-2xl sm:text-3xl font-bold text-white">
-            Create <span className="text-[#7759fd]">shared meaning</span> and lives together.
-          </h3>
+          <div className="max-w-3xl mx-auto">
+            
+            {/* Main Title - Smaller on mobile */}
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+              Our Mission
+            </h2>
+
+            {/* Primary Bold Statement - Adjusted line height */}
+            <p className="text-white text-lg sm:text-xl font-bold mb-6 leading-snug">
+              Our mission is to help every person experience meaningful, aligned, and extraordinary human connection.
+            </p>
+
+            {/* Secondary Description - Lighter text for readability */}
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+              We believe that the current tools for connection are fragmented. We are here to redesign how people find each other, see each other, and stay connected, using intelligence that is patient and humane.
+            </p>
+
+            {/* Accent Quote / Sidebar Block - Thinner border for mobile */}
+            <div className="border-l-2 border-[#a855f7]/40 pl-4 sm:pl-6 mb-10 sm:mb-12">
+              <p className="text-gray-300 text-base sm:text-lg italic leading-relaxed">
+                Helping people build skills for communication, vulnerability, and repair while deepening relationships across years, not just moments.
+              </p>
+            </div>
+
+            {/* Highlighted Card Block - Reduced padding on mobile */}
+            <div 
+              className="p-5 sm:p-8 mb-10 sm:mb-12"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.05)'
+              }}
+            >
+              <p className="text-gray-400 text-sm sm:text-lg mb-2">That means helping people:</p>
+              <h3 className="text-xl sm:text-3xl font-bold text-white leading-tight">
+                Create <span className="text-[#7759fd]">shared meaning</span> and lives together.
+              </h3>
+            </div>
+
+            {/* Horizontal Divider */}
+            <hr className="border-white/10 mb-8 sm:mb-10" />
+
+            {/* Final Footer Statement */}
+            <p className="text-white text-base sm:text-lg font-medium leading-relaxed">
+              Elinity exists because we believe relationships are too important to leave to chance, and too complex to be handled by shallow tools.
+            </p>
+          </div>
         </div>
-
-        {/* Horizontal Divider */}
-        <hr className="border-white/10 mb-10" />
-
-        {/* Final Footer Statement */}
-        <p className="text-white text-lg font-medium leading-relaxed">
-          Elinity exists because we believe relationships are too important to leave to chance, and too complex to be handled by shallow tools.
-        </p>
-      </div>
-      </div>
-
+<br></br>
       {/* Our Vision Card */}
       <div
         className="relative overflow-hidden text-left"
         style={{
-          padding: 'clamp(40px, 8vw, 64px)',
+          // Reduced mobile padding from 40px to 24px
+          padding: 'clamp(24px, 6vw, 64px)',
           background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
           borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
+          border: '1px solid rgba(255, 255, 255, 0.05)',
+          margin: '0 12px' // Added margin to match the Mission card
         }}
       >
-        <div className="max-w-3xl">
-          {/* Main Title */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+        <div className="max-w-3xl mx-auto">
+          {/* Main Title - Scaled for mobile */}
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
             Our Vision
           </h2>
 
           {/* Primary Bold Statement */}
-          <p className="text-white text-xl font-bold mb-6">
+          <p className="text-white text-lg sm:text-xl font-bold mb-6 leading-snug">
             We imagine a world where no one has to navigate relationships alone.
           </p>
 
-          {/* Narrative text with specific line breaks */}
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+          {/* Narrative text */}
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
             A world where loneliness is not normalized. Where depth is not rare. 
             Where people are seen in their full complexity, not reduced to profiles or metrics.
           </p>
 
-          {/* Accent Quote / Sidebar Block */}
-          <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
-            <p className="text-gray-300 text-lg leading-relaxed">
+          {/* Accent Quote / Sidebar Block - Responsive padding */}
+          <div className="border-l-2 border-[#a855f7]/40 pl-4 sm:pl-6 mb-10 sm:mb-12">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               Our long-term vision is an ecosystem of AI-powered relationship tools that walk with you through the seasons of your life. From finding love and building friendships to navigating the everyday realities of being close to someone.
             </p>
           </div>
 
-          {/* Highlighted Card Block (Matching the "Design Failure" style) */}
+          {/* Highlighted Card Block - Adjusted for mobile wrapping */}
           <div 
-            className="p-8 mb-12"
+            className="p-5 sm:p-8 mb-10 sm:mb-12"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               borderRadius: '16px',
               border: '1px solid rgba(255, 255, 255, 0.05)'
             }}
           >
-            <p className="text-gray-300 text-lg mb-4">Access to emotionally attuned guides that help you:</p>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-white font-bold text-xl sm:text-2xl">
+            <p className="text-gray-400 text-sm sm:text-lg mb-4">Access to emotionally attuned guides that help you:</p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-white font-bold text-lg sm:text-2xl">
               {["Reflect", "Grow", "Repair", "Choose better", "Love better", "Create more", "Explore deeper"].map((item, i, arr) => (
-                <span key={i}>
+                <span key={i} className="flex items-center">
                   <span className={i % 2 === 0 ? "text-white" : "text-[#7759fd]"}>{item}</span>
-                  {i !== arr.length - 1 && <span className="ml-4 opacity-20 text-white font-light">|</span>}
+                  {i !== arr.length - 1 && (
+                    /* Hidden separators on very small screens to prevent weird wrapping */
+                    <span className="ml-3 opacity-20 text-white font-light hidden xs:inline">|</span>
+                  )}
                 </span>
               ))}
             </div>
           </div>
 
           {/* Horizontal Divider */}
-          <hr className="border-white/10 mb-10" />
+          <hr className="border-white/10 mb-8 sm:mb-10" />
 
           {/* Final Footer Statement */}
-          <p className="text-white text-lg font-medium leading-relaxed italic">
+          <p className="text-white text-base sm:text-lg font-medium leading-relaxed italic">
             Not by telling people what to do, but by helping them understand themselves and each other more clearly.
           </p>
         </div>
       </div>
 
+<br></br>
       <div
         className="relative overflow-hidden text-left"
         style={{
-          padding: 'clamp(40px, 8vw, 64px)',
+          // Mobile: 24px padding | Desktop: scales up to 64px
+          padding: 'clamp(24px, 6vw, 64px)',
           background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
           borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
+          border: '1px solid rgba(255, 255, 255, 0.05)',
+          margin: '0 12px' // Keeps the card from hitting the phone screen edges
         }}
       >
-        <div className="max-w-3xl">
-          {/* Main Title */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+        <div className="max-w-3xl mx-auto">
+          {/* Main Title - Responsive font size */}
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
             Our Philosophy on AI
           </h2>
 
           {/* Primary Bold Statement */}
-          <p className="text-white text-xl font-bold mb-6">
+          <p className="text-white text-lg sm:text-xl font-bold mb-6 leading-snug">
             We believe AI is one of the most powerful tools humanity has ever created. What matters now is how we choose to use it.
           </p>
 
           {/* Narrative Paragraph */}
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
             At Elinity, we believe AI is at its best when it amplifies the human spirit rather than replacing it. It should support our drives to connect, create, and grow—helping us become more conscious, not more distracted.
           </p>
 
           {/* Accent Quote / Sidebar Block */}
-          <div className="border-l border-[#a855f7]/40 pl-6 mb-12">
-            <p className="text-gray-300 text-lg leading-relaxed">
+          <div className="border-l-2 border-[#a855f7]/40 pl-4 sm:pl-6 mb-10 sm:mb-12">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               Our core meta-directives involve building aligned AI that is emotionally intelligent, 
               focused on long-term wellbeing, and designed for depth rather than dependency.
             </p>
           </div>
 
-          {/* Highlighted Card Block (The "Design Failure" style box) */}
+          {/* Highlighted Card Block - Adjusted padding for mobile */}
           <div 
-            className="p-8 mb-12"
+            className="p-5 sm:p-8 mb-10 sm:mb-12"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               borderRadius: '16px',
               border: '1px solid rgba(255, 255, 255, 0.05)'
             }}
           >
-            <p className="text-gray-300 text-lg mb-4">AI shouldn't be a substitute.</p>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+            <p className="text-gray-400 text-sm sm:text-lg mb-2 sm:mb-4">AI shouldn't be a substitute.</p>
+            <h3 className="text-xl sm:text-3xl font-bold text-white leading-tight">
               It is <span className="text-[#7759fd]">scaffolding</span> for better, deeper human-to-human connection.
             </h3>
           </div>
 
           {/* Horizontal Divider */}
-          <hr className="border-white/10 mb-10" />
+          <hr className="border-white/10 mb-8 sm:mb-10" />
 
-          {/* Detailed List */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Detailed List - Stays 1 column longer on mobile for readability */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {[
               "Emotionally intelligent",
               "Aligned with long-term human wellbeing",
@@ -484,190 +499,211 @@ export default function AboutUs() {
               "Built to reinforce human-to-human connection"
             ].map((text, i) => (
               <div key={i} className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#a855f7] mt-2.5 shrink-0" />
-                <p className="text-gray-300 text-base leading-snug">{text}</p>
+                <div className="w-1.5 h-1.5 rounded-full bg-[#a855f7] mt-2 shrink-0" />
+                <p className="text-gray-300 text-sm sm:text-base leading-snug">{text}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-
+<br></br>
 
       <div
-        className="relative overflow-hidden text-left"
-        style={{
-          padding: 'clamp(40px, 8vw, 64px)',
-          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-          borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
-        }}
-      >
-        <div className="max-w-3xl">
-          {/* Main Title */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
-            What We’re Building Toward
-          </h2>
+          className="relative overflow-hidden text-left"
+          style={{
+            padding: 'clamp(40px, 8vw, 64px)',
+            background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+            borderRadius: '24px',
+            border: '1px solid rgba(255, 255, 255, 0.05)'
+          }}
+        >
+          <div className="max-w-3xl">
+            {/* Main Title */}
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+              What We’re Building Toward
+            </h2>
 
-          {/* Primary Bold Statement */}
-          <p className="text-white text-xl font-bold mb-6">
-            Elinity is being built as a long-term company, not a short-term product.
-          </p>
+            {/* Primary Bold Statement */}
+            <p className="text-white text-xl font-bold mb-6">
+              Elinity is being built as a long-term company, not a short-term product.
+            </p>
 
-          {/* Narrative Paragraph */}
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            We are not optimizing for quick wins or surface-level engagement. We are building relationship infrastructure for the future, with the belief that strong relationships are the foundation of individual flourishing and collective wellbeing.
-          </p>
+            {/* Narrative Paragraph */}
+            <p className="text-gray-400 text-lg leading-relaxed mb-10">
+              We are not optimizing for quick wins or surface-level engagement. We are building relationship infrastructure for the future, with the belief that strong relationships are the foundation of individual flourishing and collective wellbeing.
+            </p>
 
-          {/* Highlighted Card Block (The "Design Failure" style box) */}
-          <div 
-            className="p-8 mb-12"
-            style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              borderRadius: '16px',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
-            }}
-          >
-            <p className="text-gray-300 text-lg mb-6">We believe:</p>
-            
-            <div className="space-y-4">
-              {[
-                "Everyone deserves to find their people",
-                "Everyone deserves to be understood",
-                "Everyone deserves a life rich in love, friendship, purpose, and belonging"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="h-px w-6 bg-[#7759fd]" />
-                  <p className="text-white text-lg sm:text-xl font-semibold">{text}</p>
-                </div>
-              ))}
+            {/* Highlighted Card Block (The "Design Failure" style box) */}
+            <div 
+              className="p-8 mb-12"
+              style={{
+                background: 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.05)'
+              }}
+            >
+              <p className="text-gray-300 text-lg mb-6">We believe:</p>
+              
+              <div className="space-y-4">
+                {[
+                  "Everyone deserves to find their people",
+                  "Everyone deserves to be understood",
+                  "Everyone deserves a life rich in love, friendship, purpose, and belonging"
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="h-px w-6 bg-[#7759fd]" />
+                    <p className="text-white text-lg sm:text-xl font-semibold">{text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* Horizontal Divider */}
+            <hr className="border-white/10 mb-10" />
+
+            {/* Final Footer Statement */}
+            <p className="text-white text-lg font-medium leading-relaxed">
+              Connecting the right people, at the right time, with the right support, is <span className="text-[#a855f7]">one of the greatest unlocks</span> available to humanity.
+            </p>
           </div>
-
-          {/* Horizontal Divider */}
-          <hr className="border-white/10 mb-10" />
-
-          {/* Final Footer Statement */}
-          <p className="text-white text-lg font-medium leading-relaxed">
-            Connecting the right people, at the right time, with the right support, is <span className="text-[#a855f7]">one of the greatest unlocks</span> available to humanity.
-          </p>
         </div>
+<br></br>
+
+    <div
+      className="relative overflow-hidden text-left"
+      style={{
+        // Mobile: 24px padding | Desktop: scales up to 64px
+        padding: 'clamp(24px, 6vw, 64px)',
+        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        borderRadius: '24px',
+        border: '1px solid rgba(255, 255, 255, 0.05)',
+        margin: '0 12px' // Matches the alignment of your other cards
+      }}
+    >
+      <div className="max-w-3xl mx-auto">
+        {/* Main Title - Responsive size */}
+        <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+          Who We’re For
+        </h2>
+
+        {/* Primary Bold Statement */}
+        <p className="text-white text-lg sm:text-xl font-bold mb-6 leading-snug">
+          Elinity is for people who care about depth.
+        </p>
+
+        {/* Narrative Paragraph - Adjusted for readability on narrow screens */}
+        <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+          People who want real connection, not endless choice.<br className="hidden sm:block" />
+          People who want to grow, not perform.<br className="hidden sm:block" />
+          People who believe relationships are a craft worth learning, not a gamble to endure.
+        </p>
+
+        {/* Highlighted Card Block */}
+        <div 
+          className="p-5 sm:p-8 mb-10 sm:mb-12"
+          style={{
+            background: 'rgba(255, 255, 255, 0.03)',
+            borderRadius: '16px',
+            border: '1px solid rgba(255, 255, 255, 0.05)'
+          }}
+        >
+          <p className="text-gray-400 text-sm sm:text-lg mb-4 sm:mb-6">It is for:</p>
+          
+          {/* Role Tags - Gap adjusted for thumb-tapping/visual clarity */}
+          <div className="flex flex-wrap gap-2 sm:gap-3">
+            {["Users", "Builders", "Researchers", "Designers", "Investors"].map((role, i) => (
+              <span 
+                key={i} 
+                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/10 text-white text-xs sm:text-sm font-medium bg-white/5"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
+          
+          <h3 className="text-lg sm:text-2xl font-bold text-white mt-6 sm:mt-8 leading-tight">
+            Who believe technology can still be used to make us <span className="text-[#7759fd]">more human</span>, not less.
+          </h3>
+        </div>
+
+        {/* Horizontal Divider */}
+        <hr className="border-white/10 mb-2" />
       </div>
-
-
+    </div>
+<br></br>
       <div
         className="relative overflow-hidden text-left"
         style={{
-          padding: 'clamp(40px, 8vw, 64px)',
+          // Responsive padding: 24px on phone, scales to 64px on desktop
+          padding: 'clamp(24px, 6vw, 64px)',
           background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
           borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
+          border: '1px solid rgba(255, 255, 255, 0.05)',
+          margin: '0 12px' // Keeps the card consistent with your other sections
         }}
       >
-        <div className="max-w-3xl">
-          {/* Main Title */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
-            Who We’re For
-          </h2>
-
-          {/* Primary Bold Statement */}
-          <p className="text-white text-xl font-bold mb-6">
-            Elinity is for people who care about depth.
-          </p>
-
-          {/* Narrative Paragraph */}
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
-          People who want real connection, not endless choice.<br/>
-      People who want to grow, not perform.<br/>
-      People who believe relationships are a craft worth learning, not a gamble to endure.<br/>
-          </p>
-
-          {/* Highlighted Card Block (The "Design Failure" style box) */}
-          <div 
-            className="p-8 mb-12"
-            style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              borderRadius: '16px',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
-            }}
-          >
-            <p className="text-gray-300 text-lg mb-6">It is for:</p>
-            
-            <div className="flex flex-wrap gap-3">
-              {["Users", "Builders", "Researchers", "Designers", "Investors"].map((role, i) => (
-                <span 
-                  key={i} 
-                  className="px-4 py-2 rounded-full border border-white/10 text-white text-sm font-medium bg-white/5"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
-            
-            <h3 className="text-xl sm:text-2xl font-bold text-white mt-8 leading-tight">
-              Who believe technology can still be used to make us <span className="text-[#7759fd]">more human</span>, not less.
-            </h3>
-          </div>
-
-          {/* Horizontal Divider */}
-          <hr className="border-white/10 mb-10" />
-        </div>
-      </div>
-
-      <div
-        className="relative overflow-hidden text-left"
-        style={{
-          padding: 'clamp(40px, 8vw, 64px)',
-          background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-          borderRadius: '24px',
-          border: '1px solid rgba(255, 255, 255, 0.05)'
-        }}
-      >
-        <div className="max-w-3xl">
-          {/* Main Title */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight">
+        <div className="max-w-3xl mx-auto">
+          {/* Main Title - Smaller on mobile to prevent overflow */}
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight" style={{background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
             Where We’re Going
           </h2>
 
           {/* Primary Bold Statement */}
-          <p className="text-white text-xl font-bold mb-6 italic">
+          <p className="text-white text-lg sm:text-xl font-bold mb-6 italic leading-snug">
             We are early. Intentionally so.
           </p>
 
           {/* Narrative Paragraph */}
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
             We are building something that will take time, care, and courage. Something that will evolve as people evolve. Something that aims to last decades, not cycles.
           </p>
 
-          {/* Highlighted Card Block (The Impact Point) */}
+          {/* Highlighted Card Block */}
           <div 
-            className="p-8 mb-12"
+            className="p-5 sm:p-8 mb-10 sm:mb-12"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               borderRadius: '16px',
               border: '1px solid rgba(255, 255, 255, 0.05)'
             }}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-4">
+            <h3 className="text-xl sm:text-3xl font-bold text-white leading-tight mb-4">
               Elinity is our attempt to contribute to a <span className="text-[#7759fd]">better relational future.</span>
             </h3>
-            <p className="text-gray-300 text-lg">
-              One where technology helps us find each other, choose each other, and keep choosing each other,  and keep choosing each other, with clarity, care, and intention.
+            <p className="text-gray-300 text-sm sm:text-lg leading-relaxed">
+              One where technology helps us find each other, choose each other, and keep choosing each other, with clarity, care, and intention.
             </p>
           </div>
 
           {/* Horizontal Divider */}
-          <hr className="border-white/10 mb-10" />
+          <hr className="border-white/10 mb-8 sm:mb-10" />
 
           {/* Final Footer Sign-off */}
-          <div className="space-y-2">
-            <p className="text-white text-lg font-medium">This is the future of connection we are working toward.</p>
-            <div className="flex flex-col sm:flex-row sm:gap-6">
-              <p className="text-[#a855f7] font-semibold tracking-wide">Rooted in who we are.</p>
-              <p className="text-gray-400 font-light italic">Guided by who we are becoming.</p>
+          <div className="space-y-4">
+            <p className="text-white text-base sm:text-lg font-medium">
+              This is the future of connection we are working toward.
+            </p>
+            {/* Mobile: Stacked | Desktop: Side-by-side */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 space-y-1 sm:space-y-0">
+              <p className="text-[#a855f7] font-semibold tracking-wide text-sm sm:text-base">
+                Rooted in who we are.
+              </p>
+              <p className="text-gray-400 font-light italic text-sm sm:text-base">
+                Guided by who we are becoming.
+              </p>
             </div>
           </div>
         </div>
