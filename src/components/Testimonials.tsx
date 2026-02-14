@@ -39,7 +39,7 @@ const Testimonials: React.FC = () => {
   const current = TESTIMONIALS[activeIndex];
 
   return (
-    <section id="testimonials" className="py-12 md:py-20 bg-black overflow-hidden lowercase min-h-[500px] flex items-center">
+    <section id="testimonials" className="py-12 md:py-20 bg-black overflow-hidden lowercase min-h-[500px] flex items-center" style={{height: '700px'}}>
       <div className="container px-4 mx-auto">
         
         {/* section header */}
