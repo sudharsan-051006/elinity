@@ -9,6 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Server running on Vercel 🚀");
+});
+
 // ---- GOOGLE AUTH ----
 const auth = new google.auth.GoogleAuth({
   credentials: {
@@ -70,4 +74,5 @@ app.post("/api/waitlist", async (req, res) => {
 
 // console.log("PRIVATE KEY:", process.env.GOOGLE_PRIVATE_KEY);
 console.log("Spreadsheet ID:", process.env.SPREADSHEET_ID);
+
 module.exports = app;
