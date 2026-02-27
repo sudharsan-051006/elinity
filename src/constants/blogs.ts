@@ -1,426 +1,339 @@
-import un from '../../public/unnamed (1).jpg';
+import three from '../../public/Three.jpg';
+import why from '../../public/whywearebuliding.jpeg';
+import sol from '../../public/28.jpeg';
+import belif from '../../public/belifs.png';
+import birth from '../../public/brithrate.jpeg';
+import vivid from '../../public/vividdetails.jpeg';
+import breakup from '../../public/breakup.jpeg';
+import future from '../../public/25.jpeg';
 
 export const blogs = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80',
-    title: 'Some of    Core Beliefs at Elinity	',
+    title: 'Some of Our Core Beliefs at Elinity	',
+    image: belif,
     time: '6 min read',
     date: '15 April 2024',
     author: 'Rachel Adams',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
-    <h3>At the deepest level, we believe this is simple.</h3>
-
-<p>
-Deep relationships and a life of purpose are the foundation of a life well lived.
-Strip away philosophy, religion, productivity, and status games, and almost everything collapses to this.
-</p>
-
-<ul>
-  <li>Who you love.</li>
-  <li>How you love.</li>
-  <li>Who loves you.</li>
-  <li>Who you create with.</li>
-  <li>Why you wake up.</li>
-  <li>Who you play with.</li>
-</ul>
-
-<p>
-For 99.9% of people, this is the real answer to the meaning of life,
-whether they articulate it this way or not.
-</p>
-
-<h3>Optimal Connection Is Statistically Unlikely</h3>
-
-<p>
-Most people never experience the very best of relationships, but they can.
-This isn’t because they lack desire, sincerity, or capacity for love,
-but because the world we have built makes optimal connection statistically unlikely.
-</p>
-
-<p>
-Randomness, geography, timing, poor incentives, shallow systems,
-and cultural confusion do the rest.
-</p>
-
-<h3>Relationship Quality Is Upstream</h3>
-
-<p>
-Relationship quality sits upstream of almost everything we care about.
-</p>
-
-<ul>
-  <li>Mental health</li>
-  <li>Physical health</li>
-  <li>Resilience</li>
-  <li>Creativity</li>
-  <li>Courage</li>
-  <li>Empathy</li>
-  <li>Moral development</li>
-</ul>
-
-<p>
-All are downstream of who we are surrounded by,
-and how safe, seen, and challenged we feel in those bonds.
-</p>
-
-<h3>The Human Relationship Paradox</h3>
-
-<p>
-The most important problem to solve today is the human relationship paradox.
-Why is the most important thing in human life also the thing we leave most to chance?
-</p>
-
-<p>
-We engineer supply chains, markets, and cities with extreme care,
-yet treat love, friendship, and collaboration as accidents.
-</p>
-
-<h3>This Problem Is Now Solvable</h3>
-
-<p>
-For the first time in human history, we can build systems that help people
-find their most resonant humans, their kindred spirits,
-and then help those relationships actually flourish over time.
-</p>
-
-<h3>AI and Expansive Potential</h3>
-
-<p>
-We believe deeply in the expansive potential of technology, and especially in AI.
-AI has the potential to be the most life affirming,
-consciousness expanding force ever created,
-if and only if it is aligned toward long-term human flourishing,
-both at the individual scale and at the societal scale.
-</p>
-
-<h3>AI Is at Its Best When It Amplifies the Human Spirit</h3>
-
-<ul>
-  <li>Strengthens our drive to connect</li>
-  <li>Strengthens our drive to create</li>
-  <li>Strengthens our drive to learn</li>
-  <li>Strengthens our drive to grow</li>
-  <li>Strengthens our drive to play</li>
-  <li>Strengthens our drive to explore</li>
-</ul>
-
-<p>
-It is at its worst when it replaces these drives with simulacras
-or numbs them into passive consumption.
-</p>
-
-<h3>Relationships Were Always Hard</h3>
-
-<p>
-Relationships were hard long before smartphones existed.
-The idea that less technology is the answer is naive.
-Relationships have always been fragile, misaligned,
-and deeply prone to subpar outcomes.
-</p>
-
-<p>
-What has changed is that we now have the tools
-to assist and nurture and grow without intruding,
-and guide without controlling.
-</p>
-
-<h3>Thoughtful Technology Is the Answer</h3>
-
-<p>
-We believe the thoughtful application of technology
-is the answer to the relationship conundrum.
-An aligned, emotionally intelligent life flourishing companion
-can help people build relationships that would otherwise be inaccessible.
-</p>
-
-<h3>Self-Awareness Is the Root</h3>
-
-<p>
-Self-awareness is the root of relational health.
-Most long-term relationship failure traces back to:
-</p>
-
-<ul>
-  <li>Unexamined patterns</li>
-  <li>Emotional blind spots</li>
-  <li>Unresolved trauma</li>
-  <li>A weak relationship with oneself</li>
-</ul>
-
-<h3>A Good Self-Relationship Comes First</h3>
-
-<p>
-If you cannot be with yourself honestly, patiently, and compassionately,
-no amount of perfect external matching will save you.
-</p>
-
-<p>
-We believe the partner you get is the partner you deserve.
-This is not moral judgment. It is causal reality.
-If you want better relationships, you must become better at relating,
-better at loving, better at serving,
-for what we put out is what comes back in.
-</p>
-
-<h3>Connection Alone Is Insufficient</h3>
-
-<p>
-Connection — even perfect — alone is insufficient.
-Maintenance, play, and continuous nurturing matter.
-Humans have limited emotional bandwidth.
-Without intentional care,
-even great relationships can decay and wither away.
-</p>
-
-<h3>The Cost of Inefficient Connection</h3>
-
-<p>
-Inefficient connection is one of the greatest bottlenecks in human potential.
-When the wrong people end up together,
-or the right people never meet,
-the loss compounds across generations.
-</p>
-
-<p>
-The cost of the right people not meeting
-is one of the greatest tragedies of life —
-the joy that could have been had,
-the connection,
-the passion.
-</p>
-
-<h3>The Greatest Unlock</h3>
-
-<p>
-Connecting the most resonant, the best-fit people
-is the single greatest unlock in human vitality.
-</p>
-
-<ul>
-  <li>Releases creativity</li>
-  <li>Releases courage</li>
-  <li>Releases joy</li>
-  <li>Encourages intellectual risk-taking</li>
-  <li>Creates deep aliveness</li>
-</ul>
-
-<h3>Beyond Romance</h3>
-
-<p>
-This applies far beyond romance.
-</p>
-
-<ul>
-  <li>Friendships</li>
-  <li>Collaborators</li>
-  <li>Teams</li>
-  <li>Organizations</li>
-</ul>
-
-<p>
-Optimal fit is a universal problem,
-one of the central meta problems of our species.
-</p>
-
-<h3>Soulmates Are Real</h3>
-
-<p>
-Soulmates are real. And we want to help millions find theirs.
-They appear rare because life is random,
-not because they are mythical.
-</p>
-
-<p>
-In a world of intentional curation and connection,
-soulmates become common rather than miraculous.
-Everyone has access to the peak experience of love,
-which is the peak experience of being.
-</p>
-
-<h3>Depth Over Fragmentation</h3>
-
-<p>
-Self exploration and creation,
-connection curation,
-matchmaking,
-and relationship flourishing
-into one system is the optimal form factor.
-Fragmentation kills depth.
-Meaning emerges when these layers reinforce one another.
-</p>
-
-<h3>Humans Are Not Interchangeable</h3>
-
-<p>
-Humans are not interchangeable.
-Relationships are not disposable.
-Any system that treats them as such is misaligned by design.
-</p>
-
-<h3>Growth Is Essential</h3>
-
-<p>
-Growth and frontier exploration are defining features of our species.
-Humans do not merely survive.
-We probe, test, stretch, and reach.
-Stagnation is not stable. It corrodes quietly.
-A good life requires challenge that feels chosen and meaningful.
-</p>
-
-<h3>Meaning Over Comfort</h3>
-
-<p>
-Comfort and hedonism are poor substitutes for meaning.
-Pleasure has a place. Ease has a place.
-But when comfort becomes the organizing principle of life,
-something essential withers.
-Meaning requires effort, risk, and transformation.
-</p>
-
-<h3>The Post-AGI World</h3>
-
-<p>
-In the post-AGI world, passion, purpose, mission,
-and values alignment become central.
-Hard skills will be abundant.
-What remains scarce:
-</p>
-
-<ul>
-  <li>Conviction</li>
-  <li>Coherence</li>
-  <li>Taste</li>
-  <li>Belief</li>
-</ul>
-
-<h3>Mission Over Commodity</h3>
-
-<p>
-The most exciting companies of the future
-will feel more like people than corporations.
-They will have stories, values, identities.
-</p>
-
-<p>
-The future is one of missions, not commodities.
-Work becomes expression of belief,
-not merely transaction.
-</p>
-
-<h3>Stories as Currency</h3>
-
-<p>
-Stories will become the primary currency of identity and coordination.
-They answer:
-</p>
-
-<ul>
-  <li>Who are we.</li>
-  <li>Why are we here.</li>
-  <li>What are we building together.</li>
-</ul>
-
-<h3>Utopia Is Not Automatic</h3>
-
-<p>
-Utopia does not happen by default.
-Entropy always wins unless consciousness intervenes deliberately.
-AI does not automatically lead to benevolence.
-Default leads to decay.
-</p>
-
-<h3>Beauty and Meaning</h3>
-
-<p>
-Beauty and meaning are anti-entropic forces.
-They orient attention upward.
-They strengthen resilience and cooperation.
-</p>
-
-<h3>Stewardship of Consciousness</h3>
-
-<p>
-Life and consciousness are the most precious phenomena we know.
-If consciousness is rare,
-it must be protected, cultivated, expanded.
-We may be the only caretakers of it in this universe.
-There can be no greater responsibility.
-</p>
-
-<h3>Long-Term Building</h3>
-
-<p>
-We believe in inventing for the long term.
-Not chasing short-term wins.
-Building at the edge of what is possible
-while anchored to what is right.
-</p>
-
-<p>
-Life is short, but art can be long.
-The things worth building should outlast us.
-</p>
-
-<h3>Era-Defining Moment</h3>
-
-<p>
-There are only a few era-defining shots in history.
-This is one of them.
-The systems we design now
-will echo for centuries.
-</p>
-
-<h3>A World Richer in Meaning</h3>
-
-<p>
-Our world needs beauty and meaning in abundance.
-They are the antidotes to apathy, polarization,
-institutional collapse, and despair.
-</p>
-
-<ul>
-  <li>Everyone deserves to find their tribe.</li>
-  <li>To be seen without performance.</li>
-  <li>To be challenged without cruelty.</li>
-  <li>To love and be loved deeply.</li>
-  <li>To live a life that feels alive.</li>
-</ul>
-
-<h3>This Is the Work We Have Chosen</h3>
-
-<p>
-Some beliefs will be unpopular. That is fine.
-Consensus rarely builds the future.
-</p>
-
-<p>
-This is the work we have chosen.
-To aim high.
-To care deeply.
-To build deliberately.
-To take responsibility.
-To choose depth over distraction,
-meaning over ease,
-and love over its hollow substitutes.
-</p>
-
-<p>
-This is not merely a company or business.
-It is a commitment to the kind of world
-we want to wake up in,
-and the kind of humans
-we want to become while building it.
-</p>
-
-
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      At the deepest level, we believe this is simple.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Deep relationships and a life of purpose are the foundation of a life well lived. For 99.9% of people, if you strip away abstractions, ideologies, and clever wordplay, this is the real answer to the question of meaning.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Who do you love.</li>
+      <li style="margin-bottom:8px;">Who loves you.</li>
+      <li style="margin-bottom:8px;">What are you building.</li>
+      <li style="margin-bottom:8px;">Who are you building it with.</li>
+      <li style="margin-bottom:8px;">And do you feel alive while doing it.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Most people never get to experience the very best of relationships.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not because they do not want to, but because the world we have built makes it surprisingly difficult to stumble into the right people, and even harder to sustain depth over time. This is tragic, because relationship quality is downstream of almost everything we care about.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Mental health.</li>
+      <li style="margin-bottom:8px;">Physical health.</li>
+      <li style="margin-bottom:8px;">Creativity.</li>
+      <li style="margin-bottom:8px;">Risk taking.</li>
+      <li style="margin-bottom:8px;">Courage.</li>
+      <li style="margin-bottom:8px;">Compassion.</li>
+      <li style="margin-bottom:8px;">Even the willingness to hope.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      At Elinity, we believe this is the most important problem to solve.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not ASI. Not fusion. Not grand unified theories. The human relationship paradox is far more urgent. Why is the most important thing in human life also the thing most people are worst at. Why do we leave it to chance, randomness, culture, and luck, while optimizing almost everything else.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe this problem is now solvable.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      For the first time in our species’ history, we can build systems that help people find their best fit humans, and then help them build relationships that actually thrive. Not shallow matching. Not engagement loops. Not endless novelty. But alignment, depth, and long-term flourishing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      This is where our belief in technology comes in.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We believe AI has the greatest potential of any technology ever created to be life affirming and consciousness expanding. Not because it replaces us, but because it can amplify the most human parts of us.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Our drive to connect.</li>
+      <li style="margin-bottom:8px;">To create.</li>
+      <li style="margin-bottom:8px;">To learn.</li>
+      <li style="margin-bottom:8px;">To grow.</li>
+      <li style="margin-bottom:8px;">To play.</li>
+      <li style="margin-bottom:8px;">To explore.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI is at its best when it enhances our desired states of being, not when it abstracts humans away.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We do not believe the answer to the relationship conundrum is less technology.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Relationships were hard long before smartphones existed. They were fragile, misaligned, and often tragic even in slower eras. The difference now is that we finally have the tools to assist without intruding, to guide without controlling, to reflect without replacing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe the thoughtful application of technology is the only path forward.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A life flourishing buddy, aligned to your long-term wellbeing, emotionally intelligent, deeply contextual, and on your side, can help people build relationships that would otherwise be out of reach. Not by telling them what to do, but by helping them:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">See themselves more clearly.</li>
+      <li style="margin-bottom:8px;">Regulate better.</li>
+      <li style="margin-bottom:8px;">Repair faster.</li>
+      <li style="margin-bottom:8px;">Choose more wisely.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Self-awareness and a good self-relationship sit at the core of everything.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most long-term relationship failure traces back to:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Blind spots.</li>
+      <li style="margin-bottom:8px;">Unexamined patterns.</li>
+      <li style="margin-bottom:8px;">Unhealed wounds.</li>
+      <li style="margin-bottom:8px;">The inability to sit with oneself honestly.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If you want better relationships, you must become better at being with yourself first. We believe the partner you get is the partner you deserve. If you want better, you must be better. This is not moralizing. It is causal.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe relationship management and maintenance are as important as connection itself.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Humans cannot meaningfully maintain more than around 150 relationships.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Attention is finite.</li>
+      <li style="margin-bottom:8px;">Energy is finite.</li>
+      <li style="margin-bottom:8px;">Emotional bandwidth is finite.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A system that helps curate, prioritize, and tend to the relationships that matter most is not a luxury. It is infrastructure.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Inefficient connection is one of the greatest bottlenecks in human potential.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When the wrong people end up together, or the right people never meet, the loss compounds quietly.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Fewer ideas.</li>
+      <li style="margin-bottom:8px;">Less courage.</li>
+      <li style="margin-bottom:8px;">Less love.</li>
+      <li style="margin-bottom:8px;">Less joy.</li>
+      <li style="margin-bottom:8px;">Fewer beautiful things brought into the world.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When the best fit people find each other, everything accelerates. Creativity spikes. Risk tolerance increases. Life feels lighter. This is the greatest single unlock in human vitality and wellbeing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      This applies not just to romantic relationships.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      But to friendships, collaborators, teams, and organizations. We believe the optimal fit problem is universal. Connecting people to people. People to missions. People to organizations. Done well, this adds more to the world than almost anything else we could work on.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Soulmates are real.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      They are not rare because they are mythical. They are rare because life is random. Most people simply never cross paths with their best fit. In a world of optimal connection, soulmates stop being a miracle and start becoming common. The same applies to best friends, extraordinary collaborators, and teams that feel effortless and alive.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe connecting social discovery, matchmaking, and relationship building into one coherent platform.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Fragmentation is the enemy of depth. Meaning emerges when these layers reinforce each other.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Depth and intentionality matter deeply to us.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are openly hostile to the superficial, discarding, commodifying treadmill of modern culture.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">We reject the idea that humans are interchangeable.</li>
+      <li style="margin-bottom:8px;">We reject the notion that relationships are disposable.</li>
+      <li style="margin-bottom:8px;">We reject a world optimized for novelty over nourishment.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe seeking growth and exploring frontiers are defining features of our species.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Stagnation is not neutral. It is decay. A good life requires healthy challenge, friction, and stretch. Meaning is not found in comfort or hedonism. It is found in effort that feels worth it.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Looking forward, we believe passion, purpose, mission, and values alignment will become the dominant currencies of the post-AGI world.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Money will matter less. Hard skills will be commoditized. What remains scarce:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Personality.</li>
+      <li style="margin-bottom:8px;">Taste.</li>
+      <li style="margin-bottom:8px;">Coherence.</li>
+      <li style="margin-bottom:8px;">Belief.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The most exciting companies of the future will feel more like people than corporations. They will have souls. They will tell stories. They will be missions, not commodities.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Stories will be the main currency.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Identity will be narrative again.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Utopia does not happen by default.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI does not lead to utopia automatically. Entropy wins unless consciousness actively pushes back. Beauty and meaning are anti-entropic forces. To build a better world requires vigilance, taste, wisdom, and sustained effort.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Life and consciousness are the most beautiful phenomena we know.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We may be the only meaning givers in the observable universe. Until proven otherwise, we should act as if this responsibility is real. Not with arrogance, but with:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Stewardship.</li>
+      <li style="margin-bottom:8px;">Guardianship.</li>
+      <li style="margin-bottom:8px;">Care.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe humans are extraordinary.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      That belief should deepen our reverence for everything else, not justify domination. We may one day seed life and intelligence beyond Earth. If so, the values we encode now matter more than we think.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe in inventing for the long term.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not iterating for short-term wins. Building at the edge of what is possible. Shaping futures rather than reacting to trends. Life is short, but art can be long. We want to build things that last long after we are gone. This is our masterpiece.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      In life and in business, there are only a handful of era-defining shots.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When one appears, it becomes imperative to rise to it. This moment in time is one of them. Few periods in human history have been more consequential. Getting this wrong would echo for centuries. Getting it right could unlock a world far richer in beauty, love, and meaning than anything we have known.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Our world needs beauty and meaning.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A lot of it. They are the antidotes to apathy, polarization, institutional decay, and quiet despair. A world richer in beauty and meaning is richer in every way that matters.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We believe everyone deserves to find their tribe.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Everyone deserves to be heard, loved, and alive. And we believe it is one of our highest duties to try to bring that world into existence.
+    </p>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Some of these beliefs will be unpopular.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      That is fine. Progress rarely comes from consensus.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is the work we have chosen.
+    </p>
+  </div>
+
+</div>
     `
 
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+    image: why  ,
     title: 'Why We Are Building Elinity ',
     time: '4 min read',
     date: '25 April 2024',
@@ -428,1974 +341,1806 @@ we want to become while building it.
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 
-    <h3>Why We Are Building Elinity</h3>
-<p><strong>Connection as Civilizational Infrastructure, Relationships as a Solvable Human-Tech Problem</strong></p>
+   <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #0a0a23, #1a1a40);
+               color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+               box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
 
-<p>
-We are building Elinity because the current trajectory of human connection is failing, quietly, systematically, and at scale.
-This is not an aesthetic judgment. It is not nostalgia. It is not romantic idealism dressed up as tech critique.
-It is an observation grounded in trendlines, incentives, and first principles.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why We Are Building Elinity
+    </h3>
+    <p style="font-size:17px; color:#ffffff; font-weight:700; margin-bottom:20px;">
+      Connection as Civilizational Infrastructure, Relationships as a Solvable Human-Tech Problem
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are building Elinity because the current trajectory of human connection is failing, quietly, systematically, and at scale.
+      This is not an aesthetic judgment. It is not nostalgia. It is not romantic idealism dressed up as tech critique.
+      It is an observation grounded in trendlines, incentives, and first principles.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most people want better relationships. Most people want meaningful connection.
+      Most people want love, belonging, purpose, and depth.
+      Yet across cultures, income levels, and geographies, fewer people are actually achieving those outcomes.
+      The gap between desire and reality is widening, not narrowing as it should be in an ascendant trajectory of progress that we claim to be on.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      That gap is the problem. And it is far more consequential than we are collectively willing to admit.
+    </p>
+  </div>
 
-<p>
-Most people want better relationships. Most people want meaningful connection.
-Most people want love, belonging, purpose, and depth.
-Yet across cultures, income levels, and geographies, fewer people are actually achieving those outcomes.
-The gap between desire and reality is widening, not narrowing as it should be in an ascendant trajectory of progress that we claim to be on.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The State of the Landscape: A Quiet Collapse of Relationship Quality
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The dominant framing today is a “loneliness epidemic.” That framing is incomplete.
+      Loneliness is only the sharpest edge of a broader failure.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      The deeper issue is relationship quality.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Many people are not alone.
+      They are embedded in networks, marriages, workplaces, group chats, families,
+      online social networks, and situationships.
+      And yet their relationships are brittle, transactional, misaligned, or quietly depleting.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Divorce rates remain high. Relationship satisfaction remains low.
+      A large and growing share of people who want long-term partnership do not believe they will find it.
+      Birth rates are collapsing in most advanced economies.
+      Social trust is declining.
+      People spend more time alone than at any point in recorded history,
+      even as they are more “connected” than ever.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not happening because humans suddenly forgot how to relate.
+      It is happening because <strong style="color:#ffffff;">the systems surrounding connection are misaligned with human flourishing.</strong>
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Big tech did not set out to destroy relationships.
+      But its incentives made depth unprofitable, patience inefficient, and alignment irrelevant.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Platforms optimized for engagement, scale, and monetization</li>
+      <li style="margin-bottom:8px;">Dating apps optimized for retention, not resolution</li>
+      <li style="margin-bottom:8px;">Social platforms optimized for stimulation, not grounding</li>
+      <li style="margin-bottom:8px;">Algorithms optimized for outrage, novelty, and dopamine  rather than trust, coherence, or intimacy.
+</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The result is not dramatic dystopia.
+      It is normalized mediocrity,
+      where people quietly lower their expectations of life
+      without realizing how much better things could be.
+    </p>
+  </div>
 
-<p><strong>That gap is the problem. And it is far more consequential than we are collectively willing to admit.</strong></p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why This Problem Matters More Than We Realize
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Relationships are not one domain among many.
+      They are upstream of almost everything else.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Mental health outcomes</li>
+      <li style="margin-bottom:8px;">Life satisfaction</li>
+      <li style="margin-bottom:8px;">Resilience</li>
+      <li style="margin-bottom:8px;">Creativity</li>
+      <li style="margin-bottom:8px;">Physical health</li>
+      <li style="margin-bottom:8px;">Longevity</li>
+      <li style="margin-bottom:8px;">Economic productivity</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The single most reliable predictor of long-term wellbeing across cultures and decades
+      is not wealth, status, or intelligence.
+      It is the quality of one’s close relationships.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      And unlike wealth, this is not a zero-sum game.
+      A world in which most people have deeply aligned,
+      supportive, meaningful relationships is attainable.
+    </p>
+  </div>
 
-<h3>The State of the Landscape: A Quiet Collapse of Relationship Quality</h3>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Core Thesis
+    </h3>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Inefficient connection is one of humanity’s greatest bottlenecks.
+    </p>
+    We believe inefficient connection is one of the most consequential unsolved problems of our time.
+    Consider the structure of the problem.
+    <p style="font-size:17px; color:#cfcfe6;">
+      Each human being is a high-dimensional system:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Values</li>
+      <li style="margin-bottom:8px;">Temperament</li>
+      <li style="margin-bottom:8px;">Attachment style</li>
+      <li style="margin-bottom:8px;">Beliefs</li>
+      <li style="margin-bottom:8px;">Goals</li>
+      <li style="margin-bottom:8px;">Wounds</li>
+      <li style="margin-bottom:8px;">Aspirations</li>
+      <li style="margin-bottom:8px;">Rhythms</li>
+      <li style="margin-bottom:8px;">Contradictions</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Finding “your people” is a matching problem across dozens of latent dimensions.
+      Historically, we relied on luck, geography, and narrow social circles.
+      Civilization has always been about reducing luck.
+      Yet in the most important determinant of life quality, we still rely on chance.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is irrational. And it is solvable.
+    </p>
+  </div>
 
-<p>
-The dominant framing today is a “loneliness epidemic.” That framing is incomplete.
-Loneliness is only the sharpest edge of a broader failure.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why Technology, and Why AI at the Core
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Scalable, high-fidelity matching is impossible without technology.
+      Deep, personalized, continuously adaptive matching is impossible without AI.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI is the only tool capable of modeling humans at sufficient depth,
+      simulating relational dynamics,
+      learning over time,
+      and adapting as people grow.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      But how AI is built matters more than whether it is built.
+    </p>
+  </div>
 
-<p><strong>The deeper issue is relationship quality.</strong></p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Wrong Path: Replacement, Escapism, and Synthetic Comfort
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are deeply concerned by the normalization of:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Erotically charged AI companions</li>
+      <li style="margin-bottom:8px;">Frictionless emotional validation</li>
+      <li style="margin-bottom:8px;">Synthetic intimacy</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Relationships are meaningful because they are hard.
+      They require negotiation, resistance, mutuality, unpredictability, accountability.
+      A system that removes friction does not elevate you. It atrophies you.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      AI should amplify human connection, not replace it.
+    </p>
+  </div>
 
-<p>
-Many people are not alone.
-They are embedded in networks, marriages, workplaces, group chats, families,
-online social networks, and situationships.
-And yet their relationships are brittle, transactional, misaligned, or quietly depleting.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Elinity’s Position
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are building Elinity as post-AGI relationship and meaning infrastructure.
+      As intelligence becomes abundant and work commodified,
+      relationships and purpose will become primary stabilizing forces of human life.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity exists to support:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Strong relationships</li>
+      <li style="margin-bottom:8px;">Meaningful projects</li>
+      <li style="margin-bottom:8px;">A coherent sense of self</li>
+    </ul>
+  </div>
 
-<p>
-Divorce rates remain high. Relationship satisfaction remains low.
-A large and growing share of people who want long-term partnership do not believe they will find it.
-Birth rates are collapsing in most advanced economies.
-Social trust is declining.
-People spend more time alone than at any point in recorded history,
-even as they are more “connected” than ever.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Elinity Trinity
+    </h3>
+    Elinity is built around three inseparable pillars:
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>Social connection:</strong> finding your most resonant people</li>
+      <li style="margin-bottom:8px;"><strong>Relationship building:</strong> helping connections flourish</li>
+      <li style="margin-bottom:8px;"><strong>Self-awareness and growth:</strong> becoming capable of great relationships</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Games and play are not a side feature. They are central to our vision. Play is how humans learn, bond, and explore safely. We are building a new class of generative, connection-first, depth-infused games designed for meaning rather than distraction.
+    </p>
+  </div>
 
-<p>
-This is not happening because humans suddenly forgot how to relate.
-It is happening because the systems surrounding connection are misaligned with human flourishing.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Removing Luck from Social Life
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Our north star is a world in which luck plays a minimal role in whether someone finds their soulmate, their collaborators, their community, or their purpose-aligned work.
+      <br/>
+      Imagine a platform in 2050 that functions as the world’s most trusted connector. One that understands you better over time, advocates for your long-term flourishing, and helps you make fewer relational mistakes.
+      <br/><strong>That is the direction.</strong>
+    </p>
+  </div>
 
-<p>
-Big tech did not set out to destroy relationships.
-But its incentives made depth unprofitable, patience inefficient, and alignment irrelevant.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Hard Truth
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Here is an uncomfortable reality most people avoid saying out loud.
+      Most people are not yet capable of sustaining the relationships they desire.
+      This is not a moral condemnation. It is a developmental observation.
+      <br>
+      Healthy relationships require:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Emotional regulation</li>
+      <li style="margin-bottom:8px;">Self-awareness</li>
+      <li style="margin-bottom:8px;">Communication skills</li>
+      <li style="margin-bottom:8px;">Humility</li>
+      <li style="margin-bottom:8px;">Tolerance for discomfort</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity helps you not only find people,
+      but become someone worth finding.
+    </p>
+  </div>
 
-<ul>
-  <li>Platforms optimized for engagement, scale, and monetization</li>
-  <li>Dating apps optimized for retention, not resolution</li>
-  <li>Social platforms optimized for stimulation, not grounding</li>
-  <li>Algorithms optimized for outrage, novelty, and dopamine</li>
-</ul>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Soulmates, Demystified
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">We reject the mystical framing of soulmates, but we affirm the underlying intuition.<br/>
+There are people who are extraordinarily well-matched to you across deep dimensions. Finding them is rare without assistance. Building something lasting with them requires work.
+<br/>
+The best relationships are not “found.” They are formed, over time, through commitment, repair, and shared meaning.
+<br/>Technology can help with the finding. Wisdom must guide the forming.
+    </p>
+  </div>
 
-<p>
-The result is not dramatic dystopia.
-It is normalized mediocrity,
-where people quietly lower their expectations of life
-without realizing how much better things could be.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why This Is a Life’s Work
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not a mere startup.
+      It is a civilizational project.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If successful, Elinity alters:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Demographic trajectories</li>
+      <li style="margin-bottom:8px;">Mental health outcomes</li>
+      <li style="margin-bottom:8px;">Creative output</li>
+      <li style="margin-bottom:8px;">Social cohesion</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+It changes what people believe is possible.
+We believe a world with dramatically fewer hard breakups and divorces, with deeper friendships, and aligned collaborations, more kindred spirits, and more families formed because more people have choice, is possible.
+We are not naive about the risks. We are vigilant about misuse. We are deeply aware that technology amplifies whatever values it is built upon.
 
-<h3>Why This Problem Matters More Than We Realize</h3>
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      We are not just building software. We are building a philosophy of connection.
+    </p>
+  </div>
 
-<p>
-Relationships are not one domain among many.
-They are upstream of almost everything else.
-</p>
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Our One-Line Mission
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity exists to help people actualize their relationship potential:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">With themselves</li>
+      <li style="margin-bottom:8px;">With others</li>
+      <li style="margin-bottom:8px;">With the world</li>
+    </ul>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Everything else is downstream.
+    </p>
+  </div>
 
-<ul>
-  <li>Mental health outcomes</li>
-  <li>Life satisfaction</li>
-  <li>Resilience</li>
-  <li>Creativity</li>
-  <li>Physical health</li>
-  <li>Longevity</li>
-  <li>Economic productivity</li>
-</ul>
-
-<p>
-The single most reliable predictor of long-term wellbeing across cultures and decades
-is not wealth, status, or intelligence.
-It is the quality of one’s close relationships.
-</p>
-
-<p>
-And unlike wealth, this is not a zero-sum game.
-A world in which most people have deeply aligned,
-supportive, meaningful relationships is attainable.
-</p>
-
-<h3>The Core Thesis</h3>
-
-<p><strong>Inefficient connection is one of humanity’s greatest bottlenecks.</strong></p>
-
-<p>
-Each human being is a high-dimensional system:
-</p>
-
-<ul>
-  <li>Values</li>
-  <li>Temperament</li>
-  <li>Attachment style</li>
-  <li>Beliefs</li>
-  <li>Goals</li>
-  <li>Wounds</li>
-  <li>Aspirations</li>
-  <li>Rhythms</li>
-  <li>Contradictions</li>
-</ul>
-
-<p>
-Finding “your people” is a matching problem across dozens of latent dimensions.
-Historically, we relied on luck, geography, and narrow social circles.
-Civilization has always been about reducing luck.
-Yet in the most important determinant of life quality, we still rely on chance.
-</p>
-
-<p><strong>This is irrational. And it is solvable.</strong></p>
-
-<h3>Why Technology and AI</h3>
-
-<p>
-Scalable, high-fidelity matching is impossible without technology.
-Deep, personalized, continuously adaptive matching is impossible without AI.
-</p>
-
-<p>
-AI is the only tool capable of modeling humans at sufficient depth,
-simulating relational dynamics,
-learning over time,
-and adapting as people grow.
-</p>
-
-<p>
-But how AI is built matters more than whether it is built.
-</p>
-
-<h3>The Wrong Path</h3>
-
-<p>
-We are deeply concerned by the normalization of:
-</p>
-
-<ul>
-  <li>Erotically charged AI companions</li>
-  <li>Frictionless emotional validation</li>
-  <li>Synthetic intimacy</li>
-</ul>
-
-<p>
-Relationships are meaningful because they are hard.
-They require negotiation, resistance, mutuality, unpredictability, accountability.
-A system that removes friction does not elevate you. It atrophies you.
-</p>
-
-<p><strong>AI should amplify human connection, not replace it.</strong></p>
-
-<h3>Elinity’s Position</h3>
-
-<p>
-We are building Elinity as post-AGI relationship and meaning infrastructure.
-As intelligence becomes abundant and work commodified,
-relationships and purpose will become primary stabilizing forces of human life.
-</p>
-
-<p>
-Elinity exists to support:
-</p>
-
-<ul>
-  <li>Strong relationships</li>
-  <li>Meaningful projects</li>
-  <li>A coherent sense of self</li>
-</ul>
-
-<h3>The Elinity Trinity</h3>
-
-<ul>
-  <li><strong>Social connection:</strong> finding your most resonant people</li>
-  <li><strong>Relationship building:</strong> helping connections flourish</li>
-  <li><strong>Self-awareness and growth:</strong> becoming capable of great relationships</li>
-</ul>
-
-<p>
-Games and play are central.
-We are building generative, connection-first, depth-infused games
-designed for meaning rather than distraction.
-</p>
-
-<h3>Removing Luck from Social Life</h3>
-
-<p>
-Our north star is a world where luck plays a minimal role
-in whether someone finds their soulmate, collaborators, or community.
-</p>
-
-<p>
-Imagine a platform that understands you deeply over time,
-advocates for your flourishing,
-and helps you avoid relational mistakes.
-</p>
-
-<h3>The Hard Truth</h3>
-
-<p>
-Most people are not yet capable of sustaining the relationships they desire.
-Healthy relationships require:
-</p>
-
-<ul>
-  <li>Emotional regulation</li>
-  <li>Self-awareness</li>
-  <li>Communication skills</li>
-  <li>Humility</li>
-  <li>Tolerance for discomfort</li>
-</ul>
-
-<p>
-Elinity helps you not only find people,
-but become someone worth finding.
-</p>
-
-<h3>Soulmates, Demystified</h3>
-
-<p>
-There are people extraordinarily well-matched to you across deep dimensions.
-Finding them is rare without assistance.
-Building something lasting requires work.
-</p>
-
-<p>
-Technology can help with the finding.
-Wisdom must guide the forming.
-</p>
-
-<h3>Why This Is a Life’s Work</h3>
-
-<p>
-This is not a mere startup.
-It is a civilizational project.
-</p>
-
-<p>
-If successful, Elinity alters:
-</p>
-
-<ul>
-  <li>Demographic trajectories</li>
-  <li>Mental health outcomes</li>
-  <li>Creative output</li>
-  <li>Social cohesion</li>
-</ul>
-
-<p>
-We are vigilant about misuse.
-Technology amplifies the values it is built upon.
-</p>
-
-<p><strong>We are not just building software. We are building a philosophy of connection.</strong></p>
-
-<h3>Our One-Line Mission</h3>
-
-<p>
-Elinity exists to help people actualize their relationship potential:
-</p>
-
-<ul>
-  <li>With themselves</li>
-  <li>With others</li>
-  <li>With the world</li>
-</ul>
-
-<p><strong>Everything else is downstream.</strong></p>
-
-
+</div>
     `
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
+    image: sol,
     title: 'On Soulmate-Level Connections, and the Art of Curating Soulmates',
     time: '4 min read',
     date: '30 April 2024',
     author: 'Rachel Adams',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+             color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
 
-    <h3>On Soulmate-Level Connections, and the Art of Curating Soulmates</h3>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      On Soulmate-Level Connections, and the Art of Curating Soulmates
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      At the heart of Elinity, pun very much intended, we want to help people find their soulmate.
+      Not in the thin, algorithmic sense of compatibility scores and swipe economics, but in the real sense - the person with whom life opens up. The relationship that feels expansive rather than extractive. The bond that sharpens you, softens you, and steadies you all at once.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Millions of people deserve to experience this.
+      A relationship built on deep alignment across dimensions:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Values.</li>
+      <li style="margin-bottom:8px;">Temperament.</li>
+      <li style="margin-bottom:8px;">Emotional depth.</li>
+      <li style="margin-bottom:8px;">Intellectual rhythm.</li>
+      <li style="margin-bottom:8px;">Energy.</li>
+      <li style="margin-bottom:8px;">Ethics.</li>
+      <li style="margin-bottom:8px;">Curiosity.</li>
+      <li style="margin-bottom:8px;">How you argue.</li>
+      <li style="margin-bottom:8px;">How you repair.</li>
+      <li style="margin-bottom:8px;">How you dream.</li>
+      <li style="margin-bottom:8px;">How you handle boredom, ambition, grief, joy, money, sex, silence.</li>
+      <li style="margin-bottom:8px;">The quiet stuff. The hard stuff. The sacred stuff.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We want people to believe in deep love again. In the beauty of love. In idealism that has a backbone. In romantic love that is grounded, grown, and earned. In something far richer than transactionalism, superficiality, commodification, objectification, and hedonism dressed up as freedom.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We want people to experience one of the most peak states life has to offer. To love and be loved at that depth is not a side quest. It is a core human experience. An amplifier of meaning. An accelerant of growth. A stabilizer in chaos.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is an ode to deep, soulful love. And also a refusal to let it remain an abstraction, an oath to bring it to life for millions.
+    </p>
+  </div>
 
-<p>
-At the heart of Elinity, pun very much intended, we want to help people find their soulmate.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Loss of Faith in the Greatest Love
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Something quiet and devastating has happened over the past few decades. People have lost faith in soulmate-level love.
+      This hasn’t happened because humans stopped wanting it, but because the systems around us trained us to expect less. Dating became marketplaces. People became profiles. Desire became gamified. Attention became scarce. Cynicism and gamesmanship became fashionable. Vulnerability became risky. Commitment became suspicious. Romance was recast as naïveté.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Many now treat love as a hedge. A convenience. A temporary arrangement. A source of validation or pleasure until it isn’t. Others swing to the opposite extreme and mythologize it as fate, magic, and inevitability, which collapses the moment real life shows up.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Both paths miss the point.
+      The highest form of love was never supposed to be either transactional or mystical. It is deliberate. It is cultivated. It is chosen again and again. It is built.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We want to take soulmate-level love out of the realm of fairytales and ironic detachment, and bring it back into the real world. With all its complexity, effort, discipline, joy, friction, and transcendence.
+    </p>
+  </div>
 
-<p>
-Not in the thin, algorithmic sense of compatibility scores and swipe economics,
-but in the real sense — the person with whom life opens up.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Soulmate Question, Reframed
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is someone who feels like they complete you.
+      That phrase gets mocked, but it points to something real we crave at the core of our beings. Completion does not mean dependency or erasure of self. It means resonance. Complementarity. A sense that life makes more sense in their presence. That your inner world finds a listener who actually hears it. That you are more yourself, not less.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A soulmate does not have to be a romantic partner. It can be a friend. A collaborator. A guide. A teacher, like in Good Will Hunting. In the future, it may even be an AGI. The essence is the same. Deep mutual attunement. Trust. Growth. A shared sense of meaning.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is also a misunderstanding that causes a lot of harm. The idea that there is one preordained perfect person, and if you miss them, you are done. This turns love into a lottery and failure into destiny.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Reality is subtler and more hopeful. There are multiple potential soulmates for each of us. But they are rare, and they are not interchangeable. They are unlocked through timing, readiness, values, and the willingness to do the work. A soulmate is not found fully formed. A soulmate is grown into. This is where intention matters. And where tools matter.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      But this also requires huge strokes of luck, as most people do not find their soulmates. We want to remove that randomness.
+    </p>
+  </div>
 
-<p>
-The relationship that feels expansive rather than extractive.
-The bond that sharpens you, softens you, and steadies you all at once.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Does Forever Love Exist?
+    </h3>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Yes.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not as a fairytale that sustains itself on chemistry alone, but as a deep, lasting bond built through conscious effort, commitment, communication, and mutual evolution. A relationship that matures beyond infatuation into something sturdier, warmer, and more resilient.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Psychology backs this up. Longitudinal studies on long-term couples show that while passionate intensity often softens over time, emotional intimacy, trust, and companionship can deepen for decades when couples invest intentionally. Attachment research shows that secure bonds can strengthen under stress rather than fracture. Neuroscience shows that long-term love activates brain systems associated with safety, bonding, and meaning, not just reward.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Forever love is rare only because the skills required to sustain it are rare. Skills are learnable.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Key aspects keep showing up across cultures, research, and lived experience:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>Choice and commitment.</strong> Love as an active decision. A willingness to stay, to repair, to honor promises even when moods fluctuate.</li>
+      <li style="margin-bottom:8px;"><strong>Growth and adaptation.</strong> People change. Bodies age. Ambitions shift. The relationship must be elastic enough to evolve without breaking.</li>
+      <li style="margin-bottom:8px;"><strong>Nurturing.</strong> Love behaves like a living system. Attention is its oxygen. Honesty is its immune system. Vulnerability is its circulatory system.</li>
+      <li style="margin-bottom:8px;"><strong>Beyond infatuation.</strong> The butterflies fade. What replaces them can be deeper friendship, profound knowing, and a quiet sense of home.</li>
+      <li style="margin-bottom:8px;"><strong>Resilience.</strong> The strongest bonds do not avoid hardship. They metabolize it. They come out changed, often stronger.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is an optimistic view here, grounded in reality. Couples who stay together for forty, fifty, sixty years exist. Deep friendships that last a lifetime exist. They are testaments and reminders of what can be.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is also a realistic view to be considered. Love is extremely fragile under neglect. External pressures matter, but internal work is non-negotiable to make the love robust and resilient to the storms and the whimsies. Effort does not guarantee success, but lack of effort almost guarantees decay and collapse, either quite or spectacular.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Forever love, deep love, is attainable. It is demanding, but it makes life richer, harder, and infinitely more meaningful.
+    </p>
+  </div>
 
-<p>
-Millions of people deserve to experience this.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Where Most Systems Fail
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most modern systems optimize for attraction, novelty, and convenience.
+      They are good at sparking interest. They are terrible at cultivating depth.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      They do not model values well. They do not track growth. They do not help with repair. They do not reward commitment. They do not teach people how to love better. They flatten humans into static snapshots rather than evolving beings.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As a result, people bounce from connection to connection, carrying unresolved patterns, confusing chemistry with compatibility, intensity with intimacy, validation with love.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is not a human failure. It is a tooling failure.
+    </p>
+  </div>
 
-<p>
-A relationship built on deep alignment across dimensions:
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      How AI Changes the Equation
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI has the potential to fundamentally alter how we approach human connection.
+      Used poorly, it can shallow metrics and addictive loops. Used well, it can become a mirror, a guide, and a steward of depth.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI can model humans as dynamic systems rather than profiles. It can understand values, communication styles, emotional patterns, attachment tendencies, conflict behaviors, growth trajectories. It can track how two people evolve together over time, not just how they look on day one.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI can help people articulate what they actually want, beyond inherited scripts and unconscious habits. It can surface blind spots. It can slow people down where they tend to rush, and challenge them where they tend to avoid.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AI can act as a relationship coach, therapist-adjacent guide, reflective companion. It can prompt better conversations. Encourage repair after rupture. Highlight misalignment early, before resentment calcifies. Reinforce rituals. Track intentions. Celebrate progress.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In this sense, a soulmate is not just found. A soulmate is curated, and a soulmate-level relationship is designed, sculpted even, one dash of colour at a time.
+      Curated does not mean engineered or manipulated. It means cared for with intelligence, intention, and respect for complexity.
+    </p>
+  </div>
 
-<ul>
-  <li>Values</li>
-  <li>Temperament</li>
-  <li>Emotional depth</li>
-  <li>Intellectual rhythm</li>
-  <li>Energy</li>
-  <li>Ethics</li>
-  <li>Curiosity</li>
-  <li>How you argue</li>
-  <li>How you repair</li>
-  <li>How you dream</li>
-  <li>How you handle boredom, ambition, grief, joy, money, sex, silence</li>
-  <li>The quiet stuff</li>
-  <li>The hard stuff</li>
-  <li>The sacred stuff</li>
-</ul>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      From Matching to Meaning
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Finding the right person is only the beginning.
+      What matters more is helping two people build something extraordinary together. This requires a shift in focus. From matching to meaning. From discovery to development. From dopamine to devotion.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Imagine systems that help couples understand their interpersonal dynamics in real time. That adapt as they change. That offer different modes of support. Coach. Therapist. Best friend. Historian of the relationship. Keeper of shared memories and intentions.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Imagine relationship health visualized as something alive. A plant that thrives with attention and withers with neglect, as a reminder that love responds to care.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Imagine rituals built into daily life. Weekly questions that go beyond logistics. Monthly reflections. Shared goals. Playgrounds for joy and exploration. Spaces to argue safely. Spaces to dream boldly.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not about outsourcing relationship-building to machines - this is about amplifying human capacity for love, care, reflection, and growth.
+    </p>
+  </div>
 
-<p>
-We want people to believe in deep love again.
-In the beauty of love.
-In idealism that has a backbone.
-In romantic love that is grounded, grown, and earned.
-</p>
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      A Cultural Bet Worth Making
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Helping people find and build soulmate-level connections is not just a product vision for us - it is a cultural stance, that says that depth matters. That commitment is brave. That idealism can be intelligent. That love is worth taking seriously.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The opportunity cost of shallow connection is enormous. Loneliness. Burnout. Fragmentation. Cynicism. Baggage. People drifting through relationships that never quite quench our souls. Never experiencing the peak of being, which can only be accessed with the best of relationships.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The upside of deep connection is equally enormous. Health. Longevity. Creativity. Resilience. Joy. A felt sense that life is shared, witnessed, and meaningful.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We want to help people find their soulmates. Romantic, platonic, collaborative, creative or generative.
+      We want to help people believe again. And then give them the tools to make that belief real.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Deep love is not a relic. It is a distinct possibility, a practice. And with the right care, it scales. And we are here to help people fall in love with the highest love.
+    </p>
+  </div>
 
-<p>
-In something far richer than transactionalism,
-superficiality,
-commodification,
-objectification,
-and hedonism dressed up as freedom.
-</p>
-
-<p>
-We want people to experience one of the most peak states life has to offer.
-</p>
-
-<ul>
-  <li>To love and be loved at that depth</li>
-  <li>To treat it not as a side quest, but as a core human experience</li>
-  <li>To experience it as an amplifier of meaning</li>
-  <li>As an accelerant of growth</li>
-  <li>As a stabilizer in chaos</li>
-</ul>
-
-<p>
-This is an ode to deep, soulful love.
-And also a refusal to let it remain an abstraction —
-an oath to bring it to life for millions.
-</p>
-
-
+</div>
     `
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80',
+    image: '/25.jpeg',
     title: 'The Future of Work, Meaning, and Purpose',
     time: '6 min read',
     date: '30 May 2024',
     author: 'Rachel Adams',
-    authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
+    authorAvatar: '',
     content: `
-<h3>Why the Post-AGI World Forces Us to Rebuild Human Infrastructure from First Principles</h3>
-
-<p>
-We are living through one of those epoch-defining moments that history rarely announces clearly while it is happening.
-From the inside, it feels incremental, noisy, messy.
-From the outside, it will look like a clean break — a before and an after.
-</p>
-
-<p>
-This is not another cycle in the future-of-work conversation.
-This is not about reskilling or productivity.
-This is a civilizational transition:
-<strong>the end of labor as the organizing principle of human life.</strong>
-</p>
-
-<p>
-For the first time in history:
-</p>
-
-<ul>
-  <li>Intelligence is no longer scarce.</li>
-  <li>Competence is no longer scarce.</li>
-  <li>Productivity is no longer scarce.</li>
-</ul>
-
-<p>
-When these stop being scarce, they stop being meaningful signals.
-The question we now face is existential:
-<strong>What is a human for, when work is no longer required?</strong>
-</p>
-
-<h3>The Quiet Collapse of Labor as Identity</h3>
-
-<p>
-For thousands of years, labor structured identity.
-Work provided:
-</p>
-
-<ul>
-  <li>Rhythm</li>
-  <li>Belonging</li>
-  <li>Status</li>
-  <li>Dignity</li>
-  <li>A reason to wake up</li>
-</ul>
-
-<p>
-AGI does not merely automate tasks.
-It collapses labor as a proxy for human worth.
-When intelligence and execution are infinite and cheap,
-effort no longer maps cleanly to value.
-</p>
-
-<p>
-This is not a jobs crisis.
-<strong>It is a meaning distribution crisis.</strong>
-</p>
-
-<h3>Why Skills Are Losing Signal Power</h3>
-
-<p>
-Hard skills once created asymmetry.
-They took time to acquire.
-They were difficult to replicate.
-They differentiated people.
-</p>
-
-<p>
-AGI erases that asymmetry.
-</p>
-
-<p>
-What replaces it is a new scarcity regime:
-</p>
-
-<ul>
-  <li>Coherence</li>
-  <li>Judgment</li>
-  <li>Taste</li>
-  <li>Trustworthiness</li>
-  <li>Emotional intelligence</li>
-  <li>Narrative consistency</li>
-  <li>Energy</li>
-  <li>Passion</li>
-  <li>Values alignment</li>
-  <li>Mission commitment</li>
-</ul>
-
-<p>
-In a post-AGI world,
-<strong>who you are will matter more than what you can do.</strong>
-</p>
-
-<h3>Mission Congruence as the New Primitive</h3>
-
-<p>
-If AGI covers competence, humans will be selected for conviction.
-Belief cannot be rented.
-Care cannot be outsourced.
-Commitment cannot be simulated into trust.
-</p>
-
-<p>
-As skills commodify,
-mission congruence overtakes skill congruence.
-Organizations will differentiate by:
-</p>
-
-<ul>
-  <li>Why they exist</li>
-  <li>What they stand for</li>
-  <li>Who they attract</li>
-</ul>
-
-<p>
-Culture and narrative become the new moats.
-</p>
-
-<p>
-Ellaris is not a recruiting platform.
-It is a signal remapping system for a world where old signals are failing.
-</p>
-
-<h3>UBI Is Not the End of the Story</h3>
-
-<p>
-Universal Basic Income removes coercion.
-It does not create meaning.
-</p>
-
-<ul>
-  <li>It provides stability, not direction.</li>
-  <li>It ensures survival, not purpose.</li>
-</ul>
-
-<p>
-Without purpose infrastructure,
-UBI risks mass existential drift.
-Comfort without orientation corrodes.
-</p>
-
-<p>
-Ellaris exists in this gap — as scaffolding for purpose.
-</p>
-
-<h3>Relationships as the Core Skill of Post-AGI Work</h3>
-
-<p>
-As execution declines in value,
-coordination rises.
-</p>
-
-<ul>
-  <li>Collaboration</li>
-  <li>Trust-building</li>
-  <li>Emotional labor</li>
-  <li>Conflict repair</li>
-  <li>Shared meaning-making</li>
-</ul>
-
-<p>
-Meaningful relationships enable meaningful work.
-Meaningful work strengthens relationships.
-Together they stabilize identity and belonging.
-</p>
-
-<h3>From Jobs to Missions to Groups</h3>
-
-<p>
-The future of work is participation.
-</p>
-
-<ul>
-  <li>Rigid job descriptions → Mission-based grouping</li>
-  <li>Fixed roles → Fluid contribution</li>
-  <li>Employment → Evolving affiliation</li>
-</ul>
-
-<p>
-Ellaris matches humans to missions.
-And missions to humans.
-</p>
-
-<h3>Why Recruiting Systems Are Broken</h3>
-
-<p>
-Modern hiring optimizes for:
-</p>
-
-<ul>
-  <li>Credentials</li>
-  <li>Risk minimization</li>
-  <li>Narrative control</li>
-  <li>Artificial performance signals</li>
-</ul>
-
-<p>
-It ignores:
-</p>
-
-<ul>
-  <li>Values</li>
-  <li>Energy</li>
-  <li>Growth trajectory</li>
-  <li>Relationship style</li>
-  <li>Alignment</li>
-</ul>
-
-<p>
-Ellaris treats work as identity extension, not transaction.
-It surfaces congruence rather than conformity.
-</p>
-
-<h3>Ellaris as a Post-AGI Work OS</h3>
-
-<p>
-Ellaris is not a marketplace.
-It is:
-</p>
-
-<ul>
-  <li>A sense-making layer</li>
-  <li>A reflection engine</li>
-  <li>A matching intelligence</li>
-  <li>A narrative coherence system</li>
-</ul>
-
-<p>
-It helps people answer:
-</p>
-
-<ul>
-  <li>Who am I becoming?</li>
-  <li>What do I care about enough to suffer for?</li>
-  <li>Where do I belong?</li>
-  <li>Who needs someone like me?</li>
-  <li>What kind of world do I want my effort to help create?</li>
-</ul>
-
-<p>
-This is existential infrastructure.
-</p>
-
-<h3>Failure Modes We Are Trying to Prevent</h3>
-
-<ul>
-  <li>Society optimized for dopamine over contribution</li>
-  <li>Status games replacing meaning</li>
-  <li>Hyper-individualism without belonging</li>
-  <li>Nihilism masquerading as freedom</li>
-  <li>AI systems eroding human agency</li>
-</ul>
-
-<p>
-These futures arrive through convenience, not collapse.
-Ellaris is a bet against that future.
-</p>
-
-<h3>Why the Name Matters</h3>
-
-<p>
-Ellaris draws from Elinity and Polaris — the North Star.
-For centuries it guided travelers when maps failed.
-</p>
-
-<p>
-We are entering a world where old maps no longer apply.
-Orientation matters more than speed.
-Direction matters more than efficiency.
-</p>
-
-<p>
-Ellaris helps people define and remember where they are going.
-</p>
-
-<h3>Two Pillars of a Good Life</h3>
-
-<p>
-A good life rests on two pillars:
-</p>
-
-<ul>
-  <li>Great relationships</li>
-  <li>Purposeful work</li>
-</ul>
-
-<p>
-Elinity addresses the first.
-Ellaris addresses the second.
-Together they form a human flourishing stack.
-</p>
-
-<h3>The Choice Ahead</h3>
-
-<p>
-We cannot stop AGI.
-What remains open is what kind of humans we become alongside it.
-</p>
-
-<p>
-Purpose will not disappear.
-But it will require new architecture.
-New norms.
-New systems.
-</p>
-
-<p>
-The future of work is less about productivity.
-It is about caring deeply about fewer things that truly matter.
-Building things we are proud of,
-alongside people we enjoy,
-sharing the same line of sight to Polaris.
-</p>
-
-
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background:linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Future of Work, Meaning, and Purpose
+    </h3>
+    <p style="font-size: 20px; letter-spacing: 2px; color: white; margin-bottom: 40px; font-weight: 600;">
+      Why the Post-AGI World Forces Us to Rebuild Human Infrastructure from First Principles
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are living through one of those moments that is epoch-defining, but one that history rarely announces clearly while it is happening. From the inside, it feels incremental, noisy, messy. From the outside, once we are past this transition phase, it will look like a clean break. With a before and an after.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not another cycle in the future-of-work conversation. This is not about reskilling, productivity, or adapting to new tools. What is unfolding right now is nothing less than a civilizational transition: the end of labor as the organizing principle of human life.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      For the first time in our species’ history, intelligence is no longer scarce. Competence is no longer scarce. Productivity is no longer scarce. And when those things stop being scarce, they stop being meaningful signals.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The question we are now forced to confront is not an economic one but an existential one.
+      What is a human for, when work is no longer required?
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Quiet Collapse of Labor as Identity
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      For thousands of years, labor has been far more than an economic activity. It has been the primary structure around which human identity cohered.
+      Work provided rhythm. It provided belonging. It provided status. It provided a story that explained effort, struggle, and dignity. Even when work was brutal, alienating, or unjust, it gave people a place in the world and a reason to wake up.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Money was only one layer. Meaning was the deeper one.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      AGI does not merely automate tasks. It collapses the legitimacy of labor as a proxy for human worth. When intelligence and execution can be summoned instantly, endlessly, and cheaply, contribution becomes illegible. Effort no longer maps cleanly to outcome. Skill no longer maps cleanly to value.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is why the crisis ahead is not a jobs crisis. It is a meaning distribution crisis.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When labor ceases to function as the primary allocator of dignity, society must answer questions it has deferred for centuries under the shelter of scarcity. Those questions are not optional anymore.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why Skills Are Rapidly Losing Their Power as Signals
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In the industrial and early digital eras, skills were durable differentiators. They took time to acquire, they were hard to replicate, and they created asymmetry in the market.
+      AGI erases that asymmetry.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Hard skills are becoming cheap, abundant, and increasingly indistinguishable. Even many soft skills, once thought immune, are being scaffolded, simulated, or augmented. The variance advantage of individual skill accumulation is collapsing.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      What replaces it is a new scarcity regime:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Coherence.</li>
+      <li style="margin-bottom:8px;">Judgment.</li>
+      <li style="margin-bottom:8px;">Taste.</li>
+      <li style="margin-bottom:8px;">Trustworthiness.</li>
+      <li style="margin-bottom:8px;">Emotional intelligence.</li>
+      <li style="margin-bottom:8px;">Narrative consistency.</li>
+      <li style="margin-bottom:8px;">Energy.</li>
+      <li style="margin-bottom:8px;">Passion.</li>
+      <li style="margin-bottom:8px;">Values alignment.</li>
+      <li style="margin-bottom:8px;">Mission commitment.</li>
+      <li style="margin-bottom:8px;">The ability to care deeply about something beyond oneself.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      These qualities resist replication. They do not scale cleanly. They cannot be summoned on demand. They are shaped over time through lived experience, reflection, relationships, and choice.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In a post-AGI world, who you are will matter more than what you can do. This is the philosophical opening through which Ellaris enters.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Mission Congruence Will Become the New Economic Primitive
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If AGI can cover competence, humans will be selected for conviction.
+      Belief cannot be rented. Care cannot be outsourced. Commitment cannot be simulated in a way that generates genuine trust.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As skills commodify, mission congruence overtakes skill congruence as the primary axis of meaningful work. This is not a moral claim. It is a structural one, predicated on some inevitable realities of the new order.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The most resonant and the most impactful organizations will increasingly differentiate based on why they exist, not how efficiently they execute or what shareholder returns they can generate. People will increasingly choose where to contribute based on alignment, not compensation, especially as money becomes less and less valuable as a concept. Culture, values, and shared narrative will become the new moats, the true moats. This flips the logic of hiring, team formation, leadership, and even what a “company” is.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Ellaris is not designed to be a “recruiting” platform. It is a signal remapping system for a world where old signals are failing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      UBI Is Not the End of the Story
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Universal Basic Income is often discussed as if it solves the problem of work. It does not. UBI removes coercion but it does not create meaning.
+      It provides stability, not direction. It ensures survival, not purpose. It is a necessary transition mechanism, but it is not a destination.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Once economic survival is guaranteed, human trajectories will diverge.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Some people will rest.</li>
+      <li style="margin-bottom:8px;">Some will drift.</li>
+      <li style="margin-bottom:8px;">Some will collapse into distraction.</li>
+      <li style="margin-bottom:8px;">Some will awaken into deeper questions of contribution and calling.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Without purpose infrastructure, UBI risks becoming a foundation for mass existential drift. Comfort without orientation corrodes rather than liberates.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Ellaris exists in this gap, as a scaffolding for purpose.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Relationships as the Core Skill of Post-AGI Work
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As work shifts away from execution, it will shift toward coordination and personal relationships.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Collaboration.</li>
+      <li style="margin-bottom:8px;">Trust-building.</li>
+      <li style="margin-bottom:8px;">Emotional labor.</li>
+      <li style="margin-bottom:8px;">Narrative alignment.</li>
+      <li style="margin-bottom:8px;">Conflict repair.</li>
+      <li style="margin-bottom:8px;">Shared sense-making.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      These will no longer be peripheral competencies. They will become the work.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is where Elinity and Ellaris fuse at the deepest philosophical level. Meaningful relationships enable meaningful work. Meaningful work strengthens relationships. Together, they form a reinforcing loop that stabilizes identity, belonging, and purpose in a rapidly changing world.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is why Elinity focuses on relationship infrastructure and Ellaris focuses on purpose infrastructure, because they are not separate domains, but two expressions of the same human need.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      From Jobs to Missions to Groups
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The future of work is not employment. It is participation. Rigid job descriptions will give way to mission-based grouping. Fixed roles will give way to fluid contribution. Typical old-world employment will give way to evolving affiliation.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We will see:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Temporary collectives.</li>
+      <li style="margin-bottom:8px;">Research clusters.</li>
+      <li style="margin-bottom:8px;">Creative guilds.</li>
+      <li style="margin-bottom:8px;">Cause-driven teams.</li>
+      <li style="margin-bottom:8px;">Hybrid human-AI organizations.</li>
+      <li style="margin-bottom:8px;">Long-lived missions that outlast any single company structure.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris is designed for this world. It does not match resumes to roles. It matches humans to missions, and missions to humans.
+      This is structurally new. Which is why we could not be more excited to shape the scaffolding around this new structure.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why Current Recruiting Systems Are Fundamentally Broken
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Modern hiring systems optimize for legibility and risk minimization. They measure:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Credentials.</li>
+      <li style="margin-bottom:8px;">Past compliance.</li>
+      <li style="margin-bottom:8px;">Performance under artificial conditions.</li>
+      <li style="margin-bottom:8px;">Narrative control.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      They do not measure or pay attention to values, energy, growth trajectory, relationship style, stories, or alignment. They cannot.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As a result, they systematically misallocate human potential. They place people into environments where they survive rather than thrive.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris inverts this logic. It treats work as an extension of identity rather than a transaction. It is designed to surface congruence rather than conformity.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Ellaris as Part of a Post-AGI Work OS
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris should not be understood as a marketplace or a platform in the conventional sense.
+      It is a sense-making layer. A reflection engine. A matching intelligence. A narrative coherence system. It helps people answer questions that traditional systems ignore because they were never required to ask them:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Who am I becoming?</li>
+      <li style="margin-bottom:8px;">What do I care about deeply enough to suffer for?</li>
+      <li style="margin-bottom:8px;">Where do I belong?</li>
+      <li style="margin-bottom:8px;">Who needs someone like me?</li>
+      <li style="margin-bottom:8px;">What kind of world do I want my effort to help create?</li>
+    </ul>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is existential infrastructure, not some HR software.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Failure Modes We Are Actively Trying to Prevent
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The post-AGI world contains multiple plausible futures, many of them quietly catastrophic.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">A society optimized for dopamine rather than contribution, where everyone becomes an ultra-consumer.</li>
+      <li style="margin-bottom:8px;">Status games replacing meaning - something will fill the hole left by the old structures, and one plausible future is of performativeness replacing something grounded.</li>
+      <li style="margin-bottom:8px;">Hyper-individualism without belonging - people receding away into their siloes, because with work gone, so does the community and belonging aspects of it.</li>
+      <li style="margin-bottom:8px;">Nihilism masquerading as freedom - when this old seemingly imposed structure gives way, some may become so enthralled by the lack of it that the lack may become the black hole, a core identity.</li>
+      <li style="margin-bottom:8px;">AI-managed systems that erode human agency rather than amplify it, that lead to mass human disempowerment.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      These outcomes will not arrive through collapse, but through convenience.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris is a bet against that future. It is a bet that humans, given the right scaffolding, will choose purpose over sedation, challenge over atrophying comfort, and meaningful struggle over stagnation.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why the Name Matters
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris draws from the combination of Elinity and Polaris, the North Star. For centuries, it guided travelers when maps failed and terrain shifted.
+      We are entering a period where old maps of work no longer apply. Orientation matters more than speed. Direction matters more than efficiency.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Ellaris does not tell people what to do. It helps them define and remember where they are going. It helps them recalibrate day in and day out on the principles of the good life.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Two Pillars of a Good Life
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      At the highest level, Elinity’s mission is simple and uncompromising: help people design and live their best lives.
+      A good life rests on two pillars. Great relationships and purposeful work. Elinity p1 addresses the first. Ellaris addresses the second. Together, they form a human flourishing stack designed for the world that is coming, not the world that is fading.
+    </p>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Choice Ahead
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We cannot stop AGI. That question is already settled. What remains open is what kind of humans we become alongside it.
+      Purpose will not disappear. But it will require new architecture. New norms. New systems that take human interiority seriously.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity and Ellaris are one attempt to shape that future.
+      The future of work is less about productivity - it is about caring more, more deeply, about fewer things that truly matter. It is about building things we can be proud of, alongside people we enjoy, sharing the same line of sight to Polaris.
+    </p>
+  </div>
+
+</div>
     `
   },
   {
     id:  5,
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
+    image: three,
     title: 'The Three-Layered Design of Elinity',
     time: '6 min read',
     date: '15 April 2024',
     author: 'Rachel Adams',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
-<h3>A Holistic Architecture for Human Connection</h3>
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
 
-<p>
-At Elinity, we start from a simple but often ignored truth.
-<strong>Great relationships do not begin with matching. They begin with the self.</strong>
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Three-Layered Design of Elinity
+    </h3>
+    <p style="font-size: 20px; text-transform: uppercase; letter-spacing: 2px; color: #b066fe; margin-bottom: 40px; font-weight: 600;">
+      A Holistic Architecture for Human Connection
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      At Elinity, we start from a simple but often ignored truth.
+      Great relationships do not begin with matching. They begin with the self.
+      Most platforms try to solve the connection by starting at the surface. Who you meet. How many people you see. How quickly you can swipe, chat, or transact attention. That approach treats relationships as logistics.
+      We see them as ecosystems. And the bottleneck for growth is us.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Before you can build something enduring with another person, you need clarity, stability, and depth within yourself. Before you can sustain love, friendship, or partnership, you need self-understanding. Before you can find the right people, you need to know who you are, what you value, how you love, and what kind of life you are trying to build.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      That insight is what led us to design Elinity as a three-layered system, not a set of disjointed features, or a shallow matching engine.
+      Each layer builds on the one beneath it. Each reinforces the others. Together, they form a coherent architecture for connection that mirrors how real human flourishing actually works.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We do not skip layers - we grow through them.
+    </p>
+  </div>
 
-<p>
-Most platforms try to solve connection at the surface:
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Three Layers
+    </h3>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>The Core Layer:</strong> Your relationship with yourself</li>
+      <li style="margin-bottom:8px;"><strong>The Relationship Layer:</strong> Building great relationships</li>
+      <li style="margin-bottom:8px;"><strong>The Social Connection Layer:</strong> Finding your tribe</li>
+    </ul>
+  </div>
 
-<ul>
-  <li>Who you meet</li>
-  <li>How many people you see</li>
-  <li>How quickly you can swipe, chat, or transact attention</li>
-</ul>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Layer One: The Core
+    </h3>
+    <p style="font-size: 17px; color: #b066fe; font-weight: 600; margin-bottom: 20px;">
+      Your Relationship With Yourself
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Everything starts here.
+      Your patterns in love. Your choices in partners. Your tolerance for misalignment. Your capacity for intimacy. Your ability to communicate. Your emotional regulation. Your sense of self-worth. All of it flows downstream from your relationship with yourself.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most people are never taught how to build that relationship. They inherit fragments from parents, culture, past relationships, baggage and trauma. They stumble forward with partial maps and outdated scripts.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity’s core layer exists to change that.
+      This layer is designed to help you see yourself clearly, understand yourself deeply, and grow intentionally. It acts as a mirror, a thinking partner, a coach, and a stabilizing presence.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Key elements include:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>AI Thought Partner:</strong> A conversational space to think out loud, process emotions, explore ideas, and challenge your own narratives. This isn’t about shallow affirmations or generic conversations; this is meant to inspire deep thinking and real reflection. A place to clarify what you actually feel and why.</li>
+      <li style="margin-bottom:8px;"><strong>Smart Voice Journaling and Reflection:</strong> Journaling that does more than store words. It surfaces patterns. It notices cycles. It helps you see how your thoughts, emotions, and behaviors evolve over time. Insight compounds when reflection is structured and alive.</li>
+      <li style="margin-bottom:8px;"><strong>Proactive Nudges and Awareness Cues:</strong> Gentle, intelligent reminders that help you stay aligned with your goals, values, and emotional well-being. These are not interruptions but course corrections.</li>
+      <li style="margin-bottom:8px;"><strong>Self-Connection Modes:</strong> Tools designed to strengthen self-trust, emotional clarity, and internal coherence. The goal is groundedness.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This layer exists for one reason.
+      Because every relationship you build will only be as healthy as the relationship you have with yourself.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When you understand yourself, you communicate better.
+      When you trust yourself, you set better boundaries.
+      When you respect yourself, you stop settling.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      And settling for less than we deserve is precisely what we need to stop doing.
+    </p>
+  </div>
 
-<p>
-That approach treats relationships as logistics.
-We see them as ecosystems.
-And the bottleneck for growth is us.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Layer Two: The Relationship Layer
+    </h3>
+    <p style="font-size: 17px; color: #b066fe; font-weight: 600; margin-bottom: 20px;">
+      Building Deep and Fulfilling Relationships
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Once the inner foundation is strong, the work shifts outward.
+      Great relationships are not accidents. They are built with a set of skills. They are practices and rituals, built through attention, communication, emotional intelligence, and care. Yet most people are expected to figure this out through trial, error, and heartbreak.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity’s second layer exists to change that.
+      This layer focuses on helping you build and sustain high-quality relationships, whether romantic, familial, or close friendships. It is not about optimization for performance. It is about alignment, understanding, and growth together.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Core elements include:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>AI Relationship Buddy and Coach:</strong> A personalized companion that helps you think through relationship dynamics, navigate difficult conversations, and understand what is actually happening beneath the surface. With Lumi, designed to be context-aware and emotionally intelligent, not judgmental or prescriptive.</li>
+      <li style="margin-bottom:8px;"><strong>Communication and Clarity Tools:</strong> Support for expressing needs, emotions, and boundaries clearly. Tools that reduce misinterpretation, emotional drift, sapping away of joie de vivre, and silent resentment.</li>
+      <li style="margin-bottom:8px;"><strong>Relationship Insights and Growth Guidance:</strong> Patterns are flagged early. Small issues are addressed before they calcify into major fractures. The goal is not perfection, but awareness and course correction.</li>
+      <li style="margin-bottom:8px;"><strong>Therapeutic and Reflective Modes:</strong> Deeper support during emotionally charged or difficult periods. A space to process without immediately escalating, withdrawing, or self-sabotaging.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Relationships fail quietly long before they end loudly.
+      This layer is designed to keep them healthy and flourishing, bubbling with joy and sparkling like the garden of heavenly delights.
+    </p>
+  </div>
 
-<p>
-Before you can build something enduring with another person,
-you need clarity, stability, and depth within yourself.
-Before you can sustain love, friendship, or partnership,
-you need self-understanding.
-</p>
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Layer Three: The Social Connection Layer
+    </h3>
+    <p style="font-size: 17px; color: #b066fe; font-weight: 600; margin-bottom: 20px;">
+      Finding Your Best-Fit People
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Only after the inner and relational foundations are in place does Elinity move to matching. This is by design.
+      The problem with most connection platforms is not that they show you the wrong people. It is that they do not understand you deeply enough to know who the right people are.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity approaches connection as an N-dimensional problem.
+      You are not a profile. You are a complex, layered human being with values, goals, emotional patterns, preferences, timing, and context. Finding your best-fit people requires understanding all of that, not just your surface traits or labels.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This layer helps you find deeply aligned people across three core domains of social life:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;"><strong>Romantic Connection:</strong> A partner who aligns not just on attraction, but on values, temperament, long-term vision, and how you actually live and love.</li>
+      <li style="margin-bottom:8px;"><strong>Leisure and Social Life:</strong> Friends and companions who share interests, rhythms, and ways of experiencing the world. People who make life feel richer, not noisier.</li>
+      <li style="margin-bottom:8px;"><strong>Work and Purpose:</strong> Collaborators, co-founders, and partners who align with your ambition, ethics, and drive. Relationships that compound rather than drain.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Through deep modeling of who you are and how you relate, Elinity aims to reduce randomness and increase fit. Fewer connections but exponentially more resonant, more aligned.
+    </p>
+  </div>
 
-<p>
-That insight led us to design Elinity as a three-layered system.
-Each layer builds on the one beneath it.
-Each reinforces the others.
-Together, they form a coherent architecture for connection.
-</p>
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      A Different Future for Connection
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity is not trying to make social connection faster - it is trying to make it better.
+      By starting with the self, strengthening relationships, and only then expanding outward into matching, Elinity mirrors how human flourishing actually unfolds. Inner clarity leads to relational health. Relational health leads to better choices. Better choices lead to better lives.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This three-layered architecture is not merely a product decision. It is a philosophical stance.
+      Technology should not replace human connection - it should scaffold it, amplify it, ground it, and expand it.
+      It should help people know themselves, love better, and find the right people without forcing, gamifying, or flattening something sacred into a transaction.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity is building toward a world where people do not just meet more people.
+      They meet the right ones.
+      And they are ready for them when they do.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      That is the paradigm shift.
+      And it starts from within.
+    </p>
+  </div>
 
-<p><strong>The three layers are:</strong></p>
-
-<ul>
-  <li><strong>The Core Layer:</strong> Your relationship with yourself</li>
-  <li><strong>The Relationship Layer:</strong> Building great relationships</li>
-  <li><strong>The Social Connection Layer:</strong> Finding your tribe</li>
-</ul>
-
-<p><strong>We do not skip layers — we grow through them.</strong></p>
-
-<h3>Layer One: The Core — Your Relationship With Yourself</h3>
-
-<p>
-Everything starts here.
-</p>
-
-<p>
-Your patterns in love.
-Your partner choices.
-Your tolerance for misalignment.
-Your emotional regulation.
-Your self-worth.
-All of it flows from your relationship with yourself.
-</p>
-
-<p>
-Most people inherit fragments:
-</p>
-
-<ul>
-  <li>From parents</li>
-  <li>From culture</li>
-  <li>From past relationships</li>
-  <li>From trauma and baggage</li>
-</ul>
-
-<p>
-Elinity’s core layer exists to help you:
-</p>
-
-<ul>
-  <li>See yourself clearly</li>
-  <li>Understand yourself deeply</li>
-  <li>Grow intentionally</li>
-</ul>
-
-<p><strong>Key Elements</strong></p>
-
-<ul>
-  <li>
-    <strong>AI Thought Partner:</strong>
-    A conversational space for deep thinking and reflection.
-    A place to clarify what you actually feel and why.
-  </li>
-  <li>
-    <strong>Smart Voice Journaling and Reflection:</strong>
-    Reflection that surfaces patterns and helps insight compound.
-  </li>
-  <li>
-    <strong>Proactive Nudges and Awareness Cues:</strong>
-    Gentle course corrections aligned with your goals and values.
-  </li>
-  <li>
-    <strong>Self-Connection Modes:</strong>
-    Tools that build self-trust, emotional clarity, and groundedness.
-  </li>
-</ul>
-
-<p>
-Every relationship you build will only be as healthy
-as the relationship you have with yourself.
-</p>
-
-<ul>
-  <li>When you understand yourself, you communicate better.</li>
-  <li>When you trust yourself, you set better boundaries.</li>
-  <li>When you respect yourself, you stop settling.</li>
-</ul>
-
-<p><strong>And settling for less than we deserve is precisely what must stop.</strong></p>
-
-<h3>Layer Two: The Relationship Layer — Building Deep and Fulfilling Relationships</h3>
-
-<p>
-Once the inner foundation is strong, the work shifts outward.
-Great relationships are not accidents.
-They are built through:
-</p>
-
-<ul>
-  <li>Attention</li>
-  <li>Communication</li>
-  <li>Emotional intelligence</li>
-  <li>Care</li>
-</ul>
-
-<p>
-Elinity’s second layer helps you build and sustain high-quality relationships:
-</p>
-
-<ul>
-  <li>Romantic</li>
-  <li>Familial</li>
-  <li>Friendships</li>
-</ul>
-
-<p><strong>Core Elements</strong></p>
-
-<ul>
-  <li>
-    <strong>AI Relationship Buddy and Coach:</strong>
-    Context-aware support for navigating dynamics and conversations.
-  </li>
-  <li>
-    <strong>Communication and Clarity Tools:</strong>
-    Support for expressing needs and reducing resentment.
-  </li>
-  <li>
-    <strong>Relationship Insights and Growth Guidance:</strong>
-    Early detection of patterns before they calcify.
-  </li>
-  <li>
-    <strong>Therapeutic and Reflective Modes:</strong>
-    Safe spaces to process without escalating or withdrawing.
-  </li>
-</ul>
-
-<p>
-Relationships fail quietly long before they end loudly.
-This layer is designed to keep them flourishing,
-bubbling with joy,
-sparkling like a living garden.
-</p>
-
-<h3>Layer Three: The Social Connection Layer — Finding Your Best-Fit People</h3>
-
-<p>
-Only after the inner and relational foundations are in place
-does Elinity move to matching.
-This is intentional.
-</p>
-
-<p>
-Elinity treats connection as an N-dimensional problem.
-You are not a profile.
-You are a layered human being.
-</p>
-
-<p>
-This layer focuses on alignment across three domains:
-</p>
-
-<ul>
-  <li>
-    <strong>Romantic Connection:</strong>
-    Alignment in values, temperament, and long-term vision.
-  </li>
-  <li>
-    <strong>Leisure and Social Life:</strong>
-    Friends who enrich rather than exhaust.
-  </li>
-  <li>
-    <strong>Work and Purpose:</strong>
-    Collaborators who compound ambition and ethics.
-  </li>
-</ul>
-
-<p>
-Through deep modeling of who you are,
-Elinity reduces randomness and increases fit.
-Fewer connections.
-Exponentially more resonance.
-</p>
-
-<h3>A Different Future for Connection</h3>
-
-<p>
-Elinity is not trying to make connection faster.
-It is trying to make it better.
-</p>
-
-<p>
-Inner clarity → Relational health → Better choices → Better lives.
-</p>
-
-<p>
-This three-layered architecture is not merely product design.
-It is a philosophical stance.
-</p>
-
-<p>
-Technology should not replace human connection.
-It should:
-</p>
-
-<ul>
-  <li>Scaffold it</li>
-  <li>Amplify it</li>
-  <li>Ground it</li>
-  <li>Expand it</li>
-</ul>
-
-<p>
-It should help people know themselves,
-love better,
-and find the right people
-without gamifying something sacred.
-</p>
-
-<p>
-Elinity is building toward a world where people do not just meet more people.
-They meet the right ones.
-And they are ready when they do.
-</p>
-
-<p><strong>That is the paradigm shift. And it starts from within.</strong></p>
-
+</div>
     `
   },
 
   {
     id: 6,
-    image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80',
+    image: breakup,
     title: 'The Cost of Divorces, and How to Fix Divorces',
     time: '5 min read',
     date: '5 May 2024',
     author: 'Emily Chen',
     authorAvatar: 'https://randomuser.me/api/portraits/women/50.jpg',
     content: `
-    <h3>Divorce, Civilizational Progress, and the Mission of Elinity</h3>
-
-<p>
-We live in a civilization that has split the atom, mapped the genome,
-built rockets that land themselves, sent probes into deep space,
-and built language models that outperform humans in most cognitive tasks.
-</p>
-
-<p>
-We may soon:
-</p>
-
-<ul>
-  <li>Solve fusion</li>
-  <li>Terraform pieces of the climate system</li>
-  <li>Travel from London to Tokyo in thirty minutes</li>
-  <li>Mine asteroids</li>
-  <li>Build Moon and Mars bases</li>
-  <li>Wield ASI systems that compress centuries into months</li>
-</ul>
-
-<p>
-Yet we cannot reliably do the one thing that determines
-the emotional and psychological stability of our lives:
-<strong>build and maintain healthy relationships.</strong>
-</p>
-
-<p>
-We have abundance in almost everything except:
-</p>
-
-<ul>
-  <li>Inner abundance</li>
-  <li>Relational abundance</li>
-  <li>Emotional abundance</li>
-</ul>
-
-<p>
-Divorce is one of the clearest indicators of this failure.
-Not because divorce is immoral,
-but because the volume of preventable divorces
-reveals systemic breakdown:
-</p>
-
-<ul>
-  <li>How humans choose partners</li>
-  <li>How they manage conflict</li>
-  <li>How they navigate emotional life</li>
-</ul>
-
-<p><strong>This is the central mission at Elinity.</strong></p>
-
-<p>
-All the rockets and fusion reactors in the world
-won’t matter if people are miserable at home.
-</p>
-
----
-
-<h3>The Financial Cost (The Least Important, Yet Most Quantified)</h3>
-
-<p>
-United States: ~670,000 divorces per year.<br>
-United Kingdom: ~100,000 divorces per year.<br>
-Across Europe: millions more.
-</p>
-
-<p><strong>Typical cost:</strong></p>
-
-<ul>
-  <li>US: $10,000–$20,000 (often far higher)</li>
-  <li>UK: Several thousand pounds, escalating quickly</li>
-</ul>
-
-<p>
-The American divorce industry absorbs tens of billions annually.
-Most of it goes to lawyers.
-</p>
-
-<p>
-In a well-designed civilization,
-people would not need legal warfare to navigate heartbreak.
-</p>
-
-<p>
-Even modest reductions in divorce rates
-would unlock enormous productivity gains.
-But the financial cost is trivial compared to the human cost.
-</p>
-
----
-
-<h3>The Emotional Cost (The Real Catastrophe)</h3>
-
-<p>
-Divorce often brings:
-</p>
-
-<ul>
-  <li>Sleepless nights</li>
-  <li>Identity collapse</li>
-  <li>Rumination</li>
-  <li>Trauma</li>
-  <li>Loss of faith in permanence</li>
-</ul>
-
-<p>
-Most divorces were preventable —
-either because the original match was wrong,
-or because relational skills were never taught.
-</p>
-
-<p><strong>Common breakdown factors:</strong></p>
-
-<ul>
-  <li>Bad matching</li>
-  <li>Emotional immaturity</li>
-  <li>Conflict mismanagement</li>
-  <li>Attachment wounds</li>
-  <li>Chronic disconnection</li>
-</ul>
-
-<p>
-Divorce reaches into the future.
-Trust becomes harder.
-Commitment feels risky.
-Emotional landmines remain buried for years.
-</p>
-
----
-
-<h3>The Cost to Children (The Invisible Catastrophe)</h3>
-
-<p>
-Children absorb emotional reality like oxygen.
-</p>
-
-<p>In unstable homes, they learn:</p>
-
-<ul>
-  <li>Love is conditional</li>
-  <li>Conflict means danger</li>
-  <li>Vulnerability is unsafe</li>
-  <li>Trust is fragile</li>
-  <li>Commitment leads to pain</li>
-</ul>
-
-<p>
-This becomes generational inheritance.
-Broken patterns replicate quietly.
-</p>
-
-<p>
-Divorce is not merely an event.
-It is emotional architecture transmitted forward.
-</p>
-
----
-
-<h3>Why Do These Failures Happen?</h3>
-
-<h3>1. Bad Matching</h3>
-
-<p>People choose partners based on:</p>
-
-<ul>
-  <li>Attraction</li>
-  <li>Proximity</li>
-  <li>Dopamine</li>
-  <li>Fear of loneliness</li>
-  <li>Cultural scripts</li>
-  <li>Unresolved childhood wounds</li>
-</ul>
-
-<p>
-Compatibility is not magic.
-It is structured data:
-</p>
-
-<ul>
-  <li>Attachment style</li>
-  <li>Values</li>
-  <li>Communication patterns</li>
-  <li>Conflict behavior</li>
-  <li>Emotional maturity</li>
-</ul>
-
-<p>All measurable. Often ignored.</p>
-
-<h3>2. Lack of Relationship Skills</h3>
-
-<p>Healthy love requires:</p>
-
-<ul>
-  <li>Conflict resolution</li>
-  <li>Repair</li>
-  <li>Emotional regulation</li>
-  <li>Nervous system literacy</li>
-  <li>Attunement</li>
-  <li>Growth frameworks</li>
-  <li>Play, novelty, delight, laughter</li>
-</ul>
-
-<p>Most people were never taught any of this.</p>
-
-<h3>3. Childhood Scripts</h3>
-
-<p>
-Unconscious patterns drive behavior more than conscious intention.
-</p>
-
-<h3>4. Entropy</h3>
-
-<p>
-Relationships decay unless maintained.
-Love is not self-sustaining.
-</p>
-
----
-
-<h3>Why We Are Building Elinity</h3>
-
-<p>
-Because this problem is solvable.
-There are two fundamental levers:
-</p>
-
-<h3>1. Fix the Matching Problem</h3>
-
-<p>Prevent bad matches before they form.</p>
-
-<p>Imagine an AI matchmaker that:</p>
-
-<ul>
-  <li>Understands you deeply</li>
-  <li>Models long-term compatibility</li>
-  <li>Integrates psychology and attachment science</li>
-  <li>Weighs fit over vibes</li>
-  <li>Sees risks before you do</li>
-</ul>
-
-<p>
-This is not casual dating.
-This is eliminating decades of preventable suffering.
-</p>
-
-<h3>2. Fix the Relationship Management Problem</h3>
-
-<p>
-Give couples tools to thrive — not merely survive.
-</p>
-
-<p><strong>This is where Lumi comes in.</strong></p>
-
-<ul>
-  <li>Mediates conflicts</li>
-  <li>Scaffolds difficult conversations</li>
-  <li>Surfaces blind spots</li>
-  <li>Facilitates vulnerability</li>
-  <li>Designs rituals</li>
-  <li>Deepens intimacy</li>
-  <li>Prevents resentment</li>
-  <li>Teaches communication</li>
-  <li>Reinforces growth</li>
-  <li>Infuses joy and play</li>
-</ul>
-
-<p>
-Every couple receives a relationship companion
-that wants the relationship to flourish.
-</p>
-
----
-
-<h3>The Two-Pronged Strategy</h3>
-
-<ul>
-  <li>
-    <strong>Best-fit matching:</strong>
-    Eliminate bad pairings from the start.
-  </li>
-  <li>
-    <strong>Relationship flourishing system:</strong>
-    Equip couples with ongoing support and scaffolding.
-  </li>
-</ul>
-
-<p>
-The first version exists.
-The full vision is within reach.
-</p>
-
----
-
-<h3>The Future We’re Building</h3>
-
-<p>A world where:</p>
-
-<ul>
-  <li>People marry deeply compatible partners</li>
-  <li>Children grow up in emotionally safe homes</li>
-  <li>Divorce rates fall because relationships succeed</li>
-  <li>Relational intelligence becomes baseline</li>
-  <li>Lumi becomes the emotional operating system for couples</li>
-  <li>Love becomes designed and supported, not random</li>
-</ul>
-
-<p>
-A world where every home is built on depth, connection, and emotional abundance.
-A world where chance no longer decides the most important relationship of your life.
-</p>
-
-<p><strong>This is the world Elinity is building.</strong></p>
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Cost of Divorces, and How to Fix Divorces
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Divorces are one of the biggest blights on our society.
+      We have solved so many of the hard problems. We have split the atom. We have sent humans to the moon. We have sent probes to Mars, Venus, and beyond. We have unraveled secrets at the smallest scales and at the largest. We have built global communication networks, bent silicon to our will, and taught machines to see, speak, and reason.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      And we will solve many more. In the next 10 to 20 years, we will likely live in a world of material abundance. We will eat better food than any generation before us, personalized for our gut biomes. We will travel from London to Tokyo in under an hour, waking up on Mount Fuji and enjoying our dinner at the Shard within hours. We will establish permanent Moon and Mars bases. We will travel to space - stay, to play and to build. We will manipulate weather with precision, putting an end to floods and droughts. Climate change will become a managed problem. Entertainment will become lifelike, personalized, and infinite. Energy will become abundant through fusion and space-based solar. Resources will expand through asteroid mining. With increasingly capable AI systems, we will solve entire classes of technical problems that currently feel impossible.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      I paint this picture so vividly because none of this guarantees an inner abundance of goodness.
+      We have not solved many of the most important human problems.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Depression.</li>
+      <li style="margin-bottom:8px;">Loneliness.</li>
+      <li style="margin-bottom:8px;">Meaninglessness.</li>
+      <li style="margin-bottom:8px;">Nihilism.</li>
+      <li style="margin-bottom:8px;">Divorces.</li>
+      <li style="margin-bottom:8px;">The quiet erosion of hope.</li>
+      <li style="margin-bottom:8px;">The slow normalization of emotional poverty in a materially rich world.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Our central mission at Elinity is to help solve these problems. To remove obstacles and build bridges that help people reach self-actualization. To help people explore the fullest scope of their consciousness and live up to their deepest potential. In not so subtle hippy-speak :)
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Real Costs of Divorce
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      So, let’s talk about costs. The real cost - not just the line items, but the invisible damage that compounds across decades.
+      There are multiple layers here:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Financial cost.</li>
+      <li style="margin-bottom:8px;">Personal cost.</li>
+      <li style="margin-bottom:8px;">Intergenerational cost.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Let’s get the least important one out of the way first.
+      In the US alone, there are roughly 700,000 divorces every year. The direct financial cost runs into tens of billions of dollars annually when you factor in legal fees, court systems, lost productivity, duplicated housing, and downstream economic inefficiencies. The number of work hours lost to emotional distress, legal proceedings, and prolonged instability is staggering.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most of this money flows to lawyers. With all due love and respect to the Universal Lawyers Group, this is an egregious waste. In any remotely sane utopian society, lawyers are an exception, not a default profession.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is the economic analysis. The kind our capitalist machinery likes to start with. Productivity. Efficiency. Output. GDP. Which is why we started here. Capitalism-coded and all.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Even here, the case is obvious. If a platform like Elinity could help reduce divorce rates to even 3 percent over a decade, which we believe is eminently achievable, the productivity gains alone would justify national-level investment into a relationship infrastructure. Millions of phantom hours reclaimed. Billions redirected toward building rather than dissolving.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      And this is before we touch the human cost.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Personal Cost, or How Divorce Breaks People Quietly
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A divorce is one of the most psychologically destabilizing experiences a person can go through.
+      There is the obvious financial hit. Then there is the emotional devastation. Sleepless nights replaying conversations. The looping question of how this happened. The grief of watching a shared future dissolve. The nightmares. The bargaining. The negotiations. The constant low-grade misery. The humiliation. The loneliness.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is especially brutal in a coddled world where many people have not developed emotional resilience or frameworks for meaning under stress, where breakups and breakdowns can be as emotionally draining and damaging as scars left by predators or rival tribesmen for our ancestors.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In cases involving cheating, emotional abuse, or physical abuse, the damage runs even deeper. Trauma gets baked into the nervous system. Trust becomes expensive. Love becomes dangerous - it becomes a massive risk, and with this, vulnerability, a core part of a rich life, gets chucked away as a defense mechanism.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      What makes this worse is the temporal spillover. Divorce does not just damage your past and present. It often contaminates your future. Emotional scarring leads to projections. Guardedness. Overcorrection. Self-sabotage. People bring ghosts into rooms where they do not belong.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is one of the most underestimated costs of divorce. The relationships that never happen properly because of wounds that were never metabolized.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Cost We Barely Talk About: Children
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The most terrifying cost is the one we discuss the least. The cost to children.
+      Children are extraordinarily sensitive organisms - this, I can write from lived experience having been one myself. They absorb emotional states the way lungs absorb oxygen. They pick up tone, tension, avoidance, resentment, hostility, silence.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A child growing up in a household where parents are fighting constantly, or worse, cold and disengaged, is not just witnessing conflict. They are internalizing a model of love.
+      Many do not need to imagine this. They lived it.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      High divorce rates create downstream effects that last generations. Young people who grew up watching their parents tear each other apart emotionally often develop a subconscious aversion to long-term commitment. Marriage feels unsafe. Stability feels boring or suspicious. Intimacy feels like a trap.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This shows up in the data. Fewer young people want long-term relationships. Fewer want marriage. Fewer believe in permanence. Many oscillate between craving depth and avoiding it at all costs.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      I will admit my bias here. I believe monogamy and marriage, when done well, are foundational institutions for long-term human flourishing. They are not perfect. They are demanding. But they are stabilizing in ways very few other structures are.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Pre-nuptial agreements are another revealing signal. They are often framed as rational safeguards, and sometimes they are. But at a psychological level, they betray an inability to fully commit. A foot already halfway out the door. That has consequences; these choices become almost like self-fulfilling prophecies, whether we like to admit it or not.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We have no clear understanding of how much damage we are doing to children by making suboptimal mate choices and then failing to develop the skills required to maintain a relationship over decades.
+      This ignorance is costly.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      All this is before we get to the rates of infidelity. ”Infidelity rates in the US and UK are high, with studies suggesting that between 20% and over 30% of adults in these nations admit to having cheated, often placing them among the top countries for infidelity. Recent reports indicate that in the US, up to 39% of married men may engage in affairs, while UK figures show around 36% of Brits admitted to cheating in 2024.”
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      These numbers are reflective of the deep rot.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Uncomfortable Personal Part
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      I debated for a long time whether to share this. Because this is a deeply personal part of my life, and I am not super-comfortable laying things out like this. But then again, nothing can make this more visceral than adding a note written in blood. And so for the greater good, I submit.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      My parents’ marriage has not been a happy one. They are functionally separated. I have never seen them deeply in love. I have never seen them laugh together, have fun together, or experience joy as a unit, though I have heard stories from my mom about just how much in love they were when young. And that brings a tear to my heart - as I imagine how it could have been.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As a child, this hurt more than I understood at the time. As an adult, even with all my stoic posturing and self-awareness, it still does.
+      I love my parents deeply. It pains me to see them get in their own way. To watch conditioned patterns override the very thing they once wanted most. A happy, abundant family life.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      I am confident this applies to millions of couples. Patterns inherited from upbringing, culture, or trauma working directly against stated values and intentions.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In hindsight, I realized something uncomfortable. A part of my motivation for building Elinity may be that I want others to have what I did not, and to prevent for others what I saw myself - the hurt, the pain, the damages.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If millions of people have suffered needlessly because of mismatches or a lack of relationship skills in their parents, then maybe some good can come from that pain. If we can help prevent even a fraction of those outcomes, something meaningful may emerge from an otherwise tragic experience of the younger me.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why Divorces Happen, Structurally
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Divorces don’t happen because people wake up one morning and decide to destroy their lives just for kicks.
+      They happen because of compounding failures.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Suboptimal mate choice.</li>
+      <li style="margin-bottom:8px;">Poor communication.</li>
+      <li style="margin-bottom:8px;">Misaligned values.</li>
+      <li style="margin-bottom:8px;">Unexamined attachment styles.</li>
+      <li style="margin-bottom:8px;">Lack of repair mechanisms.</li>
+      <li style="margin-bottom:8px;">No tools.</li>
+      <li style="margin-bottom:8px;">No guidance.</li>
+      <li style="margin-bottom:8px;">No reflection.</li>
+      <li style="margin-bottom:8px;">Years of drift until one day the gap feels unbridgeable.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most people are never taught how to choose well. They are never taught how to love skillfully. They are never taught how to repair after rupture. We expect lifelong mastery from people who received no training.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is absurd.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      How We Intend to Fix This
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The ten trillion-dollar question - in terms of human wellbeing - is how we solve this.
+      The answer is simple in scope and brutally difficult in execution.
+      Build the ultimate connection-enhancing, relationship-deepening platform grounded in relationship psychology, neuroscience, human flourishing research, and real-world behavioral data.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There are two parts to the solution.
+      The first is discovery and curation.
+      A significant portion of divorces originate from poor mate choice. People choose based on chemistry, proximity, insecurity, timing, or unhealed wounds. Over time, these decisions compound.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      What if we could help people find their absolute best-fit partner with soulmate-level accuracy. Not left to random choice or mystical fate, but deep convergence across values, temperament, communication styles, growth trajectories, conflict patterns, and life goals.
+      Think of a personal matchmaker AI that is smarter than any human, emotionally intelligent, and deeply aware of who you actually are. Often better than you are yourself.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is part of our North Star.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The second part is management and thriving.
+      Even the best matches face difficulty. Life happens. Stress accumulates. People change. Even the best may need assistance - to spark some joy, delight, novelty, play, into the daily rhythms.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Every couple needs tools. For support, guidance, reflection, play, repair mechanisms.
+      This is where Lumi comes in. An AI relationship companion that acts as:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Coach.</li>
+      <li style="margin-bottom:8px;">Guide.</li>
+      <li style="margin-bottom:8px;">Mirror.</li>
+      <li style="margin-bottom:8px;">Life companion.</li>
+      <li style="margin-bottom:8px;">Support system for couples.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Helping with:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Conflict resolution.</li>
+      <li style="margin-bottom:8px;">Deepening conversations.</li>
+      <li style="margin-bottom:8px;">Encouraging vulnerability.</li>
+      <li style="margin-bottom:8px;">Reinforcing joy.</li>
+      <li style="margin-bottom:8px;">Tracking intentions.</li>
+      <li style="margin-bottom:8px;">Building rituals.</li>
+      <li style="margin-bottom:8px;">Supporting growth.</li>
+      <li style="margin-bottom:8px;">Inspiring delight, novelty and exploration.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The same intelligence that helps you find the right partner helps you stay aligned over time. This is where emotional intelligence matters most - for only an AI that is aligned with you can help you bring your vision of the best relationship to life.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Two-Pronged Strategy
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      In simple terms, our approach is this.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">First, best-fit matching. Deep compatibility across dimensions from the beginning.</li>
+      <li style="margin-bottom:8px;">Second, continuous support, growth and exploration. Tools and guidance to navigate inevitable lows without falling apart.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is how divorces become preventable rather than inevitable.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The World We Are Building Toward
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Our first version is already live. The ultimate version is hopefully less than three years away.
+      Our hope is that Elinity becomes a world where people are with the person they are most compatible with. Where random chance plays a smaller role in one of life’s most consequential decisions. Where people are equipped to build relationships that are meaningful, joyful, resilient, and alive.
+      Where homes become places of warmth rather than quiet damage.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If we succeed, fewer children grow up absorbing conflict as normal. Fewer adults carry unhealed wounds into every future relationship. Fewer people give up on love because they were never taught how to do it well.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      That feels like a problem worth solving more than any.
+    </p>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <p style="font-size:17px; color:#cfcfe6;">
+      After I finished writing this, I realized I could also have spoken about the cost of hard breakups - which are less quantifiable, but in many cases, equally as damaging as divorces.
+      Again, the thing to say about these are similar to what we already said about divorces:
+      One is that developing resilience is central to reduce the emotional costs, including developing a certain jadedness, a certain cynicism about people, especially the opposite sex.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The other thing is, again, to reduce the amount of relationship where such hard breakups are almost an inevitability, because of the sheer incompatibility between the people, which may have been surfaced earlier with a bit more attention.
+    </p>
+  </div>
+
+</div>
 
     `
   },
 
   {
     id: 7,
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    image: birth,
     title: 'Birth Rates, Human Flourishing in the Cosmos, and Elinity for Humanity',
     time: '4 min read',
     date: '1 May 2024',
     author: 'Sophie Turner',
     authorAvatar: 'https://randomuser.me/api/portraits/women/12.jpg',
     content: `
-<h3>The Fertility Crisis, Meaning, and the Architecture of Continuity</h3>
-
-<p>
-This is a difficult topic to talk about well.
-It is polarized. Emotionally charged. Easy to sound naïve, ideological, or preachy.
-It is also difficult personally, because the birth rate conversation is often framed — rightly — through women’s lived realities.
-Any serious treatment must acknowledge that asymmetry honestly.
-</p>
-
-<p>
-Still, difficulty is not an excuse for avoidance.
-Some problems become existential precisely because they are uncomfortable to name clearly.
-This is one of those problems.
-</p>
-
-<p>
-Elinity was not conceived as a “save humanity” project.
-It began with a simpler aim:
-</p>
-
-<ul>
-  <li>Increase love</li>
-  <li>Increase joy</li>
-  <li>Increase depth</li>
-  <li>Increase relational quality</li>
-</ul>
-
-<p>
-But when you study relationship quality at scale, you inevitably run into demographics.
-Birth rates are not collapsing in isolation.
-They are collapsing as a symptom.
-</p>
-
----
-
-<h3>The Birth Rate Crisis Is Real</h3>
-
-<p>
-South Korea is projected to lose 96–97% of its population within three generations if trends persist.
-Japan may lose half its population before century’s end.
-China’s fertility rate sits around one child per woman.
-Large parts of Europe face similar trajectories.
-</p>
-
-<p>
-This is arithmetic, not ideology.
-Fertility decline behaves like a negative exponential.
-Humans are notoriously bad at understanding exponentials.
-</p>
-
-<p>
-Once below replacement long enough:
-</p>
-
-<ul>
-  <li>Fewer parents next generation</li>
-  <li>Fewer grandparents after that</li>
-  <li>Fewer cultural carriers</li>
-  <li>Fewer people capable of reversal</li>
-</ul>
-
-<p>
-There is a point beyond which policy no longer matters.
-It arrives quietly. Then suddenly.
-</p>
-
----
-
-<h3>This Is Not Primarily a Cost Problem</h3>
-
-<p>
-Common explanations focus on:
-</p>
-
-<ul>
-  <li>Housing costs</li>
-  <li>Childcare expenses</li>
-  <li>Career pressures</li>
-  <li>Financial insecurity</li>
-</ul>
-
-<p>
-These matter.
-But if money solved fertility, the richest societies would have the most children.
-They do not.
-</p>
-
-<p>
-People reproduce because life feels expansive.
-A civilization stops reproducing when:
-</p>
-
-<ul>
-  <li>The future feels heavier than the present</li>
-  <li>Continuity feels like obligation</li>
-  <li>Meaning feels outsourced</li>
-  <li>Love feels scarce</li>
-</ul>
-
-<p>
-You cannot subsidize desire into existence.
-Birth rates collapse when people stop believing tomorrow is worth investing in.
-</p>
-
----
-
-<h3>The Overlooked Variable: Match Quality</h3>
-
-<p>
-People are not refusing children in abstraction.
-They are refusing children with the partners available to them.
-</p>
-
-<p>
-Expectations have risen.
-Relational capability has not kept pace.
-</p>
-
-<p>
-Humans are N-dimensional systems:
-</p>
-
-<ul>
-  <li>Values</li>
-  <li>Temperament</li>
-  <li>Attachment style</li>
-  <li>Ambition</li>
-  <li>Emotional regulation</li>
-  <li>Worldview</li>
-  <li>Timing</li>
-  <li>Energy</li>
-</ul>
-
-<p>
-Most people still match using blunt instruments:
-</p>
-
-<ul>
-  <li>Geography</li>
-  <li>Chance</li>
-  <li>Surface traits</li>
-  <li>Shallow filters</li>
-</ul>
-
-<p>
-When relationship formation becomes low-confidence,
-family formation collapses downstream.
-</p>
-
----
-
-<h3>The Fertility Crisis Is a Love Crisis</h3>
-
-<p>
-Happy people want to love deeply.
-They want to share life.
-They want to build continuity.
-</p>
-
-<p>
-When love feels fragile, children feel like risk.
-When love feels expansive, children feel like expression.
-</p>
-
-<p>
-Parenthood unlocks:
-</p>
-
-<ul>
-  <li>Deep unconditional love</li>
-  <li>Service beyond transaction</li>
-  <li>Identity beyond self-optimization</li>
-</ul>
-
-<p>
-Fewer people reach the relational conditions that make this transformation desirable.
-</p>
-
-<p>
-Elinity’s thesis:
-<strong>Fix match quality. Fix relationship quality. Fertility follows organically.</strong>
-</p>
-
----
-
-<h3>Japan as a Mirror</h3>
-
-<p>
-Japan optimized for safety, order, predictability.
-But children are not produced by comfort.
-They are produced by meaning.
-</p>
-
-<p>
-A quiet collapse looks peaceful:
-</p>
-
-<ul>
-  <li>Fewer schools</li>
-  <li>More hospitals</li>
-  <li>More inheritance without heirs</li>
-  <li>Systems preserving rather than renewing</li>
-</ul>
-
-<p>
-Preservation over propagation becomes self-reinforcing.
-</p>
-
----
-
-<h3>Substitution Systems and Desire Collapse</h3>
-
-<p>
-Pornography, parasocial media, synthetic intimacy —
-these act as substitutes.
-</p>
-
-<p>
-Substitutes meet drives without requiring relational complexity.
-Over time:
-</p>
-
-<ul>
-  <li>Motivation declines</li>
-  <li>Expectations rewire</li>
-  <li>Desire shifts</li>
-</ul>
-
-<p>
-This is not moral panic.
-It is systems thinking.
-</p>
-
----
-
-<h3>The Moral Argument From First Principles</h3>
-
-<p>
-Life is good.
-Consciousness is good.
-Love is good.
-</p>
-
-<p>
-Without consciousness, beauty is unobserved.
-If we may be the only minds capable of witnessing the cosmos,
-then expanding consciousness is a moral good.
-</p>
-
-<p>
-Not through coercion.
-But through civilizational aspiration.
-</p>
-
----
-
-<h3>Environment and the False Tradeoff</h3>
-
-<p>
-Concern for the environment and concern for humanity are not opposites.
-Technology allows:
-</p>
-
-<ul>
-  <li>Vertical farming</li>
-  <li>Energy abundance</li>
-  <li>Land-use efficiency</li>
-  <li>Closed-loop systems</li>
-</ul>
-
-<p>
-The constraint is cultural and technological deployment.
-Not physical limits.
-</p>
-
----
-
-<h3>AGI Raises the Stakes</h3>
-
-<p>
-As survival-driven reproduction fades,
-only meaning-driven reproduction remains.
-</p>
-
-<p>
-AGI will amplify existing trajectories.
-If relationships are weak, fertility trends toward zero.
-If relationships are strong, abundance amplifies life.
-</p>
-
----
-
-<h3>Freedom and Choice</h3>
-
-<p>
-We do not moralize individual decisions.
-We believe in freedom.
-</p>
-
-<p>
-Elinity removes obstacles for those who already want:
-</p>
-
-<ul>
-  <li>Love</li>
-  <li>Depth</li>
-  <li>Continuity</li>
-</ul>
-
-<p>
-By increasing match quality and relational intelligence,
-desire restores itself.
-</p>
-
----
-
-<h3>The Dark Futures If We Fail</h3>
-
-<p>
-Unchecked collapse could lead to:
-</p>
-
-<ul>
-  <li>Artificial reproduction systems</li>
-  <li>Genetic stratification</li>
-  <li>Managed population engineering</li>
-</ul>
-
-<p>
-The least dystopian future is one where families form naturally through love.
-</p>
-
----
-
-<h3>Long-Term Vision</h3>
-
-<p>
-Our solar system alone could support trillions of humans.
-The goal shifts from intelligence maximization to consciousness maximization.
-</p>
-
-<p>
-More humans experiencing:
-</p>
-
-<ul>
-  <li>Wonder</li>
-  <li>Love</li>
-  <li>Continuity</li>
-</ul>
-
----
-
-<h3>Final Thought</h3>
-
-<p>
-The fertility crisis is not about babies.
-It is about whether life feels worth continuing.
-</p>
-
-<p>
-If we fix relationships, meaning, and love,
-people will choose the future.
-</p>
-
-<p><strong>Elinity may not save humanity. But it will die trying.</strong></p>
-
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Birth Rates, Human Flourishing in the Cosmos, and Elinity for Humanity
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is a difficult topic to talk about well.
+      It is polarized. It is emotionally charged. It is easy to sound naïve, ideological, preachy, or worse. It is also difficult for me personally because I am not a woman, and the birth rate conversation is often framed, understandably, through women’s lived realities. Any serious treatment must acknowledge that asymmetry honestly, without pretending it doesn’t exist or trying to speak over it.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Still, difficulty is not an excuse for avoidance. Some problems become existential precisely because they are uncomfortable to name clearly.
+      This is one of those problems.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      To be clear upfront: Elinity was not conceived as a “save humanity” project. That framing came much later, almost accidentally. The initial motivation was far simpler and more human: increase love, joy, depth, passion, meaning, and relational quality in people’s lives. Those goals are intangible by nature. Hard to quantify. Hard to measure. Hard to reduce to dashboards.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      About a year into building the conceptual scaffolding, something clicked during a conversation - almost from a half joking conversation where we projected the trajectory of human population over the next 100 years, and the next 200, and seeing the numbers, laughed uncomfortably - with the kind of laugh that you have when you see something quite bleak, that elicits a forced laugh as a coping to dissipate the uncomfortable realization.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When you look at long-term relationship quality at scale, our area of focus, you inevitably run into demographic reality. Not because demographics were the goal, but because they are downstream of something far more fundamental. Birth rates are not collapsing in isolation. They are collapsing as a symptom.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      And the symptom is pointing at something worrying, at troubles brewing in paradise.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Birth Rate Crisis Is Real, and the Math Is Brutal
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Let’s ground this in reality.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">South Korea is on track to lose roughly 96 to 97 percent of its current population within three generations if current trends persist - and they are projected to worsen.</li>
+      <li style="margin-bottom:8px;">Japan is projected to lose half its population before the end of the century.</li>
+      <li style="margin-bottom:8px;">China has fallen to a fertility rate around one child per woman, far below replacement, despite ending coercive family planning policies.</li>
+      <li style="margin-bottom:8px;">Large parts of Europe face similar trajectories. Some countries will see their great-grandchildren’s generation shrink by two-thirds.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not speculation or doomerism, but simple facts of biology and the arithmetics of growth at current rates. Or the lack thereof.
+      We don’t grasp the severity of this because fertility decline behaves like a negative exponential and humans are terrible at reasoning about exponentials. We underestimate how fast they run away from us. Once a society drops below replacement for long enough, the problem is no longer “fewer babies this year.” It becomes fewer parents next generation, fewer grandparents after that, fewer cultural carriers, fewer people capable of reversal at all.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is a point beyond which policy does not matter anymore.
+      That point arrives quietly, and then suddenly, we are past the critical point.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      This Is Not a Cost Problem. It Is a Meaning Problem.
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The most common explanations for fertility decline focus on costs: housing, childcare, education, careers, time, financial insecurity. These factors matter. They are real. But they are not first-order causes.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">If money fixed birth rates, the richest societies would have the most children. They do not.</li>
+      <li style="margin-bottom:8px;">If convenience fixed birth rates, Japan would be overflowing with families. It is not.</li>
+      <li style="margin-bottom:8px;">If safety fixed birth rates, the most stable nations would be growing. They are shrinking, and fast, like China, the epitome of stability in many eyes.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      People do not reproduce because they can afford to. They reproduce because life feels expansive.
+      A civilization stops reproducing when the future feels heavier than the present. When continuity feels like obligation instead of promise. When identity feels fragile. When meaning feels outsourced. When love feels scarce or conditional.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is why throwing incentives at the problem fails. This is why polite policies and symbolic gestures do nothing. You cannot subsidize desire into existence.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Birth rates collapse when people stop believing that tomorrow is worth investing in.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      That belief is emotional before it solidifies into something almost rational. And that belief is a self fulfilling prophecy that creates a vicious loop - the less we believe, the fewer reasons we create to believe in that bright future, which creates a worse near future, which reduces our belief in the future, and so on.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Overlooked Variable: Match Quality
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is one factor almost entirely missing from mainstream discussion: relationship quality at the point of formation.
+      People are not refusing children in the abstract. They are refusing children with the partners they have available. This distinction matters.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Expectations have risen, as they should have. Lives are longer. Choices are more consequential. Dependency is no longer forced by survival. But relational capability has not kept pace. The average quality of partnership has stagnated or declined, even as expectations have risen.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This creates a widening gap.
+      Many women delay or opt out because no partner feels genuinely compelling, who crosses the bar of who she’d want as the father of her children. Many men disengage because repeated disappointments erode agency and self-belief. Desperation leads to suboptimal pairings. Suboptimal pairings collapse. Collapse reinforces avoidance. And before you know it, avoidance becomes cultural norm. Which feeds the feast.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is not a moral failure. It is a matching failure.
+      Humans are not one-dimensional. Each person is an N-dimensional vector:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Values.</li>
+      <li style="margin-bottom:8px;">Temperament.</li>
+      <li style="margin-bottom:8px;">Attachment style.</li>
+      <li style="margin-bottom:8px;">Ambition.</li>
+      <li style="margin-bottom:8px;">Sexuality.</li>
+      <li style="margin-bottom:8px;">Worldview.</li>
+      <li style="margin-bottom:8px;">Emotional regulation.</li>
+      <li style="margin-bottom:8px;">Trauma history.</li>
+      <li style="margin-bottom:8px;">Timing.</li>
+      <li style="margin-bottom:8px;">Energy.</li>
+      <li style="margin-bottom:8px;">Curiosity.</li>
+      <li style="margin-bottom:8px;">Depth.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most people still match using blunt instruments: geography, chance encounters, shallow filters, surface traits, brute-force exposure.
+      That worked when expectations were low and roles were rigid. It fails when expectations are high and lives are complex.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If relationship formation becomes low-confidence, family formation collapses downstream.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Fertility Crisis Is a Love Crisis
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Happy people want to love deeply. They want to share their love and their lives. They want to build something that outlasts them. People with strong self-relationships tend to want continuity, not escape.
+      This is one of the most underappreciated truths in modern discourse.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not wanting children often reflects a lack of relational abundance, not a rejection of life itself. When love feels fragile, adding children feels like risk. When love feels expansive, children feel like expression.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Parenthood unlocks parts of human consciousness that are otherwise inaccessible. Deep, unconditional love. Service without transactionalism. Identity beyond self-optimization. This is not romanticism. It is reported experience across cultures and generations.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The problem is that fewer people ever reach the relational conditions that make this transformation desirable, meeting the person they could imagine building a life and a family with. The birth rate crisis is a mate quality crisis in disguise.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Elinity’s thesis is simple, and radical in its implications: fix match quality, fix relationship quality, and fertility follows organically.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Remove the obstacles, the pressure, the ideology, the coercion, and let love, let nature, do its thing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Japan as a Mirror, Not an Exception
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      It is always difficult to write about cultures where your understanding is limited, but we must, because Japan is a warning. The demographics of Japan are not failing because of cost, convenience, or technology. Japan optimized for safety, predictability, efficiency, and order so thoroughly that it eliminated the emotional surplus required to bring new humans into the world.
+      Children are not produced by comfort. They are produced by meaning.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Parts of our world, our culture have optimized for sanitized comfort at the cost of messy meaning.
+      That is why the streets are clean and the cradles are empty.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Once a society crosses this line, it is on the slow walk to to collapse, a collapse that looks quiet, managed and peaceful even, without any riots or chaos. But don’t be mistaken - this is a collapse just as clear as any. Just fewer schools, more hospitals, more inheritance without heirs, more systems designed to preserve what exists rather than create what comes next.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Preservation over propagation becomes self-reinforcing. Older populations vote for stability -> stability resists disruption -> renewal requires disruption -> the renewal never comes.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Let us look at some facts on the ground:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Adult diapers are outselling baby diapers.</li>
+      <li style="margin-bottom:8px;">Intimacy pillows.</li>
+      <li style="margin-bottom:8px;">Sex robots and perversions are rife in the culture.</li>
+      <li style="margin-bottom:8px;">There are growing trends of herbivore men who opt out of social life.</li>
+      <li style="margin-bottom:8px;">Combine this with the fact that Japan is losing more people every year of natural causes than even major nations have lost in wars at the peak of fighting, and you get a picture of a struggling society.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is especially tragic when you compare the current state to Japan’s heritage, rich in arts, expression, technology, and more.
+      Japan is not an anomaly. It has been 20 years ahead of the rest of the western world since the last 60 years - it is a preview as to where we may be heading.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Pornography, Substitution, and Desire Collapse
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is an uncomfortable topic, but avoiding it does not make it go away.
+      Pornography, parasocial media, and synthetic intimacy act as substitute systems. Substitute systems meet emotional or sexual needs without requiring the complexity of real relationships. Over time, they reduce motivation for the real thing and rewire expectations.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This does not require moral panic - it requires systems thinking. When enough people satisfy enough drives synthetically, population-level desire shifts. Fertility declines not because of ideology, but because reward loops change.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The same dynamic applies to social media replacing real community. AI companions replacing effortful intimacy. Substitution always has second-order effects. And the effects are dire.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Moral Argument From First Principles
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Strip everything down, and we come to the crux of it all: Life is good; consciousness is good; love is good. This is the trinity, the highest good.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is our foundational imperative. Without consciousness, the universe has no meaning. Beauty is unobserved - and unobserved beauty may as well not exist. Experience, awe, wonder disappear without consciousness.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We may be the only minds capable of witnessing this vast, empty cosmos. If that is true, and we must assume this to be the case until we have evidence to the contrary, then more consciousness is a moral good. The highest moral good, since everything else flows downstream from this. On this, we can all agree. We must. But not coercively or at the level of individual obligation. But at the level of civilizational aspiration.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If God exists, the mandate to be fruitful and multiply follows naturally. If God does not exist, the human drive to explore, create, love, and expand still points outward.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Either way, we must go forth and plant the flag of our humanity across the cosmos - we must have more minds that can experience the highest sweetness of being alive, that can savour the absolute joie de vivre.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Environment, Resources, and the False Tradeoff
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Concern for the environment and concern for humanity needn’t be at odds, as many environmentalists falsely content. The planet can support far more humans at far higher quality of life with existing and near-term technologies.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">Vertical farming.</li>
+      <li style="margin-bottom:8px;">Energy abundance.</li>
+      <li style="margin-bottom:8px;">Land-use efficiency.</li>
+      <li style="margin-bottom:8px;">Rewilding.</li>
+      <li style="margin-bottom:8px;">Artificial meat.</li>
+      <li style="margin-bottom:8px;">Closed-loop systems.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      It is entirely plausible to have 20 billion people on earth, using a fraction of current agricultural land while expanding forests dramatically.
+      The constraint is not physical. It is cultural and technological deployment. As ever, it comes down to the will, and the execution.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      AGI Changes the Stakes, Not the Direction
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      As intelligence becomes abundant, and as money becomes obsolete, survival-driven reproduction will disappear. Only meaning-driven reproduction will remain.
+      AGI will not cause fertility collapse. It will accelerate whatever direction we are already heading. If relationships are weak, fertility trends will go to zero asymptotically. If relationships are strong, abundance amplifies life.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is why the family problem becomes more urgent in a post-scarcity world, not less.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Freedom, Choice, and the Role of Elinity
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Freedom and choice are the foundation of a good life, of a good civilization - the freedom to find your person, find your people, to build your life the way you see fit. We don’t see it as anyone’s place to tell anyone to have children, or to moralize individual choice, or to prescribe life paths.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We believe in removing obstacles for people who already want love, depth, and continuity.
+      By increasing match quality, relational skills, emotional intelligence, and long-term alignment, Elinity hopes to restore desire that policy cannot manufacture. More babies, more love, more humans, follow downstream.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Dark Futures If We Fail
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      If fertility collapse continues unchecked, societies will eventually turn to artificial reproduction, genetic selection, and managed population strategies, just to keep our species going. This introduces irreversible stratification and moral hazards we are not equipped to handle.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The least dystopian future is one where families form naturally through love, not necessity, coercion, or engineering.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Long-Term Vision
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Our solar system alone could support trillions of humans at an unfathomably extraordinary quality of life. Think O-rings, planetary settlements, new cultures, new forms of art, meaning, deeper, more expansive love.
+      The goal is no longer intelligence maximization. AGI handles that. The goal becomes consciousness maximization.
+      More humans experiencing wonder. More love. More continuity.
+    </p>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Final Thought
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The fertility crisis is not about babies. It is about whether life feels worth continuing. If we fix relationships, meaning, and love, people will choose the future.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Elinity may not save humanity. But it will die trying.
+    </p>
+  </div>
+
+</div>
     `
   },
   {
     id:  8,
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    image: vivid,
     title: 'Painting the Future in Full Color, in Vivid Detail',
     time: '5 min read',
     date: '28 April 2024',
     author: 'Michael Brown',
     authorAvatar: 'https://randomuser.me/api/portraits/men/45.jpg',
     content: `
-<h3>The World We Are Trying to Create  and the One We Refuse to Accept</h3>
-
-<p>
-When you decide to build something that truly matters, you owe the future a clear answer:
-What does the world look like if this succeeds?
-Not in slogans, but in lived reality.
-In how people wake up.
-Who they share breakfast with.
-How they argue, repair, love, play, belong, and grow old.
-</p>
-
-<p>
-Equally important is the inverse question:
-<strong>What kind of world are we explicitly trying to prevent?</strong>
-</p>
-
-<p>
-Drift is not neutral.
-Drift moves toward:
-</p>
-
-<ul>
-  <li>Engagement-maximizing systems</li>
-  <li>Convenience over depth</li>
-  <li>Dopamine over meaning</li>
-</ul>
-
-<p><strong>Elinity begins with a refusal to drift.</strong></p>
-
----
-
-<h3>Why Vision Must Be Concrete</h3>
-
-<p>
-Every ambitious project faces pressure:
-</p>
-
-<ul>
-  <li>Market pressure</li>
-  <li>Cultural pressure</li>
-  <li>Financial pressure</li>
-  <li>Technological pressure</li>
-</ul>
-
-<p>
-The danger is not dramatic betrayal.
-It is incremental deviation.
-A few degrees off course compounds over years.
-</p>
-
-<p>
-Many dominant platforms began with ideals:
-</p>
-
-<ul>
-  <li>Connection</li>
-  <li>Community</li>
-  <li>Expression</li>
-  <li>Openness</li>
-</ul>
-
-<p>
-Over time:
-</p>
-
-<ul>
-  <li>Engagement replaced wellbeing</li>
-  <li>Virality replaced meaning</li>
-  <li>Comfort replaced growth</li>
-</ul>
-
-<p>
-The future drifted because no one resisted hard enough.
-This is why vision is infrastructure.
-</p>
-
----
-
-<h3>We Are Not a Typical Company</h3>
-
-<p>
-Elinity is a vehicle:
-</p>
-
-<ul>
-  <li>A vehicle for raising baseline human wellbeing</li>
-  <li>A vehicle for re-centering civilization around flourishing</li>
-  <li>A vehicle for designing systems that make us better, not more distracted</li>
-</ul>
-
-<p>
-If you get one serious attempt to shape the world,
-why optimize for marginal convenience?
-Why treat loneliness and relational failure as background noise?
-</p>
-
-<p>
-We think in centuries, not quarters.
-In flourishing, not engagement metrics.
-In eudaimonia, not dopamine.
-</p>
-
----
-
-<h3>Eudaimonia as the North Star</h3>
-
-<p>
-Modern culture flattens happiness into pleasure.
-Pleasure spikes and fades.
-</p>
-
-<p>
-Eudaimonia is different.
-</p>
-
-<ul>
-  <li>Meaningful relationships</li>
-  <li>Purposeful work</li>
-  <li>Personal growth</li>
-  <li>Belonging</li>
-  <li>Love that endures friction</li>
-</ul>
-
-<p>
-Civilizations that optimize for pleasure burn bright and burn out.
-Civilizations that optimize for flourishing endure.
-</p>
-
----
-
-<h3>The World We Are Trying to Build</h3>
-
-<p>
-A world where:
-</p>
-
-<ul>
-  <li>Most people experience deeply fulfilling relationships</li>
-  <li>Loneliness is rare, not normalized</li>
-  <li>Divorce and hard breakups are uncommon</li>
-  <li>People choose alignment, not scarcity</li>
-</ul>
-
-<p>
-A world where:
-</p>
-
-<ul>
-  <li>Friendships are rich and enduring</li>
-  <li>Collaboration is joyful, not transactional</li>
-  <li>People regularly feel truly understood</li>
-</ul>
-
-<p>
-A world where individuals live on the upper layers of human need:
-</p>
-
-<ul>
-  <li>Self-actualized</li>
-  <li>Purpose-driven</li>
-  <li>Surrounded by people who elevate them</li>
-</ul>
-
-<p>
-A world where technology plays a supporting role, not a dominating one.
-</p>
-
-<p>
-In this world:
-</p>
-
-<ul>
-  <li>AI amplifies human flourishing</li>
-  <li>AI strengthens communication and clarity</li>
-  <li>AI surfaces blind spots</li>
-  <li>AI supports growth without replacing intimacy</li>
-</ul>
-
-<p>
-Everyone grows alongside their own Lumi —
-not as a surrogate friend,
-but as a guide, mirror, and lifelong companion for growth.
-</p>
-
----
-
-<h3>The Ambition, Made Explicit</h3>
-
-<p>We aim to build:</p>
-
-<ul>
-  <li>The ultimate matchmaker</li>
-  <li>The ultimate social connector</li>
-  <li>The ultimate relationship flourishing platform</li>
-  <li>The ultimate life-flourishing AI companion</li>
-</ul>
-
-<p>
-Our primary KPI is not engagement.
-It is happiness and eudaimonia.
-</p>
-
-<p>
-The ingredients already exist.
-What is missing is coordination and intention.
-</p>
-
----
-
-<h3>The World We Refuse to Build</h3>
-
-<p>
-A seductive but deeply wrong future:
-</p>
-
-<ul>
-  <li>Simulated experiences replacing lived ones</li>
-  <li>Synthetic intimacy weakening pair bonding</li>
-  <li>Frictionless companionship becoming meaningless</li>
-  <li>Emotional outsourcing to exploitative systems</li>
-  <li>Hyper-hedonism without direction</li>
-  <li>Transactional relationships without depth</li>
-</ul>
-
-<p>
-We do not want:
-</p>
-
-<ul>
-  <li>A Wall-E world</li>
-  <li>Dating apps as the dominant relational architecture</li>
-  <li>A culture that erodes bonding capacity</li>
-  <li>Meaningful relationships left to chance</li>
-</ul>
-
----
-
-<h3>Why This Matters</h3>
-
-<p>
-Most people are less happy than they could be —
-not because of lack of comfort,
-but because they lack the right people.
-</p>
-
-<p>
-Relationships determine:
-</p>
-
-<ul>
-  <li>Mental health</li>
-  <li>Resilience</li>
-  <li>Decision quality</li>
-  <li>Physical health</li>
-</ul>
-
-<p>
-When relationships improve, everything improves.
-When relationships fail, everything suffers.
-</p>
-
----
-
-<h3>A Final Conviction</h3>
-
-<p>
-We believe a living, earned utopia is possible within this century.
-Not static perfection,
-but collective flourishing.
-</p>
-
-<p>
-It requires:
-</p>
-
-<ul>
-  <li>Effort</li>
-  <li>Discipline</li>
-  <li>Care</li>
-  <li>Humility</li>
-  <li>Long-term tools</li>
-</ul>
-
-<p>
-Elinity exists because humanity deserves that effort.
-And because this moment may not come again.
-</p>
-
-<p><strong>
-This is the world we are trying to build.
-And the one we refuse to accept.
-</strong></p>
-
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e); 
+            color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Painting the Future in Full Color, in Vivid Detail
+    </h3>
+    <p style="font-size: 20px; text-transform: uppercase; letter-spacing: 2px; color: #dbd6e0; margin-bottom: 40px; font-weight: 600;">
+      The World We Are Trying to Create  and the One We Refuse to Accept
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When you decide to build something that matters, really matters, you owe yourself and the world more than a product roadmap or a pitch deck. You owe the future a clear answer to the question: What does the world look like if this succeeds? Really succeeds.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Not in slogans or abstractions but in lived reality. In daily life, and in the quiet texture of how people wake up, who they share breakfast with, how they argue, how they repair, how they love, how they play, how they belong, and how they grow old.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Equally important, and far less discussed, is the inverse question:
+      What kind of world are we explicitly trying to prevent?
+      Because if you do not define that boundary clearly, you will drift. And drift, in a world governed by incentives, and dominated by existing trendlines is not neutral. Drift always moves toward the path of least resistance. Toward engagement-maximizing systems. Toward convenience over depth. Toward dopamine over meaning.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Elinity begins with a refusal to drift.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why Vision Must Be Concrete, or It Will Be Corrupted
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Every ambitious project eventually encounters pressure. Market pressure. Cultural pressure. Financial pressure. Technological pressure. Moments where compromise feels small, reasonable, even necessary.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      The danger is not a dramatic betrayal of ideals. The danger is incremental deviation.
+      North stars are unforgiving. They are distant by definition. A few degrees off at the beginning does not feel catastrophic - you could even justify or rationalize small deviations as pragmatic. But over years, that deviation will compound, until you arrive somewhere you never intended to go, building something that technically “succeeded” while spiritually failing.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We have seen this story before.
+      Many of today’s dominant platforms began with ideals. Connection. Expression. Community. Openness. Over time, the absence of a deeply articulated anti-vision allowed present-day incentives to overwrite long-term intent. Engagement replaced wellbeing. Virality replaced meaning. Comfort replaced growth.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      The future did not turn out the way it did because anyone explicitly chose it.
+      It turned out that way because no one fought hard enough against it.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is why Elinity treats vision not as marketing, but as infrastructure.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      We Are Not a Typical Company - and We Do Not Intend to Become One
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity is better understood as a vehicle than a product. A vehicle for raising baseline human wellbeing. A vehicle for re-centering civilization around the deepest sources of flourishing. A vehicle for asking what systems can help us become better versions of ourselves, rather than more distracted ones. And how to design them for deep human flourishing.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      There is idealism here, and that is a deliberate choice.
+      If you get one life, one serious attempt to build something that shapes the world, why aim small? Why optimize for marginal convenience when the stakes are existential? Why treat human suffering, loneliness, and relational failure as background noise instead of the central problem they are?
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are not interested in building something that merely fits into the world as it is. In satisfying market demand.
+      We are interested in raising the world toward what it could be.
+      That requires thinking in centuries, not quarters. In flourishing, not growth metrics. In eudaimonia, not dopamine.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Eudaimonia as the North Star
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Modern culture has flattened happiness into pleasure. Stimulation. Consumption. Ease. This form of happiness is real, but it is shallow and volatile. It spikes quickly and fades just as fast.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Eudaimonia is different.
+      Eudaimonia is flourishing. It is the deep satisfaction that comes from meaningful relationships, purposeful work, personal growth, belonging, and love that endures friction. It is slower. Harder. More demanding. It requires intention and effort. But it compounds.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Civilizations that optimize for pleasure burn bright and burn out.
+      Civilizations that optimize for flourishing endure.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Elinity is explicitly designed for the latter.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The World We Are Trying to Build
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      At its highest level of attainment, the world we envision looks almost implausible by today’s standards. That is precisely why it matters, because we want to tell stories about just how good we can have it, so people start living those stories, and start living in them.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      It is a world where most people experience deeply fulfilling relationships. Where loneliness and settling for low levels of social satiation is rare, not normalized. Where hard breakups and divorce are extremely uncommon. Where people do not settle out of fear or scarcity, but choose partners who are profoundly aligned.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A world where friendships are rich and enduring. Where collaboration is joyful and purposeful rather than transactional. Where people regularly experience the rare and transformative feeling of being truly understood, of sharing their stories, and expressing their rich creativity of their inner worlds.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A world where individuals live on the upper layers of human need - self-actualized and purpose-driven. Engaged in work and projects that make them feel alive. Surrounded by people who bring out their best rather than their defenses.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A world where technology plays a supporting role, not a dominating one.
+      In this world, people have a healthy relationship with AI. An AI is aligned with human flourishing, that helps individuals understand themselves better, communicate more clearly, recognize patterns, and make better relational decisions, that  amplifies humanity and our higher drives, instead of replacing, instead of acting as a simulacra.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Everyone grows alongside their own personal Lumi - that is there not as a surrogate friend or as a romantic substitute, but as a guide, mirror, and companion in growth. As a life-long companion designed to help people design and live their best lives, grounded in their values, relationships, and long-term wellbeing.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The Ambition, Made Explicit
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We are not shy about our goals.
+      We aim to build:
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">The ultimate matchmaker, capable of connecting the most deeply aligned, resonant, compatible, people at scale.</li>
+      <li style="margin-bottom:8px;">The ultimate social connector, across romance, friendship, and collaboration.</li>
+      <li style="margin-bottom:8px;">The ultimate relationship flourishing platform, focused on repair, growth, play, creativity, and joy.</li>
+      <li style="margin-bottom:8px;">The ultimate life-flourishing AI companion, aligned with human wellbeing, built on a new kind of emotionally intelligent, human-centered AI mind.</li>
+    </ul>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Our primary KPI is not engagement.
+      It is happiness and eudaimonia.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      This is an eminently attainable goal for our species. The ingredients already exist - what is missing is coordination, infrastructure, and intention. And a scaffolding that brings it all together.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      The World We Refuse to Build
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      A vision is incomplete without resistance.
+      There is a future forming around us that feels seductive, efficient, and deeply wrong.
+    </p>
+    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
+      <li style="margin-bottom:8px;">A future of increasing virtuality. Where simulated experiences displace lived ones. Where pornographic simulacra rewrite desire, weaken pair bonding, and hollow intimacy. Where companionship becomes frictionless and therefore meaningless.</li>
+      <li style="margin-bottom:8px;">A future of hyperdependence on technology. Where people outsource emotional labor, reflection, and growth to systems optimized for consumption, exploitation, and that lead to disempowerment. Where humans become passive recipients rather than active participants in their own lives.</li>
+      <li style="margin-bottom:8px;">A future of hyper-hedonism. Pleasure without purpose. Stimulation without direction. A society optimized for feeling good in the moment and numb over time.</li>
+      <li style="margin-bottom:8px;">A future of transactional relationships. Superficial connections. Endless choice without depth. Narcissism disguised as something benign. The erosion of patience, repair, and commitment.</li>
+      <li style="margin-bottom:8px;">A future where long-term, deeply fulfilling relationships become so rare that they are treated like unicorns. Where the cold, sterile worlds once confined to science fiction quietly become normal.</li>
+    </ul>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We do not want the Wall-E world.
+      We do not want dating apps to remain the dominant way humans meet.
+      We do not want a culture that breaks people’s capacity for long-term bonding.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      Most of all, we do not want a world where the most meaningful aspects of life are left to chance.
+    </p>
+  </div>
+
+  <div style="margin-bottom:60px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      Why This Matters More Than Almost Anything Else
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Most people are less happy than they could be - this isn’t because of lack of comfort or convicence, but because they lack the right people.
+      Relationships are the single largest determinant of life satisfaction. They shape mental health, decision-making, resilience, and even physical health. They compound across decades and generations.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      When relationships improve, everything improves.
+      When relationships fail, everything suffers.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      The tragedy is not that this problem is unsolvable - tis that we have treated the status quo as inevitable.
+    </p>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+      A Final Conviction
+    </h3>
+    <p style="font-size:17px; color:#cfcfe6;">
+      We believe a utopia is possible within this century. Not a static paradise, but a living, earned state of collective flourishing.
+      It will require effort. Discipline. Care. Humility. And tools designed for the long term rather than the next dopamine hit. It will require resisting the futures that arrive by default and choosing the ones that require intention.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity exists because we believe humanity deserves that effort and deserves the very best of what life, what the universe, can be.
+      And because if we do not attempt this now, at this moment, with everything we have, we may never get another chance to shape the future at this level again.
+    </p>
+    <p style="font-size:17px; color:#ffffff; font-weight:700;">
+      This is the world we are trying to build.
+      And just as importantly, the one we are trying to leave behind and beside.
+    </p>
+  </div>
+
+</div>
     `
   },
 ]; 

@@ -10,7 +10,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   { id: 1, content: "i love how rich the app experience is, even without having users. the team told me the single-player mode would be so incredible that i would enjoy the app as is. they were not wrong." },
   { id: 2, content: "wanted to infuse some fun, some spark into my relationship with my bf. boy, has this been a revelation. a ton of fun!" },
-  { id: 3, content: "i love meeting cool people, but only if they are my type of people. and my type of people aren't that common, so it hasn't been super easy being social despite the latent desire. i get the sense this year is going to be my best year socially." },
+  { id: 3, content: "i love meeting cool people, but only if they are my type of people. and my type of people aren't that common, so it hasn't been super easy being social despite the latent desire. i love how Elinity can help with social connections across the board. i am getting the sense this year is going to be my best year socially, and i need that! " },
   { id: 4, isDisappointed: true, content: "elinity promised to find me my soul mate. i have been using it for 3 weeks, and i still haven't found her. major disappointment." },
   { id: 5, content: "i have been wanting to take a step back from the madness of the world and just go inside, explore, and lumi has been such a great companion in my inner life journey. could not recommend more!" },
 ];
@@ -44,11 +44,17 @@ const Testimonials: React.FC = () => {
         
         {/* section header */}
         <div className="max-w-4xl mx-auto mb-8 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4"
+          style={{
+            background: "linear-gradient(90deg, #ffffff,  #6d5cff)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}>
             testimonials 
           </h2>
           <p className="text-neutral-400 text-sm md:text-base max-w-md mx-auto md:mx-0 normal-case">
-            Here is what some of our early testers have had to say:
+            here is what some of our early testers have had to say:
           </p>
         </div>
 

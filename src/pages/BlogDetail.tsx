@@ -25,6 +25,34 @@ const BlogDetail = () => {
 
   const blog = blogs.find((b: any) => b.id === Number(id));
 
+  /* =======================
+     CHATGPT TYPING EFFECT
+  ======================== */
+
+  const [displayedContent, setDisplayedContent] = useState('');
+  const typingIndex = useRef(0);
+
+  useEffect(() => {
+    if (!blog) return;
+
+    const fullText = blog.content; // keep HTML
+    typingIndex.current = 0;
+    setDisplayedContent('');
+
+    const interval = setInterval(() => {
+      typingIndex.current += 3; // typing speed (increase for faster)
+      setDisplayedContent(fullText.slice(0, typingIndex.current));
+
+      if (typingIndex.current >= fullText.length) {
+        clearInterval(interval);
+      }
+    }, 8); // typing speed
+
+    return () => clearInterval(interval);
+  }, [blog]);
+
+  /* ======================= */
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
@@ -72,10 +100,10 @@ const BlogDetail = () => {
           </div>
         </aside>
 
-        {/* Main Content */}
+        {/* Main */}
         <div className="flex-1 min-w-0">
-          
-          {/* --- SIMPLIFIED NAV SECTION --- */}
+
+          {/* Nav */}
           <div className="flex items-center flex-wrap gap-3 mb-8 relative">
             {TABS.map((tab) => (
               <button
@@ -87,7 +115,6 @@ const BlogDetail = () => {
               </button>
             ))}
 
-            {/* Direct Dropdown Button (No scroll container) */}
             <div className="relative" ref={resourcesRef}>
               <button
                 onClick={(e) => {
@@ -106,11 +133,7 @@ const BlogDetail = () => {
 
               {isResourcesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-[#1a1a40] border border-purple-700 rounded-xl shadow-2xl z-[999] overflow-hidden">
-                  <Link
-                    to="/privacy-policy"
-                    className="block px-4 py-3 text-sm font-medium text-purple-100 hover:bg-purple-600/30 transition-colors"
-                    onClick={() => setIsResourcesOpen(false)}
-                  >
+                  <Link to="/privacypolicy" className="block px-4 py-3 text-sm font-medium text-purple-100 hover:bg-purple-600/30 transition-colors">
                     Privacy Policy
                   </Link>
                 </div>
@@ -118,24 +141,38 @@ const BlogDetail = () => {
             </div>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">{blog.title}</h1>
+          {/* Title */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight"
+          style={{
+            fontSize:'32px',
+            letterSpacing:'2px',
+            marginBottom:'40px',
+            fontWeight:600,
+            background:'linear-gradient(to right, #e0dded, #b066fe)',
+            WebkitBackgroundClip:'text',
+            WebkitTextFillColor:'transparent'
+          }}>
+            {blog.title}
+          </h1>
 
-          {/* Author Meta */}
+          {/* Author */}
           <div className="flex items-center gap-3 mb-8">
-            <img src={blog.authorAvatar} alt={blog.author} className="w-10 h-10 rounded-full border-2 border-purple-400 object-cover" />
+            <img src='/p.jpeg' alt={blog.author} className="w-10 h-10 rounded-full border-2 border-purple-400 object-cover" />
             <div>
               <p className="text-white font-semibold text-sm">{blog.author}</p>
               <p className="text-xs text-purple-200">{blog.date} • {blog.time}</p>
             </div>
           </div>
 
-          <img src={blog.image} alt={blog.title} className="w-full h-auto object-cover rounded-2xl shadow-2xl mb-8" />
+          <img src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover rounded-2xl shadow-2xl mb-8"/>
 
-          <article 
+          {/* ✨ CHATGPT TYPING CONTENT */}
+          <article
             className="prose prose-invert max-w-none mb-16 text-base sm:text-lg leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: blog.content }} 
+            dangerouslySetInnerHTML={{ __html: displayedContent }}
           />
 
+          {/* Related */}
           <h2 className="text-xl sm:text-2xl font-bold mb-6">Related Articles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {relatedArticles.map((article: any) => (

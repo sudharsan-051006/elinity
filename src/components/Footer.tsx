@@ -1,85 +1,162 @@
-import { Instagram, Linkedin, Twitter } from "lucide-react";
-import logo from "../../public/elogo.png"
-import { purpleGradient } from "../theme"
+import React from "react";
+import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart, MapPin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "../../public/elogo.png";
+import { purpleGradient } from "../theme";
 
-// The Footer component, which accepts an optional className for custom styling.
 const Footer = ({ className = '' }: { className?: string }) => {
+  const currentYear = new Date().getFullYear();
+
+  // Premium Scroll-to-Top Logic
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    // Merges the default classes with any custom classes passed via props.
-    <footer style={purpleGradient} className={`text-white py-12 px-4 md:px-16 ${className}`}>
-      <div className="max-w-7xl mx-auto">
-        {/* Top Border */}
-        <div className="border-b border-gray-700 mb-8 pb-4"></div>
+    <footer 
+      style={purpleGradient} 
+      className={`relative text-white pt-20 pb-10 px-6 md:px-16 overflow-hidden border-t border-white/10 ${className}`}
+    >
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] -mr-64 -mt-64" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] -ml-48 -mb-48" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="md:col-span-1">
-            <div className="flex items-center mb-4">
-              <img src={logo} alt="Elinity Logo" className="h-8 w-auto mr-2" />
-              <span className="text-2xl font-semibold text-purple-300">Elinity</span>
+        {/* Top Tier: Brand & Social Bento */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+          
+          {/* Brand Card */}
+          <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col justify-between">
+            <div className="space-y-6">
+              <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3 w-max group">
+                <img src={logo} alt="Elinity" className="h-16 w-auto transition-transform duration-700 group-hover:rotate-[540deg]" />
+              </Link>
+              <h2 className="text-2xl md:text-2xl font-light leading-tight max-w-xl text-white tracking-wide">
+                Where{" "}
+                <span className="bg-gradient-to-r from-[#d9d3fe] to-[#7759fd] 
+                                bg-clip-text text-transparent font-semibold italic"
+                      style={{paddingRight:'1px'}}>
+                  Amplifying Intelligence 
+                  {/* bg-gradient-to-r from-  bg-clip-text */}
+                </span>{" "}
+                 meets{" "}
+                <span className="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 
+                                bg-clip-text text-transparent font-semibold italic">
+                  human connection
+                </span>.
+              </h2>
+              <p className="text-purple-100/60 text-sm max-w-md">
+                Find your most resonant people with Lumi, your social matchmaker, that understands the whole of you.
+              </p>
             </div>
-            <p className="text-gray-300 text-sm">
-              Elinity is a social connection and relationship platform, with our 
-              powerful EI AI designed to understand the whole of you, with powerful
-              algorithms find you your best-fit people, and help you build emotionally
-              rich and deeply satisfying relationships.
-            </p>
           </div>
 
-          {/* Explore Links */}
-          <div className="md:col-span-1">
-            <h3 className="text-lg font-medium mb-4">Explore</h3>
-            <ul className="space-y-2">
-              <li><a href="/" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Join Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Elinity LeaderBoard</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Elinity Stories</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Elinity Community</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Elinity Manifesto</a></li>
-            </ul>
-          </div>
-
-          {/* Important Links */}
-          <div className="md:col-span-1">
-            <h3 className="text-lg font-medium mb-4">Important Links</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Subscription and Payments</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Legal</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Community Guidlines</a></li>
-              <li><a href="/sitemap" className="text-gray-300 hover:text-white transition-colors">Sitemap</a></li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className="md:col-span-1">
-            <h3 className="text-lg font-medium mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><a href="/blog" className="text-gray-300 hover:text-white transition-colors">Blogs</a></li>
-              <li><a href="/blog" className="text-gray-300 hover:text-white transition-colors">Featured Blogs</a></li>
-              <li><a href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Android App</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">iOS App</a></li>
-            </ul>
+          {/* Connect Card */}
+          <div className="lg:col-span-5 bg-gradient-to-br from-purple-500/10 to-transparent border border-white/10 rounded-3xl p-8 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                Join the Circle <Sparkles size={18} className="text-yellow-400" />
+              </h3>
+              <p className="text-purple-100/60 text-sm">Follow our journey in redefining emotional intelligence.</p>
+            </div>
+            
+            <div className="flex gap-3 mt-6">
+              {[
+                { icon: <Instagram size={22} />, href: "https://www.instagram.com/elinityai/" },
+                { icon: <Linkedin size={22} />, href: "https://www.linkedin.com/company/elinity/" },
+                { icon: <Twitter size={22} />, href: "https://x.com/forofuselabs" }
+              ].map((social, i) => (
+                <a 
+                  key={i}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-400/50 hover:-translate-y-1 transition-all duration-300"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section - Border removed */}
-        <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-xs mb-4 md:mb-0">
-            2026 Future Technologies, Inc, Bryant Street no 403, San Francisco, CA. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            <a href="https://www.instagram.com/elinityai/" className="text-gray-400 hover:text-white transition-colors">
-              <Instagram size={20} />
-            </a>
-            <a href="https://www.linkedin.com/company/elinity/" className="text-gray-400 hover:text-white transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="https://x.com/forofuselabs" className="text-gray-400 hover:text-white transition-colors">
-              <Twitter size={20} />
-            </a>
+        {/* Middle Tier: Navigation Links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 px-4">
+          
+          <div className="space-y-6">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Explore</h4>
+            <ul className="space-y-3">
+              {[
+                { n: "Home", p: "/" }, { n: "About Us", p: "/about" }, 
+                { n: "Contact Us", p: "/contact" }, { n: "Join Us", p: "/join-us" },
+                { n: "LeaderBoard", p: "#" }, { n: "Stories", p: "/stories" },
+                { n: "Community", p: "#" }, { n: "Manifesto", p: "#" }
+              ].map((link) => (
+                <li key={link.n}>
+                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                    {link.n}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-6">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Legal & Trust</h4>
+            <ul className="space-y-3">
+              {[
+                { n: "Subscriptions", p: "/get-started" }, 
+                { n: "Legal Center", p: "/legal" },
+                { n: "Guidelines", p: "#" }, 
+                { n: "Sitemap", p: "/sitemap" }
+              ].map((link) => (
+                <li key={link.n}>
+                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                    {link.n}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-6">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Knowledge</h4>
+            <ul className="space-y-3">
+              {[
+                { n: "Blogs", p: "/blog" }, { n: "Featured", p: "/blog" },
+                { n: "Privacy Policy", p: "/privacypolicy" }
+              ].map((link) => (
+                <li key={link.n}>
+                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                    {link.n}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-6">
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Platforms</h4>
+            <div className="grid gap-3">
+              {['Android App', 'iOS App'].map((app) => (
+                <a key={app} href="#" className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 transition-all group">
+                  <span className="text-xs font-semibold tracking-wide">{app}</span>
+                  <ArrowUpRight size={14} className="text-purple-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Tier: Copyright */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] tracking-[0.15em] font-medium text-purple-200/30 uppercase">
+          <p>© {currentYear} Elinity • 128 City Road, London, EC1V 2NX</p>
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5 transition-colors hover:text-purple-200 cursor-default">
+              Crafted with <Heart size={10} className="fill-purple-500/50 text-purple-500 animate-pulse" /> for human soul
+            </span>
           </div>
         </div>
       </div>

@@ -1,5 +1,31 @@
 import React, { useState, forwardRef } from "react";
 
+import { useEffect, useRef } from "react";
+
+function useReveal() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setShow(true);
+        else setShow(false); // replay animation
+      },
+      { threshold: 0.25 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return [ref, show];
+}
+
+
 const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -16,7 +42,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/waitlist", {
+      const response = await fetch("https://elinity-2ulr.vercel.app/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
@@ -40,30 +66,50 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
     }
   };
 
+  const [cardRef, show] = useReveal();
+
   return (
     <section
       ref={ref}
       className="w-full bg-[#0f0a1e] py-24 px-6 border-t border-white/5"
     >
-      <div className="max-w-3xl mx-auto text-center">
+<div
+  ref={cardRef}
+  className="max-w-3xl mx-auto text-center"
+  style={{
+    border: "1px solid purple",
+    borderRadius: "24px",
+    padding: "24px",
+    boxShadow: "0 25px 80px rgba(255,0,255,0.18)",
+    
+    opacity: show ? 1 : 0,
+    transform: show
+      ? "translateY(0px) scale(1)"
+      : "translateY(80px) scale(.96)",
+    transition: "all 1s cubic-bezier(.23,1,.32,1)"
+  }}
+>
         {/* Header */}
-        <h2 className="text-3xl sm:text-5xl font-bold text-white mb-8 tracking-tight">
-          Join the Elinity waitlist ✨
+        <h2 className="text-3xl sm:text-5xl font-bold mb-8 tracking-tight 
+                      bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 
+                      bg-clip-text text-transparent">
+          join the elinity waitlist ✨
         </h2>
+
 
         {/* Narrative Content */}
         <div className="text-gray-400 text-lg space-y-4 mb-12 leading-relaxed max-w-2xl mx-auto">
           <p>
-            We’re building something special, <br className="hidden sm:block" />
+            we’re building something special, <br className="hidden sm:block" />
             and we’re doing it carefully.
           </p>
           <p>
-            We’re onboarding in small, thoughtful batches so every new member
+            we’re onboarding in small, thoughtful batches so every new member
             gets the full Elinity experience — not a rushed one.
           </p>
           <p>
-            Add your name and email below. We’ll reach out as soon as we’re
-            ready to welcome you in and help you experience the Elinity magic.
+            add your name and email below. We’ll reach out as soon as we’re
+            ready to welcome you in and help you experience the elinity magic.
           </p>
         </div>
 
@@ -74,7 +120,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
         >
           <input
             type="text"
-            placeholder="Name"
+            placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -83,7 +129,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
 
           <input
             type="email"
-            placeholder="Email"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -95,18 +141,18 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
             disabled={loading}
             className="px-8 py-3 bg-[#7759fd] text-white font-bold rounded-xl hover:bg-[#6346d8] transition-all disabled:opacity-50 active:scale-95"
           >
-            {loading ? "Joining..." : "Join Now"}
+            {loading ? "Joining..." : "join now"}
           </button>
         </form>
 
         {/* Footer Note */}
         <div className="max-w-xl mx-auto border-t border-white/5 pt-8">
           <p className="text-gray-500 text-sm mb-4">
-            In the meantime, join our newsletter for behind-the-scenes updates,
+            in the meantime, join our newsletter for behind-the-scenes updates,
             new features, and early glimpses of what’s coming.
           </p>
           <p className="text-gray-400 font-medium italic">
-            Good things grow best when they’re nurtured. 🌱
+            good things grow best when they’re nurtured. 🌱
           </p>
         </div>
       </div>

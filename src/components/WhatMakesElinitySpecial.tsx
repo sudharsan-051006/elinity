@@ -1,14 +1,52 @@
 import { useState } from 'react';
+import { useEffect, useRef } from "react";
 
 const purpleGradient = {
-  background: 'linear-gradient(to bottom, #060014, #0c0024)',
+  background: `
+    radial-gradient(circle at 15% 20%, #1a0033 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, #22004a 0%, transparent 40%),
+    linear-gradient(to bottom, #020008, #060014 40%, #020008)
+  `,
 };
+
+function useReveal() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);   // animate when entering
+        } else {
+          setShow(false);  // reset when leaving 👈 key line
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return [ref, show];
+}
 
 export default function ElinityScreen() {
   return (
-    <div style={purpleGradient} className="min-h-screen text-white p-8 lowercase">
+    <div style={{border:'1px solid rgba(168,85,247,0.25)',borderRadius:"0px", boxShadow:"0 10px 40px rgba(139,92,246,0.25)",
+        background: `
+    radial-gradient(circle at 15% 20%, #1a0033 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, #22004a 0%, transparent 40%),
+    linear-gradient(to bottom, #020008, #060014 40%, #020008)
+  `,
+    }}  className="min-h-screen text-white p-8 lowercase">
       <div className="max-w-7xl mx-auto">
         {/* heading */}
+        <center>
         <h1 className="text-5xl font-bold mb-16 mt-8">
           what makes{' '}
           <span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">
@@ -18,7 +56,26 @@ export default function ElinityScreen() {
           special (and why it exists)
         </h1>
 
-        <div>
+          <div
+            className="max-w-3xl mx-auto mb-12"
+            style={{
+              borderRadius: "24px",
+              padding: "28px",
+              position: "relative",
+              background: `
+                linear-gradient(145deg, rgba(88,28,135,0.25), rgba(15,0,35,0.65)),
+                radial-gradient(circle at top left, rgba(236,72,153,0.18), transparent 45%)
+              `,
+              backdropFilter: "blur(18px)",
+              WebkitBackdropFilter: "blur(18px)",
+              border: "1px solid rgba(168,85,247,0.25)",
+              boxShadow: `
+                0 10px 40px rgba(139,92,246,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.08)
+              `,
+              transition: "all .4s ease"
+            }}
+          >
           <p className="text-xl text-neutral-500 max-w-3xl leading-relaxed mb-12">
             elinity exists because connection is not a single problem to be solved.
             it’s a lifelong practice. finding the right person is only the beginning.
@@ -26,33 +83,39 @@ export default function ElinityScreen() {
             that belief shapes everything we’ve built.
           </p>
         </div>
-
+</center>
         {/* first row of cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <FeatureCard
-            number="1"
+            number="🤝"
             title="one platform for every kind of connection."
             content={
               <>
-                <div className="max-w-lg mx-auto p-6 bg-neutral-900/40 rounded-2xl border border-white/5 text-neutral-300">
+                <div className=" max-w-lg mx-auto p-6 bg-neutral-900/40 rounded-2xl border border-white/5 text-neutral-300">
                   <p className="text-sm mb-4 leading-relaxed">
                     most platforms slice your life into categories. one app for dating. 
-                    another for friends. another for growth. <span className="text-white font-medium">real life doesn’t work that way.</span>
+                    another for friends. another for work. another for growth. <span className="text-white font-medium">real life doesn’t work that way.</span>
                   </p>
 
                   <div className="space-y-4 border-l border-fuchsia-500/50 pl-4">
                     <p className="text-sm text-neutral-200">
-                      elinity brings romantic, social, and purposeful collaborations into 
+                      elinity brings romantic connections, social, and leisure relationships and purposeful collaborations into 
                       <span className="text-white"> one unified experience.</span>
                     </p>
 
                     <div className="text-lg font-bold text-white tracking-tight">
                       <p>one evolving self.</p>
-                      <p className="opacity-60 text-base">three profiles. one universe.</p>
+                      <p className="opacity-60 text-base">three profiles. one social universe that adapts as your life changes.</p>
                     </div>
 
                     <p className="text-[12px] text-neutral-500 italic leading-snug">
-                      adapting as you seek love, friends, or collaborators across different seasons.
+                      because in one season you may be seeking deep love.
+                      <br></br>in another, new friends.
+                      <br></br>in another, collaborators, adventure companions, or people who share your obsessions
+                    </p>
+
+                    <p className="text-[12px] text-neutral-500 italic leading-snug">
+                      humans are complex. your relationships should be too.
                     </p>
                   </div>
                 </div>
@@ -60,13 +123,16 @@ export default function ElinityScreen() {
             }
           />
           <FeatureCard
-            number="2"
+            number="🌊"
             title="deep matching, not shallow sorting"
             content={
               <>
                 <div className="max-w-lg mx-auto p-6 bg-neutral-900/40 rounded-2xl border border-white/5 text-neutral-300">
-                  {/* <h2 className="text-lg font-bold text-white mb-2">deep matching, not shallow sorting</h2> */}
-                  <p className="text-sm text-neutral-400 mb-6">learning how you think, feel, and move through the world.</p>
+                  <p className="text-sm font-bold text-white mb-2">Elinity doesn’t match you on surface traits or swipe-friendly summaries.<br></br>
+                   it learns how you think, feel, relate, and move through the world.
+                   <br></br> 
+                  </p>  
+                  <p className="text-sm text-neutral-400 mb-6">using psychometric, behavioral, and psychological insight, combined with emotionally intelligent AI, Elinity looks at:</p>
 
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
@@ -79,13 +145,20 @@ export default function ElinityScreen() {
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
+                      <span>relational needs and attachment dynamics</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
                       <span>energy, rhythm, and intent</span>
                     </li>
                   </ul>
 
-                  <div className="mt-8 pt-4 border-t border-white/5">
-                    <p className="text-[11px] tracking-[0.2em] text-neutral-500">
-                      people are not commodities. <span className="text-white">they’re worlds.</span>
+                  <div className="mt-8 pt-4 border-t border-white/5 italic leading-snug">
+                    <p className="text-[11px] tracking-[0.01em] text-neutral-500">
+                      this isn’t similarity for convenience.
+                      <br></br>it’s alignment for depth.
+                      <br></br>because everyone deserves meaningful connection, not transactional encounters.<br></br>people are not commodities.
+                      <span className="text-white">they’re worlds.</span>
                     </p>
                   </div>
                 </div>
@@ -97,17 +170,12 @@ export default function ElinityScreen() {
         {/* second row of cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FeatureCard
-            number="3"
+            number="🤖"
             title="emotionally intelligent, personalized ai"
             content={
               <>
                 <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="mb-4">
-                    <div className="flex justify-between items-center mb-1">
-                      <h3 className="text-sm font-bold text-white tracking-tight">
-                        {/* emotionally intelligent ai that works for you */}
-                      </h3>
-                    </div>
                     <p className="text-[11px] text-fuchsia-400 font-medium">
                       elinity’s ai, lumi, is here to amplify human connection.
                     </p>
@@ -118,7 +186,9 @@ export default function ElinityScreen() {
                     trained on psychology, relational science, and communication theory, 
                     lumi learns from you and alongside you.
                   </p>
-
+                  <p className="text-xs leading-relaxed text-neutral-400 mb-4">
+                    it helps you:
+                  </p>
                   <div className="space-y-1 text-[12px] text-neutral-200 border-l border-white/10 pl-3 mb-4">
                     <p>• understand yourself more clearly</p>
                     <p>• connect more thoughtfully</p>
@@ -129,9 +199,8 @@ export default function ElinityScreen() {
 
                   <div className="pt-3 border-t border-white/5">
                     <p className="text-[11px] leading-relaxed text-neutral-500 italic">
-                      a quiet companion for life design and relationship flourishing. 
-                      one that understands your values, patterns, and fears to help you 
-                      make better choices without ever forcing them.
+                      over time, it becomes a quiet companion for life design and relationship flourishing.
+                      one that understands your values, desires, hopes, fears, and patterns, and helps you make better choices without ever forcing them.
                     </p>
                   </div>
                 </div>
@@ -139,18 +208,14 @@ export default function ElinityScreen() {
             }
           />
           <FeatureCard
-            number="4"
+            number="🌱"
             title="tools for both finding and flourishing"
             content={
               <>
-                    <br />
                 <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="mb-4">
-                    <h3 className="text-sm font-bold text-white mb-1">
-                      {/* tools for both finding and flourishing */}
-                    </h3>
-                    <p className="text-[11px] text-neutral-500 italic">
-                      most platforms stop at the introduction.
+                    <p className="text-[11px] text-neutral-500 bold">
+                      most platforms stop at the introduction.(and what do you know, they suck at that too).
                     </p>
                   </div>
 
@@ -162,7 +227,7 @@ export default function ElinityScreen() {
                   </div>
 
                   <div className="space-y-2 border-l border-fuchsia-500/30 pl-3 mb-4">
-                    <p className="text-[10px] text-neutral-500 tracking-widest font-semibold uppercase">the suite</p>
+                    <p className="text-[10px] text-neutral-500 tracking-widest font-semibold uppercase">elinity gives you a rich suite of connection tools:</p>
                     <ul className="text-[12px] space-y-1 text-neutral-200">
                       <li>• playful and deep connection games</li>
                       <li>• relationship-building experiences</li>
@@ -182,17 +247,11 @@ export default function ElinityScreen() {
             }
           />
           <FeatureCard
-            number="5"
+            number="🧑"
             title="designed for real humans, not algorithms or npcs"
             content={
               <>
                 <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
-                  <div className="mb-4">
-                    <h3 className="text-sm font-bold text-white mb-1">
-                      {/* designed for real humans, not engagement loops */}
-                    </h3>
-                  </div>
-
                   <div className="space-y-4">
                     <p className="text-xs leading-relaxed text-neutral-400">
                       elinity is not optimized for endless scrolling, shallow dopamine, or algorithmic noise. 
@@ -205,9 +264,9 @@ export default function ElinityScreen() {
                     </div>
 
                     <div className="grid grid-cols-1 gap-1 text-[11px] text-neutral-400 italic">
-                      <p>• quality matters more than quantity</p>
-                      <p>• alignment beats attention</p>
-                      <p>• relationships are nurtured, not gamified</p>
+                      <p>• one where quality matters more than quantity</p>
+                      <p>• where alignment beats attention</p>
+                      <p>• where relationships are treated as something to be nurtured, not gamified</p>
                     </div>
                   </div>
 
@@ -227,13 +286,56 @@ export default function ElinityScreen() {
 }
 
 function FeatureCard({ number, title, content }) {
+  const [ref, show] = useReveal();
+
   return (
-    <div className="rounded-xl p-6 h-full bg-gradient-to-br from-[#2a004f] via-[#3f0076] to-[#5e00a5] backdrop-blur-md shadow-md border border-purple-700 text-white flex flex-col">
+    <div
+      ref={ref}
+      className="rounded-xl p-6 h-full text-white flex flex-col"
+      style={{
+        background: `
+          linear-gradient(145deg, rgba(139,92,246,0.25), rgba(30,0,60,0.65)),
+          radial-gradient(circle at bottom, rgba(226, 168, 197, 0.25), transparent 40%)
+        `,
+        backdropFilter: "blur(18px)",
+        border: "1px solid rgba(168,85,247,0.25)",
+        boxShadow: "0 10px 40px rgba(139,92,246,0.25)",
+        transition:
+          "transform .7s cubic-bezier(.23,1,.32,1), opacity .7s ease, box-shadow .4s ease",
+        opacity: show ? 1 : 0,
+        transform: show
+          ? "translateY(0px) scale(1)"
+          : "translateY(60px) scale(.96)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+        e.currentTarget.style.boxShadow =
+          "0 20px 60px rgba(139,92,246,0.45)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(0px) scale(1)";
+        e.currentTarget.style.boxShadow =
+          "0 10px 40px rgba(139,92,246,0.25)";
+      }}
+    >
       <div>
-        <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-pink-400 via-fuchsia-500 to-violet-400 bg-clip-text ">
-          <span className="mr-2">{number}.</span>
-          {title}
+        <h2
+          className="text-xl font-bold mb-4"
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+        >
+          <span style={{ fontSize: "22px" }}>{number}</span>
+
+          <span
+            style={{
+              background: "linear-gradient(to right,#f472b6,#d946ef,#a78bfa)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {title}
+          </span>
         </h2>
+
         <div className="text-sm text-white">{content}</div>
       </div>
     </div>

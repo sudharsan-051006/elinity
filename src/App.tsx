@@ -26,7 +26,10 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Stories from './pages/Stories';
 import JoinUs from './pages/JoinUs';
 import Ellaris from './pages/Ellaris';
-
+import LegalPage from './pages/Legal';
+import ScrollToTop from "./components/ScrollToTop";
+import ElinityEnterprise from './pages/Enterprise';
+import Openroles from './pages/Openroles';
 
 function App() {
 
@@ -38,10 +41,10 @@ function App() {
     if (e) e.preventDefault();
     waitlistRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-
+  
   // This effect runs once on component mount to set up global configurations.
   useEffect(() => {
-    document.title = 'Nova | Experience Excellence';
+    document.title = 'Elinity';
     // Initializes the reveal-on-scroll animations for components.
     setupRevealAnimations();
     
@@ -59,6 +62,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
@@ -90,8 +94,11 @@ function App() {
             <Route path="/login" element={<LoginSignup />} />
             <Route path="/get-started" element={<GetStarted />} />
             <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/legal" element={<LegalPage />} />
             <Route path="/sitemap" element={<Sitemap />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/enterprise" element={<ElinityEnterprise />} />
+            <Route path="/openroles" element={<Openroles />} />
           </Routes>
         </div>
         <Footer className="mt-auto" />

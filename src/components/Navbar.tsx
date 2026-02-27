@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import elinityLogo from '../../public/mainlogo.png';
+import elinityLogo from '../../public/elogo.png';
 import heroimg from '../../public/hero.jpg';
 
 const Navbar = () => {
@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'Join Us', path: '/join-us'},
+    { name: 'Enterprise', path: '/enterprise' },
   ];
 
   const handleNavClick = (item: { name: string; path: string }) => {
@@ -77,13 +78,7 @@ const Navbar = () => {
       <nav className="relative z-10 flex items-center justify-between h-full px-2 md:px-4">
         {/* Logo */}
         <div onClick={() => handleNavClick({ name: 'Home', path: '/' })} className="flex items-center cursor-pointer">
-          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" />
-          <span
-            className="text-xl  md:text-3xl font-bold bg-gradient-to-r from-[#d9d3fe] to-[#7759fd] bg-clip-text text-transparent font-comfortaa ml-3"
-          
-          >
-            Elinity
-          </span>
+          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" width="128" height="100"/>
         </div>
 
 
@@ -100,11 +95,12 @@ const Navbar = () => {
 
         {/* Desktop Nav Links */}
             <div
-            className="hidden bg-[#050c9c] md:flex ml-28 px-7 py-2 rounded-lg space-x-4 shadow-md border-[0.25px] border-blue-400 shadow-purple-800/30 text-sm"
+            className="hidden md:flex ml-28 px-7 py-2 space-x-4 border-[0.25px] border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-purple-900/20 text-sm"
             style={{
               boxShadow: '0 0 10px rgba(255, 255, 255, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.05)',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: '500',
+              borderRadius: '16px',
             }}
             >
             {navItems.map((item) => (
@@ -150,7 +146,7 @@ const Navbar = () => {
               fontWeight: '500',
             }}
           >
-            Get Started
+            upgrade
           </button>
         </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import heroimg from "../../public/hero.jpg";
+import heroimg from "../../public/hero1.jpg";
 
 // Define props to receive the scroll function from App.tsx
 interface HeroProps {
@@ -10,54 +10,71 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   const words = ["matchmaker", "social connector", "relationship ally"];
   const [index, setIndex] = useState(0);
 
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      setIndex((prev) => (prev + 1) % words.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     /* Changed overflow-hidden to overflow-visible to ensure smooth scroll isn't blocked */
     <section className="relative bg-[#0f0225] min-h-screen w-screen overflow-visible">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroimg}
+          src="/hero1.jpeg"
           alt="Hero"
           className="w-full h-full object-cover rounded-b-3xl opacity-75"
         />
       </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
+      <div className='pt-32'></div>
 
       {/* Overlay Content */}
 
       <div className="relative z-10 h-full flex items-center pt-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h1 className="text-white text-xl md:text-5xl mb-2" style={{paddingTop:'30px'}}>
-            Find your person, your tribe,
+          <h1 className="text-white text-4xl md:text-5xl mb-2" style={{paddingTop:'30px'}}>
+            find your person, your tribe,
           </h1>
-          <h1 className="text-white text-4xl md:text-3xl mb-8">
+          <h1 className="text-white text-2xl md:text-3xl mb-8">
             and build <span className="text-indigo-400">the most incredible relationships</span>
           </h1>
           
-          <h1 style={{ fontSize: '20px', fontWeight: '800', color: 'white', textAlign: 'center', lineHeight: '1.1' }}>
-            with Lumi, your{' '}
-            <span style={{ 
-              background: 'linear-gradient(to right, #d9d3fe, #7759fd)', 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              transition: 'all 0.5s ease-in-out',
-              display: 'inline-block',
-              minWidth: '150px' 
-            }}>
+
+          <h1
+            style={{
+              fontSize: "20px",
+              fontWeight: "800",
+              color: "white",
+              textAlign: "center",
+              lineHeight: "1.1",
+            }}
+          >
+            designed to help you actualize your potential, across love, leisure,
+            and collaboration, with lumi, your{" "}
+            <span
+              style={{
+                background: "linear-gradient(to right, #d9d3fe, #7759fd)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                transition: "all 0.5s ease-in-out",
+                display: "inline-block",
+                width: "175px",
+              }}
+            >
               {words[index]}
             </span>
-            , designed to help you find your most resonant people.
           </h1>
           
           {/* Main Hero Buttons */}
@@ -110,8 +127,14 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
           <div className="mt-12">
             <button 
               onClick={onJoinClick}
-              className="text-white/60 hover:text-white text-sm font-medium underline underline-offset-8 decoration-indigo-500/50 transition-all cursor-pointer "
-               style={{borderRadius: '10px', padding: '8px 16px', background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)', width: '200px', height:'50px', margin: '0 auto'}}
+              className=" premium-button ios-button group text-white/60 hover:text-white text-sm font-medium  decoration-indigo-500/50 transition-all cursor-pointer transform hover:scale-105 hover:-translate-y-1"
+               style={{ borderRadius: '10px', padding: '8px 16px', 
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.1) 100%)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)', 
+                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)', 
+                        width: '200px', 
+                        height:'58px', 
+                        margin: '0 auto'}}
               > 
               Join Waitlist 
             </button>

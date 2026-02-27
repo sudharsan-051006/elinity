@@ -67,12 +67,12 @@ export default function ElinityFAQ() {
 
           <div className="flex items-center space-x-4 mt-4">
             <div className="flex -space-x-3">
-              <img src="../../public/userlogo.png" alt="User 1" className="w-10 h-10 rounded-full border-2 border-purple-700" />
-              <img src="../../public/userlogo.png" alt="User 2" className="w-10 h-10 rounded-full border-2 border-purple-700" />
-              <img src="../../public/userlogo.png" alt="User 3" className="w-10 h-10 rounded-full border-2 border-purple-700" />
+              <img src="/userlogo.png" alt="User 1" className="w-10 h-10 rounded-full border-2 border-purple-700" />
+              <img src="/userphoto.png" alt="User 2" className="w-10 h-10 rounded-full border-2 border-purple-700" />
+              <img src="/userphoto2.png" alt="User 3" className="w-10 h-10 rounded-full border-2 border-purple-700" />
             </div>
             <div>
-              <p className="font-semibold leading-tight">800+ Users Registered</p>
+              <p className="font-semibold leading-tight">40+ Users Registered</p>
               <p className="text-sm text-gray-400 leading-tight">Last Week</p>
             </div>
           </div>
