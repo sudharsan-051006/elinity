@@ -93,136 +93,168 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#0a0a23] p-2 md:p-4 overflow-auto">
+    <div>
+<div className="relative pt-32 pb-24 overflow-hidden bg-[#050510]">
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={stagger}
-        className="w-full max-w-4xl mx-auto flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl"
-        style={{ boxShadow: '0 8px 40px 0 rgba(168,85,247,0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10)' }}
-      >
+  {/* Brand Glow */}
+  <div className="absolute w-[600px] h-[600px] bg-[#a855f7]/20 blur-[160px] rounded-full top-[-250px] left-1/2 -translate-x-1/2" />
 
-        {/* LEFT SIDE */}
-        <motion.div
-          variants={fadeUp}
-          className="flex-1 flex flex-col justify-center items-center px-4 md:px-8 py-10 md:py-16 relative"
-          style={{ minHeight: 600, background: 'radial-gradient(circle at 50% 30%, #b983ff 0%, #a855f7 40%, #3a185a 80%, #181848 100%)' }}
-        >
-          <motion.div
-            variants={glowFloat}
-            animate="animate"
-            className="absolute inset-0 rounded-3xl"
-            style={{
-              background: 'radial-gradient(circle at 50% 30%, #b983ff 0%, #a855f7 40%, #3a185a 80%, #181848 100%)',
-              opacity: 0.85,
-              zIndex: 0
-            }}
-          />
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    viewport={{ once: true, amount: 0.4 }}
+    className="relative text-center max-w-3xl mx-auto px-6"
+  >
+    <p className="text-[#a855f7] tracking-[0.3em] text-sm mb-6">
+      CONTACT ELINITY
+    </p>
 
-          <div className="relative z-10 flex flex-col items-center w-full">
-            <motion.span variants={fadeUp} className="text-white text-lg font-semibold mb-2">⦿ Elinity</motion.span>
+    <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-white">
+      Let’s Start a{" "}
+      <span className="text-[#a855f7]">
+        Conversation
+      </span>
+    </h1>
 
-            <motion.h2 variants={fadeUp} className="text-4xl font-extrabold text-white mb-2 text-center">
-              Get Started with Us
-            </motion.h2>
+    <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+      We love hearing from you whether it's feedback, ideas, creative sparks,
+      bugs you've noticed, feature suggestions, or simply your experience
+      with Elinity.
+    </p>
 
-            <motion.p variants={fadeUp} className="text-purple-100 mb-10 text-center max-w-xs text-base">
-              Got any question about the Product we are here to help you 24/7.
-            </motion.p>
+    <p className="text-gray-400 mt-6 text-lg leading-relaxed">
+      Every message helps us grow, improve, and create more beautiful,
+      meaningful experiences.
+    </p>
+  </motion.div>
+</div>
+      <div className="relative min-h-screen bg-[#050510] text-white flex items-center justify-center px-6 py-28 overflow-hidden">
 
-            <motion.div variants={stagger} className="flex flex-col gap-4 w-full max-w-xs">
+  {/* ===== Ambient Background ===== */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute w-[700px] h-[700px] bg-[#a855f7]/20 blur-[200px] rounded-full top-[-250px] left-[-250px]" />
+    <div className="absolute w-[600px] h-[600px] bg-[#7c3aed]/15 blur-[180px] rounded-full bottom-[-250px] right-[-250px]" />
+  </div>
 
-              {[
-                {label:"Chat With Us",route:"/chat",num:1},
-                {label:"Book a call",route:"/book-call",num:2},
-                {label:"Shoot Us with Email",route:"/email",num:3}
-              ].map((b,i)=>(
-                <motion.button
-                  key={i}
-                  variants={fadeUp}
-                  whileHover={{ scale: 1.06 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={()=>handleAction(b.route)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-lg ${i===0?'bg-white text-[#181848]':'bg-[#23235b] text-white'} font-semibold shadow text-base border-2 transition`}
-                >
-                  <span className="w-7 h-7 flex items-center justify-center rounded-full bg-black text-white font-bold mr-2">
-                    {b.num}
-                  </span>
-                  {b.label}
-                </motion.button>
-              ))}
-            </motion.div>
+  <div className="relative w-full max-w-6xl">
+
+    {/* ===== HEADER ===== */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-20"
+    >
+<h1 className="text-4xl md:text-6xl font-semibold leading-tight bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+
+                Questions, ideas, partnerships, or feedback 
+        we’d love to hear from you.
+      </h1>
+    </motion.div>
+
+    {/* ===== GLASS PANEL ===== */}
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9 }}
+      className="relative rounded-3xl p-[1px] bg-gradient-to-br from-[#a855f7]/40 via-transparent to-[#7c3aed]/40"
+    >
+      {/* Inner Glass */}
+      <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 shadow-[0_0_80px_rgba(168,85,247,0.18)]">
+
+        <div className="grid md:grid-cols-2 gap-16">
+
+          {/* LEFT SIDE */}
+          <div className="space-y-10">
+            <h2 className="text-2xl font-semibold">Reach us directly</h2>
+
+            <div className="space-y-8 text-lg">
+
+              <div>
+                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Email</p>
+                <p className="font-medium">team@elinity.ai</p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Partnerships</p>
+                <p className="font-medium">partners@elinity.ai</p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Location</p>
+                <p className="font-medium">London</p>
+
+              </div>
+
+            </div>
           </div>
-        </motion.div>
 
-        {/* RIGHT SIDE */}
-        <motion.div variants={fadeUp} className="flex-1 bg-[#181848] flex flex-col justify-center px-4 md:px-8 py-10 md:py-16">
-          <div className="max-w-md w-full mx-auto">
+          {/* RIGHT SIDE FORM */}
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-6">
 
-            <motion.h2 variants={fadeUp} className="text-3xl font-extrabold text-white mb-1">
-              Let's Talk with Us
-            </motion.h2>
+              <div className="grid grid-cols-2 gap-4">
+                <input
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First name"
+                  className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
+                />
+                <input
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Last name"
+                  className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
+                />
+              </div>
 
-            <motion.p variants={fadeUp} className="text-purple-200 mb-8 text-base">
-              Let's Talk about what we can do together.
-            </motion.p>
+              <input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
+              />
 
-            <motion.div variants={stagger} className="flex gap-4 mb-8">
-              <motion.button whileHover={{ scale:1.05 }} onClick={handleGoogleLogin}
-                className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full border border-[#33336b] text-white font-semibold">
-                {GOOGLE_LOGO} Google
-              </motion.button>
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone"
+                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
+              />
 
-              <motion.button whileHover={{ scale:1.05 }} onClick={handleGithub}
-                className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full border border-[#33336b] text-white font-semibold">
-                Github
-              </motion.button>
-            </motion.div>
-
-            <form onSubmit={handleSubmit}>
-              <motion.div variants={stagger} className="flex gap-4 mb-4">
-
-                <motion.input variants={fadeUp} name="firstName" value={formData.firstName}
-                  onChange={handleChange} placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white" />
-
-                <motion.input variants={fadeUp} name="lastName" value={formData.lastName}
-                  onChange={handleChange} placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white" />
-              </motion.div>
-
-              <motion.input variants={fadeUp} name="email" value={formData.email}
-                onChange={handleChange} placeholder="Email"
-                className="w-full mb-4 px-4 py-3 rounded-lg bg-[#23235b] text-white" />
-
-              <motion.input variants={fadeUp} name="phone" value={formData.phone}
-                onChange={handleChange} placeholder="Phone"
-                className="w-full mb-4 px-4 py-3 rounded-lg bg-[#23235b] text-white" />
-
-              <motion.textarea variants={fadeUp} name="message" value={formData.message}
-                onChange={handleChange} rows={4} placeholder="Leave message"
-                className="w-full mb-4 px-4 py-3 rounded-lg bg-white text-black" />
+              <textarea
+                name="message"
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your message..."
+                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition resize-none"
+              />
 
               <motion.button
-                whileHover={{ scale:1.06 }}
-                whileTap={{ scale:0.95 }}
-                type="submit"
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#a855f7] to-[#7c4dff] text-white font-bold text-lg flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full py-3 rounded-full bg-gradient-to-r from-[#a855f7] to-[#7c3aed] hover:opacity-90 transition font-semibold shadow-lg shadow-[#a855f7]/30"
               >
-                SEND <Send size={18}/>
+                Send Message
               </motion.button>
 
-              {formStatus.submitted && (
-                <div className={`mt-4 p-3 rounded-lg ${formStatus.success?'bg-green-900':'bg-red-900'}`}>
-                  {formStatus.message}
-                </div>
-              )}
             </form>
           </div>
-        </motion.div>
 
-      </motion.div>
+        </div>
+      </div>
+    </motion.div>
+
+  </div>
+</div>
     </div>
   );
 };

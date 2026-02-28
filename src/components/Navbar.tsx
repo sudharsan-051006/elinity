@@ -17,13 +17,11 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Ellaris', path: '/ellaris' },
-    { name: 'Stories', path: '/stories' },
     { name: 'Blog', path: '/blog' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'Join Us', path: '/join-us'},
-    { name: 'Enterprise', path: '/enterprise' },
-  ];
+   ];
 
   const handleNavClick = (item: { name: string; path: string }) => {
     setActiveItem(item.name);
@@ -31,13 +29,17 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
-  const isActive = (itemName: string) => activeItem === itemName;
+  const isActive = (itemName: string) => activeItem === itemName && activeItem !== "";
 
   useEffect(() => {
     const currentPath = location.pathname;
     const matchedItem = navItems.find((item) => item.path === currentPath);
+
     if (matchedItem) {
       setActiveItem(matchedItem.name);
+    } else {
+      // If page not in navbar → remove active effect
+      setActiveItem("");
     }
   }, [location]);
 

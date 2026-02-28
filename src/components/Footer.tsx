@@ -109,7 +109,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
               {[
                 { n: "Subscriptions", p: "/get-started" }, 
                 { n: "Legal Center", p: "/legal" },
-                { n: "Guidelines", p: "#" }, 
+                { n: "Enterprise", p: "/enterprise" }, 
                 { n: "Sitemap", p: "/sitemap" }
               ].map((link) => (
                 <li key={link.n}>
@@ -125,7 +125,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
             <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Knowledge</h4>
             <ul className="space-y-3">
               {[
-                { n: "Blogs", p: "/blog" }, { n: "Featured", p: "/blog" },
+                { n: "Blogs", p: "/blog" }, { n: "ElinityPodcast", p: "/pod" },
                 { n: "Privacy Policy", p: "/privacypolicy" }
               ].map((link) => (
                 <li key={link.n}>

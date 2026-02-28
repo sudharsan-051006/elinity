@@ -30,6 +30,7 @@ import LegalPage from './pages/Legal';
 import ScrollToTop from "./components/ScrollToTop";
 import ElinityEnterprise from './pages/Enterprise';
 import Openroles from './pages/Openroles';
+import ElinityPodcast from './pages/ElinityPod'
 
 function App() {
 
@@ -63,6 +64,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      {/* <CursorSpark /> */}
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
@@ -99,7 +101,8 @@ function App() {
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/enterprise" element={<ElinityEnterprise />} />
             <Route path="/openroles" element={<Openroles />} />
-          </Routes>
+            <Route path="/pod" element={<ElinityPodcast />} />
+           </Routes>
         </div>
         <Footer className="mt-auto" />
       </div>

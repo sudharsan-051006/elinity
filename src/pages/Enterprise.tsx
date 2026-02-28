@@ -264,13 +264,40 @@ viewport={{ once: true, amount: 0.2 }}
           <br></br><br></br>
         </p>  
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-          {['values', 'long-term vision and mission congruence', 'temperament and personality', 'cognitive strengths', 'ambition profile', 'cultural fit', 'collaboration patterns and  work style'].map(trait => (
-            <div key={trait} style={{ padding: '20px', borderRadius: '20px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
-              <span style={{ fontWeight: 600 }}>{trait}</span>
-            </div>
-          ))}
-        </div>
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center", // centers second row automatically
+    gap: "20px",
+    maxWidth: "900px",
+    margin: "0 auto",
+  }}
+>
+  {[
+    "values",
+    "long-term vision and mission congruence",
+    "temperament and personality",
+    "cognitive strengths",
+    "ambition profile",
+    "cultural fit",
+    "collaboration patterns and work style",
+  ].map((trait) => (
+    <div
+      key={trait}
+      style={{
+        width: "200px",
+        padding: "20px",
+        borderRadius: "20px",
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.05)",
+        textAlign: "center",
+      }}
+    >
+      <span style={{ fontWeight: 600 }}>{trait}</span>
+    </div>
+  ))}
+</div>
         <p style={{padding: '20px', 
           borderRadius: '20px',
            background: 'rgba(255,255,255,0.03)', 

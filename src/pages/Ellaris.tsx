@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import unamed from '../../public/Ellaris.jpg';
+import { useScrollReveal } from '../components/Scroll.tsx'; 
 
 const EllarisLandingPage: React.FC = () => {
   const [isPhone, setIsPhone] = useState(false);
@@ -26,8 +27,22 @@ const EllarisLandingPage: React.FC = () => {
     }
   }, [i]);
 
-  const ellarisRef = useRef(null);
+  const ellarisRef = useRef(null);  
   const [showEllaris, setShowEllaris] = useState(false);
+
+  const whois = useScrollReveal();
+  const whyell = useScrollReveal();
+  const ee = useScrollReveal();
+  const howe = useScrollReveal();
+  const ellthe = useScrollReveal();
+  const queitA = useScrollReveal();
+
+  const core = useScrollReveal();
+  const coreCard1 = useScrollReveal();
+  const coreCard2 = useScrollReveal();
+  const coreCard3 = useScrollReveal();
+  const coreCard4 = useScrollReveal();
+  const coreCard5 = useScrollReveal();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,6 +61,30 @@ const EllarisLandingPage: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  // const ellarisRef = useRef<HTMLDivElement>(null);
+// const [showEllaris, setShowEllaris] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    if (!ellarisRef.current) return;
+
+    const rect = ellarisRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // visible when in viewport
+    if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
+      setShowEllaris(true);
+    } else {
+      setShowEllaris(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // run once
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   const s = {
     container: {
       backgroundColor: '#050505',
@@ -61,7 +100,7 @@ const EllarisLandingPage: React.FC = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: isPhone ? 'scroll' : 'fixed',
-      height: isPhone ? '70vh' : '100vh',   // SAME HEIGHT ALWAYS
+      height: isPhone ? '70vh' : '70vh',   // SAME HEIGHT ALWAYS
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -123,8 +162,6 @@ const EllarisLandingPage: React.FC = () => {
 
     fadeSlide: {
       opacity: showEllaris ? 1 : 0,
-      // transform: showEllaris ? "translateY(0px)" : "translateY(80px)",
-      // transition: "all 1s cubic-bezier(0.22, 1, 0.36, 1)",
       transform: showEllaris 
         ? "translateY(0px) scale(1)" 
         : "translateY(80px) scale(0.96)",
@@ -149,8 +186,7 @@ const EllarisLandingPage: React.FC = () => {
       <div className='pt-32'></div>
       <div style={s.wrapper}>
         {/* WHAT IS IT */}
-        <section ref={ellarisRef}
-          style={{ ...s.glassCard, ...s.fadeSlide, marginTop: '40px' }}>
+        <section ref={ellarisRef} style={{ ...s.glassCard, ...s.fadeSlide }}>
           <span style={s.sectionLabel}>What Is Ellaris</span>
 
           <p style={{ fontSize: '20px', marginBottom: '24px' }}>
@@ -166,7 +202,14 @@ const EllarisLandingPage: React.FC = () => {
         </section>
         <div className='pt-32'></div>
         {/* WHO IS IT FOR */}
-        <section style={{marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: '40px', boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)' }}>
+        <section ref={whois.ref} 
+        style={{ 
+          opacity: whois.visible ? 1 : 0,
+          transform: whois.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+          marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: '40px', boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)' }}>
           <h2 style={{ fontSize: '40px', marginBottom: '40px' }}>Who Ellaris Is For</h2>
           <p style={{ textAlign: 'center', fontSize: '18px', fontStyle: 'italic', marginBottom: '40px' }}>
             Ellaris is built for people and organizations who care deeply about fit.
@@ -199,7 +242,15 @@ const EllarisLandingPage: React.FC = () => {
         </section>
         <div className='pt-32'></div>
         {/* WHY IT EXISTS */}
-        <section style={s.glassCard}>
+        <section
+        ref={whyell.ref} 
+        style={{marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: '40px', boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)' ,
+          opacity: whyell.visible ? 1 : 0,
+          transform: whyell.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+        }}>
           <h2 style={{ fontSize: '32px', marginBottom: '20px', color: '#7759fd' }}>Why Ellaris Exists</h2>
           <p style={{ fontSize: '22px', marginBottom: '20px' }}>The way we match people to work is broken.</p>
           <p style={{ color: '#d1d1d1', marginBottom: '24px' }}>
@@ -219,13 +270,20 @@ const EllarisLandingPage: React.FC = () => {
         </section>
         <div className='pt-32'></div>
         {/* ECOSYSTEM */}
-        <section style={{ 
+        <section
+        ref={ee.ref} 
+        style={{ 
           marginBottom: '80px', 
           textAlign: 'center', 
           border: '1px solid rgba(119, 89, 253, 0.2)',
           borderRadius: '24px',
           padding: isPhone ? '20px' : '40px',
           boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)', 
+          opacity: ee.visible ? 1 : 0,
+          transform: ee.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
           }}>
           
           <h2 style={{ fontSize: isPhone ? '28px' : '40px', marginBottom: '20px' }}>Ellaris Within the Elinity Ecosystem</h2>
@@ -251,52 +309,125 @@ const EllarisLandingPage: React.FC = () => {
           </div>
         </section>
         <div className='pt-32'></div>
-        {/* CORE FEATURES */}
-        <section style={{ marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: isPhone ? '24px' : '40px' }}>
-          <h2 style={{ fontSize: isPhone ? '32px' : '50px', marginBottom: '40px', textAlign: 'center' }}>Core Features and Highlights</h2>
-          
-          <div style={s.glassCard}>
-            <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Curated, High-Bar Matching</h3>
-            <p>Ellaris does not show you everything. It shows you <strong>only what passes your bar.</strong> <br></br> Our system deeply understands both individuals and organizations across dimensions like personality, values, goals, working style, mission, and long-term direction. Matches are surfaced only when there is strong, mutual alignment.</p>
-            <p style={{ ...s.accentBox, marginTop: '20px' }}>
-              If nothing clears the bar, you see nothing. No noise. No spam. No endless scrolling. This applies equally to individuals and companies. Ellaris replaces mass applications with mutual, high-confidence introductions.
-            </p>
-          </div>
+        <section
+  ref={core.ref}
+  style={{
+    marginBottom: '80px',
+    border: '1px solid rgba(119, 89, 253, 0.2)',
+    borderRadius: '16px',
+    padding: isPhone ? '24px' : '40px',
 
-          <div style={s.grid}>
-            <div style={s.glassCard}>
-              <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Prompt-Based Discovery</h3>
-              <p>Sometimes you don’t want to browse. You want to describe. <br></br>Ellaris lets you prompt your way to people, teams, or organizations using natural language.</p>
-              <div style={{ fontSize: '14px', fontStyle: 'italic', background: '#111', padding: '15px', borderRadius: '10px', marginTop: '15px' }}>
-                “Find me small AI startups working on climate or education, with thoughtful founders and strong design culture.”<br/>
-                “I just moved to London. Find me early-stage teams obsessed with systems thinking biology, or frontier tech.”<br/>
-                "We’re building a research-heavy product. Find people who care about depth, rigor, and long-term thinking."
-              </div>
-              <p>Ellaris translates intent into discovery.</p>
-            </div>
-            <div style={s.glassCard}>
-              <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Deep Profiles, Not Resumes</h3>
-              <p>Ellaris profiles are <strong>rich, living representations,</strong> not static CVs. Matching happens at the level of essence, not credentials.</p>
-              <p style={{ fontSize: '14px', color: '#a1a1a1', marginTop: '10px' }}>For Includes: Values, motivations, interests, long-term goals , Passions, curiosities, beliefs, Working style and preferences.</p>
-              <p style={{ fontSize: '14px', color: '#a1a1a1', marginTop: '10px' }}>For Organizations: Mission and story,  Cultural principles, How work actually feels day to day, What kind of humans thrive there</p>
-            </div>
-          </div>
-          
-          <div style={s.grid}>
-            <div style={s.glassCard}>
-              <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Collaborative Experiences and Games</h3>
-              <p>Ellaris includes a growing suite of <strong>collaborative games and play-based experiences</strong> designed for teams and workplaces of the future. Build trust, Surface working styles and strengths.Encourage creativity and idea generation.Make teams more human, more bonded, and more alive.</p>
-              <p style={{ color: '#7759fd', marginBottom: '15px' }}>We see play as a core mechanism for learning, bonding, and alignment</p>
-            </div>
-            <div style={s.glassCard}>
-              <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Growth and Skill Modes and Sessions</h3>
-              <p>Ellaris includes structured growth modules designed for the future of work. <br></br> These sessions modules focusing on: Communication, decision-making and judgment, Creative thinking, leadership and self-awareness, navigating ambiguity and complexity,Developing resilience in a rapidly evolving landscape and lots more. This goes beyond credentialing, with the goal of becoming <strong>aligned humans to work with.</strong></p>
-            </div>
-          </div>
-        </section>
+    opacity: core.visible ? 1 : 0,
+    transform: core.visible ? "translateY(0px)" : "translateY(80px)",
+    transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+  }}
+>
+  <h2 style={{
+    fontSize: isPhone ? '32px' : '50px',
+    marginBottom: '40px',
+    textAlign: 'center',
+    opacity: core.visible ? 1 : 0,
+    transform: core.visible ? "translateY(0px)" : "translateY(40px)",
+    transition: "all 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s"
+  }}>
+    Core Features and Highlights
+  </h2>
+
+  {/* FIRST CARD */}
+  <div
+    ref={coreCard1.ref}
+    style={{
+      ...s.glassCard,
+      opacity: coreCard1.visible ? 1 : 0,
+      transform: coreCard1.visible ? "translateY(0px)" : "translateY(60px)",
+      transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+    }}
+  >
+    <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Curated, High-Bar Matching</h3>
+    <p>Ellaris does not show you everything. It shows you <strong>only what passes your bar.</strong> <br></br> Our system deeply understands both individuals and organizations across dimensions like personality, values, goals, working style, mission, and long-term direction. Matches are surfaced only when there is strong, mutual alignment.</p>
+    <p style={{ ...s.accentBox, marginTop: '20px' }}>
+      If nothing clears the bar, you see nothing. No noise. No spam. No endless scrolling. This applies equally to individuals and companies. Ellaris replaces mass applications with mutual, high-confidence introductions.
+    </p>
+  </div>
+
+  {/* GRID 1 */}
+  <div style={s.grid}>
+    <div
+      ref={coreCard2.ref}
+      style={{
+        ...s.glassCard,
+        opacity: coreCard2.visible ? 1 : 0,
+        transform: coreCard2.visible ? "translateY(0px)" : "translateY(60px)",
+        transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Prompt-Based Discovery</h3>
+      <p>Sometimes you don’t want to browse. You want to describe. <br></br>Ellaris lets you prompt your way to people, teams, or organizations using natural language.</p>
+      <div style={{ fontSize: '14px', fontStyle: 'italic', background: '#111', padding: '15px', borderRadius: '10px', marginTop: '15px' }}>
+        “Find me small AI startups working on climate or education, with thoughtful founders and strong design culture.”<br/>
+        “I just moved to London. Find me early-stage teams obsessed with systems thinking biology, or frontier tech.”<br/>
+        "We’re building a research-heavy product. Find people who care about depth, rigor, and long-term thinking."
+      </div>
+      <p>Ellaris translates intent into discovery.</p>
+    </div>
+
+    <div
+      ref={coreCard3.ref}
+      style={{
+        ...s.glassCard,
+        opacity: coreCard3.visible ? 1 : 0,
+        transform: coreCard3.visible ? "translateY(0px)" : "translateY(60px)",
+        transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Deep Profiles, Not Resumes</h3>
+      <p>Ellaris profiles are <strong>rich, living representations,</strong> not static CVs. Matching happens at the level of essence, not credentials.</p>
+      <p style={{ fontSize: '14px', color: '#a1a1a1', marginTop: '10px' }}>For Includes: Values, motivations, interests, long-term goals , Passions, curiosities, beliefs, Working style and preferences.</p>
+      <p style={{ fontSize: '14px', color: '#a1a1a1', marginTop: '10px' }}>For Organizations: Mission and story,  Cultural principles, How work actually feels day to day, What kind of humans thrive there</p>
+    </div>
+  </div>
+
+  {/* GRID 2 */}
+  <div style={s.grid}>
+    <div
+      ref={coreCard4.ref}
+      style={{
+        ...s.glassCard,
+        opacity: coreCard4.visible ? 1 : 0,
+        transform: coreCard4.visible ? "translateY(0px)" : "translateY(60px)",
+        transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Collaborative Experiences and Games</h3>
+      <p>Ellaris includes a growing suite of <strong>collaborative games and play-based experiences</strong> designed for teams and workplaces of the future.</p>
+      <p style={{ color: '#7759fd', marginBottom: '15px' }}>We see play as a core mechanism for learning, bonding, and alignment</p>
+    </div>
+
+    <div
+      ref={coreCard5.ref}
+      style={{
+        ...s.glassCard,
+        opacity: coreCard5.visible ? 1 : 0,
+        transform: coreCard5.visible ? "translateY(0px)" : "translateY(60px)",
+        transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <h3 style={{ color: '#7759fd', marginBottom: '15px' }}>Growth and Skill Modes and Sessions</h3>
+      <p>Ellaris includes structured growth modules designed for the future of work.</p>
+    </div>
+  </div>
+</section>
         <div className='pt-32'></div>
         {/* HOW IT WORKS */}
-        <section style={{ ...s.glassCard, textAlign: 'center' }}>
+        <section
+        ref={howe.ref} 
+        style={{ ...s.glassCard,
+        opacity: howe.visible ? 1 : 0,
+        transform: howe.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",  
+        textAlign: 'center' }}>
           <h2 style={{ fontSize: '40px', marginBottom: '40px' }}>How Ellaris Works</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left', maxWidth: '700px', margin: '0 auto' }}>
             <p><strong>1. Create a rich profile:</strong> Individuals and organizations articulate who they are, what they care about, and where they are headed.</p>
@@ -308,7 +439,15 @@ const EllarisLandingPage: React.FC = () => {
         </section>
         <div className='pt-32'></div>
         {/* THESIS & NORTH STAR */}
-        <section style={{ padding: '80px 20px', textAlign: 'center', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '24px', margin: '60px 0' }}>
+        <section
+        ref={ellthe.ref} 
+        style={{ 
+          opacity: ellthe.visible ? 1 : 0,
+          transform: ellthe.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+          padding: '80px 20px', textAlign: 'center', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '24px', margin: '60px 0' }}>
           <h2 style={{ fontSize: '40px', marginBottom: '30px' }}>The Ellaris Thesis</h2>
           <p style={{ maxWidth: '850px', margin: '0 auto 40px', fontSize: '18px' }}>
             In the coming world: <strong>Skills will be abundant, Tools will be cheap, and Distribution will be easy.</strong><br></br> The real moat will be: <strong>Who you are, What you care about, and Who you choose to build with.</strong>
@@ -329,12 +468,18 @@ const EllarisLandingPage: React.FC = () => {
         </section>
         <div className='pt-32'></div>
         {/* CLOSING FOOTER */}
-        <footer style={{ 
+        <footer 
+        ref={queitA.ref}
+        style={{ 
+          opacity: queitA.visible ? 1 : 0,
+          transform: queitA.visible
+            ? "translateY(0px)"
+            : "translateY(80px)",
+          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
           padding: '100px 40px', 
           textAlign: 'center', 
           border: '1px solid rgba(143, 21, 117, 0.2)', 
           borderRadius: '24px', 
-          // marginBottom: '80px',
           background: 'rgba(255, 255, 255, 0.02)', 
           boxShadow: '0 8px 32px rgba(255, 20, 147, 0.1), 0 2px 8px rgba(255, 20, 147, 0.2) inset',
           backdropFilter: 'blur(10px)'

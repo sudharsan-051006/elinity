@@ -1,4 +1,25 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+/* ================= ANIMATION CONFIG ================= */
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08 }
+  }
+};
+
+/* ==================================================== */
 
 const sitemapData = {
   'ROOT': [
@@ -124,111 +145,117 @@ const sitemapData = {
 };
 
 const SitemapLink = ({ name, href }: { name: string, href: string }) => (
-  <li>
-    <a href={href} className="text-gray-300 hover:text-white transition-colors text-sm">
+  <motion.li
+    variants={fadeUp}
+    whileHover={{ x: 6 }}
+  >
+    <a href={href} className="text-gray-300 hover:text-purple-300 transition-colors text-sm">
       {name}
     </a>
-  </li>
+  </motion.li>
 );
 
-const SitemapSection = ({
-  title,
-  links
-}: {
-  title: string;
-  links: any[];
-}) => (
-  <div>
+const SitemapSection = ({ title, links }: { title: string; links: any[] }) => (
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
     <h3 className="text-lg font-medium mb-3 text-purple-300">{title}</h3>
 
-    <ul className="space-y-2">
+    <motion.ul variants={stagger} className="space-y-2">
 
       {links.map((item, index) => {
 
-        // TOP LINE
         if (item.type === "top") {
           return (
-            <p key={index} className="text-xs text-gray-400 mb-2">
+            <motion.p variants={fadeUp} key={index} className="text-xs text-gray-400 mb-2">
               {item.text}
-            </p>
+            </motion.p>
           );
         }
 
-        // BOTTOM LINE
         if (item.type === "bottom") {
           return (
-            <p key={index} className="text-xs text-purple-400 mt-2">
+            <motion.p variants={fadeUp} key={index} className="text-xs text-purple-400 mt-2">
               {item.text}
-            </p>
+            </motion.p>
           );
         }
 
-        // NORMAL LINKS
         return (
           <SitemapLink key={item.name} name={item.name} href={item.href} />
         );
       })}
 
-    </ul>
-  </div>
+    </motion.ul>
+  </motion.div>
 );
 
 const Sitemap = () => {
   return (
     <div style={{background: "linear-gradient(to bottom, #0a0a23, #1a1a40)"}}>
       <div className='pt-32'></div>
-      <div style={{ maxWidth: "800px", margin: "0px auto", padding: "50px 20px", 
-                    color: "white", background: "linear-gradient(to bottom, #0a0a23, #1a1a40)",
-                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.5)", backdropFilter: "blur(10px)", 
-                    borderRadius: "12px", marginTop: "40px", marginBottom: "40px" }}>
-          
-          <div style={{ marginBottom: "20px" }}>
-            <h1 style={{ fontSize: "40px", fontWeight: "700", marginBottom: "16px", background: "linear-gradient(to right, #d9d3fe, #7759fd)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              Welcome to the Elinity Universe
-            </h1>
-          </div>
 
-          <div style={{ lineHeight: "1.8", fontSize: "18px", color: "#cfcfe7" }}>
-            <p>This is the map of a movement.</p>
+      {/* Intro card */}
+      <motion.div
+        initial={{opacity:0,y:50}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true}}
+        transition={{duration:0.8}}
+        style={{ maxWidth: "800px", margin: "0px auto", padding: "50px 20px", 
+          color: "white", background: "linear-gradient(to bottom, #0a0a23, #1a1a40)",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.5)", backdropFilter: "blur(10px)", 
+          borderRadius: "12px", marginTop: "40px", marginBottom: "40px" }}>
 
-            <p>
-              Every link below leads somewhere built to spark connection, curiosity, growth, joy, or meaning.
-            </p>
+        <div style={{ marginBottom: "20px" }}>
+          <h1 style={{ fontSize: "40px", fontWeight: "700", marginBottom: "16px", background: "linear-gradient(to right, #d9d3fe, #7759fd)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            Welcome to the Elinity Universe
+          </h1>
+        </div>
 
-            <p>
-              We’re here to help you connect, deeply and beautifully, so whether you’re exploring the manifesto,
-              diving into community stories, climbing the leaderboard, or just figuring out what Elinity actually is…
-              this is your starting point.
-            </p>
+        <div style={{ lineHeight: "1.8", fontSize: "18px", color: "#cfcfe7" }}>
+          <p>This is the map of a movement.</p>
+          <p>Every link below leads somewhere built to spark connection, curiosity, growth, joy, or meaning.</p>
+          <p>We’re here to help you connect, deeply and beautifully, so whether you’re exploring the manifesto,
+            diving into community stories, climbing the leaderboard, or just figuring out what Elinity actually is…
+            this is your starting point.</p>
+          <p>Think of it as the blueprint of a world designed for better relationships.</p>
+          <p style={{ fontWeight: "600", marginTop: "18px", color: "#ffffff" }}>Go wander.</p>
+        </div>
+      </motion.div>
 
-            <p>
-              Think of it as the blueprint of a world designed for better relationships.
-            </p>
+      {/* Sitemap grid */}
+      <div className="bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white py-16 px-4 md:px-16 pt-32">
+        <div className="max-w-7xl mx-auto">
 
-            <p style={{ fontWeight: "600", marginTop: "18px", color: "#ffffff" }}>
-              Go wander.
-            </p>
-          </div>
+          <motion.h1
+            initial={{opacity:0,y:40}}
+            whileInView={{opacity:1,y:0}}
+            viewport={{once:true}}
+            transition={{duration:0.7}}
+            className="text-4xl md:text-5xl font-extrabold text-white text-center mb-12"
+          >
+            Site<span className="text-purple-400">map</span>
+          </motion.h1>
 
-      </div>
-    <div className="bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white py-16 px-4 md:px-16 pt-32">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center mb-12">
-          Site<span className="text-purple-400">map</span>
-        </h1>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{once:true}}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          >
             {Object.entries(sitemapData).map(([title, section]) => (
-              <SitemapSection
-                key={title}
-                title={title}
-                links={section}   
-              />
+              <SitemapSection key={title} title={title} links={section} />
             ))}
-          </div>
+          </motion.div>
+
+        </div>
       </div>
-    </div>
     </div>
   );
 };
 
-export default Sitemap; 
+export default Sitemap;

@@ -101,7 +101,10 @@ const roles = [
 ];
 
   return (
-    <div className="joinus-page">
+    <div className="joinus-page"
+    style={{
+      
+    }}>
       {/* 1. Hero / An Invitation */}
       <div className="pt-10"></div>
       <header className="hero container" style={{ marginTop: '50px' }}>
@@ -135,7 +138,7 @@ const roles = [
           {/* BUTTON (UNCHANGED) */}
           <div style={{ marginTop: "25px" }}>
             <a href="/openroles" className="final-cta-link primary-orbit">
-              <span className="default-text">Join the Mission</span>
+              <span className="default-text">Open Roles</span>
             </a>
           </div>
 
