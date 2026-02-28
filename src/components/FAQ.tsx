@@ -123,7 +123,7 @@ export default function ElinityFAQ() {
 
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 z-10 relative">
           <button className="bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
-            Sign Up for Free
+            Sign Up
           </button>
           <button className="bg-transparent border border-purple-500 px-8 py-3 rounded-full font-semibold hover:bg-purple-900/30 transition">
             Talk To Us

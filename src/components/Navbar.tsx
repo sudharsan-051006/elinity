@@ -80,7 +80,7 @@ const Navbar = () => {
       <nav className="relative z-10 flex items-center justify-between h-full px-2 md:px-4">
         {/* Logo */}
         <div onClick={() => handleNavClick({ name: 'Home', path: '/' })} className="flex items-center cursor-pointer">
-          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" width="128" height="100"/>
+          <img src={elinityLogo} alt="Elinity Logo" className="h-12 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" width="125" height="110"/>
         </div>
 
 

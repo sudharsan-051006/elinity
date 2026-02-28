@@ -467,11 +467,6 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
               />
             ))}
           </div>
-
-          <div className="text-center mt-12 space-y-2 italic text-gray-400">
-              <p>It feels intentional, not noisy.</p>
-              <p className="text-white font-semibold not-italic">Building something, not swiping something.</p>
-          </div>
         </div>
       </div>
     </div>
