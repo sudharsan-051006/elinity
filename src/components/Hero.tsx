@@ -70,7 +70,9 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
                 WebkitTextFillColor: "transparent",
                 transition: "all 0.5s ease-in-out",
                 display: "inline-block",
-                width: "175px",
+                width:'180px',
+                textAlign:'left',
+// display:'inline-block'
               }}
             >
               {words[index]}

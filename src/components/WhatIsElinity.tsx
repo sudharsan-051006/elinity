@@ -5,6 +5,8 @@ export default function ElinityLandingPage() {
   const [showCard, setShowCard] = useState(false);
   const cardRef = useRef(null);
 
+  const isMobile = window.innerWidth < 768;
+
   // SCROLL TRIGGER ANIMATION
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -13,7 +15,7 @@ export default function ElinityLandingPage() {
           setShowCard(true);
         }
       },
-      { threshold: 0.35 } // trigger when 35% visible
+      { threshold: 0.15 } // trigger when 35% visible
     );
 
     if (cardRef.current) observer.observe(cardRef.current);
@@ -98,10 +100,12 @@ export default function ElinityLandingPage() {
           padding: "60px 50px",
           transition: "all 1s cubic-bezier(.23,1,.32,1)",
           transform: showCard
-                    ? hover
-                      ? "translateY(-8px)"   // only move up
-                      : "translateY(0px)"
-                    : "perspective(1400px) rotateY(-30deg) translateX(-350px)",
+            ? hover
+              ? "translateY(-8px)"
+              : "translateY(0px)"
+          : isMobile
+              ? "perspective(1000px) rotateY(-15deg) translateX(-60px)"   // 👈 mobile left animation
+              : "perspective(1400px) rotateY(-30deg) translateX(-350px)", // desktop
           opacity: showCard ? 1 : 0,
           boxShadow: hover
             ? "0 40px 140px rgba(139,92,246,0.55)"

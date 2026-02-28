@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart, MapPin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../../public/elogo.png";
@@ -59,7 +59,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
               <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
                 Join the Circle <Sparkles size={18} className="text-yellow-400" />
               </h3>
-              <p className="text-purple-100/60 text-sm">Follow our journey in redefining emotional intelligence.</p>
+              <p className="text-purple-100/60 text-sm">Follow our journey in shaping human flourishing with emotionally intelligent buddies.</p>
             </div>
             
             <div className="flex gap-3 mt-6">

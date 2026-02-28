@@ -148,7 +148,7 @@ const Navbar = () => {
               fontWeight: '500',
             }}
           >
-            upgrade
+            Upgrade
           </button>
         </div>
 
@@ -190,7 +190,7 @@ const Navbar = () => {
                     fontWeight: '500',
                   }}
                 >
-                  Get Started
+                  Upgrade
                 </button>
               </div>
             </div>
