@@ -99,32 +99,51 @@ const injectStyles = () => {
 function useReveal(threshold = 0.08) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);   // when entering screen
+        } else {
+          setVisible(false);  // when leaving screen (so it can animate again)
+        }
+      },
       { threshold }
     );
+
     if (ref.current) obs.observe(ref.current);
+
     return () => obs.disconnect();
   }, [threshold]);
+
   return [ref, visible];
 }
 
 function Reveal({ children, delay = 0, style: extra = {} }) {
   const [ref, visible] = useReveal();
+
   return (
-    <div ref={ref} style={{
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(28px)",
-      transition: `opacity 0.72s cubic-bezier(0.22,1,0.36,1) ${delay}ms,
-                   transform 0.72s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,
-      ...extra,
-    }}>
+    <div
+      ref={ref}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible
+          ? "translateY(0px) scale(1)"
+          : "translateY(40px) scale(0.96)",
+
+        transition: `
+          opacity 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms,
+          transform 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms
+        `,
+        willChange: "transform, opacity",
+        ...extra,
+      }}
+    >
       {children}
     </div>
   );
 }
-
 // ─── Responsive ───────────────────────────────────────────────────────────────
 function useBreakpoint() {
   const [bp, setBp] = useState("desktop");
@@ -515,7 +534,7 @@ export default function ElinityPodcast() {
       </Reveal>
     </div>
   </div>
-</section>
+</section>  
 
       <div style={divider} />
 
