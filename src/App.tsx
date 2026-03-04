@@ -29,8 +29,12 @@ import Ellaris from './pages/Ellaris';
 import LegalPage from './pages/Legal';
 import ScrollToTop from "./components/ScrollToTop";
 import ElinityEnterprise from './pages/Enterprise';
-import Openroles from './pages/Openroles';
-import ElinityPodcast from './pages/ElinityPod'
+import Openroles from './pages/foundgrowth';
+import OpenRolesDropdown from './pages/OpenRolesDropdown';
+import ElinityPodcast from './pages/ElinityPod';
+import Software from './pages/software';
+import DesignHead from './pages/headofdesign';
+import AIResearch from './pages/headai';
 
 function App() {
 
@@ -100,8 +104,12 @@ function App() {
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/enterprise" element={<ElinityEnterprise />} />
-            <Route path="/openroles" element={<Openroles />} />
+            <Route path="/foundgrowth" element={<Openroles />} />
+            <Route path="/opendrop" element={<OpenRolesDropdown />}/>
             <Route path="/pod" element={<ElinityPodcast />} />
+            <Route path='/software' element={<Software />}/>
+            <Route path='/designhead' element={<DesignHead />}/>
+            <Route path='/headai'element={<AIResearch />}/>
            </Routes>
         </div>
         <Footer className="mt-auto" />

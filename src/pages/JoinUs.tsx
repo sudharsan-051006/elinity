@@ -3,6 +3,7 @@ import "../styles/JoinUs.css";
 import elinityLogo from '../../public/elogo.png';
 import { motion, AnimatePresence } from "framer-motion";
 import openrole from '../pages/Openroles.tsx';
+import OpenRolesDropdown from "./OpenRolesDropdown.tsx";
 
 const JoinUs: React.FC = () => {
   const [showManifesto, setShowManifesto] = useState(false);
@@ -136,11 +137,7 @@ const roles = [
           </motion.h1>
 
           {/* BUTTON (UNCHANGED) */}
-          <div style={{ marginTop: "25px" }}>
-            <a href="/openroles" className="final-cta-link primary-orbit">
-              <span className="default-text">Open Roles</span>
-            </a>
-          </div>
+          <OpenRolesDropdown />
 
         </header>
 
