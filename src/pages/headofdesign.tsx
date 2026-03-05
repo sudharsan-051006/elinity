@@ -92,7 +92,7 @@ const DesignHead = () => {
             We're building emotionally intelligent AI that helps people find
             their most resonant connections and build extraordinary
             relationships. We need someone who can design the entire
-            experience   from product to partnerships to how we show up in
+            experience - from product to partnerships to how we show up in
             the world.
           </p>
         </motion.div>
@@ -216,7 +216,7 @@ const DesignHead = () => {
           }}
         >
           You'll be our Head of Design and Experiences. Which means you own how
-          Elinity is designed   from product interfaces to partnership
+          Elinity is designed - from product interfaces to partnership
           ecosystems to the stories we tell. You're the design mind shaping
           everything we build and how we show up in the world.
         </p>
@@ -231,7 +231,7 @@ const DesignHead = () => {
           This is design in the fullest sense. Not just making things look
           good, but designing the entire experience of what Elinity is and
           feels like. Product design, conversational design, ecosystem design,
-          content design, partnership design   everything.
+          content design, partnership design - everything.
         </p>
       </motion.div>
 
@@ -287,7 +287,7 @@ const DesignHead = () => {
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
             <strong style={{ color: "#fff" }}>AI UX Design:</strong>
             <br></br>
-            You'll design how our AI thinks, speaks, and shows up. The conversational flows that feel natural rather than robotic. The personality that comes through in every interaction. How Lumi asks questions, offers insights, holds space for people. This is frontier territory designing interactions with emotionally intelligent AI where the rules are still being written.
+            You'll design how our AI thinks, speaks, and shows up. The conversational flows that feel natural rather than robotic. The personality that comes through in every interaction. How Lumi asks questions, offers insights, holds space for people. This is frontier territory - designing interactions with emotionally intelligent AI where the rules are still being written.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
@@ -307,7 +307,7 @@ const DesignHead = () => {
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
             <strong style={{ color: "#fff" }}>Content Design:</strong> 
             <br></br>
-            You'll shape how we communicate through content. The visual language of our brand. The structure of our storytelling. How ideas are presented, framed, made compelling. Design and content aren't separate they're unified expressions of what we're building.
+            You'll shape how we communicate through content. The visual language of our brand. The structure of our storytelling. How ideas are presented, framed, made compelling. Design and content aren't separate - they're unified expressions of what we're building.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>

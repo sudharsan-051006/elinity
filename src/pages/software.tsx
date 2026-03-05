@@ -147,7 +147,7 @@ const Software: React.FC = () => {
 
             <p style={{ color: "#A1A1A1", fontSize: "18px" }}>
               As a Software Engineer at Elinity, you aren't just shipping
-              features   you're architecting the way humans interact with
+              features - you're architecting the way humans interact with
               AI and each other in the coming decade.
             </p>
           </motion.section>
@@ -318,7 +318,7 @@ const Software: React.FC = () => {
       </p>
 
       <p style={{ color: "#A1A1A1", lineHeight: "1.85", marginBottom: "30px" }}>
-        You'll also develop features that help people connect   sophisticated
+        You'll also develop features that help people connect - sophisticated
         matching algorithms, communication tools, shared experiences, and rituals
         that deepen bonds.
       </p>
@@ -335,7 +335,7 @@ const Software: React.FC = () => {
       </p>
 
       <p style={{ color: "#A1A1A1", lineHeight: "1.85", marginBottom: "30px" }}>
-        You'll build systems that understand emotion, context, and relationships  
+        You'll build systems that understand emotion, context, and relationships -  
         generating meaningful insights rather than generic advice, and pushing the
         boundaries of what modern AI can do.
       </p>
@@ -352,7 +352,7 @@ const Software: React.FC = () => {
       </p>
 
       <p style={{ color: "#A1A1A1", lineHeight: "1.85" }}>
-        You'll make architectural decisions that matter   selecting the right
+        You'll make architectural decisions that matter - selecting the right
         technologies, designing scalable abstractions, and building systems that
         evolve as we learn what works and what doesn’t.
       </p>
@@ -401,7 +401,7 @@ const Software: React.FC = () => {
         <p style={{ color: "#A1A1A1", lineHeight: "1.85", marginBottom: "28px" }}>
           You're not a code monkey. You're an architect who happens to have
           incredibly capable assistants. Your value is in knowing what to build,
-          how it should work, and what good looks like   while AI handles the
+          how it should work, and what good looks like - while AI handles the
           tedious implementation details.<br></br><br></br>
           This means you can ship 5-10x more than traditional engineers. Features that would take a team of five engineers a month, you can prototype and ship in a week. That's the pace we need
         </p>
@@ -478,7 +478,7 @@ const Software: React.FC = () => {
           </h2>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're a 10x engineer   not because you're 10x smarter, but because you
+            You're a 10x engineer - not because you're 10x smarter, but because you
             know how to leverage AI to be dramatically more productive. You already
             work heavily with AI coding agents like Claude, Cursor, and Copilot,
             prompting them effectively, reviewing their output, iterating quickly,
@@ -488,7 +488,7 @@ const Software: React.FC = () => {
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
             You have exceptionally strong fundamentals. This is not a vibe-coding
             role. You can explain everything you build from first principles. You
-            understand computer science deeply   algorithms, systems design,
+            understand computer science deeply - algorithms, systems design,
             software architecture, and why systems behave the way they do.
           </p>
 
@@ -502,13 +502,13 @@ const Software: React.FC = () => {
             When AI generates code, you can read it critically, understand the logic,
             detect subtle bugs, and recognize when the solution is actually correct
             versus simply sounding plausible. You treat AI as a force multiplier for
-            expertise   not a replacement for it.
+            expertise - not a replacement for it.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
             You hold yourself to extremely high standards. Faster development means
             higher standards, not lower ones. You take pride in what you ship.
-            Fast doesn't mean sloppy   it means you iterate quickly until the
+            Fast doesn't mean sloppy - it means you iterate quickly until the
             solution is truly right.
           </p>
 
@@ -531,7 +531,7 @@ const Software: React.FC = () => {
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're full-stack or close to it. You can operate across the system  
+            You're full-stack or close to it. You can operate across the system -
             frontend, backend, infrastructure, and AI layers. You might specialize
             in some areas, but you're capable across the stack.
           </p>
@@ -590,7 +590,7 @@ const Software: React.FC = () => {
       <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
         <strong>You don't need a CS degree.</strong> If you can build great software using AI
         agents, we don't care how you learned. Bootcamp, self-taught, traditional
-        degree   it doesn't matter.
+        degree - it doesn't matter.
       </p>
 
       <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
@@ -646,7 +646,7 @@ const Software: React.FC = () => {
         <p><strong style={{ color: "#fff" }}>Frontend:</strong> React, React Native, TypeScript</p>
         <p><strong style={{ color: "#fff" }}>Backend:</strong> FastAPI, Django, Python for AI/ML</p>
         <p><strong style={{ color: "#fff" }}>Database:</strong> Postgres, vector databases for semantic search</p>
-        <p><strong style={{ color: "#fff" }}>AI:</strong> Claude, GPT-n, Gemini   whatever works best for the use case</p>
+        <p><strong style={{ color: "#fff" }}>AI:</strong> Claude, GPT-n, Gemini - whatever works best for the use case</p>
         <p><strong style={{ color: "#fff" }}>Infrastructure:</strong> Modern cloud stack with serverless where possible</p>
         <p><strong style={{ color: "#fff" }}>AI Dev Tools:</strong> Cursor, Claude Code, Copilot, and anything that helps you ship faster</p>
       </div>
@@ -787,7 +787,7 @@ const Software: React.FC = () => {
         </p>
 
         <p style={{ color: "#A1A1A1", fontSize: "18px", lineHeight: "1.9", marginBottom: "24px" }}>
-          We’ve taken on one of the biggest problems imaginable. We might fail  
+          We’ve taken on one of the biggest problems imaginable. We might fail -  
           realistically, we might. But if we succeed, you will have helped build
           the relationship infrastructure for the post-AGI world.
         </p>
@@ -838,7 +838,7 @@ const Software: React.FC = () => {
       If you're already using AI to 10x your productivity, if you care about
       shipping with heart while still outshipping the pretenders, if you want
       to build AI that actually helps people connect and flourish, and if
-      you're comfortable with speed, uncertainty, and high stakes   we need to
+      you're comfortable with speed, uncertainty, and high stakes - we need to
       talk.
     </p>
 
@@ -850,7 +850,7 @@ const Software: React.FC = () => {
     </p>
 
     <p style={{ color: "#A1A1A1", fontSize: "18px", lineHeight: "1.9", marginBottom: "28px" }}>
-      But if you read this and think “yes  this is how engineering should be
+      But if you read this and think “yes - this is how engineering should be
       done,” if you want to build something that genuinely matters while
       becoming 10x more effective than you are today, this might be exactly
       what you've been looking for.

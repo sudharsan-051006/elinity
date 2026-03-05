@@ -144,7 +144,7 @@ viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div variants={fadeInUp}>
           <h1 style={mainHeadingStyle}>Elinity for Enterprises</h1>
-          <h2 style={subHeadingStyle}>Build teams that thrive  not just function</h2>
+          <h2 style={subHeadingStyle}>Build teams that thrive - not just function</h2>
         </motion.div>
 
         <motion.div 
@@ -250,7 +250,7 @@ viewport={{ once: true, amount: 0.2 }}
           You hope alignment magically appears after onboarding.<br></br><br></br>
           And the real brutal cost you dare not consider?
           The opportunity cost of not having the most amazing, deeply aligned people on your team. <br></br><br></br>
-          Imagine now if you did have those people in your team  how much of an accelerant the synergistic energy would be to your mission. 
+          Imagine now if you did have those people in your team - how much of an accelerant the synergistic energy would be to your mission. 
           <br></br><br></br>  Ellaris helps you achieve that.
         </p>
 
@@ -258,7 +258,7 @@ viewport={{ once: true, amount: 0.2 }}
           What is Ellaris? <br></br>
         </h3>
           <p style={{ fontSize: '1rem', color: '#cbd5e1', marginBottom: '30px' }}>  
-          Ellaris repurposes the same deep modeling and matching engine that powers Elinity’s relationship system  but for companies and talent.
+          Ellaris repurposes the same deep modeling and matching engine that powers Elinity’s relationship system - but for companies and talent.
           <br></br><br></br>
           We match individuals to companies across:
           <br></br><br></br>
@@ -540,9 +540,9 @@ viewport={{ once: true, amount: 0.2 }}
         {/* <div style={{ color: '#a78bfa', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Offering 02</div> */}
         <h2 style={offeringHeaderStyle}>Elinity for Employees: Elevate the Relationship Layer</h2>
         <p style={{ fontSize: '1.1rem', color: '#94a3b8', marginBottom: '40px' }}>
-          Your most important asset is not capital  there is plenty of that going around <br></br>
-          It’s not software  not anymore. <br></br>
-          It’s not even strategy  soon, we will all have a Jobs-level strategist in our pockets.<br></br><br></br> 
+          Your most important asset is not capital - there is plenty of that going around <br></br>
+          It’s not software - not anymore. <br></br>
+          It’s not even strategy - soon, we will all have a Jobs-level strategist in our pockets.<br></br><br></br> 
           In this world, the most important asset becomes the emotional and relational health of your team.
         </p>
 
@@ -630,7 +630,7 @@ viewport={{ once: true, amount: 0.2 }}
           >
             In high-leverage environments, a single misalignment can cost millions.
             <br /><br />
-            A single aligned team can create disproportionate value   and the kind of value beyond the financial,
+            A single aligned team can create disproportionate value - and the kind of value beyond the financial,
             the kind that matters even more. <strong style={{ color: '#fff' }}>Much more.</strong>
           </p>
         </div>
@@ -987,7 +987,7 @@ viewport={{ once: true, amount: 0.2 }}
         >
           <p>Because the cost of misalignment is enormous.</p>
           <p>Because recruitment inefficiency compounds.</p>
-          <p>Because culture is not a poster  it’s a lived system.</p>
+          <p>Because culture is not a poster - it’s a lived system.</p>
           <p>Because in a world where AI levels the technical playing field,</p>
           <p style={{ color: '#fff', fontWeight: 500 }}>
             human connection becomes the differentiator.
@@ -1045,7 +1045,7 @@ viewport={{ once: true, amount: 0.2 }}
             'decision velocity increases as landscape change rate increases',
             'leverage per individual skyrockets',
             'trust and clarity become non-negotiable',
-            'ROI  and opportunity costs  increase, as there is a lot more to gain, a lot more to lose'
+            'ROI - and opportunity costs - increase, as there is a lot more to gain, a lot more to lose'
           ].map((item, i) => (
             <motion.div
               key={i}

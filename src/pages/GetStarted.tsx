@@ -1274,7 +1274,7 @@ const GetStarted: React.FC = () => {
                   WebkitTextFillColor: "transparent"
                 }}
               >
-                Built thoughtfully  prioritizing meaningful connection over unlimited usage.
+                Built thoughtfully - prioritizing meaningful connection over unlimited usage.
               </motion.p>
 
             </motion.div>
