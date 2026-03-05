@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from "react";
-
+import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 function useReveal() {
@@ -73,22 +73,23 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
       ref={ref}
       className="w-full bg-[#0f0a1e] py-24 px-6 border-t border-white/5"
     >
-<div
-  ref={cardRef}
-  className="max-w-3xl mx-auto text-center"
-  style={{
-    border: "1px solid purple",
-    borderRadius: "24px",
-    padding: "24px",
-    boxShadow: "0 25px 80px rgba(255,0,255,0.18)",
-    
-    opacity: show ? 1 : 0,
-    transform: show
-      ? "translateY(0px) scale(1)"
-      : "translateY(80px) scale(.96)",
-    transition: "all 1s cubic-bezier(.23,1,.32,1)"
-  }}
->
+      <motion.div
+      whileHover={{ scale: 1.05 }}
+        ref={cardRef}
+        className="max-w-3xl mx-auto text-center"
+        style={{
+          border: "1px solid purple",
+          borderRadius: "24px",
+          padding: "24px",
+          boxShadow: "0 25px 80px rgba(255,0,255,0.18)",
+          
+          opacity: show ? 1 : 0,
+          transform: show
+            ? "translateY(0px) scale(1)"
+            : "translateY(80px) scale(.96)",
+          transition: "all 1s cubic-bezier(.23,1,.32,1)"
+        }}
+      >
         {/* Header */}
         <h2 className="text-3xl sm:text-5xl font-bold mb-8 tracking-tight 
                       bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 
@@ -114,37 +115,60 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
         {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-10"
-        >
-          <input
-            type="text"
-            placeholder="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="flex-[1.2] bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-[#7759fd] transition-colors"
-          />
+;
 
-          <input
-            type="email"
-            placeholder="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="flex-[1.5] bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-[#7759fd] transition-colors"
-          />
+<form
+  onSubmit={handleSubmit}
+  className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-10 
+  p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg"
+>
+  {/* Name */}
+  <div className="relative flex-[1.2]">
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="px-8 py-3 bg-[#7759fd] text-white font-bold rounded-xl hover:bg-[#6346d8] transition-all disabled:opacity-50 active:scale-95"
-          >
-            {loading ? "Joining..." : "join now"}
-          </button>
-        </form>
+    <motion.input
+      whileFocus={{ scale: 1.02 }}
+      type="text"
+      placeholder="your name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      required
+      className="w-full bg-white/10 border border-white/10 rounded-xl 
+      pl-10 pr-4 py-3 text-white placeholder-white/40 outline-none
+      focus:border-[#7759fd] focus:ring-2 focus:ring-[#7759fd]/40
+      transition-all"
+    />
+  </div>
 
+  {/* Email */}
+  <div className="relative flex-[1.5]">
+
+    <input
+      type="email"
+      placeholder="your email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      className="w-full bg-white/10 border border-white/10 rounded-xl 
+      pl-10 pr-4 py-3 text-white placeholder-white/40 outline-none
+      focus:border-[#7759fd] focus:ring-2 focus:ring-[#7759fd]/40
+      transition-all"
+    />
+  </div>
+
+  {/* Button */}
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    type="submit"
+    disabled={loading}
+    className="px-8 py-3 font-bold rounded-xl text-white
+    bg-gradient-to-r from-[#7759fd] to-[#b066fe]
+    hover:shadow-[0_10px_40px_rgba(176,102,254,0.4)]
+    transition-all disabled:opacity-50"
+  >
+    {loading ? "joining..." : "join now"}
+  </motion.button>
+</form>
         {/* Footer Note */}
         <div className="max-w-xl mx-auto border-t border-white/5 pt-8">
           <p className="text-gray-500 text-sm mb-4">
@@ -155,7 +179,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
             good things grow best when they’re nurtured. 🌱
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 });
