@@ -92,7 +92,7 @@ const AIResearch = () => {
             We're building emotionally intelligent AI that helps people find
             their most resonant connections and build extraordinary relationships.
             But the current architectures of AI are fundamentally limited in terms
-            of what we see as the greatest promise of AI — as flourishing catalysts
+            of what we see as the greatest promise of AI as flourishing catalysts
             for humans at a personal level. And so, we want to build something
             radically different.
           </p>
@@ -163,7 +163,15 @@ const AIResearch = () => {
                 cursor: "pointer"
               }}
             >
-              Apply for this Role
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of AI Research Role"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                }}
+              >
+                Apply for this Role
+              </a>
             </button>
 
           </div>

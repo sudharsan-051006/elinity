@@ -11,7 +11,7 @@ export default function ElinityFAQ() {
   const faqs = [
     {
       question: "What is Elinity?",
-      answer: "Elinity is your AI-powered platform for human connection, self-actualization, and relationship growth. It's part advanced matchmaker, part relationship coach, part social discovery playground—and all heart. Whether you're seeking your life partner, real friendships, aligned collaborators, or simply want to deepen your self-relationship, Elinity is built to help you find your people, deepen your existing relationships, and understand yourself more deeply and grow."
+      answer: "Elinity is your AI-powered platform for human connection, self-actualization, and relationship growth. It's part advanced matchmaker, part relationship coach, part social discovery playground and all heart. Whether you're seeking your life partner, real friendships, aligned collaborators, or simply want to deepen your self-relationship, Elinity is built to help you find your people, deepen your existing relationships, and understand yourself more deeply and grow."
     },
     {
       question: "What makes Elinity different from dating or social apps?",
@@ -19,7 +19,7 @@ export default function ElinityFAQ() {
     },
     {
       question: "Who is Elinity for?",
-      answer: "We've built Elinity for those who crave realness, depth, and alignment. You'll love Elinity if you are:\n• Seeking a meaningful romantic relationship with long-term potential\n• Looking to meet new friends, expand your social world, or find kindred spirits\n• Searching for aligned collaborators, cofounders, or creative partners\n• Wanting to improve and evolve your relationship with your partner or loved ones\n• On a self-growth journey—exploring your inner world, relational dynamics, and patterns"
+      answer: "We've built Elinity for those who crave realness, depth, and alignment. You'll love Elinity if you are:\n• Seeking a meaningful romantic relationship with long-term potential\n• Looking to meet new friends, expand your social world, or find kindred spirits\n• Searching for aligned collaborators, cofounders, or creative partners\n• Wanting to improve and evolve your relationship with your partner or loved ones\n• On a self-growth journey exploring your inner world, relational dynamics, and patterns"
     },
     {
       question: "How does Elinity help me find the right people?",
@@ -62,7 +62,7 @@ export default function ElinityFAQ() {
         <div className="flex flex-col justify-start space-y-6">
           <h1 className="text-5xl font-bold">FAQs</h1>
           <p className="text-gray-400 text-lg max-w-md">
-            Elinity is where you find your people—those you truly vibe with—and build extraordinary, joyful, and fulfilling relationships.
+            elinity is where you find your people those you truly vibe with and build extraordinary, joyful, and fulfilling relationships.
           </p>
 
           <div className="flex items-center space-x-4 mt-4">
@@ -115,10 +115,10 @@ export default function ElinityFAQ() {
       <div className="mt-32 text-center relative">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 w-1/2 h-32 bg-gradient-to-t from-fuchsia-600/40 to-transparent blur-2xl rounded-full z-0"></div>
         <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text z-10 relative">
-          Elinity is not just a platform
+          elinity is your life long relationship flourishing buddy 
         </h2>
         <h2 className="text-4xl font-bold mt-2 bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text z-10 relative">
-          it is a life long companion
+          enter the lumiverse to explore more!
         </h2>
 
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 z-10 relative">

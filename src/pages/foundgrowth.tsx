@@ -61,7 +61,7 @@ const text = [
 
     `We're creating a new emotional operating system for how humans connect and flourish together. The old systems are broken. The new ones haven't been built yet. This is that liminal moment where everything is possible, where a small team with the right vision and execution can shape what comes next for billions of people.`,
 
-    `This role is for a person with a special set of attributes — the person who reads this and feels it in their chest. Who recognizes that this is exactly what they've been waiting for or preparing for. Who sees the enormity of what we're attempting and thinks: "yes, this, now."`
+    `This role is for a person with a special set of attributes the person who reads this and feels it in their chest. Who recognizes that this is exactly what they've been waiting for or preparing for. Who sees the enormity of what we're attempting and thinks: "yes, this, now."`
   ];
 
 const points = [
@@ -83,11 +83,11 @@ const points = [
   ];
 
    const paragraphs = [
-    `We're launching in 15 days across NYC and London. We're planning to fundraise in one to two months. The moment is serious. Tectonic shifts are happening, and we might be trending toward dystopic futures — pardon the seeming hyperbole. This is urgent. It has never been more so.`,
+    `We're launching in 15 days across NYC and London. We're planning to fundraise in one to two months. The moment is serious. Tectonic shifts are happening, and we might be trending toward dystopic futures pardon the seeming hyperbole. This is urgent. It has never been more so.`,
 
     `Elinity moves beyond the traditional connection paradigm into something people will use as their relationship flourishing buddy for years to come. We have a suite of connection-oriented games, smart voice journaling, reflections, and AI coaching built in. We're not just matching people. We're helping them thrive together over time.`,
 
-    `The world is breaking down socially. Loneliness and low relationship satisfaction are epidemic. Algorithms are shallow. Tech is anxiety-inducing — even parasitic. UX is hijacking our dopamine systems, frying our meaning circuitry, pushing us toward a simulacra.`,
+    `The world is breaking down socially. Loneliness and low relationship satisfaction are epidemic. Algorithms are shallow. Tech is anxiety-inducing even parasitic. UX is hijacking our dopamine systems, frying our meaning circuitry, pushing us toward a simulacra.`,
 
     `We're building the antidote. A place where depth wins over breadth. Where meaning wins over metrics. Where conscious connection wins over mindless consumption.`
   ];
@@ -137,97 +137,129 @@ const points = [
       >
         <div className="pt-32"></div>
 <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
-      whileHover={{ 
-        scale: 1.01,
-        borderColor: "rgba(176, 102, 254, 0.3)",
-        boxShadow: "0 30px 100px rgba(176, 102, 254, 0.1)"
-      }}
-      style={{
-        padding: "60px 50px",
-        borderRadius: "32px",
-        background: "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
-        border: "1px solid rgba(255,255,255,0.1)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
-        maxWidth: "900px",
-        margin: "0 auto 60px auto",
-        transition: "border-color 0.4s ease, box-shadow 0.4s ease"
-      }}
-    >
-      {/* TITLE - Now inside the main motion div */}
-      <h1
-        style={{
-          fontSize: "clamp(32px, 5vw, 56px)",
-          fontWeight: 900,
-          lineHeight: 1.1,
-          marginBottom: "32px",
-          background: "linear-gradient(to right, #fff 30%, #b066fe 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          letterSpacing: "-0.03em"
-        }}
-      >
-        Founding Growth and Content Lead - Elinity
-      </h1>
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: false, amount: 0.2 }}
+  whileHover={{
+    scale: 1.01,
+    borderColor: "rgba(176, 102, 254, 0.3)",
+    boxShadow: "0 30px 100px rgba(176, 102, 254, 0.1)"
+  }}
+  style={{
+    padding: "60px 50px",
+    borderRadius: "32px",
+    background:
+      "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    backdropFilter: "blur(24px)",
+    WebkitBackdropFilter: "blur(24px)",
+    boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
+    maxWidth: "900px",
+    margin: "0 auto 60px auto",
+    transition: "border-color 0.4s ease, box-shadow 0.4s ease"
+  }}
+>
+  {/* TITLE */}
+  <h1
+    style={{
+      fontSize: "clamp(32px, 5vw, 56px)",
+      fontWeight: 900,
+      lineHeight: 1.1,
+      marginBottom: "32px",
+      background: "linear-gradient(to right, #fff 30%, #b066fe 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      letterSpacing: "-0.03em"
+    }}
+  >
+    Founding Growth and Content Lead - Elinity
+  </h1>
 
-      {/* INTRO TEXT */}
-      <p
-        style={{
-          fontSize: "19px",
-          color: "rgba(255,255,255,0.9)",
-          lineHeight: "1.7",
-          marginBottom: "32px",
-          fontWeight: "400",
-          maxWidth: "750px"
-        }}
-      >
-        We're building the first truly intelligent social and relationship
-        platform, powered by emotionally intelligent AI that understands you
-        in all your richness. And we need someone who recognizes the gravity
-        of this moment.
-      </p>
+  {/* INTRO */}
+  <p
+    style={{
+      fontSize: "19px",
+      color: "rgba(255,255,255,0.9)",
+      lineHeight: "1.7",
+      marginBottom: "32px",
+      fontWeight: "400",
+      maxWidth: "750px"
+    }}
+  >
+    We're building the first truly intelligent social and relationship
+    platform, powered by emotionally intelligent AI that understands you
+    in all your richness. And we need someone who recognizes the gravity
+    of this moment.
+  </p>
 
-      {/* DIVIDER */}
-      <div
-        style={{
-          height: "1px",
-          background: "linear-gradient(to right, rgba(176, 102, 254, 0.4), rgba(255,255,255,0.05) 80%)",
-          margin: "40px 0"
-        }}
-      />
+  {/* DIVIDER */}
+  <div
+    style={{
+      height: "1px",
+      background:
+        "linear-gradient(to right, rgba(176, 102, 254, 0.4), rgba(255,255,255,0.05) 80%)",
+      margin: "40px 0"
+    }}
+  />
 
-      {/* META INFO GRID */}
-      <div 
-        style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", 
-          gap: "24px",
-          opacity: 0.85
-        }}
-      >
-        {[
-          { label: "📍 Location", val: "New York City (remote to start, NYC-based)" },
-          { label: "🕒 Type", val: "Full-Time" },
-          { label: "💰 Salary", val: "$120K–$180K + founding equity" },
-          { label: "🚀 Start Date", val: "~April 15th" },
-          { label: "🏠 Home", val: "elinity.ai" }
-        ].map((item, i) => (
-          <div key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-            <span style={{ fontSize: "12px", textTransform: "uppercase", color: "#b066fe", letterSpacing: "0.1em", fontWeight: "700" }}>
-              {item.label.split(' ')[1]}
-            </span>
-            <span style={{ fontSize: "15px", color: "#fff", fontWeight: "500" }}>
-              {item.val}
-            </span>
-          </div>
-        ))}
+  {/* META INFO GRID */}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: "24px",
+      opacity: 0.85
+    }}
+  >
+    {[
+      { label: "📍 Location", val: "New York City (remote to start, NYC-based)" },
+      { label: "🕒 Type", val: "Full-Time" },
+      { label: "💰 Salary", val: "$120K–$180K + founding equity" },
+      { label: "🚀 Start Date", val: "~April 15th" },
+      { label: "🏠 Home", val: "elinity.ai" }
+    ].map((item, i) => (
+      <div key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+        <span
+          style={{
+            fontSize: "12px",
+            textTransform: "uppercase",
+            color: "#b066fe",
+            letterSpacing: "0.1em",
+            fontWeight: "700"
+          }}
+        >
+          {item.label.split(" ")[1]}
+        </span>
+        <span style={{ fontSize: "15px", color: "#fff", fontWeight: "500" }}>
+          {item.val}
+        </span>
       </div>
-    </motion.div>
+    ))}
+  </div>
+
+  {/* APPLY BUTTON */}
+  <div style={{ marginTop: "50px", textAlign: "center" }}>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Founding Growth and Content Lead"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          padding: "16px 36px",
+          borderRadius: "999px",
+          background: "linear-gradient(90deg,#b066fe,#7c3aed)",
+          color: "#fff",
+          fontWeight: "600",
+          fontSize: "16px",
+          textDecoration: "none",
+          boxShadow: "0 10px 40px rgba(176,102,254,0.4)",
+          display: "inline-block"
+        }}
+      >
+        Apply for this Role
+      </a>
+  </div>
+</motion.div>
         {/* SECTION CARDS */}
         {[
           {
