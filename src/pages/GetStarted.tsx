@@ -286,7 +286,7 @@ const GetStarted: React.FC = () => {
               }}
             >
 
-              {/* CARD 1 — SILVER */}
+              {/* CARD 1  SILVER */}
               <div className="relative group max-w-sm flex-1 min-w-[320px]">
 
                 {/* outer glow */}
@@ -391,7 +391,7 @@ const GetStarted: React.FC = () => {
                 </div>
               </div>
 
-              {/* CARD 2 — GOLD */}
+              {/* CARD 2  GOLD */}
               <div className="relative group max-w-sm flex-1 min-w-[320px]">
 
                 {/* gold glow */}
@@ -498,7 +498,7 @@ const GetStarted: React.FC = () => {
                 </div>
               </div>
 
-              {/* CARD 3 — DIAMOND */}
+              {/* CARD 3  DIAMOND */}
               <div className="relative group max-w-sm flex-1 min-w-[320px]">
                 <div className="absolute -inset-[1.5px] rounded-3xl bg-gradient-to-r from-slate-200 via-sky-100 to-slate-300 opacity-60 blur-xl group-hover:opacity-90 transition duration-700"></div>
                   <div className="relative h-full bg-gradient-to-br from-[#F0F8FF] via-[#FFFFFF] to-[#E0EFFF] backdrop-blur-2xl border border-white/80 rounded-3xl p-8 text-gray-950 shadow-[0_15px_50px_rgba(200,220,255,0.6)] transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_25px_80px_rgba(200,220,255,0.8)]">
@@ -1274,7 +1274,7 @@ const GetStarted: React.FC = () => {
                   WebkitTextFillColor: "transparent"
                 }}
               >
-                Built thoughtfully — prioritizing meaningful connection over unlimited usage.
+                Built thoughtfully  prioritizing meaningful connection over unlimited usage.
               </motion.p>
 
             </motion.div>

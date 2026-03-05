@@ -165,18 +165,18 @@ const themes = [
   { title: "The Relationship Landscape", body: "From psychology, neuroscience, philosophy, and economics lenses. This is deliberately broad because we intend to have hundreds of conversations on this theme over the next few years with people who have spent considerable time studying and thinking about human connection." },
   { title: "The Socio-Cultural Landscape", body: "Meaning, human flourishing, purpose, wellbeing. The mental fitness landscape. Virtualization and parasocialization. What happens when simulacra become more compelling than reality? What does flourishing look like when everything is abundant, automated, at our fingertips?" },
   { title: "Human-AI Interaction", body: "The perception and psychology of and around AI. AI as companions, as actors in our world. The relationship between humans and AI, humans and technology. Human essence in silicon minds." },
-  { title: "New Product Paradigms", body: "Emerging UX patterns. Generative experiences. Intelligent recommendation systems. Designing the perfect home companion from scratch. HX (Human Experience) rather than UX — looking at people not merely as users but holistically as complete beings that exist outside the context of your product." },
+  { title: "New Product Paradigms", body: "Emerging UX patterns. Generative experiences. Intelligent recommendation systems. Designing the perfect home companion from scratch. HX (Human Experience) rather than UX  looking at people not merely as users but holistically as complete beings that exist outside the context of your product." },
   { title: "Creativity and Expression", body: "Art and storytelling in the age of AI. New methods, innovations, personalization. The intersection of human creativity and machine capability." },
   { title: "Preparing for Transition", body: "What does the post-AGI world look like? When work as we know it disappears, when struggle dissipates, when purpose and passion become the main currencies, what fills the holes in our identities? How do we prepare for this now?" },
 ];
 
 const reasons = [
   { num: "01", title: "We want to start conversations and seed ideas.", body: "Not just have them, but seed them. Get people thinking about questions they haven't considered. Create space for ideas to spread and evolve." },
-  { num: "02", title: "We're learning.", body: "We intend to serve hundreds of millions of users by 2030. That comes with enormous responsibility, especially since our ecosystem is designed to become a deeply embedded part of people's daily lives. We operate with deep humility — if we have this responsibility, we need to get the best possible answers by speaking with people who've thought about these themes far more deeply." },
+  { num: "02", title: "We're learning.", body: "We intend to serve hundreds of millions of users by 2030. That comes with enormous responsibility, especially since our ecosystem is designed to become a deeply embedded part of people's daily lives. We operate with deep humility  if we have this responsibility, we need to get the best possible answers by speaking with people who've thought about these themes far more deeply." },
   { num: "03", title: "Building better institutions for the future.", body: "Building the relationship infrastructure, meaning infrastructure and purpose infrastructure for the post-AGI world should be a collective effort. We want to build scaffolding around our products alongside people who have thought longer about the problems we're grappling with." },
-  { num: "04", title: "We believe in the power of dialogue.", body: "The French salons during the Enlightenment are one of our core inspirations. Ideas spread through conversation, refined through debate, sharpened through exchange. We want to create that kind of intellectual space — a new age of enlightenment, focused more on wisdom, not just knowledge." },
+  { num: "04", title: "We believe in the power of dialogue.", body: "The French salons during the Enlightenment are one of our core inspirations. Ideas spread through conversation, refined through debate, sharpened through exchange. We want to create that kind of intellectual space  a new age of enlightenment, focused more on wisdom, not just knowledge." },
   { num: "05", title: "Reaching people who value substance.", body: "Podcasts as user discovery, as provocation to deep thought and reflection, as a way to connect with potential users who value substance over surface." },
-  { num: "06", title: "Personal curiosity.", body: "A particular genre we want to listen to is missing. Deeply techno-optimist but also grounded, cautious, cognizant of risks. Focused on the near future and the practical implications of AGI for human flourishing — always bringing it back to the individual, to how you actually navigate this changing world." },
+  { num: "06", title: "Personal curiosity.", body: "A particular genre we want to listen to is missing. Deeply techno-optimist but also grounded, cautious, cognizant of risks. Focused on the near future and the practical implications of AGI for human flourishing  always bringing it back to the individual, to how you actually navigate this changing world." },
 ];
 
 
@@ -408,7 +408,7 @@ export default function ElinityPodcast() {
         }}
       >
         Exploring the questions that will shape our world. From AI and
-        relationships to human flourishing in a post-AGI future — diving deep
+        relationships to human flourishing in a post-AGI future  diving deep
         into topics about building the future humanity deserves.
       </p>
     </div>
@@ -581,7 +581,7 @@ export default function ElinityPodcast() {
         }}
       >
 
-        {/* 🔮 Glow layer (EMPTY — do not put content inside) */}
+        {/* 🔮 Glow layer (EMPTY  do not put content inside) */}
         <div
           style={{
             position: "absolute",

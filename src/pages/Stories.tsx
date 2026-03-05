@@ -100,7 +100,7 @@ const Stories = () => {
                 This is our Bridge of Love
               </h3>
               <p className="text-purple-300 mb-4">
-                — A living archive of human connection made possible by Elinity.
+                 A living archive of human connection made possible by Elinity.
               </p>
               <p className="text-lg">
                 Because this isn't just an app.<br />
@@ -193,7 +193,7 @@ const Stories = () => {
                 <p className="text-gray-300 mb-4">
                   "I wanted to find someone to build something meaningful with. I matched with Mika through the Purpose Mode on Elinity. We instantly clicked, sparked, and found a purpose that fuels both of us."
                 </p>
-                <p className="text-sm text-gray-400">— Jay, 31, New York</p>
+                <p className="text-sm text-gray-400"> Jay, 31, New York</p>
               </div>
             </div>
           </motion.div>
@@ -223,7 +223,7 @@ const Stories = () => {
           </motion.p>
 
           <motion.p variants={fadeUp} className="text-gray-300 mb-16 text-lg leading-relaxed">
-            Or slide into our DMs — if you're open to it, we'll feature your story (with permission, always) here
+            Or slide into our DMs  if you're open to it, we'll feature your story (with permission, always) here
             on Our Bridge of Love.
           </motion.p>
 
