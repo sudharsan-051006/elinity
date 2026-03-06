@@ -12,6 +12,28 @@ const EllarisLandingPage: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+    useEffect(() => {
+      document.title = "Elinity | Ellaris";
+    }, []);
+  
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setShowEllaris(true);
+        observer.disconnect(); // stop observing after first reveal
+      }
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px"
+    }
+  );
+
+  if (ellarisRef.current) observer.observe(ellarisRef.current);
+
+  return () => observer.disconnect();
+}, []);
   const fullText = "Ellaris: Work, Reimagined Around Purpose, People, and Fit";
   const [typedText, setTypedText] = useState("");
   const [i, setI] = useState(0);
@@ -61,30 +83,6 @@ const EllarisLandingPage: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // const ellarisRef = useRef<HTMLDivElement>(null);
-// const [showEllaris, setShowEllaris] = useState(false);
-
-  useEffect(() => {
-  const handleScroll = () => {
-    if (!ellarisRef.current) return;
-
-    const rect = ellarisRef.current.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    // visible when in viewport
-    if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
-      setShowEllaris(true);
-    } else {
-      setShowEllaris(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); // run once
-
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
   const s = {
     container: {
       backgroundColor: '#050505',
@@ -100,7 +98,7 @@ const EllarisLandingPage: React.FC = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: isPhone ? 'scroll' : 'fixed',
-      height: isPhone ? '70vh' : '70vh',   // SAME HEIGHT ALWAYS
+      height: isPhone ? '70vh' : '80vh',   // SAME HEIGHT ALWAYS
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -160,19 +158,12 @@ const EllarisLandingPage: React.FC = () => {
       border: '1px solid rgba(119, 89, 253, 0.2)',
     } as React.CSSProperties,
 
-    fadeSlide: {
-      opacity: showEllaris ? 1 : 0,
-      transform: showEllaris 
-        ? "translateY(0px) scale(1)" 
-        : "translateY(80px) scale(0.96)",
-
-      boxShadow: showEllaris
-        ? "0 25px 60px rgba(233, 69, 239, 0.25)"
-        : "0 0px 0px rgba(215, 64, 190, 0)",
-
-  transition: "all 0.9s cubic-bezier(0.22, 1, 0.36, 1)",
-
-    } as React.CSSProperties,
+fadeSlide: {
+  opacity: showEllaris ? 1 : 0,
+  transform: showEllaris ? "translateY(0px)" : "translateY(80px)",
+  transition: "transform 0.9s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease",
+  willChange: "transform"
+} as React.CSSProperties,
   };
   
   return (
@@ -203,13 +194,22 @@ const EllarisLandingPage: React.FC = () => {
         <div className='pt-32'></div>
         {/* WHO IS IT FOR */}
         <section ref={whois.ref} 
-        style={{ 
-          opacity: whois.visible ? 1 : 0,
-          transform: whois.visible
-            ? "translateY(0px)"
-            : "translateY(80px)",
-          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
-          marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: '40px', boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)' }}>
+        style={s.wrapper}>  <div
+    style={{
+      border: '1px solid rgba(119, 89, 253, 0.2)',
+      borderRadius: '16px',
+      padding: '40px',
+      boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)',
+
+      opacity: whois.visible ? 1 : 0,
+      transform: whois.visible
+        ? "translateY(0px)"
+        : "translateY(80px)",
+
+      transition: "transform 0.9s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease",
+      willChange: "transform"
+    }}
+  >
           <h2 style={{ fontSize: '40px', marginBottom: '40px' }}>Who Ellaris Is For</h2>
           <p style={{ textAlign: 'center', fontSize: '18px', fontStyle: 'italic', marginBottom: '40px' }}>
             Ellaris is built for people and organizations who care deeply about fit.
@@ -239,18 +239,29 @@ const EllarisLandingPage: React.FC = () => {
           <p style={{ textAlign: 'center', fontSize: '18px', fontStyle: 'italic' }}>
             Ellaris is for the future-ready. For those building toward something that lasts, that truly matters, that deeply resonates.
           </p>
+          </div>
         </section>
         <div className='pt-32'></div>
         {/* WHY IT EXISTS */}
         <section
         ref={whyell.ref} 
-        style={{marginBottom: '80px', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '16px', padding: '40px', boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)' ,
-          opacity: whyell.visible ? 1 : 0,
-          transform: whyell.visible
-            ? "translateY(0px)"
-            : "translateY(80px)",
-          transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
-        }}>
+        style={s.wrapper}>
+          <div
+          style={{
+      border: '1px solid rgba(119, 89, 253, 0.2)',
+      borderRadius: '16px',
+      padding: '40px',
+      boxShadow: '0 4px 16px rgba(119, 89, 253, 0.1)',
+
+      opacity:  1,
+      transform: whyell.visible
+        ? "translateY(0px)"
+        : "translateY(80px)",
+
+      transition: "transform 0.9s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease",
+      willChange: "transform"
+    }}
+          >
           <h2 style={{ fontSize: '32px', marginBottom: '20px', color: '#7759fd' }}>Why Ellaris Exists</h2>
           <p style={{ fontSize: '22px', marginBottom: '20px' }}>The way we match people to work is broken.</p>
           <p style={{ color: '#d1d1d1', marginBottom: '24px' }}>
@@ -267,12 +278,14 @@ const EllarisLandingPage: React.FC = () => {
           <p style={{ marginTop: '24px' }}>
             Ellaris exists because <strong>these things are not captured by résumés</strong>, and because the future of work demands a different matching architecture.
           </p>
+          </div>
         </section>
         <div className='pt-32'></div>
         {/* ECOSYSTEM */}
         <section
-        ref={ee.ref} 
-        style={{ 
+        ref={ee.ref}>
+          <div
+                  style={{ 
           marginBottom: '80px', 
           textAlign: 'center', 
           border: '1px solid rgba(119, 89, 253, 0.2)',
@@ -285,7 +298,6 @@ const EllarisLandingPage: React.FC = () => {
             : "translateY(80px)",
           transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
           }}>
-          
           <h2 style={{ fontSize: isPhone ? '28px' : '40px', marginBottom: '20px' }}>Ellaris Within the Elinity Ecosystem</h2>
           
           <div style={{ maxWidth: '800px', margin: '0 auto 40px', textAlign: 'left' }}>
@@ -307,11 +319,12 @@ const EllarisLandingPage: React.FC = () => {
             </div>
             <p style={{ marginTop: '30px', fontWeight: 'bold' }}>Relationships feed purpose. Purpose feeds relationships. Ellaris and Elinity form a single, coherent ecosystem designed around the whole human.</p>
           </div>
+          </div>  
         </section>
-        <div className='pt-32'></div>
-        <section
-  ref={core.ref}
-  style={{
+        <div className='pt-16'></div>
+        <section ref={core.ref}>
+          <div
+            style={{
     marginBottom: '80px',
     border: '1px solid rgba(119, 89, 253, 0.2)',
     borderRadius: '16px',
@@ -320,8 +333,7 @@ const EllarisLandingPage: React.FC = () => {
     opacity: core.visible ? 1 : 0,
     transform: core.visible ? "translateY(0px)" : "translateY(80px)",
     transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
-  }}
->
+  }}>
   <h2 style={{
     fontSize: isPhone ? '32px' : '50px',
     marginBottom: '40px',
@@ -416,18 +428,21 @@ const EllarisLandingPage: React.FC = () => {
       <p>Ellaris includes structured growth modules designed for the future of work.</p>
     </div>
   </div>
+  </div>
 </section>
         <div className='pt-32'></div>
         {/* HOW IT WORKS */}
         <section
-        ref={howe.ref} 
-        style={{ ...s.glassCard,
+        ref={howe.ref}>
+          <div
+                  style={{ ...s.glassCard,
         opacity: howe.visible ? 1 : 0,
         transform: howe.visible
             ? "translateY(0px)"
             : "translateY(80px)",
           transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",  
-        textAlign: 'center' }}>
+        textAlign: 'center' }}
+          >
           <h2 style={{ fontSize: '40px', marginBottom: '40px' }}>How Ellaris Works</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left', maxWidth: '700px', margin: '0 auto' }}>
             <p><strong>1. Create a rich profile:</strong> Individuals and organizations articulate who they are, what they care about, and where they are headed.</p>
@@ -436,18 +451,21 @@ const EllarisLandingPage: React.FC = () => {
             <p><strong>4. Explore together:</strong> Use conversations, collaborative experiences, and shared activities to sense real fit.</p>
             <p><strong>5. Build from alignment:</strong> Teams form around belief, energy, and purpose, not just opportunity.</p>
           </div>
+          </div>
         </section>
         <div className='pt-32'></div>
         {/* THESIS & NORTH STAR */}
         <section
-        ref={ellthe.ref} 
-        style={{ 
+        ref={ellthe.ref}>
+          <div
+                  style={{ 
           opacity: ellthe.visible ? 1 : 0,
           transform: ellthe.visible
             ? "translateY(0px)"
             : "translateY(80px)",
           transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
-          padding: '80px 20px', textAlign: 'center', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '24px', margin: '60px 0' }}>
+          padding: '80px 20px', textAlign: 'center', border: '1px solid rgba(119, 89, 253, 0.2)', borderRadius: '24px', margin: '60px 0' }}
+          >
           <h2 style={{ fontSize: '40px', marginBottom: '30px' }}>The Ellaris Thesis</h2>
           <p style={{ maxWidth: '850px', margin: '0 auto 40px', fontSize: '18px' }}>
             In the coming world: <strong>Skills will be abundant, Tools will be cheap, and Distribution will be easy.</strong><br></br> The real moat will be: <strong>Who you are, What you care about, and Who you choose to build with.</strong>
@@ -465,12 +483,14 @@ const EllarisLandingPage: React.FC = () => {
               Ellaris exists to help people and organizations find their direction, their alignment, and their place in a rapidly changing world. Not faster hiring but better matching. Not more productivity but more meaningful work.
             </p>
           </div>
+          </div>
         </section>
         <div className='pt-32'></div>
         {/* CLOSING FOOTER */}
         <footer 
-        ref={queitA.ref}
-        style={{ 
+        ref={queitA.ref}>
+          <div
+                  style={{ 
           opacity: queitA.visible ? 1 : 0,
           transform: queitA.visible
             ? "translateY(0px)"
@@ -483,7 +503,8 @@ const EllarisLandingPage: React.FC = () => {
           background: 'rgba(255, 255, 255, 0.02)', 
           boxShadow: '0 8px 32px rgba(255, 20, 147, 0.1), 0 2px 8px rgba(255, 20, 147, 0.2) inset',
           backdropFilter: 'blur(10px)'
-        }}>
+        }}
+          >
           <h3 style={{ fontSize: isPhone ? '36px' : '52px', marginBottom: '30px', fontWeight: '800' }}>A Quiet Ambition</h3>
           <p style={{ maxWidth: '800px', margin: '0 auto 40px', color: '#a1a1a1', fontSize: '18px' }}>
             Ellaris is not trying to replace everything overnight. We are making a long-term bet on a better future of work. One where people love what they do, love who they do it with, and feel that their effort actually matters.
@@ -493,6 +514,7 @@ const EllarisLandingPage: React.FC = () => {
           </p>
           <div style={{ background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: isPhone ? '24px' : '32px', fontWeight: 'bold' }}>
             That is Ellaris, and we invite you to join us in shaping the new world of purposeful work.
+          </div>
           </div>
         </footer>
         <div className='pt-32'></div>
