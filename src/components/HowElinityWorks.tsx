@@ -1,9 +1,11 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-
+import { motion } from "framer-motion";
+ 
 function useReveal() {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const el = ref.current;
@@ -11,13 +13,20 @@ function useReveal() {
 
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);   // animate in
-        } else {
-          setShow(false);  // reset when out
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY.current;
+        lastScrollY.current = currentScrollY;
+
+        if (entry.isIntersecting && scrollingDown) {
+          setShow(true);   // animate when scrolling down
+        }
+
+        // reset animation flag but don't hide card
+        if (!entry.isIntersecting) {
+          setShow(false);
         }
       },
-      { threshold: 0.18 }
+      { threshold: 0.05 }
     );
 
     obs.observe(el);
@@ -34,13 +43,13 @@ function AnimatedStep({ step, index, isLast }) {
     <div
       ref={ref}
       className="space-y-8"
-      style={{
-        opacity: show ? 1 : 0,
-        transform: show
-          ? "translateY(0px) scale(1)"
-          : "translateY(80px) scale(.96)",
-        transition: "all .8s cubic-bezier(.23,1,.32,1)",
-      }}
+style={{
+  opacity: 1,
+  transform: show
+    ? "translateY(0px) scale(1)"
+    : "translateY(60px) scale(.98)",
+  transition: "all .8s cubic-bezier(.23,1,.32,1)",
+}}
     >
       <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl bg-gradient-to-r from-[#1a0040]/90 via-[#0d003f]/85 to-[#001a4d]/80 backdrop-blur-xl border border-gray-700">
         
@@ -276,7 +285,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
       style={purpleGradient}
     >
       {/* header */}
-      <div className="text-center mb-16">
+      <motion.div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-3">
           <span className="text-white">how </span>
           <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
@@ -297,10 +306,12 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
             here's how it works, end to end.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* steps cards */}
-       <div className="max-w-6xl mx-auto space-y-16">
+       <motion.div
+        
+       className="max-w-6xl mx-auto space-y-16">
         {steps.map((step, index) => (
           <AnimatedStep
             key={index}
@@ -309,7 +320,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
             isLast={index === steps.length - 1}
           />
         ))}
-      </div>
+      </motion.div>
 
       <div className="pt-16"></div>
 
@@ -319,7 +330,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
         className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-[#07071c] to-[#0f1030] text-white overflow-hidden"
         style={{
           borderRadius: "24px",
-          opacity: infoShow ? 1 : 0,
+          opacity:1,
           transform: infoShow
             ? "translateY(0px)"
             : "translateY(120px)",
@@ -330,7 +341,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
 
         <div className="max-w-5xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-6">
-            Quick tour — inside <span className="text-purple-400">Elinity</span>
+            Quick tour - inside <span className="text-purple-400">Elinity</span>
           </h1>
 
           <p className="text-center text-gray-300 text-lg mb-14">

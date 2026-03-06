@@ -91,8 +91,9 @@ const Footer = ({ className = '' }: { className?: string }) => {
               {[
                 { n: "Home", p: "/" }, { n: "About Us", p: "/about" }, 
                 { n: "Contact Us", p: "/contact" }, { n: "Join Us", p: "/join-us" },
-                { n: "LeaderBoard", p: "#" }, { n: "Stories", p: "/stories" },
-                { n: "Community", p: "#" }, { n: "Manifesto", p: "#" }
+                { n: "LeaderBoard", p: "#" },
+                { n: "Community", p: "#" }, { n: "Manifesto", p: "#" },
+                { n: "Enterprise", p: "/enterprise" }, 
               ].map((link) => (
                 <li key={link.n}>
                   <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
@@ -109,8 +110,8 @@ const Footer = ({ className = '' }: { className?: string }) => {
               {[
                 { n: "Subscriptions", p: "/get-started" }, 
                 { n: "Legal Center", p: "/legal" },
-                { n: "Enterprise", p: "/enterprise" }, 
-                { n: "Sitemap", p: "/sitemap" }
+                { n: "Sitemap", p: "/sitemap" },
+                { n: "Privacy Policy", p: "/privacypolicy" }
               ].map((link) => (
                 <li key={link.n}>
                   <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
@@ -122,11 +123,11 @@ const Footer = ({ className = '' }: { className?: string }) => {
           </div>
 
           <div className="space-y-6">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Knowledge</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Learn more</h4>
             <ul className="space-y-3">
               {[
                 { n: "Blogs", p: "/blog" }, { n: "ElinityPodcast", p: "/pod" },
-                { n: "Privacy Policy", p: "/privacypolicy" }
+                 { n: "Stories", p: "/stories" },
               ].map((link) => (
                 <li key={link.n}>
                   <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">

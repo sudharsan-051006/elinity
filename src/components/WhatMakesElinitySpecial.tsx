@@ -12,6 +12,7 @@ const purpleGradient = {
 function useReveal() {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const el = ref.current;
@@ -19,13 +20,24 @@ function useReveal() {
 
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);   // animate when entering
-        } else {
-          setShow(false);  // reset when leaving 👈 key line
+        const currentScrollY = window.scrollY;
+        const scrollingDown = currentScrollY > lastScrollY.current;
+        lastScrollY.current = currentScrollY;
+
+        // animate only when scrolling down
+        if (entry.isIntersecting && scrollingDown) {
+          setShow(true);
+        }
+
+        // reset when leaving viewport so animation can run again
+        if (!entry.isIntersecting) {
+          setShow(false);
         }
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px"
+      }
     );
 
     obs.observe(el);
@@ -157,8 +169,7 @@ export default function ElinityScreen() {
                     <p className="text-[11px] tracking-[0.01em] text-neutral-500">
                       this isn’t similarity for convenience.
                       <br></br>it’s alignment for depth.
-                      <br></br>because everyone deserves meaningful connection, not transactional encounters.<br></br>people are not commodities.
-                      <span className="text-white">they’re worlds.</span>
+                      <br></br>because everyone deserves meaningful connection, not transactional encounters.<br></br>people are not commodities.they’re worlds.
                     </p>
                   </div>
                 </div>
@@ -168,7 +179,7 @@ export default function ElinityScreen() {
         </div>
 
         {/* second row of cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <FeatureCard
             number="🤖"
             title="emotionally intelligent, personalized ai"
@@ -214,7 +225,7 @@ export default function ElinityScreen() {
               <>
                 <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="mb-4">
-                    <p className="text-[11px] text-neutral-500 bold">
+                    <p className="text-xs text-neutral-500 bold">
                       most platforms stop at the introduction.(and what do you know, they suck at that too).
                     </p>
                   </div>
@@ -236,10 +247,12 @@ export default function ElinityScreen() {
                     </ul>
                   </div>
 
+                  <br></br>
+
                   <div className="pt-3 border-t border-white/5">
                     <p className="text-[11px] leading-relaxed text-neutral-400">
                       whether it’s a partner, a friend, a family member, or yourself, 
-                      elinity helps relationships <span className="text-white">grow</span> instead of stagnate or fade away.
+                      elinity helps relationships grow instead of stagnate or fade away.
                     </p>
                   </div>
                   </div>
@@ -269,6 +282,8 @@ export default function ElinityScreen() {
                       <p>• where relationships are treated as something to be nurtured, not gamified</p>
                     </div>
                   </div>
+
+                  <div className='pt-10'></div>
 
                   <div className="mt-5 pt-3 border-t border-white/5">
                     <p className="text-[11px] text-white/70">
@@ -300,22 +315,12 @@ function FeatureCard({ number, title, content }) {
         backdropFilter: "blur(18px)",
         border: "1px solid rgba(168,85,247,0.25)",
         boxShadow: "0 10px 40px rgba(139,92,246,0.25)",
-        transition:
-          "transform .7s cubic-bezier(.23,1,.32,1), opacity .7s ease, box-shadow .4s ease",
-        opacity: show ? 1 : 0,
+        opacity: 1,  
         transform: show
-          ? "translateY(0px) scale(1)"
-          : "translateY(60px) scale(.96)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
-        e.currentTarget.style.boxShadow =
-          "0 20px 60px rgba(139,92,246,0.45)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0px) scale(1)";
-        e.currentTarget.style.boxShadow =
-          "0 10px 40px rgba(139,92,246,0.25)";
+    ? "translateY(0px) scale(1)"
+    : "translateY(0px) scale(.96)",
+  transition:
+    "transform .7s cubic-bezier(.23,1,.32,1), box-shadow .4s ease",
       }}
     >
       <div>

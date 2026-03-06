@@ -23,36 +23,43 @@ export default function FeaturesPage() {
     const ref = useRef(null);
     const [show, setShow] = useState(false);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setShow(true);
-          } else {
-            setShow(false); // reset when leaving
-          }
-        },
-        { threshold: 0.3 }
-      );
+useEffect(() => {
+  let lastScrollY = window.scrollY;
 
-      if (ref.current) observer.observe(ref.current);
-      return () => observer.disconnect();
-    }, []);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+
+      lastScrollY = currentScrollY;
+
+      if (entry.isIntersecting && scrollingDown) {
+        setShow(true);      // animate when scrolling down
+      }
+
+      if (!entry.isIntersecting) {
+        setShow(false);     // reset when leaving viewport
+      }
+    },
+    {
+      threshold: 0.25,
+      rootMargin: "0px 0px -20% 0px"
+    }
+  );
+
+  if (ref.current) observer.observe(ref.current);
+  return () => observer.disconnect();
+}, []);
 
     return (
       <div
         ref={ref}
         style={{
-          opacity: isNew ? (animateNew ? (show ? 1 : 0) : 0) : show ? 1 : 0,
-          transform: isNew
-            ? animateNew
-              ? show ? "translateY(0px)" : "translateY(60px)"
-              : "translateY(60px)"
-            : show
-            ? "translateY(0px)"
-            : "translateY(60px)",
-          transition: `all 0.7s cubic-bezier(.23,1,.32,1) ${index * 0.06}s`
-        }}
+  opacity:show ? 1 : 0.98,
+  transform: show ? "translateY(0px)" : "translateY(20px)",
+  transition: `transform 0.7s cubic-bezier(.23,1,.32,1) ${index * 0.06}s`,
+  willChange: "transform"
+}}
       >
         {children}
       </div>
@@ -215,7 +222,7 @@ because there is so much flavour and richness we can add with platonic relations
   const visibleCards = isExpanded ? featureCards : featureCards.slice(0, 4);
 
   return (
-    <div style={backgroundGradient} className="min-h-screen text-white lowercase px-4 sm:px-6 md:px-10 py-20">
+    <div style={backgroundGradient} className="min-h-screen text-white lowercase px-4 sm:px-6 md:px-10 py-0">
       <div className="max-w-[1400px] mx-auto">
 
         {/* header */}

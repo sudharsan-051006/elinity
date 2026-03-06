@@ -243,8 +243,8 @@ const DesignHead = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
         style={{
-          maxWidth: "1100px",
-          margin: "140px auto",
+          maxWidth: "1200px",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "70px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -396,23 +396,23 @@ const DesignHead = () => {
         </div>
       </motion.section>
 
-      <div className="pt-16"></div>
+      {/* <div className="pt-16"></div> */}
     
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        style={{
-          maxWidth: "1200px",
-          margin: "140px auto",
-          padding: mobile ? "40px 24px" : "60px",
-          borderRadius: "30px",
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(176,102,254,0.25)",
-          backdropFilter: "blur(16px)",
-          boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
-        }}
+style={{
+  maxWidth: "1200px",
+  margin: "0 auto",
+  padding: mobile ? "40px 24px" : "60px",
+  borderRadius: "30px",
+  background: "rgba(255,255,255,0.03)",
+  border: "1px solid rgba(176,102,254,0.25)",
+  backdropFilter: "blur(16px)",
+  boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
+}}
       >
         <h2
           style={{
@@ -437,27 +437,27 @@ const DesignHead = () => {
             gap: "22px"
           }}
         >
-          <p>You're an exceptional designer. This is your core capability. You have elite taste and a strong portfolio demonstrating sophisticated design thinking. You understand product design, interaction design, visual design, systems design. You know the difference between something that looks good and something that works beautifully. You can design interfaces that feel intuitive, experiences that feel meaningful, systems that feel coherent.</p>
+          <p><strong style={{color:'white'}}>You're an exceptional designer.</strong> This is your core capability. You have elite taste and a strong portfolio demonstrating sophisticated design thinking. You understand product design, interaction design, visual design, systems design. You know the difference between something that looks good and something that works beautifully. You can design interfaces that feel intuitive, experiences that feel meaningful, systems that feel coherent.</p>
 
-          <p>You understand design at multiple levels: the micro (individual interactions, visual details, UI components) and the macro (entire ecosystems, long-term journeys, cultural positioning). You can zoom in to refine a specific interaction and zoom out to see how everything fits together.</p>
+          <p><strong style={{color:'white'}}>You understand design at multiple levels:</strong> <br></br>the micro (individual interactions, visual details, UI components) and the macro (entire ecosystems, long-term journeys, cultural positioning). You can zoom in to refine a specific interaction and zoom out to see how everything fits together.</p>
 
-          <p>You're fluent in modern design tools (Figma, etc.) but more importantly, you're fluent in design thinking. You can articulate why certain design choices work, how form shapes experience, what makes something resonate emotionally versus just function correctly.</p>
+          <p><strong style={{color:'white'}}>You're fluent in modern design tools (Figma, etc.)</strong> but more importantly, you're fluent in design thinking. You can articulate why certain design choices work, how form shapes experience, what makes something resonate emotionally versus just function correctly.</p>
 
-          <p>You understand that design isn't just aesthetics. It's about shaping behavior, creating meaning, enabling certain kinds of experiences while making others impossible. You know design is power, and you use it thoughtfully.</p>
+          <p><strong style={{color:'white'}}>You understand that design isn't just aesthetics.</strong> It's about shaping behavior, creating meaning, enabling certain kinds of experiences while making others impossible. You know design is power, and you use it thoughtfully.</p>
 
-          <p>You're a world-class storyteller. You know how to make people feel something real through narrative. You can craft stories that stick, that spread, that change minds. You understand the power of good storytelling to shift culture and inspire action.</p>
+          <p><strong style={{color:'white'}}>You're a world-class storyteller. </strong>You know how to make people feel something real through narrative. You can craft stories that stick, that spread, that change minds. You understand the power of good storytelling to shift culture and inspire action.</p>
 
-          <p>You understand humans deeply. You have real knowledge of human psychology, relationships, meaning-making, behavior. Ideally a background in design, psychology, or related fields. You know why people connect, what makes relationships work, what conditions enable flourishing. This isn't just theoretical. You have intuition for human experience.</p>
+          <p><strong style={{color:'white'}}>You understand humans deeply. </strong>You have real knowledge of human psychology, relationships, meaning-making, behavior. Ideally a background in design, psychology, or related fields. You know why people connect, what makes relationships work, what conditions enable flourishing. This isn't just theoretical. You have intuition for human experience.</p>
 
-          <p>You're strategic about partnerships. You know how to identify the right partners, build meaningful relationships, create alliances that serve the mission. You're comfortable representing the company, making connections, opening doors.</p>
+          <p><strong style={{color:'white'}}>You're strategic about partnerships. </strong>You know how to identify the right partners, build meaningful relationships, create alliances that serve the mission. You're comfortable representing the company, making connections, opening doors.</p>
 
-          <p>You're passionate about human flourishing. This is not just a professional interest. You genuinely care about helping people live better, more connected, more meaningful lives. You see technology as a tool for amplifying our human essence, our humanity.</p>
+          <p><strong style={{color:'white'}}>You're passionate about human flourishing. </strong>This is not just a professional interest. You genuinely care about helping people live better, more connected, more meaningful lives. You see technology as a tool for amplifying our human essence, our humanity.</p>
 
-          <p>You can think philosophically when needed. While this isn't primarily a philosophy role, you're comfortable engaging with deeper questions about consciousness, meaning, values, human experience. You can think rigorously about why we're building what we're building and what it means for people.</p>
+          <p><strong style={{color:'white'}}>You can think philosophically when needed.</strong> While this isn't primarily a philosophy role, you're comfortable engaging with deeper questions about consciousness, meaning, values, human experience. You can think rigorously about why we're building what we're building and what it means for people.</p>
 
-          <p>You want to shape culture. You're not content to build products in a vacuum. You want to shift how people think about relationships, about AI, about what technology should do. You see this as an opportunity to influence culture at scale.</p>
+          <p><strong style={{color:'white'}}>You want to shape culture. </strong>You're not content to build products in a vacuum. You want to shift how people think about relationships, about AI, about what technology should do. You see this as an opportunity to influence culture at scale.</p>
 
-          <p>You're an exceptional communicator. In writing, in speaking, in person. You can represent complex ideas compellingly. You could eventually become a C-level executive because you have the communication skills and strategic thinking to operate at that level.</p>
+          <p><strong style={{color:'white'}}>You're an exceptional communicator.</strong> In writing, in speaking, in person. You can represent complex ideas compellingly. You could eventually become a C-level executive because you have the communication skills and strategic thinking to operate at that level.</p>
         </div>
       </motion.div>
 

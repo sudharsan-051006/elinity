@@ -21,7 +21,7 @@ const FeatureCard = ({ title, description, subtext, delay = 0 }: FeatureProps) =
           setShow(false); // re-trigger when coming back
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -32,7 +32,7 @@ const FeatureCard = ({ title, description, subtext, delay = 0 }: FeatureProps) =
     <div
       ref={ref}
       style={{
-        opacity: show ? 1 : 0,
+        opacity: 1 ,
         transform: show
           ? "translateY(0px) scale(1)"
           : "translateY(80px) scale(.96)",
@@ -63,7 +63,7 @@ export default function ElinityDiscovery() {
           setShowLast(false);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0 }
     );
 
     if (lastCardRef.current) observer.observe(lastCardRef.current);

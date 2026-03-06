@@ -215,8 +215,6 @@ const points = [
     {[
       { label: "📍 Location", val: "New York City (remote to start, NYC-based)" },
       { label: "🕒 Type", val: "Full-Time" },
-      { label: "💰 Salary", val: "$120K–$180K + founding equity" },
-      { label: "🚀 Start Date", val: "~April 15th" },
       { label: "🏠 Home", val: "elinity.ai" }
     ].map((item, i) => (
       <div key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>

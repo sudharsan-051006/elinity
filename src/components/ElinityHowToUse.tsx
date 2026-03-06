@@ -13,7 +13,7 @@ const AnimatedBlock = ({ children, delay = 0 }) => {
           setShow(false); // reset when leaving
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -24,7 +24,7 @@ const AnimatedBlock = ({ children, delay = 0 }) => {
     <div
       ref={ref}
       style={{
-        opacity: show ? 1 : 0,
+        opacity: 1,
         transform: show
           ? "translateY(0px)"
           : "translateY(70px)",

@@ -55,7 +55,7 @@ because building something meaningful takes more than talent.
 it takes chemistry and co-dreaming.`,
     },
     {
-      id: "🤝",
+      id: "🫂",
       name: "the relationship deepeners",
       description: `you already have people you care about deeply.
 now you want to nurture those relationships intentionally.
@@ -93,7 +93,7 @@ the better every other relationship in your life becomes.`,
           if (entry.isIntersecting) setShow(true);
           else setShow(false);
         },
-        { threshold: 0.25 }
+        { threshold: 0   }
       );
 
       if (ref.current) observer.observe(ref.current);
