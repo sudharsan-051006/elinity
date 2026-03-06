@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
 };
 
 const AIResearch = () => {
@@ -124,7 +124,7 @@ const AIResearch = () => {
 
             <div style={{ marginBottom: "22px" }}>
               <div style={{ color: "#888", fontSize: "13px" }}>Location</div>
-              <div>Remote (US-based preferred, NYC ideal)</div>
+              <div>Remote</div>
             </div>
 
             <div style={{ marginBottom: "22px" }}>
@@ -179,12 +179,11 @@ const AIResearch = () => {
         </motion.div>
 
       </div>
-
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -241,11 +240,11 @@ const AIResearch = () => {
 
       </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -362,11 +361,11 @@ const AIResearch = () => {
 
       </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -418,12 +417,11 @@ const AIResearch = () => {
           </p>
         </div>
       </motion.div>
-
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -492,11 +490,11 @@ const AIResearch = () => {
         </div>
       </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -542,7 +540,7 @@ const AIResearch = () => {
               gap: "20px",
               fontSize: "18px",
               lineHeight: "1.95",
-              color: "#A1A1A1"
+              color: "White"
             }}
           >
             <p>
@@ -583,7 +581,7 @@ const AIResearch = () => {
               gap: "20px",
               fontSize: "18px",
               lineHeight: "1.95",
-              color: "#A1A1A1"
+              color: "white"
             }}
           >
             <p>
@@ -610,11 +608,11 @@ const AIResearch = () => {
       </motion.div>
 
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -646,40 +644,46 @@ const AIResearch = () => {
             gap: "22px",
             fontSize: "18px",
             lineHeight: "1.95",
-            color: "#A1A1A1"
+            // color: "#A1A1A1"
           }}
         >
           <p>
-            <strong>Significant early team equity.</strong> This is not just an engineering role. You're potentially defining the technical foundation of everything we build long-term. Founding researcher-level ownership.
+            <strong color="white">Significant early team equity.</strong> 
+            <br></br>This is not just an engineering role. You're potentially defining the technical foundation of everything we build long-term. Founding researcher-level ownership.
           </p>
 
           <p>
-<strong>            Real research freedom. </strong>Once you've proven you can ship production systems, you'll have genuine freedom to explore ambitious ideas. We're not asking for quarterly research reviews or demanding you optimize for papers published. We want you to explore important problems that others aren't tackling.
+<strong>            Real research freedom. </strong>
+<br></br>Once you've proven you can ship production systems, you'll have genuine freedom to explore ambitious ideas. We're not asking for quarterly research reviews or demanding you optimize for papers published. We want you to explore important problems that others aren't tackling.
           </p>
 
           <p>
-<strong>            Impact on real people. </strong>Your research won't sit in papers. It'll get deployed in production, tested with real users, refined based on how it actually helps people. You'll see your ideas make a difference immediately.
+<strong>            Impact on real people. </strong>
+<br></br>Your research won't sit in papers. It'll get deployed in production, tested with real users, refined based on how it actually helps people. You'll see your ideas make a difference immediately.
           </p>
 
           <p>
- <strong>           Interdisciplinary work.</strong> You'll collaborate with neuroscientists, psychologists, philosophers, designers, product people. This isn't just a technical problem. It's a deeply interdisciplinary challenge.
+ <strong>           Interdisciplinary work.</strong> 
+ <br></br>You'll collaborate with neuroscientists, psychologists, philosophers, designers, product people. This isn't just a technical problem. It's a deeply interdisciplinary challenge.
           </p>
 
           <p>
-  <strong>          Long-term commitment to the vision.</strong> We're not going to pivot away from alignment and empathy research if it's hard. This is core to what we're building. You'll have support to pursue this work for years.
+  <strong>          Long-term commitment to the vision.</strong> 
+  <br></br>We're not going to pivot away from alignment and empathy research if it's hard. This is core to what we're building. You'll have support to pursue this work for years.
           </p>
 
           <p>
-<strong>            A chance to define the field.</strong> Emotionally intelligent, aligned-by-default AI is not a well-explored space. You could be one of the researchers who defines what this looks like, what approaches work, what the fundamental principles are.
+<strong>            A chance to define the field.</strong>
+<br></br> Emotionally intelligent, aligned-by-default AI is not a well-explored space. You could be one of the researchers who defines what this looks like, what approaches work, what the fundamental principles are.
           </p>
         </div>
       </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",
@@ -732,12 +736,11 @@ const AIResearch = () => {
         </div>
       </motion.div>
 
-
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
           margin: "120px auto",

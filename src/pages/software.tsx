@@ -218,14 +218,14 @@ const Software: React.FC = () => {
         }
       `}</style>
 
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.3 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",   // reduced width
-          margin: "60px auto", // center horizontally
+          margin: "10px auto", // center horizontally
           padding: "40px",
           borderRadius: "20px",
           background: "rgba(255,255,255,0.03)",
@@ -267,13 +267,13 @@ const Software: React.FC = () => {
         </p>
     </motion.div>
 
-    <div className="pt-16"></div>
+    <div className="pt-6"></div>
 
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
       style={{
         maxWidth: "1200px",
         margin: "80px auto",
@@ -358,13 +358,12 @@ const Software: React.FC = () => {
       </p>
     </motion.div>
 
-    <div className="pt-16"></div>
-
-    <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+    <div className="pt-6"></div>
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",
           margin: "80px auto",
@@ -447,12 +446,11 @@ const Software: React.FC = () => {
       </motion.div>
 
     <div className="pt-16"></div>
-      
       <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-120px" }}
           style={{
             maxWidth: "1200px",
             margin: "80px auto",
@@ -478,7 +476,7 @@ const Software: React.FC = () => {
           </h2>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're a 10x engineer - not because you're 10x smarter, but because you
+            <strong style={{ color: "white" }}>You're a 10x engineer</strong>- not because you're 10x smarter, but because you
             know how to leverage AI to be dramatically more productive. You already
             work heavily with AI coding agents like Claude, Cursor, and Copilot,
             prompting them effectively, reviewing their output, iterating quickly,
@@ -486,68 +484,73 @@ const Software: React.FC = () => {
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You have exceptionally strong fundamentals. This is not a vibe-coding
+            <strong style={{ color : "white"}}>You have exceptionally strong fundamentals.</strong> This is not a vibe-coding
             role. You can explain everything you build from first principles. You
             understand computer science deeply - algorithms, systems design,
             software architecture, and why systems behave the way they do.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You know design patterns, computational complexity, distributed systems,
-            and database theory. AI lets you move faster, but your understanding of
+            <strong style={{ color : "white"}}>You know design patterns, computational complexity, distributed systems,
+            and database theory. </strong>AI lets you move faster, but your understanding of
             fundamentals ensures you're moving in the right direction.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            When AI generates code, you can read it critically, understand the logic,
+            <strong  style={{ color : "white"}}>When AI generates code, you can read it critically, understand the logic,
             detect subtle bugs, and recognize when the solution is actually correct
-            versus simply sounding plausible. You treat AI as a force multiplier for
+            versus simply sounding plausible.</strong> You treat AI as a force multiplier for
             expertise - not a replacement for it.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You hold yourself to extremely high standards. Faster development means
+            <strong  style={{ color : "white"}}>You hold yourself to extremely high standards.</strong> Faster development means
             higher standards, not lower ones. You take pride in what you ship.
             Fast doesn't mean sloppy - it means you iterate quickly until the
             solution is truly right.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You take ownership. Every line of code that goes into production is
+            <strong  style={{ color : "white"}}>You take ownership.</strong> Every line of code that goes into production is
             something you're accountable for. Even if AI helped generate it,
             you're responsible for the result.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're product-minded. You care about what you're building and why.
+            <strong style={{color:'white'}}>You're product-minded.</strong> You care about what you're building and why.
             You think about users, their experiences, and whether the system
             actually solves meaningful problems for real people.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're comfortable moving fast, shipping early, and iterating constantly.
+            <strong style={{color:'white'}}>You're comfortable moving fast, shipping early, and iterating constantly.</strong>
             You don't get stuck overthinking decisions. You build, test, learn,
             and improve continuously.
           </p>
 
           <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You're full-stack or close to it. You can operate across the system -
+            <strong style={{color:'white'}}>You're full-stack or close to it.</strong> You can operate across the system -
             frontend, backend, infrastructure, and AI layers. You might specialize
             in some areas, but you're capable across the stack.
           </p>
+<p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
+  <strong style={{ color: "#ffffff" }}>
+    You understand AI deeply.
+  </strong>{" "}
+  You've worked with LLMs, built or experimented
+  with agentic systems, designed prompting strategies, and understand the
+  capabilities and limitations of modern models.
+</p>
 
-          <p style={{ color: "#A1A1A1", lineHeight: "1.9", marginBottom: "18px" }}>
-            You understand AI deeply. You've worked with LLMs, built or experimented
-            with agentic systems, designed prompting strategies, and understand the
-            capabilities and limitations of modern models.
-          </p>
-
-          <p style={{ color: "#A1A1A1", lineHeight: "1.9" }}>
-            Most importantly, you care about the mission. You're excited about using
-            technology and AI to strengthen human relationships and help people
-            build deeper connections. You're comfortable working in ambiguity,
-            adapting quickly as we learn and grow.
-          </p>
+<p style={{ color: "#A1A1A1", lineHeight: "1.9" }}>
+  <strong style={{ color: "#ffffff" }}>
+    Most importantly, you care about the mission.
+  </strong>{" "}
+  You're excited about using
+  technology and AI to strengthen human relationships and help people
+  build deeper connections. You're comfortable working in ambiguity,
+  adapting quickly as we learn and grow.
+</p>
       </motion.div>
     
     <div className="pt-16"></div>
@@ -753,60 +756,89 @@ const Software: React.FC = () => {
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      style={{
-        maxWidth: "1200px",
-        margin: "100px auto",
-        padding: "50px",
-        borderRadius: "24px",
-        background: "linear-gradient(180deg, rgba(176,102,254,0.08), rgba(0,0,0,0.65))",
-        border: "1px solid rgba(176,102,254,0.35)",
-        backdropFilter: "blur(14px)",
-        boxShadow: "0 40px 100px rgba(0,0,0,0.7)"
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "34px",
-          fontWeight: 800,
-          marginBottom: "36px",
-          textAlign: "center",
-          background: "linear-gradient(90deg,#ffffff,#b066fe)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}
-      >
-        The Reality
-      </h2>
+      viewport={{ once: true, margin: "-120px" }}
+          style={{
+            maxWidth: "1200px",
+            margin: "20px auto",
+            padding: "50px",
+            borderRadius: "24px",
+            background: "linear-gradient(180deg, rgba(176,102,254,0.08), rgba(0,0,0,0.65))",
+            border: "1px solid rgba(176,102,254,0.35)",
+            backdropFilter: "blur(14px)",
+            boxShadow: "0 40px 100px rgba(0,0,0,0.7)"
+          }}        >
+          <h2
+            style={{
+              fontSize: "34px",
+              fontWeight: 800,
+              marginBottom: "36px",
+              textAlign: "center",
+              background: "linear-gradient(90deg,#ffffff,#b066fe)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}
+          >
+            The Reality
+          </h2>
 
-      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-        <p style={{ color: "#A1A1A1", fontSize: "18px", lineHeight: "1.9", marginBottom: "24px" }}>
-          This will be intense. We'll be iterating constantly. We need to move fast,
-          learn fast, and ship fast. Sometimes that means long hours, high pressure,
-          and navigating uncertainty.
-        </p>
-
-        <p style={{ color: "#A1A1A1", fontSize: "18px", lineHeight: "1.9", marginBottom: "24px" }}>
-          We’ve taken on one of the biggest problems imaginable. We might fail -  
-          realistically, we might. But if we succeed, you will have helped build
-          the relationship infrastructure for the post-AGI world.
-        </p>
-
-        <p style={{ color: "#A1A1A1", fontSize: "18px", lineHeight: "1.9" }}>
-          You'll work directly with the founding and growth teams, shipping features
-          that users interact with immediately. You'll see the impact of your work
-          in real time and have genuine ownership over core product decisions.
-        </p>
-      </div>
-    </motion.div>
+          <div
+  style={{
+    maxWidth: "900px",
+    margin: "0 auto",
+    textAlign: "center"
+  }}
+><p
+  style={{
+    color: "#A1A1A1",
+    fontSize: "18px",
+    lineHeight: "1.9",
+    marginBottom: "24px",
+    marginLeft: "auto",
+    marginRight: "auto"
+  }}
+>
+              This will be intense. We'll be iterating constantly. We need to move fast,
+              learn fast, and ship fast. Sometimes that means long hours, high pressure,
+              and navigating uncertainty.
+            </p>
+<p
+  style={{
+    color: "#A1A1A1",
+    fontSize: "18px",
+    lineHeight: "1.9",
+    marginBottom: "24px",
+    marginLeft: "auto",
+    marginRight: "auto"
+  }}
+>
+              We’ve taken on one of the biggest problems imaginable. We might fail -  
+              realistically, we might. But if we succeed, you will have helped build
+              the relationship infrastructure for the post-AGI world.
+            </p>
+<p
+  style={{
+    color: "#A1A1A1",
+    fontSize: "18px",
+    lineHeight: "1.9",
+    marginBottom: "24px",
+    marginLeft: "auto",
+    marginRight: "auto"
+  }}
+>
+              You'll work directly with the founding and growth teams, shipping features
+              that users interact with immediately. You'll see the impact of your work
+              in real time and have genuine ownership over core product decisions.
+            </p>
+          </div>
+        </motion.div>
 
     <div className="pt-16"></div>
 
-    <motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: false, amount: 0.25 }}
+ <motion.div
+   variants={fadeUp}
+   initial="hidden"
+   whileInView="show"
+   viewport={{ once: true, margin: "-120px" }}
   style={{
     maxWidth: "1200px",
     margin: "120px auto",

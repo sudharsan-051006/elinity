@@ -65,21 +65,21 @@ const text = [
   ];
 
 const points = [
-    `You're a world-class storyteller. Not just good at it, but someone who loves connecting with people through stories. You're comfortable picking up a camera and captivating audiences. You have strong taste and aesthetics. Everything else in this role is downstream of this.`,
+    `<strong>You're a world-class storyteller.</strong> Not just good at it, but someone who loves connecting with people through stories. You're comfortable picking up a camera and captivating audiences. You have strong taste and aesthetics. Everything else in this role is downstream of this.`,
 
-    `You're deeply creative. The market is saturated. There are infinite products, infinite stories. We need lateral thinking, divergent approaches. Creative content strategies and growth strategies. Smart user acquisition tactics that don't rely on paid marketing. Creativity is not optional here. It's the core requirement.`,
+    `<strong>You're deeply creative. </strong> The market is saturated.There are infinite products, infinite stories. We need lateral thinking, divergent approaches. Creative content strategies and growth strategies. Smart user acquisition tactics that don't rely on paid marketing. Creativity is not optional here. It's the core requirement.`,
 
-    `You understand the gravity of this moment. You're deeply passionate about the problem space we're tackling. You feel it in your bones that if we don't get this right now, we might never get the chance to get it right again. You bring urgency, energy, and passion to the table every day. For you, this is more than work. This is a mission you own deeply.`,
+    `<strong>You understand the gravity of this moment. </strong> You're deeply passionate about the problem space we're tackling. You feel it in your bones that if we don't get this right now, we might never get the chance to get it right again. You bring urgency, energy, and passion to the table every day. For you, this is more than work. This is a mission you own deeply.`,
 
-    `You're intrinsically motivated. Not purely by the financial aspect, though that matters. But by the deeply human impact we could create if we actualize this vision. You own the work, the mission, and you move with conviction.`,
+    `<strong>You're intrinsically motivated.  </strong>Not purely by the financial aspect, though that matters. But by the deeply human impact we could create if we actualize this vision. You own the work, the mission, and you move with conviction.`,
 
-    `You're obsessed with human connection. Romantic, platonic, collaborative. You love the stories behind relationships and the idea of fostering deeply meaningful connections between people. You love people, and you can’t get enough of the beauty of the human soul.`,
+    `<strong>You're obsessed with human connection. </strong>Romantic, platonic, collaborative. You love the stories behind relationships and the idea of fostering deeply meaningful connections between people. You love people, and you can’t get enough of the beauty of the human soul.`,
 
-    `You're a deep-feeler and sharp thinker. You understand emotion, behavior, meaning-making, and energy. You believe in the potential of aligned AI to help people live more conscious, connected lives.`,
+    `<strong>You're a deep-feeler and sharp thinker. </strong>You understand emotion, behavior, meaning-making, and energy. You believe in the potential of aligned AI to help people live more conscious, connected lives.`,
 
-    `You've done growth before. User acquisition, partnerships, content. But you want to do it with heart this time. You're full of drive, ideas, energy, and execution chops. You don't wait for permission.`,
+    `<strong>You've done growth before. </strong>User acquisition, partnerships, content. But you want to do it with heart this time. You're full of drive, ideas, energy, and execution chops. You don't wait for permission.`,
 
-    `You'd rather build something that matters deeply than just chase metrics. You're ready to break rules, not follow them.`
+    `<strong>You'd rather build something that matters deeply than just chase metrics.</strong> You're ready to break rules, not follow them.`
   ];
 
    const paragraphs = [
@@ -298,7 +298,12 @@ Your job is to help Elinity reach our first 500,000 users through the power of c
               boxShadow: "0 20px 60px rgba(0,0,0,0.5)"
             }}
           >
-            <h2 style={{ fontSize: 26, marginBottom: 16 }}>{sec.title}</h2>
+            <h2 style={{ fontSize: 26, marginBottom: 16,
+              
+      background: "linear-gradient(to right, #fff 30%, #b066fe 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+             }}>{sec.title}</h2>
             <p style={{ lineHeight: 1.9, opacity: 0.9, whiteSpace: "pre-line" }}>
               {sec.text}
             </p>
@@ -310,15 +315,15 @@ Your job is to help Elinity reach our first 500,000 users through the power of c
           {
             title: "How Do We Get To Our First 500k ",
             text: `
-User Acquisition & Early Growth Strategy
+<strong style="color:white; font-size:20px">User Acquisition & Early Growth Strategy </strong>
 
 Architect and execute our user acquisition plan across NYC and major US cities beyond. Hustle, test, and creatively break through the noise to get our first 100K passionate users who genuinely love what we're building. Leverage post-grad student hubs, communities, offline events, partnerships, and influencer relationships. Get scrappy. Get creative. Get it done.
 
-Influencer & Partnership Marketing
+<strong style="color:white; font-size:20px">Influencer & Partnership Marketing</strong>
 
 Identify and collaborate with creators in the relationships, psychology, and storytelling spaces. Form value-aligned partnerships with communities, brands, universities, events, and content networks. Find the people who share our vision and turn them into evangelists.
 
-Content & Storytelling
+<strong style="color:white; font-size:20px">Content & Storytelling</strong>
 
 Build and own Elinity's early content and storytelling engine, both short-form and long-form. Create magnetic narratives, campaigns, and series that make people feel something real and act on it. Craft social stories, reels, experiments, and narratives that make waves.
 
@@ -326,17 +331,17 @@ Here's what's different: we're not creating playful content or fun content or en
 
 Our sci-fi-esque content about the near future will pose real questions, not the sensationalist exaggerated threats, the way, say, a Black Mirror does it. Where are we headed? What are the risks we face? What kind of world do we want to build? What do we need to build that world? Talking about the real concerns that we must get ahead of. 
 
-The Elinity Podcast Series
+<strong style="color:white; font-size:20px">The Elinity Podcast Series</strong>
 
 A key part of our content strategy is the Elinity Podcast, where we'll invite thinkers and builders to discuss ideas we feel more and more people should think about. We will have a frequent in-person company pod, for conversations about how we're building the company, the decisions we make, the choices that shape the future of relationship infrastructure. We're building in public because we're building for the public, and for generations that don't exist yet but are constantly in our minds.
 
 We'll talk about the post-AGI world and the challenges we should get ahead of. The intersection of AI and relationships. Flourishing and designing companies for the future. How to be your own person in a world of strong forces pulling you in all directions. You'll occasionally co-facilitate these conversations, both with people inside the company and thought leaders beyond it who share our perspective
 
-Creative Experiments & Growth Hacking
+<strong style="color:white; font-size:20px">Creative Experiments & Growth Hacking</strong>
 
 Be an idea machine. Launch weekly creative experiments, both offline and online. Test formats, copy, videos, voice drops, referral loops, guerrilla activations, creative PR. Go wild. The old playbook doesn't work, and we're not interested in following it anyway. Distribution has become the biggest bottleneck, and we don’t intend to grow through ads, period, so your job is to crack it through pure creativity.
 
-Brand Evangelism & Community Cultivation
+<strong style="color:white; font-size:20px">Brand Evangelism & Community Cultivation</strong>
 
 Be a living embodiment of Elinity's ethos: intentional connection, depth, care, and human aliveness. Build and nurture a founding community that spreads Elinity's vibe like wildfire. This is earned growth, not bought growth. Community-driven, not algorithm-driven.
 `
@@ -359,10 +364,16 @@ Be a living embodiment of Elinity's ethos: intentional connection, depth, care, 
               boxShadow: "0 20px 60px rgba(0,0,0,0.5)"
             }}
           >
-            <h2 style={{ fontSize: 26, marginBottom: 16 }}>{sec.title}</h2>
-            <p style={{ lineHeight: 1.9, opacity: 0.9, whiteSpace: "pre-line" }}>
-              {sec.text}
-            </p>
+            <h2 style={{ fontSize: 36, marginBottom: 16,
+              
+      background: "linear-gradient(to right, #fff 30%, #b066fe 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+             }}><strong>{sec.title}</strong></h2>
+<p
+  style={{ lineHeight: 1.9, opacity: 0.9, whiteSpace: "pre-line" }}
+  dangerouslySetInnerHTML={{ __html: sec.text }}
+/>
           </motion.div>
         ))}
 
@@ -410,9 +421,8 @@ Be a living embodiment of Elinity's ethos: intentional connection, depth, care, 
             marginBottom: "28px",
             opacity: 0.9
           }}
-        >
-          {text}
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
       ))}
     </motion.section>
 

@@ -45,7 +45,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
                 <span className="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 
                                 bg-clip-text text-transparent font-semibold italic">
                   human connection
-                </span>.
+                </span>
               </h2>
               <p className="text-purple-100/60 text-sm max-w-md">
                 Find your most resonant people with Lumi, your social matchmaker, that understands the whole of you.

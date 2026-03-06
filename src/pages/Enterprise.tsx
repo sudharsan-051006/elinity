@@ -949,7 +949,7 @@ viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         style={{
           maxWidth: '1000px',
-          margin: '100px auto',
+          margin: '0px auto',
           padding: '70px 50px',
           borderRadius: '36px',
           background: 'rgba(255,255,255,0.03)',

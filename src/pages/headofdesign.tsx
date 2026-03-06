@@ -182,10 +182,10 @@ const DesignHead = () => {
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.3 }}
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",
-          margin: "120px auto",
+          margin: "60px auto",
           padding: mobile ? "30px" : "50px",
           borderRadius: "26px",
           background: "rgba(255,255,255,0.03)",
@@ -235,13 +235,11 @@ const DesignHead = () => {
         </p>
       </motion.div>
 
-      {/* <div className="pt-16"></div> */}
-
       <motion.section
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",
           margin: "20px auto",
@@ -258,7 +256,7 @@ const DesignHead = () => {
           style={{
             fontSize: mobile ? "32px" : "40px",
             fontWeight: 900,
-            marginBottom: "60px",
+            marginBottom: "20px",
             background: "linear-gradient(to right,#fff,#b066fe)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent"
@@ -383,8 +381,8 @@ const DesignHead = () => {
         </div>
 
         {/* CULTURE */}
-        <div>
-          <h3 style={{ fontSize: "26px", marginBottom: "20px", color: "#b066fe" }}>
+        <div style={{marginBottom:'0px'}}>
+          <h3 style={{ fontSize: "26px", marginBottom: "0px", color: "#b066fe" }}>
             Shape Culture
           </h3>
 
@@ -395,24 +393,22 @@ const DesignHead = () => {
           </p>
         </div>
       </motion.section>
-
-      {/* <div className="pt-16"></div> */}
     
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-style={{
-  maxWidth: "1200px",
-  margin: "0 auto",
-  padding: mobile ? "40px 24px" : "60px",
-  borderRadius: "30px",
-  background: "rgba(255,255,255,0.03)",
-  border: "1px solid rgba(176,102,254,0.25)",
-  backdropFilter: "blur(16px)",
-  boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
-}}
+  viewport={{ once: true, margin: "-120px" }}
+        style={{
+          maxWidth: "1200px",
+          margin: "0px auto",
+          padding: mobile ? "40px 24px" : "60px",
+          borderRadius: "30px",
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(176,102,254,0.25)",
+          backdropFilter: "blur(16px)",
+          boxShadow: "0 40px 120px rgba(0,0,0,0.6)"
+        }}
       >
         <h2
           style={{
@@ -465,10 +461,11 @@ style={{
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+  viewport={{ once: true, margin: "-120px" }}
+
         style={{
           maxWidth: "1200px",
-          margin: "140px auto",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -528,10 +525,11 @@ style={{
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+  viewport={{ once: true, margin: "-120px" }}
+
         style={{
           maxWidth: "1200px",
-          margin: "140px auto",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -591,10 +589,11 @@ style={{
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+  viewport={{ once: true, margin: "-120px" }}
+
         style={{
           maxWidth: "1200px",
-          margin: "140px auto",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -664,11 +663,11 @@ style={{
       <motion.div
         variants={fadeUp}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        whileInView="show"  viewport={{ once: true, margin: "-120px" }}
+
         style={{
           maxWidth: "1200px",
-          margin: "140px auto",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -703,7 +702,7 @@ style={{
           <p>
             We have built a suite of modules for discovery, matching, relationships
             flourishing, with connection-oriented games, smart voice journaling,
-            reflections, AI coaching built in. We're not just matching people -we're
+            reflections, AI coaching built in. We're not just matching people - we're
             helping them thrive together over time.
           </p>
 
@@ -731,12 +730,12 @@ style={{
 
       <motion.div
         variants={fadeUp}
-        initial="hidden"
+        // initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+  viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",
-          margin: "140px auto",
+          margin: "20px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
@@ -802,8 +801,7 @@ style={{
       <motion.div
   variants={fadeUp}
   initial="hidden"
-  whileInView="show"
-  viewport={{ once: false, amount: 0.3 }}
+  whileInView="show"  viewport={{ once: true, margin: "-120px" }}
   style={{
     maxWidth: "950px",
     margin: "160px auto",
@@ -896,6 +894,13 @@ style={{
       </p>
     </div>
 
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of Design and Experiences Role"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                }}
+              >
     <button
       style={{
         padding: "16px 36px",
@@ -911,6 +916,8 @@ style={{
     >
       Apply for this Role
     </button>
+              </a>
+
   </div>
 </motion.div>
     </div>
