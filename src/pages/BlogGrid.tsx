@@ -21,7 +21,7 @@ const BlogContainer = () => {
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden px-4 sm:px-6 mx-auto">
-
+<div className='pt-8'></div>
       {/* GRID */}
       <motion.div
         id="blog-start"

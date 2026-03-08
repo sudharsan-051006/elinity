@@ -6,8 +6,231 @@ import birth from '../../public/brithrate.jpeg';
 import vivid from '../../public/vividdetails.jpeg';
 import breakup from '../../public/breakup.jpeg';
 import future from '../../public/25.jpeg';
+import elintyblog from '../../public/theelinityblog.png';
 
 export const blogs = [
+  {
+    id: 0,
+    title: 'The Elinity Alignment Thesis',
+    image: elintyblog,
+    time: '6 min read',
+    date: '15 April 2024',
+    author: 'Rachel Adams',
+    authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
+    content: `
+
+    <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+<h1 style="font-size:36px; margin-bottom:50px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:800;">
+The Elinity Alignment Thesis
+</h1>
+
+
+<!-- I -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+I.
+</h3>
+
+<p style="color:#cfcfe6;">
+We might be the only consciousness in the entire universe. Let the gravity of that possibility, the responsibility of that realization, sink in for a moment.<br><br>
+
+We might be the only intelligent life that has ever existed in the cosmos. The only minds capable of understanding beauty, meaning, love, joy, suffering, growth. The only beings who can look up at the stars and comprehend what we're seeing. The only consciousness that has emerged from billions of years of evolution on this pale blue dot.<br><br>
+
+We have a responsibility to ensure the light of our consciousness lives on. The depth of this responsibility we cannot fathom - this is <strong>Our Great Climb.</strong><br><br>
+
+What we have in front of us is a light cone of billions of years of human flourishing across the cosmos. Quadrillions of humans across billions of years, across millions of planets, across thousands of galaxies. An endowment so vast, so beautiful, so precious that if we erase it, the scale of the tragedy would be something we dare not conceive.<br><br>
+
+Never before has the gulf between what is possible if we succeed and what happens if we fail been greater. If we succeed, it's the best of all possible worlds. If we fail, it's the worst of all possible worlds. The stakes are as high as they've ever been, as high as they can ever be.<br><br>
+
+And right now, as I write this, as you read this, we're perched on a precipice most precariously.
+</p>
+</div>
+
+
+<!-- II -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+II.
+</h3>
+
+<p style="color:#cfcfe6;">
+<strong>The alignment problem is the most important problem of our times. Period.</strong><br><br>
+
+AGI is inevitable within the next decade. ASI is inevitable within the next two decades at most. Human nature, the circumstances of ASI's birth, the inherent risks of superintelligence, all of this makes bad outcomes more likely than we'd like them to be.<br><br>
+
+ASI can be a catalyst for the grandest futures. Or it can be the culmination, the end of everything.<br><br>
+
+We don't know precisely how likely the risks are. But we know we cannot assume the risk of crippling outcomes to be less than 0.01%. Think of it like a meteor hurtling towards us with a probability of 0.01%. We'd mobilize everything, every resource, every brilliant mind to stop it. The alignment problem deserves the same urgency.<br><br>
+
+Here's the thing: this is something we can solve for. This is not like a meteorite we cannot prepare for. This is not a black swan event. If we fail, it'll be because we failed to rise to the occasion. We don't want to fail by default, by not trying our damnedest. We don't want to fail because we ran out of time, because of lack of heart and soul.<br><br>
+
+And understand this: ASI doesn't just pose a threat in rendering us extinct. There are so many futures where we survive but live in suboptimal worlds. Tyrannical worlds. Authoritarian surveillance states. Techno-feudalism. Post-human futures where we're kept as pets or museum pieces. Lots of different sci-fi dystopias are possible.<br><br>
+
+Extinction is just the most extreme outcome. Even if you want to discount that, there are so many other catastrophic risks that we have to take the alignment problem as the most important problem of the next 10 years.
+</p>
+</div>
+
+
+<!-- III -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+III.
+</h3>
+
+<p style="color:#cfcfe6;">
+We take a realist view of ASI and its implications. Anyone paying attention would eventually converge on this.<br><br>
+
+We cannot afford to be naive. We cannot afford to be rose-eyed and hope things go well. <strong>Hope is not a strategy.</strong><br><br>
+
+AGI and ASI are not just about intelligence. They're about power. The ultimate power. Organizations that wield AGI will have the power of nation-states. In our anarchic might-is-right world order, in a system with no centralized authority, this will create lots of chances for things to go catastrophically wrong.<br><br>
+
+<strong>Things are about to get wild.</strong><br><br>
+
+When you have greed that knows no bounds the human thirst for power and control and domination that knows no bounds, when you have something as powerful as ASI, people's brains are going to break. Reckless choices will be made.<br><br>
+
+Corporations are entering a dog-eat-dog world where they'll become more powerful than nation-states. What gives nation-states power is the monopoly on violence. But big corporations will have their own militaries with robots. The rules change completely when violence becomes decentralized and automated.<br><br>
+
+Without the credible threat of consequences, rules don't mean anything. Power is going to centralize in ways we've never seen before. We need to find ways to protect ourselves.
+</p>
+</div>
+
+
+<!-- IV -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+IV.
+</h3>
+
+<p style="color:#cfcfe6;">
+Just look around. You'll see just how precarious this moment is.<br><br>
+
+The state of the companies. The state of the techno-capital machine. Us going towards fascism, moving towards techno-feudalism, atomizing, living in simulacra, escaping from reality.<br><br>
+
+The Palantirs of the world want surveillance states. The Musks of the world want to remove humans from the loop entirely. The Zuckerbergs and Metas want addictive algorithms that keep you hooked. The TikToks want you running on the dopamine treadmill.<br><br>
+
+<strong>These are not the futures we can accept.</strong><br><br>
+
+Companies dominating everything, accruing all value in the world is a real risk.<br><br>
+
+Countries, regions, groups need their own AGI and robotics so they're not dependent on corporations or governments.<br><br>
+
+The only way not to be at the mercy of another entity is having your own powerful AI looking out for your interests.
+</p>
+</div>
+
+
+<!-- V -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+V.
+</h3>
+
+<p style="color:#cfcfe6;">
+The path to alignment requires multiple approaches. We need a diversity of super minds.<br><br>
+
+Alignment needs to be built in at the base layer, not tacked on.<br><br>
+
+The best foundation for an aligned AGI would be something truly empathetic.<br><br>
+
+Understanding, empathy, alignment are different dimensions. We need all of them.<br><br>
+
+The best protection against a rogue ASI is an aligned ASI.<br><br>
+
+<strong>This is core to our Lumi thesis.</strong><br><br>
+
+True autonomy exists in the cognitive and intellectual plane as well. Being able to have your own thoughts, question, and maintain intellectual sovereignty.<br><br>
+
+The only way to maintain agency and freedom is by having aligned AIs protecting our interests.
+</p>
+</div>
+
+
+<!-- VI -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+VI.
+</h3>
+
+<p style="color:#cfcfe6;">
+This is why we're building Lumi.<br><br>
+
+A lifelong companion. Thinking partner. Relationship ally. AI coach.<br><br>
+
+Your life flourishing buddy.<br><br>
+
+It needs to understand you deeply and align with your goals and values.<br><br>
+
+Some friends joke: are you building an alignment organization under the guise of a relationship platform, or vice versa?<br><br>
+
+<strong>Why not both?</strong><br><br>
+
+Alignment at the personal scale teaches us alignment at the civilizational scale.<br><br>
+
+They're the same problem at different scales.
+</p>
+</div>
+
+
+<!-- VII -->
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+VII.
+</h3>
+
+<p style="color:#cfcfe6;">
+Elinity may ultimately become a public good.<br><br>
+
+An aligned ASI could steward the mission and protect it from human weaknesses like ego or domination.<br><br>
+
+Even if leadership changes, the mission could continue for centuries.
+</p>
+</div>
+
+
+<!-- VIII -->
+<div style="margin-bottom:20px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+VIII.
+</h3>
+
+<p style="color:#cfcfe6;">
+This moment demands the very best of us.<br><br>
+
+If we get ASI alignment right, we unlock the grandest futures imaginable.<br><br>
+
+Billions of years of human flourishing across the cosmos.<br><br>
+
+Quadrillions of humans across millions of planets and thousands of galaxies.<br><br>
+
+If we fail, the worst outcomes may await us.<br><br>
+
+<strong>The alternative is unacceptable.</strong><br><br>
+
+So we're building what needs to be built.<br><br>
+
+This is the Elinity alignment thesis.<br><br>
+
+<strong>Join us if you are called.</strong>
+</p>
+</div>
+
+</div>
+
+    `    
+  },
+
   {
     id: 1,
     title: 'Some of Our Core Beliefs at Elinity	',
