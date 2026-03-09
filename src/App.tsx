@@ -35,6 +35,7 @@ import ElinityPodcast from './pages/ElinityPod';
 import Software from './pages/software';
 import DesignHead from './pages/headofdesign';
 import AIResearch from './pages/headai';
+import { useLocation } from "react-router-dom";
 
 function App() {
 
@@ -65,8 +66,50 @@ function App() {
     };
   }, []);
 
+function TitleManager() {
+  const location = useLocation();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/ellaris":
+        document.title = "Elinity | Ellaris";
+        break;
+
+      case "/":
+        document.title = "Elinity";
+        break;
+
+      case "/blog":
+        document.title = "Elinity | Blogs";
+        break;
+      
+      case "/about":
+        document.title = "Elinity | About Us";
+        break;
+      
+      case "/contact":
+        document.title = "Elinity | Contact Us";
+        break;
+      
+      case "/join-us":
+        document.title = "Elinity | Join Us";
+        break;
+      
+      case "/about":
+        document.title = "Elinity | About Us";
+        break;
+
+      default:
+        document.title = "Elinity";
+    }
+  }, [location.pathname]); // runs whenever route changes
+
+  return null;
+}
+
   return (
     <Router>
+      <TitleManager />
       <ScrollToTop />
       {/* <CursorSpark /> */}
       <div className="flex flex-col min-h-screen">
@@ -87,6 +130,7 @@ function App() {
                 <Testimonials />
                 <WaitlistSection ref={waitlistRef} />
                 <FAQ />
+                
                
               </main>
             } />

@@ -25,33 +25,63 @@ const BlogDetail = () => {
 
   const blog = blogs.find((b: any) => b.id === Number(id));
 
-  /* =======================
-     CHATGPT TYPING EFFECT
-  ======================== */
+  // /* =======================
+  //    CHATGPT TYPING EFFECT
+  // ======================== */
 
-  const [displayedContent, setDisplayedContent] = useState('');
-  const typingIndex = useRef(0);
+  // const [displayedContent, setDisplayedContent] = useState('');
+  // const typingIndex = useRef(0);
 
-  useEffect(() => {
-    if (!blog) return;
+  // useEffect(() => {
+  //   if (!blog) return;
 
-    const fullText = blog.content; // keep HTML
-    typingIndex.current = 0;
-    setDisplayedContent('');
+  //   const fullText = blog.content; // keep HTML
+  //   typingIndex.current = 0;
+  //   setDisplayedContent('');
 
-    const interval = setInterval(() => {
-      typingIndex.current += 3; // typing speed (increase for faster)
-      setDisplayedContent(fullText.slice(0, typingIndex.current));
+  //   const interval = setInterval(() => {
+  //     typingIndex.current += 3; // typing speed (increase for faster)
+  //     setDisplayedContent(fullText.slice(0, typingIndex.current));
 
-      if (typingIndex.current >= fullText.length) {
-        clearInterval(interval);
-      }
-    }, 8); // typing speed
+  //     if (typingIndex.current >= fullText.length) {
+  //       clearInterval(interval);
+  //     }
+  //   }, 8); // typing speed
 
-    return () => clearInterval(interval);
-  }, [blog]);
+  //   return () => clearInterval(interval);
+  // }, [blog]);
 
-  /* ======================= */
+  // /* ======================= */
+
+    /* =======================
+        WORD BY WORD TYPING EFFECT
+    ======================== */
+
+      const [displayedContent, setDisplayedContent] = useState('');
+      const typingIndex = useRef(0);
+
+      useEffect(() => {
+        if (!blog) return;
+
+        const words = blog.content.split(" "); // split text into words
+        typingIndex.current = 0;
+        setDisplayedContent('');
+
+        const speed = Math.random() * 60 + 60; 
+
+        const interval = setInterval(() => {
+          if (typingIndex.current < words.length) {
+            setDisplayedContent(prev => prev + words[typingIndex.current] + " ");
+            typingIndex.current += 1;
+          } else {
+            clearInterval(interval);
+          }
+        }, speed); // speed of typing
+
+        return () => clearInterval(interval);
+      }, [blog]);
+
+      /* ======================= */
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {

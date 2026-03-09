@@ -15,7 +15,7 @@ export const blogs = [
     image: elintyblog,
     time: '6 min read',
     date: '15 April 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 
@@ -237,7 +237,7 @@ This is the Elinity alignment thesis.<br><br>
     image: belif,
     time: '6 min read',
     date: '15 April 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -560,7 +560,7 @@ This is the Elinity alignment thesis.<br><br>
     title: 'Why We Are Building Elinity ',
     time: '4 min read',
     date: '25 April 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 
@@ -879,7 +879,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     title: 'On Soulmate-Level Connections, and the Art of Curating Soulmates',
     time: '4 min read',
     date: '30 April 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -1097,7 +1097,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     title: 'The Future of Work, Meaning, and Purpose',
     time: '6 min read',
     date: '30 May 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: '',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -1389,7 +1389,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     title: 'The Three-Layered Design of Elinity',
     time: '6 min read',
     date: '15 April 2024',
-    author: 'Rachel Adams',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -1851,7 +1851,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     title: 'Birth Rates, Human Flourishing in the Cosmos, and Elinity for Humanity',
     time: '4 min read',
     date: '1 May 2024',
-    author: 'Sophie Turner',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/women/12.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -2163,7 +2163,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     title: 'Painting the Future in Full Color, in Vivid Detail',
     time: '5 min read',
     date: '28 April 2024',
-    author: 'Michael Brown',
+    author: 'Suraj Pandya',
     authorAvatar: 'https://randomuser.me/api/portraits/men/45.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e); 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import unamed from '../../public/Ellaris.jpg';
 import { useScrollReveal } from '../components/Scroll.tsx'; 
+import { useLocation } from "react-router-dom";
 
 const EllarisLandingPage: React.FC = () => {
   const [isPhone, setIsPhone] = useState(false);
@@ -12,9 +13,19 @@ const EllarisLandingPage: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-    useEffect(() => {
+function TitleManager() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/ellaris") {
       document.title = "Elinity | Ellaris";
-    }, []);
+    }
+  }, [location]);
+
+  return null;
+}
+
+// TitleManager();
   
 useEffect(() => {
   const observer = new IntersectionObserver(

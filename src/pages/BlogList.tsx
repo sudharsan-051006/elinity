@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import BlogCategoryTabs from './BlogCategoryTabs';
 import FeaturedBlogCarousel from './FeaturedBlogCarousel';
 import BlogGrid from './BlogGrid';
+// import { useEffect } from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },

@@ -19,9 +19,6 @@ const JoinUs: React.FC = () => {
   const [showManifesto, setShowManifesto] = useState(false);
   }
 
-  useEffect(() => {
-    document.title = "Elinity | Join Us";
-  }, []);
 
   const [isLaptop, setIsLaptop] = React.useState(window.innerWidth >= 1024);
 
