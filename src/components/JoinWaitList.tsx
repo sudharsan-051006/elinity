@@ -42,13 +42,25 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://elinity-2ulr.vercel.app/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
-      });
+      const response = await fetch(
+        "https://elinity-2ulr.vercel.app/api",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email }),
+        }
+      );
 
-      const data = await response.json();
+      let data: any = {};
+
+      // Safely parse JSON
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
+      }
 
       if (response.ok) {
         alert("You're on the waitlist 🚀");
@@ -57,15 +69,16 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
       } else if (response.status === 409) {
         alert("You're already on the waitlist 🙂");
       } else {
-        alert(data.error || "Something went wrong.");
+        alert(data?.error || "Something went wrong.");
       }
+
     } catch (error) {
+      console.error("Waitlist API error:", error);
       alert("Could not connect to server.");
     } finally {
       setLoading(false);
     }
   };
-
   const [cardRef, show] = useReveal();
 
   return (
@@ -130,6 +143,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
           <input
+            disabled={loading}
             type="text"
             placeholder="your name"
             value={name}
@@ -145,6 +159,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </div>
           <input
+            disabled={loading}
             type="email"
             placeholder="your email"
             value={email}
