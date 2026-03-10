@@ -23,7 +23,6 @@ const stagger = {
 
 const sitemapData = {
   'ROOT': [
-    { type: 'top', text: '' },
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Manifesto', href: '#' },
@@ -35,9 +34,6 @@ const sitemapData = {
     { name: 'Contact Us', href: '/contact' },
   ],
   'HOME': [
-    { type: 'bottom', text: `Purpose: 
-      Clear positioning + emotional pull + conversion.
-      Sections (internal anchors): \n` },
     { name: "Hero Section", href: '#' },
     { name: 'How Elinity Works', href: '#' },
     { name: 'Why Elinity', href: '#' },
@@ -62,7 +58,6 @@ const sitemapData = {
     { name: 'What We Stand For', href: '#' },
     { name: 'What We Reject', href: '#' },
     { name: 'The Future We’re Building', href: '#' },
-    { type: 'bottom', text: 'This is ideological gravity. This page matters.' },
   ],
   'COMMUNITY': [
     { name: 'Community Overview', href: '#' },
@@ -79,7 +74,6 @@ const sitemapData = {
     { name: 'Categories (Love, Growth, Creativity, Contribution etc.)', href: '#' },
     { name: 'How Rankings Work', href: '#' },
     { name: 'Hall of Fame ', href: '#' },
-    { type: 'bottom', text: 'Gamification meets meaning' },  
   ],
   'ELINITY STORIES': [
     { name: 'Featured Stories', href: '#' },
@@ -88,7 +82,6 @@ const sitemapData = {
     { name: 'Founder Stories', href: '#' },
     { name: 'Community Stories', href: '#' },
     { name: 'Submit Your Story', href: '#' },
-    { type: 'bottom', text: 'Social proof + emotional resonance.' },
   ],
   'BLOG': [
     { type: 'top', text: 'All Blogs' },
@@ -99,7 +92,6 @@ const sitemapData = {
     { name: 'Personal Growth', href: '#' },
     { name: 'Community Highlights', href: '#' },
     { name: 'AI & Human Connection', href: '#' },
-    { type: 'bottom', text: 'SEO engine + intellectual credibility' },
   ],
   'JOIN US': [
     { name: 'Join the Waitlist', href: '/' },
@@ -107,7 +99,6 @@ const sitemapData = {
     { name: 'Early Access Program', href: '#' },
     { name: 'Ambassador Program', href: '#' },
     { name: 'Careers', href: '/join-us' },
-    { type: 'bottom', text: 'This is where momentum compounds' },
   ],
   'CONTACT US': [
     { name: 'General Inquiries', href: '/contact' },

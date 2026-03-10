@@ -94,7 +94,7 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
     ref={cardRef}
     initial={false}
     animate={{ 
-      opacity: show ? 1 : 0, 
+      opacity: 1, 
       y: show ? 0 : 40,
       scale: show ? 1 : 0.95 
     }}
