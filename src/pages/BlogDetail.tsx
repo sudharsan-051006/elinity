@@ -120,9 +120,14 @@ const BlogDetail = () => {
         
         {/* Sidebar */}
         <aside className="lg:w-16 flex lg:flex-col items-center justify-between lg:justify-start gap-4 lg:pt-20">
-          <Link to="/blog" className="flex items-center gap-2 bg-[#23235b] text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-purple-700 transition" style={{width:'120px'}}>
-            <ChevronLeft size={32} /> <span className="hidden sm:inline">Back to blogs</span>
-          </Link>
+<Link
+  to="/blog"
+  className="flex items-center gap-2 bg-[#23235b] text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-purple-700 transition"
+>
+  <ChevronLeft size={20} />
+  <span className="sm:hidden">Back</span>
+  <span className="hidden sm:inline">Back</span>
+</Link>
           <div className="flex lg:flex-col gap-3">
             <button className="bg-[#23235b] hover:bg-purple-700 p-2.5 rounded-full transition" onClick={() => handleShare('twitter')}><XIcon size={16} /></button>
             <button className="bg-[#23235b] hover:bg-purple-700 p-2.5 rounded-full transition" onClick={() => handleShare('facebook')}><Facebook size={16} /></button>

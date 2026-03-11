@@ -43,6 +43,8 @@ const BlogList = () => {
           <BlogCategoryTabs />
         </motion.div>
         
+<br></br>
+
         {/* Featured Section */}
         <motion.section
           variants={fadeUp}
