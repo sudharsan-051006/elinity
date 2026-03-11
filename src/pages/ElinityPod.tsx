@@ -875,36 +875,118 @@ export default function ElinityPodcast() {
           </Reveal>
         </div>
       </section>
-      {/* ══ THE PROCESS ══ */}
-      <section style={sec}>
-        <Reveal><div style={{
-          color:'white',
-          fontSize:'32px',
-          // marginLeft:'50%',
-          marginBottom:'60px'
-        }}>The Process <span style={labelLine} /></div></Reveal>
-        <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : isTablet ? "1fr 1fr" : "repeat(3,1fr)", gap:"2px", 
-          color:'white'
-        }}>
-          {processSteps.map((s, i) => (
-            <Reveal key={s.num} delay={60 + i * 80}>
-              <div className="hover-card" style={{ padding: isMobile ? "32px 22px" : "48px 38px", background:B.bgDark, border:"1px solid rgba(168,85,247,0.09)", height:"100%", boxSizing:"border-box" }}>
-                <span style={{ fontSize:"42px", fontFamily:F, fontWeight:300, color:"rgba(168,85,247,0.18)", marginBottom:"20px", display:"block", fontStyle:"italic" }}>{s.num}</span>
-                <div style={{ fontSize:"16px", fontFamily:F, fontWeight:500, color:B.textLight, marginBottom:"12px" }}>{s.title}</div>
-                <div style={{ fontSize:"14px", lineHeight:1.78, fontFamily:F, fontWeight:300, color:'white' }}>{s.body}</div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={120}>
-          <p style={bodyStyle({ margin:"100px",
-            
-            maxWidth:"640px", 
-            border:'1px solid transparent', borderRadius:'24px', padding:'24px' })}>
-            In the spirit of Elinity, which is fundamentally about enabling deeper human connection, we want to have more conversations with people. Get people thinking. Get people discussing. Spread ideas that matter.</p>
-        </Reveal>
-      </section>
+{/* ══ THE PROCESS ══ */}
+<section
+  style={{
+    padding: isMobile ? "80px 20px" : "120px 40px",
+    background: "linear-gradient(180deg,#0b0b1a,#050510)",
+    color: "white",
+    position: "relative"
+  }}
+>
+  <Reveal>
+    <div
+      style={{
+        fontSize: "34px",
+        textAlign: "center",
+        marginBottom: "70px",
+        fontWeight: 500,
+        letterSpacing: "0.5px"
+      }}
+    >
+      The Process <span style={labelLine} />
+    </div>
+  </Reveal>
 
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : isTablet
+        ? "1fr 1fr"
+        : "repeat(3,1fr)",
+      gap: "40px",
+      position: "relative"
+    }}
+  >
+    {processSteps.map((s, i) => (
+      <Reveal key={s.num} delay={60 + i * 80}>
+        <div
+          className="hover-card"
+          style={{
+            padding: "40px 30px",
+            borderRadius: "18px",
+            background:
+              "linear-gradient(145deg, rgba(20,20,45,0.9), rgba(12,12,30,0.7))",
+            border: "1px solid rgba(168,85,247,0.18)",
+            transition: "all 0.3s ease",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px"
+          }}
+        >
+          {/* Step number */}
+          <span
+            style={{
+              fontSize: "52px",
+              fontWeight: 300,
+              color: "rgba(168,85,247,0.25)",
+              fontStyle: "italic",
+              lineHeight: 1
+            }}
+          >
+            {s.num}
+          </span>
+
+          {/* Title */}
+          <div
+            style={{
+              fontSize: "18px",
+              fontWeight: 500,
+              color: "#d9d9ff"
+            }}
+          >
+            {s.title}
+          </div>
+
+          {/* Body */}
+          <div
+            style={{
+              fontSize: "14px",
+              lineHeight: 1.8,
+              color: "rgba(255,255,255,0.75)"
+            }}
+          >
+            {s.body}
+          </div>
+        </div>
+      </Reveal>
+    ))}
+  </div>
+
+  <Reveal delay={120}>
+    <p
+      style={{
+        maxWidth: "650px",
+        margin: "70px auto 0",
+        textAlign: "center",
+        fontSize: "15px",
+        lineHeight: 1.8,
+        padding: "28px",
+        borderRadius: "20px",
+        background:
+          "linear-gradient(145deg, rgba(20,20,45,0.8), rgba(10,10,25,0.6))",
+        border: "1px solid rgba(168,85,247,0.18)"
+      }}
+    >
+      In the spirit of Elinity, which is fundamentally about enabling deeper
+      human connection, we want to have more conversations with people. Get
+      people thinking. Get people discussing. Spread ideas that matter.
+    </p>
+  </Reveal>
+</section>
       {/* ══ WHY THIS MATTERS ══ */}
       <div style={{ background:B.bgMid, borderTop:"1px solid rgba(168,85,247,0.1)", borderBottom:"1px solid rgba(168,85,247,0.1)", padding:`${sY} 0` }}>
         <div style={{ maxWidth:"740px", margin:"0 auto", padding:`0 ${px}` }}>
