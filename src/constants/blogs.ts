@@ -93,9 +93,9 @@ AGI and ASI are not just about intelligence. They're about power. The ultimate p
 
 <strong>Things are about to get wild.</strong><br><br>
 
-When you have greed that knows no bounds the human thirst for power and control and domination that knows no bounds, when you have something as powerful as ASI, people's brains are going to break. Reckless choices will be made.<br><br>
+When you have greed that knows no bounds the human thirst for power and control and domination that knows no bounds, when you have something as powerful as ASI (I wouldn't even call it a "technology" anymore, it becomes a force more powerful than that), when people believe they can wield it and achieve their aims, people's brains are going to break. Reckless choices will be made.<br><br>
 
-Corporations are entering a dog-eat-dog world where they'll become more powerful than nation-states. What gives nation-states power is the monopoly on violence. But big corporations will have their own militaries with robots. The rules change completely when violence becomes decentralized and automated.<br><br>
+This is not just true for countries. This is true for corporations. Corporations are entering a dog-eat-dog world where they'll become more powerful than nation-states. What gives nation-states power is the monopoly on violence. But big corporations will have their own militaries with robots. The rules change completely when violence becomes decentralized and automated.<br><br>
 
 Without the credible threat of consequences, rules don't mean anything. Power is going to centralize in ways we've never seen before. We need to find ways to protect ourselves.
 </p>
@@ -112,17 +112,21 @@ IV.
 <p style="color:#cfcfe6;">
 Just look around. You'll see just how precarious this moment is.<br><br>
 
-The state of the companies. The state of the techno-capital machine. Us going towards fascism, moving towards techno-feudalism, atomizing, living in simulacra, escaping from reality.<br><br>
+The state of the companies. The state of the techno-capital machine. Us going towards fascism, moving towards techno-feudalism, atomizing, living in simulacra, escaping from reality.Us not having strong grounding in reality and strong relationships that can be the centripetal force holding everything together.
+<br><br>
 
-The Palantirs of the world want surveillance states. The Musks of the world want to remove humans from the loop entirely. The Zuckerbergs and Metas want addictive algorithms that keep you hooked. The TikToks want you running on the dopamine treadmill.<br><br>
+<strong>In the absence of that, things spiral out of control. Fast.<strong>
 
-<strong>These are not the futures we can accept.</strong><br><br>
+The Palantirs of the world want surveillance states. The Musks of the world want to remove humans from the loop entirely, imagine post-human futures, capture all value of human labor with planetary scale push into AI and robotics.The Zuckerbergs and Metas want addictive algorithms that keep you hooked and turn you into consumers.The TikToks want you running and panting on the dopamine treadmill.<br><br>
 
-Companies dominating everything, accruing all value in the world is a real risk.<br><br>
+<strong>We cannot allow that future.</strong><br><br>
 
-Countries, regions, groups need their own AGI and robotics so they're not dependent on corporations or governments.<br><br>
+What we're on track for is companies dominating everything, accruing all value in the world. Global GDP is $50 trillion. Big tech wants all of it. And they might get it, because everyone who doesn't have their own AGI will be dependent, and all the value ultimately accrues to the foundational layer in this new world.<br/><br/>
 
-The only way not to be at the mercy of another entity is having your own powerful AI looking out for your interests.
+Countries, regions, groups need their own AGI and robotics so they're not at the mercy of corporations, or UBI from those corporations, or their own governments, or the goodwill of Silicon Valley, or the whims of the US. The USAid episode showed us clearly where the winds are blowing and how damaging dependence can be. <br/><br/>
+
+The only way not to be at the mercy of another nation, company, entity, or even your own government is having your own powerful AI looking out for your interests, actively working to advance them, helping you achieve your goals.<br/><br/>
+
 </p>
 </div>
 
@@ -135,21 +139,21 @@ V.
 </h3>
 
 <p style="color:#cfcfe6;">
-The path to alignment requires multiple approaches. We need a diversity of super minds.<br><br>
+The path to alignment requires multiple approaches. We need a diversity of super minds. This is the best path towards alignment and towards positive equilibria.<br><br>
 
-Alignment needs to be built in at the base layer, not tacked on.<br><br>
+Alignment needs to be built in at the base layer, not tacked on. The best foundation for an aligned AGI would be something that is truly empathetic. Only an AI that can truly understand the human experience and empathize with us will want to keep the human experience around. Only that kind of AI will care about our flourishing.<br><br>
 
-The best foundation for an aligned AGI would be something truly empathetic.<br><br>
+TWe believe that understanding and empathy can lead to alignment, though they don't naturally or automatically lead to alignment. We need to add things on top. But empathy is a necessary condition, a base condition. Understanding, empathy, alignment are different dimensions. We need all of them.<br><br>
 
-Understanding, empathy, alignment are different dimensions. We need all of them.<br><br>
-
-The best protection against a rogue ASI is an aligned ASI.<br><br>
+The best protection against a rogue ASI is an aligned ASI. The best protection against AIs that want to exploit you, hurt you, harm you, is your own aligned AI designed to protect you and help you flourish long-term. This AI protects you against rogue actors: humans, companies, governments, other AIs.<br><br>
 
 <strong>This is core to our Lumi thesis.</strong><br><br>
 
-True autonomy exists in the cognitive and intellectual plane as well. Being able to have your own thoughts, question, and maintain intellectual sovereignty.<br><br>
+True autonomy doesn't just exist in the physical plane. It exists in the cognitive, intellectual, spiritual plane. Being able to have your own thoughts. Think critically. Be your own person. Question. Have the will to question. Have intellectual sovereignty.<br><br>
 
-The only way to maintain agency and freedom is by having aligned AIs protecting our interests.
+The only way we keep that is by having our protective AGI buddy looking out for us. The only way for personal freedom and flourishing to reign is with everyone having their aligned, protective AGI layer.<br><br>
+
+We need to maintain our agency, our freedoms. The only way to do that is by having our own aligned AIs that fight against other superintelligent algorithms and AIs, that fight to keep our wellbeing and goals and interests front and center.
 </p>
 </div>
 
@@ -164,19 +168,27 @@ VI.
 <p style="color:#cfcfe6;">
 This is why we're building Lumi.<br><br>
 
-A lifelong companion. Thinking partner. Relationship ally. AI coach.<br><br>
+A lifelong companion. Thinking partner and relationship ally and AI coach. Your life flourishing buddy.<br><br>
 
-Your life flourishing buddy.<br><br>
+For this AI to be anything remotely close to what we need it to be, it needs to be aligned with your long-term goals, aligned with your values, aligned with your hopes, aligned with you. It needs to understand you deeply. Alignment and understanding are different dimensions. We need both.<br><br>
 
-It needs to understand you deeply and align with your goals and values.<br><br>
-
-Some friends joke: are you building an alignment organization under the guise of a relationship platform, or vice versa?<br><br>
+Some friends joke: are you building an alignment organization under the guise of a relationship flourishing platform, or a relationship flourishing platform under the guise of an alignment organization?<br><br>
 
 <strong>Why not both?</strong><br><br>
 
-Alignment at the personal scale teaches us alignment at the civilizational scale.<br><br>
+Even the name, Elinity, suspiciously sounds like it's derived from "Alignment." Nominative determinism at work :)<br><br>
 
-They're the same problem at different scales.
+These are not separate missions. In a world heading toward atomization and simulacra and techno-feudalism, strong relationships and strong grounding in reality are the forces that hold everything together. Building tools that help people find their people, build extraordinary relationships, and flourish together is essential infrastructure for what's coming.<br><br>
+
+Building AI genuinely aligned with individual humans, that understands them deeply, that cares about their flourishing, is practice for the harder civilizational-scale alignment problem. Every insight we gain about aligning AI with human values at the individual level teaches us something about the bigger problem.<br><br>
+
+Great relationships are built from alignment. We hope our alignment research feeds those day-to-day parts of our mission. This alignment mission becomes meta.<br><br>
+
+In our alignment research, in aligning the goals and values of an AI agent with its human, we'll learn things that help us establish deeper alignment within individuals, between individuals and their long-term goals, between partners, collaborators, communities. Building an aligned ASI teaches us about building aligned institutions, aligned to long-term human flourishing.<br><br>
+
+The work of helping people build aligned, flourishing relationships is the work of learning how alignment works. The work of building AI aligned with individual human flourishing is preparation for building ASI aligned with civilizational flourishing.<br><br>
+
+<strong>They're the same thing at different scales.</strong>
 </p>
 </div>
 
@@ -189,11 +201,10 @@ VII.
 </h3>
 
 <p style="color:#cfcfe6;">
-Elinity may ultimately become a public good.<br><br>
+Considering what we are trying to achieve with Elinity, it makes a ton of sense for Elinity to become a public good. And something that could be an unflinching, reliable steward of our mission, lest the organization stray in any way, would be an ASI - an ASI without human weaknesses, human frailties, human baggage like desires for expansion, domination, ego, none of the stuff that may endanger our mission or enshittify our offerings. That aligned ASI could shepherd the organization, let it continue doing the best work for the longest time, even if the company loses its leadership.<br><br>
 
-An aligned ASI could steward the mission and protect it from human weaknesses like ego or domination.<br><br>
+We always want the most aligned, deeply principled people in the company, intrinsically motivated by our north star. That goes without saying. But as a backup, to ensure this most important mission of helping people build incredible relationships and flourish in their lives is never put at risk, we can rest assured that an ASI could take over, be the CEO, manage the company, help it become a public good organization, ensuring the mission lives on for 50 years, 200 years, 500 years.<br><br>
 
-Even if leadership changes, the mission could continue for centuries.
 </p>
 </div>
 
@@ -208,21 +219,25 @@ VIII.
 <p style="color:#cfcfe6;">
 This moment demands the very best of us.<br><br>
 
-If we get ASI alignment right, we unlock the grandest futures imaginable.<br><br>
+We have all the chances of screwing it up. In fact, we're on track to mess it up. Just pay attention to what's happening.<br><br>
 
-Billions of years of human flourishing across the cosmos.<br><br>
+But if we get ASI right, if we get it aligned, we have a veritable utopia. Possible. Inevitable. The very best of most possible worlds within our grasp.<br><br>
 
-Quadrillions of humans across millions of planets and thousands of galaxies.<br><br>
+If we don't get it right, and inaction is failure by default, then the very worst outcomes are inevitable.<br><br>
 
-If we fail, the worst outcomes may await us.<br><br>
+So we've got to get it right.<br><br>
 
-<strong>The alternative is unacceptable.</strong><br><br>
+Because if we do, the grandest futures are ours for the taking. Billions of years of human flourishing across the cosmos. Quadrillions of humans living rich, meaningful, beautiful lives across millions of planets and thousands of galaxies.<br><br>
 
-So we're building what needs to be built.<br><br>
+If we mess it up, or if we're late in solving alignment, the very worst futures may await us.<br><br>
+
+<strong>Or none at all.</strong><br><br>
+
+The alternative is unacceptable. So we're building what needs to be built. We're doing the work that needs to be done. We're trying to solve one of the most important problems in human history.<br><br>
 
 This is the Elinity alignment thesis.<br><br>
 
-<strong>Join us if you are called.</strong>
+This is why we're here, doing what we’re doing.<strong>Join us if you are called.</strong>
 </p>
 </div>
 

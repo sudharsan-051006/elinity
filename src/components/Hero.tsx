@@ -63,7 +63,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
               lineHeight: "1.1",
             }}
           >
-            designed to help you actualize your potential, across love, leisure,
+            elinity is designed to help you actualize your potential, across love, leisure,
             and collaboration, with lumi, your{" "}
             <span
               style={{
