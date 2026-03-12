@@ -1,118 +1,245 @@
-import React, { useState, useEffect } from 'react';
-import { blogs } from '../constants/blogs';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { blogs } from "../constants/blogs";
+import { Link } from "react-router-dom";
 
 const targetIndices = [0, 1, 2, 3];
-const featuredBlogs = blogs
-  .filter((_, index) => targetIndices.includes(index))
-  .map(blog => ({ ...blog, tag: 'Featured' }));
 
-const ANIMATION_DURATION = 1400;
-const AUTO_TRANSITION_DELAY = 4500;
+const featuredBlogs = blogs
+  .filter((_, i) => targetIndices.includes(i))
+  .map((b) => ({ ...b, tag: "Featured" }));
+
+const ANIMATION_DURATION = 500;
+const AUTO_DELAY = 4500;
+
+const n = featuredBlogs.length;
+
+/* clones for infinite loop */
+const slides = [
+  featuredBlogs[n - 1],
+  ...featuredBlogs,
+  featuredBlogs[0],
+];
 
 const FeaturedBlogCarousel = () => {
-  const [current, setCurrent] = useState(0);
-  const [next, setNext] = useState<number | null>(null);
-  const [direction, setDirection] = useState<'left' | 'right' | null>(null);
+  const [index, setIndex] = useState(1);
+  const [transition, setTransition] = useState(true);
 
-  useEffect(() => {
-    if (next !== null) return;
-    const timer = setTimeout(() => handleNav('right'), AUTO_TRANSITION_DELAY);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line
-  }, [current, next]);
+  const timerRef = useRef<any>(null);
 
-  const handleNav = (dir: 'left' | 'right') => {
-    if (next !== null) return;
-    setDirection(dir);
-    setNext(dir === 'left' 
-      ? (current === 0 ? featuredBlogs.length - 1 : current - 1) 
-      : (current === featuredBlogs.length - 1 ? 0 : current + 1)
-    );
-    setTimeout(() => {
-      setCurrent(dir === 'left' 
-        ? (current === 0 ? featuredBlogs.length - 1 : current - 1) 
-        : (current === featuredBlogs.length - 1 ? 0 : current + 1)
-      );
-      setNext(null);
-      setDirection(null);
-    }, ANIMATION_DURATION);
+  const clearTimer = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
   };
 
-  const renderCard = (blog: typeof featuredBlogs[0], animate: boolean, animDir: 'left' | 'right' | null) => (
-    <div
-      className={`absolute inset-0 w-full h-full transition-transform duration-[${ANIMATION_DURATION}ms] ${
-        animate
-          ? animDir === 'left' ? 'translate-x-[-100%] opacity-0' : 'translate-x-[100%] opacity-0'
-          : 'translate-x-0 opacity-100'
-      }`}
-      style={{ zIndex: 2, pointerEvents: animate ? 'none' : 'auto' }}
-    >
-      <Link to={`/blog/${blog.id}`} className="block h-full">
-        <div 
-          className="w-full h-full bg-[#181848]/90 backdrop-blur-md rounded-2xl border border-purple-700/40 p-3 flex items-center gap-3 sm:gap-6" 
-          style={{ boxShadow: '0 10px 30px -10px rgba(0,0,0,0.7)' }}
-        >
-          {/* Image - Square and small on mobile, larger on desktop */}
-          <img 
-            src={blog.image} 
-            alt={blog.title} 
-            className="w-20 h-20 sm:w-40 sm:h-32 object-cover rounded-xl flex-shrink-0" 
-          />
-          
-          <div className="flex-1 min-w-0">
-            <span className="text-[9px] sm:text-xs text-purple-400 font-bold uppercase tracking-widest">
-              {blog.tag}
-            </span>
-            <h2 className="text-[13px] sm:text-2xl font-bold text-white line-clamp-2 leading-tight mb-1">
-              {blog.title}
-            </h2>
-            <div className="flex items-center gap-2 text-[10px] sm:text-sm text-purple-300">
-              <span className="font-semibold text-white/70">{blog.date}</span>
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
+  /* dot index */
+  const dotIndex = (index - 1 + n) % n;
+
+  const next = () => {
+    setIndex((prev) => prev + 1);
+  };
+
+  const prev = () => {
+    setIndex((prev) => prev - 1);
+  };
+
+  const goTo = (i: number) => {
+    setIndex(i + 1);
+  };
+
+  /* autoplay */
+  useEffect(() => {
+    clearTimer();
+    timerRef.current = setTimeout(next, AUTO_DELAY);
+    return clearTimer;
+  }, [index]);
+
+  /* infinite reset */
+  useEffect(() => {
+    if (index === slides.length - 1) {
+      setTimeout(() => {
+        setTransition(false);
+        setIndex(1);
+      }, ANIMATION_DURATION);
+    }
+
+    if (index === 0) {
+      setTimeout(() => {
+        setTransition(false);
+        setIndex(n);
+      }, ANIMATION_DURATION);
+    }
+  }, [index]);
+
+  /* re-enable transition */
+  useEffect(() => {
+    if (!transition) {
+      requestAnimationFrame(() => setTransition(true));
+    }
+  }, [transition]);
+
+  /* swipe */
+  const startX = useRef<number | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!startX.current) return;
+
+    const diff = startX.current - e.changedTouches[0].clientX;
+
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? next() : prev();
+    }
+
+    startX.current = null;
+  };
 
   return (
-    /* Center the carousel and add horizontal padding to prevent full-width stretching */
-    <div className="w-full flex flex-col items-center px-6">
-      <div className="relative w-full max-w-[330px] sm:max-w-2xl flex items-center">
-        
-        {/* Navigation Arrows - Placed slightly outside the card edges */}
-        <button
-          className="absolute -left-4 z-30 bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform"
-          onClick={() => handleNav('left')}
-          disabled={next !== null}
-        >
-          <span className="text-xs">&larr;</span>
-        </button>
+    <div className="w-full flex flex-col items-center">
 
-        {/* Carousel Viewport */}
-        <div className="relative w-full h-[110px] sm:h-[180px] overflow-hidden rounded-2xl">
-          {renderCard(featuredBlogs[current], next !== null, direction)}
-          {next !== null && renderCard(featuredBlogs[next], false, direction === 'left' ? 'right' : 'left')}
+      {/* carousel */}
+      <div className="relative w-full max-w-2xl">
+
+        <div
+          className="overflow-hidden rounded-3xl"
+          style={{ height: "clamp(160px,40vw,260px)" }}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div
+            className="flex h-full"
+            style={{
+              width: `${slides.length * 100}%`,
+              transform: `translateX(-${index * (100 / slides.length)}%)`,
+              transition: transition
+                ? `transform ${ANIMATION_DURATION}ms ease`
+                : "none",
+            }}
+          >
+            {slides.map((b, i) => (
+              <div
+                key={i}
+                style={{ width: `${100 / slides.length}%` }}
+              >
+              <Link to={`/blog/${b.id}`}>
+                <div className="relative h-full group">
+
+                  <img
+                    src={b.image}
+                    alt={b.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2))",
+                    }}
+                  />
+
+                  <div className="absolute bottom-4 left-4 text-white pr-6">
+
+                    <p className="text-xs opacity-60 mb-1">{b.date}</p>
+
+                    <h2 className="text-lg font-bold leading-tight mb-2">
+                      {b.title}
+                    </h2>
+
+                    {/* Read More */}
+                    <div className="flex items-center gap-1 text-sm font-semibold text-white/80 group-hover:text-white transition">
+                      <span>Read more</span>
+
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        className="group-hover:translate-x-1 transition-transform"
+                      >
+                        <path
+                          d="M2 7h9M7 3l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+
+                  </div>
+
+                </div>
+              </Link>
+              </div>
+            ))}
+          </div>
         </div>
 
+        {/* arrows */}
+        {/* Left Arrow */}
         <button
-          className="absolute -right-4 z-30 bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform"
-          onClick={() => handleNav('right')}
-          disabled={next !== null}
+          onClick={prev}
+          aria-label="Previous"
+          className="absolute -left-4 sm:-left-5 top-1/2 -translate-y-1/2 z-20
+          w-9 h-9 sm:w-10 sm:h-10
+          flex items-center justify-center
+          rounded-full
+          bg-white/95 backdrop-blur-md
+          shadow-lg hover:shadow-xl
+          hover:scale-110
+          transition-all duration-300"
         >
-          <span className="text-xs">&rarr;</span>
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M9 2L4 7l5 5"
+              stroke="#111"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={next}
+          aria-label="Next"
+          className="absolute -right-4 sm:-right-5 top-1/2 -translate-y-1/2 z-20
+          w-9 h-9 sm:w-10 sm:h-10
+          flex items-center justify-center
+          rounded-full
+          bg-white/95 backdrop-blur-md
+          shadow-lg hover:shadow-xl
+          hover:scale-110
+          transition-all duration-300"
+        >
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M5 2l5 5-5 5"
+              stroke="#111"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+</button>
+
       </div>
 
-      {/* Slide Indicators */}
-      <div className="flex gap-1.5 mt-5">
+      {/* dots */}
+      <div className="flex gap-2 mt-4">
         {featuredBlogs.map((_, i) => (
-          <div 
-            key={i} 
-            className={`h-1 rounded-full transition-all duration-300 ${
-              current === i ? 'w-5 bg-purple-500' : 'w-1.5 bg-gray-700'
-            }`} 
+          <div
+            key={i}
+            onClick={() => goTo(i)}
+            className="cursor-pointer rounded-full transition-all"
+            style={{
+              width: dotIndex === i ? 24 : 8,
+              height: 4,
+              background: dotIndex === i ? "#111" : "#d1d5db",
+            }}
           />
         ))}
       </div>
