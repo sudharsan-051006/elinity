@@ -826,61 +826,80 @@ This is not a company or a business to us. It is a commitment to the kind of wor
     <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
       Why Technology, and Why AI at the Core
     </h3>
+    <p style="color:white">This is not ideology. It is math.</p>
     <p style="font-size:17px; color:#cfcfe6;">
       Scalable, high-fidelity matching is impossible without technology.
       Deep, personalized, continuously adaptive matching is impossible without AI.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      AI is the only tool capable of modeling humans at sufficient depth,
-      simulating relational dynamics,
-      learning over time,
-      and adapting as people grow.
+      If you want to understand one person deeply, that already exceeds the capacity of casual human cognition. If you want to understand millions of people deeply and match them optimally across contexts, life stages, and goals, human-only systems simply cannot cope
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      But how AI is built matters more than whether it is built.
+      AI is the only tool capable of modeling humans at sufficient depth, simulating relational dynamics, learning over time, and adapting as people grow.
     </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+But this immediately raises the right objection.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+“Hasn’t tech already damaged relationships?”
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+Yes. And that is precisely why how AI is built matters more than whether it is built.
+    </p>
+    
   </div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      The Wrong Path: Replacement, Escapism, and Synthetic Comfort
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      We are deeply concerned by the normalization of:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Erotically charged AI companions</li>
-      <li style="margin-bottom:8px;">Frictionless emotional validation</li>
-      <li style="margin-bottom:8px;">Synthetic intimacy</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Relationships are meaningful because they are hard.
-      They require negotiation, resistance, mutuality, unpredictability, accountability.
-      A system that removes friction does not elevate you. It atrophies you.
-    </p>
-    <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      AI should amplify human connection, not replace it.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+  <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+    The Wrong Path: Replacement, Escapism, and Synthetic Comfort
+  </h3>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Elinity’s Position
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      We are building Elinity as post-AGI relationship and meaning infrastructure.
-      As intelligence becomes abundant and work commodified,
-      relationships and purpose will become primary stabilizing forces of human life.
-    </p>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Elinity exists to support:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Strong relationships</li>
-      <li style="margin-bottom:8px;">Meaningful projects</li>
-      <li style="margin-bottom:8px;">A coherent sense of self</li>
-    </ul>
-  </div>
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    We are deeply concerned by the direction much of the AI industry is taking.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    The normalization of erotically charged AI companions, frictionless emotional validation, and synthetic intimacy is not benign. These systems exploit the brain’s reward pathways while removing the essential ingredients of growth: resistance, mutuality, unpredictability, and accountability.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    Relationships are meaningful because they are hard. Because they require negotiation with another will. Because they force you to change.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    A system that gives you everything you want without resistance does not elevate you. It atrophies you. It saps you.
+  </p>
+
+  <p style="font-size:17px; color:#ffffff; font-weight:700; line-height:1.7;">
+    We believe AI should amplify human connection, not replace it. It should make real relationships easier to find, safer and more fun to build, and richer to sustain. It should not offer an escape from them, as more and more tech promises.
+  </p>
+</div>
+
+<div style="margin-bottom:60px;">
+  <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
+    Elinity’s Position: Relationship Infrastructure for the Post-AGI World
+  </h3>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    We are building Elinity as post-AGI relationship and meaning infrastructure.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    As work is commodified, as intelligence becomes abundant, and as traditional sources of identity erode, relationships and purpose will become the primary stabilizing forces of human life.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    This is not speculative. It is already happening.
+  </p>
+
+  <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
+    The greatest shock absorber against technological disruption, ontological uncertainty, and social fragmentation is not productivity. It is strong relationships, meaningful projects, and a coherent sense of self.
+  </p>
+
+  <p style="font-size:17px; color:#ffffff; font-weight:700; line-height:1.7;">
+    Elinity exists to support all three.
+  </p>
+</div>
 
   <div style="margin-bottom:60px;">
     <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
@@ -914,7 +933,7 @@ This is not a company or a business to us. It is a commitment to the kind of wor
       The Hard Truth
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Here is an uncomfortable reality most people avoid saying out loud.
+      Here is an uncomfortable reality most people avoid saying out loud.<br>
       Most people are not yet capable of sustaining the relationships they desire.
       This is not a moral condemnation. It is a developmental observation.
       <br>
@@ -925,11 +944,13 @@ This is not a company or a business to us. It is a commitment to the kind of wor
       <li style="margin-bottom:8px;">Self-awareness</li>
       <li style="margin-bottom:8px;">Communication skills</li>
       <li style="margin-bottom:8px;">Humility</li>
-      <li style="margin-bottom:8px;">Tolerance for discomfort</li>
+      <li style="margin-bottom:8px;">the ability to tolerate discomfort</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity helps you not only find people,
-      but become someone worth finding.
+      Modern life has eroded many of these capacities while simultaneously inflating expectations.
+    </p>
+    <p style="font-size:17px; color:#cfcfe6;">
+      Elinity does not just help you find people. It helps you become someone worth finding.
     </p>
   </div>
 
@@ -940,7 +961,7 @@ This is not a company or a business to us. It is a commitment to the kind of wor
     <p style="font-size:17px; color:#cfcfe6;">We reject the mystical framing of soulmates, but we affirm the underlying intuition.<br/>
 There are people who are extraordinarily well-matched to you across deep dimensions. Finding them is rare without assistance. Building something lasting with them requires work.
 <br/>
-The best relationships are not “found.” They are formed, over time, through commitment, repair, and shared meaning.
+The best relationships are not “found.” They are <strong style="color:white">formed</strong>, over time, through commitment, repair, and shared meaning.
 <br/>Technology can help with the finding. Wisdom must guide the forming.
     </p>
   </div>
@@ -954,7 +975,7 @@ The best relationships are not “found.” They are formed, over time, through 
       It is a civilizational project.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      If successful, Elinity alters:
+      If successful, Elinity does not just improve individual lives.It alters:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
       <li style="margin-bottom:8px;">Demographic trajectories</li>
@@ -964,12 +985,13 @@ The best relationships are not “found.” They are formed, over time, through 
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
 It changes what people believe is possible.
+<br><br>
 We believe a world with dramatically fewer hard breakups and divorces, with deeper friendships, and aligned collaborations, more kindred spirits, and more families formed because more people have choice, is possible.
 We are not naive about the risks. We are vigilant about misuse. We are deeply aware that technology amplifies whatever values it is built upon.
 
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      We are not just building software. We are building a philosophy of connection.
+      We are not just building software. <br><br>We are building a philosophy of connection.
     </p>
   </div>
 
@@ -1011,11 +1033,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       On Soulmate-Level Connections, and the Art of Curating Soulmates
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      At the heart of Elinity, pun very much intended, we want to help people find their soulmate.
+      At the heart of Elinity, pun very much intended, we want to help people find their soulmate.<br><br>
       Not in the thin, algorithmic sense of compatibility scores and swipe economics, but in the real sense - the person with whom life opens up. The relationship that feels expansive rather than extractive. The bond that sharpens you, softens you, and steadies you all at once.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Millions of people deserve to experience this.
+      <strong style="color:white">Millions of people deserve to experience this.</strong><br>
       A relationship built on deep alignment across dimensions:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -1048,15 +1070,15 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Loss of Faith in the Greatest Love
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Something quiet and devastating has happened over the past few decades. People have lost faith in soulmate-level love.
+      Something quiet and devastating has happened over the past few decades. People have lost faith in soulmate-level love.<br><br>
       This hasn’t happened because humans stopped wanting it, but because the systems around us trained us to expect less. Dating became marketplaces. People became profiles. Desire became gamified. Attention became scarce. Cynicism and gamesmanship became fashionable. Vulnerability became risky. Commitment became suspicious. Romance was recast as naïveté.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Many now treat love as a hedge. A convenience. A temporary arrangement. A source of validation or pleasure until it isn’t. Others swing to the opposite extreme and mythologize it as fate, magic, and inevitability, which collapses the moment real life shows up.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Both paths miss the point.
-      The highest form of love was never supposed to be either transactional or mystical. It is deliberate. It is cultivated. It is chosen again and again. It is built.
+      Both paths miss the point.<br><br>
+      The highest form of love was never supposed to be either transactional or mystical. It is deliberate. It is cultivated. It is chosen again and again. It is built.<br><br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       We want to take soulmate-level love out of the realm of fairytales and ironic detachment, and bring it back into the real world. With all its complexity, effort, discipline, joy, friction, and transcendence.
@@ -1068,7 +1090,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Soulmate Question, Reframed
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is someone who feels like they complete you.
+      This is someone who feels like they complete you.<br><br>
       That phrase gets mocked, but it points to something real we crave at the core of our beings. Completion does not mean dependency or erasure of self. It means resonance. Complementarity. A sense that life makes more sense in their presence. That your inner world finds a listener who actually hears it. That you are more yourself, not less.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1160,7 +1182,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       In this sense, a soulmate is not just found. A soulmate is curated, and a soulmate-level relationship is designed, sculpted even, one dash of colour at a time.
-      Curated does not mean engineered or manipulated. It means cared for with intelligence, intention, and respect for complexity.
+      <br><br>Curated does not mean engineered or manipulated. It means cared for with intelligence, intention, and respect for complexity.
     </p>
   </div>
 
@@ -1169,7 +1191,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       From Matching to Meaning
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Finding the right person is only the beginning.
+      Finding the right person is only the beginning.<br><br>
       What matters more is helping two people build something extraordinary together. This requires a shift in focus. From matching to meaning. From discovery to development. From dopamine to devotion.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1242,7 +1264,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       The question we are now forced to confront is not an economic one but an existential one.
-      What is a human for, when work is no longer required?
+<br><br>      What is a human for, when work is no longer required?
     </p>
   </div>
 
@@ -1251,7 +1273,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Quiet Collapse of Labor as Identity
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      For thousands of years, labor has been far more than an economic activity. It has been the primary structure around which human identity cohered.
+      For thousands of years, labor has been far more than an economic activity. It has been the primary structure around which human identity cohered.<br><br>
       Work provided rhythm. It provided belonging. It provided status. It provided a story that explained effort, struggle, and dignity. Even when work was brutal, alienating, or unjust, it gave people a place in the world and a reason to wake up.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1274,7 +1296,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
       In the industrial and early digital eras, skills were durable differentiators. They took time to acquire, they were hard to replicate, and they created asymmetry in the market.
-      AGI erases that asymmetry.
+      <br><br>AGI erases that asymmetry.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Hard skills are becoming cheap, abundant, and increasingly indistinguishable. Even many soft skills, once thought immune, are being scaffolded, simulated, or augmented. The variance advantage of individual skill accumulation is collapsing.
@@ -1308,7 +1330,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Mission Congruence Will Become the New Economic Primitive
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      If AGI can cover competence, humans will be selected for conviction.
+      If AGI can cover competence, humans will be selected for conviction.<br><br>
       Belief cannot be rented. Care cannot be outsourced. Commitment cannot be simulated in a way that generates genuine trust.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1327,7 +1349,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       UBI Is Not the End of the Story
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Universal Basic Income is often discussed as if it solves the problem of work. It does not. UBI removes coercion but it does not create meaning.
+      Universal Basic Income is often discussed as if it solves the problem of work. It does not. UBI removes coercion but it does not create meaning.<br><br>
       It provides stability, not direction. It ensures survival, not purpose. It is a necessary transition mechanism, but it is not a destination.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1491,11 +1513,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Choice Ahead
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      We cannot stop AGI. That question is already settled. What remains open is what kind of humans we become alongside it.
-      Purpose will not disappear. But it will require new architecture. New norms. New systems that take human interiority seriously.
+      We cannot stop AGI. That question is already settled. What remains open is what kind of humans we become alongside it.<br><br>
+      Purpose will not disappear. But it will require new architecture. New norms. New systems that take human interiority seriously.<br><br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity and Ellaris are one attempt to shape that future.
+      Elinity and Ellaris are one attempt to shape that future.<br><br>
       The future of work is less about productivity - it is about caring more, more deeply, about fewer things that truly matter. It is about building things we can be proud of, alongside people we enjoy, sharing the same line of sight to Polaris.
     </p>
   </div>
@@ -1524,17 +1546,17 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       A Holistic Architecture for Human Connection
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      At Elinity, we start from a simple but often ignored truth.
-      Great relationships do not begin with matching. They begin with the self.
-      Most platforms try to solve the connection by starting at the surface. Who you meet. How many people you see. How quickly you can swipe, chat, or transact attention. That approach treats relationships as logistics.
-      We see them as ecosystems. And the bottleneck for growth is us.
+      At Elinity, we start from a simple but often ignored truth.<br>
+      Great relationships do not begin with matching. They begin with the self.<br>
+      Most platforms try to solve the connection by starting at the surface. Who you meet. How many people you see. How quickly you can swipe, chat, or transact attention. That approach treats relationships as logistics.<br>
+      We see them as ecosystems. And the bottleneck for growth is us.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Before you can build something enduring with another person, you need clarity, stability, and depth within yourself. Before you can sustain love, friendship, or partnership, you need self-understanding. Before you can find the right people, you need to know who you are, what you value, how you love, and what kind of life you are trying to build.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      That insight is what led us to design Elinity as a three-layered system, not a set of disjointed features, or a shallow matching engine.
-      Each layer builds on the one beneath it. Each reinforces the others. Together, they form a coherent architecture for connection that mirrors how real human flourishing actually works.
+      That insight is what led us to design Elinity as a three-layered system, not a set of disjointed features, or a shallow matching engine.<br>
+      Each layer builds on the one beneath it. Each reinforces the others. Together, they form a coherent architecture for connection that mirrors how real human flourishing actually works.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       We do not skip layers - we grow through them.
@@ -1560,33 +1582,33 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Your Relationship With Yourself
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Everything starts here.
-      Your patterns in love. Your choices in partners. Your tolerance for misalignment. Your capacity for intimacy. Your ability to communicate. Your emotional regulation. Your sense of self-worth. All of it flows downstream from your relationship with yourself.
+      Everything starts here.<br>
+      Your patterns in love. Your choices in partners. Your tolerance for misalignment. Your capacity for intimacy. Your ability to communicate. Your emotional regulation. Your sense of self-worth. All of it flows downstream from your relationship with yourself.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Most people are never taught how to build that relationship. They inherit fragments from parents, culture, past relationships, baggage and trauma. They stumble forward with partial maps and outdated scripts.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity’s core layer exists to change that.
-      This layer is designed to help you see yourself clearly, understand yourself deeply, and grow intentionally. It acts as a mirror, a thinking partner, a coach, and a stabilizing presence.
+      Elinity’s core layer exists to change that.<br>
+      This layer is designed to help you see yourself clearly, understand yourself deeply, and grow intentionally. It acts as a mirror, a thinking partner, a coach, and a stabilizing presence.<br>
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
       Key elements include:
     </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;"><strong>AI Thought Partner:</strong> A conversational space to think out loud, process emotions, explore ideas, and challenge your own narratives. This isn’t about shallow affirmations or generic conversations; this is meant to inspire deep thinking and real reflection. A place to clarify what you actually feel and why.</li>
-      <li style="margin-bottom:8px;"><strong>Smart Voice Journaling and Reflection:</strong> Journaling that does more than store words. It surfaces patterns. It notices cycles. It helps you see how your thoughts, emotions, and behaviors evolve over time. Insight compounds when reflection is structured and alive.</li>
-      <li style="margin-bottom:8px;"><strong>Proactive Nudges and Awareness Cues:</strong> Gentle, intelligent reminders that help you stay aligned with your goals, values, and emotional well-being. These are not interruptions but course corrections.</li>
-      <li style="margin-bottom:8px;"><strong>Self-Connection Modes:</strong> Tools designed to strengthen self-trust, emotional clarity, and internal coherence. The goal is groundedness.</li>
+    <ul style="padding-left:22px; margin:18px 0; ">
+      <li style="margin-bottom:8px;"><strong style="color:#ffffff;">AI Thought Partner:</strong> A conversational space to think out loud, process emotions, explore ideas, and challenge your own narratives. This isn’t about shallow affirmations or generic conversations; this is meant to inspire deep thinking and real reflection. A place to clarify what you actually feel and why.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#ffffff;">Smart Voice Journaling and Reflection:</strong> Journaling that does more than store words. It surfaces patterns. It notices cycles. It helps you see how your thoughts, emotions, and behaviors evolve over time. Insight compounds when reflection is structured and alive.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#ffffff;">Proactive Nudges and Awareness Cues:</strong> Gentle, intelligent reminders that help you stay aligned with your goals, values, and emotional well-being. These are not interruptions but course corrections.</li>
+      <li style="margin-bottom:8px;"><strong style="color:#ffffff;">Self-Connection Modes:</strong> Tools designed to strengthen self-trust, emotional clarity, and internal coherence. The goal is groundedness.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      This layer exists for one reason.
-      Because every relationship you build will only be as healthy as the relationship you have with yourself.
+      This layer exists for one reason.<br>
+      Because every relationship you build will only be as healthy as the relationship you have with yourself.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      When you understand yourself, you communicate better.
-      When you trust yourself, you set better boundaries.
-      When you respect yourself, you stop settling.
+      When you understand yourself, you communicate better.<br>
+      When you trust yourself, you set better boundaries.<br>
+      When you respect yourself, you stop settling.<br>
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
       And settling for less than we deserve is precisely what we need to stop doing.
@@ -1601,12 +1623,12 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Building Deep and Fulfilling Relationships
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Once the inner foundation is strong, the work shifts outward.
-      Great relationships are not accidents. They are built with a set of skills. They are practices and rituals, built through attention, communication, emotional intelligence, and care. Yet most people are expected to figure this out through trial, error, and heartbreak.
+      Once the inner foundation is strong, the work shifts outward.<br>
+      Great relationships are not accidents. They are built with a set of skills. They are practices and rituals, built through attention, communication, emotional intelligence, and care. Yet most people are expected to figure this out through trial, error, and heartbreak.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity’s second layer exists to change that.
-      This layer focuses on helping you build and sustain high-quality relationships, whether romantic, familial, or close friendships. It is not about optimization for performance. It is about alignment, understanding, and growth together.
+      Elinity’s second layer exists to change that.<br>
+      This layer focuses on helping you build and sustain high-quality relationships, whether romantic, familial, or close friendships. It is not about optimization for performance. It is about alignment, understanding, and growth together.<br>
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
       Core elements include:
@@ -1618,8 +1640,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;"><strong>Therapeutic and Reflective Modes:</strong> Deeper support during emotionally charged or difficult periods. A space to process without immediately escalating, withdrawing, or self-sabotaging.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      Relationships fail quietly long before they end loudly.
-      This layer is designed to keep them healthy and flourishing, bubbling with joy and sparkling like the garden of heavenly delights.
+      Relationships fail quietly long before they end loudly.<br>
+      This layer is designed to keep them healthy and flourishing, bubbling with joy and sparkling like the garden of heavenly delights.<br>
     </p>
   </div>
 
@@ -1631,12 +1653,12 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Finding Your Best-Fit People
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Only after the inner and relational foundations are in place does Elinity move to matching. This is by design.
-      The problem with most connection platforms is not that they show you the wrong people. It is that they do not understand you deeply enough to know who the right people are.
+      Only after the inner and relational foundations are in place does Elinity move to matching. This is by design.<br>
+      The problem with most connection platforms is not that they show you the wrong people. It is that they do not understand you deeply enough to know who the right people are.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity approaches connection as an N-dimensional problem.
-      You are not a profile. You are a complex, layered human being with values, goals, emotional patterns, preferences, timing, and context. Finding your best-fit people requires understanding all of that, not just your surface traits or labels.
+      Elinity approaches connection as an N-dimensional problem.<br>
+      You are not a profile. You are a complex, layered human being with values, goals, emotional patterns, preferences, timing, and context. Finding your best-fit people requires understanding all of that, not just your surface traits or labels.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       This layer helps you find deeply aligned people across three core domains of social life:
@@ -1656,21 +1678,21 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       A Different Future for Connection
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity is not trying to make social connection faster - it is trying to make it better.
-      By starting with the self, strengthening relationships, and only then expanding outward into matching, Elinity mirrors how human flourishing actually unfolds. Inner clarity leads to relational health. Relational health leads to better choices. Better choices lead to better lives.
+      Elinity is not trying to make social connection faster - it is trying to make it better.<br>
+      By starting with the self, strengthening relationships, and only then expanding outward into matching, Elinity mirrors how human flourishing actually unfolds. Inner clarity leads to relational health. Relational health leads to better choices. Better choices lead to better lives.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      This three-layered architecture is not merely a product decision. It is a philosophical stance.
-      Technology should not replace human connection - it should scaffold it, amplify it, ground it, and expand it.
-      It should help people know themselves, love better, and find the right people without forcing, gamifying, or flattening something sacred into a transaction.
+      This three-layered architecture is not merely a product decision. It is a philosophical stance.<br>
+      Technology should not replace human connection - it should scaffold it, amplify it, ground it, and expand it.<br>
+      It should help people know themselves, love better, and find the right people without forcing, gamifying, or flattening something sacred into a transaction.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity is building toward a world where people do not just meet more people.
-      They meet the right ones.
-      And they are ready for them when they do.
+      Elinity is building toward a world where people do not just meet more people.<br>
+      They meet the right ones.<br>
+      And they are ready for them when they do.<br>
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      That is the paradigm shift.
+      That is the paradigm shift.<br>
       And it starts from within.
     </p>
   </div>
@@ -1697,14 +1719,14 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Cost of Divorces, and How to Fix Divorces
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Divorces are one of the biggest blights on our society.
-      We have solved so many of the hard problems. We have split the atom. We have sent humans to the moon. We have sent probes to Mars, Venus, and beyond. We have unraveled secrets at the smallest scales and at the largest. We have built global communication networks, bent silicon to our will, and taught machines to see, speak, and reason.
+      Divorces are one of the biggest blights on our society.<br><br>
+      We have solved so many of the hard problems. We have split the atom. We have sent humans to the moon. We have sent probes to Mars, Venus, and beyond. We have unraveled secrets at the smallest scales and at the largest. We have built global communication networks, bent silicon to our will, and taught machines to see, speak, and reason.<br><br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       And we will solve many more. In the next 10 to 20 years, we will likely live in a world of material abundance. We will eat better food than any generation before us, personalized for our gut biomes. We will travel from London to Tokyo in under an hour, waking up on Mount Fuji and enjoying our dinner at the Shard within hours. We will establish permanent Moon and Mars bases. We will travel to space - stay, to play and to build. We will manipulate weather with precision, putting an end to floods and droughts. Climate change will become a managed problem. Entertainment will become lifelike, personalized, and infinite. Energy will become abundant through fusion and space-based solar. Resources will expand through asteroid mining. With increasingly capable AI systems, we will solve entire classes of technical problems that currently feel impossible.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      I paint this picture so vividly because none of this guarantees an inner abundance of goodness.
+      I paint this picture so vividly because none of this guarantees an inner abundance of goodness.<br><br>
       We have not solved many of the most important human problems.
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -1726,7 +1748,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Real Costs of Divorce
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      So, let’s talk about costs. The real cost - not just the line items, but the invisible damage that compounds across decades.
+      So, let’s talk about costs. The real cost - not just the line items, but the invisible damage that compounds across decades.<br>
       There are multiple layers here:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -1735,8 +1757,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">Intergenerational cost.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      Let’s get the least important one out of the way first.
-      In the US alone, there are roughly 700,000 divorces every year. The direct financial cost runs into tens of billions of dollars annually when you factor in legal fees, court systems, lost productivity, duplicated housing, and downstream economic inefficiencies. The number of work hours lost to emotional distress, legal proceedings, and prolonged instability is staggering.
+      Let’s get the least important one out of the way first.<br><br>
+      In the US alone, there are roughly 700,000 divorces every year. The direct financial cost runs into tens of billions of dollars annually when you factor in legal fees, court systems, lost productivity, duplicated housing, and downstream economic inefficiencies. The number of work hours lost to emotional distress, legal proceedings, and prolonged instability is staggering.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Most of this money flows to lawyers. With all due love and respect to the Universal Lawyers Group, this is an egregious waste. In any remotely sane utopian society, lawyers are an exception, not a default profession.
@@ -1757,7 +1779,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Personal Cost, or How Divorce Breaks People Quietly
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      A divorce is one of the most psychologically destabilizing experiences a person can go through.
+      A divorce is one of the most psychologically destabilizing experiences a person can go through.<br><br>
       There is the obvious financial hit. Then there is the emotional devastation. Sleepless nights replaying conversations. The looping question of how this happened. The grief of watching a shared future dissolve. The nightmares. The bargaining. The negotiations. The constant low-grade misery. The humiliation. The loneliness.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1779,15 +1801,15 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Cost We Barely Talk About: Children
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      The most terrifying cost is the one we discuss the least. The cost to children.
+      The most terrifying cost is the one we discuss the least. The cost to children.<br><br>
       Children are extraordinarily sensitive organisms - this, I can write from lived experience having been one myself. They absorb emotional states the way lungs absorb oxygen. They pick up tone, tension, avoidance, resentment, hostility, silence.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      A child growing up in a household where parents are fighting constantly, or worse, cold and disengaged, is not just witnessing conflict. They are internalizing a model of love.
+      A child growing up in a household where parents are fighting constantly, or worse, cold and disengaged, is not just witnessing conflict. They are internalizing a model of love.<br><br>
       Many do not need to imagine this. They lived it.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      High divorce rates create downstream effects that last generations. Young people who grew up watching their parents tear each other apart emotionally often develop a subconscious aversion to long-term commitment. Marriage feels unsafe. Stability feels boring or suspicious. Intimacy feels like a trap.
+      High divorce rates create downstream effects that last generations. Young people who grew up watching their parents tear each other apart emotionally often develop a subconscious aversion to long-term commitment. Marriage feels unsafe. Stability feels boring or suspicious. Intimacy feels like a trap.<br>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       This shows up in the data. Fewer young people want long-term relationships. Fewer want marriage. Fewer believe in permanence. Many oscillate between craving depth and avoiding it at all costs.
@@ -1799,7 +1821,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Pre-nuptial agreements are another revealing signal. They are often framed as rational safeguards, and sometimes they are. But at a psychological level, they betray an inability to fully commit. A foot already halfway out the door. That has consequences; these choices become almost like self-fulfilling prophecies, whether we like to admit it or not.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      We have no clear understanding of how much damage we are doing to children by making suboptimal mate choices and then failing to develop the skills required to maintain a relationship over decades.
+      We have no clear understanding of how much damage we are doing to children by making suboptimal mate choices and then failing to develop the skills required to maintain a relationship over decades.<br><br>
       This ignorance is costly.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1821,7 +1843,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       My parents’ marriage has not been a happy one. They are functionally separated. I have never seen them deeply in love. I have never seen them laugh together, have fun together, or experience joy as a unit, though I have heard stories from my mom about just how much in love they were when young. And that brings a tear to my heart - as I imagine how it could have been.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      As a child, this hurt more than I understood at the time. As an adult, even with all my stoic posturing and self-awareness, it still does.
+      As a child, this hurt more than I understood at the time. As an adult, even with all my stoic posturing and self-awareness, it still does.<br>
       I love my parents deeply. It pains me to see them get in their own way. To watch conditioned patterns override the very thing they once wanted most. A happy, abundant family life.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1840,7 +1862,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Why Divorces Happen, Structurally
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Divorces don’t happen because people wake up one morning and decide to destroy their lives just for kicks.
+      Divorces don’t happen because people wake up one morning and decide to destroy their lives just for kicks.<br>
       They happen because of compounding failures.
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -1867,28 +1889,28 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       How We Intend to Fix This
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      The ten trillion-dollar question - in terms of human wellbeing - is how we solve this.
-      The answer is simple in scope and brutally difficult in execution.
+      The ten trillion-dollar question - in terms of human wellbeing - is how we solve this.<br>
+      The answer is simple in scope and brutally difficult in execution.<br>
       Build the ultimate connection-enhancing, relationship-deepening platform grounded in relationship psychology, neuroscience, human flourishing research, and real-world behavioral data.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      There are two parts to the solution.
-      The first is discovery and curation.
+      There are two parts to the solution.<br><br>
+      The first is discovery and curation.<br><br>
       A significant portion of divorces originate from poor mate choice. People choose based on chemistry, proximity, insecurity, timing, or unhealed wounds. Over time, these decisions compound.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      What if we could help people find their absolute best-fit partner with soulmate-level accuracy. Not left to random choice or mystical fate, but deep convergence across values, temperament, communication styles, growth trajectories, conflict patterns, and life goals.
+      What if we could help people find their absolute best-fit partner with soulmate-level accuracy. Not left to random choice or mystical fate, but deep convergence across values, temperament, communication styles, growth trajectories, conflict patterns, and life goals.<br><br>
       Think of a personal matchmaker AI that is smarter than any human, emotionally intelligent, and deeply aware of who you actually are. Often better than you are yourself.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       This is part of our North Star.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      The second part is management and thriving.
+      The second part is management and thriving.<br><br>
       Even the best matches face difficulty. Life happens. Stress accumulates. People change. Even the best may need assistance - to spark some joy, delight, novelty, play, into the daily rhythms.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Every couple needs tools. For support, guidance, reflection, play, repair mechanisms.
+      Every couple needs tools. For support, guidance, reflection, play, repair mechanisms.<br><br>
       This is where Lumi comes in. An AI relationship companion that acts as:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -1937,8 +1959,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The World We Are Building Toward
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Our first version is already live. The ultimate version is hopefully less than three years away.
-      Our hope is that Elinity becomes a world where people are with the person they are most compatible with. Where random chance plays a smaller role in one of life’s most consequential decisions. Where people are equipped to build relationships that are meaningful, joyful, resilient, and alive.
+      Our first version is already live. The ultimate version is hopefully less than three years away.<br>
+      Our hope is that Elinity becomes a world where people are with the person they are most compatible with. Where random chance plays a smaller role in one of life’s most consequential decisions. Where people are equipped to build relationships that are meaningful, joyful, resilient, and alive.<br><br>
       Where homes become places of warmth rather than quiet damage.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1951,8 +1973,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
 
   <div style="margin-bottom:20px;">
     <p style="font-size:17px; color:#cfcfe6;">
-      After I finished writing this, I realized I could also have spoken about the cost of hard breakups - which are less quantifiable, but in many cases, equally as damaging as divorces.
-      Again, the thing to say about these are similar to what we already said about divorces:
+      After I finished writing this, I realized I could also have spoken about the cost of hard breakups - which are less quantifiable, but in many cases, equally as damaging as divorces.<br><br>
+      Again, the thing to say about these are similar to what we already said about divorces:<br><br>
       One is that developing resilience is central to reduce the emotional costs, including developing a certain jadedness, a certain cynicism about people, especially the opposite sex.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -1983,11 +2005,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Birth Rates, Human Flourishing in the Cosmos, and Elinity for Humanity
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is a difficult topic to talk about well.
+      This is a difficult topic to talk about well.<br><br>
       It is polarized. It is emotionally charged. It is easy to sound naïve, ideological, preachy, or worse. It is also difficult for me personally because I am not a woman, and the birth rate conversation is often framed, understandably, through women’s lived realities. Any serious treatment must acknowledge that asymmetry honestly, without pretending it doesn’t exist or trying to speak over it.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Still, difficulty is not an excuse for avoidance. Some problems become existential precisely because they are uncomfortable to name clearly.
+      Still, difficulty is not an excuse for avoidance. Some problems become existential precisely because they are uncomfortable to name clearly.<br><br>
       This is one of those problems.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2018,11 +2040,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">Large parts of Europe face similar trajectories. Some countries will see their great-grandchildren’s generation shrink by two-thirds.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is not speculation or doomerism, but simple facts of biology and the arithmetics of growth at current rates. Or the lack thereof.
+      This is not speculation or doomerism, but simple facts of biology and the arithmetics of growth at current rates. Or the lack thereof.<br><br>
       We don’t grasp the severity of this because fertility decline behaves like a negative exponential and humans are terrible at reasoning about exponentials. We underestimate how fast they run away from us. Once a society drops below replacement for long enough, the problem is no longer “fewer babies this year.” It becomes fewer parents next generation, fewer grandparents after that, fewer cultural carriers, fewer people capable of reversal at all.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      There is a point beyond which policy does not matter anymore.
+      There is a point beyond which policy does not matter anymore.<br><br>
       That point arrives quietly, and then suddenly, we are past the critical point.
     </p>
   </div>
@@ -2040,7 +2062,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">If safety fixed birth rates, the most stable nations would be growing. They are shrinking, and fast, like China, the epitome of stability in many eyes.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      People do not reproduce because they can afford to. They reproduce because life feels expansive.
+      People do not reproduce because they can afford to. They reproduce because life feels expansive.<br><br>
       A civilization stops reproducing when the future feels heavier than the present. When continuity feels like obligation instead of promise. When identity feels fragile. When meaning feels outsourced. When love feels scarce or conditional.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2059,7 +2081,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Overlooked Variable: Match Quality
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      There is one factor almost entirely missing from mainstream discussion: relationship quality at the point of formation.
+      There is one factor almost entirely missing from mainstream discussion: relationship quality at the point of formation.<br><br>
       People are not refusing children in the abstract. They are refusing children with the partners they have available. This distinction matters.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2070,7 +2092,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Many women delay or opt out because no partner feels genuinely compelling, who crosses the bar of who she’d want as the father of her children. Many men disengage because repeated disappointments erode agency and self-belief. Desperation leads to suboptimal pairings. Suboptimal pairings collapse. Collapse reinforces avoidance. And before you know it, avoidance becomes cultural norm. Which feeds the feast.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is not a moral failure. It is a matching failure.
+      This is not a moral failure. It is a matching failure.<br><br>
       Humans are not one-dimensional. Each person is an N-dimensional vector:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -2088,7 +2110,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">Depth.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      Most people still match using blunt instruments: geography, chance encounters, shallow filters, surface traits, brute-force exposure.
+      Most people still match using blunt instruments: geography, chance encounters, shallow filters, surface traits, brute-force exposure.<br><br>
       That worked when expectations were low and roles were rigid. It fails when expectations are high and lives are complex.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2101,7 +2123,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Fertility Crisis Is a Love Crisis
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Happy people want to love deeply. They want to share their love and their lives. They want to build something that outlasts them. People with strong self-relationships tend to want continuity, not escape.
+      Happy people want to love deeply. They want to share their love and their lives. They want to build something that outlasts them. People with strong self-relationships tend to want continuity, not escape.<br><br>
       This is one of the most underappreciated truths in modern discourse.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2126,17 +2148,17 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Japan as a Mirror, Not an Exception
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      It is always difficult to write about cultures where your understanding is limited, but we must, because Japan is a warning. The demographics of Japan are not failing because of cost, convenience, or technology. Japan optimized for safety, predictability, efficiency, and order so thoroughly that it eliminated the emotional surplus required to bring new humans into the world.
+      It is always difficult to write about cultures where your understanding is limited, but we must, because Japan is a warning. The demographics of Japan are not failing because of cost, convenience, or technology. Japan optimized for safety, predictability, efficiency, and order so thoroughly that it eliminated the emotional surplus required to bring new humans into the world.<br><br>
       Children are not produced by comfort. They are produced by meaning.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Parts of our world, our culture have optimized for sanitized comfort at the cost of messy meaning.
+      Parts of our world, our culture have optimized for sanitized comfort at the cost of messy meaning.<br><br>
       That is why the streets are clean and the cradles are empty.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Once a society crosses this line, it is on the slow walk to to collapse, a collapse that looks quiet, managed and peaceful even, without any riots or chaos. But don’t be mistaken - this is a collapse just as clear as any. Just fewer schools, more hospitals, more inheritance without heirs, more systems designed to preserve what exists rather than create what comes next.
     </p>
-    <p style="font-size:17px; color:#cfcfe6;">
+    <p style="font-size:17px; color:#cfcfe6; line-height:1.7;">
       Preservation over propagation becomes self-reinforcing. Older populations vote for stability -> stability resists disruption -> renewal requires disruption -> the renewal never comes.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2150,7 +2172,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">Combine this with the fact that Japan is losing more people every year of natural causes than even major nations have lost in wars at the peak of fighting, and you get a picture of a struggling society.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is especially tragic when you compare the current state to Japan’s heritage, rich in arts, expression, technology, and more.
+      This is especially tragic when you compare the current state to Japan’s heritage, rich in arts, expression, technology, and more.<br><br>
       Japan is not an anomaly. It has been 20 years ahead of the rest of the western world since the last 60 years - it is a preview as to where we may be heading.
     </p>
   </div>
@@ -2160,7 +2182,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Pornography, Substitution, and Desire Collapse
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      This is an uncomfortable topic, but avoiding it does not make it go away.
+      This is an uncomfortable topic, but avoiding it does not make it go away.<br><br>
       Pornography, parasocial media, and synthetic intimacy act as substitute systems. Substitute systems meet emotional or sexual needs without requiring the complexity of real relationships. Over time, they reduce motivation for the real thing and rewire expectations.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2208,7 +2230,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">Closed-loop systems.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      It is entirely plausible to have 20 billion people on earth, using a fraction of current agricultural land while expanding forests dramatically.
+      It is entirely plausible to have 20 billion people on earth, using a fraction of current agricultural land while expanding forests dramatically.<br><br>
       The constraint is not physical. It is cultural and technological deployment. As ever, it comes down to the will, and the execution.
     </p>
   </div>
@@ -2218,7 +2240,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       AGI Changes the Stakes, Not the Direction
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      As intelligence becomes abundant, and as money becomes obsolete, survival-driven reproduction will disappear. Only meaning-driven reproduction will remain.
+      As intelligence becomes abundant, and as money becomes obsolete, survival-driven reproduction will disappear. Only meaning-driven reproduction will remain.<br><br>
       AGI will not cause fertility collapse. It will accelerate whatever direction we are already heading. If relationships are weak, fertility trends will go to zero asymptotically. If relationships are strong, abundance amplifies life.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
@@ -2234,7 +2256,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Freedom and choice are the foundation of a good life, of a good civilization - the freedom to find your person, find your people, to build your life the way you see fit. We don’t see it as anyone’s place to tell anyone to have children, or to moralize individual choice, or to prescribe life paths.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      We believe in removing obstacles for people who already want love, depth, and continuity.
+      We believe in removing obstacles for people who already want love, depth, and continuity.<br><br>
       By increasing match quality, relational skills, emotional intelligence, and long-term alignment, Elinity hopes to restore desire that policy cannot manufacture. More babies, more love, more humans, follow downstream.
     </p>
   </div>
@@ -2256,8 +2278,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Long-Term Vision
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Our solar system alone could support trillions of humans at an unfathomably extraordinary quality of life. Think O-rings, planetary settlements, new cultures, new forms of art, meaning, deeper, more expansive love.
-      The goal is no longer intelligence maximization. AGI handles that. The goal becomes consciousness maximization.
+      Our solar system alone could support trillions of humans at an unfathomably extraordinary quality of life. Think O-rings, planetary settlements, new cultures, new forms of art, meaning, deeper, more expansive love.<br><br>
+      The goal is no longer intelligence maximization. AGI handles that. The goal becomes consciousness maximization.<br><br>
       More humans experiencing wonder. More love. More continuity.
     </p>
   </div>
@@ -2298,14 +2320,14 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The World We Are Trying to Create  and the One We Refuse to Accept
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      When you decide to build something that matters, really matters, you owe yourself and the world more than a product roadmap or a pitch deck. You owe the future a clear answer to the question: What does the world look like if this succeeds? Really succeeds.
+      When you decide to build something that matters, really matters, you owe yourself and the world more than a product roadmap or a pitch deck. You owe the future a clear answer to the question: <br><strong>What does the world look like if this succeeds? Really succeeds.</strong>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Not in slogans or abstractions but in lived reality. In daily life, and in the quiet texture of how people wake up, who they share breakfast with, how they argue, how they repair, how they love, how they play, how they belong, and how they grow old.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Equally important, and far less discussed, is the inverse question:
-      What kind of world are we explicitly trying to prevent?
+      Equally important, and far less discussed, is the inverse question:<br><br>
+      What kind of world are we explicitly trying to prevent?<br><br>
       Because if you do not define that boundary clearly, you will drift. And drift, in a world governed by incentives, and dominated by existing trendlines is not neutral. Drift always moves toward the path of least resistance. Toward engagement-maximizing systems. Toward convenience over depth. Toward dopamine over meaning.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
@@ -2321,16 +2343,16 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Every ambitious project eventually encounters pressure. Market pressure. Cultural pressure. Financial pressure. Technological pressure. Moments where compromise feels small, reasonable, even necessary.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      The danger is not a dramatic betrayal of ideals. The danger is incremental deviation.
+      The danger is not a dramatic betrayal of ideals. The danger is <strong style="color:white">incremental deviation</strong>.<br><br>
       North stars are unforgiving. They are distant by definition. A few degrees off at the beginning does not feel catastrophic - you could even justify or rationalize small deviations as pragmatic. But over years, that deviation will compound, until you arrive somewhere you never intended to go, building something that technically “succeeded” while spiritually failing.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      We have seen this story before.
+      We have seen this story before.<br><br>
       Many of today’s dominant platforms began with ideals. Connection. Expression. Community. Openness. Over time, the absence of a deeply articulated anti-vision allowed present-day incentives to overwrite long-term intent. Engagement replaced wellbeing. Virality replaced meaning. Comfort replaced growth.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      The future did not turn out the way it did because anyone explicitly chose it.
-      It turned out that way because no one fought hard enough against it.
+      The future did not turn out the way it did because anyone explicitly chose it.<br><br>
+      It turned out that way because <strong style="color:white">no one fought hard enough against it.</strong>
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
       This is why Elinity treats vision not as marketing, but as infrastructure.
@@ -2345,12 +2367,12 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Elinity is better understood as a vehicle than a product. A vehicle for raising baseline human wellbeing. A vehicle for re-centering civilization around the deepest sources of flourishing. A vehicle for asking what systems can help us become better versions of ourselves, rather than more distracted ones. And how to design them for deep human flourishing.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      There is idealism here, and that is a deliberate choice.
+      There is idealism here, and that is a deliberate choice.<br><br>
       If you get one life, one serious attempt to build something that shapes the world, why aim small? Why optimize for marginal convenience when the stakes are existential? Why treat human suffering, loneliness, and relational failure as background noise instead of the central problem they are?
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      We are not interested in building something that merely fits into the world as it is. In satisfying market demand.
-      We are interested in raising the world toward what it could be.
+      We are not interested in building something that merely fits into the world as it is. In satisfying market demand.<br><br>
+      We are interested in <strong style="color:white">raising the world toward what it could be</strong>.<br><br>
       That requires thinking in centuries, not quarters. In flourishing, not growth metrics. In eudaimonia, not dopamine.
     </p>
   </div>
@@ -2363,11 +2385,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Modern culture has flattened happiness into pleasure. Stimulation. Consumption. Ease. This form of happiness is real, but it is shallow and volatile. It spikes quickly and fades just as fast.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Eudaimonia is different.
+      Eudaimonia is different.<br><br>
       Eudaimonia is flourishing. It is the deep satisfaction that comes from meaningful relationships, purposeful work, personal growth, belonging, and love that endures friction. It is slower. Harder. More demanding. It requires intention and effort. But it compounds.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Civilizations that optimize for pleasure burn bright and burn out.
+      Civilizations that optimize for pleasure burn bright and burn out.<br><br>
       Civilizations that optimize for flourishing endure.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
@@ -2383,7 +2405,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       At its highest level of attainment, the world we envision looks almost implausible by today’s standards. That is precisely why it matters, because we want to tell stories about just how good we can have it, so people start living those stories, and start living in them.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      It is a world where most people experience deeply fulfilling relationships. Where loneliness and settling for low levels of social satiation is rare, not normalized. Where hard breakups and divorce are extremely uncommon. Where people do not settle out of fear or scarcity, but choose partners who are profoundly aligned.
+      It is a world where most people experience <strong style="color:white">deeply fulfilling relationships</strong>. Where loneliness and settling for low levels of social satiation is rare, not normalized. Where hard breakups and divorce are extremely uncommon. Where people do not settle out of fear or scarcity, but choose partners who are profoundly aligned.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       A world where friendships are rich and enduring. Where collaboration is joyful and purposeful rather than transactional. Where people regularly experience the rare and transformative feeling of being truly understood, of sharing their stories, and expressing their rich creativity of their inner worlds.
@@ -2392,8 +2414,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       A world where individuals live on the upper layers of human need - self-actualized and purpose-driven. Engaged in work and projects that make them feel alive. Surrounded by people who bring out their best rather than their defenses.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      A world where technology plays a supporting role, not a dominating one.
-      In this world, people have a healthy relationship with AI. An AI is aligned with human flourishing, that helps individuals understand themselves better, communicate more clearly, recognize patterns, and make better relational decisions, that  amplifies humanity and our higher drives, instead of replacing, instead of acting as a simulacra.
+      A world where technology plays a supporting role, not a dominating one.<br><br>
+      In this world, people have a <strong style="color:white">healthy relationship with AI</strong>. An AI is aligned with human flourishing, that helps individuals understand themselves better, communicate more clearly, recognize patterns, and make better relational decisions, that  amplifies humanity and our higher drives, instead of replacing, instead of acting as a simulacra.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       Everyone grows alongside their own personal Lumi - that is there not as a surrogate friend or as a romantic substitute, but as a guide, mirror, and companion in growth. As a life-long companion designed to help people design and live their best lives, grounded in their values, relationships, and long-term wellbeing.
@@ -2405,7 +2427,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The Ambition, Made Explicit
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      We are not shy about our goals.
+      We are not shy about our goals.<br><br>
       We aim to build:
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -2415,8 +2437,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">The ultimate life-flourishing AI companion, aligned with human wellbeing, built on a new kind of emotionally intelligent, human-centered AI mind.</li>
     </ul>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      Our primary KPI is not engagement.
-      It is happiness and eudaimonia.
+      Our primary KPI is not engagement.<br><br>
+      It is <strong style="color:white">happiness and eudaimonia.</strong>
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
       This is an eminently attainable goal for our species. The ingredients already exist - what is missing is coordination, infrastructure, and intention. And a scaffolding that brings it all together.
@@ -2428,7 +2450,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       The World We Refuse to Build
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      A vision is incomplete without resistance.
+      A vision is incomplete without resistance.<br><br>
       There is a future forming around us that feels seductive, efficient, and deeply wrong.
     </p>
     <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
@@ -2439,8 +2461,8 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       <li style="margin-bottom:8px;">A future where long-term, deeply fulfilling relationships become so rare that they are treated like unicorns. Where the cold, sterile worlds once confined to science fiction quietly become normal.</li>
     </ul>
     <p style="font-size:17px; color:#cfcfe6;">
-      We do not want the Wall-E world.
-      We do not want dating apps to remain the dominant way humans meet.
+      We do not want the Wall-E world.<br><br>
+      We do not want dating apps to remain the dominant way humans meet.<br><br>
       We do not want a culture that breaks people’s capacity for long-term bonding.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
@@ -2453,11 +2475,11 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       Why This Matters More Than Almost Anything Else
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      Most people are less happy than they could be - this isn’t because of lack of comfort or convicence, but because they lack the right people.
+      Most people are less happy than they could be - this isn’t because of lack of comfort or convicence, but because they lack the right people.<br><br>
       Relationships are the single largest determinant of life satisfaction. They shape mental health, decision-making, resilience, and even physical health. They compound across decades and generations.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      When relationships improve, everything improves.
+      When relationships improve, everything improves.<br><br>
       When relationships fail, everything suffers.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
@@ -2470,15 +2492,15 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
       A Final Conviction
     </h3>
     <p style="font-size:17px; color:#cfcfe6;">
-      We believe a utopia is possible within this century. Not a static paradise, but a living, earned state of collective flourishing.
+      We believe a utopia is possible within this century. Not a static paradise, but a living, earned state of collective flourishing.<br><br>
       It will require effort. Discipline. Care. Humility. And tools designed for the long term rather than the next dopamine hit. It will require resisting the futures that arrive by default and choosing the ones that require intention.
     </p>
     <p style="font-size:17px; color:#cfcfe6;">
-      Elinity exists because we believe humanity deserves that effort and deserves the very best of what life, what the universe, can be.
+      Elinity exists because we believe humanity deserves that effort and deserves the very best of what life, what the universe, can be.<br><br>
       And because if we do not attempt this now, at this moment, with everything we have, we may never get another chance to shape the future at this level again.
     </p>
     <p style="font-size:17px; color:#ffffff; font-weight:700;">
-      This is the world we are trying to build.
+      This is the world we are trying to build.<br><br>
       And just as importantly, the one we are trying to leave behind and beside.
     </p>
   </div>
