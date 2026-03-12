@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { blogs } from "../constants/blogs";
 import { Link } from "react-router-dom";
 
-const targetIndices = [0, 1, 2, 3];
+const targetIndices = [0, 1, 2, 3, 4];
 
 const featuredBlogs = blogs
   .filter((_, i) => targetIndices.includes(i))
@@ -189,7 +189,8 @@ const FeaturedBlogCarousel = () => {
           bg-white/95 backdrop-blur-md
           shadow-lg hover:shadow-xl
           hover:scale-110
-          transition-all duration-300"
+          transition-all duration-300
+          bg-gradient-to-l from-[#0a0a23] to-[#4A0E4E] hover:from-[#1a1a40] hover:to-[#3a3a80] transition-all duration-300"
         >
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
             <path
@@ -213,8 +214,10 @@ const FeaturedBlogCarousel = () => {
           bg-white/95 backdrop-blur-md
           shadow-lg hover:shadow-xl
           hover:scale-110
-          transition-all duration-300"
+          transition-all duration-300
+          bg-gradient-to-l from-[#0a0a23] to-[#4A0E4E] hover:from-[#1a1a40] hover:to-[#3a3a80] transition-all duration-300"
         >
+          
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
             <path
               d="M5 2l5 5-5 5"
