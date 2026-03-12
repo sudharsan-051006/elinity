@@ -256,317 +256,422 @@ This is why we're here, doing what we’re doing.<strong>Join us if you are call
     authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
     content: `
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
-           color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
-           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      At the deepest level, we believe this is simple.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Deep relationships and a life of purpose are the foundation of a life well lived. For 99.9% of people, if you strip away abstractions, ideologies, and clever wordplay, this is the real answer to the question of meaning.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Who do you love.</li>
-      <li style="margin-bottom:8px;">Who loves you.</li>
-      <li style="margin-bottom:8px;">What are you building.</li>
-      <li style="margin-bottom:8px;">Who are you building it with.</li>
-      <li style="margin-bottom:8px;">And do you feel alive while doing it.</li>
-    </ul>
-  </div>
+color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Most people never get to experience the very best of relationships.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Not because they do not want to, but because the world we have built makes it surprisingly difficult to stumble into the right people, and even harder to sustain depth over time. This is tragic, because relationship quality is downstream of almost everything we care about.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Mental health.</li>
-      <li style="margin-bottom:8px;">Physical health.</li>
-      <li style="margin-bottom:8px;">Creativity.</li>
-      <li style="margin-bottom:8px;">Risk taking.</li>
-      <li style="margin-bottom:8px;">Courage.</li>
-      <li style="margin-bottom:8px;">Compassion.</li>
-      <li style="margin-bottom:8px;">Even the willingness to hope.</li>
-    </ul>
-  </div>
+<div style="margin-bottom:60px;">
+<h2 style="font-size:34px; margin-bottom:20px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+Some of Our Core Beliefs at Elinity
+</h2>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      At Elinity, we believe this is the most important problem to solve.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Not ASI. Not fusion. Not grand unified theories. The human relationship paradox is far more urgent. Why is the most important thing in human life also the thing most people are worst at. Why do we leave it to chance, randomness, culture, and luck, while optimizing almost everything else.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+Deep relationships and a life of purpose are the foundation of a life well lived.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Strip away philosophy, religion, productivity, and status games, and almost everything collapses to this. Who you love. How you love. Who loves you. Who you create with. Why you wake up. Who you play with. For 99.9% of people, this is the real answer to the meaning of life, whether they articulate it this way or not.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe this problem is now solvable.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      For the first time in our species’ history, we can build systems that help people find their best fit humans, and then help them build relationships that actually thrive. Not shallow matching. Not engagement loops. Not endless novelty. But alignment, depth, and long-term flourishing.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Most people never experience the very best of relationships, but they can.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+This isn’t because they lack desire, sincerity, or capacity for love, but because the world we have built makes optimal connection statistically unlikely. Randomness, geography, timing, poor incentives, shallow systems, and cultural confusion do the rest.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      This is where our belief in technology comes in.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      We believe AI has the greatest potential of any technology ever created to be life affirming and consciousness expanding. Not because it replaces us, but because it can amplify the most human parts of us.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Our drive to connect.</li>
-      <li style="margin-bottom:8px;">To create.</li>
-      <li style="margin-bottom:8px;">To learn.</li>
-      <li style="margin-bottom:8px;">To grow.</li>
-      <li style="margin-bottom:8px;">To play.</li>
-      <li style="margin-bottom:8px;">To explore.</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      AI is at its best when it enhances our desired states of being, not when it abstracts humans away.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Relationship quality sits upstream of almost everything we care about.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Mental health, physical health, resilience, creativity, courage, empathy, even moral development are downstream of who we are surrounded by and how safe, seen, and challenged we feel in those bonds.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We do not believe the answer to the relationship conundrum is less technology.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Relationships were hard long before smartphones existed. They were fragile, misaligned, and often tragic even in slower eras. The difference now is that we finally have the tools to assist without intruding, to guide without controlling, to reflect without replacing.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The most important problem to solve today is the human relationship paradox.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Why is the most important thing in human life also the thing we leave most to chance. We engineer supply chains, markets, and cities with extreme care, yet treat love, friendship, and collaboration as accidents.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe the thoughtful application of technology is the only path forward.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      A life flourishing buddy, aligned to your long-term wellbeing, emotionally intelligent, deeply contextual, and on your side, can help people build relationships that would otherwise be out of reach. Not by telling them what to do, but by helping them:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">See themselves more clearly.</li>
-      <li style="margin-bottom:8px;">Regulate better.</li>
-      <li style="margin-bottom:8px;">Repair faster.</li>
-      <li style="margin-bottom:8px;">Choose more wisely.</li>
-    </ul>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+This problem is now solvable.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+For the first time in human history, we can build systems that help people find their most resonant humans, their kindred spirits, and then help those relationships actually flourish over time.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Self-awareness and a good self-relationship sit at the core of everything.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Most long-term relationship failure traces back to:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Blind spots.</li>
-      <li style="margin-bottom:8px;">Unexamined patterns.</li>
-      <li style="margin-bottom:8px;">Unhealed wounds.</li>
-      <li style="margin-bottom:8px;">The inability to sit with oneself honestly.</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      If you want better relationships, you must become better at being with yourself first. We believe the partner you get is the partner you deserve. If you want better, you must be better. This is not moralizing. It is causal.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+We believe deeply in the expansive potential of technology, and especially in AI.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+AI has the potential to be the most life affirming, consciousness expanding force ever created, if and only if it is aligned toward long-term human flourishing, both at the individual scale, and at the societal scale.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe relationship management and maintenance are as important as connection itself.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Humans cannot meaningfully maintain more than around 150 relationships.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Attention is finite.</li>
-      <li style="margin-bottom:8px;">Energy is finite.</li>
-      <li style="margin-bottom:8px;">Emotional bandwidth is finite.</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      A system that helps curate, prioritize, and tend to the relationships that matter most is not a luxury. It is infrastructure.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+AI (/tech) is at its best when it amplifies the human spirit.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+When it strengthens our drives to connect, create, learn, grow, play, and explore. It is at its worst when it replaces these drives with simulacras or numbs them into passive consumption.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Inefficient connection is one of the greatest bottlenecks in human potential.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      When the wrong people end up together, or the right people never meet, the loss compounds quietly.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Fewer ideas.</li>
-      <li style="margin-bottom:8px;">Less courage.</li>
-      <li style="margin-bottom:8px;">Less love.</li>
-      <li style="margin-bottom:8px;">Less joy.</li>
-      <li style="margin-bottom:8px;">Fewer beautiful things brought into the world.</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      When the best fit people find each other, everything accelerates. Creativity spikes. Risk tolerance increases. Life feels lighter. This is the greatest single unlock in human vitality and wellbeing.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Relationships were hard long before smartphones existed.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+The idea that less technology is the answer is naive. Relationships have always been fragile, misaligned, and deeply prone to subpar outcomes. What has changed is that we now have the tools to assist and nurture and grow without intruding and guide without controlling.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      This applies not just to romantic relationships.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      But to friendships, collaborators, teams, and organizations. We believe the optimal fit problem is universal. Connecting people to people. People to missions. People to organizations. Done well, this adds more to the world than almost anything else we could work on.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+We believe the thoughtful application of technology is the answer to the relationship conundrum.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+An aligned, emotionally intelligent life flourishing companion can help people build relationships that would otherwise be inaccessible.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Soulmates are real.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      They are not rare because they are mythical. They are rare because life is random. Most people simply never cross paths with their best fit. In a world of optimal connection, soulmates stop being a miracle and start becoming common. The same applies to best friends, extraordinary collaborators, and teams that feel effortless and alive.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Self-awareness is the root of relational health.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Most long-term relationship failure traces back to unexamined patterns, emotional blind spots, unresolved trauma, and a weak relationship with oneself.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe connecting social discovery, matchmaking, and relationship building into one coherent platform.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Fragmentation is the enemy of depth. Meaning emerges when these layers reinforce each other.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+A good self-relationship precedes all great relationships.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+If you cannot be with yourself honestly, patiently, and compassionately, no amount of perfect external matching will save you.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Depth and intentionality matter deeply to us.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      We are openly hostile to the superficial, discarding, commodifying treadmill of modern culture.
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">We reject the idea that humans are interchangeable.</li>
-      <li style="margin-bottom:8px;">We reject the notion that relationships are disposable.</li>
-      <li style="margin-bottom:8px;">We reject a world optimized for novelty over nourishment.</li>
-    </ul>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+We believe the partner you get is the partner you deserve.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+This is not moral judgment. It is causal reality. If you want better relationships, you must become better at relating, better at loving, better at serving, for what we put out is what comes back in.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe seeking growth and exploring frontiers are defining features of our species.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Stagnation is not neutral. It is decay. A good life requires healthy challenge, friction, and stretch. Meaning is not found in comfort or hedonism. It is found in effort that feels worth it.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Connection - even perfect - alone is insufficient. Maintenance and play and continuous nurturing matters.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Humans have limited emotional bandwidth. Without intentional care, even great relationships can atrophy, decay and wither away.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Looking forward, we believe passion, purpose, mission, and values alignment will become the dominant currencies of the post-AGI world.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Money will matter less. Hard skills will be commoditized. What remains scarce:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Personality.</li>
-      <li style="margin-bottom:8px;">Taste.</li>
-      <li style="margin-bottom:8px;">Coherence.</li>
-      <li style="margin-bottom:8px;">Belief.</li>
-    </ul>
-    <p style="font-size:17px; color:#cfcfe6;">
-      The most exciting companies of the future will feel more like people than corporations. They will have souls. They will tell stories. They will be missions, not commodities.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Inefficient connection is one of the greatest bottlenecks in human potential.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+When the wrong people end up together, or the right people never meet, the loss compounds across generations - the cost of the right people not meeting is one of the greatest tragedies of life, because of what this leaves on the table for the two - the joy that could have been had, the connection, the passion.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Stories will be the main currency.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Identity will be narrative again.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Connecting the most resonant, the best-fit people is the single greatest unlock in human vitality.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+It releases creativity, courage, joy, intellectual risk-taking, and deep aliveness at a scale few other interventions can match.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Utopia does not happen by default.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      AI does not lead to utopia automatically. Entropy wins unless consciousness actively pushes back. Beauty and meaning are anti-entropic forces. To build a better world requires vigilance, taste, wisdom, and sustained effort.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+This applies far beyond romance.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Friendships, collaborators, teams, and organizations are just as consequential. Optimal fit is a universal problem, one of the central meta problems of our species.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Life and consciousness are the most beautiful phenomena we know.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      We may be the only meaning givers in the observable universe. Until proven otherwise, we should act as if this responsibility is real. Not with arrogance, but with:
-    </p>
-    <ul style="padding-left:22px; margin:18px 0; color:#ffffff;">
-      <li style="margin-bottom:8px;">Stewardship.</li>
-      <li style="margin-bottom:8px;">Guardianship.</li>
-      <li style="margin-bottom:8px;">Care.</li>
-    </ul>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Soulmates are real. And we want to help millions find theirs.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+They appear rare because life is random, not because they are mythical. In a world of intentional curation and connection, soulmates become common rather than miraculous. With this everyone, everyone has access to the peak experience of love, which is the peak experience of being.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe humans are extraordinary.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      That belief should deepen our reverence for everything else, not justify domination. We may one day seed life and intelligence beyond Earth. If so, the values we encode now matter more than we think.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The same is true of best friends and extraordinary collaborators.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+The tragedy is not that these connections are rare, but that we have built a world where they struggle to find each other. Ours is to ensure this is no longer the case.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe in inventing for the long term.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Not iterating for short-term wins. Building at the edge of what is possible. Shaping futures rather than reacting to trends. Life is short, but art can be long. We want to build things that last long after we are gone. This is our masterpiece.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Self exploration and creation, connection curation, matchmaking, and relationship flourishing in one operating system is the optimal form factor.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Fragmentation kills depth. Meaning emerges when these layers reinforce one another.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      In life and in business, there are only a handful of era-defining shots.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      When one appears, it becomes imperative to rise to it. This moment in time is one of them. Few periods in human history have been more consequential. Getting this wrong would echo for centuries. Getting it right could unlock a world far richer in beauty, love, and meaning than anything we have known.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+We believe in depth and intentionality.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+And we are openly opposed to the superficial, discarding, objectifying, commodifying treadmill of modern culture.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Our world needs beauty and meaning.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      A lot of it. They are the antidotes to apathy, polarization, institutional decay, and quiet despair. A world richer in beauty and meaning is richer in every way that matters.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Humans are not interchangeable. Relationships are not disposable.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Any system that treats them as such is misaligned by design.
+</p>
+</div>
 
-  <div style="margin-bottom:60px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      We believe everyone deserves to find their tribe.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      Everyone deserves to be heard, loved, and alive. And we believe it is one of our highest duties to try to bring that world into existence.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Growth and frontier exploration are defining features of our species.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Humans do not merely survive. We probe, test, stretch, and reach. We climb mountains just because they are there. We ask questions because the universe is the ultimate puzzle. Stagnation is not a stable state for us. It corrodes quietly. A good life requires challenge that feels chosen, meaningful, and oriented toward something larger than comfort.
+</p>
+</div>
 
-  <div style="margin-bottom:20px;">
-    <h3 style="font-size:28px; margin-bottom:18px; background: linear-gradient(to right,#e0dded,#b066fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; letter-spacing:0.5px;">
-      Some of these beliefs will be unpopular.
-    </h3>
-    <p style="font-size:17px; color:#cfcfe6;">
-      That is fine. Progress rarely comes from consensus.
-    </p>
-    <p style="font-size:17px; color:#cfcfe6;">
-      This is the work we have chosen.
-    </p>
-  </div>
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Comfort and hedonism are poor substitutes for meaning.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Pleasure has a place. Ease has a place. But when comfort becomes the organizing principle of life, something deeply essential withers. A life optimized for frictionless enjoyment eventually loses texture, depth, and soul. Meaning requires effort, risk, and the willingness to be changed by what we care about.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+In the post-AGI world, passion, purpose, mission, and values alignment become central.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Technical skills will be abundant and cheap. Competence will be assumed. What will remain scarce is conviction, coherence, taste, and belief. Who you are, what you stand for, and why you show up will matter more than what you can execute.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Personality, passion, and mission will become the real moat.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+These are the traits that will compound over time. They will shape culture, trust, and direction. In a world where intelligence is everywhere, purpose integrity and vital passion will become differentiators and the ultimate human moat.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The most exciting companies of the future will feel more like people than corporations.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+They will have clear values, identities, stories. They will attract those who resonate deeply and repel those who do not.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The future is one of missions, not commodities.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+People will increasingly gather around shared purpose rather than interchangeable output. Work will become an expression of belief, and a confluence of binding narratives, rather than a transaction for survival.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Stories will become the primary currency of identity and coordination.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Stories transmit values, intent, and meaning far more efficiently than rules, metrics or KPIs. They answer the questions humans actually care about. Who are we. Why are we here. What are we building together.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Utopia does not happen by default.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Left to inertia, systems will decay. Incentives will drift. Power will concentrate. AI does not lead to benevolent outcomes automatically. In fact, default leads to bad outcomes. Entropy always wins unless consciousness intervenes deliberately.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Beauty and meaning are anti-entropic forces.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+They orient attention upward. They remind people that something is worth caring about. Societies rich in beauty and meaning are more resilient, more cooperative, and less prone to nihilism.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Life and consciousness are the most precious phenomena we know.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+The universe is silent. We must assume - and operate as if - we are alone. If consciousness, this most precious of things, is rare, then it is not something to treat casually. It is something to protect, cultivate, and expand. We may be the ultimate - and the only - caretakers of consciousness in this universe. There can be no greater responsibility than to ensure we keep the flame burning for billions of years.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Humans are not owners of the universe. We are stewards within it.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Our intelligence does not grant dominion. It grants responsibility. The more power we wield, the greater our obligation to wield it with care, restraint, and reverence.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+We believe in inventing for the long term.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+In not chasing short-term wins, or bending to quarterly incentives or cultural trends, but in building at the edge of what is possible while remaining anchored to what is right.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Life is short, but art can be long.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+The things worth building should outlast us. They should carry forward values, taste, and care into futures we will never personally see. “A society grows great when old men plant trees in whose shade they know they shall never sit.”, as the ancient Chinese proverb reminds us.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+There are only a few era-defining shots in history.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+Moments when the trajectory of civilization is malleable. When defaults are still being written. When small choices scale into permanent structures.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+This is one of those moments.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+The way we design our technologies, our institutions, our companies, our relationships, and our systems of meaning now will echo for centuries, shaping what it means to be human.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Our world needs beauty and meaning, in abundance.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+They are the antidotes to apathy, polarization, institutional collapse, and quiet despair. A world richer in beauty and meaning is richer in every dimension that matters.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Everyone deserves to find their tribe.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+To be seen without performance. To be challenged without cruelty. To love and be loved deeply. To live a life that feels alive. And we will ensure this is so.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Some of these beliefs will be unpopular.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+That is fine. Consensus is rarely how the future is built. The goal is not to be agreeable. It is to be aligned with what we believe is true.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+This is the work we have chosen.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+To aim high. To care deeply. To build deliberately. To take responsibility for the futures our tools make possible. To choose depth over distraction, meaning over ease, and love over its hollow substitutes.
+</p>
+
+<p style="color:#ffffff;font-size:17px;margin-top:20px;">
+This is not a company or a business to us. It is a commitment to the kind of world we want to wake up in, and the kind of humans we want to become while building it.
+</p>
+</div>
 
 </div>
-    `
+`
 
   },
   {
