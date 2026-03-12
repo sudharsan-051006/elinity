@@ -217,6 +217,8 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     { title: "It’s a Match!", description: "Two paths just aligned.Take the first step and begin something real.", image: "/23.jpeg" },
   ];
 
+  const slides = [...tourSteps, tourSteps[0]];
+
   const [infoRef, infoShow] = useReveal();
 
 
@@ -261,6 +263,8 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     return () => clearInterval(interval);
   }, [isPaused]);
 
+
+  
   const scrollManual = (direction) => {
     if (scrollRef.current) {
       const { clientWidth } = scrollRef.current;
@@ -269,6 +273,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     }
   };
 
+  console.log(tourSteps.length)
   const scrollToIndex = (index) => {
     if (scrollRef.current) {
       const { clientWidth } = scrollRef.current;
@@ -465,18 +470,18 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
 
           {/* Navigatable Dots */}
           <div className="flex justify-center gap-3 mt-4">
-            {tourSteps.map((_, idx) => (
-              <button 
-                key={idx} 
-                onClick={() => scrollToIndex(idx)}
-                className={`transition-all duration-300 rounded-full h-2 ${
-                  activeIndex === idx 
-                    ? 'w-8 bg-purple-400' 
-                    : 'w-2 bg-white/20 hover:bg-white/40'
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
+          {tourSteps.slice(0, 10).map((_, idx) => (
+            <button 
+              key={idx}
+              onClick={() => scrollToIndex(idx)}
+              className={`transition-all duration-300 rounded-full h-2 ${
+                activeIndex === idx
+                  ? "w-8 bg-purple-400"
+                  : "w-2 bg-white/20 hover:bg-white/40"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
           </div>
         </div>
       </div>

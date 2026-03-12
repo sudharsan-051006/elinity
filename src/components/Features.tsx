@@ -297,8 +297,8 @@ because there is so much flavour and richness we can add with platonic relations
             </div>
           </button>
         </div>
-
       </div>
+      <br></br>
     </div>
   );
 }

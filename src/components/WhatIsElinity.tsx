@@ -97,7 +97,7 @@ export default function ElinityLandingPage() {
           background: hover ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.06)",
           border: "1px solid rgba(255,255,255,0.12)",
           borderRadius: "32px",
-          padding: "60px 50px",
+          padding: isMobile ? "20px 30px" : "60px 50px",
           transition: "all 1s cubic-bezier(.23,1,.32,1)",
           transform: showCard
             ? hover
