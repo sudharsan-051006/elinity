@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { blogs } from "../constants/blogs";
 import { Link } from "react-router-dom";
 
-const targetIndices = [0, 1, 2, 3, 4];
+const targetIndices = [0, 1, 2, 3, 4, 5];
 
 const featuredBlogs = blogs
   .filter((_, i) => targetIndices.includes(i))

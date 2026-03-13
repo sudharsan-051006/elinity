@@ -7,6 +7,7 @@ import vivid from '../../public/vividdetails.jpeg';
 import breakup from '../../public/breakup.jpeg';
 import future from '../../public/25.jpeg';
 import elintyblog from '../../public/theelinityblog.png';
+import might from '../../public/might.png'
 
 export const blogs = [
   {
@@ -248,6 +249,248 @@ This is why we're here, doing what we’re doing.<strong>Join us if you are call
 
   {
     id: 1,
+    title: 'On a Return To The “Might Is Right” World Order - In Geopolitics, In AI, And The Consolidation of All Production and All Power	',
+    image: might, 
+    time: '6 min read',
+    date: '15 April 2024',
+    author: 'Suraj Pandya',
+    authorAvatar: 'https://randomuser.me/api/portraits/women/33.jpg',
+    content: `
+
+<div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
+color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
+
+<div style="margin-bottom:60px;">
+<h2 style="font-size:34px; margin-bottom:20px; background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
+On a Return To The “Might Is Right” World Order - In Geopolitics, In AI, And The Consolidation of All Production and All Power
+</h2>
+</div>
+
+<div style="margin-bottom:60px;">
+<p style="color:#cfcfe6;font-size:17px;">
+I have found myself thinking a lot about the shifting world order, the emerging power dynamics, the means of production, and, thanks to Mark Carney, I have found a rather decent opener, even if I say so myself, for this very long due essay.
+<br><br> As I was listening to Carney’s recent Davos speech, I could not help but overlay his words from the geopolitical stage onto the technology and AI landscape. <br><br>  We are in a new world order, in all sorts of ways. And might is explicitly returning as the dominant paradigm, as I will argue in the next 10 minutes.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+“The strong do as they will, and the weak suffer what they must", Thucydides remarked on the conditions of power dynamics 2500 years ago, and as you'd expect, when it comes to obstinate human nature, it still describes our milieu pretty accurately. The Melian Dialogue is still one of the most brutally honest descriptions of power politics ever written. The Athenians laid out their case without euphemism. Justice or fairness, they said, only applies between equals.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Of course, the historical punchline has its own twist of irony. The Athenians lost the Peloponnesian War; hubris has a half-life, after all. The lesson we took - that we learned at the cost of hundreds of millions of lives - that “might makes right” is not a sustainable equilibrium, even if it is a recurring phase of human systems. But tyrants and bullies have always had short-term memories - they haven't historically been known as the epitome of intellect for a reason.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<p style="color:#cfcfe6;font-size:17px;">
+Being at the behest of superpowers - and I count the AGI labs in this bucket, because an entity that can wield AGI/ASI has powers we can scarcely imagine, powers that would be the stuff of dreams for despots - as Carney made pains to emphasize, is extremely expensive for everyone else. The take-home message was simple: “This is a rupture, not a transition.”
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Call it out, and name the thing. <br><br> He didn't say it outright, so what did he mean by the rupture? <br><br> The rupture is in the liberal world order. <br><br> The rules-based order was a stabilizing fiction at one point, but it has become a lie, being the implication, and we need to stop believing the pretense, and give it more credence, giving it legitimacy it no longer deserves. Adopting the language of a pretense only serves to ease participation in it, from a movie I can't recall for the life of me.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Quoting Václav Havel, his framing was that continued belief in the functioning of international institutions is “living within a lie.” We sit with the lie - the lie that everything is alright - because the lie is convenient. The alternative requires admitting that we are in a new era of power dynamics, arms race dynamics, and geopolitical fragmentation, where, for instance, economic integration is now routinely used as coercion, where trade, sanctions, access to markets, technology, and even currency clearing systems have become weapons, and where economic pressure is now openly deployed even against allies, and trade wars dressed up as industrial policy.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+He did not say it in these exact words, but the implication was clear enough. The old rules do not protect smaller nations or players, i.e., the sovereign individuals, anymore. The rallying cry was simple, too - middle powers must stop waiting for the old order to return and instead build parallel, sovereign coalitions.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<p style="color:#cfcfe6;font-size:17px;">
+As an aside, it has to be said that the speech was a masterclass in standing up and compelling the blinders off; I was able to sit through the entire thing - I say it like that not because it was super long, or because I am TikTok-brained, but because most speeches by politicians are an endless barrage of nothingness. There is no end, no start, because it's all the same - a big ball of nothing. This one, on the other hand, was one of the most impressive political speeches I have listened to. Considering the total number of speeches by political leaders, and where the bar is in recent history, it may not be much in the grander scheme, but it was damn impressive as a specimen. The irony of a former banker pointing out the rupture, the break in rules, wasn't lost on me. We live in such an inverted world, where a Christian Evangelist who speaks in the most philistine of manners becomes the supreme leader, his millions of supporters not blinking twice at the debasement of all things good and glorious, while the former governor of the BoE, of all institutions, rails and dares the cowardly people (which essentially is everyone but China right now) to get up and stop accepting the bullying. You could only cook something like this up in a simulation.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The Social Contract Is Quietly But Quickly Being Rewritten, With The Same Rupture Happening in AI.
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+ The AI landscape is echoing the move towards a might-is-right paradigm almost in lockstep with the political. And why would you expect otherwise? Power has always had the greatest appeal, and the power to be had, by the one who wields the metaphorical ASI ring to rule them all, has never been greater in magnitude.<br><br> gies are being deployed is historically unprecedented.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+AI labs are treating the world as their playground, externalities be damned. This is the peak of might-is-rightism syndrome. A prime example of this rupture sits closer to home than geopolitics - in people's homes and wallets. <br><br>The social contract, which, again, was used as a stabilizing fiction, is now outright being stripped away. It was already in peril - young people can barely afford life, can barely afford families, but there was relative stability, but, now this is taking a far bleaker turn.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Livelihood, at least in modern liberal democracies, had implicitly become a baseline expectation. Stable careers were the first casualty.<br><br> Now, if you listen carefully to the rhetoric coming out of both political and technological institutions, livelihood itself is being reframed as optional. AI companies are unleashing job-obsoleting technologies at a rate completely at odds with a relatively pain-free transition - no consent asked or needed, according to the old, tried and true playbook of break first, ask for permission or forgiveness later, or how about never. They are automating away everything within sight, just because they can. Without the consent of the 3 billion people, they will be removed from the workforce in the next 10 years, which is a conservative estimate, just to be clear.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+For those who believe more jobs will be created, oh, you sweet summer soul, I have two things to say to you. An AGI can, by definition, do anything a human can do, and if it can do anything a human can do today, it can do anything a human can do in the future. And second, if the system wanted you to continue having jobs, or promises to find you a better job later post the transition, it wouldn't go all in on accelerating towards a world where we are going to obsolete literally 90% of jobs within 10 years. Expecting otherwise is a fantasy.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The Erosion of Rights and the Rise of Surveillance
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+People are losing their economic value, and in a world where economic value is the proxy for actual value, this could have dire outcomes.<br><br> Even in politics, across both ends of the ideological spectrum, free speech, once treated as the bedrock of liberal societies, is increasingly conditional, in the UK, the US, and beyond.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+“I disapprove of what you say, but I will defend to the death your right to say it” has quietly been retired from polite conversation. <br><br> Protesting government overreach against ICE gets innocent people killed, like in a scene from some dystopian novel. Israel's actions cannot be criticized by university students, once the bastion of free speech, lest people be detained and tarnished. The attack on free speech on both sides is trampling on individual rights harkening an end to a free era.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Meanwhile, surveillance capacity - further meant to constrict free speech by instilling fear in the populace - continues to expand, both state and corporate. Palantir-like infrastructure is becoming embedded at the level of the national OS.<br><br> None of this is full-on dystopia just yet -it seems banal, procedural, and incremental, which is precisely how structures shift quietly but radically.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+A lot of my socialist friends despise AI with a vengeance, which has made for some fun conversations. But fun aside, the grievances are legit.<br><br> The social contract was already hard torn - young people expected to have stable careers, their own houses, strong relationships, if only they worked hard.<br><br> And they did, with not much to show for it.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<p style="color:#cfcfe6;font-size:17px;">
+The AI industry is now torching the contract, with a disdain to boot. Forget about a stable career, how about we give you none? Forget about strong relationships, how about we give you a simulacra, or an illusion of choice by creating an endless swiping supply, to keep you on our treadmill?
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Now, a part of me could care less about politics, and I have always avoided it, but it is - especially, with the embedding and entrenchment of AI into everything - becoming more and more in the face. You don't have the luxury to ignore the dirty game because if you do it for long enough, it will get to you long before you know you needed to react.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Consolidation of the Means of Production
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+At the same time, we are seeing an extraordinary consolidation of both physical and cognitive production capacity. <br><br> China is actively breaking the classic “flying geese” development model. <br><br> Historically, as nations moved up the manufacturing value chain, lower-value manufacturing shifted to poorer economies, allowing them to industrialize. China is counting on an ultra-scale robotics deployment to disrupt that progression, to own most production for all eternity.<br><br> If automated factories produce more cheaply than any labor market in Southeast Asia, Africa, or Latin America, there is no economic incentive to relinquish lower-tier production. Owning the entire stack is becoming the dominant strategy for those who can.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+The United States, meanwhile, is signaling a similar intent in technology. 
+  <ul style="padding-left:22px; margin:18px 0; color:#ffffff;>
+        <li style="margin-bottom:8px;">Own the chips.</li>
+        <li style="margin-bottom:8px;">Own the cloud.</li>
+        <li style="margin-bottom:8px;">Own the models.</li>
+  </ul> 
+And make the world dependent on us - threaten and impose penalties if they show an intent to develop sovereign AI. <br><br> If you control intelligence and production, you effectively control everything downstream. And if you control everything downstream, your threats to take over lands, to impose your will onto other populations, become that much more credible.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+The underlying thesis from large AI firms is straightforward - all economic value comes from intelligence and labor. <br><br> Make both cheaper than humans. <br><br> Capture the surplus.<br><br> They want to make this cheaper and "better," thus removing the need for humans, and thus accrue more and more value, removing the middlemen, literally. And considering the numbers I see being thrown around all the time, and the air around it - "50 trillion as the global labour market, and even if we capture 10%, which we believe we easily can, we have got a $5 trillion sized pie in our mouths", the belief is that the more they can automate, the higher their valuation; investors cannot stop lapping this up and throwing money at this promised land - the greater the promised disruption, the greater their arousal in interest, it appears.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Funny how things change, for not long ago, creating jobs was treated as the gold standard of corporate virtue. Now, destroying jobs at scale is framed as efficiency. <br><br>Cue the old favourite: Yes, the planet got destroyed. But for a beautiful moment in time we created a lot of value for shareholders.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+AGI Is Already Priced In
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+At this point, AGI is effectively priced into the global technology economy. It's happening, and it will be a tsunami, no matter how many heads are in the sand, no matter how insulated people think they may be. The capital expenditure by hyperscalers is too large for anything else to be true. <br><br> If AGI timelines collapse, there will be a financial bloodbath. If they hold, there is a societal one if we keep on our current trajectories. This is not a problem that disappears because we prefer not to think about it - so the only thing to do is to stop living the pretense and start talking.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+I wrote recently about how even “aligned” AI could still lead to authoritarian outcomes if deployed within existing power structures. <br><br> I recently wrote about how even aligned AI likely leads to authoritarian control - that is where we are trending towards with all these trendlines that overpower the alignedness of "AGIs". After all, AGI doesn't happen in a vacuum - it is into a world already trending toward centralized control. <br><br>We are about to birth ASI into an era of might-is-right. Now, I don't think many of our assumptions about humans will hold true with an ASI, and not to anthropomorphize it, but I can't help but wonder how significant the moment of birth, the circumstances surrounding it, might be. We are about to introduce systems with potentially civilization-scale capability into an era defined by great power rivalry and corporate consolidation. <br><br> That combination looks like a tindermatch.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+So Where Are We Heading, and What Can Be Done?
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+We are entering a very dangerous period - the most fraught with risk in our history, and I know people have said this for the last 2000 years, but it couldn't be truer than it is today. The combination of autonomous weapons, global surveillance, and syndicates, self-improving intelligence systems, and the good old human nature found in many leaders that drives them to control and dominate, this is genuinely singularitarian in terms of us being able to predict anything reasonably strong about the state of it.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+Both the tech world and the political world need to learn the thing that hasn't come most easily to humans - restraint. In a world trending toward “if you can get it, you should get it,” restraint needs to become the order of the times, the most important missing virtue. <br><br>Just because you can build missiles that can decimate a town on the other side of the planet in 5 minutes doesn't mean you should. <br><br> Just because you can add erotically charged companions as a mainstream, public-benefit, AGI for all company, truth-seeking company, doesn't mean you should. <br><br>Have some restraint - if you can't control your market domination urges, you cannot be trusted to be a good steward of AGI, period, either as a lab, or as a nation.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+Distributed Aligned Intelligence as Counterweight
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+  Big tech wants to have the ultimate monopoly, not on some isolated vertical, but on the foundation of all verticals - intelligence and labour. <br><br> You have these, and you can build anything, is their shtick. <br><br> And for the rest of us, the reckoning comes from the fact that they are right. <br><br> So what can we do? The only good solution I see is to have multiple AIs - tens of approaches to ASI, in a world in which AGI is inevitable, and in a world in which the lower the number of AGIs, the higher the odds of control.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  To this end, I have been working on something with Elinity that may be a part of the solution - a system of aligned intelligences seeded across the board. One of the core themes that runs through the project is that of using AI for human empowerment. To extend this line of thinking, I think the only way to counter control is by having multiple approaches to AGI, a world where each group or community has its own AGI and robotics fleet, thus needing to do away with the ultimate dependence of intelligence and labour on entities that may not have your best interests at heart.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  At Elinity, one of our core metadirectives is to understand the foundations of the post-AGI order and lay out parts of the social infrastructure. We have been thinking hard about the scaffolding, the design of this system, and we have a proto version ready to go. Hopefully, we will start working on the tech component soon, a component that, once it comes online, can be disbursed to the broader world as a public good or public utility.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  Only way the authoritarian, disempowered future doesn't happen - or one of the few ways, since I am sure there are hopefully more than a few other ways we could achieve these ends that I can't see today - is by having distributed intelligence and production. If the intelligence units and production factories are not wholly and entirely owned by the big guys, power is diffused, and in the hands of the people, and we still have a chance. AI could become the ultimate empowerment layer if we get it right.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  Staying reliant on the US tech or China production is an extremely dangerous gambit, both for nations and individuals. We have to learn from the EU's mammoth miscalculations that made it reliant on Russia, restricting its optionality.<br><br> This applies just as well to American citizens. After all, there are reports that companies are giving away information about ICE protestors and genocide protestors to the government willy-nilly - we are seeing the ultimate consolidation of power. <br><br>The surveillance state is coming - the panopticon is about to become very real.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  The only path ahead is the self-sufficient sovereign individual.<br><br> The principle to remember: <br>If the government or a company can take it from you, you never had it in the first place. <br><br>AI - the AGI kind - is going to become as deeply embedded in our lives as anything. Not for everyone, but anyone who wants to be effective in the new world will have AI flowing through their life like air. For us, finding the solution came as a child of necessity. We are designing Lumi AI, our aligned-by-default life-flourishing buddy for our users. Now, Lumi is going to become an intricate part of our users' lives, and we wouldn't feel comfortable about Lumi being connected to the cloud, to those intimate conversations being connected to the cloud, even if no human ever saw them. So we realized a chipset that can carry the Lumi brain, that can be upgraded whenever we upgrade Lumi over the air, is the solution. And as it turns out, that can be expanded into the Sovereign Individuals and Sovereign Communities project.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+The Range of Futures:
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+A utopia is possible, but unlikely.<br><br> A world of abundant love and meaning is possible, but unlikely. <br><br> Because we are fighting against entropic forces, against deeply entrenched systems and incentives. <br><br> I will try my damnedest to move at least some of these outcomes from unlikely toward inevitable. Because the alternative is to drift into whatever configuration of concentrated power emerges by default. And history suggests that default configurations rarely optimize for human flourishing. <br><br> That is the work we must do.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+The last thing we can be now is complacent, for contrary to perception, not only has history not ended, it is only now starting, and accelerating in a way that the next 10 years are going to compress 100 years of history in them.
+</p>
+
+</div>
+
+<div style="margin-bottom:60px;">
+
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+One Last Thing
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+My messaging may seem bipolar in nature - one day, I wax lyrical about the potential of AI, the other, I talk of its risks as if that's all I ever think about. <br><br>In reality, the best optimists are pessimists, or put better, the best form of optimism is realism. 
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+The entire reason why I chose to work on this, the reason I have chosen to work on the set of products I have, is because AI brings unique capabilities to humans and humanity; it scales things up that were reserved only for the top 0.1%, it unleashes revolutions in medicine and education making the highest quality care and learning dirt cheap, nay even free. It is, without hyperbole, the single greatest phase shift in the history of human civilization, almost on par with fire and electricity, in terms of what it makes possible, possibly greater, as we may soon learn.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+But, and this is a big but, it poses the gravest threats we have ever faced - and to be sure, the default path, with our current set of conditions, is that of dystopia. An authoritarian state, misaligned AI, human disempowerment, concentration of economic power, thus all power, loss of control are the likeliest outcomes. I don't say this to cause alarm or dooomserism, I say this because people far smarter than me, people who have spent far more hours thinking about these issues, thinking built upon their own priors that are conditioned upon believing deeply in the power of technology, have individually converged to conclusions about the dangers and risks, and their p(d) distributions paint a terrifying picture for anyone with half a mind.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+I am bipolar in the sense that I am both a radical optimist and a radical realist - I have seen how good things can be, and I have also seen how bad they can get. But even as I say that, I know that I haven't seen even a glimpse of just how bad they really can get. <br><br>I have a love-hate relationship with the tech industry. I love parts of it, I love the promise, but I hate the way it's being done. We should be able to hold two conflicting thoughts in our minds at the same time - this is a sign of maturity, of nuance that our world could do with.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<p style="color:#cfcfe6;font-size:17px;"> 
+  But there is a better path ahead, if we are clear-eyed and resolute. <br><br> I find absolute utopians boring, tiresome even - it is as if they suffer from a lack of imagination, it is as if their religion is an inevitable singularitarian world, an ASI that magically fixes everything. <br><br>  The path to an actual utopia is long - it will likely take us centuries, not decades, and even then, it won't be a stable equilibrium. It will be messy, and we will have to work hard to maintain it.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  If you love something, if you love dearly, then it becomes your duty to understand the flaws and weaknesses, because you can see just how good that thing can be, and you want it to be the best it can be, but you understand that for that to happen, the flaws have to be fixed, not ignored out of a misplaced form of love. This thing can be a person, it can be a movement, it can be a product, it can be a nation, or it can be a technology, or it can be humanity itself.
+</p>
+</div>
+
+<div style="margin-bottom:60px;">
+<h3 style="font-size:28px;margin-bottom:18px;background: linear-gradient(to right,#e0dded,#b066fe);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">
+PS: The last last thing
+</h3>
+<p style="color:#cfcfe6;font-size:17px;">
+  PS: The last last thing. Another reason I write some of these pieces, with an almost faux sense of conviction, but having the disclaimer that I know nothing except for what I see, is that things are extremely flexible; you can't be wedded to a single position or model at this time.<br><br> But you do need to have strong salience and depth in various positions. If you can't describe all the decile outcomes, you are going to stay in the dark.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  It is good to have deep conviction in some things, but you don't need conviction in all of your positions - that is as indicative of madness as having complete conviction in all your takes. A humble pie is something we could all add to our daily diets. Sometimes, the purpose of modelling is not to show you have high confidence in what you just laid out, but to prepare and work towards shifting away from what you laid out. The act of observing and paying attention can shift what might seem inevitable.
+</p>
+<p style="color:#cfcfe6;font-size:17px;">
+  Also, subconsciously, I have a desire to write fiction, but I can't afford to, so I let some of those instincts and desires be parlayed into my non-fiction writing. Which can be fun. <br><br>Also, in case things do go down, or if they have a can't-ignore chance of going so, it's always good to be prepared for the worse case scenarios cognitively.
+</p>
+</div>
+
+</div>
+
+    `
+  },
+
+  {
+    id: 2,
     title: 'Some of Our Core Beliefs at Elinity	',
     image: belif,
     time: '6 min read',
@@ -258,7 +501,7 @@ This is why we're here, doing what we’re doing.<strong>Join us if you are call
 <div style="max-width: 900px; margin: auto; padding: 60px 20px; background: linear-gradient(to bottom, #1a1a2e, #16213e);
 color: #e6e6eb; font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.8; letter-spacing: 0.2px;
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px;font-size: 16px;">
-
+    
 <div style="margin-bottom:60px;">
 <h2 style="font-size:34px; margin-bottom:20px; background: linear-gradient(to right,#e0dded,#b066fe);
 -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">
@@ -675,7 +918,7 @@ This is not a company or a business to us. It is a commitment to the kind of wor
 
   },
   {
-    id: 2,
+    id: 3,
     image: why  ,
     title: 'Why We Are Building Elinity ',
     time: '4 min read',
@@ -1016,7 +1259,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     `
   },
   {
-    id: 3,
+    id: 4,
     image: sol,
     title: 'On Soulmate-Level Connections, and the Art of Curating Soulmates',
     time: '4 min read',
@@ -1234,7 +1477,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     `
   },
   {
-    id: 4,
+    id: 6,
     image: '/25.jpeg',
     title: 'The Future of Work, Meaning, and Purpose',
     time: '6 min read',
@@ -1702,7 +1945,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
   },
 
   {
-    id: 6,
+    id: 7,
     image: breakup,
     title: 'The Cost of Divorces, and How to Fix Divorces',
     time: '5 min read',
@@ -1988,7 +2231,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
   },
 
   {
-    id: 7,
+    id: 8,
     image: birth,
     title: 'Birth Rates, Human Flourishing in the Cosmos, and Elinity for Humanity',
     time: '4 min read',
@@ -2300,7 +2543,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
     `
   },
   {
-    id:  8,
+    id:  9,
     image: vivid,
     title: 'Painting the Future in Full Color, in Vivid Detail',
     time: '5 min read',
