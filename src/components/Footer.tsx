@@ -66,7 +66,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
               {[
                 { icon: <Instagram size={22} />, href: "https://www.instagram.com/elinityai/" },
                 { icon: <Linkedin size={22} />, href: "https://www.linkedin.com/company/elinity/" },
-                { icon: <Twitter size={22} />, href: "https://x.com/forofuselabs" }
+                { icon: <Twitter size={22} />, href: "#" }
               ].map((social, i) => (
                 <a 
                   key={i}
