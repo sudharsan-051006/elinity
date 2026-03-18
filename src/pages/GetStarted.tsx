@@ -3,6 +3,8 @@ import { Check, Sparkles, Zap } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+
 
 // Defines the pricing plans available to users. Each object contains details for a single plan.
 const plans = [
@@ -83,6 +85,20 @@ const CheckIcon = ({ className = '' }) => (
 
 const GetStarted: React.FC = () => {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+
+    const handleChange = () => {
+      setIsMobile(media.matches);
+    };
+
+    handleChange(); // initial check
+    media.addEventListener("change", handleChange);
+
+    return () => media.removeEventListener("change", handleChange);
+  }, []);
 
   /**
    * Handles the click event for the "Get it Now!" button.
@@ -591,29 +607,31 @@ const GetStarted: React.FC = () => {
 
           <div className='pt-16'></div>
           
-          <motion.div
-  initial={{ opacity: 0, y: 80, scale: 0.98 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  viewport={{ once: false, amount: 0.2 }}
-  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0}}
+  transition={{ duration: 0.5, ease: "easeOut" }}
   style={{
     maxWidth: "900px",
-    margin: "80px auto",
-    padding: "40px",
+    margin: isMobile ? "20px" : "80px auto", // fixed layout
+    padding: isMobile ? "20px" : "40px",
     borderRadius: "28px",
     background: "rgba(10,10,30,0.55)",
-    backdropFilter: "blur(20px)",
-    WebkitBackdropFilter: "blur(20px)",
+    backdropFilter: "blur(10px)", // reduced blur
+    WebkitBackdropFilter: "blur(10px)",
     border: "1px solid rgba(255,255,255,0.08)",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
-    color: "white"
+    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+    color: "white",
+    willChange: "transform, opacity",
+    transform: "translateZ(0)"
   }}
 >
 
   <motion.h2
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     transition={{ delay: 0.2, duration: 0.6 }}
     style={{
       fontSize: "28px",
@@ -629,7 +647,7 @@ const GetStarted: React.FC = () => {
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     transition={{ delay: 0.3, duration: 0.6 }}
     style={{ marginBottom: "26px" }}
   >
@@ -647,7 +665,7 @@ const GetStarted: React.FC = () => {
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     transition={{ delay: 0.45, duration: 0.6 }}
     style={{ marginBottom: "26px" }}
   >
@@ -665,7 +683,7 @@ const GetStarted: React.FC = () => {
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     transition={{ delay: 0.6, duration: 0.6 }}
   >
     <h3 style={{
@@ -688,22 +706,24 @@ const GetStarted: React.FC = () => {
 
 
 <motion.div
-  initial={{ opacity: 0, y: 80, scale: 0.98 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  viewport={{ once: false, amount: 0.25 }}
-  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.25 }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
   style={{
     maxWidth: "850px",
-    margin: "60px auto",
-    padding: "36px 40px",
+    margin: isMobile ? "20px" : "60px auto",
+    padding: isMobile ? "20px":"36px 40px",
     borderRadius: "26px",
     background: "rgba(15, 10, 40, 0.55)",
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
+    backdropFilter: "blur(10px)", // ↓ reduced
+    WebkitBackdropFilter: "blur(10px)",
     border: "1px solid rgba(255,255,255,0.08)",
-    boxShadow: "0 25px 60px rgba(0,0,0,0.45)",
+    boxShadow: "0 15px 40px rgba(0,0,0,0.3)", // ↓ lighter
     color: "white",
-    position: "relative"
+    position: "relative",
+    willChange: "transform, opacity",
+    transform: "translateZ(0)"
   }}
 >
 
@@ -713,7 +733,7 @@ const GetStarted: React.FC = () => {
     inset: "-1px",
     borderRadius: "26px",
     background: "linear-gradient(120deg, rgba(168,85,247,0.35), rgba(99,102,241,0.25))",
-    filter: "blur(18px)",
+    filter: "blur(8px)",
     opacity: 0.25,
     zIndex: 0
   }} />
@@ -722,7 +742,7 @@ const GetStarted: React.FC = () => {
     style={{ position: "relative", zIndex: 1 }}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     variants={{
       hidden: {},
       visible: { transition: { staggerChildren: 0.15 } }
@@ -763,7 +783,7 @@ const GetStarted: React.FC = () => {
     {/* top up box */}
     <motion.div
       variants={{
-        hidden: { opacity: 0, scale: 0.95 },
+        hidden: { opacity: 0, y: 20 } ,
         visible: { opacity: 1, scale: 1 }
       }}
       transition={{ duration: 0.6 }}
@@ -833,13 +853,13 @@ const GetStarted: React.FC = () => {
 </motion.div>
 
 <motion.div
-  initial={{ opacity: 0, y: 80, scale: 0.98 }}
+  initial={{ opacity: 0, y: 60 }}
   whileInView={{ opacity: 1, y: 0, scale: 1 }}
   viewport={{ once: false, amount: 0.25 }}
   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
   style={{
     maxWidth: "850px",
-    margin: "60px auto",
+    margin: isMobile ? "20px" : "60px auto",
     padding: "38px 42px",
     borderRadius: "26px",
     background: "rgba(12, 10, 35, 0.55)",
@@ -848,7 +868,9 @@ const GetStarted: React.FC = () => {
     border: "1px solid rgba(255,255,255,0.08)",
     boxShadow: "0 25px 60px rgba(0,0,0,0.45)",
     color: "white",
-    position: "relative"
+    position: "relative",
+    willChange: "transform, opacity",
+  transform: "translateZ(0)"
   }}
 >
 
@@ -863,101 +885,107 @@ const GetStarted: React.FC = () => {
       filter: "blur(20px)",
       opacity: 0.25,
       zIndex: 0,
+      willChange: "transform, opacity",
+  transform: "translateZ(0)"
     }}
   />
 
-  <motion.div
-    style={{ position: "relative", zIndex: 1 }}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false }}
+ <motion.div
+  style={{
+    position: "relative",
+    zIndex: 1,
+    willChange: "transform, opacity",
+    transform: "translateZ(0)"
+  }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.1 }
+    }
+  }}
+>
+
+  <motion.h2
     variants={{
-      hidden: {},
-      visible: { transition: { staggerChildren: 0.12 } }
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    style={{
+      fontSize: "26px",
+      fontWeight: "800",
+      marginBottom: "18px",
+      letterSpacing: "0.5px"
     }}
   >
-    
-    <motion.h2
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 }
-      }}
-      transition={{ duration: 0.6 }}
-      style={{
-        fontSize: "26px",
-        fontWeight: "800",
-        marginBottom: "18px",
-        letterSpacing: "0.5px",
-      }}
-    >
-      Payment Options & Flexibility
-    </motion.h2>
+    Payment Options & Flexibility
+  </motion.h2>
 
-    <motion.ul
-      style={{ lineHeight: "1.9", fontSize: "15px" }}
-    >
-      {[
-        "Monthly and annual plans available",
-        "Annual subscriptions provide meaningful savings",
-        "You can pause or cancel anytime",
-        "Your data and relationship history remain secure and accessible if you return",
-      ].map((text, i) => (
-        <motion.li
-          key={i}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.5, delay: i * 0.08 }}
+  <motion.ul style={{ lineHeight: "1.9", fontSize: "15px" }}>
+    {[
+      "Monthly and annual plans available",
+      "Annual subscriptions provide meaningful savings",
+      "You can pause or cancel anytime",
+      "Your data and relationship history remain secure and accessible if you return",
+    ].map((text, i) => (
+      <motion.li
+        key={i}
+        variants={{
+          hidden: { opacity: 0, x: -15 },
+          visible: { opacity: 1, x: 0 }
+        }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          marginBottom: "10px",
+          color: "rgba(255,255,255,0.8)"
+        }}
+      >
+        <span
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            marginBottom: "10px",
-            color: "rgba(255,255,255,0.8)",
+            height: "6px",
+            width: "6px",
+            borderRadius: "50%",
+            background: "linear-gradient(90deg,#a78bfa,#67e8f9)",
+            display: "inline-block"
           }}
-        >
-          <span
-            style={{
-              height: "6px",
-              width: "6px",
-              borderRadius: "50%",
-              background: "linear-gradient(90deg,#a78bfa,#67e8f9)",
-              display: "inline-block",
-            }}
-          ></span>
-          {text}
-        </motion.li>
-      ))}
-    </motion.ul>
+        />
+        {text}
+      </motion.li>
+    ))}
+  </motion.ul>
 
-    <motion.p
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      style={{
-        marginTop: "18px",
-        fontWeight: "600",
-        fontSize: "15px",
-        background: "linear-gradient(90deg,#c4b5fd,#67e8f9)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-      }}
-    >
-      Our goal is sustained growth and trust, not lock-in.
-    </motion.p>
+  <motion.p
+    variants={{
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    style={{
+      marginTop: "18px",
+      fontWeight: "600",
+      fontSize: "15px",
+      background: "linear-gradient(90deg,#c4b5fd,#67e8f9)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}
+  >
+    Our goal is sustained growth and trust, not lock-in.
+  </motion.p>
 
-  </motion.div>
+</motion.div>
 </motion.div>
 
 <motion.div
-  initial={{ opacity: 0, y: 80, scale: 0.98 }} 
+  initial={{ opacity: 0, y: 60 }} 
   whileInView={{ opacity: 1, y: 0, scale: 1 }}
   viewport={{ once: false, amount: 0.3 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
   style={{
     maxWidth: "850px",
-    margin: "60px auto",
+    margin: isMobile ? "20px" : "60px auto",
     padding: "40px 42px",
     borderRadius: "26px",
     background: "rgba(12, 10, 35, 0.55)",
@@ -966,7 +994,9 @@ const GetStarted: React.FC = () => {
     border: "1px solid rgba(255,255,255,0.08)",
     boxShadow: "0 25px 60px rgba(0,0,0,0.45)",
     color: "white",
-    position: "relative"
+    position: "relative",
+    willChange: "transform, opacity",
+  transform: "translateZ(0)"
   }}
 >
             {/* glow */}
@@ -979,15 +1009,20 @@ const GetStarted: React.FC = () => {
                   "linear-gradient(120deg, rgba(168,85,247,0.35), rgba(99,102,241,0.25))",
                 filter: "blur(22px)",
                 opacity: 0.25,
-                zIndex: 0
+                zIndex: 0,
+                willChange: "transform, opacity",
+  transform: "translateZ(0)"
               }}
             />
 
  <motion.div 
-  style={{ position: "relative", zIndex: 1 }}
+  style={{ position: "relative", zIndex: 1,
+    willChange: "transform, opacity",
+  transform: "translateZ(0)"
+   }}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: false }}
+  viewport={{ once: true }}
   variants={{
     hidden: {},
     visible: { transition: { staggerChildren: 0.15 } }
@@ -1003,7 +1038,9 @@ const GetStarted: React.FC = () => {
     fontSize: "26px",
     fontWeight: "800",
     marginBottom: "18px",
-    letterSpacing: "0.5px"
+    letterSpacing: "0.5px",
+    willChange: "transform, opacity",
+  transform: "translateZ(0)"
   }}
 >
   Why a Credit-Based System?
@@ -1047,13 +1084,13 @@ const GetStarted: React.FC = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 80, scale: 0.98 }} 
+            initial={{ opacity: 0, y: 60 }} 
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{
               maxWidth: "900px",
-              margin: "70px auto",
+              margin: isMobile ? "20px" : "70px auto",
               padding: "42px",
               borderRadius: "28px",
               background: "rgba(14, 10, 40, 0.55)",
@@ -1174,13 +1211,13 @@ const GetStarted: React.FC = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 80, scale: 0.98 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{
               maxWidth: "900px",
-              margin: "70px auto",
+              margin: isMobile ? "20px": "70px auto",
               padding: "42px",
               borderRadius: "28px",
               background: "rgba(14, 10, 40, 0.55)",
@@ -1209,188 +1246,181 @@ const GetStarted: React.FC = () => {
             />
 
 <motion.div
-  style={{ position: "relative", zIndex: 1 }}
+  style={{
+    position: "relative",
+    zIndex: 1,
+    willChange: "transform, opacity",
+    transform: "translateZ(0)"
+  }}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: false }}
+  viewport={{ once: true }}
   variants={{
-    hidden: {},
+    hidden: { opacity: 0, y: 30 },
     visible: {
+      opacity: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.18
+        duration: 0.5,
+        ease: "easeOut",
+        staggerChildren: 0.12
       }
     }
   }}
 >
-              
-              {/* Heading */}
-              <motion.h2
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  fontSize: "26px",
-                  fontWeight: "800",
-                  marginBottom: "14px",
-                  letterSpacing: "0.5px"
-                }}
-              >
-                Considering a Free Tier?
-              </motion.h2>
 
-              {/* Paragraph */}
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0, y: 25 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  color: "rgba(255,255,255,0.85)",
-                  fontSize: "15px",
-                  lineHeight: "1.8",
-                  marginBottom: "14px"
-                }}
-              >
-                Our current focus is depth, safety, and high-quality personalized AI.
-                A limited free tier may be introduced in the future to allow lighter
-                exploration with restricted recommendations or credits.
-              </motion.p>
+  {/* Heading */}
+  <motion.h2
+    variants={{
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0 }
+    }}
+    style={{
+      fontSize: "26px",
+      fontWeight: "800",
+      marginBottom: "14px",
+      letterSpacing: "0.5px"
+    }}
+  >
+    Considering a Free Tier?
+  </motion.h2>
 
-              {/* Highlight line */}
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0, y: 25 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  fontSize: "15px",
-                  fontWeight: "600",
-                  background: "linear-gradient(90deg,#c4b5fd,#67e8f9)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
-                }}
-              >
-                Built thoughtfully - prioritizing meaningful connection over unlimited usage.
-              </motion.p>
+  {/* Paragraph */}
+  <p
+    style={{
+      color: "rgba(255,255,255,0.85)",
+      fontSize: "15px",
+      lineHeight: "1.8",
+      marginBottom: "14px"
+    }}
+  >
+    Our current focus is depth, safety, and high-quality personalized AI.
+    A limited free tier may be introduced in the future to allow lighter
+    exploration with restricted recommendations or credits.
+  </p>
 
-            </motion.div>
+  {/* Highlight */}
+  <p
+    style={{
+      fontSize: "15px",
+      fontWeight: "600",
+      background: "linear-gradient(90deg,#c4b5fd,#67e8f9)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    }}
+  >
+    Built thoughtfully - prioritizing meaningful connection over unlimited usage.
+  </p>
+
+</motion.div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 80, scale: 0.98 }} 
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            style={{
-              maxWidth: "950px",
-              margin: "80px auto",
-              padding: "48px",
-              borderRadius: "30px",
-              background: "rgba(14, 10, 40, 0.55)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 30px 80px rgba(0,0,0,0.45)",
-              color: "white",
-              position: "relative",
-              overflow: "hidden"
-            }}
-          >
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  style={{
+    maxWidth: "950px",
+    margin: isMobile ? "20px" : "80px auto",
+    padding: "48px",
+    borderRadius: "30px",
+    background: "rgba(14, 10, 40, 0.55)",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
+    color: "white",
+    position: "relative",
+    overflow: "hidden"
+  }}
+>
 
-            {/* soft glow */}
-            <motion.div
-            variants={{
-              hidden: { opacity: 0, scale: 0.95 },
-              visible: { opacity: 1, scale: 1 }
-            }}
-            transition={{ duration: 0.6 }}
-              style={{
-                position: "absolute",
-                inset: "-1px",
-                borderRadius: "30px",
-                background:
-                  "linear-gradient(120deg, rgba(168,85,247,0.35), rgba(99,102,241,0.25))",
-                filter: "blur(24px)",
-                opacity: 0.25,
-                zIndex: 0
-              }}
-            />
+  {/* ✅ glow (NOT motion.div) */}
+  <div
+    style={{
+      position: "absolute",
+      inset: "-1px",
+      borderRadius: "30px",
+      background:
+        "linear-gradient(120deg, rgba(168,85,247,0.35), rgba(99,102,241,0.25))",
+      filter: "blur(10px)",
+      opacity: 0.25,
+      zIndex: 0,
+      pointerEvents: "none"
+    }}
+  />
 
-            <motion.div
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.18 } }
-            }}  
-             style={{ position: "relative", zIndex: 1 }}>
-              
-              {/* Heading */}
-              <motion.h2
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  fontSize: "28px",
-                  fontWeight: "800",
-                  marginBottom: "18px",
-                  letterSpacing: "0.5px"
-                }}
-              >
-                Start With a 2-Week Discounted Trial
-              </motion.h2>
+  {/* ✅ content */}
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={{
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { staggerChildren: 0.15 }
+      }
+    }}
+    style={{ position: "relative", zIndex: 1 }}
+  >
 
-              {/* Paragraphs */}
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0, y: 25 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: "1.9",
-                  fontSize: "16px",
-                  marginBottom: "16px"
-                }}
-              >
-                Every paid tier begins with a two-week discounted trial so you can explore
-                the full experience before committing long-term. Use the time to test the
-                matching engine, journaling, AI coaching, games, and conversation features
-                in your real day-to-day life.
-              </motion.p>
+    <motion.h2
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      style={{
+        fontSize: "28px",
+        fontWeight: "800",
+        marginBottom: "18px"
+      }}
+    >
+      Start With a 2-Week Discounted Trial
+    </motion.h2>
 
-              <motion.p
-                variants={{
-                  hidden: { opacity: 0, y: 25 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: "1.9",
-                  fontSize: "16px",
-                  marginBottom: "16px"
-                }}
-              >
-                If at any point you need more usage than your plan includes, you can top up
-                credits instantly without changing your subscription.
-              </motion.p>
-              </motion.div>
-          </motion.div>
+    <motion.p
+      variants={{
+        hidden: { opacity: 0, y: 15 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      style={{
+        color: "rgba(255,255,255,0.85)",
+        lineHeight: "1.9",
+        fontSize: "16px",
+        marginBottom: "16px"
+      }}
+    >
+      Every paid tier begins with a two-week discounted trial so you can explore the full experience before committing long-term. Use the time to test the matching engine, journaling, AI coaching, games, and conversation features in your real day-to-day life.
+    </motion.p>
+
+    <motion.p
+      variants={{
+        hidden: { opacity: 0, y: 15 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      style={{
+        color: "rgba(255,255,255,0.85)",
+        lineHeight: "1.9",
+        fontSize: "16px"
+      }}
+    >
+If at any point you need more usage than your plan includes, you can top up credits instantly without changing your subscription
+    </motion.p>
+
+  </motion.div>
+</motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 80, scale: 0.98 }} 
+            initial={{ opacity: 0, y: 60 }} 
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className='pt-16'
           style={{
               maxWidth: "950px",
-              margin: "80px auto",
+              margin: isMobile? "20px" : "80px auto",
               padding: "48px",
               borderRadius: "30px",
               background: "rgba(14, 10, 40, 0.55)",
