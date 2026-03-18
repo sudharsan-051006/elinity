@@ -793,7 +793,8 @@ export default function AboutUs() {
         background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)'
+        border: '1px solid rgba(255, 255, 255, 0.05)',
+        margin: '0 12px'
       }}
     >
       {/* ambient glow */}
