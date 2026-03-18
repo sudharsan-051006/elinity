@@ -249,7 +249,7 @@ This is why we're here, doing what we’re doing.<strong>Join us if you are call
 
   {
     id: 1,
-    title: 'On a Return To The “Might Is Right” World Order - In Geopolitics, In AI, And The Consolidation of All Production and All Power	',
+    title: 'On a Return To The “Might Is Right” World Order 	',
     image: might, 
     time: '6 min read',
     date: '15 April 2024',
