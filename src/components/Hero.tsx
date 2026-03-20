@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { QRCodeCanvas } from "qrcode.react";
 import heroimg from "../../public/hero1.jpg";
 
 // Define props to receive the scroll function from App.tsx
@@ -9,6 +10,7 @@ interface HeroProps {
 export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   const words = ["matchmaker", "social connector", "relationship ally"];
   const [index, setIndex] = useState(0);
+  const [showQR, setShowQR] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -74,7 +76,6 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
                 display: "inline-block",
                 width:'180px',
                 textAlign:'left',
-// display:'inline-block'
               }}
             >
               {words[index]}
@@ -84,31 +85,79 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
           {/* Main Hero Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center mt-20 gap-10">
             {/* ANDROID BUTTON */}
-            <div className="relative w-72 h-14">
-              <a 
-                href="#waitlist" 
-                onClick={onJoinClick}
-                className="premium-button android-button group relative flex items-center justify-center w-full h-full text-white font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 ease-out transform hover:scale-105 hover:-translate-y-1"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.1) 100%)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
-                }}
-              >
-                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" style={{paddingRight:'10px'}}>
-                    <path d="M6,18c0,0.55 0.45,1 1,1h1v3.5c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5V19h2v3.5c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5V19h1c0.55,0 1,-0.45 1,-1V8H6V18zM3.5,8C2.67,8 2,8.67 2,9.5v7c0,0.83 0.67,1.5 1.5,1.5S5,17.33 5,16.5v-7C5,8.67 4.33,8 3.5,8zM20.5,8C19.67,8 19,8.67 19,9.5v7c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5v-7C22,8.67 21.33,8 20.5,8zM15.53,2.16l1.3,-1.3c0.2,-0.2 0.2,-0.51 0,-0.71c-0.2,-0.2 -0.51,-0.2 -0.71,0l-1.48,1.48C13.85,1.23 12.95,1 12,1c-0.96,0 -1.86,0.23 -2.66,0.63L7.85,0.15c-0.2,-0.2 -0.51,-0.2 -0.71,0c-0.2,0.2 -0.2,0.51 0,0.71l1.31,1.31C6.97,3.26 6,5.01 6,7h12C18,5.01 17.03,3.26 15.53,2.16zM10,5H9V4h1V5zM15,5h-1V4h1V5z"/>
-                </svg>
+<div className="relative w-72 h-auto">
+  <a
+    href="#"
+    onClick={(e) => {
+      e.preventDefault();
+      setShowQR(!showQR);
+    }}
+    className="premium-button android-button group relative flex items-center justify-center w-full h-14 text-white font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 ease-out transform hover:scale-105 hover:-translate-y-1"
+    style={{
+      background:
+        "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.1) 100%)",
+      backdropFilter: "blur(10px)",
+      border: "1px solid rgba(255, 255, 255, 0.2)",
+      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+    }}
+  >
+    <svg
+      className="w-6 h-6"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style={{ paddingRight: "10px" }}
+    >
+      <path d="M6,18c0,0.55 0.45,1 1,1h1v3.5c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5V19h2v3.5c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5V19h1c0.55,0 1,-0.45 1,-1V8H6V18zM3.5,8C2.67,8 2,8.67 2,9.5v7c0,0.83 0.67,1.5 1.5,1.5S5,17.33 5,16.5v-7C5,8.67 4.33,8 3.5,8zM20.5,8C19.67,8 19,8.67 19,9.5v7c0,0.83 0.67,1.5 1.5,1.5s1.5,-0.67 1.5,-1.5v-7C22,8.67 21.33,8 20.5,8zM15.53,2.16l1.3,-1.3c0.2,-0.2 0.2,-0.51 0,-0.71c-0.2,-0.2 -0.51,-0.2 -0.71,0l-1.48,1.48C13.85,1.23 12.95,1 12,1c-0.96,0 -1.86,0.23 -2.66,0.63L7.85,0.15c-0.2,-0.2 -0.51,-0.2 -0.71,0c-0.2,0.2 -0.2,0.51 0,0.71l1.31,1.31C6.97,3.26 6,5.01 6,7h12C18,5.01 17.03,3.26 15.53,2.16zM10,5H9V4h1V5zM15,5h-1V4h1V5z" />
+    </svg>
 
-                <span className="relative z-10 font-medium">Download On Android</span>
-              </a>
-            </div>
+    <span className="relative z-10 font-medium">
+      Download On Android
+    </span>
+  </a>
+
+  {/* QR DROPDOWN */}
+{showQR && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center"
+  >
+    {/* BACKDROP */}
+    <div
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      onClick={() => setShowQR(false)}
+    />
+
+    {/* QR CARD */}
+    <div className="relative z-10 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl animate-[fadeIn_0.3s_ease]">
+      
+      <button
+        onClick={() => setShowQR(false)}
+        className="absolute top-3 right-3 text-black/60 hover:text-black text-xl"
+      >
+      </button>
+
+      <div className="flex flex-col items-center">
+        <QRCodeCanvas
+          value="https://dapper-sunshine-c2ae11.netlify.app/" // 🔥 replace
+          size={180}
+        />
+
+        <p className="text-black text-sm mt-4 font-medium">
+          Scan to download
+        </p>
+      </div>
+    </div>
+  </div>
+)}
+</div>
 
             {/* iOS BUTTON */}
             <div className="relative w-72 h-14">
               <a 
-                href="#waitlist" 
-                onClick={onJoinClick}
+                href="#" 
+                onClick={(e) => {
+      e.preventDefault();
+      setShowQR(!showQR);
+    }}
                 className="premium-button ios-button group relative flex items-center justify-center w-full h-full text-white font-semibold text-lg rounded-2xl overflow-hidden transition-all duration-300 ease-out transform hover:scale-105 hover:-translate-y-1"
                 style={{
                   background: 'linear-gradient(270deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.1) 100%)',
@@ -123,6 +172,38 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
                 </svg>
 
                 <span className="relative z-10 font-medium">Download On iOS</span>
+                {showQR && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center"
+  >
+    {/* BACKDROP */}
+    <div
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      onClick={() => setShowQR(false)}
+    />
+
+    {/* QR CARD */}
+    <div className="relative z-10 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl animate-[fadeIn_0.3s_ease]">
+      
+      <button
+        onClick={() => setShowQR(false)}
+        className="absolute top-3 right-3 text-black/60 hover:text-black text-xl"
+      >
+      </button>
+
+      <div className="flex flex-col items-center">
+        <QRCodeCanvas
+          value="https://dapper-sunshine-c2ae11.netlify.app/" // 🔥 replace
+          size={180}
+        />
+
+        <p className="text-black text-sm mt-4 font-medium">
+          Scan to download
+        </p>
+      </div>
+    </div>
+  </div>
+)}
               </a>
             </div>
           </div>

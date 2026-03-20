@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { ChevronDown } from 'lucide-react';
 
 export default function ElinityFAQ() {
   const [openFAQ, setOpenFAQ] = useState(null);
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const bluishGradient = {
    background: 'linear-gradient(to bottom, #060014, #140035)'
@@ -77,9 +81,13 @@ export default function ElinityFAQ() {
             </div>
           </div>
 
-          <button className="bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white px-6 py-3 rounded-full mt-6 font-semibold hover:opacity-90 transition-opacity w-max">
-            Get Started
+          <Link to={"/get-started"} onClick={scrollToTop} className=" text-sm block">
+          <button className="bg-gradient-to-r from-purple-600 to-fuchsia-500 px-9 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
+            
+                        Get Started
+
           </button>
+            </Link>
         </div>
 
         {/* Right Section - FAQs */}
@@ -122,12 +130,31 @@ export default function ElinityFAQ() {
         </h2>
 
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 z-10 relative">
+          <Link to={"/get-started"} onClick={scrollToTop} className=" text-sm block">
           <button className="bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
-            Sign Up
+            
+                        Sign Up
+
           </button>
-          <button className="bg-transparent border border-purple-500 px-8 py-3 rounded-full font-semibold hover:bg-purple-900/30 transition">
-            Talk To Us
-          </button>
+            </Link>
+<Link to={"/contact"} onClick={scrollToTop} className="text-sm block">
+  <button
+    className="
+      px-8 py-3 rounded-full font-semibold 
+      text-white
+      bg-white/10 
+      backdrop-blur-lg 
+      border border-white/20
+      shadow-lg
+      hover:bg-white/20 
+      hover:shadow-xl
+      transition-all duration-300
+    "
+  >
+    Talk To Us
+  </button>
+</Link>
+
         </div>
       </div>
     </div>
