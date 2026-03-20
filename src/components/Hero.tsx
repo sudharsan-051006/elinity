@@ -266,38 +266,6 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
                 </svg>
 
                 <span className="relative z-10 font-medium">Download On iOS</span>
-{showQR && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center">
-    
-    {/* BACKDROP */}
-    <div
-      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-      onClick={() => setShowQR(false)}
-    />
-
-    {/* QR CARD */}
-    <div className="relative z-10 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl animate-[fadeIn_0.3s_ease]">
-      
-      <button
-        onClick={() => setShowQR(false)}
-        className="absolute top-3 right-3 text-black/60 hover:text-black text-xl"
-      >
-        ✕
-      </button>
-
-      <div className="flex flex-col items-center">
-        <QRCodeCanvas
-          value="https://dapper-sunshine-c2ae11.netlify.app/"
-          size={180}
-        />
-
-        <p className="text-black text-sm mt-4 font-medium">
-          Scan to download
-        </p>
-      </div>
-    </div>
-  </div>
-)}
               </a>
             </div>
           </div>
