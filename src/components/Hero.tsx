@@ -183,7 +183,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     transition: "all 0.25s ease",
   }}
   onMouseEnter={(e) => {
-    e.currentTarget.style.background = "rgba(0,0,0,0.85)";
+    e.currentTarget.style.background = "indigo";
     e.currentTarget.style.color = "#fff";
     e.currentTarget.style.transform = "scale(1.1) rotate(90deg)";
   }}
@@ -205,10 +205,22 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
           boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
         }}
       >
-        <QRCodeCanvas
-          value="https://dapper-sunshine-c2ae11.netlify.app/"
-          size={180}
-        />
+<QRCodeCanvas
+  value="https://dapper-sunshine-c2ae11.netlify.app/"
+  size={180}
+  fgColor="#7759fd"
+  bgColor="#ffffff"
+  level="H"   // ⭐ VERY IMPORTANT (high error correction)
+  imageSettings={{
+    src: "/elogo.png",
+    height: 50,   // medium logo
+    width: 50,
+    excavate: true
+  }}
+  style={{
+    zIndex:'10110'
+  }}
+/>
       </div>
 
       {/* TEXT */}
