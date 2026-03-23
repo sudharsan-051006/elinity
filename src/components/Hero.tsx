@@ -11,6 +11,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   const words = ["matchmaker", "social connector", "relationship ally"];
   const [index, setIndex] = useState(0);
   const [showQR, setShowQR] = useState(false);
+  const [mouse, setMouse] = useState({ x: 5, y: 5 });
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -32,15 +33,56 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   }, []);
   return (
     /* Changed overflow-hidden to overflow-visible to ensure smooth scroll isn't blocked */
-    <section className="relative bg-[#0f0225] min-h-screen w-screen overflow-visible">
+    <section className="relative bg-[#0f0225] min-h-screen w-screen overflow-visible group"
+    onMouseMove={(e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  setMouse({
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top,
+  });
+}}>
       {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="/hero1.jpeg"
-          alt="Hero"
-          className="w-full h-full object-cover rounded-b-3xl opacity-75"
-        />
-      </div>
+<div
+  className="absolute inset-0 overflow-hidden"
+  onMouseMove={(e) => {
+    if (isMobile) return; // ❌ disable on mobile
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMouse({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }}
+>
+  {/* ✅ MOBILE → Normal Image */}
+  {isMobile ? (
+    <img
+      src="/hero1.jpeg"
+      alt="Hero"
+      className="w-full h-full object-cover rounded-b-3xl"
+    />
+  ) : (
+    <>
+      {/* 🔲 B/W Base */}
+      <img
+        src="/hero1.jpeg"
+        alt="Hero"
+        className="w-full h-full object-cover rounded-b-3xl grayscale"
+      />
+
+      {/* 🌈 Spotlight Color */}
+      <img
+        src="/hero1.jpeg"
+        alt="Hero Color"
+        className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
+        style={{
+          WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+          maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+        }}
+      />
+    </>
+  )}
+</div>
 
       <div className='pt-32'></div>
 
