@@ -21,31 +21,31 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 640);
+  };
 
-  
+  handleResize(); // ✅ MUST
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   return (
     /* Changed overflow-hidden to overflow-visible to ensure smooth scroll isn't blocked */
     <section className="relative bg-[#0f0225] min-h-screen w-screen overflow-visible group"
-    onMouseMove={(e) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  setMouse({
-    x: e.clientX - rect.left,
-    y: e.clientY - rect.top,
-  });
-}}>
+        onMouseMove={(e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      setMouse({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }}>
       {/* Background Image */}
 <div
   className="absolute inset-0 overflow-hidden"
   onMouseMove={(e) => {
-    if (isMobile) return; // ❌ disable on mobile
+    if (isMobile) return; // ✅ HARD STOP
 
     const rect = e.currentTarget.getBoundingClientRect();
     setMouse({
@@ -54,35 +54,35 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     });
   }}
 >
-  {/* ✅ MOBILE → Normal Image */}
-  {isMobile ? (
-    <img
-      src="/hero1.jpeg"
-      alt="Hero"
-      className="w-full h-full object-cover rounded-b-3xl"
-    />
-  ) : (
-    <>
-      {/* 🔲 B/W Base */}
-      <img
-        src="/hero1.jpeg"
-        alt="Hero"
-        className="w-full h-full object-cover rounded-b-3xl grayscale"
-      />
+        {/* ✅ MOBILE → Normal Image */}
+        {isMobile ? (
+          <img
+            src="/hero1.jpeg"
+            alt="Hero"
+            className="w-full h-full object-cover rounded-b-3xl"
+          />
+        ) : (
+          <>
+            {/* 🔲 B/W Base */}
+            <img
+              src="/hero1.jpeg"
+              alt="Hero"
+              className="w-full h-full object-cover rounded-b-3xl grayscale"
+            />
 
-      {/* 🌈 Spotlight Color */}
-      <img
-        src="/hero1.jpeg"
-        alt="Hero Color"
-        className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
-        style={{
-          WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-          maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-        }}
-      />
-    </>
-  )}
-</div>
+            {/* 🌈 Spotlight Color */}
+            <img
+              src="/hero1.jpeg"
+              alt="Hero Color"
+              className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
+              style={{
+                WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+                maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+              }}
+            />
+          </>
+        )}
+      </div>
 
       <div className='pt-32'></div>
 
