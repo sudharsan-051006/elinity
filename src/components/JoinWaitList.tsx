@@ -195,10 +195,11 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
         style={{
           display:'inline-block'
         }}>
-          good things grow best when they’re nurtured
+          good things grow best when they’re nurtured.
         </p> <p style={{
-          display:'inline-block'
-        }}>🌱</p>
+          display:'inline-block',
+          marginLeft:'5px'
+        }}> 🌱</p>
       </div>
     </div>
   </motion.div>
