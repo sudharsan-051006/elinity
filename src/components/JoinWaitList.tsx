@@ -191,9 +191,14 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
           in the meantime, join our newsletter for behind-the-scenes updates,
           new features, and early glimpses of what’s coming.
         </p>
-        <p className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text font-medium italic">
-          good things grow best when they’re nurtured. 🌱
-        </p>
+        <p className="text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text font-medium italic" 
+        style={{
+          display:'inline-block'
+        }}>
+          good things grow best when they’re nurtured
+        </p> <p style={{
+          display:'inline-block'
+        }}>🌱</p>
       </div>
     </div>
   </motion.div>
