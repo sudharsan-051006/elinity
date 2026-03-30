@@ -264,9 +264,12 @@ const renderFeatureBlock = (text, idx) => {
               how we help you live your best social life
             </span>
           </h1>
-          <p className="text-slate-400 text-lg">
-            core experiences of <span className="text-fuchsia-400">elinity v1.0</span>
-          </p>
+<p className="text-slate-400 text-lg">
+  some core experiences, modes, and features of{" "}
+  <span className="bg-gradient-to-r from-white via-fuchsia-300 to-purple-500 text-transparent bg-clip-text font-medium">
+    elinity v1.0
+  </span>
+</p>
         </div>
 
         {/* Grid */}
