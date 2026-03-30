@@ -282,7 +282,7 @@ const renderFeatureBlock = (text, idx) => {
                   <h2 className="text-[18px]  text-fuchsia-300 lowercase">
                     {card.title}
                   </h2>
-                  <ChevronRight size={18} className="text-fuchsia-500" />
+                  {/* <ChevronRight size={18} className="text-fuchsia-500" /> */}
                 </div>
 
                 <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-2">
