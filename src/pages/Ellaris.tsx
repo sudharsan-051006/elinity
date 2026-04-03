@@ -449,40 +449,102 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
         </section>
 
         {/* WHY IT EXISTS */}
-        <section ref={whyell.ref}>
-          <div style={{
-            ...s.sectionCard,
-            ...reveal(whyell.visible),
-            marginBottom: isPhone ? '16px' : '24px',
-          }}>
-            <h2 style={{
-              fontSize: isPhone ? '26px' : '40px',
-              fontWeight: '800',
-              letterSpacing: '-0.03em',
-              marginBottom: '16px',
-              ...headingGradient,
-            }}>
-              Why Ellaris Exists
-            </h2>
-            <p style={{ fontSize: isPhone ? '17px' : '22px', marginBottom: '20px', fontWeight: '600' }}>The way we match people to work is broken.</p>
-            <p style={{ color: '#c8c8c8', marginBottom: '28px', fontSize: isPhone ? '15px' : '17px', lineHeight: '1.75' }}>
-              Today, individuals apply to hundreds of roles they barely resonate with. Companies sort through thousands of applications, filtering by proxies that say little about who someone actually is. The result is misalignment on both sides, high churn, disengagement, and enormous wasted human potential.
-              <br /><br />
-              At the same time, <strong style={{ color: '#fff' }}>work itself is changing.</strong>
-            </p>
-            <div style={s.accentBox}>
-              <p style={{ marginBottom: '16px', fontSize: isPhone ? '14px' : '16px', fontWeight: '600', color: '#c4b5fd' }}>As AI and automation commoditize hard skills, the real value shifts toward:</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap' as const }}>
-                {['Passion', 'Purpose', 'Personality', 'Judgment', 'Taste', 'Mission alignment', 'Relationship-building ability'].map((item, idx) => (
-                  <span key={idx} style={s.pill}>{item}</span>
-                ))}
-              </div>
-            </div>
-            <p style={{ marginTop: '28px', fontSize: isPhone ? '15px' : '17px', color: '#c8c8c8', lineHeight: '1.7' }}>
-              Ellaris exists because <strong style={{ color: '#fff' }}>these things are not captured by résumés</strong>, and because the future of work demands a different matching architecture.
-            </p>
-          </div>
-        </section>
+<section ref={whyell.ref}>
+  <div style={{
+    ...s.sectionCard,
+    ...reveal(whyell.visible),
+    marginBottom: isPhone ? '16px' : '24px',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }}>
+    
+    <h2 style={{
+      fontSize: isPhone ? '26px' : '40px',
+      fontWeight: '800',
+      letterSpacing: '-0.03em',
+      marginBottom: '16px',
+      textAlign: 'center',
+      ...headingGradient,
+    }}>
+      Why Ellaris Exists
+    </h2>
+
+    <p style={{
+      fontSize: isPhone ? '17px' : '22px',
+      marginBottom: '20px',
+      fontWeight: '600',
+      maxWidth: '700px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }}>
+      The way we match people to work is broken.
+    </p>
+
+    <p style={{
+      color: '#c8c8c8',
+      marginBottom: '28px',
+      fontSize: isPhone ? '15px' : '17px',
+      lineHeight: '1.75',
+      maxWidth: '700px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }}>
+      Today, individuals apply to hundreds of roles they barely resonate with. Companies sort through thousands of applications, filtering by proxies that say little about who someone actually is. The result is misalignment on both sides, high churn, disengagement, and enormous wasted human potential.
+      <br /><br />
+      At the same time, <strong style={{ color: '#fff' }}>work itself is changing.</strong>
+    </p>
+
+    <div style={{
+      ...s.accentBox,
+      maxWidth: '700px',
+      margin: '0 auto',
+    }}>
+      <p style={{
+        marginBottom: '16px',
+        fontSize: isPhone ? '14px' : '16px',
+        fontWeight: '600',
+        color: '#c4b5fd',
+        textAlign: 'center',
+      }}>
+        As AI and automation commoditize hard skills, the real value shifts toward:
+      </p>
+
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '8px',
+      }}>
+        {[
+          'Passion',
+          'Purpose',
+          'Personality',
+          'Judgment',
+          'Taste',
+          'Mission alignment',
+          'Relationship-building ability'
+        ].map((item, idx) => (
+          <span key={idx} style={s.pill}>{item}</span>
+        ))}
+      </div>
+    </div>
+
+    <p style={{
+      marginTop: '28px',
+      fontSize: isPhone ? '15px' : '17px',
+      color: '#c8c8c8',
+      lineHeight: '1.7',
+      maxWidth: '700px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }}>
+      Ellaris exists because <strong style={{ color: '#fff' }}>these things are not captured by résumés</strong>, and because the future of work demands a different matching architecture.
+    </p>
+
+  </div>
+</section>
 
         {/* ECOSYSTEM */}
         <section ref={ee.ref}>
