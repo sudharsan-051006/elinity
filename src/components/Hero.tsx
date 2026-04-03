@@ -26,7 +26,7 @@ useEffect(() => {
     setIsMobile(window.innerWidth <= 640);
   };
 
-  handleResize(); // ✅ MUST
+  handleResize(); // MUST
 
   window.addEventListener("resize", handleResize);
   return () => window.removeEventListener("resize", handleResize);
@@ -45,7 +45,7 @@ useEffect(() => {
 <div
   className="absolute inset-0 overflow-hidden"
   onMouseMove={(e) => {
-    if (isMobile) return; // ✅ HARD STOP
+    if (isMobile) return; // HARD STOP
 
     const rect = e.currentTarget.getBoundingClientRect();
     setMouse({
@@ -54,7 +54,7 @@ useEffect(() => {
     });
   }}
 >
-        {/* ✅ MOBILE → Normal Image */}
+        {/* MOBILE → Normal Image */}
         {isMobile ? (
           <img
             src="/hero1.jpeg"
@@ -63,16 +63,16 @@ useEffect(() => {
           />
         ) : (
           <>
-            {/* 🔲 B/W Base */}
+            {/* B/W Base */}
             <img
               src="/hero1.jpeg"
               alt="Hero"
               className="w-full h-full object-cover rounded-b-3xl grayscale"
             />
 
-            {/* 🌈 Spotlight Color */}
+            {/* Spotlight Color */}
             <img
-              src="/hero1.jpeg"
+              src="/hero 1.jpeg"
               alt="Hero Color"
               className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
               style={{
@@ -252,7 +252,7 @@ useEffect(() => {
   size={180}
   fgColor="#7759fd"
   bgColor="#ffffff"
-  level="H"   // ⭐ VERY IMPORTANT (high error correction)
+  level="H"   // VERY IMPORTANT (high error correction)
   imageSettings={{
     src: "/elogo.png",
     height: 50,   // medium logo
