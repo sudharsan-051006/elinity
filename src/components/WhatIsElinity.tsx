@@ -321,7 +321,7 @@ export default function ElinityLandingPage() {
     zIndex: 20,
   }}
 >
-  {isCollapsed ? "More about this ↓" : "Show less ↑"}
+  {isCollapsed ? "more about this ↓" : "show less ↑"}
 </button>
 
 <style>{`
