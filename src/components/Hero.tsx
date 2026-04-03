@@ -72,7 +72,7 @@ useEffect(() => {
 
             {/* Spotlight Color */}
             <img
-              src="/hero 1.jpeg"
+              src="/hero1.jpeg"
               alt="Hero Color"
               className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
               style={{
