@@ -1,36 +1,40 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { tr } from "framer-motion/m";
+import MoreElinity from "./morecontent";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function ElinityLandingPage() {
   const [hover, setHover] = useState(false);
   const [showCard, setShowCard] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [isExpanding, setIsExpanding] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isExpanding, setIsExpanding] = useState(false); // ✅ Added for transition
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
   const cardRef = useRef(null);
-  const [showLine, setShowLine] = useState(false);
-
-  // Responsive logic
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-useEffect(() => {
-  if (showModal) {
-    const scrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-  } else {
-    const scrollY = document.body.style.top;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
-  }
-}, [showModal]);
+  // Scroll lock for Modal
+  useEffect(() => {
+    if (isModalOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+  }, [isModalOpen]);
 
-  // Intersection Observer for entry animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,264 +42,385 @@ useEffect(() => {
           setShowCard(true);
         }
       },
-      { threshold: isMobile ? 0.05 : 0.15 }
+      { threshold: 0.15 }
     );
+
     if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
-  }, [isMobile]);
+  }, []);
 
-  // Handle the premium transition
+  // ✅ Premium Transition Trigger
   const handleOpenModal = () => {
     setIsExpanding(true);
-
-
-
     setTimeout(() => {
-      setShowModal(true);
+      setIsModalOpen(true);
       setIsExpanding(false);
-    }, 600); // Matches the CSS transition duration
+    }, 600); // Duration of the blur animation
   };
 
-  const MoreInfoModal = () => (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      backgroundColor: 'rgba(5, 0, 15, 0.96)',
-      backdropFilter: 'blur(25px)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      zIndex: 2000,
-      padding: isMobile ? '15px' : '20px',
-      animation: 'fadeIn 0.3s ease'
-    }}>
-      <style>{`
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        
-        /* STYLISH CUSTOM SCROLLBAR */
-        .elinity-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .elinity-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.02);
-          border-radius: 10px;
-          margin: 20px 0;
-        }
-        .elinity-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #7c3aed, #4f46e5);
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
-        }
-        .elinity-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #a78bfa, #818cf8);
-        }
-      `}</style>
-      
-      <div 
-        className="elinity-scrollbar"
+  return (
+    <div
+      style={{
+        position: "relative",
+        minHeight: "120vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "120px 20px",
+        overflow: "hidden",
+        textAlign: "center",
+        background: "radial-gradient(circle at 20% 20%, #12002b, #050010 60%)",
+        fontFamily: "Inter, sans-serif",
+      }}
+    >
+      {/* ✅ BLUR TRANSITION OVERLAY */}
+      <div
         style={{
-          background: 'linear-gradient(160deg, rgba(30, 30, 50, 0.95), rgba(10, 10, 20, 1))',
-          border: '1px solid rgba(168, 85, 247, 0.4)',
-          borderRadius: isMobile ? '24px' : '32px',
-          maxWidth: '750px',
-          width: '100%',
-          maxHeight: '85vh',
-          overflowY: 'auto',
-          padding: isMobile ? '45px 20px 40px 20px' : '60px',
-          position: 'relative',
-          animation: 'scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both',
-          boxShadow: '0 0 80px rgba(124, 58, 237, 0.2)',
-          scrollbarWidth: 'thin',
-          scrollbarColor: '#7c3aed rgba(255, 255, 255, 0.02)'
+          position: "fixed",
+          inset: 0,
+          backdropFilter: isExpanding ? "blur(20px)" : "blur(0px)",
+          background: isExpanding ? "rgba(5, 0, 15, 0.4)" : "rgba(5, 0, 15, 0)",
+          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+          zIndex: 1400,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* background glow */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-120px",
+          left: "-120px",
+          width: "420px",
+          height: "420px",
+          background: "#7c3aed",
+          opacity: 0.25,
+          filter: "blur(120px)",
+          borderRadius: "50%",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-120px",
+          right: "-120px",
+          width: "420px",
+          height: "420px",
+          background: "#4f46e5",
+          opacity: 0.25,
+          filter: "blur(120px)",
+          borderRadius: "50%",
+        }}
+      />
+
+      {/* glow ring */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          pointerEvents: "none",
         }}
       >
-        <button 
-          onClick={() => setShowModal(false)}
+        <div
           style={{
-            position: 'absolute',
-            top: isMobile ? '15px' : '25px',
-            right: isMobile ? '15px' : '25px',
-            background: 'rgba(255,255,255,0.1)',
-            border: 'none',
-            color: 'white',
-            width: '36px',
-            height: '36px',
-            borderRadius: '50%',
-            cursor: 'pointer',
-            fontSize: '16px',
-            zIndex: 10
+            width: "700px",
+            height: "700px",
+            borderRadius: "50%",
+            border: "1px solid rgba(168,85,247,0.15)",
+            filter: "blur(40px)",
+            opacity: 0.4,
           }}
-        >✕</button>
-
-        <h3 style={{ 
-          fontSize: isMobile ? '26px' : '32px', 
-          marginBottom: '8px', 
-          background: 'linear-gradient(to right, #e9d5ff, #a5b4fc)', 
-          WebkitBackgroundClip: 'text', 
-          WebkitTextFillColor: 'transparent',
-          fontWeight: 700
-        }}>
-          the flourishing suite
-        </h3>
-        <p style={{ color: '#a5b4fc', fontSize: '12px', letterSpacing: '0.75px', marginBottom: '25px'}}>
-          (thriving in your relationships)
-        </p>
-        
-        <p style={{ color: '#cbd5e1', fontSize: isMobile ? '15px' : '17px', lineHeight: '1.7', marginBottom: '25px' }}>
-          once you've met, the magic begins. we give you a portal to make relationships actually thrive. think:
-        </p>
-
-        <div style={{ display: 'grid', gap: '12px', textAlign: 'left' }}>
-          {[
-            { title: "relationship coaching", desc: "to navigate the tricky bits." },
-            { title: 'a "life book"', desc: "to track your shared journey." },
-            { title: "connection games", desc: "designed for pure whimsy and delight." },
-            { title: "a walled-garden social network", desc: " - all the connection, none of the noise." }
-          ].map((item, i) => (
-            <div key={i} style={{ 
-              padding: isMobile ? '15px' : '20px', 
-              background: 'rgba(255,255,255,0.03)', 
-              borderRadius: '16px', 
-              border: '1px solid rgba(255,255,255,0.05)',
-              borderLeft: '4px solid #7c3aed' 
-            }}>
-              <span style={{ color: '#fff', fontWeight: 600, fontSize: isMobile ? '16px' : '18px', display: 'block', marginBottom: '2px' }}>{item.title}</span>
-              <p style={{ color: '#94a3b8', margin: 0, fontSize: isMobile ? '13px' : '15px' }}>{item.desc}</p>
-            </div>
-          ))}
-          <p style={{ color: '#fff', fontSize: '16px', fontWeight: 500, marginTop: '10px', textAlign: 'center' }}>and more</p>
-        </div>
-
-        <div style={{ marginTop: '30px', padding: '25px 10px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-          <p style={{ color: '#e9d5ff', fontSize: isMobile ? '14px' : '16px', fontStyle: 'italic', lineHeight: '1.6', maxWidth: '500px', margin: '0 auto' }}>
-            <b style={{ fontWeight: 900 }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life. as they are meant to be!
-          </p>
-        </div>
+        />
       </div>
-    </div>
-  );
 
-  return (
-    <div style={{
-      position: "relative",
-      minHeight: "100vh",
+      {/* CARD */}
+{/* CARD */}
+<div
+  ref={cardRef}
+  onMouseEnter={() => setHover(true)}
+  onMouseLeave={() => setHover(false)}
+  style={{
+    position: "relative",
+    zIndex: 10,
+    maxWidth: "900px",
+    width: "100%",
+    // ✅ FIX: Increased opacity and added a slight white gradient
+    background: hover
+      ? "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05))"
+      : "linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03))",
+    // ✅ FIX: Webkit prefix is often needed for backdrop-filter to work on all browsers
+    backdropFilter: "blur(25px) saturate(120%)",
+    WebkitBackdropFilter: "blur(25px) saturate(120%)",
+    
+    border: "1px solid rgba(255,255,255,0.15)",
+    borderRadius: "32px",
+    padding: isMobile ? "20px 30px" : "60px 50px",
+    transition: "all 1s cubic-bezier(.23,1,.32,1)",
+    
+    // ... rest of your transform and opacity logic
+    transform: showCard
+      ? hover ? "translateY(-8px)" : "translateY(0px)"
+      : isMobile
+        ? "perspective(1000px) rotateY(-15deg) translateX(-60px)"
+        : "perspective(1400px) rotateY(-30deg) translateX(-350px)",
+    opacity: showCard ? 1 : 0,
+    boxShadow: hover
+      ? "0 40px 140px rgba(139,92,246,0.55)"
+      : "0 0 80px rgba(139,92,246,0.25)",
+    overflow: "hidden",
+  }}
+>
+        {/* shine sweep */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: hover ? "130%" : "-120%",
+            width: "25%",
+            height: "100%",
+            background:
+              "linear-gradient(120deg, transparent, rgba(168,85,247,0.18), transparent)",
+            transform: "skewX(-20deg)",
+            transition: "all 2.5s ease",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        <h1
+          style={{
+            fontSize: "clamp(32px, 5vw, 56px)",
+            fontWeight: 600,
+            marginBottom: "30px",
+            background: "linear-gradient(to right,#e9d5ff,#a5b4fc,#c4b5fd)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            letterSpacing: "-0.5px",
+            textShadow: hover
+              ? "0 0 12px rgba(168,85,247,0.45)"
+              : "0 0 6px rgba(168,85,247,0.25)",
+            transition: "all .4s",
+          }}
+        >
+          what is elinity
+        </h1>
+
+        <p
+          style={{
+            fontSize: "15px",
+            lineHeight: "1.7",
+            color: "rgba(255,255,255,0.85)",
+            marginBottom: "40px",
+          }}
+        >
+          elinity exists for people who believe connection is the foundation of
+          a good life.
+          <br />
+          <br />
+          it’s an emotionally intelligent ai platform that helps you meet deeply
+          aligned people and build meaningful relationships over time.
+          <br />
+          <br />
+          whether you’re looking for love, friendship, collaborators, or simply
+          richer human connection, elinity brings everything into one coherent
+          space. it understands who you are, what you’re seeking, and how you
+          connect, then introduces you to people who feel like a natural yes.
+          <br />
+          <br />
+          this isn’t about more matches. it’s about better ones, and the tools to
+          turn connection into something real.
+        </p>
+
+        <div
+          style={{
+            height: "1px",
+            width: "100%",
+            background:
+              "linear-gradient(to right, transparent, rgba(168,85,247,0.5), transparent)",
+            marginBottom: "40px",
+          }}
+        />
+
+        <h2
+          style={{
+            fontSize: "clamp(22px,4vw,40px)",
+            fontWeight: 700,
+            color: "white",
+            marginBottom: "20px",
+          }}
+        >
+          what elinity actually helps you do.
+        </h2>
+
+        <p
+          style={{
+            fontSize: "18px",
+            lineHeight: "1.7",
+            color: "#cbd5e1",
+          }}
+        >
+          elinity is about{" "}
+          <span style={{ color: "#fff", fontWeight: 500 }}>
+            people, your people.
+          </span>
+          <br />
+          It’s about <span style={{ color: "#fff" }}>better matches</span>, not
+          more.
+          <br />
+          it’s about <span style={{ color: "#fff" }}>better conversations</span>,
+          not more.
+          <br />
+          It’s about <span style={{ color: "#60a5fa" }}>more signal</span>, not
+          noise.
+        </p>
+
+        <p
+          style={{
+            fontSize: "15px",
+            lineHeight: "1.7",
+            color: "rgba(255,255,255,0.85)",
+            marginTop: "40px",
+          }}
+        >
+          we help you find people you can build incredible relationships with
+          <br />
+          for love, friendship, leisure, collaboration, creativity, and life
+          <br />
+          and then we help you actually nurture those relationships over time
+        </p>
+      </div>
+<button
+  onClick={() => {
+    if (isCollapsed) {
+      // Expand + open modal
+      setIsCollapsed(false);
+      handleOpenModal();
+    } else {
+      // Collapse + CLOSE modal
+      setIsCollapsed(true);
+      setIsModalOpen(false);   // ✅ THIS LINE FIXES YOUR ISSUE
+    }
+  }}
+  style={{
+    marginTop: "30px",
+    padding: "12px 28px",
+    borderRadius: "100px",
+    border: "1px solid rgba(168,85,247,0.4)",
+    background: "rgba(168,85,247,0.1)",
+    color: "#e9d5ff",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "500",
+    transition: "all 0.3s ease",
+    zIndex: 20,
+  }}
+>
+  {isCollapsed ? "More about this ↓" : "Show less ↑"}
+</button>
+
+<style>{`
+  /* Chrome, Edge, Safari */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #7c3aed, #4f46e5);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a78bfa, #818cf8);
+  }
+
+  /* Firefox */
+  .custom-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #7c3aed rgba(255,255,255,0.05);
+  }
+`}</style>  
+      {/* ✅ MODAL RENDER */}
+{/* ✅ MODAL RENDER - Wrapped in a Fixed Portal/Container */}
+{isModalOpen && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      padding: isMobile ? "60px 15px" : "100px 20px",
-      overflowX: "hidden",
-      background: "#050010",
-      fontFamily: "'Inter', sans-serif",
-      color: 'white'
-    }}>
-      {showModal && <MoreInfoModal />}
-
-        
-  {/* BLUR TRANSITION OVERLAY */}
-  <div
-    style={{
-      position: 'fixed',
-      inset: 0,
-      backdropFilter: isExpanding ? 'blur(20px)' : 'blur(0px)',
-      background: isExpanding ? 'rgba(5, 0, 15, 0.4)' : 'rgba(5, 0, 15, 0)',
-      transition: 'all 2s ease',
-      zIndex: 1400,
-      pointerEvents: 'none'
+      zIndex: 2000,
+      background: "rgba(5, 0, 15, 0.4)", 
+      backdropFilter: "blur(12px)", 
+      WebkitBackdropFilter: "blur(12px)",
     }}
-  />
-  {/* TRANSITION LINE */}
-      <div style={{ position: "absolute", top: "5%", left: "5%", width: isMobile ? "300px" : "600px", height: isMobile ? "300px" : "600px", background: "radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: 'none' }} />
-
-      <div ref={cardRef}
-        onMouseEnter={() => !isMobile && setHover(true)}
-        onMouseLeave={() => !isMobile && setHover(false)}
+    onClick={() => { setIsModalOpen(false); setIsCollapsed(true); }}
+  >
+    <div 
+      className="custom-scroll"
+      onClick={(e) => e.stopPropagation()} 
+      style={{
+        position: "relative", // CRITICAL: Allows absolute positioning of the X
+        width: "90%",
+        maxWidth: "600px", // Keeping it compact as per your preference
+        maxHeight: "85vh",
+        overflowY: "auto",
+        borderRadius: "24px",
+        background: "rgba(20, 20, 30, 0.8)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+      }}
+    >
+      {/* --- THE X CLOSE BUTTON --- */}
+      <button 
+        onClick={() => { setIsModalOpen(false); setIsCollapsed(true); }}
         style={{
-          position: "relative",
-          zIndex: 10,
-          maxWidth: "920px",
-          width: "100%",
-          backdropFilter: "blur(30px)",
-          background: "linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          borderRadius: isMobile ? "32px" : "48px",
-          padding: isMobile ? "40px 20px" : "80px 70px",
-          transition: "all 1s cubic-bezier(.2,1,.2,1)",
-          transform: showCard 
-            ? (hover ? "translateY(-12px)" : "translateY(0px)") 
-            : isMobile ? "translateY(40px) opacity(0)" : "perspective(1500px) rotateX(10deg) translateY(80px)",
-          opacity: showCard ? 1 : 0,
-          boxShadow: hover ? "0 60px 120px rgba(0,0,0,0.6), 0 0 50px rgba(139,92,246,0.15)" : "0 40px 80px rgba(0,0,0,0.5)"
-        }}>
-        
-        <h1 style={{
-          fontSize: isMobile ? "34px" : "64px",
-          fontWeight: 800,
-          marginBottom: "25px",
-          lineHeight: 1.1,
-          background: "linear-gradient(to bottom, #fff 40%, #c4b5fd 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          letterSpacing: "-0.04em"
-        }}>say hello to elinity</h1>
+          position: "absolute",
+          top: "16px",
+          right: "16px",
+          width: "30px",
+          height: "30px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(255, 255, 255, 0.05)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          color: "rgba(255, 255, 255, 0.6)",
+          cursor: "pointer",
+          fontSize: "14px",
+          zIndex: 2010,
+          transition: "all 0.2s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+          e.currentTarget.style.color = "#fff";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+          e.currentTarget.style.color = "rgba(255, 255, 255, 0.6)";
+        }}
+      >
+        ✕
+      </button>
+      {/* --------------------------- */}
 
-        <p style={{
-          fontSize: isMobile ? "16px" : "19px",
-          lineHeight: "1.7",
-          color: "rgba(255,255,255,0.85)",
-          marginBottom: "40px",
-          fontWeight: 500
-        }}>
-          your social life, <span style={{color: '#a5b4fc', fontWeight: 600}}>leveled up like never before.</span> let's be real - modern connecting is kind of broken. between the endless scrolling, the swipe nightmare, and the growing vacuum of depth, finding - and actually keeping - meaningful relationships feels harder than ever.
-        </p>
-
-        <div style={{
-          fontSize: isMobile ? "15px" : "18px",
-          color: "#cbd5e1",
-          marginBottom: "60px",
-          padding: isMobile ? "20px" : "25px 35px",
-          background: "rgba(168, 85, 247, 0.04)",
-          borderRadius: "20px",
-          border: "1px solid rgba(168, 85, 247, 0.15)",
-          lineHeight: "1.7"
-        }}>
-          <b style={{ fontSize: isMobile ? "16px" : "20px", fontWeight: 600 }}>elinity is here to fix the big glitch.</b> we're a holistic app built to help you find your <span style={{color: '#fff', fontWeight: 600}}>"best-fit" humans</span> and turn those connections into legendary, lifelong relationships.
-        </div>
-
-        <div style={{ marginBottom: isMobile ? "40px" : "50px" }}>
-          <h2 style={{ fontSize: isMobile ? "18px" : "22px", color: "#7c3aed", marginBottom: "20px", fontWeight: 700 }}>how we do it:</h2>
-          <div style={{ textAlign: 'left', background: 'rgba(255,255,255,0.02)', padding: isMobile ? '25px' : '40px', borderRadius: isMobile ? '24px' : '32px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <h3 style={{ fontSize: isMobile ? "19px" : "24px", color: "#fff", marginBottom: "12px", display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center' }}>
-              <span style={{ display: 'flex', alignItems: 'center' }}><span style={{ marginRight: '10px', fontSize: '24px' }}>⚡</span> the resonance engine</span>
-              <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.4)', marginLeft: isMobile ? '34px' : '12px', fontWeight: 400 }}>(finding your people)</span>
-            </h3>
-            <p style={{ fontSize: isMobile ? "14px" : "16px", lineHeight: "1.8", color: "#94a3b8", margin: 0 }}>
-              forget mindless swiping. our ai doesn't just look at your bio; it models your values, goals, and quirks to find your most resonant matches across <span style={{color: '#fff', fontWeight: 500}}>love, leisure, and collaboration.</span> our goal? get you off the screen and meeting your people in record time.
-            </p>
-          </div>
-        </div>
-
-        <button
-          onClick={handleOpenModal}
-          style={{
-            padding: isMobile ? "18px 35px" : "22px 50px",
-            borderRadius: "100px",
-            border: "none",
-            background: "linear-gradient(90deg, #7c3aed, #4f46e5)",
-            color: "white",
-            fontSize: isMobile ? "16px" : "18px",
-            fontWeight: "600",
-            cursor: "pointer",
-            transition: "all 0.3s ease",
-            boxShadow: "0 10px 25px rgba(124, 58, 237, 0.4)",
-            width: isMobile ? "100%" : "auto"
-          }}
-          onMouseEnter={(e) => !isMobile && (e.currentTarget.style.transform = 'translateY(-2px)')}
-          onMouseLeave={(e) => !isMobile && (e.currentTarget.style.transform = 'translateY(0)')}
-        >
-          more about elinity
-        </button>
-      </div>
+      <MoreElinity onClose={() => { setIsModalOpen(true); setIsCollapsed(true);  }} />
+    </div>
+  </div>
+)}
     </div>
   );
 }
