@@ -14,27 +14,27 @@ const ElinityManifesto = ({ onClose }) => {
     <div style={{
       color: "#fff",
       /* Adjusted padding for mobile vs laptop */
-      padding: isMobile ? "40px 10px" : "60px 40px",
+      padding: isMobile ? "30px 10px" : "50px 40px",
       fontFamily: "'Inter', sans-serif",
       background: "transparent",
     }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "700px", margin: "0 auto" }}>
         
         {/* Section 1: Definition */}
-        <section style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+        <section style={{ marginBottom: isMobile ? "30px" : "50px" }}>
           <h2 style={{
-            fontSize: isMobile ? "20px" : "28px",
+            fontSize: isMobile ? "16px" : "22px",
             letterSpacing: "1px",
             color: "rgba(255, 255, 255, 0.4)",
-            marginBottom: "24px",
+            marginBottom: "20px",
             fontWeight: 600
           }}>
             what is elinity
           </h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <p style={{
-              fontSize: isMobile ? "24px" : "32px",
+              fontSize: isMobile ? "20px" : "26px",
               fontWeight: 300,
               lineHeight: 1.3,
               background: "linear-gradient(to right, #fff, #a78bfa)",
@@ -45,7 +45,7 @@ const ElinityManifesto = ({ onClose }) => {
             </p>
 
             <p style={{
-              fontSize: isMobile ? "17px" : "20px",
+              fontSize: isMobile ? "15px" : "17px",
               color: "rgba(255, 255, 255, 0.6)",
               fontWeight: 300,
               lineHeight: 1.6
@@ -56,9 +56,9 @@ const ElinityManifesto = ({ onClose }) => {
         </section>
 
         {/* Section 2: Core Explanation */}
-        <section style={{ marginBottom: isMobile ? "40px" : "60px", display: "flex", flexDirection: "column", gap: "32px" }}>
+        <section style={{ marginBottom: isMobile ? "30px" : "50px", display: "flex", flexDirection: "column", gap: "28px" }}>
           <p style={{
-            fontSize: isMobile ? "16px" : "18px",
+            fontSize: isMobile ? "14px" : "15px",
             lineHeight: 1.7,
             color: "rgba(255, 255, 255, 0.8)"
           }}>
@@ -66,10 +66,10 @@ const ElinityManifesto = ({ onClose }) => {
           </p>
 
           <p style={{
-            fontSize: isMobile ? "16px" : "18px",
+            fontSize: isMobile ? "14px" : "15px",
             fontWeight: 500,
             borderLeft: "2px solid #7c3aed",
-            paddingLeft: isMobile ? "16px" : "24px",
+            paddingLeft: isMobile ? "14px" : "20px",
             paddingTop: "4px",
             paddingBottom: "4px",
             color: "#a78bfa"
@@ -79,12 +79,12 @@ const ElinityManifesto = ({ onClose }) => {
         </section>
 
         {/* Section 3: What it helps you do */}
-        <section style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+        <section style={{ marginBottom: isMobile ? "30px" : "50px" }}>
           <h2 style={{
-            fontSize: isMobile ? "20px" : "28px",
+            fontSize: isMobile ? "16px" : "22px",
             letterSpacing: "0.5px",
             color: "rgba(255, 255, 255, 0.4)",
-            marginBottom: "32px",
+            marginBottom: "28px",
             fontWeight: 500
           }}>
             what elinity actually helps you do.
@@ -95,7 +95,7 @@ const ElinityManifesto = ({ onClose }) => {
             padding: 0,
             display: "flex",
             flexDirection: "column",
-            gap: "12px"
+            gap: "10px"
           }}>
             {[
               "elinity is about people, your people.",
@@ -104,10 +104,10 @@ const ElinityManifesto = ({ onClose }) => {
               "it’s about more signal, not noise."
             ].map((item, index) => (
               <li key={index} style={{
-                fontSize: isMobile ? "18px" : "24px",
+                fontSize: isMobile ? "15px" : "20px",
                 fontWeight: 300,
                 fontStyle: "italic",
-                paddingBottom: "16px",
+                paddingBottom: "14px",
                 borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
                 color: "rgba(255, 255, 255, 0.9)"
               }}>
@@ -120,24 +120,24 @@ const ElinityManifesto = ({ onClose }) => {
         {/* Section 4: Promise */}
         <section style={{
           background: "rgba(255, 255, 255, 0.03)",
-          padding: isMobile ? "24px" : "40px",
-          borderRadius: "32px",
+          padding: isMobile ? "20px" : "32px",
+          borderRadius: "24px",
           border: "1px solid rgba(255, 255, 255, 0.08)"
         }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             
-            <p style={{ fontSize: isMobile ? "17px" : "20px", lineHeight: 1.5, color: "#fff" }}>
+            <p style={{ fontSize: isMobile ? "15px" : "17px", lineHeight: 1.5, color: "#fff" }}>
               we help you find people you can build incredible relationships with
             </p>
 
             <div style={{
               display: "flex",
               flexWrap: "wrap",
-              columnGap: "12px",
+              columnGap: "10px",
               rowGap: "4px",
               color: "#a78bfa",
               fontWeight: 600,
-              fontSize: isMobile ? "14px" : "16px"
+              fontSize: isMobile ? "12px" : "14px"
             }}>
               {[
                 "for love,",
@@ -152,9 +152,9 @@ const ElinityManifesto = ({ onClose }) => {
             </div>
 
             <p style={{
-              fontSize: isMobile ? "17px" : "20px",
+              fontSize: isMobile ? "15px" : "17px",
               lineHeight: 1.5,
-              paddingTop: "20px",
+              paddingTop: "16px",
               borderTop: "1px solid rgba(255, 255, 255, 0.05)",
               color: "rgba(255, 255, 255, 0.7)"
             }}>
@@ -164,17 +164,17 @@ const ElinityManifesto = ({ onClose }) => {
         </section>
 
         {/* Bottom Close Button */}
-        <div style={{ marginTop: "60px", textAlign: "center" }}>
+        <div style={{ marginTop: "50px", textAlign: "center" }}>
           <button 
             onClick={onClose}
             style={{
               background: "transparent",
               border: "1px solid rgba(255, 255, 255, 0.2)",
               color: "rgba(255, 255, 255, 0.5)",
-              padding: "12px 32px",
+              padding: "10px 28px",
               borderRadius: "100px",
               cursor: "pointer",
-              fontSize: "14px",
+              fontSize: "13px",
               transition: "all 0.3s ease"
             }}
             onMouseEnter={(e) => {
@@ -188,7 +188,7 @@ const ElinityManifesto = ({ onClose }) => {
               e.currentTarget.style.background = "transparent";
             }}
           >
-            close manifesto
+            back to the site    
           </button>
         </div>
 

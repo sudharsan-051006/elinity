@@ -251,7 +251,7 @@ export default function ElinityLandingPage() {
                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(124, 58, 237, 0.4)";
               }}
             >
-              read the manifesto
+              read more about elinity
             </button>
           </div>
 
@@ -322,8 +322,8 @@ export default function ElinityLandingPage() {
                   className="custom-scroll"
                   style={{
                     width: "100%",
-                    maxWidth: "720px",
-                    maxHeight: "85vh",
+                    maxWidth: "500px",
+                    maxHeight: "75vh",
                     overflowY: "auto",
                     position: "relative",
 
@@ -345,7 +345,7 @@ export default function ElinityLandingPage() {
                   <button
                     onClick={handleCloseModal}
                     style={{
-                      position: "absolute",
+                      position: "fixed",
                       top: "20px",
                       right: "20px",
                       width: "32px",
