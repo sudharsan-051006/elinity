@@ -131,7 +131,7 @@ export default function ElinityLandingPage() {
               color: "rgba(255,255,255,0.7)", fontWeight: 400, maxWidth: "780px", 
               margin: isMobile ? "0" : "0 auto", letterSpacing: '-0.01em'
             }}>
-              your social life, <span style={{color: '#fff', fontWeight: 600}}>leveled up like never before.</span> let's be real-modern connecting is broken. between the endless scrolling, the swipe nightmare, and the growing vacuum of depth, finding-and actually keeping-meaningful relationships feels harder than ever.
+              your social life, <span style={{color: '#fff', fontWeight: 600}}>leveled up like never before.</span> let's be real - modern connecting is broken. between the endless scrolling, the swipe nightmare, and the growing vacuum of depth, finding- and actually keeping - meaningful relationships feels harder than ever.
             </p>
           </div>
 
@@ -170,7 +170,7 @@ export default function ElinityLandingPage() {
                 <p style={{ 
                   color: '#94a3b8', fontSize: '14px', fontStyle: 'italic',
                   maxWidth: '450px', margin: '0 auto', lineHeight: 1.7,
-                  visibility: isMobile ? 'hidden' : 'visible' /* Hide on mobile to reduce length */ 
+                display: isMobile ? 'none' : 'block' /* Hide on mobile to reduce length */ 
                 }}>
                   <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life.
                 </p>
@@ -192,7 +192,7 @@ export default function ElinityLandingPage() {
               <p style={{ color: '#7c3aed', fontSize: '10px', fontWeight: 700, letterSpacing: '0.5px', marginBottom: '20px'}}>(thriving in your relationships)</p>
               
               <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', marginBottom: '24px' }}>
-                Once the resonance engine finds your people, the real magic begins. We provide the infrastructure to help those connections actually thrive:
+                once the resonance engine finds your people, the real magic begins. We provide the infrastructure to help those connections actually <i>thrive</i>. think:
               </p>
 
               <div style={{ display: 'grid', gap: '12px' }}>
@@ -211,11 +211,13 @@ export default function ElinityLandingPage() {
                     <p style={{ color: '#64748b', margin: '4px 0 0 0', fontSize: '12px' }}>{item.desc}</p>
                   </div>
                 ))}
+                <p style={{ color: 'white', margin: '4px 0 0 0', fontSize: '16px', paddingLeft: '20px' }}>and more</p>
               </div>
+            </div>
               <div style={{ 
-                marginTop: '80px', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.08)', 
+                marginTop: '20px', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.08)', 
                 textAlign: 'center',
-                visibility: isMobile ? 'visible' : 'hidden' /* Hide on mobile to reduce length */ 
+                display: isMobile ? 'block' : 'none' /* Hide on mobile to reduce length */ 
               }}>
                 <p style={{ 
                   color: '#94a3b8', fontSize: '14px', fontStyle: 'italic',
@@ -224,8 +226,6 @@ export default function ElinityLandingPage() {
                   <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life.
                 </p>
               </div>
-            </div>
-            
           </div>
           <div style={{ marginTop: "60px", display: "flex", justifyContent: "center" }}>
             <button
