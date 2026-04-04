@@ -1,12 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function ElinityLandingPage() {
-  const [hover, setHover] = useState(false);
-  const [showCard, setShowCard] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [isExpanding, setIsExpanding] = useState(false);
-  const cardRef = useRef(null);
-
+const ElinityManifesto = ({ onClose }) => {
+  // Local responsive check for standalone usage or resizing
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
@@ -15,175 +10,191 @@ export default function ElinityLandingPage() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (showModal) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    }
-  }, [showModal]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setShowCard(true);
-      },
-      { threshold: isMobile ? 0.05 : 0.15 }
-    );
-    if (cardRef.current) observer.observe(cardRef.current);
-    return () => observer.disconnect();
-  }, [isMobile]);
-
-  const handleOpenModal = () => {
-    setIsExpanding(true);
-    setTimeout(() => {
-      setShowModal(true);
-      setIsExpanding(false);
-    }, 600);
-  };
-
-  const MoreInfoModal = () => (
-    <div style={{
-      position: 'fixed', inset: 0, background: 'rgba(5, 0, 15, 0.5)',
-      backdropFilter: 'blur(25px)', display: 'flex', alignItems: 'center',
-      justifyContent: 'center', zIndex: 2000, padding: '15px',
-      animation: 'fadeIn 0.3s ease'
-    }}>
-      <style>{`
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .elinity-scrollbar::-webkit-scrollbar { width: 4px; }
-        .elinity-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); }
-        .elinity-scrollbar::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 10px; }
-      `}</style>
-      
-      <div className="elinity-scrollbar" style={{
-          background: 'linear-gradient(160deg, rgba(30, 30, 50, 0.95), rgba(10, 10, 20, 1))',
-          border: '1px solid rgba(168, 85, 247, 0.4)', borderRadius: '24px',
-          maxWidth: '520px', width: '100%', maxHeight: '80vh', overflowY: 'auto',
-          padding: isMobile ? '35px 20px' : '40px 45px', position: 'relative',
-          animation: 'scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both',
-          boxShadow: '0 0 50px rgba(124, 58, 237, 0.15)',
-        }}>
-        <button onClick={() => setShowModal(false)} style={{
-            position: 'absolute', top: '15px', right: '15px', background: 'rgba(255,255,255,0.1)',
-            border: 'none', color: 'white', width: '28px', height: '28px', borderRadius: '50%',
-            cursor: 'pointer', fontSize: '12px', zIndex: 10
-          }}>✕</button>
-
-        <h3 style={{ 
-          fontSize: isMobile ? '20px' : '24px', marginBottom: '4px', 
-          background: 'linear-gradient(to right, #e9d5ff, #a5b4fc)', 
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700
-        }}>the flourishing suite</h3>
-        <p style={{ color: '#a5b4fc', fontSize: '10px', letterSpacing: '0.5px', marginBottom: '18px'}}>(thriving in your relationships)</p>
-        
-        <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5', marginBottom: '18px' }}>
-          once you've met, the magic begins. we give you a portal to make relationships actually thrive. think:
-        </p>
-
-        <div style={{ display: 'grid', gap: '8px', textAlign: 'left' }}>
-          {[
-            { title: "relationship coaching", desc: "to navigate the tricky bits." },
-            { title: 'a "life book"', desc: "to track your shared journey." },
-            { title: "connection games", desc: "designed for pure whimsy and delight." },
-            { title: "a walled-garden social network", desc: " - all the connection, none of the noise." }
-          ].map((item, i) => (
-            <div key={i} style={{ 
-              padding: '10px 15px', background: 'rgba(255,255,255,0.03)', 
-              borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', borderLeft: '3px solid #7c3aed' 
-            }}>
-              <span style={{ color: '#fff', fontWeight: 600, fontSize: '14px', display: 'block' }}>{item.title}</span>
-              <p style={{ color: '#94a3b8', margin: 0, fontSize: '12px' }}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ marginTop: '20px', padding: '15px 5px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-          <p style={{ color: '#e9d5ff', fontSize: '13px', fontStyle: 'italic', lineHeight: '1.5', maxWidth: '400px', margin: '0 auto' }}>
-            <b style={{ fontWeight: 800 }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div style={{
-      position: "relative", minHeight: "100vh", display: "flex", alignItems: "center",
-      justifyContent: "center", padding: isMobile ? "30px 15px" : "40px 20px",
-      background: "#050010", fontFamily: "'Inter', sans-serif", color: 'white', overflowX: "hidden"
+      color: "#fff",
+      /* Adjusted padding for mobile vs laptop */
+      padding: isMobile ? "40px 10px" : "60px 40px",
+      fontFamily: "'Inter', sans-serif",
+      background: "transparent",
     }}>
-      {showModal && <MoreInfoModal />}
-
-      <div style={{
-          position: 'fixed', inset: 0, backdropFilter: isExpanding ? 'blur(10px)' : 'blur(0px)',
-          background: isExpanding ? 'rgba(5, 0, 15, 0.4)' : 'rgba(5, 0, 15, 0)',
-          transition: 'all 0.6s ease', zIndex: 1400, pointerEvents: 'none'
-        }} />
-
-      <div ref={cardRef}
-        onMouseEnter={() => !isMobile && setHover(true)}
-        onMouseLeave={() => !isMobile && setHover(false)}
-        style={{
-          position: "relative", zIndex: 10, maxWidth: "700px", width: "100%",
-          backdropFilter: "blur(30px)",
-          background: "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
-          border: "1px solid rgba(255,255,255,0.08)", borderRadius: isMobile ? "20px" : "32px",
-          padding: isMobile ? "30px 18px" : "45px 50px",
-          transition: "all 1s cubic-bezier(.2,1,.2,1)",
-          transform: showCard ? (hover ? "translateY(-6px)" : "translateY(0px)") : "translateY(25px)",
-          opacity: showCard ? 1 : 0,
-          boxShadow: hover ? "0 30px 80px rgba(0,0,0,0.6)" : "0 20px 50px rgba(0,0,0,0.5)"
-        }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
         
-        <h1 style={{
-          fontSize: isMobile ? "26px" : "42px", fontWeight: 800, marginBottom: "15px", lineHeight: 1.1,
-          background: "linear-gradient(to bottom, #fff 40%, #c4b5fd 100%)",
-          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "-0.03em"
-        }}>say hello to elinity</h1>
+        {/* Section 1: Definition */}
+        <section style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+          <h2 style={{
+            fontSize: isMobile ? "20px" : "28px",
+            letterSpacing: "1px",
+            color: "rgba(255, 255, 255, 0.4)",
+            marginBottom: "24px",
+            fontWeight: 600
+          }}>
+            what is elinity
+          </h2>
 
-        <p style={{
-          fontSize: isMobile ? "14px" : "15px", lineHeight: "1.6",
-          color: "rgba(255,255,255,0.85)", marginBottom: "30px", fontWeight: 500
-        }}>
-          your social life, <span style={{color: '#a5b4fc', fontWeight: 600}}>leveled up like never before.</span> let's be real - modern connecting is broken.between the endless scrolling, the swipe nightmare, and the growing vacuum of depth, finding - and actually keeping - meaningful relationships feels harder than ever.
-        </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            <p style={{
+              fontSize: isMobile ? "24px" : "32px",
+              fontWeight: 300,
+              lineHeight: 1.3,
+              background: "linear-gradient(to right, #fff, #a78bfa)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}>
+              elinity exists for people who believe connection is the foundation of a good life.
+            </p>
 
-        <div style={{
-          fontSize: isMobile ? "13px" : "14px", color: "#cbd5e1", marginBottom: "35px",
-          padding: isMobile ? "15px" : "18px 25px", background: "rgba(168, 85, 247, 0.04)",
-          borderRadius: "15px", border: "1px solid rgba(168, 85, 247, 0.12)", lineHeight: "1.6"
-        }}>
-          <b style={{ fontSize: isMobile ? "14px" : "16px", fontWeight: 600 }}>elinity is here to fix the big glitch.</b> we're a holistic app built to help you find your<span style={{color: '#fff', fontWeight: 600}}>"best-fit" humans</span> and turn connections into legendary, lifelong relationships.
-        </div>
-
-        <div style={{ marginBottom: "35px" }}>
-          <h2 style={{ fontSize: "14px", color: "#7c3aed", marginBottom: "12px", fontWeight: 700, letterSpacing: '0.5px' }}>how we do it:</h2>
-          <div style={{ textAlign: 'left', background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '18px', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <h3 style={{ fontSize: isMobile ? "15px" : "18px", color: "#fff", marginBottom: "8px", display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: '8px', fontSize: '18px' }}>⚡</span> the resonance engine
-              <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginLeft: '10px', fontWeight: 400 }}>(finding your people)</span>
-            </h3>
-            <p style={{ fontSize: isMobile ? "12px" : "13.5px", lineHeight: "1.7", color: "#94a3b8", margin: 0 }}>
-              forget mindless swiping. our ai doesn't just look at your bio; it models your values, goals, and quirks to find your most resonant matches across <span style={{color: '#fff', fontWeight: 500}}>love, leisure, and collaboration.</span> our goal? get you off the screen and meeting your people in record time. yup, our north star is to reduce the time it takes to get you to your people.
+            <p style={{
+              fontSize: isMobile ? "17px" : "20px",
+              color: "rgba(255, 255, 255, 0.6)",
+              fontWeight: 300,
+              lineHeight: 1.6
+            }}>
+              it’s an emotionally intelligent ai platform that helps you meet deeply aligned people and build meaningful relationships over time.
             </p>
           </div>
+        </section>
+
+        {/* Section 2: Core Explanation */}
+        <section style={{ marginBottom: isMobile ? "40px" : "60px", display: "flex", flexDirection: "column", gap: "32px" }}>
+          <p style={{
+            fontSize: isMobile ? "16px" : "18px",
+            lineHeight: 1.7,
+            color: "rgba(255, 255, 255, 0.8)"
+          }}>
+            whether you’re looking for love, friendship, collaborators, or simply richer human connection, elinity brings everything into one coherent space. it understands who you are, what you’re seeking, and how you connect, then introduces you to people who feel like a natural yes.
+          </p>
+
+          <p style={{
+            fontSize: isMobile ? "16px" : "18px",
+            fontWeight: 500,
+            borderLeft: "2px solid #7c3aed",
+            paddingLeft: isMobile ? "16px" : "24px",
+            paddingTop: "4px",
+            paddingBottom: "4px",
+            color: "#a78bfa"
+          }}>
+            this isn’t about more matches. it’s about better ones, and the tools to turn connection into something real.
+          </p>
+        </section>
+
+        {/* Section 3: What it helps you do */}
+        <section style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+          <h2 style={{
+            fontSize: isMobile ? "20px" : "28px",
+            letterSpacing: "0.5px",
+            color: "rgba(255, 255, 255, 0.4)",
+            marginBottom: "32px",
+            fontWeight: 500
+          }}>
+            what elinity actually helps you do.
+          </h2>
+
+          <ul style={{
+            listStyle: "none",
+            padding: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px"
+          }}>
+            {[
+              "elinity is about people, your people.",
+              "it’s about better matches, not more.",
+              "it’s about better conversations, not more.",
+              "it’s about more signal, not noise."
+            ].map((item, index) => (
+              <li key={index} style={{
+                fontSize: isMobile ? "18px" : "24px",
+                fontWeight: 300,
+                fontStyle: "italic",
+                paddingBottom: "16px",
+                borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
+                color: "rgba(255, 255, 255, 0.9)"
+              }}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Section 4: Promise */}
+        <section style={{
+          background: "rgba(255, 255, 255, 0.03)",
+          padding: isMobile ? "24px" : "40px",
+          borderRadius: "32px",
+          border: "1px solid rgba(255, 255, 255, 0.08)"
+        }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            
+            <p style={{ fontSize: isMobile ? "17px" : "20px", lineHeight: 1.5, color: "#fff" }}>
+              we help you find people you can build incredible relationships with
+            </p>
+
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              columnGap: "12px",
+              rowGap: "4px",
+              color: "#a78bfa",
+              fontWeight: 600,
+              fontSize: isMobile ? "14px" : "16px"
+            }}>
+              {[
+                "for love,",
+                "friendship,",
+                "leisure,",
+                "collaboration,",
+                "creativity,",
+                "and life"
+              ].map((tag, i) => (
+                <span key={i}>{tag}</span>
+              ))}
+            </div>
+
+            <p style={{
+              fontSize: isMobile ? "17px" : "20px",
+              lineHeight: 1.5,
+              paddingTop: "20px",
+              borderTop: "1px solid rgba(255, 255, 255, 0.05)",
+              color: "rgba(255, 255, 255, 0.7)"
+            }}>
+              and then we help you actually nurture those relationships over time
+            </p>
+          </div>
+        </section>
+
+        {/* Bottom Close Button */}
+        <div style={{ marginTop: "60px", textAlign: "center" }}>
+          <button 
+            onClick={onClose}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              color: "rgba(255, 255, 255, 0.5)",
+              padding: "12px 32px",
+              borderRadius: "100px",
+              cursor: "pointer",
+              fontSize: "14px",
+              transition: "all 0.3s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#fff";
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.5)";
+              e.currentTarget.style.background = "transparent";
+            }}
+          >
+            close manifesto
+          </button>
         </div>
 
-        <button onClick={handleOpenModal} style={{
-            padding: isMobile ? "14px 28px" : "15px 35px", borderRadius: "100px", border: "none",
-            background: "linear-gradient(90deg, #7c3aed, #4f46e5)", color: "white",
-            fontSize: "14px", fontWeight: "600", cursor: "pointer",
-            transition: "all 0.3s ease", boxShadow: "0 6px 18px rgba(124, 58, 237, 0.3)",
-            width: isMobile ? "100%" : "auto"
-          }}>more about elinity</button>
       </div>
     </div>
   );
-}
+};
+
+export default ElinityManifesto;
