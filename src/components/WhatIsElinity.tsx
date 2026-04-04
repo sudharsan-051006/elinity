@@ -124,14 +124,14 @@ export default function ElinityLandingPage() {
               lineHeight: 0.95, letterSpacing: "-0.05em",
               background: "linear-gradient(180deg, #fff 30%, #a78bfa 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
-            }}>say hello to elinity</h1>
+            }}>say hello to elinity:</h1>
 
             <p style={{
               fontSize: isMobile ? "16px" : "19px", lineHeight: "1.6",
               color: "rgba(255,255,255,0.7)", fontWeight: 400, maxWidth: "780px", 
               margin: isMobile ? "0" : "0 auto", letterSpacing: '-0.01em'
             }}>
-              your social life, <span style={{color: '#fff', fontWeight: 600}}>leveled up like never before.</span> let's be real - modern connecting is broken. between the endless scrolling, the swipe nightmare, and the growing vacuum of depth, finding- and actually keeping - meaningful relationships feels harder than ever.
+              your social life, <span style={{color: '#fff', fontWeight: 600}}>leveled up like never before.</span> let’s be real - modern connecting is kind of broken. between the endless scrolling and jumping, the swipe nightmare, and the growing vacuum of depth, finding - and actually keeping - meaningful relationships feels harder than ever.
             </p>
           </div>
 
@@ -157,7 +157,7 @@ export default function ElinityLandingPage() {
             <div style={{ paddingRight: isMobile ? '0' : '20px' }}>
               <span style={{ fontSize: "20px", color: "#7c3aed", fontWeight: 800, letterSpacing: '1px'}}>how we do it:</span>
               <h3 style={{ fontSize: "28px", color: "#fff", margin: "12px 0 16px", fontWeight: 700, display: 'flex', alignItems: 'center' }}>
-                <span style={{ marginRight: '12px', filter: 'drop-shadow(0 0 8px #7c3aed)' }}>⚡</span> the resonance engine
+                <span style={{ marginRight: '12px', filter: 'drop-shadow(0 0 8px #7c3aed)' }}>⚡</span> the resonance engine :
               </h3>
               <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', marginBottom: '16px', fontWeight: 500 }}>(finding your people)</p>
               <p style={{ fontSize: "15px", lineHeight: "1.8", color: "#94a3b8" }}>
@@ -172,7 +172,7 @@ export default function ElinityLandingPage() {
                   maxWidth: '450px', margin: '0 auto', lineHeight: 1.7,
                 display: isMobile ? 'none' : 'block' /* Hide on mobile to reduce length */ 
                 }}>
-                  <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life.
+                  <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b>  to help you find your tribe and build relationships so good, they feel like a cheat code for life. as they are meant to be!
                 </p>
               </div>
             </div>
@@ -188,11 +188,11 @@ export default function ElinityLandingPage() {
                 fontSize: '24px', marginBottom: '4px', 
                 background: 'linear-gradient(to right, #fff, #a5b4fc)', 
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700
-              }}>the flourishing suite</h3>
+              }}>the flourishing suite : </h3>
               <p style={{ color: '#7c3aed', fontSize: '10px', fontWeight: 700, letterSpacing: '0.5px', marginBottom: '20px'}}>(thriving in your relationships)</p>
               
               <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6', marginBottom: '24px' }}>
-                once the resonance engine finds your people, the real magic begins. We provide the infrastructure to help those connections actually <i>thrive</i>. think:
+                once you’ve met, the magic begins. we give you a portal to make relationships actually <i>thrive</i>. think:
               </p>
 
               <div style={{ display: 'grid', gap: '12px' }}>
@@ -223,7 +223,7 @@ export default function ElinityLandingPage() {
                   color: '#94a3b8', fontSize: '14px', fontStyle: 'italic',
                   maxWidth: '450px', margin: '0 auto', lineHeight: 1.7 
                 }}>
-                  <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b> to help you find your tribe and build relationships so good, they feel like a cheat code for life.
+                  <b style={{ color: '#fff', fontWeight: 800, fontStyle: 'normal' }}>our mission is simple:</b>  to help you find your tribe and build relationships so good, they feel like a cheat code for life. as they are meant to be!
                 </p>
               </div>
           </div>
