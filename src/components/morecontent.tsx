@@ -74,7 +74,7 @@ const ElinityManifesto = ({ onClose }) => {
             paddingBottom: "4px",
             color: "#a78bfa"
           }}>
-            this isn’t about more matches. it’s about better ones, and the tools to turn connection into something real.
+            this is about better matches, not more, and the tools to turn connection into something real.
           </p>
         </section>
 
