@@ -73,7 +73,7 @@ const Divider: React.FC = () => (
         marginTop: "2rem",
         marginBottom: "2rem",
     }}
-    initial={{ scaleX: 0, originX: 0 }}
+    initial={{ scaleX : 0, originX: 0 }}
     whileInView={{ scaleX: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7, ease: "easeOut" }}

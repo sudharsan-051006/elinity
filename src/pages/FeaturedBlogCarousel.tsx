@@ -241,7 +241,7 @@ const FeaturedBlogCarousel = () => {
             style={{
               width: dotIndex === i ? 24 : 8,
               height: 4,
-              background: dotIndex === i ? "#111" : "#d1d5db",
+              background: dotIndex === i ? "#3a3a80" : "#1a1a40",
             }}
           />
         ))}
