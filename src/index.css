@@ -183,3 +183,44 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* 1. Main scrollbar container */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 2. REMOVE TOP AND BOTTOM ARROWS */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* 3. The background track */
+::-webkit-scrollbar-track {
+  background: #0f172a; 
+  border-radius: 10px;
+}
+
+/* 4. The draggable handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7c3aed, #a78bfa);
+  border-radius: 10px;
+  /* Matching the track color creates the 'floating' effect */
+  border: 2px solid #0f172a; 
+}
+
+/* 5. Handle hover state */
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9; 
+}
+
+/* Firefox Specifics (Firefox doesn't show arrows by default in 'thin' mode) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}

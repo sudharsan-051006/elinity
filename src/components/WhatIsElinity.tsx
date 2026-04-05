@@ -251,7 +251,7 @@ export default function ElinityLandingPage() {
                 e.currentTarget.style.boxShadow = "0 10px 30px rgba(124, 58, 237, 0.4)";
               }}
             >
-              read more about elinity
+              more about elinity
             </button>
           </div>
 
