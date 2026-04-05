@@ -111,7 +111,11 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
       <h2 className="text-4xl sm:text-6xl font-extrabold mb-12 tracking-tighter 
                     bg-gradient-to-r from-purple-400 via-[#b066fe] to-pink-500 
                     bg-clip-text text-transparent
-                    drop-shadow-[0_0_15px_rgba(176,102,254,0.3)]">
+                    drop-shadow-[0_0_15px_rgba(176,102,254,0.3)]"
+          style={{
+            lineHeight:'100.1px'
+          }}
+            >
         join the elinity waitlist ✨
       </h2>
 

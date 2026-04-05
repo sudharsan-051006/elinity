@@ -28,6 +28,8 @@ const EllarisLandingPage: React.FC = () => {
   const [typedText, setTypedText] = useState("");
   const [i, setI] = useState(0);
 
+  const [isHovered, setIsHovered] = React.useState(false);
+
   useEffect(() => {
     if (i < fullText.length) {
       const t = setTimeout(() => {
@@ -69,6 +71,7 @@ useEffect(() => {
   const ellthe = useScrollReveal();
   const queitA = useScrollReveal();
   const core = useScrollReveal();
+const [isIndHovered, setIsIndHovered] = React.useState(false);
 
 const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
   opacity: visible ? 1 : 0,
@@ -363,90 +366,241 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
         </section>
 
         {/* WHO IS IT FOR */}
-        <section
-          ref={whois.ref}
-          style={{
-            ...s.sectionCard,
-            ...reveal(whois.visible),
-            marginBottom: isPhone ? '16px' : '24px',
-          }}
-        >
-          <div style={{ textAlign: 'center', marginBottom: isPhone ? '28px' : '44px' }}>
-            <h2 style={{
-              fontSize: isPhone ? '26px' : '44px',
-              fontWeight: '800',
-              letterSpacing: '-0.03em',
-              lineHeight: '1.2',
-              marginBottom: '16px',
-              ...headingGradient,
-            }}>
-              Who Ellaris Is For
-            </h2>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: isPhone ? '15px' : '18px', fontStyle: 'italic', maxWidth: '600px', margin: '0 auto' }}>
-              Ellaris is built for people and organizations who care deeply about fit.
-            </p>
-          </div>
+<section
+  ref={whois.ref}
+  style={{
+    ...s.sectionCard,
+    ...reveal(whois.visible),
+    marginBottom: isPhone ? '24px' : '40px',
+    padding: isPhone ? '30px 16px' : '60px 40px',
+    background: 'rgba(255, 255, 255, 0.02)', // Subtle section container
+    borderRadius: '32px',
+    border: '1px solid rgba(255, 255, 255, 0.05)',
+  }}
+>
+  {/* Header Section */}
+  <div style={{ textAlign: 'center', marginBottom: isPhone ? '32px' : '56px' }}>
+    <h2 style={{
+      fontSize: isPhone ? '28px' : '48px',
+      fontWeight: '800',
+      letterSpacing: '-0.04em',
+      lineHeight: '1.1',
+      marginBottom: '20px',
+      ...headingGradient,
+      filter: 'drop-shadow(0px 4px 12px rgba(119, 89, 253, 0.2))',
+    }}>
+      Who Ellaris Is For
+    </h2>
+    <p style={{ 
+      color: 'rgba(255,255,255,0.7)', 
+      fontSize: isPhone ? '16px' : '19px', 
+      fontWeight: '400',
+      maxWidth: '540px', 
+      margin: '0 auto',
+      lineHeight: '1.6'
+    }}>
+      Ellaris is built for people and organizations who <span style={{ color: '#fff', fontWeight: '500' }}>care deeply about fit.</span>
+    </p>
+  </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: isPhone ? '16px' : '20px', marginBottom: '36px' }}>
-            {/* Card: Individuals */}
-            <div className="hover-card" style={{
-              flex: '1 1 280px', minWidth: 0,
-              background: 'linear-gradient(135deg, rgba(119,89,253,0.08), rgba(119,89,253,0.03))',
-              border: '1px solid rgba(119,89,253,0.18)',
-              borderRadius: '20px',
-              padding: isPhone ? '24px 18px' : '36px',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, rgba(119,89,253,0.3), rgba(119,89,253,0.1))', border: '1px solid rgba(119,89,253,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>👤</div>
-                <h3 style={{ fontSize: isPhone ? '18px' : '22px', fontWeight: '700', color: '#c4b5fd', margin: 0 }}>For individuals</h3>
-              </div>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', margin: 0 }}>
-                {[
-                  "People who want to work on things they genuinely care about",
-                  "Builders, thinkers, creators, researchers, operators",
-                  "Those who value mission, values, and people over titles and prestige",
-                  "Anyone who wants their work to feel alive, not extractive"
-                ].map((text: string, idx: number) => (
-                  <li key={idx} style={{ marginBottom: '14px', display: 'flex', alignItems: 'flex-start', gap: '12px', color: '#d1d1d1', fontSize: isPhone ? '14px' : '15px' }}>
-                    <div style={s.dot} />
-                    {text}
-                  </li>
-                ))}
-              </ul>
-            </div>
+  {/* Cards Container */}
+  <div style={{ 
+    display: 'flex', 
+    flexWrap: 'wrap' as const, 
+    gap: isPhone ? '20px' : '24px', 
+    marginBottom: '44px' 
+  }}>
+    
+    {/* Card: Individuals */}
 
-            {/* Card: Companies */}
-            <div className="hover-card" style={{
-              flex: '1 1 280px', minWidth: 0,
-              background: 'linear-gradient(135deg, rgba(222,60,190,0.06), rgba(119,89,253,0.04))',
-              border: '1px solid rgba(222,60,190,0.15)',
-              borderRadius: '20px',
-              padding: isPhone ? '24px 18px' : '36px',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, rgba(222,60,190,0.25), rgba(222,60,190,0.08))', border: '1px solid rgba(222,60,190,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>🏢</div>
-                <h3 style={{ fontSize: isPhone ? '18px' : '22px', fontWeight: '700', color: '#f0a0e0', margin: 0 }}>For companies and teams</h3>
-              </div>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', margin: 0 }}>
-                {[
-                  "Mission-driven startups and organizations",
-                  "Teams that care about culture, coherence, and long-term impact",
-                  "Founders who want people who believe in the mission, not just the compensation",
-                  "Organizations preparing for a post-AGI world where human qualities matter more"
-                ].map((text: string, idx: number) => (
-                  <li key={idx} style={{ marginBottom: '14px', display: 'flex', alignItems: 'flex-start', gap: '12px', color: '#d1d1d1', fontSize: isPhone ? '14px' : '15px' }}>
-                    <div style={{ ...s.dot, background: 'linear-gradient(135deg, #de3cbe, #7759fd)' }} />
-                    {text}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+<div
+  onMouseEnter={() => setIsIndHovered(true)}
+  onMouseLeave={() => setIsIndHovered(false)}
+  style={{
+    flex: '1 1 300px',
+    minWidth: 0,
+    borderRadius: '24px',
+    padding: isPhone ? '28px 20px' : '40px',
+    backdropFilter: 'blur(12px)',
+    display: 'flex',
+    flexDirection: 'column',
+    cursor: 'pointer',
+    
+    /* Smooth Transition */
+    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+    
+    /* Dynamic Hover Styles */
+    transform: isIndHovered ? 'scale(1.03) translateY(-8px)' : 'scale(1) translateY(0)',
+    background: isIndHovered 
+      ? 'linear-gradient(145deg, rgba(119,89,253,0.18), rgba(119,89,253,0.06))' 
+      : 'linear-gradient(145deg, rgba(119,89,253,0.12), rgba(119,89,253,0.02))',
+    border: isIndHovered 
+      ? '1px solid rgba(119,89,253,0.5)' 
+      : '1px solid rgba(119,89,253,0.25)',
+    boxShadow: isIndHovered 
+      ? '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(119, 89, 253, 0.2)' 
+      : '0 0px 0px rgba(0, 0, 0, 0)',
+  }}
+>
+  {/* Header Section */}
+  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+    <div style={{ 
+      width: '48px', height: '48px', borderRadius: '14px', 
+      background: 'linear-gradient(135deg, rgba(119,89,253,0.4), rgba(119,89,253,0.1))', 
+      border: '1px solid rgba(119,89,253,0.4)', 
+      display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px',
+      transition: 'transform 0.5s ease',
+      transform: isIndHovered ? 'rotate(5deg) scale(1.1)' : 'rotate(0) scale(1)',
+      boxShadow: '0 4px 12px rgba(119, 89, 253, 0.2)'
+    }}>
+      👤
+    </div>
+    <h3 style={{ 
+      fontSize: isPhone ? '20px' : '24px', 
+      fontWeight: '700', 
+      color: '#fff', 
+      margin: 0,
+      transition: 'color 0.3s ease',
+      color: isIndHovered ? '#b099ff' : '#fff' 
+    }}>
+      For individuals
+    </h3>
+  </div>
 
-          <p style={{ textAlign: 'center', fontSize: isPhone ? '14px' : '16px', fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', lineHeight: '1.6' }}>
-            Ellaris is for the future-ready. For those building toward something that lasts, that truly matters, that deeply resonates.
-          </p>
-        </section>
+  {/* List Section */}
+  <ul style={{ listStyleType: 'none', paddingLeft: '0', margin: 0 }}>
+    {[
+      "People who want to work on things they genuinely care about",
+      "Builders, thinkers, creators, researchers, operators",
+      "Those who value mission, values, and people over titles",
+      "Anyone who wants their work to feel alive, not extractive"
+    ].map((text: string, idx: number) => (
+      <li key={idx} style={{ 
+        marginBottom: '16px', 
+        display: 'flex', 
+        alignItems: 'flex-start', 
+        gap: '12px', 
+        color: isIndHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.8)', 
+        fontSize: isPhone ? '14px' : '16px', 
+        lineHeight: '1.5',
+        transition: 'color 0.3s ease'
+      }}>
+        <div style={{ 
+          ...s.dot, 
+          marginTop: '8px', 
+          flexShrink: 0, 
+          background: '#7759fd',
+          transform: isIndHovered ? 'scale(1.2)' : 'scale(1)',
+          transition: 'transform 0.3s ease',
+          boxShadow: isIndHovered ? '0 0 10px rgba(119, 89, 253, 0.8)' : 'none'
+        }} />
+        {text}
+      </li>
+    ))}
+  </ul>
+</div>
+
+    {/* Card: Companies */}
+
+<div
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+  style={{
+    flex: '1 1 300px',
+    minWidth: 0,
+    borderRadius: '24px',
+    padding: isPhone ? '28px 20px' : '40px',
+    backdropFilter: 'blur(12px)',
+    cursor: 'pointer',
+    
+    /* Smooth Transition Control */
+    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+    
+    /* Dynamic Hover Styles */
+    transform: isHovered ? 'scale(1.03) translateY(-8px)' : 'scale(1) translateY(0)',
+    background: isHovered 
+      ? 'linear-gradient(145deg, rgba(222,60,190,0.18), rgba(119,89,253,0.08))' 
+      : 'linear-gradient(145deg, rgba(222,60,190,0.1), rgba(119,89,253,0.03))',
+    border: isHovered 
+      ? '1px solid rgba(222,60,190,0.5)' 
+      : '1px solid rgba(222,60,190,0.2)',
+    boxShadow: isHovered 
+      ? '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(222, 60, 190, 0.2)' 
+      : '0 0px 0px rgba(0, 0, 0, 0)',
+  }}
+>
+  {/* Header Section */}
+  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+    <div style={{ 
+      width: '48px', height: '48px', borderRadius: '14px', 
+      background: 'linear-gradient(135deg, rgba(222,60,190,0.3), rgba(222,60,190,0.1))', 
+      border: '1px solid rgba(222,60,190,0.3)', 
+      display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px',
+      transition: 'transform 0.5s ease',
+      transform: isHovered ? 'rotate(-5deg) scale(1.1)' : 'rotate(0) scale(1)',
+      boxShadow: '0 4px 12px rgba(222, 60, 190, 0.2)'
+    }}>
+      🏢
+    </div>
+    <h3 style={{ 
+      fontSize: isPhone ? '20px' : '24px', 
+      fontWeight: '700', 
+      color: '#fff', 
+      margin: 0,
+      transition: 'color 0.3s ease',
+      color: isHovered ? '#f0a0e0' : '#fff' 
+    }}>
+      For teams
+    </h3>
+  </div>
+
+  {/* List Section */}
+  <ul style={{ listStyleType: 'none', paddingLeft: '0', margin: 0 }}>
+    {[
+      "Mission-driven startups and organizations",
+      "Teams that care about culture, coherence, and long-term impact",
+      "Founders who want people who believe in the mission, not just the compensation",
+      "Organizations preparing for a post-AGI world where human qualities matter more"
+    ].map((text: string, idx: number) => (
+      <li key={idx} style={{ 
+        marginBottom: '16px', 
+        display: 'flex', 
+        alignItems: 'flex-start', 
+        gap: '12px', 
+        color: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.8)', 
+        fontSize: isPhone ? '14px' : '16px', 
+        lineHeight: '1.5',
+        transition: 'color 0.3s ease'
+      }}>
+        <div style={{ 
+          ...s.dot, 
+          marginTop: '8px', 
+          flexShrink: 0, 
+          background: 'linear-gradient(135deg, #de3cbe, #7759fd)',
+          transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+          transition: 'transform 0.3s ease',
+          boxShadow: isHovered ? '0 0 10px rgba(222, 60, 190, 0.6)' : 'none'
+        }} />
+        {text}
+      </li>
+    ))}
+  </ul>
+</div>
+  </div>
+
+  {/* Footer Text */}
+  <p style={{ 
+    textAlign: 'center', 
+    fontSize: isPhone ? '14px' : '16px', 
+    fontWeight: '500',
+    color: 'rgba(255,255,255,0.4)', 
+    lineHeight: '1.6',
+    maxWidth: '500px',
+    margin: '0 auto'
+  }}>
+    Ellaris is for the <span style={{ color: 'rgba(255,255,255,0.7)' }}>future-ready</span>. For those building toward something that lasts, that truly matters, that deeply resonates.
+  </p>
+</section>
 
         {/* WHY IT EXISTS */}
 <section ref={whyell.ref}>
@@ -677,7 +831,7 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
                   </div>
                   <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px', paddingTop: '12px' }}>                 
                      Matching happens at the level of essence, not credentials.
-                  </p>
+                  </p>  
                 </div>
               </div>
 
