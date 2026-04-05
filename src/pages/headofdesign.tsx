@@ -31,7 +31,7 @@ const DesignHead = () => {
         minHeight: "100vh",
         padding: mobile ? "80px 20px" : "120px 20px",
         background:
-          "radial-gradient(circle at 20% 20%,#1a103d,transparent 40%), radial-gradient(circle at 80% 0%,#2b0c54,transparent 40%), #07071c",
+          "radial-gradient(circle at 20% 20%,black,transparent 40%), radial-gradient(circle at 80% 0%,black,transparent 40%), #07071c",
         color: "#fff"
       }}
     >
@@ -39,42 +39,49 @@ const DesignHead = () => {
       <div className="pt-16"></div>
 
       <div
-        style={{
-          maxWidth: "1300px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: mobile ? "1fr" : "1.3fr 0.7fr",
-          gap: mobile ? "40px" : "80px",
-          alignItems: "start"
-        }}
+      style={{
+        maxWidth: "1300px",
+        margin: "0 auto",
+        padding: mobile ? "40px 20px" : "80px 40px",
+        display: "grid",
+        gridTemplateColumns: mobile ? "1fr" : "1.3fr 0.7fr",
+        gap: mobile ? "60px" : "100px",
+        alignItems: "start",
+        background: "transparent", // Deep black background
+        color: "#fff",
+        fontFamily: "Inter, system-ui, sans-serif"
+      }}
+    >
+      {/* LEFT SIDE - CONTENT */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
       >
-        {/* LEFT SIDE */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
+        <h1
+          style={{
+            fontSize: "clamp(48px, 7vw, 84px)",
+            fontWeight: 900,
+            lineHeight: 0.95,
+            marginBottom: "40px",
+            background: "linear-gradient(135deg, #fff 30%, #b066fe 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            letterSpacing: "-0.04em"
+          }}
         >
-          <h1
-            style={{
-              fontSize: "clamp(42px,6vw,70px)",
-              fontWeight: 900,
-              lineHeight: 1.1,
-              marginBottom: "28px",
-              background: "linear-gradient(to right,#fff,#b066fe)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}
-          >
-            Head of Design <br /> & Experiences
-          </h1>
+          Head of Design <br /> & Experiences
+        </h1>
 
+        <div style={{ maxWidth: "720px" }}>
           <p
             style={{
-              fontSize: mobile ? "20px" : "22px",
-              color: "#bbb",
-              lineHeight: "1.8",
-              marginBottom: "28px",
-              maxWidth: "700px"
+              fontSize: mobile ? "22px" : "26px",
+              color: "rgba(255,255,255,0.9)",
+              lineHeight: "1.5",
+              marginBottom: "32px",
+              fontWeight: 500,
+              letterSpacing: "-0.01em"
             }}
           >
             We're building the future of human connection. We need someone who
@@ -83,10 +90,10 @@ const DesignHead = () => {
 
           <p
             style={{
-              fontSize: "18px",
-              color: "#A1A1A1",
-              lineHeight: "1.9",
-              maxWidth: "700px"
+              fontSize: "19px",
+              color: "rgba(255,255,255,0.5)",
+              lineHeight: "1.8",
+              fontWeight: 400
             }}
           >
             We're building emotionally intelligent AI that helps people find
@@ -95,87 +102,99 @@ const DesignHead = () => {
             experience - from product to partnerships to how we show up in
             the world.
           </p>
-        </motion.div>
+        </div>
+      </motion.div>
 
-        {/* RIGHT PANEL */}
+      {/* RIGHT PANEL - SIDEBAR */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        style={{
+          position: mobile ? "relative" : "sticky",
+          top: mobile ? "0px" : "120px"
+        }}
+      >
         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
+          whileHover={{ y: -5 }}
           style={{
-            position: mobile ? "relative" : "sticky",
-            top: mobile ? "0px" : "120px"
+            padding: mobile ? "32px" : "48px",
+            borderRadius: "32px",
+            background: "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+            border: "1px solid rgba(176,102,254,0.3)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            boxShadow: "0 40px 100px rgba(0,0,0,0.8), inset 0 0 20px rgba(176,102,254,0.05)"
           }}
         >
-          <div
+          {[
+            { label: "Location", value: "New York City or London" },
+            { label: "Type", value: "Full-Time" },
+            { label: "Compensation", value: "Competitive salary + equity" },
+          ].map((item, index) => (
+            <div key={index} style={{ marginBottom: "32px" }}>
+              <div style={{ 
+                color: "#b066fe", 
+                fontSize: "11px", 
+                textTransform: "uppercase", 
+                letterSpacing: "0.15em",
+                fontWeight: 800,
+                marginBottom: "8px"
+              }}>
+                {item.label}
+              </div>
+              <div style={{ fontSize: "20px", fontWeight: 500, color: "#fff" }}>
+                {item.value}
+              </div>
+            </div>
+          ))}
+
+          <div style={{ marginBottom: "40px" }}>
+            <div style={{ color: "#b066fe", fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", fontWeight: 800, marginBottom: "8px" }}>Company</div>
+            <a
+              href="https://elinity.ai"
+              style={{
+                fontSize: "20px",
+                color: "#fff",
+                textDecoration: "none",
+                borderBottom: "1px solid #b066fe",
+                paddingBottom: "2px",
+                transition: "opacity 0.3s"
+              }}
+              onMouseOver={(e) => e.target.style.opacity = 0.7}
+              onMouseOut={(e) => e.target.style.opacity = 1}
+            >
+              elinity.ai
+            </a>
+          </div>
+
+          <motion.a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of Design and Experiences Role"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileTap={{ scale: 0.97 }}
             style={{
-              padding: mobile ? "30px" : "40px",
-              borderRadius: "24px",
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(176,102,254,0.25)",
-              backdropFilter: "blur(16px)",
-              boxShadow: "0 30px 80px rgba(0,0,0,0.6)"
+              width: "100%",
+              padding: "20px",
+              borderRadius: "16px",
+              border: "none",
+              background: "linear-gradient(90deg, #b066fe, #7c3aed)",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "17px",
+              cursor: "pointer",
+              display: "block",
+              textAlign: "center",
+              textDecoration: "none",
+              boxShadow: "0 20px 40px rgba(124, 58, 237, 0.3)",
+              transition: "box-shadow 0.3s ease"
             }}
           >
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Location</div>
-              <div style={{ fontSize: "18px" }}>
-                New York City or London
-              </div>
-            </div>
-
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Type</div>
-              <div style={{ fontSize: "18px" }}>Full-Time</div>
-            </div>
-
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Compensation</div>
-              <div style={{ fontSize: "18px" }}>
-                Competitive salary + early equity
-              </div>
-            </div>
-
-            <div style={{ marginBottom: "30px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Company</div>
-              <a
-                href="https://elinity.ai"
-                style={{
-                  fontSize: "18px",
-                  color: "#b066fe",
-                  textDecoration: "none"
-                }}
-              >
-                elinity.ai
-              </a>
-            </div>
-
-            <button
-              style={{
-                width: "100%",
-                padding: "16px",
-                borderRadius: "12px",
-                border: "none",
-                background: "linear-gradient(90deg,#b066fe,#7c3aed)",
-                color: "#fff",
-                fontWeight: 700,
-                fontSize: "16px",
-                cursor: "pointer"
-              }}
-            >
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of Design and Experiences Role"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                }}
-              >
-                Apply for this Role
-              </a>
-            </button>
-          </div>
+            Apply for this Role
+          </motion.a>
         </motion.div>
-      </div>
+      </motion.div>
+    </div>
 
       {/* SECTION */}
       <motion.div
@@ -730,9 +749,8 @@ const DesignHead = () => {
 
       <motion.div
         variants={fadeUp}
-        // initial="hidden"
         whileInView="show"
-  viewport={{ once: true, margin: "-120px" }}
+        viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "1200px",
           margin: "20px auto",
@@ -799,127 +817,120 @@ const DesignHead = () => {
       </motion.div>
 
       <motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"  viewport={{ once: true, margin: "-120px" }}
-  style={{
-    maxWidth: "950px",
-    margin: "160px auto",
-    padding: mobile ? "48px 26px" : "70px",
-    borderRadius: "32px",
-    background:
-      "linear-gradient(180deg, rgba(176,102,254,0.18), rgba(0,0,0,0.65))",
-    border: "1px solid rgba(176,102,254,0.35)",
-    backdropFilter: "blur(18px)",
-    boxShadow: "0 60px 160px rgba(0,0,0,0.7)",
-    textAlign: "center",
-    position: "relative",
-    overflow: "hidden"
-  }}
->
-  {/* subtle glow */}
-  <motion.div
-    animate={{ opacity: [0.25, 0.5, 0.25], scale: [1, 1.08, 1] }}
-    transition={{ duration: 8, repeat: Infinity }}
-    style={{
-      position: "absolute",
-      width: 500,
-      height: 500,
-      borderRadius: "50%",
-      background: "radial-gradient(circle,#b066fe55,transparent 70%)",
-      filter: "blur(120px)",
-      top: -200,
-      left: -120,
-      zIndex: 0
-    }}
-  />
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"  viewport={{ once: true, margin: "-120px" }}
+          style={{
+            maxWidth: "950px",
+            margin: "75px auto",
+            padding: mobile ? "48px 26px" : "70px",
+            borderRadius: "32px",
+            background:
+              "linear-gradient(180deg, rgba(176,102,254,0.18), rgba(0,0,0,0.65))",
+            border: "1px solid rgba(176,102,254,0.35)",
+            backdropFilter: "blur(18px)",
+            boxShadow: "0 60px 160px rgba(0,0,0,0.7)",
+            textAlign: "center",
+            position: "relative",
+            overflow: "hidden"
+          }}
+      >
+          {/* subtle glow */}
+          <motion.div
+            animate={{ opacity: [0.25, 0.5, 0.25], scale: [1, 1.08, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            style={{
+              position: "absolute",
+              width: 500,
+              height: 500,
+              borderRadius: "50%",
+              background: "radial-gradient(circle,#b066fe55,transparent 70%)",
+              filter: "blur(120px)",
+              top: -200,
+              left: -120,
+              zIndex: 0
+            }}
+          />
 
-  <div style={{ position: "relative", zIndex: 2 }}>
-    <h2
-      style={{
-        fontSize: mobile ? "34px" : "44px",
-        fontWeight: 900,
-        marginBottom: "30px",
-        background: "linear-gradient(to right,#fff,#c084fc)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent"
-      }}
-    >
-      If This Resonates
-    </h2>
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <h2
+              style={{
+                fontSize: mobile ? "34px" : "44px",
+                fontWeight: 900,
+                marginBottom: "30px",
+                background: "linear-gradient(to right,#fff,#c084fc)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent"
+              }}
+            >
+              If This Resonates
+            </h2>
 
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "22px",
-        fontSize: "18px",
-        lineHeight: "1.9",
-        color: "#E5E5E5",
-        marginBottom: "36px"
-      }}
-    >
-      <p>
-        If you're exceptional at storytelling and design, if you understand
-        human psychology and relationships deeply, if you can build strategic
-        partnerships and represent a company in the world, if you want to work
-        on shaping how people think about AI and connection and flourishing,
-        let’s talk.
-      </p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "22px",
+                fontSize: "18px",
+                lineHeight: "1.9",
+                color: "#E5E5E5",
+                marginBottom: "36px"
+              }}
+            >
+              <p>
+                If you're exceptional at storytelling and design, if you understand
+                human psychology and relationships deeply, if you can build strategic
+                partnerships and represent a company in the world, if you want to work
+                on shaping how people think about AI and connection and flourishing,
+                let’s talk.
+              </p>
 
-      <p>
-        This role requires serious creative and strategic horsepower. It
-        requires caring deeply about human well-being while being realistic
-        about how hard it is to build things that actually help. It requires
-        being comfortable at the frontier, in the space where we're still
-        figuring out what works and what doesn't.
-      </p>
+              <p>
+                This role requires serious creative and strategic horsepower. It
+                requires caring deeply about human well-being while being realistic
+                about how hard it is to build things that actually help. It requires
+                being comfortable at the frontier, in the space where we're still
+                figuring out what works and what doesn't.
+              </p>
 
-      <p>
-        But if that describes you, if you read this and see an opportunity to
-        design experiences and craft stories and build partnerships around
-        something that could genuinely matter, then this might be exactly what
-        you've been looking for.
-      </p>
+              <p>
+                But if that describes you, if you read this and see an opportunity to
+                design experiences and craft stories and build partnerships around
+                something that could genuinely matter, then this might be exactly what
+                you've been looking for.
+              </p>
 
-      <p style={{ fontWeight: 600 }}>
-        🌀 Elinity. Find your people. Build your tribe. Flourish in your
-        relationships.
-      </p>
+              <p style={{ fontWeight: 600 }}>
+                🌀 Elinity. Find your people. Build your tribe. Flourish in your
+                relationships.
+              </p>
 
-      <p>
-        This is one of our most critical hires. The person who fills this role
-        will shape how millions of people experience and understand what we're
-        building.
-      </p>
-    </div>
+              <p>
+                This is one of our most critical hires. The person who fills this role
+                will shape how millions of people experience and understand what we're
+                building.
+              </p>
+            </div>
 
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of Design and Experiences Role"
-                target="_blank"
-                rel="noopener noreferrer"
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of Design and Experiences Role" target="_blank"  rel="noopener noreferrer">
+              <button
                 style={{
+                  padding: "16px 36px",
+                  borderRadius: "14px",
+                  border: "none",
+                  background: "linear-gradient(90deg,#b066fe,#7c3aed)",
+                  color: "#fff",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                  cursor: "pointer",
+                  boxShadow: "0 10px 40px rgba(176,102,254,0.4)"
                 }}
               >
-    <button
-      style={{
-        padding: "16px 36px",
-        borderRadius: "14px",
-        border: "none",
-        background: "linear-gradient(90deg,#b066fe,#7c3aed)",
-        color: "#fff",
-        fontWeight: 700,
-        fontSize: "16px",
-        cursor: "pointer",
-        boxShadow: "0 10px 40px rgba(176,102,254,0.4)"
-      }}
-    >
-      Apply for this Role
-    </button>
-              </a>
-
-  </div>
-</motion.div>
+                Apply for this Role
+              </button>
+            </a>
+          </div>
+        </motion.div>
     </div>
   );
 };

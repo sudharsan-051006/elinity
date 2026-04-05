@@ -137,127 +137,156 @@ const points = [
       >
         <div className="pt-32"></div>
 <motion.div
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: false, amount: 0.2 }}
-  whileHover={{
-    scale: 1.01,
-    borderColor: "rgba(176, 102, 254, 0.3)",
-    boxShadow: "0 30px 100px rgba(176, 102, 254, 0.1)"
-  }}
-  style={{
-    padding: "60px 50px",
-    borderRadius: "32px",
-    background:
-      "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(24px)",
-    WebkitBackdropFilter: "blur(24px)",
-    boxShadow: "0 40px 120px rgba(0,0,0,0.7)",
-    maxWidth: "900px",
-    margin: "0 auto 60px auto",
-    transition: "border-color 0.4s ease, box-shadow 0.4s ease"
-  }}
->
-  {/* TITLE */}
-  <h1
-    style={{
-      fontSize: "clamp(32px, 5vw, 56px)",
-      fontWeight: 900,
-      lineHeight: 1.1,
-      marginBottom: "32px",
-      background: "linear-gradient(to right, #fff 30%, #b066fe 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      letterSpacing: "-0.03em"
-    }}
-  >
-    Founding Growth and Content Lead - Elinity
-  </h1>
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
+      whileHover={{
+        scale: 1.015,
+        translateY: -5,
+        borderColor: "rgba(176, 102, 254, 0.5)",
+        boxShadow: "0 40px 120px rgba(176, 102, 254, 0.15), 0 0 0 1px rgba(176, 102, 254, 0.2)"
+      }}
+      animate={{
+        y: [0, -8, 0],
+      }}
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      style={{
+        padding: "70px 60px",
+        borderRadius: "40px",
+        background: "radial-gradient(circle at top left, rgba(176, 102, 254, 0.08), transparent 40%), linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        backdropFilter: "blur(30px)",
+        WebkitBackdropFilter: "blur(30px)",
+        boxShadow: "0 40px 120px rgba(0,0,0,0.8)",
+        maxWidth: "900px",
+        margin: "0 auto 60px auto",
+        position: "relative",
+        overflow: "hidden",
+        transition: "all 0.5s cubic-bezier(0.23, 1, 0.32, 1)"
+      }}
+    >
+      {/* GLOW DECORATION */}
+      <div style={{
+        position: "absolute",
+        top: "-10%",
+        right: "-10%",
+        width: "300px",
+        height: "300px",
+        background: "rgba(176, 102, 254, 0.05)",
+        filter: "blur(100px)",
+        borderRadius: "50%",
+        pointerEvents: "none"
+      }} />
 
-  {/* INTRO */}
-  <p
-    style={{
-      fontSize: "19px",
-      color: "rgba(255,255,255,0.9)",
-      lineHeight: "1.7",
-      marginBottom: "32px",
-      fontWeight: "400",
-      maxWidth: "750px"
-    }}
-  >
-    We're building the first truly intelligent social and relationship
-    platform, powered by emotionally intelligent AI that understands you
-    in all your richness. And we need someone who recognizes the gravity
-    of this moment.
-  </p>
-
-  {/* DIVIDER */}
-  <div
-    style={{
-      height: "1px",
-      background:
-        "linear-gradient(to right, rgba(176, 102, 254, 0.4), rgba(255,255,255,0.05) 80%)",
-      margin: "40px 0"
-    }}
-  />
-
-  {/* META INFO GRID */}
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-      gap: "24px",
-      opacity: 0.85
-    }}
-  >
-    {[
-      { label: "📍 Location", val: "New York City (remote to start, NYC-based)" },
-      { label: "🕒 Type", val: "Full-Time" },
-      { label: "🏠 Home", val: "elinity.ai" }
-    ].map((item, i) => (
-      <div key={i} style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-        <span
-          style={{
-            fontSize: "12px",
-            textTransform: "uppercase",
-            color: "#b066fe",
-            letterSpacing: "0.1em",
-            fontWeight: "700"
-          }}
-        >
-          {item.label.split(" ")[1]}
-        </span>
-        <span style={{ fontSize: "15px", color: "#fff", fontWeight: "500" }}>
-          {item.val}
-        </span>
-      </div>
-    ))}
-  </div>
-
-  {/* APPLY BUTTON */}
-  <div style={{ marginTop: "50px", textAlign: "center" }}>
-      <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Founding Growth and Content Lead"
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* TITLE */}
+      <h1
         style={{
-          padding: "16px 36px",
-          borderRadius: "999px",
-          background: "linear-gradient(90deg,#b066fe,#7c3aed)",
-          color: "#fff",
-          fontWeight: "600",
-          fontSize: "16px",
-          textDecoration: "none",
-          boxShadow: "0 10px 40px rgba(176,102,254,0.4)",
-          display: "inline-block"
+          fontSize: "clamp(36px, 6vw, 64px)",
+          fontWeight: 850,
+          lineHeight: 1.05,
+          marginBottom: "26px",
+          background: "linear-gradient(135deg, #fff 40%, #b066fe 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          letterSpacing: "-0.04em",
+          textShadow: "0 10px 30px rgba(0,0,0,0.3)"
         }}
       >
-        Apply for this Role
-      </a>
-  </div>
-</motion.div>
+        Founding Growth and <br /> Content Lead - Elinity
+      </h1>
+
+      {/* INTRO */}
+      <p
+        style={{
+          fontSize: "20px",
+          color: "rgba(255,255,255,0.85)",
+          lineHeight: "1.8",
+          marginBottom: "40px",
+          fontWeight: "400",
+          maxWidth: "780px",
+          letterSpacing: "-0.01em"
+        }}
+      >
+        We're building the first truly intelligent social and relationship
+        platform, powered by emotionally intelligent AI that understands you
+        in all your richness. And we need someone who recognizes the gravity
+        of this moment.
+      </p>
+
+      {/* DIVIDER */}
+      <div
+        style={{
+          height: "1px",
+          width: "100%",
+          background: "linear-gradient(to right, rgba(176, 102, 254, 0.6), rgba(176, 102, 254, 0.1) 50%, rgba(255,255,255,0.02) 100%)",
+          margin: "48px 0"
+        }}
+      />
+
+      {/* META INFO GRID */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "32px",
+        }}
+      >
+        {[
+          { label: "📍 Location", val: "New York City (Hybrid)" },
+          { label: "🕒 Type", val: "Full-Time" },
+          { label: "🏠 Home", val: "elinity.ai" }
+        ].map((item, i) => (
+          <div key={i} style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <span
+              style={{
+                fontSize: "11px",
+                textTransform: "uppercase",
+                color: "#b066fe",
+                letterSpacing: "0.2em",
+                fontWeight: "800",
+                opacity: 0.9
+              }}
+            >
+              {item.label.split(" ")[1]}
+            </span>
+            <span style={{ fontSize: "16px", color: "#fff", fontWeight: "600", opacity: 0.95 }}>
+              {item.val}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* APPLY BUTTON */}
+      <div style={{ marginTop: "64px", textAlign: "left", zIndex: 2, position: "relative" }}> 
+        <motion.a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Founding Growth and Content Lead"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05, boxShadow: "0 15px 50px rgba(176,102,254,0.6)" }}
+          whileTap={{ scale: 0.98 }}
+          style={{
+            padding: "20px 48px",
+            borderRadius: "100px",
+            background: "linear-gradient(90deg, #b066fe, #8b5cf6)",
+            color: "#fff",
+            fontWeight: "700",
+            fontSize: "17px",
+            textDecoration: "none",
+            boxShadow: "0 12px 40px rgba(176,102,254,0.3)",
+            display: "inline-block",
+            transition: "all 0.3s ease",
+            border: "1px solid rgba(255,255,255,0.1)"
+          }}
+        >
+          Apply for this Role
+        </motion.a>
+      </div>
+    </motion.div>
         {/* SECTION CARDS */}
         {[
           {
@@ -402,6 +431,7 @@ Be a living embodiment of Elinity's ethos: intentional connection, depth, care, 
           fontSize: "clamp(28px,5vw,44px)",
           fontWeight: 700,
           marginBottom: 60,
+          lineHeight: 1.15,  
           background: "linear-gradient(to right,#fff,#b066fe)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent"

@@ -34,6 +34,7 @@ const Software: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: "clamp(2.5rem, 5vw, 4rem)",
     fontWeight: 800,
+    lineHeight: 1.2,
     letterSpacing: "-0.03em",
     margin: "0 0 16px 0",
     background: "linear-gradient(90deg,#ffffff,#b066fe)",

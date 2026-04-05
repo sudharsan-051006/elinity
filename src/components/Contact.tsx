@@ -147,10 +147,8 @@ const Contact: React.FC = () => {
       transition={{ duration: 0.8 }}
       className="text-center mb-20"
     >
-<h1 className="text-4xl md:text-6xl font-semibold leading-tight bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-
-                Questions, ideas, partnerships, or feedback 
-        we’d love to hear from you.
+      <h1 className="text-4xl md:text-6xl font-semibold leading-tight bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+        Questions, ideas, partnerships, or feedback we’d love to hear from you.
       </h1>
     </motion.div>
 
@@ -160,7 +158,23 @@ const Contact: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.9 }}
-      className="relative rounded-3xl p-[1px] bg-gradient-to-br from-[#a855f7]/40 via-transparent to-[#7c3aed]/40"
+      className="relative rounded-3xl p-[1px]
+                bg-[linear-gradient(135deg,#7c3aed,transparent,#7c3aed)]
+                bg-[length:300%_300%]"
+      animate={{
+        backgroundPosition: ["0% 0%", "100% 100%"]
+      }}
+      whileHover={{
+        backgroundPosition: "50% 50%" // freeze at center
+      }}
+      transition={{
+        backgroundPosition: {
+          duration: 4,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "linear"
+        }
+      }}
     >
       {/* Inner Glass */}
       <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 shadow-[0_0_80px_rgba(168,85,247,0.18)]">

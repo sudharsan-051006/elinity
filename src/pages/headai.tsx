@@ -31,7 +31,7 @@ const AIResearch = () => {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at 20% 20%,#1a103d,transparent 40%), radial-gradient(circle at 80% 0%,#2b0c54,transparent 40%), #07071c",
+          "radial-gradient(circle at 20% 20%,black,transparent 40%), radial-gradient(circle at 80% 0%,#07071c,transparent 40%), #07071c",
         color: "#fff",
         padding: mobile ? "80px 20px" : "120px 40px"
       }}
@@ -39,146 +39,178 @@ const AIResearch = () => {
       <div className="pt-16"></div>
 
       <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: mobile ? "1fr" : "1.4fr 0.8fr",
-          gap: mobile ? "40px" : "80px",
-          alignItems: "start"
-        }}
+      style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: mobile ? "40px 20px" : "100px 40px",
+        display: "grid",
+        gridTemplateColumns: mobile ? "1fr" : "1.4fr 0.8fr",
+        gap: mobile ? "60px" : "100px",
+        alignItems: "start",
+        background: "transparent", // Ultra-dark tech background
+        minHeight: "100vh",
+        fontFamily: "'Inter', sans-serif"
+      }}
+    >
+      {/* LEFT SIDE: CORE MISSION */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
-
-        {/* LEFT SIDE */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-        >
-
-          <h1
-            style={{
-              fontSize: "clamp(38px,6vw,64px)",
-              fontWeight: 900,
-              lineHeight: 1.1,
-              marginBottom: "22px",
-              background: "linear-gradient(to right,#fff,#b066fe)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}
-          >
-            Head of AI Research
-          </h1>
-
-          <p
-            style={{
-              fontSize: "26px",
-              color: "#c084fc",
-              marginBottom: "28px",
-              fontWeight: 600
-            }}
-          >
-            Aligned-by-Default AI is Possible. Truly Empathic AI is Possible.
-          </p>
-
-          <p
-            style={{
-              fontSize: "18px",
-              color: "#A1A1A1",
-              lineHeight: 1.9,
-              maxWidth: "720px"
-            }}
-          >
-            We're building emotionally intelligent AI that helps people find
-            their most resonant connections and build extraordinary relationships.
-            But the current architectures of AI are fundamentally limited in terms
-            of what we see as the greatest promise of AI - as flourishing catalysts
-            for humans at a personal level. And so, we want to build something
-            radically different.
-          </p>
-
-        </motion.div>
-
-
-        {/* RIGHT PANEL */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
+        <h1
           style={{
-            position: mobile ? "relative" : "sticky",
-            top: "120px"
+            fontSize: "clamp(44px, 7vw, 72px)",
+            fontWeight: 900,
+            lineHeight: 1,
+            marginBottom: "32px",
+            background: "linear-gradient(135deg, #fff 40%, #b066fe 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            letterSpacing: "-0.05em"
           }}
         >
+          Head of AI Research
+        </h1>
 
-          <div
-            style={{
-              padding: mobile ? "28px" : "40px",
-              borderRadius: "26px",
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(176,102,254,0.25)",
-              backdropFilter: "blur(16px)",
-              boxShadow: "0 30px 80px rgba(0,0,0,0.6)"
-            }}
-          >
+        <motion.p
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+          style={{
+            fontSize: mobile ? "20px" : "28px",
+            color: "#c084fc",
+            marginBottom: "32px",
+            fontWeight: 500,
+            lineHeight: 1.3,
+            maxWidth: "600px",
+            letterSpacing: "-0.02em"
+          }}
+        >
+          Aligned-by-Default AI is Possible. <br /> 
+          Truly Empathic AI is Possible.
+        </motion.p>
 
-            <div style={{ marginBottom: "22px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Location</div>
-              <div>Remote</div>
-            </div>
+        {/* GLOWING DIVIDER */}
+        <div style={{
+          height: "1px",
+          width: "80px",
+          background: "#b066fe",
+          boxShadow: "0 0 15px #b066fe",
+          marginBottom: "32px"
+        }} />
 
-            <div style={{ marginBottom: "22px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Role</div>
-              <div>AI Research Engineer</div>
-            </div>
+        <p
+          style={{
+            fontSize: "19px",
+            color: "rgba(255, 255, 255, 0.6)",
+            lineHeight: 1.9,
+            maxWidth: "720px",
+            fontWeight: 400
+          }}
+        >
+          We're building emotionally intelligent AI that helps people find
+          their most resonant connections and build extraordinary relationships.
+          But the current architectures of AI are fundamentally limited in terms
+          of what we see as the greatest promise of AI - as flourishing catalysts
+          for humans at a personal level. 
+          <br /><br />
+          <span style={{ color: "#fff", fontWeight: 500 }}>
+            And so, we want to build something radically different.
+          </span>
+        </p>
+      </motion.div>
 
-            <div style={{ marginBottom: "22px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Compensation</div>
-              <div>Competitive salary + significant early team equity</div>
-            </div>
-
-            <div style={{ marginBottom: "28px" }}>
-              <div style={{ color: "#888", fontSize: "13px" }}>Company</div>
-              <a
-                href="https://elinity.ai"
-                style={{
-                  color: "#b066fe",
-                  textDecoration: "none"
-                }}
-              >
-                elinity.ai
-              </a>
-            </div>
-
-            <button
-              style={{
-                width: "100%",
-                padding: "14px",
-                borderRadius: "12px",
-                border: "none",
-                background: "linear-gradient(90deg,#b066fe,#7c3aed)",
-                color: "#fff",
+      {/* RIGHT PANEL: TECHNICAL DETAILS */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        style={{
+          position: mobile ? "relative" : "sticky",
+          top: "120px"
+        }}
+      >
+        <div
+          style={{
+            padding: mobile ? "32px" : "48px",
+            borderRadius: "32px",
+            background: "rgba(10, 10, 10, 0.6)",
+            border: "1px solid rgba(176, 102, 254, 0.2)",
+            backdropFilter: "blur(40px)",
+            WebkitBackdropFilter: "blur(40px)",
+            boxShadow: "0 50px 100px rgba(0,0,0,0.9), inset 0 0 40px rgba(176, 102, 254, 0.03)"
+          }}
+        >
+          {[
+            { label: "Location", val: "Remote" },
+            { label: "Role", val: "AI Research Engineer" },
+            { label: "Compensation", val: "Competitive salary + significant early team equity" },
+          ].map((item, i) => (
+            <div key={i} style={{ marginBottom: "28px" }}>
+              <div style={{ 
+                color: "#888", 
+                fontSize: "11px", 
+                textTransform: "uppercase", 
+                letterSpacing: "0.2em",
                 fontWeight: 700,
-                fontSize: "16px",
-                cursor: "pointer"
+                marginBottom: "8px"
+              }}>
+                {item.label}
+              </div>
+              <div style={{ fontSize: "18px", color: "#fff", fontWeight: 500 }}>
+                {item.val}
+              </div>
+            </div>
+          ))}
+
+          <div style={{ marginBottom: "40px" }}>
+            <div style={{ color: "#888", fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 700, marginBottom: "8px" }}>Company</div>
+            <a
+              href="https://elinity.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "18px",
+                color: "#b066fe",
+                textDecoration: "none",
+                fontWeight: 600,
+                display: "inline-block"
               }}
             >
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of AI Research Role"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                }}
-              >
-                Apply for this Role
-              </a>
-            </button>
-
+              elinity.ai ↗
+            </a>
           </div>
 
-        </motion.div>
-
-      </div>
+          <motion.a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=careers@elinity.ai&su=Application for Head of AI Research Role"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02, boxShadow: "0 0 30px rgba(176, 102, 254, 0.4)" }}
+            whileTap={{ scale: 0.98 }}
+            style={{
+              width: "100%",
+              padding: "18px",
+              borderRadius: "16px",
+              border: "none",
+              background: "linear-gradient(90deg, #b066fe, #6366f1)",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "16px",
+              cursor: "pointer",
+              display: "block",
+              textAlign: "center",
+              textDecoration: "none",
+              transition: "all 0.3s ease"
+            }}
+          >
+            Apply for this Role
+          </motion.a>
+        </div>
+      </motion.div>
+    </div>
 <motion.div
   variants={fadeUp}
   initial="hidden"
@@ -186,7 +218,7 @@ const AIResearch = () => {
   viewport={{ once: true, margin: "-120px" }}
         style={{
           maxWidth: "950px",
-          margin: "120px auto",
+          margin: "70px auto",
           padding: mobile ? "40px 24px" : "60px",
           borderRadius: "30px",
           background: "rgba(255,255,255,0.03)",
