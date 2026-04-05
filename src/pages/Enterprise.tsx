@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 
 const ElinityEnterprise: React.FC = () => {
 
@@ -10,7 +10,7 @@ const ElinityEnterprise: React.FC = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   /* =========================
      GLOBAL ANIMATION VARIANTS
   ==========================*/
@@ -253,16 +253,66 @@ const ElinityEnterprise: React.FC = () => {
         </motion.div>
       </motion.section>
 
+<style>
+        {`
+          @keyframes glowPulse {
+            0% { filter: drop-shadow(0px 4px 8px rgba(119, 89, 253, 0.3)); }
+            50% { filter: drop-shadow(0px 4px 20px rgba(119, 89, 253, 0.6)); }
+            100% { filter: drop-shadow(0px 4px 8px rgba(119, 89, 253, 0.3)); }
+          },
+.pill-hover {
+  /* Hardware acceleration & smooth rendering */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0); 
+  
+  /* The "Fluid" Ease: A custom curve that starts slow, speeds up, and settles softly */
+  transition: 
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+  
+  cursor: pointer;
+  will-change: transform; /* Prepares the browser for movement */
+}
+
+.pill-hover:hover {
+  /* scale(1.05) is smoother than 1.1; it feels less "jumpy" */
+  transform: scale(1.05) translateY(-3px);
+  
+  background: rgba(119, 89, 253, 0.18) !important;
+  
+  /* Soft, layered shadow for a more natural depth */
+  box-shadow: 
+    0 10px 20px rgba(119, 89, 253, 0.15),
+    0 4px 6px rgba(119, 89, 253, 0.05);
+}
+
+/* Optional: Smoothly return to state when mouse leaves */
+.pill-hover:active {
+  transform: scale(0.98) translateY(0); /* Subtle "press" effect */
+  transition: transform 0.1s ease;
+}
+        `}
+      </style>
       <h1
         style={{
-          color: '#fff',
-          fontSize: isPhone ? '1.8rem' : '2.5rem',
-          fontWeight: 700,
+          fontSize: isPhone ? '2.2rem' : '3.5rem',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          background: 'linear-gradient(135deg, #ffffff 30%, #7759fd 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
           textAlign: 'center',
-          margin: isPhone ? '20px 0 20px 0' : '40px 20px 30px 20px'
+          lineHeight: '1.2',
+          margin: isPhone ? '24px 0' : '48px 20px',
+          // Applying the animation here:
+          animation: 'glowPulse 4s ease-in-out infinite',
+          display: 'block'
         }}
-      >Our Offerings</h1>
-
+      >
+        Our Offerings
+      </h1>
       {/* SECTION 1: ELLARIS */}
       <motion.section
         initial="hidden"
@@ -271,20 +321,30 @@ const ElinityEnterprise: React.FC = () => {
         variants={fadeInUp}
         style={glassStyle}
       >
-        <h2 style={offeringHeaderStyle}>Ellaris: Find Missionaries. Not Mercenaries.</h2>
+        <h2 style={{...offeringHeaderStyle,
+                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+
+        }}
+
+        >Ellaris: Find Missionaries. Not Mercenaries.</h2>
         <p style={{ fontSize: isPhone ? '0.95rem' : '1.1rem', color: '#a1a1a1', marginBottom: '32px' }}>
           Hiring is broken. <br />
           You pay brutal search costs.<br />
           You burn months interviewing.<br />
           You optimize for CVs and keywords.<br />
           You hope alignment magically appears after onboarding.<br /><br />
-          And the real brutal cost you dare not consider?
+          And the real brutal cost you dare not consider?<br></br>
           The opportunity cost of not having the most amazing, deeply aligned people on your team. <br /><br />
           Imagine now if you did have those people in your team - how much of an accelerant the synergistic energy would be to your mission.
           <br /><br /> Ellaris helps you achieve that.
         </p>
 
-        <h3 style={{ color: '#fff', fontSize: isPhone ? '1.1rem' : '1.25rem', marginBottom: '8px' }}>
+        <h3 style={{ color: '#fff', fontSize: isPhone ? '1.1rem' : '1.25rem', marginBottom: '8px' ,
+          background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
+        }}>
           What is Ellaris?
         </h3>
         <p style={{ fontSize: isPhone ? '0.9rem' : '1rem', color: '#d1d1d1', marginBottom: '20px' }}>
@@ -312,7 +372,10 @@ const ElinityEnterprise: React.FC = () => {
           ].map((trait) => (
             <div
               key={trait}
+              onMouseEnter={() => setHoveredIndex(trait)}
+  onMouseLeave={() => setHoveredIndex(null)}
               style={{
+                
                 width: isPhone ? '100%' : '200px',
                 padding: isPhone ? '12px 16px' : '20px',
                 borderRadius: '20px',
@@ -320,6 +383,14 @@ const ElinityEnterprise: React.FC = () => {
                 border: '1px solid rgba(119, 89, 253, 0.1)',
                 textAlign: 'center',
                 boxSizing: 'border-box',
+                cursor: 'pointer',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', // Smooth "pop"
+    transform: hoveredIndex === trait ? 'scale(1.08)' : 'scale(1)',
+    backgroundColor: hoveredIndex === trait ? 'rgba(119, 89, 253, 0.12)' : 'rgba(119, 89, 253, 0.05)',
+    boxShadow: hoveredIndex === trait 
+      ? '0 10px 30px -10px rgba(119, 89, 253, 0.4)' 
+      : '0 0px 0px rgba(0,0,0,0)',
+    zIndex: hoveredIndex === trait ? 2 : 1, // Ensures it stays on top of neighbors
               }}
             >
               <span style={{ fontWeight: 600, fontSize: isPhone ? '0.9rem' : 'inherit' }}>{trait}</span>
@@ -365,7 +436,7 @@ const ElinityEnterprise: React.FC = () => {
                 'Founders → founding team members',
                 'Companies → high-conviction operators',
                 'Mission-driven orgs → deeply aligned talent',
-                'Culture-shaping companies → talent that fits right at home'
+                'ambitious, culture shaping company’s → talent that fits right at home'
               ].map((item, i) => (
                 <li key={i} style={{
                   padding: isPhone ? '10px 14px' : '14px 18px',
@@ -428,7 +499,15 @@ const ElinityEnterprise: React.FC = () => {
         variants={fadeInUp}
         style={glassStyle}
       >
-        <h2 style={offeringHeaderStyle}>Elinity for Employees: Elevate the Relationship Layer</h2>
+        <h2 style={{...offeringHeaderStyle,
+                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+
+        }}>
+          Elinity for Employees: Elevate the Relationship Layer
+        </h2>
         <p style={{ fontSize: isPhone ? '0.95rem' : '1.1rem', color: '#a1a1a1', marginBottom: '32px' }}>
           Your most important asset is not capital - there is plenty of that going around <br />
           It's not software - not anymore. <br />
@@ -444,19 +523,35 @@ const ElinityEnterprise: React.FC = () => {
           borderRadius: isPhone ? '20px' : '28px',
           textAlign: 'center',
         }}>
-          <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '20px', letterSpacing: '-0.01em' }}>
+          <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '20px', letterSpacing: '-0.01em',
+                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+
+           }}>
             Relationship quality is the most powerful determinant of well-being.
           </h3>
           <p style={{ fontSize: isPhone ? '0.95rem' : '1.05rem', color: '#a1a1a1', marginBottom: '20px' }}>Well-being drives:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginBottom: '24px' }}>
             {['motivation', 'creativity', 'alignment', 'resilience', 'discretionary effort', 'long-term retention'].map((item, i) => (
-              <div key={i} style={pillStyle}>{item}</div>
+              <div key={i} style={{...pillStyle,
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: hoveredIndex === i ? 'scale(1.08)' : 'scale(1)',
+                backgroundColor: hoveredIndex === i ? 'rgba(119, 89, 253, 0.12)' : 'rgba(119, 89, 253, 0.05)',
+                boxShadow: hoveredIndex === i 
+                  ? '0 10px 30px -10px rgba(119, 89, 253, 0.4)' 
+                  : '0 0px 0px rgba(0,0,0,0)',
+                zIndex: hoveredIndex === i ? 2 : 1,
+              }} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}
+              >{item}</div>
             ))}
           </div>
           <p style={{ fontSize: isPhone ? '0.9rem' : '1.05rem', color: '#d1d1d1', lineHeight: '1.8', maxWidth: '720px', margin: '0 auto' }}>
             In high-leverage environments, a single misalignment can cost millions.
             <br /><br />
-            A single aligned team can create disproportionate value - and the kind of value beyond the financial,
+            A single aligned team can create disproportionate value, and the kind of value beyond the financial,
             the kind that matters even more. <strong style={{ color: '#fff' }}>Much more.</strong>
           </p>
         </div>
@@ -468,8 +563,15 @@ const ElinityEnterprise: React.FC = () => {
           padding: isPhone ? '24px 16px' : '60px 45px',
           borderRadius: isPhone ? '20px' : '32px',
           textAlign: 'center',
+          
         }}>
-          <h2 style={{ fontSize: isPhone ? '1.3rem' : '1.8rem', fontWeight: 700, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: isPhone ? '1.3rem' : '1.8rem', fontWeight: 700, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em' ,
+                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+
+          }}>
             What We Provide
           </h2>
           <p style={{ color: '#a1a1a1', marginBottom: '24px', fontSize: isPhone ? '0.9rem' : '1.05rem' }}>
@@ -486,11 +588,18 @@ const ElinityEnterprise: React.FC = () => {
               'conflict-awareness frameworks',
               'emotional intelligence development tools'
             ].map((item, i) => (
-              <div key={i} style={pillStyle}>{item}</div>
+              <div key={i} style={{...pillStyle}} className="pill-hover ml-2 mr-2">
+                {item}
+              </div>
             ))}
           </div>
           <div style={divider} />
-          <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '12px' }}>
+          <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '12px',
+                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      lineHeight: '1.1',
+           }}>
             A Work Flourishing Skills Coach for the Post-AGI Era
           </h3>
           <p style={{ color: '#a1a1a1', marginBottom: '24px', fontSize: isPhone ? '0.9rem' : '1.05rem' }}>
@@ -498,7 +607,13 @@ const ElinityEnterprise: React.FC = () => {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginBottom: '32px' }}>
             {['judgment', 'taste', 'trust', 'emotional regulation', 'clarity of thought', 'ethical reasoning', 'collaborative intelligence'].map((item, i) => (
-              <div key={i} style={pillStyle}>{item}</div>
+<div 
+  key={i} 
+  className="pill-hover mr-2 ml-2" 
+  style={{...pillStyle}}
+>
+  {item}
+</div>
             ))}
           </div>
           <p style={{ fontSize: isPhone ? '0.9rem' : '1.05rem', color: '#d1d1d1', lineHeight: '1.8', maxWidth: '720px', margin: '0 auto' }}>
@@ -524,26 +639,38 @@ const ElinityEnterprise: React.FC = () => {
           borderRadius: isPhone ? '24px' : '34px',
           textAlign: 'left',
         }}>
-          <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em',
+                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+
+           }}>
             How It Works
           </h2>
 
           {/* STEP 1 */}
           <div style={{ marginBottom: '36px' }}>
-            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px' }}>Step 1: Enterprise Package</h3>
+            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px', background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1' }}>Step 1: Enterprise Package</h3>
             <p style={{ color: '#d1d1d1', marginBottom: '16px', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
               You choose an Elinity Enterprise package tailored to your team size and goals.<br />This includes access to:
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {['Ellaris (if hiring)', 'The team relationship OS', 'Work flourishing human skills development system'].map((item, i) => (
-                <div key={i} style={smallPillStyle}>{item}</div>
+                <div key={i} style={smallPillStyle} className='pill-hover mr-2 ml-2'>
+                  {item}
+                </div>
               ))}
             </div>
           </div>
 
           {/* STEP 2 */}
           <div style={{ marginBottom: '36px' }}>
-            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px' }}>Step 2: Onboarding</h3>
+            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px',           background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+ }}>Step 2: Onboarding</h3>
             <p style={{ color: '#d1d1d1', marginBottom: '16px', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
               One of our team members conducts a live onboarding session with you and your team.<br />We walk you through:
             </p>
@@ -554,7 +681,9 @@ const ElinityEnterprise: React.FC = () => {
                 'how to integrate it into existing workflows',
                 'how to measure relational health and growth'
               ].map((item, i) => (
-                <div key={i} style={smallPillStyle}>{item}</div>
+                <div key={i} style={smallPillStyle} className='pill-hover mr-2 ml-2'>
+                  {item}
+                </div>
               ))}
             </div>
             <p style={{ color: '#a1a1a1', marginTop: '16px', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
@@ -564,7 +693,12 @@ const ElinityEnterprise: React.FC = () => {
 
           {/* STEP 3 */}
           <div>
-            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px' }}>Step 3: Ongoing Integration</h3>
+            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px',
+                        background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+             }}>Step 3: Ongoing Integration</h3>
             <p style={{ color: '#d1d1d1', marginBottom: '16px', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
               Your team uses Elinity as a living layer:
             </p>
@@ -577,7 +711,9 @@ const ElinityEnterprise: React.FC = () => {
                 'resolving tension early',
                 'reinforcing culture intentionally'
               ].map((item, i) => (
-                <div key={i} style={smallPillStyle}>{item}</div>
+                <div key={i} style={smallPillStyle} className='pill-hover ml-2 mr-2'>
+                  {item}
+                </div>
               ))}
             </div>
             <p style={{ color: '#a1a1a1', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
@@ -601,7 +737,12 @@ const ElinityEnterprise: React.FC = () => {
           borderRadius: isPhone ? '24px' : '36px',
         }}
       >
-        <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.01em' }}>
+        <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.01em',
+                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+         }}>
           Why Enterprises Choose Elinity
         </h2>
 
@@ -610,12 +751,19 @@ const ElinityEnterprise: React.FC = () => {
           <p>Because recruitment inefficiency compounds.</p>
           <p>Because culture is not a poster - it's a lived system.</p>
           <p>Because in a world where AI levels the technical playing field,</p>
-          <p style={{ color: '#fff', fontWeight: 500 }}>human connection becomes the differentiator.</p>
+          <p style={{ color: '#fff', fontWeight: 500,
+            background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
+           }}>human connection becomes the differentiator.</p>
         </div>
 
         <div style={{ height: '1px', background: 'rgba(119, 89, 253, 0.2)', margin: isPhone ? '24px auto' : '50px auto', maxWidth: '700px' }} />
 
-        <h3 style={{ fontSize: isPhone ? '1.2rem' : '1.5rem', color: '#fff', textAlign: 'center', marginBottom: '16px', fontWeight: 600 }}>
+        <h3 style={{ fontSize: isPhone ? '1.2rem' : '1.5rem', color: '#fff', textAlign: 'center', marginBottom: '16px', fontWeight: 600,
+                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+         }}>
           Built for the Post-AGI Landscape
         </h3>
         <p style={{ textAlign: 'center', color: '#a1a1a1', marginBottom: '24px', fontSize: isPhone ? '0.9rem' : '1.05rem' }}>
@@ -636,6 +784,7 @@ const ElinityEnterprise: React.FC = () => {
               whileHover={isPhone ? undefined : { scale: 1.05 }}
               transition={{ duration: 0.2 }}
               style={pillStyle}
+              className='pill-hover ml-2 mr-2'
             >
               {item}
             </motion.div>
@@ -644,7 +793,12 @@ const ElinityEnterprise: React.FC = () => {
 
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto', lineHeight: '1.9', fontSize: isPhone ? '0.95rem' : '1.08rem', color: '#d1d1d1' }}>
           <p>We built Ellaris and the team OS together with that future in mind.</p>
-          <p style={{ marginTop: '16px', color: '#fff', fontWeight: 600 }}>
+          <p style={{ marginTop: '16px', color: '#fff', fontWeight: 600,
+                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          lineHeight: '1.1',
+           }}>
             Elinity for Enterprises is about tomorrow's team architecture.
           </p>
         </div>
@@ -658,7 +812,11 @@ const ElinityEnterprise: React.FC = () => {
         variants={fadeInUp}
         style={{ textAlign: 'center', padding: isPhone ? '40px 0 20px 0' : '80px 20px' }}
       >
-        <h2 style={{ fontSize: isPhone ? '1.8rem' : '2.5rem', fontWeight: 800, marginBottom: '20px', lineHeight: '1.2' }}>
+        <h2 style={{ fontSize: isPhone ? '1.8rem' : '2.5rem', fontWeight: 800, marginBottom: '20px', lineHeight: '1.2',
+                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+         }}>
           Ready to Explore?
         </h2>
 
@@ -685,7 +843,7 @@ const ElinityEnterprise: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           href="mailto:enterprise@elinity.ai"
           style={{
-            background: '#fff',
+            background: 'linear-gradient(to right, #ffffff, #7759fd)',
             color: '#060014',
             padding: isPhone ? '14px 32px' : '20px 60px',
             borderRadius: '100px',
