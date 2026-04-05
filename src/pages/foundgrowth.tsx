@@ -97,7 +97,7 @@ const points = [
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at 20% 20%,#1a103d,transparent 40%), radial-gradient(circle at 80% 0%,#2b0c54,transparent 40%), #07071c",
+          "radial-gradient(circle at 20% 20%,#1a103d,transparent 40%), radial-gradient(circle at 80% 0%,black,transparent 40%), #07071c",
         color: "#fff",
         padding: "100px 20px",
         overflow: "hidden"
