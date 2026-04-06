@@ -322,7 +322,7 @@ export default function ElinityLandingPage() {
                   className="custom-scroll"
                   style={{
                     width: "100%",
-                    maxWidth: "500px",
+                    maxWidth: "700px",
                     maxHeight: "75vh",
                     overflowY: "auto",
                     position: "relative",
