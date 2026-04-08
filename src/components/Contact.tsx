@@ -152,30 +152,29 @@ const Contact: React.FC = () => {
       </h1>
     </motion.div>
 
-    {/* ===== GLASS PANEL ===== */}
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.9 }}
-      className="relative rounded-3xl p-[1px]
-                bg-[linear-gradient(135deg,#7c3aed,transparent,#7c3aed)]
-                bg-[length:300%_300%]"
-      animate={{
-        backgroundPosition: ["0% 0%", "100% 100%"]
-      }}
-      whileHover={{
-        backgroundPosition: "50% 50%" // freeze at center
-      }}
-      transition={{
-        backgroundPosition: {
-          duration: 4,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "linear"
-        }
-      }}
-    >
+<motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  animate={{
+    backgroundPosition: ["0% 0%", "100% 100%"]
+  }}
+  whileHover={{
+    backgroundPosition: "50% 50%"
+  }}
+  transition={{
+    duration: 0.9, // for entry animation
+    backgroundPosition: {
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "linear"
+    }
+  }}
+  className="relative rounded-3xl p-[1px]
+             bg-[linear-gradient(135deg,#7c3aed,transparent,#7c3aed)]
+             bg-[length:300%_300%]"
+>
       {/* Inner Glass */}
       <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 shadow-[0_0_80px_rgba(168,85,247,0.18)]">
 
