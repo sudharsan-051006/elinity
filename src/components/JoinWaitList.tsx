@@ -1,5 +1,6 @@
 import React, { useState, forwardRef } from "react";
 import { motion } from "framer-motion";
+import { supabase } from "../lib/supabase";
 import { useEffect, useRef } from "react";
 
 function useReveal() {
@@ -32,53 +33,32 @@ const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!name || !email) {
-      alert("Please fill all fields.");
-      return;
-    }
+  if (!name || !email) {
+    alert("Please fill all fields.");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const response = await fetch(
-        "https://elinity-2ulr.vercel.app/api",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email }),
-        }
-      );
+  const { error } = await supabase
+    .from("waitlist")
+    .insert([{ name, email }]);
 
-      let data: any = {};
+  if (!error) {
+    alert("You're on the waitlist 🚀");
+    setName("");
+    setEmail("");
+  } else if (error.code === "23505") {
+    alert("You're already on the waitlist 🙂");
+  } else {
+    console.error(error);
+    alert("Something went wrong.");
+  }
 
-      // Safely parse JSON
-      try {
-        data = await response.json();
-      } catch {
-        data = {};
-      }
-
-      if (response.ok) {
-        alert("You're on the waitlist 🚀");
-        setName("");
-        setEmail("");
-      } else if (response.status === 409) {
-        alert("You're already on the waitlist 🙂");
-      } else {
-        alert(data?.error || "Something went wrong.");
-      }
-
-    } catch (error) {
-      console.error("Waitlist API error:", error);
-      alert("Could not connect to server.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  setLoading(false);
+};
   const [cardRef, show] = useReveal();
 
   return (
