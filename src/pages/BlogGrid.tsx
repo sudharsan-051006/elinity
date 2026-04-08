@@ -119,7 +119,8 @@ const TiltWrapper = ({ children, isVisible }) => {
 
 const BlogContainer = () => {
   const [showAll, setShowAll] = useState(false);
-  const visibleBlogs = showAll ? blogs : blogs.slice(0, INITIAL_COUNT);
+  const filteredBlogs = blogs.filter(blog => blog.id !== 1);
+  const visibleBlogs = showAll ? filteredBlogs : filteredBlogs.slice(0, INITIAL_COUNT);
 
   return (
     <div className="w-full max-w-[100vw] overflow-x-hidden px-4 sm:px-6 mx-auto">
