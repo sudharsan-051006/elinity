@@ -603,7 +603,7 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
 </section>
 
         {/* WHY IT EXISTS */}
-<section ref={whyell.ref}>
+<section ref={whyell.ref} style={{ padding: isPhone ? '20px 10px' : '40px 20px' }}>
   <div style={{
     ...s.sectionCard,
     ...reveal(whyell.visible),
@@ -612,55 +612,94 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    /* Added Styling */
+    background: 'rgba(255, 255, 255, 0.03)',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(255, 255, 255, 0.08)',
+    borderRadius: '24px',
+    padding: isPhone ? '40px 20px' : '80px 40px',
+    boxShadow: '0 20px 50px rgba(0,0,0,0.3)',
+    position: 'relative',
+    overflow: 'hidden'
   }}>
     
+    {/* Background Decorative Glow */}
+    <div style={{
+      position: 'absolute',
+      top: '-10%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '80%',
+      height: '40%',
+      background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%)',
+      zIndex: 0,
+      pointerEvents: 'none'
+    }} />
+
     <h2 style={{
-      fontSize: isPhone ? '26px' : '40px',
+      fontSize: isPhone ? '32px' : '48px', // Slightly larger for impact
       fontWeight: '800',
-      letterSpacing: '-0.03em',
-      marginBottom: '16px',
+      letterSpacing: '-0.04em',
+      marginBottom: '24px',
       textAlign: 'center',
+      lineHeight: '1.1',
+      zIndex: 1,
+      /* Enhanced Gradient */
+      background: 'linear-gradient(135deg, #fff 30%, #a78bfa 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
       ...headingGradient,
     }}>
       Why Ellaris Exists
     </h2>
 
     <p style={{
-      fontSize: isPhone ? '17px' : '22px',
-      marginBottom: '20px',
+      fontSize: isPhone ? '18px' : '24px',
+      marginBottom: '24px',
       fontWeight: '600',
-      maxWidth: '700px',
+      maxWidth: '650px',
       marginLeft: 'auto',
       marginRight: 'auto',
+      color: '#fff',
+      lineHeight: '1.4',
+      zIndex: 1,
     }}>
       The way we match people to work is broken.
     </p>
 
     <p style={{
-      color: '#c8c8c8',
-      marginBottom: '28px',
-      fontSize: isPhone ? '15px' : '17px',
-      lineHeight: '1.75',
+      color: '#a1a1aa', // Softer, modern gray
+      marginBottom: '32px',
+      fontSize: isPhone ? '15px' : '18px',
+      lineHeight: '1.8',
       maxWidth: '700px',
       marginLeft: 'auto',
       marginRight: 'auto',
+      zIndex: 1,
     }}>
       Today, individuals apply to hundreds of roles they barely resonate with. Companies sort through thousands of applications, filtering by proxies that say little about who someone actually is. The result is misalignment on both sides, high churn, disengagement, and enormous wasted human potential.
       <br /><br />
-      At the same time, <strong style={{ color: '#fff' }}>work itself is changing.</strong>
+      At the same time, <strong style={{ color: '#fff', borderBottom: '2px solid #7c3aed' }}>work itself is changing.</strong>
     </p>
 
     <div style={{
       ...s.accentBox,
-      maxWidth: '700px',
+      maxWidth: '750px',
       margin: '0 auto',
+      padding: '32px',
+      borderRadius: '20px',
+      background: 'rgba(124, 58, 237, 0.05)',
+      border: '1px solid rgba(124, 58, 237, 0.2)',
+      zIndex: 1,
     }}>
       <p style={{
-        marginBottom: '16px',
-        fontSize: isPhone ? '14px' : '16px',
-        fontWeight: '600',
+        marginBottom: '20px',
+        fontSize: isPhone ? '13px' : '15px',
+        fontWeight: '700',
         color: '#c4b5fd',
         textAlign: 'center',
+        // textTransform: 'uppercase',
+        letterSpacing: '0.01em'
       }}>
         As AI and automation commoditize hard skills, the real value shifts toward:
       </p>
@@ -669,7 +708,7 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        gap: '8px',
+        gap: '10px',
       }}>
         {[
           'Passion',
@@ -680,19 +719,43 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
           'Mission alignment',
           'Relationship-building ability'
         ].map((item, idx) => (
-          <span key={idx} style={s.pill}>{item}</span>
+          <span key={idx} style={{
+            ...s.pill,
+            padding: '8px 16px',
+            fontSize: isPhone ? '13px' : '15px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '100px',
+            color: '#e4e4e7',
+            transition: 'all 0.3s ease',
+            cursor: 'default',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.background = 'rgba(124, 58, 237, 0.2)';
+            e.currentTarget.style.borderColor = '#c4b5fd';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+          }}
+          >
+            {item}
+          </span>
         ))}
       </div>
     </div>
 
     <p style={{
-      marginTop: '28px',
+      marginTop: '32px',
       fontSize: isPhone ? '15px' : '17px',
-      color: '#c8c8c8',
+      color: '#a1a1aa',
       lineHeight: '1.7',
-      maxWidth: '700px',
+      maxWidth: '600px',
       marginLeft: 'auto',
       marginRight: 'auto',
+      fontStyle: 'italic',
+      zIndex: 1,
     }}>
       Ellaris exists because <strong style={{ color: '#fff' }}>these things are not captured by résumés</strong>, and because the future of work demands a different matching architecture.
     </p>
@@ -701,217 +764,596 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
 </section>
 
         {/* ECOSYSTEM */}
-        <section ref={ee.ref}>
-          <div style={{
-            ...s.sectionCard,
-            ...reveal(ee.visible),
-            marginBottom: isPhone ? '16px' : '24px',
-            textAlign: 'center',
-          }}>
-            <h2 style={{
-              fontSize: isPhone ? '24px' : '44px',
-              fontWeight: '800',
-              letterSpacing: '-0.03em',
-              marginBottom: '16px',
-              lineHeight: '1.2',
-              ...headingGradient,
-            }}>
-              Ellaris Within the Elinity Ecosystem
-            </h2>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: isPhone ? '15px' : '18px', marginBottom: isPhone ? '24px' : '36px', maxWidth: '600px', margin: '0 auto 36px' }}>
-              Elinity is a platform for human flourishing. <br></br>At the highest level, we believe a good life rests on two pillars:
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: isPhone ? '12px' : '32px', flexWrap: 'wrap' as const, marginBottom: '36px' }}>
-              {[
-                { icon: ' ', label: 'Deep, meaningful relationships' },
-                { icon: ' ', label: 'Purposeful, meaningful work' },
-              ].map((item, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: isPhone ? '12px 16px' : '14px 24px', borderRadius: '16px', background: 'rgba(119,89,253,0.1)', border: '1px solid rgba(119,89,253,0.2)', fontSize: isPhone ? '14px' : '18px', fontWeight: '600' }}>
-                  <span>{item.icon}</span> {item.label}
-                </div>
-              ))}
-            </div>
-            <div className="ellaris-ecosystem-inner" style={{ ...s.glassCard, textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-              <p style={{ fontSize: isPhone ? '15px' : '17px', color: '#c8c8c8', marginBottom: '28px', textAlign: 'center' }}>Elinity began by tackling the first pillar. Ellaris is the natural extension into the second.</p>
-              <div style={{ display: 'flex', flexDirection: isPhone ? 'column' : 'row', gap: isPhone ? '20px' : '0' }}>
-                <div style={{ flex: 1, padding: isPhone ? '0' : '0 32px 0 0', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', marginBottom: '10px' }}> </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '16px', lineHeight: '1.6', color: '#d1d1d1' }}><strong style={{ color: '#fff' }}>Elinity</strong> helps you find your people and build deep relationships</p>
-                </div>
-                <div style={{ width: isPhone ? '100%' : '1px', height: isPhone ? '1px' : 'auto', background: 'rgba(119,89,253,0.2)', margin: isPhone ? '0' : '0' }} />
-                <div style={{ flex: 1, padding: isPhone ? '0' : '0 0 0 32px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '28px', marginBottom: '10px' }}> </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '16px', lineHeight: '1.6', color: '#d1d1d1' }}><strong style={{ color: '#fff' }}>Ellaris</strong> helps you find your place, your mission, and your work tribe</p>
-                </div>
-              </div>
-              <div style={{ marginTop: '28px', padding: isPhone ? '16px' : '20px', background: 'rgba(119,89,253,0.08)', borderRadius: '14px', border: '1px solid rgba(119,89,253,0.15)', textAlign: 'center' }}>
-                <p style={{ fontWeight: '700', fontSize: isPhone ? '14px' : '16px', color: '#e2d9ff' }}>Relationships feed purpose.<br></br> Purpose feeds relationships. <br></br>Ellaris and Elinity form a single, coherent ecosystem designed around the whole human.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+<section ref={ee.ref} style={{ padding: isPhone ? '20px 10px' : '40px 20px' }}>
+  <div style={{
+    ...s.sectionCard,
+    ...reveal(ee.visible),
+    marginBottom: isPhone ? '16px' : '24px',
+    textAlign: 'center',
+    background: 'transparent', // Let the inner card handle the depth
+  }}>
+    <h2 style={{
+      fontSize: isPhone ? '28px' : '48px',
+      fontWeight: '800',
+      letterSpacing: '-0.04em',
+      marginBottom: '16px',
+      lineHeight: '1.1',
+      ...headingGradient,
+    }}>
+      Ellaris Within the Elinity Ecosystem
+    </h2>
+    
+    <p style={{ 
+      color: 'rgba(255,255,255,0.6)', 
+      fontSize: isPhone ? '16px' : '20px', 
+      marginBottom: isPhone ? '32px' : '48px', 
+      maxWidth: '650px', 
+      margin: '0 auto 48px',
+      lineHeight: '1.6'
+    }}>
+      Elinity is a platform for human flourishing. <br />
+      At the highest level, we believe a good life rests on <span style={{ color: '#fff', fontWeight: '600' }}>two pillars:</span>
+    </p>
+
+    {/* The Two Pillars Badges */}
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      gap: isPhone ? '12px' : '20px', 
+      flexWrap: 'wrap', 
+      marginBottom: '48px' 
+    }}>
+      {[
+        { label: 'Deep, meaningful relationships', glow: 'rgba(119,89,253,0.3)' },
+        { label: 'Purposeful, meaningful work', glow: 'rgba(119,89,253,0.3)' },
+      ].map((item, idx) => (
+        <div key={idx} style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          padding: isPhone ? '12px 20px' : '16px 32px', 
+          borderRadius: '100px', 
+          background: 'rgba(119,89,253,0.08)', 
+          border: '1px solid rgba(119,89,253,0.25)', 
+          fontSize: isPhone ? '14px' : '17px', 
+          fontWeight: '600',
+          color: '#fff',
+          boxShadow: `0 0 20px ${item.glow}`,
+        }}>
+          {item.label}
+        </div>
+      ))}
+    </div>
+
+    {/* Ecosystem Integration Card */}
+    <div className="ellaris-ecosystem-inner" style={{ 
+      ...s.glassCard, 
+      textAlign: 'left', 
+      maxWidth: '900px', 
+      margin: '0 auto',
+      padding: isPhone ? '24px' : '48px',
+      borderRadius: '32px',
+      background: 'rgba(255, 255, 255, 0.02)',
+      border: '1px solid rgba(255, 255, 255, 0.08)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: '0 30px 60px rgba(0,0,0,0.4)'
+    }}>
+      <p style={{ 
+        fontSize: isPhone ? '15px' : '18px', 
+        color: '#a1a1aa', 
+        marginBottom: '40px', 
+        textAlign: 'center',
+        fontWeight: '400' 
+      }}>
+        Elinity began by tackling the first pillar. <br />
+        <strong>Ellaris</strong> is the natural extension into the second.
+      </p>
+
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: isPhone ? 'column' : 'row', 
+        gap: isPhone ? '40px' : '0',
+        alignItems: 'center',
+        position: 'relative'
+      }}>
+        {/* Left Side: Elinity */}
+        <div style={{ flex: 1, padding: isPhone ? '0' : '0 40px', textAlign: 'center' }}>
+          <p style={{ fontSize: isPhone ? '16px' : '19px', lineHeight: '1.5', color: '#d1d1d1' }}>
+            <strong style={{ color: '#fff', fontSize: '22px', display: 'block', marginBottom: '8px' }}>Elinity</strong> 
+            helps you find your people and build deep relationships.
+          </p>
+        </div>
+
+        {/* Vertical/Horizontal Divider with Glow */}
+        <div style={{ 
+          width: isPhone ? '60px' : '2px', 
+          height: isPhone ? '2px' : '100px', 
+          background: 'linear-gradient(to bottom, transparent, #7759fd, transparent)', 
+          opacity: 0.5,
+          boxShadow: '0 0 15px #7759fd'
+        }} />
+
+        {/* Right Side: Ellaris */}
+        <div style={{ flex: 1, padding: isPhone ? '0' : '0 40px', textAlign: 'center' }}>
+          <p style={{ fontSize: isPhone ? '16px' : '19px', lineHeight: '1.5', color: '#d1d1d1' }}>
+            <strong style={{ color: '#fff', fontSize: '22px', display: 'block', marginBottom: '8px' }}>Ellaris</strong> 
+            helps you find your place, your mission, and your work tribe.
+          </p>
+        </div>
+      </div>
+
+      {/* Synthesis Box */}
+      <div style={{ 
+        marginTop: '48px', 
+        padding: isPhone ? '24px' : '32px', 
+        background: 'linear-gradient(145deg, rgba(119,89,253,0.12), rgba(119,89,253,0.02))', 
+        borderRadius: '20px', 
+        border: '1px solid rgba(119,89,253,0.2)', 
+        textAlign: 'center' 
+      }}>
+        <p style={{ 
+          fontWeight: '600', 
+          fontSize: isPhone ? '15px' : '18px', 
+          color: '#e2d9ff', 
+          lineHeight: '1.7',
+          margin: 0
+        }}>
+          Relationships feed purpose. <br /> 
+          Purpose feeds relationships. <br />
+          <span style={{ color: '#fff', fontWeight: '800' }}>
+            Ellaris and Elinity form a single, coherent ecosystem designed around the whole human.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* CORE FEATURES */}
-        <section ref={core.ref}>
-          <div style={{
-            ...s.sectionCard,
-            marginBottom: isPhone ? '16px' : '80px',
-            ...reveal(isPhone ? true : core.visible),
-          }}>
-            <div style={{ textAlign: 'center', marginBottom: isPhone ? '28px' : '48px' }}>
-              <h2 style={{
-                fontSize: isPhone ? '26px' : '52px',
-                fontWeight: '800',
-                letterSpacing: '-0.04em',
-                lineHeight: '1.1',
-                ...headingGradient,
-              }}>
-                Core Features and Highlights
-              </h2>
-            </div>
+<section ref={core.ref} style={{ padding: isPhone ? '40px 10px' : '80px 20px' }}>
+  <div style={{
+    ...s.sectionCard,
+    marginBottom: isPhone ? '16px' : '80px',
+    ...reveal(isPhone ? true : core.visible),
+    background: 'transparent',
+  }}>
+    <div style={{ textAlign: 'center', marginBottom: isPhone ? '40px' : '64px' }}>
+      <h2 style={{
+        fontSize: isPhone ? '32px' : '56px',
+        fontWeight: '800',
+        letterSpacing: '-0.05em',
+        lineHeight: '1.1',
+        ...headingGradient,
+      }}>
+        Core Features and Highlights
+      </h2>
+      <div style={{ 
+        width: '60px', 
+        height: '4px', 
+        background: 'linear-gradient(90deg, #7759fd, #de3cbe)', 
+        margin: '24px auto', 
+        borderRadius: '2px' 
+      }} />
+    </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: isPhone ? '16px' : '20px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: isPhone ? '20px' : '32px' }}>
 
-              {/* CARD 1: Curated Matching */}
-              <div className="hover-card" style={coreCard}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '14px', background: 'linear-gradient(135deg, #7759fd, #de3cbe)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', flexShrink: 0, boxShadow: '0 8px 24px rgba(119,89,253,0.4)' }}>✦</div>
-                  <h3 style={{ color: '#c4b5fd', fontSize: isPhone ? '17px' : '22px', fontWeight: '700', margin: 0 }}>Curated, High-Bar Matching</h3>
-                </div>
-                <p style={{ fontSize: isPhone ? '15px' : '17px', color: '#d1d1d1', lineHeight: '1.7', marginBottom: '20px' }}>
-                  Ellaris does not show you everything. It shows you <strong style={{ color: '#fff' }}>only what passes your bar.</strong><br />
-                  Our system deeply understands both individuals and organizations across dimensions like personality, values, goals, working style, mission, and long-term direction. Matches are surfaced only when there is strong, mutual alignment.
-                </p>
-                <div style={s.accentBox}>
-                  <p style={{ fontSize: isPhone ? '14px' : '16px', color: '#c8c8c8', lineHeight: '1.7' }}>
-                    If nothing clears the bar, you see nothing. No noise. No spam. No endless scrolling. This applies equally to individuals and companies. Ellaris replaces mass applications with <b style={{ color:'white' }}>mutual, high-confidence introductions.</b>
-                  </p>
-                </div>
-              </div>
+      {/* CARD 1: Curated Matching - Featured Wide Card */}
+      <div className="hover-card" style={{
+        ...coreCard,
+        padding: isPhone ? '24px' : '48px',
+        borderRadius: '32px',
+        background: 'rgba(255, 255, 255, 0.03)',
+        border: '1px solid rgba(119, 89, 253, 0.3)',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Glow effect for featured card */}
+        <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(119,89,253,0.15) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        
+        <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '24px' }}>
+          <div style={{ width: '52px', height: '52px', borderRadius: '16px', background: 'linear-gradient(135deg, #7759fd, #de3cbe)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0, boxShadow: '0 8px 32px rgba(119,89,253,0.5)' }}>✦</div>
+          <h3 style={{ color: '#fff', fontSize: isPhone ? '20px' : '28px', fontWeight: '800', margin: 0, letterSpacing: '-0.02em' }}>Curated, High-Bar Matching</h3>
+        </div>
+        <p style={{ fontSize: isPhone ? '16px' : '19px', color: '#d4d4d8', lineHeight: '1.8', marginBottom: '28px', maxWidth: '800px' }}>
+          Ellaris does not show you everything. It shows you <strong style={{ color: '#fff', textDecoration: 'underline', textDecorationColor: '#7759fd' }}>only what passes your bar.</strong><br />
+          Our system deeply understands both individuals and organizations across dimensions like personality, values, goals, working style, mission, and long-term direction. Matches are surfaced only when there is strong, mutual alignment.
+        </p>
+        <div style={{ 
+          padding: '24px', 
+          background: 'rgba(0,0,0,0.3)', 
+          borderRadius: '18px', 
+          borderLeft: '4px solid #7759fd',
+        }}>
+          <p style={{ fontSize: isPhone ? '14px' : '16px', color: '#a1a1aa', lineHeight: '1.7', margin: 0 }}>
+            If nothing clears the bar, you see nothing. No noise. No spam. No endless scrolling. This applies equally to individuals and companies. Ellaris replaces mass applications with <b style={{ color: 'white', paddingLeft:'1px' }}>high-confidence introductions.</b>
+          </p>
+        </div>
+      </div>
 
-              {/* GRID 1 */}
-              <div style={s.grid}>
-                <div className="hover-card" style={coreCard}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(119,89,253,0.2)', border: '1px solid rgba(119,89,253,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', flexShrink: 0 }}>💬</div>
-                    <h3 style={{ color: '#c4b5fd', fontSize: isPhone ? '16px' : '20px', fontWeight: '700', margin: 0 }}>Prompt-Based Discovery</h3>
-                  </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px' }}>
-                    Sometimes you don't want to browse. You want to describe.<br />Ellaris lets you prompt your way to people, teams, or organizations using natural language.
-                  </p>
-                  <div style={{ background: 'rgba(0,0,0,0.4)', padding: isPhone ? '14px' : '18px', borderRadius: '12px', border: '1px solid rgba(119,89,253,0.15)', marginBottom: '16px' }}>
-                    {[
-                      '"Find me small AI startups working on climate or education, with thoughtful founders and strong design culture."',
-                      '"I just moved to London. Find me early-stage teams obsessed with systems thinking, biology, or frontier tech."',
-                      '"We\'re building a research-heavy product. Find people who care about depth, rigor, and long-term thinking."'
-                    ].map((q, idx) => (
-                      <p key={idx} style={{ fontSize: isPhone ? '12px' : '13px', fontStyle: 'italic', color: '#a89dff', lineHeight: '1.6', marginBottom: idx < 2 ? '10px' : '0' }}>{q}</p>
-                    ))}
-                  </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', fontWeight: '600' }}>Ellaris translates intent into discovery.</p>
-                </div>
-
-                <div className="hover-card" style={coreCard}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(222,60,190,0.15)', border: '1px solid rgba(222,60,190,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', flexShrink: 0 }}>🧬</div>
-                    <h3 style={{ color: '#f0a0e0', fontSize: isPhone ? '16px' : '20px', fontWeight: '700', margin: 0 }}>Deep Profiles, Not Resumes</h3>
-                  </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px' }}>
-                    Ellaris profiles are <strong style={{ color: '#fff' }}>rich, living representations,</strong> not static CVs. Matching happens at the level of essence, not credentials.
-                  </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px 16px', background: 'rgba(119,89,253,0.08)', borderRadius: '10px', border: '1px solid rgba(119,89,253,0.12)' }}>
-                      <p style={{ fontSize: '12px', fontWeight: '700', color: '#9d87ff', marginBottom: '8px', letterSpacing: '0.1em' }}>FOR INDIVIDUALS</p>
-                      <p style={{ fontSize: isPhone ? '12px' : '13px', color: '#a1a1a1' }}>Values, motivations, interests, <br></br> long-term goals, <br></br>passions, curiosities, beliefs,<br></br> working style and preferences</p>
-                    </div>
-                    <div style={{ padding: '12px 16px', background: 'rgba(222,60,190,0.06)', borderRadius: '10px', border: '1px solid rgba(222,60,190,0.12)' }}>
-                      <p style={{ fontSize: '12px', fontWeight: '700', color: '#e070c8', marginBottom: '8px', letterSpacing: '0.1em' }}>FOR ORGANIZATIONS</p>
-                      <p style={{ fontSize: isPhone ? '12px' : '13px', color: '#a1a1a1' }}>Mission and story, <br></br> cultural principles, <br></br> how work actually feels day to day, <br></br>   what kind of humans thrive there</p>
-                    </div>
-                  </div>
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px', paddingTop: '12px' }}>                 
-                     Matching happens at the level of essence, not credentials.
-                  </p>  
-                </div>
-              </div>
-
-              {/* GRID 2 */}
-              <div style={s.grid}>
-                <div className="hover-card" style={coreCard}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(119,89,253,0.2)', border: '1px solid rgba(119,89,253,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', flexShrink: 0 }}>🎮</div>
-                    <h3 style={{ color: '#c4b5fd', fontSize: isPhone ? '16px' : '20px', fontWeight: '700', margin: 0 }}>
-                      Collaborative Experiences and Games
-                    </h3>
-                  </div>
-
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px' }}>
-                    Ellaris includes a growing suite of <strong style={{ color: '#fff' }}>collaborative games and play-based experiences</strong> designed for teams and workplaces of the future.
-                  </p>
-
-                  <div style={{ marginBottom: '20px' }}>
-                    <p style={{ fontSize: '13px', color: '#fff', fontWeight: '600', marginBottom: '10px', opacity: 0.9 }}>These experiences help:</p>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {[
-                        'Build trust and rapport',
-                        'Surface working styles and strengths',
-                        'Encourage creativity and idea generation',
-                        'Make teams more human, more bonded, and more alive'
-                      ].map((text, idx) => (
-                        <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: isPhone ? '13px' : '14px', color: '#a1a1a1', lineHeight: '1.5' }}>
-                          <span style={{ color: '#7759fd', marginTop: '2px' }}>•</span>
-                          {text}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <p style={{ fontSize: isPhone ? '13px' : '14px', color: '#9d87ff', fontWeight: '600', fontStyle: 'italic', borderTop: '1px solid rgba(119,89,253,0.15)', paddingTop: '16px' }}>
-                    We see play as a core mechanism for learning, bonding, and alignment.
-                  </p>
-                </div>
-
-                <div className="hover-card" style={coreCard}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(222,60,190,0.15)', border: '1px solid rgba(222,60,190,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', flexShrink: 0 }}>🌱</div>
-                    <h3 style={{ color: '#f0a0e0', fontSize: isPhone ? '16px' : '20px', fontWeight: '700', margin: 0 }}>
-                      Growth and Skill Modes and Sessions
-                    </h3>
-                  </div>
-
-                  <p style={{ fontSize: isPhone ? '14px' : '15px', color: '#c8c8c8', lineHeight: '1.7', marginBottom: '16px' }}>
-                    Ellaris includes structured growth modules designed for the future of work.
-                  </p>
-
-                  <div style={{ marginBottom: '20px' }}>
-                    <p style={{ fontSize: '13px', color: '#fff', fontWeight: '600', marginBottom: '10px', opacity: 0.9 }}>These sessions focus on:</p>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {[
-                        'Communication and collaboration',
-                        'Decision-making and judgment',
-                        'Creative thinking',
-                        'Leadership and self-awareness',
-                        'Navigating ambiguity and complexity',
-                        'Developing resilience in a rapidly evolving landscape',
-                        'And lots more'
-                      ].map((text, idx) => (
-                        <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: isPhone ? '13px' : '14px', color: '#a1a1a1', lineHeight: '1.5' }}>
-                          <span style={{ color: '#de3cbe', marginTop: '2px' }}>•</span>
-                          {text}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <p style={{ fontSize: isPhone ? '13px' : '14px', color: '#f0a0e0', fontWeight: '600', fontStyle: 'italic', borderTop: '1px solid rgba(222,60,190,0.15)', paddingTop: '16px' }}>
-                    This goes beyond credentialing, with the goal of becoming aligned humans to work with.
-                  </p>
-                </div>
-              </div>
-
-            </div>{/* end flex column wrapper */}
+      {/* GRID 1: Discovery & Profiles */}
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: isPhone ? '1fr' : '1fr 1fr', 
+        gap: isPhone ? '20px' : '32px' 
+      }}>
+        {/* Prompt-Based Discovery */}
+        <div className="hover-card" style={{ ...coreCard, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: isPhone ? '24px' : '32px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(119,89,253,0.15)', border: '1px solid rgba(119,89,253,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>💬</div>
+            <h3 style={{ color: '#c4b5fd', fontSize: '20px', fontWeight: '700', margin: 0 }}>Prompt-Based Discovery</h3>
           </div>
-        </section>
+          <p style={{ fontSize: '15px', color: '#a1a1aa', lineHeight: '1.7', marginBottom: '20px' }}>
+            Sometimes you don't want to browse. You want to describe.<br></br>
+Ellaris lets you prompt your way to people, teams, or organizations using natural language
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
+            {[
+              '“Find me small AI startups working on climate or education, with thoughtful founders and strong design culture”',
+              '“I just moved to London. Find me early-stage teams obsessed with systems thinking, biology, or frontier technology.”',
+              "We're building a research-heavy product. Find people who care about depth, rigor, and long-term thinking."
+            ].map((q, idx) => (
+              <div key={idx} style={{ 
+                padding: '12px 16px', 
+                background: 'rgba(119,89,253,0.05)', 
+                borderRadius: '10px', 
+                border: '1px solid rgba(119,89,253,0.1)',
+                fontSize: '13px',
+                color: '#a89dff',
+                fontStyle: 'italic'
+              }}>
+                {q}
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: '14px', color: '#fff', fontWeight: '600' }}>Ellaris translates intent into discovery.</p>
+        </div>
+
+        {/* Deep Profiles */}
+<div className="hover-card" style={{ 
+  ...coreCard, 
+  background: 'rgba(255,255,255,0.02)', 
+  border: '1px solid rgba(255,255,255,0.08)', 
+  borderRadius: '24px', 
+  padding: isPhone ? '24px' : '36px',
+  position: 'relative',
+  overflow: 'hidden'
+}}>
+  {/* Subtle decorative "Core" glow */}
+  <div style={{ 
+    position: 'absolute', 
+    bottom: '-20%', 
+    right: '-10%', 
+    width: '150px', 
+    height: '150px', 
+    background: 'radial-gradient(circle, rgba(222,60,190,0.1) 0%, transparent 70%)', 
+    pointerEvents: 'none' 
+  }} />
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
+    <div style={{ 
+      width: '40px', 
+      height: '40px', 
+      borderRadius: '12px', 
+      background: 'rgba(222,60,190,0.15)', 
+      border: '1px solid rgba(222,60,190,0.3)', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      fontSize: '18px',
+      boxShadow: '0 0 15px rgba(222,60,190,0.2)' 
+    }}>🧬</div>
+    <div>
+      <h3 style={{ color: '#f0a0e0', fontSize: isPhone ? '18px' : '22px', fontWeight: '800', margin: 0, letterSpacing: '-0.02em' }}>Deep Profiles, Not Resumes</h3>
+      {/* <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', margin: '2px 0 0 0', fontWeight: '500' }}>ESSENCE OVER CREDENTIALS</p> */}
+    </div>
+  </div>
+
+  <p style={{ 
+    fontSize: isPhone ? '14px' : '15px', 
+    color: '#d1d1d1', 
+    lineHeight: '1.6', 
+    marginBottom: '28px',
+    fontWeight: '400' 
+  }}>
+    Ellaris profiles are <strong style={{ color: '#fff' }}>rich, living representations</strong>, not static CVs. Matching happens at the level of essence, not credentials.
+  </p>
+
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    {/* Individuals Side */}
+    <div style={{ 
+      borderLeft: '3px solid rgba(119,89,253,0.5)', 
+      paddingLeft: '20px',
+      background: 'linear-gradient(90deg, rgba(119,89,253,0.03) 0%, transparent 100%)',
+      paddingTop: '4px',
+      paddingBottom: '4px'
+    }}>
+      <p style={{ 
+        fontSize: '11px', 
+        fontWeight: '800', 
+        color: '#9d87ff', 
+        letterSpacing: '0.15em', 
+        marginBottom: '8px', 
+        textTransform: 'uppercase' 
+      }}>For Individuals</p>
+      <p style={{ 
+        fontSize: isPhone ? '13px' : '14px', 
+        color: '#e4e4e7', 
+        lineHeight: '1.6', 
+        margin: 0,
+        maxWidth: '90%'
+      }}>
+        Values, motivations, interests, long-term goals, passions, curiosities, beliefs, working style and preferences.
+      </p>
+    </div>
+
+    {/* Organizations Side */}
+    <div style={{ 
+      borderLeft: '3px solid rgba(222,60,190,0.5)', 
+      paddingLeft: '20px',
+      background: 'linear-gradient(90deg, rgba(222,60,190,0.03) 0%, transparent 100%)',
+      paddingTop: '4px',
+      paddingBottom: '4px'
+    }}>
+      <p style={{ 
+        fontSize: '11px', 
+        fontWeight: '800', 
+        color: '#e070c8', 
+        letterSpacing: '0.15em', 
+        marginBottom: '8px', 
+        textTransform: 'uppercase' 
+      }}>For Organizations</p>
+      <p style={{ 
+        fontSize: isPhone ? '13px' : '14px', 
+        color: '#e4e4e7', 
+        lineHeight: '1.6', 
+        margin: 0,
+        maxWidth: '90%'
+      }}>
+        Mission and story, cultural principles, how work actually feels day to day, and what kind of humans thrive there.
+      </p>
+    </div>
+  </div>
+
+  <div style={{ 
+    marginTop: '32px', 
+    paddingTop: '20px', 
+    borderTop: '1px solid rgba(255,255,255,0.06)',
+    textAlign: 'center'
+  }}>
+    <p style={{ 
+      fontSize: '14px', 
+      color: '#fff', 
+      fontWeight: '600', 
+      margin: 0,
+      fontStyle: 'italic',
+      opacity: 0.9
+    }}>
+      Matching happens at the level of essence, not credentials.
+    </p>
+  </div>
+</div>
+      </div>
+
+      {/* GRID 2: Games & Growth */}
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: isPhone ? '1fr' : '1fr 1fr', 
+        gap: isPhone ? '20px' : '32px' 
+      }}>
+<div className="hover-card" style={{ 
+  ...coreCard, 
+  background: 'rgba(255,255,255,0.02)', 
+  border: '1px solid rgba(255,255,255,0.08)', 
+  borderRadius: '24px', 
+  padding: isPhone ? '24px' : '32px',
+  position: 'relative',
+  overflow: 'hidden'
+}}>
+  {/* Radial Glow for a "Gaming" vibe */}
+  <div style={{ 
+    position: 'absolute', 
+    top: '-10%', 
+    left: '-10%', 
+    width: '120px', 
+    height: '120px', 
+    background: 'radial-gradient(circle, rgba(119,89,253,0.1) 0%, transparent 70%)', 
+    pointerEvents: 'none' 
+  }} />
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
+    <div style={{ 
+      width: '40px', 
+      height: '40px', 
+      borderRadius: '12px', 
+      background: 'rgba(119,89,253,0.15)', 
+      border: '1px solid rgba(119,89,253,0.3)', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      fontSize: '20px',
+      boxShadow: '0 4px 15px rgba(119,89,253,0.2)'
+    }}>🎮</div>
+    <h3 style={{ color: '#fff', fontSize: isPhone ? '18px' : '22px', fontWeight: '800', margin: 0, letterSpacing: '-0.02em' }}>
+      Collaborative Experiences & Games
+    </h3>
+  </div>
+
+  <p style={{ 
+    fontSize: isPhone ? '14px' : '15px', 
+    color: '#d1d1d1', 
+    lineHeight: '1.6', 
+    marginBottom: '24px' 
+  }}>
+    Ellaris includes a growing suite of <strong style={{ color: '#fff' }}>collaborative games and play-based experiences</strong> designed for teams and workplaces of the future.
+  </p>
+
+  <div style={{ marginBottom: '24px' }}>
+    <p style={{ 
+      fontSize: '11px', 
+      fontWeight: '800', 
+      color: '#9d87ff', 
+      letterSpacing: '0.1em', 
+      marginBottom: '12px',
+      textTransform: 'uppercase',
+      opacity: 0.8
+    }}>These experiences help:</p>
+    
+    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      {[
+        'Build trust and rapport',
+        'Surface working styles and strengths',
+        'Encourage creativity and idea generation',
+        'Make teams more human, bonded, and alive'
+      ].map((text, idx) => (
+        <li key={idx} style={{ 
+          display: 'flex', 
+          alignItems: 'flex-start', 
+          gap: '12px', 
+          fontSize: isPhone ? '13px' : '14px', 
+          color: '#e4e4e7', 
+          lineHeight: '1.4' 
+        }}>
+          <span style={{ 
+            color: '#7759fd', 
+            fontSize: '16px',
+            lineHeight: '1',
+            marginTop: '2px'
+          }}>•</span>
+          {text}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div style={{ 
+    marginTop: 'auto',
+    padding: '16px', 
+    background: 'rgba(119,89,253,0.06)', 
+    borderRadius: '14px', 
+    border: '1px solid rgba(119,89,253,0.15)' 
+  }}>
+    <p style={{ 
+      fontSize: isPhone ? '13px' : '14px', 
+      color: '#c4b5fd', 
+      fontWeight: '600', 
+      fontStyle: 'italic',
+      margin: 0,
+      textAlign: 'center'
+    }}>
+      We see play as a core mechanism for learning, bonding, and alignment.
+    </p>
+  </div>
+</div>
+
+        {/* Growth Card */}
+<div className="hover-card" style={{ 
+  ...coreCard, 
+  background: 'rgba(255,255,255,0.02)', 
+  border: '1px solid rgba(255,255,255,0.08)', 
+  borderRadius: '24px', 
+  padding: isPhone ? '24px' : '32px',
+  position: 'relative',
+  overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column'
+}}>
+  {/* Soft "Organic Growth" Glow */}
+  <div style={{ 
+    position: 'absolute', 
+    top: '-15%', 
+    right: '-15%', 
+    width: '140px', 
+    height: '140px', 
+    background: 'radial-gradient(circle, rgba(222,60,190,0.1) 0%, transparent 70%)', 
+    pointerEvents: 'none' 
+  }} />
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
+    <div style={{ 
+      width: '40px', 
+      height: '40px', 
+      borderRadius: '12px', 
+      background: 'rgba(222,60,190,0.15)', 
+      border: '1px solid rgba(222,60,190,0.3)', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      fontSize: '20px',
+      boxShadow: '0 4px 15px rgba(222,60,190,0.2)'
+    }}>🌱</div>
+    <h3 style={{ color: '#fff', fontSize: isPhone ? '18px' : '22px', fontWeight: '800', margin: 0, letterSpacing: '-0.02em' }}>
+      Growth & Skill Modes
+    </h3>
+  </div>
+
+  <p style={{ 
+    fontSize: isPhone ? '14px' : '15px', 
+    color: '#d1d1d1', 
+    lineHeight: '1.6', 
+    marginBottom: '20px' 
+  }}>
+    Ellaris includes structured growth modules designed for the future of work, shifting the focus from paper credentials to human depth.
+  </p>
+
+  <div style={{ marginBottom: '24px' }}>
+    <p style={{ 
+      fontSize: '11px', 
+      fontWeight: '800', 
+      color: '#f0a0e0', 
+      letterSpacing: '0.01em', 
+      marginBottom: '12px',
+      // textTransform: 'uppercase',
+      opacity: 0.8
+    }}>These sessions focus on:</p>
+    
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+      {[
+        'Communication and collaboration', 'Decision-making and judgment', 
+        'Creative Thinking', 'Leadership', 'Self-awareness', 
+        'Navigating ambiguity', 'complexity' , 'Developing resilience in a rapidly evolving landscape'
+      ].map((tag, i) => (
+        <span key={i} style={{ 
+          fontSize: '11px', 
+          padding: '5px 12px', 
+          background: 'rgba(222,60,190,0.08)', 
+          border: '1px solid rgba(222,60,190,0.2)', 
+          borderRadius: '8px', 
+          color: '#f0a0e0',
+          fontWeight: '600'
+        }}>
+          {tag}
+        </span>
+      ))}
+      <span style={{ fontSize: '11px', padding: '5px 12px', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>+ lots more</span>
+    </div>
+  </div>
+
+  <div style={{ 
+    marginTop: 'auto',
+    padding: '16px', 
+    background: 'rgba(222,60,190,0.06)', 
+    borderRadius: '14px', 
+    border: '1px solid rgba(222,60,190,0.15)' 
+  }}>
+    <p style={{ 
+      fontSize: isPhone ? '13px' : '14px', 
+      color: '#f0a0e0', 
+      fontWeight: '600', 
+      fontStyle: 'italic',
+      margin: 0,
+      textAlign: 'center',
+      lineHeight: '1.5'
+    }}>
+      This goes beyond credentialing—the goal is becoming <span style={{ color: '#fff' }}>aligned humans</span> to work with.
+    </p>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* HOW ELLARIS WORKS */}
         <section ref={howe.ref}>
