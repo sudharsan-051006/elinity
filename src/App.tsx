@@ -39,6 +39,7 @@ import ElinityPodcast from './pages/ElinityPod';
 import Software from './pages/software';
 import DesignHead from './pages/headofdesign';
 import AIResearch from './pages/headai';
+import ElinityLanding from './pages/ElinityLanding';
 
 // Utils
 import { setupRevealAnimations } from './utils/animations';
@@ -146,6 +147,7 @@ function AppContent({ waitlistRef, handleScrollToWaitlist }) {
           <Route path='/software' element={<Software />} />
           <Route path='/designhead' element={<DesignHead />} />
           <Route path='/headai' element={<AIResearch />} />
+          <Route path='/ab' element={<ElinityLanding />} />
         </Routes>
       </div>
 

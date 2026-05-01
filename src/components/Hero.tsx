@@ -69,17 +69,16 @@ useEffect(() => {
               alt="Hero"
               className="w-full h-full object-cover rounded-b-3xl grayscale"
             />
-
-            {/* Spotlight Color */}
             <img
-              src="/hero1.jpeg"
-              alt="Hero Color"
+  src="https://res.cloudinary.com/dvdgx9x0b/image/upload/v1776441530/hero1_pdidyl.jpg"
+  loading="lazy"
+                alt="Hero Color"
               className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
               style={{
                 WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
                 maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
               }}
-            />
+/>
           </>
         )}
       </div>

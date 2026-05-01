@@ -240,21 +240,19 @@ export default function EllarisLandingPage() {
           </motion.h1>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 rounded-full bg-fuchsia-400"
-            />
-          </div>
-        </motion.div>
+<div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
+  {[0, 1, 2].map((i) => (
+    <div key={i} className="relative flex items-center justify-center">
+      <motion.div
+        className="absolute w-4 h-4 rounded-full border border-fuchsia-500"
+        animate={{ scale: [1, 2], opacity: [0.5, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.4 }}
+      />
+      <div className="w-1.5 h-1.5 bg-fuchsia-500 rounded-full" />
+    </div>
+  ))}
+</div>
+
       </section>
 
       {/* Main Content */}

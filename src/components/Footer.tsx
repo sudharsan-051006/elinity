@@ -94,6 +94,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
                 { n: "LeaderBoard", p: "#" },
                 { n: "Community", p: "#" }, { n: "Manifesto", p: "#" },
                 { n: "Enterprise", p: "/enterprise" }, 
+                {n: "AB", p: "/ab" },
               ].map((link) => (
                 <li key={link.n}>
                   <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
