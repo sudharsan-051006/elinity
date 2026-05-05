@@ -536,24 +536,20 @@ const SectionLabel: FC<SectionLabelProps> = ({ label, index }) => (
   </div>
 );
 
-const Nav: FC = () => (
-  <nav>
-    <a className="nav-logo" href="#">elinity</a>
-    <div className="nav-right">
-      {(["Mission", "Features", "Tribes"] as const).map((l) => (
-        <a key={l} className="nav-link" href="#">{l}</a>
-      ))}
-      <button className="nav-btn">Join waitlist</button>
-    </div>
-  </nav>
-);
-
 const HeroCreature: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Replace this with the actual path to your saved image
+  const robotImageUrl = "/Robot.png";
+
   return (
     <div 
-      style={{ position: 'relative', cursor: 'pointer' }}
+      style={{ 
+        position: 'relative', 
+        display: 'inline-block', 
+        cursor: 'pointer',
+        padding: '20px' 
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -561,34 +557,35 @@ const HeroCreature: React.FC = () => {
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 20, x: -20 }}
-            animate={{ opacity: 1, scale: 1, y: -40, x: 20 }}
-            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            initial={{ opacity: 0, scale: 0.5, y: 10, x: 20 }}
+            animate={{ opacity: 1, scale: 1, y: -20, x: 50 }}
+            exit={{ opacity: 0, scale: 0.5, y: 10 }}
             style={{
               position: 'absolute',
-              top: '0',
+              top: '10%',
               left: '60%',
               backgroundColor: 'white',
-              color: '#030005',
-              padding: '10px 22px',
+              color: '#1a1a1a',
+              padding: '12px 24px',
               borderRadius: '24px 24px 24px 4px',
-              fontWeight: 700,
-              fontSize: '1.2rem',
-              boxShadow: '0 15px 35px rgba(0,0,0,0.3)',
+              fontWeight: 800,
+              fontSize: '1.4rem',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
               zIndex: 10,
-              pointerEvents: 'none'
+              pointerEvents: 'none',
+              border: '2px solid #e0e0e0'
             }}
           >
-            hi!
+            Hi there!
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* LUMI SVG */}
+      {/* ROBOT IMAGE CONTAINER */}
       <motion.div
         animate={{ 
-          y: isHovered ? [0, -8, 0] : [0, -15, 0],
-          scale: isHovered ? 1.05 : 1 
+          y: isHovered ? [0, -10, 0] : [0, -5, 0],
+          rotate: isHovered ? [0, -1, 1, 0] : 0
         }}
         transition={{ 
           duration: isHovered ? 2 : 4, 
@@ -596,49 +593,37 @@ const HeroCreature: React.FC = () => {
           ease: "easeInOut" 
         }}
       >
-        <svg className="blob-svg" viewBox="0 0 300 360" width="300" height="360" xmlns="http://www.w3.org/2000/svg">
-          {/* Body & Head */}
-          <ellipse cx="150" cy="210" rx="110" ry="130" fill={brand.primary.main} />
-          <ellipse cx="150" cy="110" rx="85"  ry="85"  fill={brand.primary.main} />
-          
-          {/* Eyes */}
-          <circle  cx="120" cy="105" r="28" fill={brand.text.light} />
-          <circle  cx="180" cy="105" r="28" fill={brand.text.light} />
-          <circle  cx="125" cy="108" r="16" fill={brand.background.main} />
-          <circle  cx="185" cy="108" r="16" fill={brand.background.main} />
-          
-          {/* Pupils - Animating these on hover adds "life" */}
-          <motion.circle 
-            animate={{ x: isHovered ? 2 : 0 }} 
-            cx="131" cy="102" r="5" fill={brand.text.light} 
+        <img 
+          src={robotImageUrl} 
+          alt="Friendly Robot" 
+          style={{
+            width: '300px',
+            height: 'auto',
+            display: 'block',
+            // Subtle drop shadow to give it depth on your site
+            filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))'
+          }} 
+        />
+        
+        {/* GLOW EFFECT (Optional) */}
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '150px',
+              height: '150px',
+              backgroundColor: '#ffd700',
+              filter: 'blur(60px)',
+              borderRadius: '50%',
+              zIndex: -1
+            }}
           />
-          <motion.circle 
-            animate={{ x: isHovered ? 2 : 0 }} 
-            cx="191" cy="102" r="5" fill={brand.text.light} 
-          />
-          
-          {/* Mouth */}
-          <path d="M 125 145 Q 150 168 175 145" stroke={brand.background.main} strokeWidth="4" fill="none" strokeLinecap="round" />
-          
-          {/* Arms/Fins */}
-          <ellipse cx="42"  cy="220" rx="22" ry="40" fill={brand.primary.secondary} transform="rotate(-15 42 220)" />
-          <ellipse cx="258" cy="220" rx="22" ry="40" fill={brand.primary.secondary} transform="rotate(15 258 220)" />
-          
-          {/* Floating Hearts */}
-          <motion.text 
-            animate={{ y: [0, -5, 0] }} 
-            transition={{ duration: 3, repeat: Infinity }}
-            x="55" y="165" fontSize="18" fill={brand.text.light} opacity="0.8"
-          >
-            ♥
-          </motion.text>
-          <text x="230" y="170" fontSize="14" fill={brand.text.light} opacity="0.6">♥</text>
-          <text x="140" y="52"  fontSize="12" fill={brand.text.light} opacity="0.4">♥</text>
-          
-          {/* Feet */}
-          <ellipse cx="115" cy="332" rx="30" ry="16" fill={brand.background.deep} />
-          <ellipse cx="185" cy="332" rx="30" ry="16" fill={brand.background.deep} />
-        </svg>
+        )}
       </motion.div>
     </div>
   );
@@ -672,52 +657,68 @@ const LumiCreature: FC = () => (
 );
 const words = ["social connector", "matchmaker", "relationship buddy"];
 
+
 const Hero: React.FC = () => {
   const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Handle screen resize for mobile-specific adjustments
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 968);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
     }, 2500);
-    return () => clearInterval(interval);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   return (
     <section 
       style={{ 
         display: "flex", 
-        flexDirection: "row", // Ensures side-by-side layout
+        flexDirection: isMobile ? "column" : "row", // Stacks on mobile
         alignItems: "center", 
-        justifyContent: "space-between",
+        justifyContent: "center",
         minHeight: "100vh", 
-        padding: "0 10%", 
-        backgroundColor: "#0a0a1a", // Matches your dark theme
+        padding: isMobile ? "120px 5% 60px 5%" : "0 10%", 
+        backgroundColor: "#0a0a1a",
         color: "white",
-        overflow: "hidden"
+        overflowX: "hidden",
+        gap: isMobile ? "3rem" : "0"
       }}
     >
       {/* LEFT CONTENT */}
-      <div style={{ flex: "1", maxWidth: "600px", zIndex: 2 }}>
+      <div style={{ 
+        flex: "1", 
+        maxWidth: isMobile ? "100%" : "600px", 
+        zIndex: 2,
+        textAlign: isMobile ? "center" : "left" // Centers text on mobile
+      }}>
         <h1 style={{ 
-          fontSize: "clamp(3rem, 5vw, 4.5rem)", 
+          fontSize: "clamp(2.5rem, 8vw, 4.5rem)", 
           lineHeight: "1.1", 
           fontWeight: 800, 
           margin: "0 0 1.5rem 0",
-          textAlign: "left" 
         }}>
           find your<br />
           <span style={{ color: "#7759fd" }}>person,</span><br />
-          your tribe.
+          build your tribe.
         </h1>
 
         <p style={{ 
-          fontSize: "1.2rem", 
+          fontSize: isMobile ? "1.1rem" : "1.2rem", 
           color: "#b0b0d1", 
           lineHeight: "1.6", 
           margin: "0 0 2.5rem 0",
-          textAlign: "left"
+          maxWidth: isMobile ? "100%" : "90%"
         }}>
-          find your people across love, leisure, and <br />
+          find your people across love, leisure, and <br style={{ display: isMobile ? "none" : "block" }} />
           collaborations with lumi, your ai{" "}
           <span style={{ display: "inline-grid", verticalAlign: "bottom" }}>
             <AnimatePresence mode="wait">
@@ -742,82 +743,74 @@ const Hero: React.FC = () => {
         </p>
 
         <div style={{ 
-  display: "flex", 
-  gap: "1rem", 
-  flexWrap: "wrap", // Ensures buttons stack nicely on mobile
-  marginTop: "2rem" 
-}}>
-  {/* ANDROID BUTTON */}
-  <button style={{ 
-    padding: "1rem 2rem", 
-    borderRadius: "12px", 
-    border: "none", 
-    backgroundColor: "#7759fd", 
-    color: "white", 
-    fontWeight: "600", 
-    cursor: "pointer",
-    boxShadow: "0 4px 15px rgba(119, 89, 253, 0.3)",
-    transition: "transform 0.2s"
-  }}>
-    Download On Android
-  </button>
-
-  {/* IOS BUTTON */}
-  <button style={{ 
-    padding: "1rem 2rem", 
-    borderRadius: "12px", 
-    border: "1px solid rgba(119, 89, 253, 0.5)", 
-    backgroundColor: "transparent", 
-    color: "white", 
-    fontWeight: "600", 
-    cursor: "pointer",
-    transition: "background 0.3s"
-  }}>
-    Download On iOS
-  </button>
-
-  {/* JOIN WAITLIST BUTTON (Glassmorphism style) */}
-  <button style={{ 
-    padding: "1rem 2rem", 
-    borderRadius: "12px", 
-    border: "1px solid rgba(255, 255, 255, 0.1)", 
-    backgroundColor: "rgba(255, 255, 255, 0.05)", 
-    backdropFilter: "blur(10px)",
-    color: "#d9d3fe", 
-    fontWeight: "600", 
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px"
-  }}>
-    Join Waitlist 
-  </button>
-</div>
+          display: "flex", 
+          gap: "1rem", 
+          flexWrap: "wrap", 
+          justifyContent: isMobile ? "center" : "flex-start",
+          marginTop: "2rem" 
+        }}>
+          <button style={buttonStyle(true)}>Download On Android</button>
+          <button style={buttonStyle(false)}>Download On iOS</button>
+          <button style={glassButtonStyle}>Join Waitlist</button>
+        </div>
       </div>
 
-      {/* RIGHT CONTENT (CREATURE) */}
+      {/* RIGHT CONTENT (ROBOT) */}
       <div style={{ 
         flex: "1", 
         display: "flex", 
         justifyContent: "center", 
         alignItems: "center",
         position: "relative",
-        height: "100%"
+        width: "100%",
+        minHeight: isMobile ? "300px" : "auto"
       }}>
+        {/* Glow Effect */}
         <div style={{ 
           position: "absolute", 
-          width: "400px", 
-          height: "400px", 
-          background: "radial-gradient(circle, rgba(119, 89, 253, 0.15) 0%, transparent 70%)",
+          width: isMobile ? "250px" : "450px", 
+          height: isMobile ? "250px" : "450px", 
+          background: "radial-gradient(circle, rgba(119, 89, 253, 0.2) 0%, transparent 70%)",
           zIndex: 1
         }} />
-        <div style={{ zIndex: 2, transform: "scale(1.2)" }}>
+        
+        <div style={{ 
+          zIndex: 2, 
+          transform: isMobile ? "scale(0.85)" : "scale(1.2)",
+          transition: "transform 0.3s ease"
+        }}>
           <HeroCreature />
         </div>
       </div>
     </section>
   );
+};
+
+// --- Helper Styles ---
+
+const buttonStyle = (primary: boolean) => ({
+  padding: "0.8rem 1.6rem", 
+  borderRadius: "12px", 
+  border: primary ? "none" : "1px solid rgba(119, 89, 253, 0.5)", 
+  backgroundColor: primary ? "#7759fd" : "transparent", 
+  color: "white", 
+  fontWeight: "600" as const, 
+  cursor: "pointer",
+  boxShadow: primary ? "0 4px 15px rgba(119, 89, 253, 0.3)" : "none",
+  fontSize: "0.95rem",
+  whiteSpace: "nowrap" as const
+});
+
+const glassButtonStyle = {
+  padding: "0.8rem 1.6rem", 
+  borderRadius: "12px", 
+  border: "1px solid rgba(255, 255, 255, 0.1)", 
+  backgroundColor: "rgba(255, 255, 255, 0.05)", 
+  backdropFilter: "blur(10px)",
+  color: "#d9d3fe", 
+  fontWeight: "600" as const, 
+  cursor: "pointer",
+  fontSize: "0.95rem"
 };
 
 
@@ -1723,7 +1716,9 @@ const Closing: React.FC = () => {
           fontWeight: 900, 
           letterSpacing: "-0.07em", 
           lineHeight: 0.8,
-          marginBottom: "60px"
+          // lineD
+          marginBottom: "60px",
+          color: "white"
         }}>
           welcome to <br />
           <span style={{ 
@@ -1787,7 +1782,7 @@ const Closing: React.FC = () => {
 
 const ElinityLanding: FC = () => (
   <>
-    <GlobalStyles />
+    {/* <GlobalStyles /> */}
     <CustomCursor />
     <Hero />
     <Statement />
