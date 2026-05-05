@@ -715,7 +715,8 @@ const Hero: React.FC = () => {
         }}>
           find your<br />
           <span style={{ color: "#7759fd" }}>person,</span><br />
-          build your tribe.
+          your <span style={{ color: "#7759fd" }}>tribe.</span><br />
+          build <span style={{ color: "#7759fd" }}>awesome</span> relationships. 
         </h1>
 
         <p style={{ 
