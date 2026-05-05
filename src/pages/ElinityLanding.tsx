@@ -749,9 +749,17 @@ const Hero: React.FC = () => {
           justifyContent: isMobile ? "center" : "flex-start",
           marginTop: "2rem" 
         }}>
-          <button style={buttonStyle(true)}>Download On Android</button>
-          <button style={buttonStyle(false)}>Download On iOS</button>
-          <button style={glassButtonStyle}>Join Waitlist</button>
+<button style={buttonStyle(true, true)} disabled>
+  Download On Android
+</button>
+
+<button style={buttonStyle(false, true)} disabled>
+  Download On iOS
+</button>
+
+<button style={glassButtonStyle(true)} disabled>
+  Join Waitlist
+</button>
         </div>
       </div>
 
@@ -788,32 +796,34 @@ const Hero: React.FC = () => {
 
 // --- Helper Styles ---
 
-const buttonStyle = (primary: boolean) => ({
-  padding: "0.8rem 1.6rem", 
-  borderRadius: "12px", 
-  border: primary ? "none" : "1px solid rgba(119, 89, 253, 0.5)", 
-  backgroundColor: primary ? "#7759fd" : "transparent", 
-  color: "white", 
-  fontWeight: "600" as const, 
-  cursor: "pointer",
+const buttonStyle = (primary: boolean, disabled: boolean) => ({
+  padding: "0.8rem 1.6rem",
+  borderRadius: "12px",
+  border: primary ? "none" : "1px solid rgba(119, 89, 253, 0.5)",
+  backgroundColor: primary ? "#7759fd" : "transparent",
+  color: "white",
+  fontWeight: "600" as const,
+  cursor: disabled ? "not-allowed" : "pointer",
   boxShadow: primary ? "0 4px 15px rgba(119, 89, 253, 0.3)" : "none",
   fontSize: "0.95rem",
-  whiteSpace: "nowrap" as const
+  whiteSpace: "nowrap" as const,
+  opacity: disabled ? 0.5 : 1,
+  pointerEvents: disabled ? "none" : "auto"
 });
 
-const glassButtonStyle = {
-  padding: "0.8rem 1.6rem", 
-  borderRadius: "12px", 
-  border: "1px solid rgba(255, 255, 255, 0.1)", 
-  backgroundColor: "rgba(255, 255, 255, 0.05)", 
+const glassButtonStyle = (disabled: boolean) => ({
+  padding: "0.8rem 1.6rem",
+  borderRadius: "12px",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  backgroundColor: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(10px)",
-  color: "#d9d3fe", 
-  fontWeight: "600" as const, 
-  cursor: "pointer",
-  fontSize: "0.95rem"
-};
-
-
+  color: "#d9d3fe",
+  fontWeight: "600" as const,
+  cursor: disabled ? "not-allowed" : "pointer",
+  fontSize: "0.95rem",
+  opacity: disabled ? 0.5 : 1,
+  pointerEvents: disabled ? "none" : "auto"
+});
 const Statement: React.FC = () => {
   const ref = useFadeIn();
   // Using a simple state or media query hook is ideal, 
