@@ -539,7 +539,7 @@ const SectionLabel: FC<SectionLabelProps> = ({ label, index }) => (
 const HeroCreature: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Replace this with the actual path to your saved image
+  // Path to your robot image
   const robotImageUrl = "/Robot.png";
 
   return (
@@ -548,35 +548,39 @@ const HeroCreature: React.FC = () => {
         position: 'relative', 
         display: 'inline-block', 
         cursor: 'pointer',
-        padding: '20px' 
+        padding: '20px',
+        // This ensures the image rendering stays crisp/pixelated when scaled
+        imageRendering: 'pixelated' 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* SPEECH BUBBLE */}
+      {/* PIXELATED SPEECH BUBBLE */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 10, x: 20 }}
-            animate={{ opacity: 1, scale: 1, y: -20, x: 50 }}
-            exit={{ opacity: 0, scale: 0.5, y: 10 }}
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: -20 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             style={{
               position: 'absolute',
-              top: '10%',
-              left: '60%',
+              top: '5%',
+              left: '65%',
               backgroundColor: 'white',
               color: '#1a1a1a',
-              padding: '12px 24px',
-              borderRadius: '24px 24px 24px 4px',
-              fontWeight: 800,
-              fontSize: '1.4rem',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+              padding: '10px 20px',
+              // Blocky border-radius for pixel feel
+              borderRadius: '0px', 
+              border: '4px solid #1a1a1a',
+              boxShadow: '6px 6px 0px rgba(0,0,0,0.2)',
+              fontWeight: 'bold',
+              fontFamily: '"Courier New", Courier, monospace', // Monospace for retro vibe
+              fontSize: '1.2rem',
               zIndex: 10,
               pointerEvents: 'none',
-              border: '2px solid #e0e0e0'
             }}
           >
-            Hi there!
+            Lumi: Hi!
           </motion.div>
         )}
       </AnimatePresence>
@@ -584,11 +588,10 @@ const HeroCreature: React.FC = () => {
       {/* ROBOT IMAGE CONTAINER */}
       <motion.div
         animate={{ 
-          y: isHovered ? [0, -10, 0] : [0, -5, 0],
-          rotate: isHovered ? [0, -1, 1, 0] : 0
+          y: isHovered ? [0, -12, 0] : [0, -6, 0],
         }}
         transition={{ 
-          duration: isHovered ? 2 : 4, 
+          duration: isHovered ? 1.5 : 3, 
           repeat: Infinity, 
           ease: "easeInOut" 
         }}
@@ -600,26 +603,30 @@ const HeroCreature: React.FC = () => {
             width: '300px',
             height: 'auto',
             display: 'block',
-            // Subtle drop shadow to give it depth on your site
-            filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))'
+            // --- PIXEL ART CSS TRICK ---
+            // If the image is high-res, this CSS "pixelates" it slightly
+            filter: isHovered 
+              ? 'contrast(1.1) brightness(1.1)' 
+              : 'none',
+            // Keeps pixels sharp if you downscale a large image
+            imageRendering: 'pixelated', 
           }} 
         />
         
-        {/* GLOW EFFECT (Optional) */}
+        {/* PIXELATED GLOW (Square instead of round) */}
         {isHovered && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
+            animate={{ opacity: 0.3 }}
             style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '150px',
-              height: '150px',
+              width: '180px',
+              height: '180px',
               backgroundColor: '#ffd700',
-              filter: 'blur(60px)',
-              borderRadius: '50%',
+              filter: 'blur(40px)', // Soft glow still works well with pixel art
               zIndex: -1
             }}
           />
