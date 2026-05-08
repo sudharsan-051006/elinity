@@ -475,6 +475,8 @@ const GlobalStyles: FC = () => (
   <style dangerouslySetInnerHTML={{ __html: GLOBAL_CSS }} />
 );
 
+
+
 const CustomCursor: FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const ringRef   = useRef<HTMLDivElement>(null);
@@ -751,6 +753,20 @@ const HeroCreature: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const endTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
  
   const [hoverCount, setHoverCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -825,49 +841,62 @@ const HeroCreature: React.FC = () => {
       onMouseEnter={handleHover}
     >
       {/* Speech Bubble */}
-      <AnimatePresence>
-        {isAnimating && (
-          <motion.div
-            key={bubbleText}
-            initial={{ opacity: 0, scale: 0.7, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: -10 }}
-            exit={{ opacity: 0, scale: 0.7, y: 20 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            style={{
-              position: "absolute",
-              top: "8%",
-              left: "75%",
-              backgroundColor: "white",
-              color: "#1a1a1a",
-              padding: "16px 24px",
-              border: "4px solid #2C3E50",
-              borderRadius: "4px",
-              boxShadow: "6px 6px 0px rgba(44, 62, 80, 0.4)",
-              fontWeight: "bold",
-              fontFamily: '"Courier New", monospace',
-              fontSize: "0.6rem",
-              zIndex: 10,
-              whiteSpace: "nowrap",
-            }}
-          >
-            {bubbleText}
-            {/* Speech bubble tail */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-16px",
-                left: "20px",
-                width: 0,
-                height: 0,
-                borderLeft: "12px solid transparent",
-                borderRight: "12px solid transparent",
-                borderTop: "16px solid white",
-                filter: "drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))",
-              }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+<AnimatePresence>
+  {isAnimating && (
+    <motion.div
+      key={bubbleText}
+      initial={{ opacity: 0, scale: 0.7, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: -10 }}
+      exit={{ opacity: 0, scale: 0.7, y: 20 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      style={{
+        position: "absolute",
+
+        // MOBILE vs DESKTOP positioning
+        top: isMobile ? "-48px" : "8%",
+        left: isMobile ? "50%" : "75%",
+        transform: isMobile ? "translateX(-50%)" : "none",
+
+        backgroundColor: "white",
+        color: "#1a1a1a",
+        padding: isMobile ? "12px 18px" : "16px 24px",
+
+        border: "4px solid #2C3E50",
+        borderRadius: "4px",
+        boxShadow: "6px 6px 0px rgba(44, 62, 80, 0.4)",
+
+        fontWeight: "bold",
+        fontFamily: '"Courier New", monospace',
+
+        // Responsive text
+        fontSize: isMobile ? "0.5rem" : "0.6rem",
+
+        zIndex: 10,
+        whiteSpace: "nowrap",
+      }}
+    >
+      {bubbleText}
+
+      {/* Speech bubble tail */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-16px",
+          left: isMobile ? "50%" : "20px",
+          transform: isMobile ? "translateX(-50%)" : "none",
+
+          width: 0,
+          height: 0,
+          borderLeft: "12px solid transparent",
+          borderRight: "12px solid transparent",
+          borderTop: "16px solid white",
+
+          filter: "drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))",
+        }}
+      />
+    </motion.div>
+  )}
+</AnimatePresence>
  
       {/* Pixel Robot Canvas */}
       <div
