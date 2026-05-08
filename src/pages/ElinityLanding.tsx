@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, FC } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
+import { button } from "framer-motion/m";
 
 // ─── Brand Tokens ─────────────────────────────────────────────────────────────
 
@@ -529,18 +530,248 @@ const CustomCursor: FC = () => {
   );
 };
 
-const SectionLabel: FC<SectionLabelProps> = ({ label, index }) => (
-  <div className="section-label">
-    <span>{label}</span>
-    <span>{index}</span>
-  </div>
-);
+
+const words = ["social connector", "matchmaker", "relationship buddy"];
+
+// Pixel art animation states
+const pixelAnimations = [
+  { name: "Hello I am Lumi", frames: 4 },
+  { name: "Loading Magic...", frames: 6 },
+  { name: "Processing Pixels...", frames: 5 },
+  { name: "Charging Energy...", frames: 8 },
+  { name: "Ready to Explore!", frames: 6 }
+];
 
 const HeroCreature: React.FC = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [hoverCount, setHoverCount] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [currentFrame, setCurrentFrame] = useState(0);
+  
+  const currentAnimation = pixelAnimations[hoverCount % pixelAnimations.length];
 
-  // Path to your robot image
-  const robotImageUrl = "/Robot.png";
+  useEffect(() => {
+    if (!isAnimating) return;
+    
+    const frameInterval = setInterval(() => {
+      setCurrentFrame((prev) => (prev + 1) % currentAnimation.frames);
+    }, 120);
+
+    const timeout = setTimeout(() => {
+      setIsAnimating(false);
+      setCurrentFrame(0);
+    }, currentAnimation.frames * 120 + 500);
+
+    return () => {
+      clearInterval(frameInterval);
+      clearTimeout(timeout);
+    };
+  }, [isAnimating, currentAnimation.frames]);
+
+  const handleHover = () => {
+    setHoverCount((prev) => prev + 1);
+    setIsAnimating(true);
+    setCurrentFrame(0);
+  };
+
+  // Enhanced pixel robot with more detail
+  const generatePixelRobot = () => {
+    const pixelSize = 10;
+    
+    // Detailed robot pixel map inspired by the uploaded images
+    const robotPattern = [
+      // Antenna ball (cream/yellow)
+      [19, 1, '#FFE5B4'], [20, 1, '#FFE5B4'], [21, 1, '#FFE5B4'],
+      [19, 2, '#FFE5B4'], [20, 2, '#FFF4D6'], [21, 2, '#FFE5B4'],
+      [19, 3, '#FFE5B4'], [20, 3, '#FFE5B4'], [21, 3, '#FFE5B4'],
+      
+      // Antenna connector
+      [20, 4, '#6B8DB8'], [20, 5, '#6B8DB8'],
+      
+      // Head top
+      [17, 6, '#7BA3D1'], [18, 6, '#7BA3D1'], [19, 6, '#7BA3D1'], [20, 6, '#7BA3D1'], [21, 6, '#7BA3D1'], [22, 6, '#7BA3D1'], [23, 6, '#7BA3D1'],
+      
+      // Head upper
+      [16, 7, '#7BA3D1'], [17, 7, '#7BA3D1'], [18, 7, '#7BA3D1'], [19, 7, '#7BA3D1'], [20, 7, '#7BA3D1'], [21, 7, '#7BA3D1'], [22, 7, '#7BA3D1'], [23, 7, '#7BA3D1'], [24, 7, '#7BA3D1'],
+      
+      // Face screen area
+      [16, 8, '#7BA3D1'], [17, 8, '#E8F0FF'], [18, 8, '#E8F0FF'], [19, 8, '#E8F0FF'], [20, 8, '#E8F0FF'], [21, 8, '#E8F0FF'], [22, 8, '#E8F0FF'], [23, 8, '#E8F0FF'], [24, 8, '#7BA3D1'],
+      [16, 9, '#7BA3D1'], [17, 9, '#E8F0FF'], [18, 9, '#E8F0FF'], [19, 9, '#E8F0FF'], [20, 9, '#E8F0FF'], [21, 9, '#E8F0FF'], [22, 9, '#E8F0FF'], [23, 9, '#E8F0FF'], [24, 9, '#7BA3D1'],
+      
+      // Eyes
+      [16, 10, '#7BA3D1'], [17, 10, '#E8F0FF'], [18, 10, '#4A5F7F'], [19, 10, '#2C3E50'], [20, 10, '#E8F0FF'], [21, 10, '#E8F0FF'], [22, 10, '#4A5F7F'], [23, 10, '#E8F0FF'], [24, 10, '#7BA3D1'],
+      [16, 11, '#7BA3D1'], [17, 11, '#E8F0FF'], [18, 11, '#2C3E50'], [19, 11, '#FFD700'], [20, 11, '#E8F0FF'], [21, 11, '#2C3E50'], [22, 11, '#FFD700'], [23, 11, '#E8F0FF'], [24, 11, '#7BA3D1'],
+      
+      // Smile
+      [16, 12, '#7BA3D1'], [17, 12, '#E8F0FF'], [18, 12, '#E8F0FF'], [19, 12, '#5B7DAE'], [20, 12, '#5B7DAE'], [21, 12, '#5B7DAE'], [22, 12, '#E8F0FF'], [23, 12, '#E8F0FF'], [24, 12, '#7BA3D1'],
+      [16, 13, '#7BA3D1'], [17, 13, '#E8F0FF'], [18, 13, '#5B7DAE'], [19, 13, '#E8F0FF'], [20, 13, '#E8F0FF'], [21, 13, '#E8F0FF'], [22, 13, '#5B7DAE'], [23, 13, '#E8F0FF'], [24, 13, '#7BA3D1'],
+      
+      // Head bottom
+      [16, 14, '#7BA3D1'], [17, 14, '#7BA3D1'], [18, 14, '#7BA3D1'], [19, 14, '#7BA3D1'], [20, 14, '#7BA3D1'], [21, 14, '#7BA3D1'], [22, 14, '#7BA3D1'], [23, 14, '#7BA3D1'], [24, 14, '#7BA3D1'],
+      
+      // Left ear
+      [14, 9, '#FFB4C8'], [15, 9, '#FFB4C8'], 
+      [14, 10, '#FFB4C8'], [15, 10, '#FFC8DC'], 
+      [14, 11, '#FFB4C8'], [15, 11, '#FFB4C8'],
+      [13, 10, '#FFD700'],
+      
+      // Right ear
+      [25, 9, '#FFB4C8'], [26, 9, '#FFB4C8'],
+      [25, 10, '#FFC8DC'], [26, 10, '#FFB4C8'],
+      [25, 11, '#FFB4C8'], [26, 11, '#FFB4C8'],
+      [27, 10, '#FFD700'],
+      
+      // Neck
+      [19, 15, '#6B8DB8'], [20, 15, '#6B8DB8'], [21, 15, '#6B8DB8'],
+      
+      // Body top
+      [17, 16, '#7BA3D1'], [18, 16, '#7BA3D1'], [19, 16, '#7BA3D1'], [20, 16, '#7BA3D1'], [21, 16, '#7BA3D1'], [22, 16, '#7BA3D1'], [23, 16, '#7BA3D1'],
+      
+      // Body with heart
+      [16, 17, '#7BA3D1'], [17, 17, '#7BA3D1'], [18, 17, '#7BA3D1'], [19, 17, '#7BA3D1'], [20, 17, '#7BA3D1'], [21, 17, '#7BA3D1'], [22, 17, '#7BA3D1'], [23, 17, '#7BA3D1'], [24, 17, '#7BA3D1'],
+      [16, 18, '#7BA3D1'], [17, 18, '#7BA3D1'], [18, 18, '#FFD700'], [19, 18, '#FFC850'], [20, 18, '#7BA3D1'], [21, 18, '#FFD700'], [22, 18, '#FFC850'], [23, 18, '#7BA3D1'], [24, 18, '#7BA3D1'],
+      [16, 19, '#7BA3D1'], [17, 19, '#7BA3D1'], [18, 19, '#FFC850'], [19, 19, '#FFD700'], [20, 19, '#FFC850'], [21, 19, '#FFC850'], [22, 19, '#FFD700'], [23, 19, '#7BA3D1'], [24, 19, '#7BA3D1'],
+      [16, 20, '#7BA3D1'], [17, 20, '#7BA3D1'], [18, 20, '#FFD700'], [19, 20, '#FFC850'], [20, 20, '#FFD700'], [21, 20, '#FFD700'], [22, 20, '#FFC850'], [23, 20, '#7BA3D1'], [24, 20, '#7BA3D1'],
+      [16, 21, '#7BA3D1'], [17, 21, '#7BA3D1'], [18, 21, '#7BA3D1'], [19, 21, '#FFD700'], [20, 21, '#FFC850'], [21, 21, '#FFD700'], [22, 21, '#7BA3D1'], [23, 21, '#7BA3D1'], [24, 21, '#7BA3D1'],
+      [16, 22, '#7BA3D1'], [17, 22, '#7BA3D1'], [18, 22, '#7BA3D1'], [19, 22, '#7BA3D1'], [20, 22, '#FFD700'], [21, 22, '#7BA3D1'], [22, 22, '#7BA3D1'], [23, 22, '#7BA3D1'], [24, 22, '#7BA3D1'],
+      
+      // Body bottom
+      [17, 23, '#7BA3D1'], [18, 23, '#7BA3D1'], [19, 23, '#7BA3D1'], [20, 23, '#7BA3D1'], [21, 23, '#7BA3D1'], [22, 23, '#7BA3D1'], [23, 23, '#7BA3D1'],
+      [17, 24, '#6B8DB8'], [18, 24, '#6B8DB8'], [19, 24, '#6B8DB8'], [20, 24, '#6B8DB8'], [21, 24, '#6B8DB8'], [22, 24, '#6B8DB8'], [23, 24, '#6B8DB8'],
+      
+      // Left arm (waving)
+      [11, 18, '#7BA3D1'], [12, 18, '#7BA3D1'],
+      [11, 19, '#7BA3D1'], [12, 19, '#7BA3D1'],
+      [11, 20, '#7BA3D1'], [12, 20, '#6B8DB8'],
+      [10, 21, '#7BA3D1'], [11, 21, '#7BA3D1'], [12, 21, '#6B8DB8'],
+      [9, 22, '#7BA3D1'], [10, 22, '#7BA3D1'], [11, 22, '#7BA3D1'],
+      [9, 23, '#7BA3D1'], [10, 23, '#6B8DB8'], [11, 23, '#6B8DB8'],
+      
+      // Right arm
+      [28, 18, '#7BA3D1'], [29, 18, '#7BA3D1'],
+      [28, 19, '#7BA3D1'], [29, 19, '#7BA3D1'],
+      [28, 20, '#6B8DB8'], [29, 20, '#7BA3D1'],
+      [28, 21, '#6B8DB8'], [29, 21, '#7BA3D1'], [30, 21, '#7BA3D1'],
+      [29, 22, '#7BA3D1'], [30, 22, '#7BA3D1'], [31, 22, '#7BA3D1'],
+      [29, 23, '#6B8DB8'], [30, 23, '#6B8DB8'], [31, 23, '#7BA3D1'],
+      
+      // Left leg
+      [17, 25, '#7BA3D1'], [18, 25, '#7BA3D1'], [19, 25, '#7BA3D1'],
+      [17, 26, '#7BA3D1'], [18, 26, '#7BA3D1'], [19, 26, '#7BA3D1'],
+      [17, 27, '#7BA3D1'], [18, 27, '#6B8DB8'], [19, 27, '#7BA3D1'],
+      [17, 28, '#7BA3D1'], [18, 28, '#6B8DB8'], [19, 28, '#7BA3D1'],
+      [17, 29, '#6B8DB8'], [18, 29, '#6B8DB8'], [19, 29, '#6B8DB8'],
+      [16, 30, '#6B8DB8'], [17, 30, '#6B8DB8'], [18, 30, '#5B7DAE'], [19, 30, '#6B8DB8'], [20, 30, '#6B8DB8'],
+      [17, 29, '#FFD700'],
+      
+      // Right leg
+      [21, 25, '#7BA3D1'], [22, 25, '#7BA3D1'], [23, 25, '#7BA3D1'],
+      [21, 26, '#7BA3D1'], [22, 26, '#7BA3D1'], [23, 26, '#7BA3D1'],
+      [21, 27, '#7BA3D1'], [22, 27, '#6B8DB8'], [23, 27, '#7BA3D1'],
+      [21, 28, '#7BA3D1'], [22, 28, '#6B8DB8'], [23, 28, '#7BA3D1'],
+      [21, 29, '#6B8DB8'], [22, 29, '#6B8DB8'], [23, 29, '#6B8DB8'],
+      [20, 30, '#6B8DB8'], [21, 30, '#6B8DB8'], [22, 30, '#5B7DAE'], [23, 30, '#6B8DB8'], [24, 30, '#6B8DB8'],
+      [23, 29, '#FFD700'],
+    ];
+
+    // Apply animation transformations
+    const animatedPattern = robotPattern.map(([x, y, color]) => {
+      let newX = x;
+      let newY = y;
+      let newColor = color;
+      let scale = 1;
+      let opacity = 1;
+      
+      if (isAnimating) {
+        const progress = currentFrame / currentAnimation.frames;
+        
+        switch (currentAnimation.name) {
+          case "Wave":
+            // Left arm waves
+            if (x >= 9 && x <= 12 && y >= 18 && y <= 23) {
+              const waveOffset = Math.sin(progress * Math.PI * 2) * 3;
+              newY = y + waveOffset;
+              newX = x - Math.abs(waveOffset) * 0.5;
+            }
+            break;
+            
+          case "Heart Beat":
+            // Heart pulses
+            if (color === '#FFD700' || color === '#FFC850') {
+              scale = 1 + Math.sin(progress * Math.PI * 2) * 0.3;
+              newColor = progress % 0.5 < 0.25 ? '#FFD700' : '#FFA500';
+              const centerX = 20;
+              const centerY = 19;
+              newX = centerX + (x - centerX) * scale;
+              newY = centerY + (y - centerY) * scale;
+            }
+            // Eye glow
+            if (color === '#FFD700' && y >= 10 && y <= 11) {
+              newColor = progress % 0.3 < 0.15 ? '#FFE87C' : '#FFD700';
+            }
+            break;
+            
+          case "Bounce":
+            // Entire robot bounces
+            const bounceHeight = Math.abs(Math.sin(progress * Math.PI)) * 5;
+            newY = y - bounceHeight;
+            // Squash and stretch
+            if (bounceHeight < 1) {
+              scale = 1 + (1 - bounceHeight) * 0.15;
+              newX = 20 + (x - 20) * scale;
+            }
+            break;
+            
+          case "Glow":
+            // Entire robot glows
+            if (color.includes('#7BA3D1') || color.includes('#6B8DB8')) {
+              const glowIntensity = Math.sin(progress * Math.PI * 2);
+              opacity = 0.7 + glowIntensity * 0.3;
+            }
+            if (color === '#FFD700' || color === '#FFC850') {
+              scale = 1 + Math.sin(progress * Math.PI * 4) * 0.2;
+            }
+            break;
+            
+          case "Excited":
+            // Slight shake and arm movements
+            newX = x + Math.sin(progress * Math.PI * 8) * 0.5;
+            newY = y + Math.cos(progress * Math.PI * 8) * 0.5;
+            // Both arms up
+            if ((x >= 9 && x <= 12) || (x >= 28 && x <= 31)) {
+              if (y >= 18 && y <= 23) {
+                newY = y - Math.sin(progress * Math.PI) * 2;
+              }
+            }
+            break;
+        }
+      }
+      
+      return { x: Math.round(newX), y: Math.round(newY), color: newColor, scale, opacity };
+    });
+
+    return animatedPattern.map((pixel, idx) => (
+      <motion.div
+        key={`pixel-${idx}-${hoverCount}`}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: pixel.scale, opacity: pixel.opacity }}
+        transition={{ delay: idx * 0.002, duration: 0.2 }}
+        style={{
+          position: 'absolute',
+          left: `${pixel.x * pixelSize}px`,
+          top: `${pixel.y * pixelSize}px`,
+          width: `${pixelSize}px`,
+          height: `${pixelSize}px`,
+          backgroundColor: pixel.color,
+          boxShadow: 
+            pixel.color === '#FFD700' || pixel.color === '#FFC850' 
+              ? `0 0 ${isAnimating ? 16 : 8}px rgba(255, 215, 0, ${isAnimating ? 0.8 : 0.5})`
+              : pixel.color === '#FFE87C'
+              ? '0 0 12px rgba(255, 232, 124, 0.9)'
+              : 'none',
+        }}
+      />
+    ));
+  };
 
   return (
     <div 
@@ -548,137 +779,172 @@ const HeroCreature: React.FC = () => {
         position: 'relative', 
         display: 'inline-block', 
         cursor: 'pointer',
-        padding: '20px',
-        // This ensures the image rendering stays crisp/pixelated when scaled
-        imageRendering: 'pixelated' 
+        padding: '60px',
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleHover}
     >
-      {/* PIXELATED SPEECH BUBBLE */}
+      {/* Speech Bubble */}
       <AnimatePresence>
-        {isHovered && (
+        {isAnimating && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: -20 }}
-            exit={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.7, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: -10 }}
+            exit={{ opacity: 0, scale: 0.7, y: 20 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{
               position: 'absolute',
-              top: '5%',
-              left: '65%',
+              top: '8%',
+              left: '75%',
               backgroundColor: 'white',
               color: '#1a1a1a',
-              padding: '10px 20px',
-              // Blocky border-radius for pixel feel
-              borderRadius: '0px', 
-              border: '4px solid #1a1a1a',
-              boxShadow: '6px 6px 0px rgba(0,0,0,0.2)',
+              padding: '16px 24px',
+              border: '4px solid #2C3E50',
+              borderRadius: '4px',
+              boxShadow: '6px 6px 0px rgba(44, 62, 80, 0.4)',
               fontWeight: 'bold',
-              fontFamily: '"Courier New", Courier, monospace', // Monospace for retro vibe
-              fontSize: '1.2rem',
+              fontFamily: '"Courier New", monospace',
+              fontSize: '0.6rem',
               zIndex: 10,
-              pointerEvents: 'none',
+              whiteSpace: 'nowrap',
             }}
           >
-            Lumi: Hi!
+            {currentAnimation.name}! 
+            <div style={{
+              position: 'absolute',
+              bottom: '-16px',
+              left: '20px',
+              width: 0,
+              height: 0,
+              borderLeft: '12px solid transparent',
+              borderRight: '12px solid transparent',
+              borderTop: '16px solid white',
+              filter: 'drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))'
+            }} />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ROBOT IMAGE CONTAINER */}
-      <motion.div
-        animate={{ 
-          y: isHovered ? [0, -12, 0] : [0, -6, 0],
-        }}
-        transition={{ 
-          duration: isHovered ? 1.5 : 3, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-      >
-        <img 
-          src={robotImageUrl} 
-          alt="Friendly Robot" 
-          style={{
-            width: '300px',
-            height: 'auto',
-            display: 'block',
-            // --- PIXEL ART CSS TRICK ---
-            // If the image is high-res, this CSS "pixelates" it slightly
-            filter: isHovered 
-              ? 'contrast(1.1) brightness(1.1)' 
-              : 'none',
-            // Keeps pixels sharp if you downscale a large image
-            imageRendering: 'pixelated', 
-          }} 
-        />
+      {/* Pixel Robot Container */}
+      <div style={{
+        position: 'relative',
+        width: '480px',
+        height: '400px',
+        imageRendering: 'pixelated',
+      }}>
+        {generatePixelRobot()}
         
-        {/* PIXELATED GLOW (Square instead of round) */}
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.3 }}
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '180px',
-              height: '180px',
-              backgroundColor: '#ffd700',
-              filter: 'blur(40px)', // Soft glow still works well with pixel art
-              zIndex: -1
-            }}
-          />
+        {/* Animated Glow Effects */}
+        {isAnimating && (
+          <>
+            <motion.div
+              animate={{ 
+                opacity: [0.2, 0.5, 0.2],
+                scale: [0.9, 1.2, 0.9]
+              }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '300px',
+                height: '300px',
+                background: 'radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%)',
+                filter: 'blur(40px)',
+                zIndex: -1,
+                pointerEvents: 'none'
+              }}
+            />
+            <motion.div
+              animate={{ 
+                opacity: [0.3, 0.6, 0.3],
+                scale: [1, 1.15, 1]
+              }}
+              transition={{ duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '280px',
+                height: '280px',
+                background: 'radial-gradient(circle, rgba(119, 89, 253, 0.3) 0%, transparent 70%)',
+                filter: 'blur(30px)',
+                zIndex: -2,
+                pointerEvents: 'none'
+              }}
+            />
+          </>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };
 
-const LumiCreature: FC = () => (
-  <svg
-    viewBox="0 0 280 340" width="260"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ position: "relative", zIndex: 2, filter: "drop-shadow(0 30px 60px rgba(168,85,247,0.55))" }}
-  >
-    <ellipse cx="140" cy="200" rx="105" ry="125" fill={brand.primary.secondary} />
-    <ellipse cx="140" cy="100" rx="80"  ry="80"  fill={brand.primary.secondary} />
-    <text x="85"  y="180" fontSize="16" fill={brand.primary.light} opacity="0.9">✦</text>
-    <text x="175" y="210" fontSize="12" fill={brand.primary.light} opacity="0.7">✦</text>
-    <text x="120" y="250" fontSize="10" fill={brand.primary.light} opacity="0.5">✦</text>
-    <circle cx="112" cy="96" r="26" fill={brand.text.light} />
-    <circle cx="168" cy="96" r="26" fill={brand.text.light} />
-    <circle cx="116" cy="99" r="15" fill={brand.background.main} />
-    <circle cx="172" cy="99" r="15" fill={brand.background.main} />
-    <circle cx="122" cy="93" r="5"  fill={brand.text.light} />
-    <circle cx="178" cy="93" r="5"  fill={brand.text.light} />
-    <path d="M 118 132 Q 140 150 162 132" stroke={brand.background.main} strokeWidth="4" fill="none" strokeLinecap="round" />
-    <ellipse cx="38"  cy="185" rx="20" ry="36" fill={brand.primary.secondary} transform="rotate(-30 38 185)" />
-    <ellipse cx="242" cy="185" rx="20" ry="36" fill={brand.primary.secondary} transform="rotate(30 242 185)" />
-    <circle cx="24"  cy="158" r="14" fill={brand.background.deep} />
-    <circle cx="256" cy="158" r="14" fill={brand.background.deep} />
-    <ellipse cx="108" cy="318" rx="28" ry="14" fill={brand.background.deep} />
-    <ellipse cx="172" cy="318" rx="28" ry="14" fill={brand.background.deep} />
-  </svg>
-);
-const words = ["social connector", "matchmaker", "relationship buddy"];
+const ButtonGroup = ({ isMobile }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: "1.2rem",
+        flexWrap: "wrap",
+        justifyContent: isMobile ? "center" : "flex-start",
+        marginTop: "2.5rem",
+      }}
+    >
+      <AppButton
+        label="Download On Android"
+        icon="📱"
+        primary
+        color="#7759fd"
+      />
+      <AppButton label="Download On iOS" icon="🍎" />
+      <AppButton label="Join Waitlist" icon="✨" isGhost />
+    </div>
+  );
+};
 
+const AppButton = ({ label, icon, primary, color, isGhost }) => {
+  return (
+    <motion.button
+      whileHover={{ y: -5, scale: 1.02, boxShadow: primary ? "0 20px 40px rgba(119, 89, 253, 0.4)" : "0 20px 40px rgba(0,0,0,0.3)" }}
+      whileTap={{ scale: 0.98 }}
+      style={{
+        padding: "14px 28px",
+        borderRadius: "16px",
+        border: primary ? "none" : "1px solid rgba(255,255,255,0.15)",
+        background: primary 
+          ? `linear-gradient(135deg, ${color}, #9b7bff)` 
+          : isGhost ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.05)",
+        color: "white",
+        fontSize: "0.95rem",
+        fontWeight: 600,
+        backdropFilter: "blur(12px)",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "10px",
+        minWidth: "200px",
+        transition: "background 0.3s ease",
+        letterSpacing: "0.2px",
+      }}
+    >
+      <span style={{ fontSize: "1.2rem" }}>{icon}</span>
+      {label}
+    </motion.button>
+  );
+};
 
 const Hero: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Handle screen resize for mobile-specific adjustments
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 968);
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
-    
+    const interval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
     return () => {
       clearInterval(interval);
       window.removeEventListener("resize", checkMobile);
@@ -686,152 +952,158 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section 
-      style={{ 
-        display: "flex", 
-        flexDirection: isMobile ? "column" : "row", // Stacks on mobile
-        alignItems: "center", 
+    <section
+      style={{
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        alignItems: "center",
         justifyContent: "center",
-        minHeight: "100vh", 
-        padding: isMobile ? "120px 5% 60px 5%" : "0 10%", 
-        backgroundColor: "#0a0a1a",
+        minHeight: "100vh",
+        padding: isMobile ? "100px 24px" : "0 8%",
+        backgroundColor: "#050510", // Deeper navy for more "premium" feel
+        backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
         color: "white",
-        overflowX: "hidden",
-        gap: isMobile ? "3rem" : "0"
+        overflow: "hidden",
       }}
     >
+      {/* Background Glow Decor */}
+      <div style={{
+        position: "absolute",
+        top: "10%",
+        left: "5%",
+        width: "300px",
+        height: "300px",
+        background: "rgba(119, 89, 253, 0.1)",
+        filter: "blur(120px)",
+        borderRadius: "50%",
+        pointerEvents: "none",
+      }} />
+
       {/* LEFT CONTENT */}
-      <div style={{ 
-        flex: "1", 
-        maxWidth: isMobile ? "100%" : "600px", 
-        zIndex: 2,
-        textAlign: isMobile ? "center" : "left" // Centers text on mobile
-      }}>
-        <h1 style={{ 
-          fontSize: "clamp(2.5rem, 8vw, 4.5rem)", 
-          lineHeight: "1.1", 
-          fontWeight: 800, 
-          margin: "0 0 1.5rem 0",
-        }}>
-          find your<br />
-          <span style={{ color: "#7759fd" }}>person,</span><br />
-          your <span style={{ color: "#7759fd" }}>tribe.</span><br />
-          build <span style={{ color: "#7759fd" }}>awesome</span> relationships. 
-        </h1>
+      <div
+        style={{
+          flex: "1.2",
+          maxWidth: isMobile ? "100%" : "680px",
+          zIndex: 2,
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1
+            style={{
+              fontSize: "clamp(2.8rem, 7vw, 5rem)",
+              lineHeight: "1.05",
+              fontWeight: 900,
+              margin: "0 0 1.5rem 0",
+              letterSpacing: "-0.03em",
+            }}
+          >
+            find your <span style={{                 background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
+                WebkitTextFillColor: "transparent", }}>person,</span>
+            <br />
+            your <span style={{                 background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
+                WebkitTextFillColor: "transparent", }}>tribe.</span>
+            <br />
+            build <span 
+            style={{       
+                background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
+                WebkitTextFillColor: "transparent",
+                }}>awesome</span> relationships.
+          </h1>
 
-        <p style={{ 
-          fontSize: isMobile ? "1.1rem" : "1.2rem", 
-          color: "#b0b0d1", 
-          lineHeight: "1.6", 
-          margin: "0 0 2.5rem 0",
-          maxWidth: isMobile ? "100%" : "90%"
-        }}>
-          find your people across love, leisure, and <br style={{ display: isMobile ? "none" : "block" }} />
-          collaborations with lumi, your ai{" "}
-          <span style={{ display: "inline-grid", verticalAlign: "bottom" }}>
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={words[index]}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
-                style={{
-                  gridArea: "1 / 1",
-                  fontWeight: "bold",
-                  background: "linear-gradient(135deg, #7759fd 0%, #d9d3fe 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {words[index]}
-              </motion.span>
-            </AnimatePresence>
-          </span>
-        </p>
+          <p
+            style={{
+              fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
+              color: "#a0a0c0",
+              lineHeight: "1.6",
+              margin: "0 0 2.5rem 0",
+              maxWidth: isMobile ? "100%" : "540px",
+            }}
+          >
+            find your people across love, leisure, and collaborations with lumi, your ai {" "}
+            <span style={{ display: "inline-grid", minWidth: "120px" }}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[index]}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.5, ease: "circOut" }}
+                  style={{
+                    gridArea: "1 / 1",
+                    fontWeight: "700",
+                    background: "linear-gradient(to right, #9b7bff, #d9d3fe)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {words[index]}.
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </p>
+        </motion.div>
 
-        <div style={{ 
-          display: "flex", 
-          gap: "1rem", 
-          flexWrap: "wrap", 
-          justifyContent: isMobile ? "center" : "flex-start",
-          marginTop: "2rem" 
-        }}>
-<button style={buttonStyle(true, true)} disabled>
-  Download On Android
-</button>
-
-<button style={buttonStyle(false, true)} disabled>
-  Download On iOS
-</button>
-
-<button style={glassButtonStyle(true)} disabled>
-  Join Waitlist
-</button>
-        </div>
+        <ButtonGroup isMobile={isMobile} />
       </div>
 
-      {/* RIGHT CONTENT (ROBOT) */}
-      <div style={{ 
-        flex: "1", 
-        display: "flex", 
-        justifyContent: "center", 
-        alignItems: "center",
-        position: "relative",
-        width: "100%",
-        minHeight: isMobile ? "300px" : "auto"
-      }}>
-        {/* Glow Effect */}
-        <div style={{ 
-          position: "absolute", 
-          width: isMobile ? "250px" : "450px", 
-          height: isMobile ? "250px" : "450px", 
-          background: "radial-gradient(circle, rgba(119, 89, 253, 0.2) 0%, transparent 70%)",
-          zIndex: 1
+      {/* RIGHT CONTENT (CREATURE) */}
+      <div
+        style={{
+          flex: "1",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          marginTop: isMobile ? "4rem" : "0",
+        }}
+      >
+        <motion.div
+          animate={{ 
+            y: [0, -20, 0],
+          }}
+          transition={{ 
+            duration: 6, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+          style={{ zIndex: 2 }}
+        >
+          <div style={{ 
+            transform: isMobile ? "scale(0.9)" : "scale(1.25)",
+          }}>
+            <HeroCreature />
+          </div>
+        </motion.div>
+
+        {/* Ambient Glow behind creature */}
+        <div style={{
+          position: "absolute",
+          width: "400px",
+          height: "400px",
+          background: "radial-gradient(circle, rgba(119, 89, 253, 0.15) 0%, transparent 70%)",
+          zIndex: 1,
         }} />
-        
-        <div style={{ 
-          zIndex: 2, 
-          transform: isMobile ? "scale(0.85)" : "scale(1.2)",
-          transition: "transform 0.3s ease"
-        }}>
-          <HeroCreature />
-        </div>
       </div>
     </section>
   );
 };
 
-// --- Helper Styles ---
 
-const buttonStyle = (primary: boolean, disabled: boolean) => ({
-  padding: "0.8rem 1.6rem",
-  borderRadius: "12px",
-  border: primary ? "none" : "1px solid rgba(119, 89, 253, 0.5)",
-  backgroundColor: primary ? "#7759fd" : "transparent",
-  color: "white",
-  fontWeight: "600" as const,
-  cursor: disabled ? "not-allowed" : "pointer",
-  boxShadow: primary ? "0 4px 15px rgba(119, 89, 253, 0.3)" : "none",
-  fontSize: "0.95rem",
-  whiteSpace: "nowrap" as const,
-  opacity: disabled ? 0.5 : 1,
-  pointerEvents: disabled ? "none" : "auto"
-});
 
-const glassButtonStyle = (disabled: boolean) => ({
-  padding: "0.8rem 1.6rem",
-  borderRadius: "12px",
-  border: "1px solid rgba(255, 255, 255, 0.1)",
-  backgroundColor: "rgba(255, 255, 255, 0.05)",
-  backdropFilter: "blur(10px)",
-  color: "#d9d3fe",
-  fontWeight: "600" as const,
-  cursor: disabled ? "not-allowed" : "pointer",
-  fontSize: "0.95rem",
-  opacity: disabled ? 0.5 : 1,
-  pointerEvents: disabled ? "none" : "auto"
-});
 const Statement: React.FC = () => {
   const ref = useFadeIn();
   // Using a simple state or media query hook is ideal, 
