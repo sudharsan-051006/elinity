@@ -533,253 +533,294 @@ const CustomCursor: FC = () => {
 
 const words = ["social connector", "matchmaker", "relationship buddy"];
 
-// Pixel art animation states
-const pixelAnimations = [
+
+interface PixelAnimation {
+  name: string;
+  frames: number;
+}
+ 
+interface PixelData {
+  x: number;
+  y: number;
+  color: string;
+  opacity: number;
+}
+ 
+type AnimationType = "Wave" | "Dance" | "Jump" | "Spin" | "Excited" | null;
+ 
+// ─── Constants ────────────────────────────────────────────────────────────────
+ 
+const PIXEL_SIZE = 9;
+const CANVAS_W = 340;
+const CANVAS_H = 340;
+ 
+const pixelAnimations: PixelAnimation[] = [
   { name: "Hello I am Lumi", frames: 4 },
   { name: "Loading Magic...", frames: 6 },
   { name: "Processing Pixels...", frames: 5 },
   { name: "Charging Energy...", frames: 8 },
-  { name: "Ready to Explore!", frames: 6 }
+  { name: "Ready to Explore!", frames: 6 },
 ];
-
+ 
+const ANIMATION_TYPES: AnimationType[] = [
+  "Wave",
+  "Dance",
+  "Jump",
+  "Spin",
+  "Excited",
+];
+ 
+// ─── Base Robot Pixel Map ─────────────────────────────────────────────────────
+ 
+const BASE_ROBOT: [number, number, string][] = [
+  // Antenna ball
+  [19, 1, "#FFE5B4"], [20, 1, "#FFE5B4"], [21, 1, "#FFE5B4"],
+  [19, 2, "#FFE5B4"], [20, 2, "#FFF4D6"], [21, 2, "#FFE5B4"],
+  [19, 3, "#FFE5B4"], [20, 3, "#FFE5B4"], [21, 3, "#FFE5B4"],
+  // Antenna connector
+  [20, 4, "#6B8DB8"], [20, 5, "#6B8DB8"],
+  // Head top
+  [17, 6, "#7BA3D1"], [18, 6, "#7BA3D1"], [19, 6, "#7BA3D1"], [20, 6, "#7BA3D1"], [21, 6, "#7BA3D1"], [22, 6, "#7BA3D1"], [23, 6, "#7BA3D1"],
+  // Head upper
+  [16, 7, "#7BA3D1"], [17, 7, "#7BA3D1"], [18, 7, "#7BA3D1"], [19, 7, "#7BA3D1"], [20, 7, "#7BA3D1"], [21, 7, "#7BA3D1"], [22, 7, "#7BA3D1"], [23, 7, "#7BA3D1"], [24, 7, "#7BA3D1"],
+  // Face screen
+  [16, 8, "#7BA3D1"], [17, 8, "#E8F0FF"], [18, 8, "#E8F0FF"], [19, 8, "#E8F0FF"], [20, 8, "#E8F0FF"], [21, 8, "#E8F0FF"], [22, 8, "#E8F0FF"], [23, 8, "#E8F0FF"], [24, 8, "#7BA3D1"],
+  [16, 9, "#7BA3D1"], [17, 9, "#E8F0FF"], [18, 9, "#E8F0FF"], [19, 9, "#E8F0FF"], [20, 9, "#E8F0FF"], [21, 9, "#E8F0FF"], [22, 9, "#E8F0FF"], [23, 9, "#E8F0FF"], [24, 9, "#7BA3D1"],
+  // Eyes
+  [16, 10, "#7BA3D1"], [17, 10, "#E8F0FF"], [18, 10, "#4A5F7F"], [19, 10, "#2C3E50"], [20, 10, "#E8F0FF"], [21, 10, "#E8F0FF"], [22, 10, "#4A5F7F"], [23, 10, "#E8F0FF"], [24, 10, "#7BA3D1"],
+  [16, 11, "#7BA3D1"], [17, 11, "#E8F0FF"], [18, 11, "#2C3E50"], [19, 11, "#FFD700"], [20, 11, "#E8F0FF"], [21, 11, "#2C3E50"], [22, 11, "#FFD700"], [23, 11, "#E8F0FF"], [24, 11, "#7BA3D1"],
+  // Smile
+  [16, 12, "#7BA3D1"], [17, 12, "#E8F0FF"], [18, 12, "#E8F0FF"], [19, 12, "#5B7DAE"], [20, 12, "#5B7DAE"], [21, 12, "#5B7DAE"], [22, 12, "#E8F0FF"], [23, 12, "#E8F0FF"], [24, 12, "#7BA3D1"],
+  [16, 13, "#7BA3D1"], [17, 13, "#E8F0FF"], [18, 13, "#5B7DAE"], [19, 13, "#E8F0FF"], [20, 13, "#E8F0FF"], [21, 13, "#E8F0FF"], [22, 13, "#5B7DAE"], [23, 13, "#E8F0FF"], [24, 13, "#7BA3D1"],
+  // Head bottom
+  [16, 14, "#7BA3D1"], [17, 14, "#7BA3D1"], [18, 14, "#7BA3D1"], [19, 14, "#7BA3D1"], [20, 14, "#7BA3D1"], [21, 14, "#7BA3D1"], [22, 14, "#7BA3D1"], [23, 14, "#7BA3D1"], [24, 14, "#7BA3D1"],
+  // Left ear
+  [14, 9, "#FFB4C8"], [15, 9, "#FFB4C8"],
+  [14, 10, "#FFB4C8"], [15, 10, "#FFC8DC"],
+  [14, 11, "#FFB4C8"], [15, 11, "#FFB4C8"],
+  [13, 10, "#FFD700"],
+  // Right ear
+  [25, 9, "#FFB4C8"], [26, 9, "#FFB4C8"],
+  [25, 10, "#FFC8DC"], [26, 10, "#FFB4C8"],
+  [25, 11, "#FFB4C8"], [26, 11, "#FFB4C8"],
+  [27, 10, "#FFD700"],
+  // Neck
+  [19, 15, "#6B8DB8"], [20, 15, "#6B8DB8"], [21, 15, "#6B8DB8"],
+  // Body top
+  [17, 16, "#7BA3D1"], [18, 16, "#7BA3D1"], [19, 16, "#7BA3D1"], [20, 16, "#7BA3D1"], [21, 16, "#7BA3D1"], [22, 16, "#7BA3D1"], [23, 16, "#7BA3D1"],
+  // Body with heart
+  [16, 17, "#7BA3D1"], [17, 17, "#7BA3D1"], [18, 17, "#7BA3D1"], [19, 17, "#7BA3D1"], [20, 17, "#7BA3D1"], [21, 17, "#7BA3D1"], [22, 17, "#7BA3D1"], [23, 17, "#7BA3D1"], [24, 17, "#7BA3D1"],
+  [16, 18, "#7BA3D1"], [17, 18, "#7BA3D1"], [18, 18, "#FFD700"], [19, 18, "#FFC850"], [20, 18, "#7BA3D1"], [21, 18, "#FFD700"], [22, 18, "#FFC850"], [23, 18, "#7BA3D1"], [24, 18, "#7BA3D1"],
+  [16, 19, "#7BA3D1"], [17, 19, "#7BA3D1"], [18, 19, "#FFC850"], [19, 19, "#FFD700"], [20, 19, "#FFC850"], [21, 19, "#FFC850"], [22, 19, "#FFD700"], [23, 19, "#7BA3D1"], [24, 19, "#7BA3D1"],
+  [16, 20, "#7BA3D1"], [17, 20, "#7BA3D1"], [18, 20, "#FFD700"], [19, 20, "#FFC850"], [20, 20, "#FFD700"], [21, 20, "#FFD700"], [22, 20, "#FFC850"], [23, 20, "#7BA3D1"], [24, 20, "#7BA3D1"],
+  [16, 21, "#7BA3D1"], [17, 21, "#7BA3D1"], [18, 21, "#7BA3D1"], [19, 21, "#FFD700"], [20, 21, "#FFC850"], [21, 21, "#FFD700"], [22, 21, "#7BA3D1"], [23, 21, "#7BA3D1"], [24, 21, "#7BA3D1"],
+  [16, 22, "#7BA3D1"], [17, 22, "#7BA3D1"], [18, 22, "#7BA3D1"], [19, 22, "#7BA3D1"], [20, 22, "#FFD700"], [21, 22, "#7BA3D1"], [22, 22, "#7BA3D1"], [23, 22, "#7BA3D1"], [24, 22, "#7BA3D1"],
+  // Body bottom
+  [17, 23, "#7BA3D1"], [18, 23, "#7BA3D1"], [19, 23, "#7BA3D1"], [20, 23, "#7BA3D1"], [21, 23, "#7BA3D1"], [22, 23, "#7BA3D1"], [23, 23, "#7BA3D1"],
+  [17, 24, "#6B8DB8"], [18, 24, "#6B8DB8"], [19, 24, "#6B8DB8"], [20, 24, "#6B8DB8"], [21, 24, "#6B8DB8"], [22, 24, "#6B8DB8"], [23, 24, "#6B8DB8"],
+  // Left arm
+  [11, 18, "#7BA3D1"], [12, 18, "#7BA3D1"],
+  [11, 19, "#7BA3D1"], [12, 19, "#7BA3D1"],
+  [11, 20, "#7BA3D1"], [12, 20, "#6B8DB8"],
+  [10, 21, "#7BA3D1"], [11, 21, "#7BA3D1"], [12, 21, "#6B8DB8"],
+  [9, 22, "#7BA3D1"], [10, 22, "#7BA3D1"], [11, 22, "#7BA3D1"],
+  [9, 23, "#7BA3D1"], [10, 23, "#6B8DB8"], [11, 23, "#6B8DB8"],
+  // Right arm
+  [28, 18, "#7BA3D1"], [29, 18, "#7BA3D1"],
+  [28, 19, "#7BA3D1"], [29, 19, "#7BA3D1"],
+  [28, 20, "#6B8DB8"], [29, 20, "#7BA3D1"],
+  [28, 21, "#6B8DB8"], [29, 21, "#7BA3D1"], [30, 21, "#7BA3D1"],
+  [29, 22, "#7BA3D1"], [30, 22, "#7BA3D1"], [31, 22, "#7BA3D1"],
+  [29, 23, "#6B8DB8"], [30, 23, "#6B8DB8"], [31, 23, "#7BA3D1"],
+  // Left leg
+  [17, 25, "#7BA3D1"], [18, 25, "#7BA3D1"], [19, 25, "#7BA3D1"],
+  [17, 26, "#7BA3D1"], [18, 26, "#7BA3D1"], [19, 26, "#7BA3D1"],
+  [17, 27, "#7BA3D1"], [18, 27, "#6B8DB8"], [19, 27, "#7BA3D1"],
+  [17, 28, "#7BA3D1"], [18, 28, "#6B8DB8"], [19, 28, "#7BA3D1"],
+  [17, 29, "#FFD700"],
+  [17, 29, "#6B8DB8"], [18, 29, "#6B8DB8"], [19, 29, "#6B8DB8"],
+  [16, 30, "#6B8DB8"], [17, 30, "#6B8DB8"], [18, 30, "#5B7DAE"], [19, 30, "#6B8DB8"], [20, 30, "#6B8DB8"],
+  // Right leg
+  [21, 25, "#7BA3D1"], [22, 25, "#7BA3D1"], [23, 25, "#7BA3D1"],
+  [21, 26, "#7BA3D1"], [22, 26, "#7BA3D1"], [23, 26, "#7BA3D1"],
+  [21, 27, "#7BA3D1"], [22, 27, "#6B8DB8"], [23, 27, "#7BA3D1"],
+  [21, 28, "#7BA3D1"], [22, 28, "#6B8DB8"], [23, 28, "#7BA3D1"],
+  [21, 29, "#6B8DB8"], [22, 29, "#6B8DB8"], [23, 29, "#6B8DB8"],
+  [20, 30, "#6B8DB8"], [21, 30, "#6B8DB8"], [22, 30, "#5B7DAE"], [23, 30, "#6B8DB8"], [24, 30, "#6B8DB8"],
+  [23, 29, "#FFD700"],
+];
+ 
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+ 
+const isLeftArm = (x: number, y: number) => x >= 9 && x <= 12 && y >= 18 && y <= 23;
+const isRightArm = (x: number, y: number) => x >= 28 && x <= 31 && y >= 18 && y <= 23;
+const isLeg = (x: number, y: number) =>
+  (x >= 17 && x <= 19 && y >= 25 && y <= 30) ||
+  (x >= 21 && x <= 23 && y >= 25 && y <= 30);
+const isHeart = (c: string) => c === "#FFD700" || c === "#FFC850";
+ 
+// ─── Pixel Transform ──────────────────────────────────────────────────────────
+ 
+function transformPixel(
+  bx: number,
+  by: number,
+  col: string,
+  anim: AnimationType,
+  t: number
+): PixelData {
+  let dx = 0;
+  let dy = 0;
+  let alpha = 1;
+  let color = col;
+  const cx = 20;
+ 
+  if (anim === "Wave") {
+    if (isLeftArm(bx, by)) {
+      dy = -Math.sin(t * Math.PI * 2) * 3;
+      dx = Math.cos(t * Math.PI * 2) * 1.5;
+    }
+    if (isRightArm(bx, by)) {
+      dy = Math.sin(t * Math.PI * 2 + Math.PI) * 2;
+    }
+  } else if (anim === "Dance") {
+    dx = Math.sin(t * Math.PI * 4) * 1.5;
+    if (isLeftArm(bx, by)) {
+      dy = -Math.abs(Math.sin(t * Math.PI * 4)) * 4;
+      dx += -1;
+    }
+    if (isRightArm(bx, by)) {
+      dy = -Math.abs(Math.sin(t * Math.PI * 4 + Math.PI)) * 4;
+      dx += 1;
+    }
+    if (isLeg(bx, by)) {
+      dy = Math.sin(t * Math.PI * 4 + (bx < 20 ? 0 : Math.PI)) * 2;
+    }
+  } else if (anim === "Jump") {
+    const jumpY = -Math.abs(Math.sin(t * Math.PI)) * 6;
+    dy = jumpY;
+    if (jumpY > -1) {
+      const squash = 0.15 * (1 - Math.abs(jumpY) / 6);
+      dx = (bx - cx) * squash;
+      dy += (by - 17) * (-squash * 0.5);
+    }
+  } else if (anim === "Spin") {
+    const angle = t * Math.PI * 2;
+    const rx = (bx - cx) * Math.cos(angle);
+    dx = rx - (bx - cx);
+    dy = (bx - cx) * Math.sin(angle) * 0.3;
+    alpha = 0.6 + Math.abs(Math.cos(angle)) * 0.4;
+  } else if (anim === "Excited") {
+    dx = Math.sin(t * Math.PI * 8) * 0.8;
+    dy = Math.cos(t * Math.PI * 8) * 0.8;
+    if (isLeftArm(bx, by) || isRightArm(bx, by)) {
+      dy -= Math.abs(Math.sin(t * Math.PI)) * 3;
+    }
+    if (isHeart(col)) {
+      color = t % 0.5 < 0.25 ? "#FFD700" : "#FF8C00";
+    }
+  }
+ 
+  return {
+    x: Math.round((bx + dx) * PIXEL_SIZE),
+    y: Math.round((by + dy) * PIXEL_SIZE),
+    color,
+    opacity: alpha,
+  };
+}
+ 
+// ─── Canvas Renderer ──────────────────────────────────────────────────────────
+ 
+function renderFrame(
+  ctx: CanvasRenderingContext2D,
+  anim: AnimationType,
+  t: number
+) {
+  ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+  for (const [bx, by, col] of BASE_ROBOT) {
+    const px = transformPixel(bx, by, col, anim, t);
+    ctx.globalAlpha = px.opacity;
+    ctx.fillStyle = px.color;
+    ctx.fillRect(px.x, px.y, PIXEL_SIZE, PIXEL_SIZE);
+  }
+  ctx.globalAlpha = 1;
+}
+ 
+// ─── HeroCreature ─────────────────────────────────────────────────────────────
+ 
 const HeroCreature: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const frameTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const endTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+ 
   const [hoverCount, setHoverCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [currentFrame, setCurrentFrame] = useState(0);
-  
-  const currentAnimation = pixelAnimations[hoverCount % pixelAnimations.length];
-
+  const [bubbleText, setBubbleText] = useState("");
+ 
+  // Draw idle state on mount
   useEffect(() => {
-    if (!isAnimating) return;
-    
-    const frameInterval = setInterval(() => {
-      setCurrentFrame((prev) => (prev + 1) % currentAnimation.frames);
-    }, 120);
-
-    const timeout = setTimeout(() => {
-      setIsAnimating(false);
-      setCurrentFrame(0);
-    }, currentAnimation.frames * 120 + 500);
-
-    return () => {
-      clearInterval(frameInterval);
-      clearTimeout(timeout);
-    };
-  }, [isAnimating, currentAnimation.frames]);
-
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    renderFrame(ctx, null, 0);
+  }, []);
+ 
+  const stopAnim = () => {
+    if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+    if (endTimerRef.current) clearTimeout(endTimerRef.current);
+    setIsAnimating(false);
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      if (ctx) renderFrame(ctx, null, 0);
+    }
+  };
+ 
   const handleHover = () => {
-    setHoverCount((prev) => prev + 1);
+    // Stop any running animation first
+    if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+    if (endTimerRef.current) clearTimeout(endTimerRef.current);
+ 
+    const nextCount = hoverCount + 1;
+    setHoverCount(nextCount);
+ 
+    const animDef = pixelAnimations[nextCount % pixelAnimations.length];
+    const animType = ANIMATION_TYPES[nextCount % ANIMATION_TYPES.length];
+    const totalFrames = animDef.frames;
+    const frameDuration = 140;
+    const totalDuration = totalFrames * frameDuration + 400;
+ 
+    setBubbleText(animDef.name);
     setIsAnimating(true);
-    setCurrentFrame(0);
-  };
-
-  // Enhanced pixel robot with more detail
-  const generatePixelRobot = () => {
-    const pixelSize = 10;
-    
-    // Detailed robot pixel map inspired by the uploaded images
-    const robotPattern = [
-      // Antenna ball (cream/yellow)
-      [19, 1, '#FFE5B4'], [20, 1, '#FFE5B4'], [21, 1, '#FFE5B4'],
-      [19, 2, '#FFE5B4'], [20, 2, '#FFF4D6'], [21, 2, '#FFE5B4'],
-      [19, 3, '#FFE5B4'], [20, 3, '#FFE5B4'], [21, 3, '#FFE5B4'],
-      
-      // Antenna connector
-      [20, 4, '#6B8DB8'], [20, 5, '#6B8DB8'],
-      
-      // Head top
-      [17, 6, '#7BA3D1'], [18, 6, '#7BA3D1'], [19, 6, '#7BA3D1'], [20, 6, '#7BA3D1'], [21, 6, '#7BA3D1'], [22, 6, '#7BA3D1'], [23, 6, '#7BA3D1'],
-      
-      // Head upper
-      [16, 7, '#7BA3D1'], [17, 7, '#7BA3D1'], [18, 7, '#7BA3D1'], [19, 7, '#7BA3D1'], [20, 7, '#7BA3D1'], [21, 7, '#7BA3D1'], [22, 7, '#7BA3D1'], [23, 7, '#7BA3D1'], [24, 7, '#7BA3D1'],
-      
-      // Face screen area
-      [16, 8, '#7BA3D1'], [17, 8, '#E8F0FF'], [18, 8, '#E8F0FF'], [19, 8, '#E8F0FF'], [20, 8, '#E8F0FF'], [21, 8, '#E8F0FF'], [22, 8, '#E8F0FF'], [23, 8, '#E8F0FF'], [24, 8, '#7BA3D1'],
-      [16, 9, '#7BA3D1'], [17, 9, '#E8F0FF'], [18, 9, '#E8F0FF'], [19, 9, '#E8F0FF'], [20, 9, '#E8F0FF'], [21, 9, '#E8F0FF'], [22, 9, '#E8F0FF'], [23, 9, '#E8F0FF'], [24, 9, '#7BA3D1'],
-      
-      // Eyes
-      [16, 10, '#7BA3D1'], [17, 10, '#E8F0FF'], [18, 10, '#4A5F7F'], [19, 10, '#2C3E50'], [20, 10, '#E8F0FF'], [21, 10, '#E8F0FF'], [22, 10, '#4A5F7F'], [23, 10, '#E8F0FF'], [24, 10, '#7BA3D1'],
-      [16, 11, '#7BA3D1'], [17, 11, '#E8F0FF'], [18, 11, '#2C3E50'], [19, 11, '#FFD700'], [20, 11, '#E8F0FF'], [21, 11, '#2C3E50'], [22, 11, '#FFD700'], [23, 11, '#E8F0FF'], [24, 11, '#7BA3D1'],
-      
-      // Smile
-      [16, 12, '#7BA3D1'], [17, 12, '#E8F0FF'], [18, 12, '#E8F0FF'], [19, 12, '#5B7DAE'], [20, 12, '#5B7DAE'], [21, 12, '#5B7DAE'], [22, 12, '#E8F0FF'], [23, 12, '#E8F0FF'], [24, 12, '#7BA3D1'],
-      [16, 13, '#7BA3D1'], [17, 13, '#E8F0FF'], [18, 13, '#5B7DAE'], [19, 13, '#E8F0FF'], [20, 13, '#E8F0FF'], [21, 13, '#E8F0FF'], [22, 13, '#5B7DAE'], [23, 13, '#E8F0FF'], [24, 13, '#7BA3D1'],
-      
-      // Head bottom
-      [16, 14, '#7BA3D1'], [17, 14, '#7BA3D1'], [18, 14, '#7BA3D1'], [19, 14, '#7BA3D1'], [20, 14, '#7BA3D1'], [21, 14, '#7BA3D1'], [22, 14, '#7BA3D1'], [23, 14, '#7BA3D1'], [24, 14, '#7BA3D1'],
-      
-      // Left ear
-      [14, 9, '#FFB4C8'], [15, 9, '#FFB4C8'], 
-      [14, 10, '#FFB4C8'], [15, 10, '#FFC8DC'], 
-      [14, 11, '#FFB4C8'], [15, 11, '#FFB4C8'],
-      [13, 10, '#FFD700'],
-      
-      // Right ear
-      [25, 9, '#FFB4C8'], [26, 9, '#FFB4C8'],
-      [25, 10, '#FFC8DC'], [26, 10, '#FFB4C8'],
-      [25, 11, '#FFB4C8'], [26, 11, '#FFB4C8'],
-      [27, 10, '#FFD700'],
-      
-      // Neck
-      [19, 15, '#6B8DB8'], [20, 15, '#6B8DB8'], [21, 15, '#6B8DB8'],
-      
-      // Body top
-      [17, 16, '#7BA3D1'], [18, 16, '#7BA3D1'], [19, 16, '#7BA3D1'], [20, 16, '#7BA3D1'], [21, 16, '#7BA3D1'], [22, 16, '#7BA3D1'], [23, 16, '#7BA3D1'],
-      
-      // Body with heart
-      [16, 17, '#7BA3D1'], [17, 17, '#7BA3D1'], [18, 17, '#7BA3D1'], [19, 17, '#7BA3D1'], [20, 17, '#7BA3D1'], [21, 17, '#7BA3D1'], [22, 17, '#7BA3D1'], [23, 17, '#7BA3D1'], [24, 17, '#7BA3D1'],
-      [16, 18, '#7BA3D1'], [17, 18, '#7BA3D1'], [18, 18, '#FFD700'], [19, 18, '#FFC850'], [20, 18, '#7BA3D1'], [21, 18, '#FFD700'], [22, 18, '#FFC850'], [23, 18, '#7BA3D1'], [24, 18, '#7BA3D1'],
-      [16, 19, '#7BA3D1'], [17, 19, '#7BA3D1'], [18, 19, '#FFC850'], [19, 19, '#FFD700'], [20, 19, '#FFC850'], [21, 19, '#FFC850'], [22, 19, '#FFD700'], [23, 19, '#7BA3D1'], [24, 19, '#7BA3D1'],
-      [16, 20, '#7BA3D1'], [17, 20, '#7BA3D1'], [18, 20, '#FFD700'], [19, 20, '#FFC850'], [20, 20, '#FFD700'], [21, 20, '#FFD700'], [22, 20, '#FFC850'], [23, 20, '#7BA3D1'], [24, 20, '#7BA3D1'],
-      [16, 21, '#7BA3D1'], [17, 21, '#7BA3D1'], [18, 21, '#7BA3D1'], [19, 21, '#FFD700'], [20, 21, '#FFC850'], [21, 21, '#FFD700'], [22, 21, '#7BA3D1'], [23, 21, '#7BA3D1'], [24, 21, '#7BA3D1'],
-      [16, 22, '#7BA3D1'], [17, 22, '#7BA3D1'], [18, 22, '#7BA3D1'], [19, 22, '#7BA3D1'], [20, 22, '#FFD700'], [21, 22, '#7BA3D1'], [22, 22, '#7BA3D1'], [23, 22, '#7BA3D1'], [24, 22, '#7BA3D1'],
-      
-      // Body bottom
-      [17, 23, '#7BA3D1'], [18, 23, '#7BA3D1'], [19, 23, '#7BA3D1'], [20, 23, '#7BA3D1'], [21, 23, '#7BA3D1'], [22, 23, '#7BA3D1'], [23, 23, '#7BA3D1'],
-      [17, 24, '#6B8DB8'], [18, 24, '#6B8DB8'], [19, 24, '#6B8DB8'], [20, 24, '#6B8DB8'], [21, 24, '#6B8DB8'], [22, 24, '#6B8DB8'], [23, 24, '#6B8DB8'],
-      
-      // Left arm (waving)
-      [11, 18, '#7BA3D1'], [12, 18, '#7BA3D1'],
-      [11, 19, '#7BA3D1'], [12, 19, '#7BA3D1'],
-      [11, 20, '#7BA3D1'], [12, 20, '#6B8DB8'],
-      [10, 21, '#7BA3D1'], [11, 21, '#7BA3D1'], [12, 21, '#6B8DB8'],
-      [9, 22, '#7BA3D1'], [10, 22, '#7BA3D1'], [11, 22, '#7BA3D1'],
-      [9, 23, '#7BA3D1'], [10, 23, '#6B8DB8'], [11, 23, '#6B8DB8'],
-      
-      // Right arm
-      [28, 18, '#7BA3D1'], [29, 18, '#7BA3D1'],
-      [28, 19, '#7BA3D1'], [29, 19, '#7BA3D1'],
-      [28, 20, '#6B8DB8'], [29, 20, '#7BA3D1'],
-      [28, 21, '#6B8DB8'], [29, 21, '#7BA3D1'], [30, 21, '#7BA3D1'],
-      [29, 22, '#7BA3D1'], [30, 22, '#7BA3D1'], [31, 22, '#7BA3D1'],
-      [29, 23, '#6B8DB8'], [30, 23, '#6B8DB8'], [31, 23, '#7BA3D1'],
-      
-      // Left leg
-      [17, 25, '#7BA3D1'], [18, 25, '#7BA3D1'], [19, 25, '#7BA3D1'],
-      [17, 26, '#7BA3D1'], [18, 26, '#7BA3D1'], [19, 26, '#7BA3D1'],
-      [17, 27, '#7BA3D1'], [18, 27, '#6B8DB8'], [19, 27, '#7BA3D1'],
-      [17, 28, '#7BA3D1'], [18, 28, '#6B8DB8'], [19, 28, '#7BA3D1'],
-      [17, 29, '#6B8DB8'], [18, 29, '#6B8DB8'], [19, 29, '#6B8DB8'],
-      [16, 30, '#6B8DB8'], [17, 30, '#6B8DB8'], [18, 30, '#5B7DAE'], [19, 30, '#6B8DB8'], [20, 30, '#6B8DB8'],
-      [17, 29, '#FFD700'],
-      
-      // Right leg
-      [21, 25, '#7BA3D1'], [22, 25, '#7BA3D1'], [23, 25, '#7BA3D1'],
-      [21, 26, '#7BA3D1'], [22, 26, '#7BA3D1'], [23, 26, '#7BA3D1'],
-      [21, 27, '#7BA3D1'], [22, 27, '#6B8DB8'], [23, 27, '#7BA3D1'],
-      [21, 28, '#7BA3D1'], [22, 28, '#6B8DB8'], [23, 28, '#7BA3D1'],
-      [21, 29, '#6B8DB8'], [22, 29, '#6B8DB8'], [23, 29, '#6B8DB8'],
-      [20, 30, '#6B8DB8'], [21, 30, '#6B8DB8'], [22, 30, '#5B7DAE'], [23, 30, '#6B8DB8'], [24, 30, '#6B8DB8'],
-      [23, 29, '#FFD700'],
-    ];
-
-    // Apply animation transformations
-    const animatedPattern = robotPattern.map(([x, y, color]) => {
-      let newX = x;
-      let newY = y;
-      let newColor = color;
-      let scale = 1;
-      let opacity = 1;
-      
-      if (isAnimating) {
-        const progress = currentFrame / currentAnimation.frames;
-        
-        switch (currentAnimation.name) {
-          case "Wave":
-            // Left arm waves
-            if (x >= 9 && x <= 12 && y >= 18 && y <= 23) {
-              const waveOffset = Math.sin(progress * Math.PI * 2) * 3;
-              newY = y + waveOffset;
-              newX = x - Math.abs(waveOffset) * 0.5;
-            }
-            break;
-            
-          case "Heart Beat":
-            // Heart pulses
-            if (color === '#FFD700' || color === '#FFC850') {
-              scale = 1 + Math.sin(progress * Math.PI * 2) * 0.3;
-              newColor = progress % 0.5 < 0.25 ? '#FFD700' : '#FFA500';
-              const centerX = 20;
-              const centerY = 19;
-              newX = centerX + (x - centerX) * scale;
-              newY = centerY + (y - centerY) * scale;
-            }
-            // Eye glow
-            if (color === '#FFD700' && y >= 10 && y <= 11) {
-              newColor = progress % 0.3 < 0.15 ? '#FFE87C' : '#FFD700';
-            }
-            break;
-            
-          case "Bounce":
-            // Entire robot bounces
-            const bounceHeight = Math.abs(Math.sin(progress * Math.PI)) * 5;
-            newY = y - bounceHeight;
-            // Squash and stretch
-            if (bounceHeight < 1) {
-              scale = 1 + (1 - bounceHeight) * 0.15;
-              newX = 20 + (x - 20) * scale;
-            }
-            break;
-            
-          case "Glow":
-            // Entire robot glows
-            if (color.includes('#7BA3D1') || color.includes('#6B8DB8')) {
-              const glowIntensity = Math.sin(progress * Math.PI * 2);
-              opacity = 0.7 + glowIntensity * 0.3;
-            }
-            if (color === '#FFD700' || color === '#FFC850') {
-              scale = 1 + Math.sin(progress * Math.PI * 4) * 0.2;
-            }
-            break;
-            
-          case "Excited":
-            // Slight shake and arm movements
-            newX = x + Math.sin(progress * Math.PI * 8) * 0.5;
-            newY = y + Math.cos(progress * Math.PI * 8) * 0.5;
-            // Both arms up
-            if ((x >= 9 && x <= 12) || (x >= 28 && x <= 31)) {
-              if (y >= 18 && y <= 23) {
-                newY = y - Math.sin(progress * Math.PI) * 2;
-              }
-            }
-            break;
-        }
+ 
+    let frame = 0;
+    frameTimerRef.current = setInterval(() => {
+      frame = (frame + 1) % totalFrames;
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        if (ctx) renderFrame(ctx, animType, frame / totalFrames);
       }
-      
-      return { x: Math.round(newX), y: Math.round(newY), color: newColor, scale, opacity };
-    });
-
-    return animatedPattern.map((pixel, idx) => (
-      <motion.div
-        key={`pixel-${idx}-${hoverCount}`}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: pixel.scale, opacity: pixel.opacity }}
-        transition={{ delay: idx * 0.002, duration: 0.2 }}
-        style={{
-          position: 'absolute',
-          left: `${pixel.x * pixelSize}px`,
-          top: `${pixel.y * pixelSize}px`,
-          width: `${pixelSize}px`,
-          height: `${pixelSize}px`,
-          backgroundColor: pixel.color,
-          boxShadow: 
-            pixel.color === '#FFD700' || pixel.color === '#FFC850' 
-              ? `0 0 ${isAnimating ? 16 : 8}px rgba(255, 215, 0, ${isAnimating ? 0.8 : 0.5})`
-              : pixel.color === '#FFE87C'
-              ? '0 0 12px rgba(255, 232, 124, 0.9)'
-              : 'none',
-        }}
-      />
-    ));
+    }, frameDuration);
+ 
+    endTimerRef.current = setTimeout(stopAnim, totalDuration);
   };
-
+ 
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+      if (endTimerRef.current) clearTimeout(endTimerRef.current);
+    };
+  }, []);
+ 
   return (
-    <div 
-      style={{ 
-        position: 'relative', 
-        display: 'inline-block', 
-        cursor: 'pointer',
-        padding: '60px',
+    <div
+      style={{
+        position: "relative",
+        display: "inline-block",
+        cursor: "pointer",
+        padding: "60px",
       }}
       onMouseEnter={handleHover}
     >
@@ -787,95 +828,114 @@ const HeroCreature: React.FC = () => {
       <AnimatePresence>
         {isAnimating && (
           <motion.div
+            key={bubbleText}
             initial={{ opacity: 0, scale: 0.7, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: -10 }}
             exit={{ opacity: 0, scale: 0.7, y: 20 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{
-              position: 'absolute',
-              top: '8%',
-              left: '75%',
-              backgroundColor: 'white',
-              color: '#1a1a1a',
-              padding: '16px 24px',
-              border: '4px solid #2C3E50',
-              borderRadius: '4px',
-              boxShadow: '6px 6px 0px rgba(44, 62, 80, 0.4)',
-              fontWeight: 'bold',
+              position: "absolute",
+              top: "8%",
+              left: "75%",
+              backgroundColor: "white",
+              color: "#1a1a1a",
+              padding: "16px 24px",
+              border: "4px solid #2C3E50",
+              borderRadius: "4px",
+              boxShadow: "6px 6px 0px rgba(44, 62, 80, 0.4)",
+              fontWeight: "bold",
               fontFamily: '"Courier New", monospace',
-              fontSize: '0.6rem',
+              fontSize: "0.6rem",
               zIndex: 10,
-              whiteSpace: 'nowrap',
+              whiteSpace: "nowrap",
             }}
           >
-            {currentAnimation.name}! 
-            <div style={{
-              position: 'absolute',
-              bottom: '-16px',
-              left: '20px',
-              width: 0,
-              height: 0,
-              borderLeft: '12px solid transparent',
-              borderRight: '12px solid transparent',
-              borderTop: '16px solid white',
-              filter: 'drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))'
-            }} />
+            {bubbleText}
+            {/* Speech bubble tail */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-16px",
+                left: "20px",
+                width: 0,
+                height: 0,
+                borderLeft: "12px solid transparent",
+                borderRight: "12px solid transparent",
+                borderTop: "16px solid white",
+                filter: "drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))",
+              }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Pixel Robot Container */}
-      <div style={{
-        position: 'relative',
-        width: '480px',
-        height: '400px',
-        imageRendering: 'pixelated',
-      }}>
-        {generatePixelRobot()}
-        
-        {/* Animated Glow Effects */}
-        {isAnimating && (
-          <>
-            <motion.div
-              animate={{ 
-                opacity: [0.2, 0.5, 0.2],
-                scale: [0.9, 1.2, 0.9]
-              }}
-              transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '300px',
-                height: '300px',
-                background: 'radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%)',
-                filter: 'blur(40px)',
-                zIndex: -1,
-                pointerEvents: 'none'
-              }}
-            />
-            <motion.div
-              animate={{ 
-                opacity: [0.3, 0.6, 0.3],
-                scale: [1, 1.15, 1]
-              }}
-              transition={{ duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '280px',
-                height: '280px',
-                background: 'radial-gradient(circle, rgba(119, 89, 253, 0.3) 0%, transparent 70%)',
-                filter: 'blur(30px)',
-                zIndex: -2,
-                pointerEvents: 'none'
-              }}
-            />
-          </>
-        )}
+ 
+      {/* Pixel Robot Canvas */}
+      <div
+        style={{
+          position: "relative",
+          width: `${CANVAS_W}px`,
+          height: `${CANVAS_H}px`,
+        }}
+      >
+        <canvas
+          ref={canvasRef}
+          width={CANVAS_W}
+          height={CANVAS_H}
+          style={{ imageRendering: "pixelated", display: "block" }}
+        />
+ 
+        {/* Glow effects during animation */}
+        <AnimatePresence>
+          {isAnimating && (
+            <>
+              <motion.div
+                key="glow1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0.2, 0.5, 0.2], scale: [0.9, 1.2, 0.9] }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "300px",
+                  height: "300px",
+                  background:
+                    "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
+                  filter: "blur(40px)",
+                  zIndex: -1,
+                  pointerEvents: "none",
+                }}
+              />
+              <motion.div
+                key="glow2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.15, 1] }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "280px",
+                  height: "280px",
+                  background:
+                    "radial-gradient(circle, rgba(119,89,253,0.3) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                  zIndex: -2,
+                  pointerEvents: "none",
+                }}
+              />
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
