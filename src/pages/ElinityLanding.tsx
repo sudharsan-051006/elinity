@@ -532,6 +532,180 @@ const CustomCursor: FC = () => {
   );
 };
 
+// Add this component after the HeroCreature component definition
+
+const PixelGround: React.FC = () => {
+  const GROUND_HEIGHT = 100;
+  const PIXEL_SIZE = 8; // Larger for more visible rigid pixels
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [time, setTime] = useState(0);
+  
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Animation loop
+  useEffect(() => {
+    let animationFrameId: number;
+    const animate = () => {
+      setTime(prev => prev + 0.02);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+  
+  const cols = Math.ceil(windowWidth / PIXEL_SIZE);
+  const rows = Math.ceil(GROUND_HEIGHT / PIXEL_SIZE);
+  
+  // Brand color palette - ordered for gradient flow
+  const brandPalette = [
+    '#1e1b4b', // deep indigo
+    '#312e81', // indigo
+    '#4c1d95', // dark purple
+    '#5b21b6', // purple
+    '#6d28d9', // vibrant purple
+    '#7c3aed', // bright purple
+    '#a855f7', // magenta-purple
+    '#c084fc', // light purple
+    '#e879f9', // pink-purple
+    '#ec4899', // magenta
+    '#3b82f6', // blue
+    '#60a5fa', // light blue
+  ];
+  
+  // Get color based on wave position
+  const getColor = (value: number) => {
+    const normalized = (value + 1) / 2; // Convert -1,1 to 0,1
+    const index = Math.floor(normalized * (brandPalette.length - 1));
+    return brandPalette[Math.max(0, Math.min(brandPalette.length - 1, index))];
+  };
+  
+  // Generate rigid pixel pattern with animation
+  const generatePattern = () => {
+    const pattern: { x: number; y: number; color: string; brightness: number }[] = [];
+    
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const x = col * PIXEL_SIZE;
+        const y = row * PIXEL_SIZE;
+        
+        // Multiple wave layers for complex motion
+        const wave1 = Math.sin((col * 0.15) + time);
+        const wave2 = Math.cos((row * 0.2) + time * 0.7);
+        const wave3 = Math.sin((col * 0.08 + row * 0.1) + time * 0.5);
+        
+        // Combine waves
+        const combined = (wave1 + wave2 + wave3) / 3;
+        
+        // Add depth gradient (darker at bottom)
+        const depthFactor = 1 - (row / rows) * 0.5;
+        
+        // Occasional bright pixels
+        const isBright = Math.sin(col * 0.3 + row * 0.2 + time) > 0.85;
+        const brightness = isBright ? 1.3 : depthFactor;
+        
+        pattern.push({
+          x,
+          y,
+          color: getColor(combined),
+          brightness,
+        });
+      }
+    }
+    
+    return pattern;
+  };
+  
+  const pattern = generatePattern();
+  
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: `${GROUND_HEIGHT}px`,
+        zIndex: 9999,
+        pointerEvents: 'none',
+        imageRendering: 'pixelated',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Main pixelated layer */}
+      <svg
+        width="100%"
+        height={GROUND_HEIGHT}
+        style={{ 
+          display: 'block',
+        }}
+      >
+        <defs>
+          <filter id="pixelGlow">
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {pattern.map((pixel, i) => (
+          <rect
+            key={i}
+            x={pixel.x}
+            y={pixel.y}
+            width={PIXEL_SIZE}
+            height={PIXEL_SIZE}
+            fill={pixel.color}
+            opacity={pixel.brightness}
+            filter={pixel.brightness > 1 ? "url(#pixelGlow)" : undefined}
+            style={{
+              transition: 'opacity 0.1s ease',
+            }}
+          />
+        ))}
+      </svg>
+      
+      {/* Horizon glow line */}
+      <motion.div
+        animate={{
+          opacity: [0.4, 0.7, 0.4],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        style={{
+          position: 'absolute',
+          top: '0px',
+          left: 0,
+          right: 0,
+          height: '3px',
+          background: 'linear-gradient(to right, #a855f7, #ec4899, #3b82f6, #a855f7)',
+          boxShadow: '0 0 20px rgba(168, 85, 247, 0.8)',
+        }}
+      />
+      
+      {/* Subtle gradient overlay for depth */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '100%',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%)',
+          pointerEvents: 'none',
+        }}
+      />
+    </div>
+  );
+};
 
 const words = ["social connector", "matchmaker", "relationship buddy"];
 
@@ -988,26 +1162,32 @@ const Hero: React.FC = () => {
   return (
     <section
       style={{
-        display: "grid",
-        // Changed to 1fr auto to let content breathe and buttons stick to bottom
-        gridTemplateRows: isMobile ? "1fr auto" : "1fr auto",
+        display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        justifyItems: "center",
+        justifyContent: "space-between",
         minHeight: "100vh",
-        // Reduced top padding on mobile to prevent pushing content too far down
-        padding: isMobile ? "40px 20px 30px" : "0 8%",
+        padding: isMobile ? "160px 20px 140px" : "180px 8% 140px", // More bottom padding for pixel ground
         backgroundColor: "#050510",
         backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
         color: "white",
         overflowX: "hidden", 
         position: "relative",
-        boxSizing: "border-box" // Ensures padding doesn't add to width
+        boxSizing: "border-box"
       }}
     >
       {/* Background Glow */}
-      <div style={{ position: "absolute", top: "10%", left: "5%", width: isMobile ? "150px" : "300px", 
-                    height: isMobile ? "150px" : "300px", background: "rgba(119, 89, 253, 0.1)", 
-                    filter: "blur(100px)", borderRadius: "50%", pointerEvents: "none" }} />
+      <div style={{ 
+        position: "absolute", 
+        top: "10%", 
+        left: "5%", 
+        width: isMobile ? "200px" : "400px", 
+        height: isMobile ? "200px" : "400px", 
+        background: "rgba(168, 85, 247, 0.15)", 
+        filter: "blur(120px)", 
+        borderRadius: "50%", 
+        pointerEvents: "none" 
+      }} />
 
       {/* --- TOP CONTENT AREA --- */}
       <div
@@ -1019,17 +1199,25 @@ const Hero: React.FC = () => {
           width: "100%",
           maxWidth: "1250px",
           zIndex: 2,
-          // Reduced gap on mobile so things don't feel "overwhelmed" or too long
-          gap: isMobile ? "20px" : "40px",
+          gap: isMobile ? "40px" : "60px",
+          flex: 1,
         }}
       >
-        <div style={{ flex: "1.2", width: "100%", textAlign: isMobile ? "center" : "left" }}>
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+        <div style={{ 
+          flex: isMobile ? "none" : "1.2", 
+          width: "100%", 
+          textAlign: isMobile ? "center" : "left" 
+        }}>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
             <h1 style={{ 
-              fontSize: isMobile ? "2.2rem" : "clamp(2.8rem, 7vw, 5rem)", 
+              fontSize: isMobile ? "2.5rem" : "clamp(2.8rem, 7vw, 5rem)", 
               lineHeight: "1.1", 
               fontWeight: 900, 
-              margin: "0 0 1rem 0", 
+              margin: "0 0 1.5rem 0", 
               letterSpacing: "-0.02em" 
             }}>
               find your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>person,</span>
@@ -1039,18 +1227,21 @@ const Hero: React.FC = () => {
               build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
             </h1>
             <p style={{ 
-              fontSize: isMobile ? "0.95rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
+              fontSize: isMobile ? "1.05rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
               color: "#a0a0c0", 
-              lineHeight: "1.5", 
+              lineHeight: "1.6", 
               margin: "0 auto", 
-              maxWidth: isMobile ? "280px" : "540px" 
+              maxWidth: isMobile ? "100%" : "540px" 
             }}>
               find your people across love, leisure, and collaborations with lumi, your ai {" "}
-              <span style={{ display: "inline-grid", minWidth: isMobile ? "70px" : "120px" }}>
+              <span style={{ display: "inline-grid", minWidth: isMobile ? "90px" : "120px" }}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={words[index]}
-                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.4 }}
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }} 
+                    transition={{ duration: 0.4 }}
                     style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #9b7bff, #d9d3fe)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     {words[index]}.
@@ -1061,10 +1252,23 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Creature Container: Scaled down significantly on mobile to reclaim space */}
-        <div style={{ flex: "1", display: "flex", justifyContent: "center", position: "relative" }}>
-          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
-            <div style={{ transform: isMobile ? "scale(0.75)" : "scale(1.1)", transformOrigin: "center" }}>
+        {/* Creature Container */}
+        <div style={{ 
+          flex: isMobile ? "none" : "1", 
+          display: "flex", 
+          justifyContent: "center", 
+          position: "relative",
+          width: "100%"
+        }}>
+          <motion.div 
+            animate={{ y: [0, -10, 0] }} 
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} 
+            style={{ zIndex: 2 }}
+          >
+            <div style={{ 
+              transform: isMobile ? "scale(0.85)" : "scale(1.1)", 
+              transformOrigin: "center" 
+            }}>
               <HeroCreature />
             </div>
           </motion.div>
@@ -1075,15 +1279,14 @@ const Hero: React.FC = () => {
       <div
         style={{
           width: "100%",
-          maxWidth: "500px", 
-          padding: isMobile ? "10px 0" : "20px 0",
+          maxWidth: isMobile ? "100%" : "700px", 
+          padding: isMobile ? "0" : "20px 0",
           display: "flex",
           flexDirection: isMobile ? "column" : "row", 
           justifyContent: "center",
           alignItems: "stretch", 
-          gap: isMobile ? "10px" : "12px",
+          gap: isMobile ? "12px" : "16px",
           zIndex: 10,
-          contain: "layout style", 
         }}
       >
         {[
@@ -1091,32 +1294,35 @@ const Hero: React.FC = () => {
           { label: "Download On iOS", type: "ghost" },
           { label: "Join Waitlist", type: "solid" }
         ].map((btn, i) => (
-          <button
+          <motion.button
             key={i}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             style={{
               all: "unset",
-              height: isMobile ? "48px" : "54px", // Shorter buttons on mobile to fit the screen better
-              padding: isMobile ? "0" : "0 28px",
-              borderRadius: "14px",
+              height: isMobile ? "52px" : "56px",
+              padding: "0 24px",
+              borderRadius: "12px",
               cursor: "pointer",
-              fontSize: isMobile ? "0.9rem" : "0.95rem",
+              fontSize: isMobile ? "0.95rem" : "1rem",
               fontWeight: "600",
               textAlign: "center",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               boxSizing: "border-box",
-              transition: "all 0.2s ease",
-              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.15)" : "none",
-              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.04)" : "transparent",
+              transition: "all 0.3s ease",
+              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
+              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent",
               backgroundImage: btn.type === "solid" ? "linear-gradient(to right, #ff0080, #c026d3)" : "none",
               color: "white",
               flex: isMobile ? "none" : "1", 
-              width: "100%"
+              width: "100%",
+              boxShadow: btn.type === "solid" ? "0 4px 20px rgba(255, 0, 128, 0.3)" : "none",
             }}
           >
             {btn.label}
-          </button>
+          </motion.button>
         ))}
       </div>
     </section>
@@ -2091,8 +2297,9 @@ const Closing: React.FC = () => {
 
 const ElinityLanding: FC = () => (
   <>
-    {/* <GlobalStyles /> */}
+    <GlobalStyles />
     <CustomCursor />
+    {/* <PixelGround />  */}
     <Hero />
     <Statement />
         <LumiSection />
