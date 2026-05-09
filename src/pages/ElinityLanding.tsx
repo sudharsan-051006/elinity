@@ -988,23 +988,26 @@ const Hero: React.FC = () => {
   return (
     <section
       style={{
-        display: "grid", // Switch to grid for more rigid layout control
-        gridTemplateRows: "1fr auto", // Top takes all space, bottom fits content
+        display: "grid",
+        // '1fr' for content, 'auto' for buttons. 
+        // On mobile, we give the bottom row more breathing room.
+        gridTemplateRows: isMobile ? "1fr auto" : "1fr auto",
         alignItems: "center",
         justifyItems: "center",
         minHeight: "100vh",
-        padding: isMobile ? "100px 24px 60px" : "0 8%",
+        // Increased bottom padding for mobile to account for thumb-reach/nav bars
+        padding: isMobile ? "60px 20px 40px" : "0 8%",
         backgroundColor: "#050510",
         backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
         color: "white",
-        overflow: "hidden",
+        overflowX: "hidden", // Prevent horizontal scroll
         position: "relative",
       }}
     >
-      {/* Background Glow Decor */}
-      <div style={{ position: "absolute", top: "10%", left: "5%", width: "300px", height: "300px", background: "rgba(119, 89, 253, 0.1)", filter: "blur(120px)", borderRadius: "50%", pointerEvents: "none" }} />
+      {/* Background Glow */}
+      <div style={{ position: "absolute", top: "10%", left: "5%", width: isMobile ? "200px" : "300px", height: isMobile ? "200px" : "300px", background: "rgba(119, 89, 253, 0.1)", filter: "blur(100px)", borderRadius: "50%", pointerEvents: "none" }} />
 
-      {/* TOP CONTENT AREA */}
+      {/* --- TOP CONTENT AREA --- */}
       <div
         style={{
           display: "flex",
@@ -1014,24 +1017,38 @@ const Hero: React.FC = () => {
           width: "100%",
           maxWidth: "1250px",
           zIndex: 2,
+          // Shift text up slightly on mobile to make room for creature
+          paddingTop: isMobile ? "40px" : "0", 
         }}
       >
         <div style={{ flex: "1.2", maxWidth: isMobile ? "100%" : "680px", textAlign: isMobile ? "center" : "left" }}>
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", lineHeight: "1.05", fontWeight: 900, margin: "0 0 1.5rem 0", letterSpacing: "-0.03em" }}>
-              find your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>person,</span>
+            <h1 style={{ 
+              fontSize: isMobile ? "2.4rem" : "clamp(2.8rem, 7vw, 5rem)", 
+              lineHeight: "1.1", 
+              fontWeight: 900, 
+              margin: "0 0 1rem 0", 
+              letterSpacing: "-0.02em" 
+            }}>
+              find your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>person,</span>
               <br />
-              your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>tribe.</span>
+              your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>tribe.</span>
               <br />
-              build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
+              build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
             </h1>
-            <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)", color: "#a0a0c0", lineHeight: "1.6", margin: "0", maxWidth: isMobile ? "100%" : "540px" }}>
+            <p style={{ 
+              fontSize: isMobile ? "1rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
+              color: "#a0a0c0", 
+              lineHeight: "1.6", 
+              margin: "0 auto", 
+              maxWidth: isMobile ? "300px" : "540px" 
+            }}>
               find your people across love, leisure, and collaborations with lumi, your ai {" "}
-              <span style={{ display: "inline-grid", minWidth: "120px" }}>
+              <span style={{ display: "inline-grid", minWidth: isMobile ? "80px" : "120px" }}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={words[index]}
-                    initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.5, ease: "circOut" }}
+                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.4 }}
                     style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #9b7bff, #d9d3fe)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     {words[index]}.
@@ -1042,27 +1059,29 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        <div style={{ flex: "1", display: "flex", justifyContent: "center", marginTop: isMobile ? "4rem" : "0", position: "relative" }}>
-          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
-            <div style={{ transform: isMobile ? "scale(0.9)" : "scale(1.25)" }}>
+        {/* Creature Container */}
+        <div style={{ flex: "1", display: "flex", justifyContent: "center", marginTop: isMobile ? "2rem" : "0", position: "relative" }}>
+          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
+            <div style={{ transform: isMobile ? "scale(0.85)" : "scale(1.1)" }}>
               <HeroCreature />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* ISOLATED BUTTON ROW - Fully layout-contained */}
-      <br></br>
+      {/* --- MOBILE-READY BUTTON ROW --- */}
       <div
         style={{
           width: "100%",
-          padding: "20px 0",
+          maxWidth: "600px", // Prevents buttons from getting too wide on tablets
+          padding: isMobile ? "20px 0" : "10px 0",
           display: "flex",
+          flexDirection: isMobile ? "column" : "row", // Stack vertically on mobile
           justifyContent: "center",
-          gap: "16px",
-          flexWrap: "wrap",
+          alignItems: "stretch", // Buttons take full width of container on mobile
+          gap: "12px",
           zIndex: 10,
-          contain: "layout style", // CRITICAL: This isolates these elements from the rest of the page
+          contain: "layout style", 
         }}
       >
         {[
@@ -1073,10 +1092,10 @@ const Hero: React.FC = () => {
           <button
             key={i}
             style={{
-              all: "unset", // Removes browser-specific button padding/border issues
-              height: "50px",
-              padding: "0 24px",
-              borderRadius: "12px",
+              all: "unset",
+              height: "54px", // Slightly taller for better touch target
+              padding: isMobile ? "0" : "0 28px",
+              borderRadius: "16px", // Softer corners for modern mobile feel
               cursor: "pointer",
               fontSize: "0.95rem",
               fontWeight: "600",
@@ -1085,18 +1104,21 @@ const Hero: React.FC = () => {
               alignItems: "center",
               justifyContent: "center",
               boxSizing: "border-box",
-              transition: "background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease",
-              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid transparent",
-              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent",
+              transition: "all 0.2s ease",
+              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.15)" : "none",
+              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.04)" : "transparent",
               backgroundImage: btn.type === "solid" ? "linear-gradient(to right, #ff0080, #c026d3)" : "none",
               color: "white",
+              // On mobile, if column, they fill width. On desktop, they fit content.
+              flex: isMobile ? "none" : "1", 
+              maxWidth: isMobile ? "100%" : "220px"
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = btn.type === "ghost" ? "rgba(255, 255, 255, 0.15)" : "";
+              if (btn.type === "ghost") e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
               if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1.1)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent";
+              if (btn.type === "ghost") e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.04)";
               if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1)";
             }}
           >
