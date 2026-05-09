@@ -559,7 +559,7 @@ const CANVAS_H = 340;
 const pixelAnimations: PixelAnimation[] = [
   { name: "Hello I am Lumi", frames: 4 },
   { name: "Loading Magic...", frames: 6 },
-  { name: "Processing Pixels...", frames: 5 },
+  { name: "Processing Prompts...", frames: 5 },
   { name: "Charging Energy...", frames: 8 },
   { name: "Ready to Explore!", frames: 6 },
 ];
@@ -766,7 +766,7 @@ useEffect(() => {
   return () => {
     window.removeEventListener("resize", handleResize);
   };
-}, []);
+}, []); 
  
   const [hoverCount, setHoverCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -970,61 +970,6 @@ useEffect(() => {
   );
 };
 
-const ButtonGroup = ({ isMobile }) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "1.2rem",
-        flexWrap: "wrap",
-        justifyContent: isMobile ? "center" : "flex-start",
-        marginTop: "2.5rem",
-      }}
-    >
-      <AppButton
-        label="Download On Android"
-        icon="📱"
-        primary
-        color="#7759fd"
-      />
-      <AppButton label="Download On iOS" icon="🍎" />
-      <AppButton label="Join Waitlist" icon="✨" isGhost />
-    </div>
-  );
-};
-
-const AppButton = ({ label, icon, primary, color, isGhost }) => {
-  return (
-    <motion.button
-      whileHover={{ y: -5, scale: 1.02, boxShadow: primary ? "0 20px 40px rgba(119, 89, 253, 0.4)" : "0 20px 40px rgba(0,0,0,0.3)" }}
-      whileTap={{ scale: 0.98 }}
-      style={{
-        padding: "14px 28px",
-        borderRadius: "16px",
-        border: primary ? "none" : "1px solid rgba(255,255,255,0.15)",
-        background: primary 
-          ? `linear-gradient(135deg, ${color}, #9b7bff)` 
-          : isGhost ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.05)",
-        color: "white",
-        fontSize: "0.95rem",
-        fontWeight: 600,
-        backdropFilter: "blur(12px)",
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "10px",
-        minWidth: "200px",
-        transition: "background 0.3s ease",
-        letterSpacing: "0.2px",
-      }}
-    >
-      <span style={{ fontSize: "1.2rem" }}>{icon}</span>
-      {label}
-    </motion.button>
-  );
-};
-
 const Hero: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -1043,155 +988,125 @@ const Hero: React.FC = () => {
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: isMobile ? "column" : "row",
+        display: "grid", // Switch to grid for more rigid layout control
+        gridTemplateRows: "1fr auto", // Top takes all space, bottom fits content
         alignItems: "center",
-        justifyContent: "center",
+        justifyItems: "center",
         minHeight: "100vh",
-        padding: isMobile ? "100px 24px" : "0 8%",
-        backgroundColor: "#050510", // Deeper navy for more "premium" feel
+        padding: isMobile ? "100px 24px 60px" : "0 8%",
+        backgroundColor: "#050510",
         backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
         color: "white",
         overflow: "hidden",
+        position: "relative",
       }}
     >
       {/* Background Glow Decor */}
-      <div style={{
-        position: "absolute",
-        top: "10%",
-        left: "5%",
-        width: "300px",
-        height: "300px",
-        background: "rgba(119, 89, 253, 0.1)",
-        filter: "blur(120px)",
-        borderRadius: "50%",
-        pointerEvents: "none",
-      }} />
+      <div style={{ position: "absolute", top: "10%", left: "5%", width: "300px", height: "300px", background: "rgba(119, 89, 253, 0.1)", filter: "blur(120px)", borderRadius: "50%", pointerEvents: "none" }} />
 
-      {/* LEFT CONTENT */}
+      {/* TOP CONTENT AREA */}
       <div
         style={{
-          flex: "1.2",
-          maxWidth: isMobile ? "100%" : "680px",
+          display: "flex",
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          maxWidth: "1250px",
           zIndex: 2,
-          textAlign: isMobile ? "center" : "left",
         }}
       >
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1
-            style={{
-              fontSize: "clamp(2.8rem, 7vw, 5rem)",
-              lineHeight: "1.05",
-              fontWeight: 900,
-              margin: "0 0 1.5rem 0",
-              letterSpacing: "-0.03em",
-            }}
-          >
-            find your <span style={{                 background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
-                WebkitTextFillColor: "transparent", }}>person,</span>
-            <br />
-            your <span style={{                 background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
-                WebkitTextFillColor: "transparent", }}>tribe.</span>
-            <br />
-            build <span 
-            style={{       
-                background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextStroke: "1px rgba(255,255,255,0.25)",
-                WebkitTextFillColor: "transparent",
-                }}>awesome</span> relationships.
-          </h1>
+        <div style={{ flex: "1.2", maxWidth: isMobile ? "100%" : "680px", textAlign: isMobile ? "center" : "left" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <h1 style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", lineHeight: "1.05", fontWeight: 900, margin: "0 0 1.5rem 0", letterSpacing: "-0.03em" }}>
+              find your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>person,</span>
+              <br />
+              your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>tribe.</span>
+              <br />
+              build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
+            </h1>
+            <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)", color: "#a0a0c0", lineHeight: "1.6", margin: "0", maxWidth: isMobile ? "100%" : "540px" }}>
+              find your people across love, leisure, and collaborations with lumi, your ai {" "}
+              <span style={{ display: "inline-grid", minWidth: "120px" }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={words[index]}
+                    initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.5, ease: "circOut" }}
+                    style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #9b7bff, #d9d3fe)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                  >
+                    {words[index]}.
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </p>
+          </motion.div>
+        </div>
 
-          <p
-            style={{
-              fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
-              color: "#a0a0c0",
-              lineHeight: "1.6",
-              margin: "0 0 2.5rem 0",
-              maxWidth: isMobile ? "100%" : "540px",
-            }}
-          >
-            find your people across love, leisure, and collaborations with lumi, your ai {" "}
-            <span style={{ display: "inline-grid", minWidth: "120px" }}>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={words[index]}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.5, ease: "circOut" }}
-                  style={{
-                    gridArea: "1 / 1",
-                    fontWeight: "700",
-                    background: "linear-gradient(to right, #9b7bff, #d9d3fe)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  {words[index]}.
-                </motion.span>
-              </AnimatePresence>
-            </span>
-          </p>
-        </motion.div>
-
-        <ButtonGroup isMobile={isMobile} />
+        <div style={{ flex: "1", display: "flex", justifyContent: "center", marginTop: isMobile ? "4rem" : "0", position: "relative" }}>
+          <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
+            <div style={{ transform: isMobile ? "scale(0.9)" : "scale(1.25)" }}>
+              <HeroCreature />
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* RIGHT CONTENT (CREATURE) */}
+      {/* ISOLATED BUTTON ROW - Fully layout-contained */}
+      <br></br>
       <div
         style={{
-          flex: "1",
+          width: "100%",
+          padding: "20px 0",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-          marginTop: isMobile ? "4rem" : "0",
+          gap: "16px",
+          flexWrap: "wrap",
+          zIndex: 10,
+          contain: "layout style", // CRITICAL: This isolates these elements from the rest of the page
         }}
       >
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-          style={{ zIndex: 2 }}
-        >
-          <div style={{ 
-            transform: isMobile ? "scale(0.9)" : "scale(1.25)",
-          }}>
-            <HeroCreature />
-          </div>
-        </motion.div>
-
-        {/* Ambient Glow behind creature */}
-        <div style={{
-          position: "absolute",
-          width: "400px",
-          height: "400px",
-          background: "radial-gradient(circle, rgba(119, 89, 253, 0.15) 0%, transparent 70%)",
-          zIndex: 1,
-        }} />
+        {[
+          { label: "Download On Android", type: "ghost" },
+          { label: "Download On iOS", type: "ghost" },
+          { label: "Join Waitlist", type: "solid" }
+        ].map((btn, i) => (
+          <button
+            key={i}
+            style={{
+              all: "unset", // Removes browser-specific button padding/border issues
+              height: "50px",
+              padding: "0 24px",
+              borderRadius: "12px",
+              cursor: "pointer",
+              fontSize: "0.95rem",
+              fontWeight: "600",
+              textAlign: "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxSizing: "border-box",
+              transition: "background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease",
+              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid transparent",
+              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent",
+              backgroundImage: btn.type === "solid" ? "linear-gradient(to right, #ff0080, #c026d3)" : "none",
+              color: "white",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = btn.type === "ghost" ? "rgba(255, 255, 255, 0.15)" : "";
+              if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent";
+              if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1)";
+            }}
+          >
+            {btn.label}
+          </button>
+        ))}
       </div>
     </section>
   );
 };
-
-
 
 const Statement: React.FC = () => {
   const ref = useFadeIn();
