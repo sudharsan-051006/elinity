@@ -975,7 +975,7 @@ const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 968);
+    const checkMobile = () => setIsMobile(window.innerWidth < 720);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     const interval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
@@ -989,23 +989,25 @@ const Hero: React.FC = () => {
     <section
       style={{
         display: "grid",
-        // '1fr' for content, 'auto' for buttons. 
-        // On mobile, we give the bottom row more breathing room.
+        // Changed to 1fr auto to let content breathe and buttons stick to bottom
         gridTemplateRows: isMobile ? "1fr auto" : "1fr auto",
         alignItems: "center",
         justifyItems: "center",
         minHeight: "100vh",
-        // Increased bottom padding for mobile to account for thumb-reach/nav bars
-        padding: isMobile ? "60px 20px 40px" : "0 8%",
+        // Reduced top padding on mobile to prevent pushing content too far down
+        padding: isMobile ? "40px 20px 30px" : "0 8%",
         backgroundColor: "#050510",
         backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
         color: "white",
-        overflowX: "hidden", // Prevent horizontal scroll
+        overflowX: "hidden", 
         position: "relative",
+        boxSizing: "border-box" // Ensures padding doesn't add to width
       }}
     >
       {/* Background Glow */}
-      <div style={{ position: "absolute", top: "10%", left: "5%", width: isMobile ? "200px" : "300px", height: isMobile ? "200px" : "300px", background: "rgba(119, 89, 253, 0.1)", filter: "blur(100px)", borderRadius: "50%", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", top: "10%", left: "5%", width: isMobile ? "150px" : "300px", 
+                    height: isMobile ? "150px" : "300px", background: "rgba(119, 89, 253, 0.1)", 
+                    filter: "blur(100px)", borderRadius: "50%", pointerEvents: "none" }} />
 
       {/* --- TOP CONTENT AREA --- */}
       <div
@@ -1017,14 +1019,14 @@ const Hero: React.FC = () => {
           width: "100%",
           maxWidth: "1250px",
           zIndex: 2,
-          // Shift text up slightly on mobile to make room for creature
-          paddingTop: isMobile ? "40px" : "0", 
+          // Reduced gap on mobile so things don't feel "overwhelmed" or too long
+          gap: isMobile ? "20px" : "40px",
         }}
       >
-        <div style={{ flex: "1.2", maxWidth: isMobile ? "100%" : "680px", textAlign: isMobile ? "center" : "left" }}>
+        <div style={{ flex: "1.2", width: "100%", textAlign: isMobile ? "center" : "left" }}>
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <h1 style={{ 
-              fontSize: isMobile ? "2.4rem" : "clamp(2.8rem, 7vw, 5rem)", 
+              fontSize: isMobile ? "2.2rem" : "clamp(2.8rem, 7vw, 5rem)", 
               lineHeight: "1.1", 
               fontWeight: 900, 
               margin: "0 0 1rem 0", 
@@ -1037,14 +1039,14 @@ const Hero: React.FC = () => {
               build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
             </h1>
             <p style={{ 
-              fontSize: isMobile ? "1rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
+              fontSize: isMobile ? "0.95rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
               color: "#a0a0c0", 
-              lineHeight: "1.6", 
+              lineHeight: "1.5", 
               margin: "0 auto", 
-              maxWidth: isMobile ? "300px" : "540px" 
+              maxWidth: isMobile ? "280px" : "540px" 
             }}>
               find your people across love, leisure, and collaborations with lumi, your ai {" "}
-              <span style={{ display: "inline-grid", minWidth: isMobile ? "80px" : "120px" }}>
+              <span style={{ display: "inline-grid", minWidth: isMobile ? "70px" : "120px" }}>
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={words[index]}
@@ -1059,10 +1061,10 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Creature Container */}
-        <div style={{ flex: "1", display: "flex", justifyContent: "center", marginTop: isMobile ? "2rem" : "0", position: "relative" }}>
-          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
-            <div style={{ transform: isMobile ? "scale(0.85)" : "scale(1.1)" }}>
+        {/* Creature Container: Scaled down significantly on mobile to reclaim space */}
+        <div style={{ flex: "1", display: "flex", justifyContent: "center", position: "relative" }}>
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
+            <div style={{ transform: isMobile ? "scale(0.75)" : "scale(1.1)", transformOrigin: "center" }}>
               <HeroCreature />
             </div>
           </motion.div>
@@ -1073,13 +1075,13 @@ const Hero: React.FC = () => {
       <div
         style={{
           width: "100%",
-          maxWidth: "600px", // Prevents buttons from getting too wide on tablets
-          padding: isMobile ? "20px 0" : "10px 0",
+          maxWidth: "500px", 
+          padding: isMobile ? "10px 0" : "20px 0",
           display: "flex",
-          flexDirection: isMobile ? "column" : "row", // Stack vertically on mobile
+          flexDirection: isMobile ? "column" : "row", 
           justifyContent: "center",
-          alignItems: "stretch", // Buttons take full width of container on mobile
-          gap: "12px",
+          alignItems: "stretch", 
+          gap: isMobile ? "10px" : "12px",
           zIndex: 10,
           contain: "layout style", 
         }}
@@ -1093,11 +1095,11 @@ const Hero: React.FC = () => {
             key={i}
             style={{
               all: "unset",
-              height: "54px", // Slightly taller for better touch target
+              height: isMobile ? "48px" : "54px", // Shorter buttons on mobile to fit the screen better
               padding: isMobile ? "0" : "0 28px",
-              borderRadius: "16px", // Softer corners for modern mobile feel
+              borderRadius: "14px",
               cursor: "pointer",
-              fontSize: "0.95rem",
+              fontSize: isMobile ? "0.9rem" : "0.95rem",
               fontWeight: "600",
               textAlign: "center",
               display: "flex",
@@ -1109,17 +1111,8 @@ const Hero: React.FC = () => {
               backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.04)" : "transparent",
               backgroundImage: btn.type === "solid" ? "linear-gradient(to right, #ff0080, #c026d3)" : "none",
               color: "white",
-              // On mobile, if column, they fill width. On desktop, they fit content.
               flex: isMobile ? "none" : "1", 
-              maxWidth: isMobile ? "100%" : "220px"
-            }}
-            onMouseEnter={(e) => {
-              if (btn.type === "ghost") e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-              if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              if (btn.type === "ghost") e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.04)";
-              if (btn.type === "solid") e.currentTarget.style.filter = "brightness(1)";
+              width: "100%"
             }}
           >
             {btn.label}
