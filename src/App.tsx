@@ -19,6 +19,8 @@ import WhatMakesElinitySpecial from './components/WhatMakesElinitySpecial';
 import HowElinityWorks from './components/HowElinityWorks';
 import FAQ from './components/FAQ';
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingChat from './components/FloatingChat';
+
 
 // Page Imports
 import BlogList from './pages/BlogList';
@@ -150,6 +152,8 @@ function AppContent({ waitlistRef, handleScrollToWaitlist }) {
           <Route path='/ab' element={<ElinityLanding />} />
         </Routes>
       </div>
+      
+              <FloatingChat />
 
       <Footer className="mt-auto" />
     </div>
