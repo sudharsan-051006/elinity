@@ -212,49 +212,45 @@ export default function EllarisLandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-6">
-        {/* Animated grid background with pulse */}
-        <motion.div 
-          className="absolute inset-0 bg-[linear-gradient(rgba(167,139,250,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"
-          animate={{
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+<section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
+  {/* Base Background Image */}
+  <div 
+    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/Ellaris.png')" }}
+  >
+    {/* Dark Overlay to help text contrast (optional) */}
+    <div className="absolute inset-0 bg-black/40" />
+  </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+  {/* Animated grid background with pulse */}
+  <motion.div 
+    className="absolute inset-0 z-10 bg-[linear-gradient(rgba(167,139,250,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(167,139,250,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"
+    animate={{
+      opacity: [0.3, 0.6, 0.3],
+    }}
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
 
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <ShimmerText>
-              {typedText}
-            </ShimmerText>
-          </motion.h1>
-        </div>
+  <div className="relative z-20 max-w-5xl mx-auto text-center">
+    <motion.h1 
+      className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-white"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      <ShimmerText>
+        {typedText}
+      </ShimmerText>
+    </motion.h1>
+  </div>
+</section>
 
-<div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
-  {[0, 1, 2].map((i) => (
-    <div key={i} className="relative flex items-center justify-center">
-      <motion.div
-        className="absolute w-4 h-4 rounded-full border border-fuchsia-500"
-        animate={{ scale: [1, 2], opacity: [0.5, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.4 }}
-      />
-      <div className="w-1.5 h-1.5 bg-fuchsia-500 rounded-full" />
-    </div>
-  ))}
-</div>
-
-      </section>
-
+<br>
+</br>
       {/* Main Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 pb-24">
         {/* What Is Ellaris */}

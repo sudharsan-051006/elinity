@@ -1,5 +1,5 @@
-import three from '../../public/Three.jpg';
-import why from '../../public/whywearebuliding.jpeg';
+import three from '../../public/Three.png';
+import why from '../../public/whywearebuliding.png';
 import sol from '../../public/28.jpeg';
 import belif from '../../public/belifs.png';
 import birth from '../../public/brithrate.jpeg';
@@ -1478,7 +1478,7 @@ We are not naive about the risks. We are vigilant about misuse. We are deeply aw
   },
   {
     id: 6,
-    image: '/25.jpeg',
+    image: '/25.png',
     title: 'The Future of Work, Meaning, and Purpose',
     time: '6 min read',
     date: '30 May 2024',

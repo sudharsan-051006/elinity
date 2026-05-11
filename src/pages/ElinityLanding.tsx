@@ -532,617 +532,1226 @@ const CustomCursor: FC = () => {
   );
 };
 
-// Add this component after the HeroCreature component definition
-
-const PixelGround: React.FC = () => {
-  const GROUND_HEIGHT = 100;
-  const PIXEL_SIZE = 8; // Larger for more visible rigid pixels
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [time, setTime] = useState(0);
-  
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  // Animation loop
-  useEffect(() => {
-    let animationFrameId: number;
-    const animate = () => {
-      setTime(prev => prev + 0.02);
-      animationFrameId = requestAnimationFrame(animate);
-    };
-    animate();
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
-  
-  const cols = Math.ceil(windowWidth / PIXEL_SIZE);
-  const rows = Math.ceil(GROUND_HEIGHT / PIXEL_SIZE);
-  
-  // Brand color palette - ordered for gradient flow
-  const brandPalette = [
-    '#1e1b4b', // deep indigo
-    '#312e81', // indigo
-    '#4c1d95', // dark purple
-    '#5b21b6', // purple
-    '#6d28d9', // vibrant purple
-    '#7c3aed', // bright purple
-    '#a855f7', // magenta-purple
-    '#c084fc', // light purple
-    '#e879f9', // pink-purple
-    '#ec4899', // magenta
-    '#3b82f6', // blue
-    '#60a5fa', // light blue
-  ];
-  
-  // Get color based on wave position
-  const getColor = (value: number) => {
-    const normalized = (value + 1) / 2; // Convert -1,1 to 0,1
-    const index = Math.floor(normalized * (brandPalette.length - 1));
-    return brandPalette[Math.max(0, Math.min(brandPalette.length - 1, index))];
-  };
-  
-  // Generate rigid pixel pattern with animation
-  const generatePattern = () => {
-    const pattern: { x: number; y: number; color: string; brightness: number }[] = [];
-    
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const x = col * PIXEL_SIZE;
-        const y = row * PIXEL_SIZE;
-        
-        // Multiple wave layers for complex motion
-        const wave1 = Math.sin((col * 0.15) + time);
-        const wave2 = Math.cos((row * 0.2) + time * 0.7);
-        const wave3 = Math.sin((col * 0.08 + row * 0.1) + time * 0.5);
-        
-        // Combine waves
-        const combined = (wave1 + wave2 + wave3) / 3;
-        
-        // Add depth gradient (darker at bottom)
-        const depthFactor = 1 - (row / rows) * 0.5;
-        
-        // Occasional bright pixels
-        const isBright = Math.sin(col * 0.3 + row * 0.2 + time) > 0.85;
-        const brightness = isBright ? 1.3 : depthFactor;
-        
-        pattern.push({
-          x,
-          y,
-          color: getColor(combined),
-          brightness,
-        });
-      }
-    }
-    
-    return pattern;
-  };
-  
-  const pattern = generatePattern();
-  
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: `${GROUND_HEIGHT}px`,
-        zIndex: 9999,
-        pointerEvents: 'none',
-        imageRendering: 'pixelated',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Main pixelated layer */}
-      <svg
-        width="100%"
-        height={GROUND_HEIGHT}
-        style={{ 
-          display: 'block',
-        }}
-      >
-        <defs>
-          <filter id="pixelGlow">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        
-        {pattern.map((pixel, i) => (
-          <rect
-            key={i}
-            x={pixel.x}
-            y={pixel.y}
-            width={PIXEL_SIZE}
-            height={PIXEL_SIZE}
-            fill={pixel.color}
-            opacity={pixel.brightness}
-            filter={pixel.brightness > 1 ? "url(#pixelGlow)" : undefined}
-            style={{
-              transition: 'opacity 0.1s ease',
-            }}
-          />
-        ))}
-      </svg>
-      
-      {/* Horizon glow line */}
-      <motion.div
-        animate={{
-          opacity: [0.4, 0.7, 0.4],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        style={{
-          position: 'absolute',
-          top: '0px',
-          left: 0,
-          right: 0,
-          height: '3px',
-          background: 'linear-gradient(to right, #a855f7, #ec4899, #3b82f6, #a855f7)',
-          boxShadow: '0 0 20px rgba(168, 85, 247, 0.8)',
-        }}
-      />
-      
-      {/* Subtle gradient overlay for depth */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '100%',
-          background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%)',
-          pointerEvents: 'none',
-        }}
-      />
-    </div>
-  );
-};
-
 const words = ["social connector", "matchmaker", "relationship buddy"];
 
 
-interface PixelAnimation {
-  name: string;
-  frames: number;
+// interface PixelAnimation {
+//   name: string;
+//   frames: number;
+// }
+ 
+// interface PixelData {
+//   x: number;
+//   y: number;
+//   color: string;
+//   opacity: number;
+// }
+ 
+// type AnimationType = "Wave" | "Dance" | "Jump" | "Spin" | "Excited" | null;
+ 
+// // ─── Constants ────────────────────────────────────────────────────────────────
+ 
+// const PIXEL_SIZE = 9;
+// const CANVAS_W = 340;
+// const CANVAS_H = 340;
+ 
+// const pixelAnimations: PixelAnimation[] = [
+//   { name: "Hello I am Lumi", frames: 4 },
+//   { name: "Loading Magic...", frames: 6 },
+//   { name: "Processing Prompts...", frames: 5 },
+//   { name: "Charging Energy...", frames: 8 },
+//   { name: "Ready to Explore!", frames: 6 },
+// ];
+ 
+// const ANIMATION_TYPES: AnimationType[] = [
+//   "Wave",
+//   "Dance",
+//   "Jump",
+//   "Spin",
+//   "Excited",
+// ];
+ 
+// // ─── Base Robot Pixel Map ─────────────────────────────────────────────────────
+ 
+// const BASE_ROBOT: [number, number, string][] = [
+//   // Antenna ball
+//   [19, 1, "#FFE5B4"], [20, 1, "#FFE5B4"], [21, 1, "#FFE5B4"],
+//   [19, 2, "#FFE5B4"], [20, 2, "#FFF4D6"], [21, 2, "#FFE5B4"],
+//   [19, 3, "#FFE5B4"], [20, 3, "#FFE5B4"], [21, 3, "#FFE5B4"],
+//   // Antenna connector
+//   [20, 4, "#6B8DB8"], [20, 5, "#6B8DB8"],
+//   // Head top
+//   [17, 6, "#7BA3D1"], [18, 6, "#7BA3D1"], [19, 6, "#7BA3D1"], [20, 6, "#7BA3D1"], [21, 6, "#7BA3D1"], [22, 6, "#7BA3D1"], [23, 6, "#7BA3D1"],
+//   // Head upper
+//   [16, 7, "#7BA3D1"], [17, 7, "#7BA3D1"], [18, 7, "#7BA3D1"], [19, 7, "#7BA3D1"], [20, 7, "#7BA3D1"], [21, 7, "#7BA3D1"], [22, 7, "#7BA3D1"], [23, 7, "#7BA3D1"], [24, 7, "#7BA3D1"],
+//   // Face screen
+//   [16, 8, "#7BA3D1"], [17, 8, "#E8F0FF"], [18, 8, "#E8F0FF"], [19, 8, "#E8F0FF"], [20, 8, "#E8F0FF"], [21, 8, "#E8F0FF"], [22, 8, "#E8F0FF"], [23, 8, "#E8F0FF"], [24, 8, "#7BA3D1"],
+//   [16, 9, "#7BA3D1"], [17, 9, "#E8F0FF"], [18, 9, "#E8F0FF"], [19, 9, "#E8F0FF"], [20, 9, "#E8F0FF"], [21, 9, "#E8F0FF"], [22, 9, "#E8F0FF"], [23, 9, "#E8F0FF"], [24, 9, "#7BA3D1"],
+//   // Eyes
+//   [16, 10, "#7BA3D1"], [17, 10, "#E8F0FF"], [18, 10, "#4A5F7F"], [19, 10, "#2C3E50"], [20, 10, "#E8F0FF"], [21, 10, "#E8F0FF"], [22, 10, "#4A5F7F"], [23, 10, "#E8F0FF"], [24, 10, "#7BA3D1"],
+//   [16, 11, "#7BA3D1"], [17, 11, "#E8F0FF"], [18, 11, "#2C3E50"], [19, 11, "#FFD700"], [20, 11, "#E8F0FF"], [21, 11, "#2C3E50"], [22, 11, "#FFD700"], [23, 11, "#E8F0FF"], [24, 11, "#7BA3D1"],
+//   // Smile
+//   [16, 12, "#7BA3D1"], [17, 12, "#E8F0FF"], [18, 12, "#E8F0FF"], [19, 12, "#5B7DAE"], [20, 12, "#5B7DAE"], [21, 12, "#5B7DAE"], [22, 12, "#E8F0FF"], [23, 12, "#E8F0FF"], [24, 12, "#7BA3D1"],
+//   [16, 13, "#7BA3D1"], [17, 13, "#E8F0FF"], [18, 13, "#5B7DAE"], [19, 13, "#E8F0FF"], [20, 13, "#E8F0FF"], [21, 13, "#E8F0FF"], [22, 13, "#5B7DAE"], [23, 13, "#E8F0FF"], [24, 13, "#7BA3D1"],
+//   // Head bottom
+//   [16, 14, "#7BA3D1"], [17, 14, "#7BA3D1"], [18, 14, "#7BA3D1"], [19, 14, "#7BA3D1"], [20, 14, "#7BA3D1"], [21, 14, "#7BA3D1"], [22, 14, "#7BA3D1"], [23, 14, "#7BA3D1"], [24, 14, "#7BA3D1"],
+//   // Left ear
+//   [14, 9, "#FFB4C8"], [15, 9, "#FFB4C8"],
+//   [14, 10, "#FFB4C8"], [15, 10, "#FFC8DC"],
+//   [14, 11, "#FFB4C8"], [15, 11, "#FFB4C8"],
+//   [13, 10, "#FFD700"],
+//   // Right ear
+//   [25, 9, "#FFB4C8"], [26, 9, "#FFB4C8"],
+//   [25, 10, "#FFC8DC"], [26, 10, "#FFB4C8"],
+//   [25, 11, "#FFB4C8"], [26, 11, "#FFB4C8"],
+//   [27, 10, "#FFD700"],
+//   // Neck
+//   [19, 15, "#6B8DB8"], [20, 15, "#6B8DB8"], [21, 15, "#6B8DB8"],
+//   // Body top
+//   [17, 16, "#7BA3D1"], [18, 16, "#7BA3D1"], [19, 16, "#7BA3D1"], [20, 16, "#7BA3D1"], [21, 16, "#7BA3D1"], [22, 16, "#7BA3D1"], [23, 16, "#7BA3D1"],
+//   // Body with heart
+//   [16, 17, "#7BA3D1"], [17, 17, "#7BA3D1"], [18, 17, "#7BA3D1"], [19, 17, "#7BA3D1"], [20, 17, "#7BA3D1"], [21, 17, "#7BA3D1"], [22, 17, "#7BA3D1"], [23, 17, "#7BA3D1"], [24, 17, "#7BA3D1"],
+//   [16, 18, "#7BA3D1"], [17, 18, "#7BA3D1"], [18, 18, "#FFD700"], [19, 18, "#FFC850"], [20, 18, "#7BA3D1"], [21, 18, "#FFD700"], [22, 18, "#FFC850"], [23, 18, "#7BA3D1"], [24, 18, "#7BA3D1"],
+//   [16, 19, "#7BA3D1"], [17, 19, "#7BA3D1"], [18, 19, "#FFC850"], [19, 19, "#FFD700"], [20, 19, "#FFC850"], [21, 19, "#FFC850"], [22, 19, "#FFD700"], [23, 19, "#7BA3D1"], [24, 19, "#7BA3D1"],
+//   [16, 20, "#7BA3D1"], [17, 20, "#7BA3D1"], [18, 20, "#FFD700"], [19, 20, "#FFC850"], [20, 20, "#FFD700"], [21, 20, "#FFD700"], [22, 20, "#FFC850"], [23, 20, "#7BA3D1"], [24, 20, "#7BA3D1"],
+//   [16, 21, "#7BA3D1"], [17, 21, "#7BA3D1"], [18, 21, "#7BA3D1"], [19, 21, "#FFD700"], [20, 21, "#FFC850"], [21, 21, "#FFD700"], [22, 21, "#7BA3D1"], [23, 21, "#7BA3D1"], [24, 21, "#7BA3D1"],
+//   [16, 22, "#7BA3D1"], [17, 22, "#7BA3D1"], [18, 22, "#7BA3D1"], [19, 22, "#7BA3D1"], [20, 22, "#FFD700"], [21, 22, "#7BA3D1"], [22, 22, "#7BA3D1"], [23, 22, "#7BA3D1"], [24, 22, "#7BA3D1"],
+//   // Body bottom
+//   [17, 23, "#7BA3D1"], [18, 23, "#7BA3D1"], [19, 23, "#7BA3D1"], [20, 23, "#7BA3D1"], [21, 23, "#7BA3D1"], [22, 23, "#7BA3D1"], [23, 23, "#7BA3D1"],
+//   [17, 24, "#6B8DB8"], [18, 24, "#6B8DB8"], [19, 24, "#6B8DB8"], [20, 24, "#6B8DB8"], [21, 24, "#6B8DB8"], [22, 24, "#6B8DB8"], [23, 24, "#6B8DB8"],
+//   // Left arm
+//   [11, 18, "#7BA3D1"], [12, 18, "#7BA3D1"],
+//   [11, 19, "#7BA3D1"], [12, 19, "#7BA3D1"],
+//   [11, 20, "#7BA3D1"], [12, 20, "#6B8DB8"],
+//   [10, 21, "#7BA3D1"], [11, 21, "#7BA3D1"], [12, 21, "#6B8DB8"],
+//   [9, 22, "#7BA3D1"], [10, 22, "#7BA3D1"], [11, 22, "#7BA3D1"],
+//   [9, 23, "#7BA3D1"], [10, 23, "#6B8DB8"], [11, 23, "#6B8DB8"],
+//   // Right arm
+//   [28, 18, "#7BA3D1"], [29, 18, "#7BA3D1"],
+//   [28, 19, "#7BA3D1"], [29, 19, "#7BA3D1"],
+//   [28, 20, "#6B8DB8"], [29, 20, "#7BA3D1"],
+//   [28, 21, "#6B8DB8"], [29, 21, "#7BA3D1"], [30, 21, "#7BA3D1"],
+//   [29, 22, "#7BA3D1"], [30, 22, "#7BA3D1"], [31, 22, "#7BA3D1"],
+//   [29, 23, "#6B8DB8"], [30, 23, "#6B8DB8"], [31, 23, "#7BA3D1"],
+//   // Left leg
+//   [17, 25, "#7BA3D1"], [18, 25, "#7BA3D1"], [19, 25, "#7BA3D1"],
+//   [17, 26, "#7BA3D1"], [18, 26, "#7BA3D1"], [19, 26, "#7BA3D1"],
+//   [17, 27, "#7BA3D1"], [18, 27, "#6B8DB8"], [19, 27, "#7BA3D1"],
+//   [17, 28, "#7BA3D1"], [18, 28, "#6B8DB8"], [19, 28, "#7BA3D1"],
+//   [17, 29, "#FFD700"],
+//   [17, 29, "#6B8DB8"], [18, 29, "#6B8DB8"], [19, 29, "#6B8DB8"],
+//   [16, 30, "#6B8DB8"], [17, 30, "#6B8DB8"], [18, 30, "#5B7DAE"], [19, 30, "#6B8DB8"], [20, 30, "#6B8DB8"],
+//   // Right leg
+//   [21, 25, "#7BA3D1"], [22, 25, "#7BA3D1"], [23, 25, "#7BA3D1"],
+//   [21, 26, "#7BA3D1"], [22, 26, "#7BA3D1"], [23, 26, "#7BA3D1"],
+//   [21, 27, "#7BA3D1"], [22, 27, "#6B8DB8"], [23, 27, "#7BA3D1"],
+//   [21, 28, "#7BA3D1"], [22, 28, "#6B8DB8"], [23, 28, "#7BA3D1"],
+//   [21, 29, "#6B8DB8"], [22, 29, "#6B8DB8"], [23, 29, "#6B8DB8"],
+//   [20, 30, "#6B8DB8"], [21, 30, "#6B8DB8"], [22, 30, "#5B7DAE"], [23, 30, "#6B8DB8"], [24, 30, "#6B8DB8"],
+//   [23, 29, "#FFD700"],
+// ];
+ 
+// // ─── Helpers ──────────────────────────────────────────────────────────────────
+ 
+// const isLeftArm = (x: number, y: number) => x >= 9 && x <= 12 && y >= 18 && y <= 23;
+// const isRightArm = (x: number, y: number) => x >= 28 && x <= 31 && y >= 18 && y <= 23;
+// const isLeg = (x: number, y: number) =>
+//   (x >= 17 && x <= 19 && y >= 25 && y <= 30) ||
+//   (x >= 21 && x <= 23 && y >= 25 && y <= 30);
+// const isHeart = (c: string) => c === "#FFD700" || c === "#FFC850";
+ 
+// // ─── Pixel Transform ──────────────────────────────────────────────────────────
+ 
+// function transformPixel(
+//   bx: number,
+//   by: number,
+//   col: string,
+//   anim: AnimationType,
+//   t: number
+// ): PixelData {
+//   let dx = 0;
+//   let dy = 0;
+//   let alpha = 1;
+//   let color = col;
+//   const cx = 20;
+ 
+//   if (anim === "Wave") {
+//     if (isLeftArm(bx, by)) {
+//       dy = -Math.sin(t * Math.PI * 2) * 3;
+//       dx = Math.cos(t * Math.PI * 2) * 1.5;
+//     }
+//     if (isRightArm(bx, by)) {
+//       dy = Math.sin(t * Math.PI * 2 + Math.PI) * 2;
+//     }
+//   } else if (anim === "Dance") {
+//     dx = Math.sin(t * Math.PI * 4) * 1.5;
+//     if (isLeftArm(bx, by)) {
+//       dy = -Math.abs(Math.sin(t * Math.PI * 4)) * 4;
+//       dx += -1;
+//     }
+//     if (isRightArm(bx, by)) {
+//       dy = -Math.abs(Math.sin(t * Math.PI * 4 + Math.PI)) * 4;
+//       dx += 1;
+//     }
+//     if (isLeg(bx, by)) {
+//       dy = Math.sin(t * Math.PI * 4 + (bx < 20 ? 0 : Math.PI)) * 2;
+//     }
+//   } else if (anim === "Jump") {
+//     const jumpY = -Math.abs(Math.sin(t * Math.PI)) * 6;
+//     dy = jumpY;
+//     if (jumpY > -1) {
+//       const squash = 0.15 * (1 - Math.abs(jumpY) / 6);
+//       dx = (bx - cx) * squash;
+//       dy += (by - 17) * (-squash * 0.5);
+//     }
+//   } else if (anim === "Spin") {
+//     const angle = t * Math.PI * 2;
+//     const rx = (bx - cx) * Math.cos(angle);
+//     dx = rx - (bx - cx);
+//     dy = (bx - cx) * Math.sin(angle) * 0.3;
+//     alpha = 0.6 + Math.abs(Math.cos(angle)) * 0.4;
+//   } else if (anim === "Excited") {
+//     dx = Math.sin(t * Math.PI * 8) * 0.8;
+//     dy = Math.cos(t * Math.PI * 8) * 0.8;
+//     if (isLeftArm(bx, by) || isRightArm(bx, by)) {
+//       dy -= Math.abs(Math.sin(t * Math.PI)) * 3;
+//     }
+//     if (isHeart(col)) {
+//       color = t % 0.5 < 0.25 ? "#FFD700" : "#FF8C00";
+//     }
+//   }
+ 
+//   return {
+//     x: Math.round((bx + dx) * PIXEL_SIZE),
+//     y: Math.round((by + dy) * PIXEL_SIZE),
+//     color,
+//     opacity: alpha,
+//   };
+// }
+ 
+// // ─── Canvas Renderer ──────────────────────────────────────────────────────────
+ 
+// function renderFrame(
+//   ctx: CanvasRenderingContext2D,
+//   anim: AnimationType,
+//   t: number
+// ) {
+//   ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+//   for (const [bx, by, col] of BASE_ROBOT) {
+//     const px = transformPixel(bx, by, col, anim, t);
+//     ctx.globalAlpha = px.opacity;
+//     ctx.fillStyle = px.color;
+//     ctx.fillRect(px.x, px.y, PIXEL_SIZE, PIXEL_SIZE);
+//   }
+//   ctx.globalAlpha = 1;
+// }
+ 
+// // ─── HeroCreature ─────────────────────────────────────────────────────────────
+ 
+// const HeroCreature: React.FC = () => {
+//   const canvasRef = useRef<HTMLCanvasElement>(null);
+//   const frameTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+//   const endTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+// useEffect(() => {
+//   const handleResize = () => {
+//     setIsMobile(window.innerWidth <= 768);
+//   };
+
+//   window.addEventListener("resize", handleResize);
+
+//   return () => {
+//     window.removeEventListener("resize", handleResize);
+//   };
+// }, []); 
+ 
+//   const [hoverCount, setHoverCount] = useState(0);
+//   const [isAnimating, setIsAnimating] = useState(false);
+//   const [bubbleText, setBubbleText] = useState("");
+ 
+//   // Draw idle state on mount
+//   useEffect(() => {
+//     const canvas = canvasRef.current;
+//     if (!canvas) return;
+//     const ctx = canvas.getContext("2d");
+//     if (!ctx) return;
+//     renderFrame(ctx, null, 0);
+//   }, []);
+ 
+//   const stopAnim = () => {
+//     if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+//     if (endTimerRef.current) clearTimeout(endTimerRef.current);
+//     setIsAnimating(false);
+//     const canvas = canvasRef.current;
+//     if (canvas) {
+//       const ctx = canvas.getContext("2d");
+//       if (ctx) renderFrame(ctx, null, 0);
+//     }
+//   };
+ 
+//   const handleHover = () => {
+//     // Stop any running animation first
+//     if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+//     if (endTimerRef.current) clearTimeout(endTimerRef.current);
+ 
+//     const nextCount = hoverCount + 1;
+//     setHoverCount(nextCount);
+ 
+//     const animDef = pixelAnimations[nextCount % pixelAnimations.length];
+//     const animType = ANIMATION_TYPES[nextCount % ANIMATION_TYPES.length];
+//     const totalFrames = animDef.frames;
+//     const frameDuration = 140;
+//     const totalDuration = totalFrames * frameDuration + 400;
+ 
+//     setBubbleText(animDef.name);
+//     setIsAnimating(true);
+ 
+//     let frame = 0;
+//     frameTimerRef.current = setInterval(() => {
+//       frame = (frame + 1) % totalFrames;
+//       const canvas = canvasRef.current;
+//       if (canvas) {
+//         const ctx = canvas.getContext("2d");
+//         if (ctx) renderFrame(ctx, animType, frame / totalFrames);
+//       }
+//     }, frameDuration);
+ 
+//     endTimerRef.current = setTimeout(stopAnim, totalDuration);
+//   };
+ 
+//   // Cleanup on unmount
+//   useEffect(() => {
+//     return () => {
+//       if (frameTimerRef.current) clearInterval(frameTimerRef.current);
+//       if (endTimerRef.current) clearTimeout(endTimerRef.current);
+//     };
+//   }, []);
+ 
+//   return (
+//     <div
+//       style={{
+//         position: "relative",
+//         display: "inline-block",
+//         cursor: "pointer",
+//         padding: "60px",
+//       }}
+//       onMouseEnter={handleHover}
+//     >
+//       {/* Speech Bubble */}
+// <AnimatePresence>
+//   {isAnimating && (
+//     <motion.div
+//       key={bubbleText}
+//       initial={{ opacity: 0, scale: 0.7, y: 20 }}
+//       animate={{ opacity: 1, scale: 1, y: -10 }}
+//       exit={{ opacity: 0, scale: 0.7, y: 20 }}
+//       transition={{ type: "spring", stiffness: 260, damping: 20 }}
+//       style={{
+//         position: "absolute",
+
+//         // MOBILE vs DESKTOP positioning
+//         top: isMobile ? "-48px" : "8%",
+//         left: isMobile ? "50%" : "75%",
+//         transform: isMobile ? "translateX(-50%)" : "none",
+
+//         backgroundColor: "white",
+//         color: "#1a1a1a",
+//         padding: isMobile ? "12px 18px" : "16px 24px",
+
+//         border: "4px solid #2C3E50",
+//         borderRadius: "4px",
+//         boxShadow: "6px 6px 0px rgba(44, 62, 80, 0.4)",
+
+//         fontWeight: "bold",
+//         fontFamily: '"Courier New", monospace',
+
+//         // Responsive text
+//         fontSize: isMobile ? "0.5rem" : "0.6rem",
+
+//         zIndex: 10,
+//         whiteSpace: "nowrap",
+//       }}
+//     >
+//       {bubbleText}
+
+//       {/* Speech bubble tail */}
+//       <div
+//         style={{
+//           position: "absolute",
+//           bottom: "-16px",
+//           left: isMobile ? "50%" : "20px",
+//           transform: isMobile ? "translateX(-50%)" : "none",
+
+//           width: 0,
+//           height: 0,
+//           borderLeft: "12px solid transparent",
+//           borderRight: "12px solid transparent",
+//           borderTop: "16px solid white",
+
+//           filter: "drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))",
+//         }}
+//       />
+//     </motion.div>
+//   )}
+// </AnimatePresence>
+ 
+//       {/* Pixel Robot Canvas */}
+//       <div
+//         style={{
+//           position: "relative",
+//           width: `${CANVAS_W}px`,
+//           height: `${CANVAS_H}px`,
+//         }}
+//       >
+//         <canvas
+//           ref={canvasRef}
+//           width={CANVAS_W}
+//           height={CANVAS_H}
+//           style={{ imageRendering: "pixelated", display: "block" }}
+//         />
+ 
+//         {/* Glow effects during animation */}
+//         <AnimatePresence>
+//           {isAnimating && (
+//             <>
+//               <motion.div
+//                 key="glow1"
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: [0.2, 0.5, 0.2], scale: [0.9, 1.2, 0.9] }}
+//                 exit={{ opacity: 0 }}
+//                 transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+//                 style={{
+//                   position: "absolute",
+//                   top: "50%",
+//                   left: "50%",
+//                   transform: "translate(-50%, -50%)",
+//                   width: "300px",
+//                   height: "300px",
+//                   background:
+//                     "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
+//                   filter: "blur(40px)",
+//                   zIndex: -1,
+//                   pointerEvents: "none",
+//                 }}
+//               />
+//               <motion.div
+//                 key="glow2"
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.15, 1] }}
+//                 exit={{ opacity: 0 }}
+//                 transition={{
+//                   duration: 1,
+//                   repeat: Infinity,
+//                   ease: "easeInOut",
+//                   delay: 0.2,
+//                 }}
+//                 style={{
+//                   position: "absolute",
+//                   top: "50%",
+//                   left: "50%",
+//                   transform: "translate(-50%, -50%)",
+//                   width: "280px",
+//                   height: "280px",
+//                   background:
+//                     "radial-gradient(circle, rgba(119,89,253,0.3) 0%, transparent 70%)",
+//                   filter: "blur(30px)",
+//                   zIndex: -2,
+//                   pointerEvents: "none",
+//                 }}
+//               />
+//             </>
+//           )}
+//         </AnimatePresence>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+interface AnimationMessage {
+  text: string;
+  emotionColor: string;
 }
  
-interface PixelData {
-  x: number;
-  y: number;
-  color: string;
-  opacity: number;
-}
- 
-type AnimationType = "Wave" | "Dance" | "Jump" | "Spin" | "Excited" | null;
+type AnimationState =
+  | "idle"
+  | "wave"
+  | "dance"
+  | "jump"
+  | "spin"
+  | "excited";
  
 // ─── Constants ────────────────────────────────────────────────────────────────
  
-const PIXEL_SIZE = 9;
-const CANVAS_W = 340;
-const CANVAS_H = 340;
- 
-const pixelAnimations: PixelAnimation[] = [
-  { name: "Hello I am Lumi", frames: 4 },
-  { name: "Loading Magic...", frames: 6 },
-  { name: "Processing Prompts...", frames: 5 },
-  { name: "Charging Energy...", frames: 8 },
-  { name: "Ready to Explore!", frames: 6 },
+const MESSAGES: AnimationMessage[] = [
+  { text: "Hello! I am Lumi ✨", emotionColor: "#7BA3D1" },
+  { text: "Loading Magic...", emotionColor: "#9B7BE8" },
+  { text: "Processing Prompts...", emotionColor: "#5DCAA5" },
+  { text: "Charging Energy! ⚡", emotionColor: "#FFD700" },
+  { text: "Ready to Explore! 🚀", emotionColor: "#FF8C69" },
 ];
  
-const ANIMATION_TYPES: AnimationType[] = [
-  "Wave",
-  "Dance",
-  "Jump",
-  "Spin",
-  "Excited",
+const ANIMATION_SEQUENCE: AnimationState[] = [
+  "wave",
+  "dance",
+  "jump",
+  "spin",
+  "excited",
 ];
  
-// ─── Base Robot Pixel Map ─────────────────────────────────────────────────────
+const COLORS = {
+  bodyBlue: "#7BA3D1",
+  bodyBlueDark: "#5B85B8",
+  bodyBlueLight: "#A8C4E8",
+  bodyBluePale: "#D4E5F7",
+  bodyBlueShadow: "#4A6E9E",
+  earPink: "#F0B8C8",
+  earPinkLight: "#FAD4E2",
+  eyeGlow: "#FFD700",
+  eyeGlowOuter: "#FF9500",
+  heartGold: "#FFD700",
+  heartOrange: "#FF8C00",
+  antennaOrb: "#FFE5A0",
+  antennaOrbGlow: "#FFD060",
+  neckDark: "#5A7EA8",
+  footDark: "#4A6E9E",
+  shadowBase: "#3A5C88",
+  white: "#FFFFFF",
+  screenBg: "#EAF2FF",
+};
  
-const BASE_ROBOT: [number, number, string][] = [
-  // Antenna ball
-  [19, 1, "#FFE5B4"], [20, 1, "#FFE5B4"], [21, 1, "#FFE5B4"],
-  [19, 2, "#FFE5B4"], [20, 2, "#FFF4D6"], [21, 2, "#FFE5B4"],
-  [19, 3, "#FFE5B4"], [20, 3, "#FFE5B4"], [21, 3, "#FFE5B4"],
-  // Antenna connector
-  [20, 4, "#6B8DB8"], [20, 5, "#6B8DB8"],
-  // Head top
-  [17, 6, "#7BA3D1"], [18, 6, "#7BA3D1"], [19, 6, "#7BA3D1"], [20, 6, "#7BA3D1"], [21, 6, "#7BA3D1"], [22, 6, "#7BA3D1"], [23, 6, "#7BA3D1"],
-  // Head upper
-  [16, 7, "#7BA3D1"], [17, 7, "#7BA3D1"], [18, 7, "#7BA3D1"], [19, 7, "#7BA3D1"], [20, 7, "#7BA3D1"], [21, 7, "#7BA3D1"], [22, 7, "#7BA3D1"], [23, 7, "#7BA3D1"], [24, 7, "#7BA3D1"],
-  // Face screen
-  [16, 8, "#7BA3D1"], [17, 8, "#E8F0FF"], [18, 8, "#E8F0FF"], [19, 8, "#E8F0FF"], [20, 8, "#E8F0FF"], [21, 8, "#E8F0FF"], [22, 8, "#E8F0FF"], [23, 8, "#E8F0FF"], [24, 8, "#7BA3D1"],
-  [16, 9, "#7BA3D1"], [17, 9, "#E8F0FF"], [18, 9, "#E8F0FF"], [19, 9, "#E8F0FF"], [20, 9, "#E8F0FF"], [21, 9, "#E8F0FF"], [22, 9, "#E8F0FF"], [23, 9, "#E8F0FF"], [24, 9, "#7BA3D1"],
-  // Eyes
-  [16, 10, "#7BA3D1"], [17, 10, "#E8F0FF"], [18, 10, "#4A5F7F"], [19, 10, "#2C3E50"], [20, 10, "#E8F0FF"], [21, 10, "#E8F0FF"], [22, 10, "#4A5F7F"], [23, 10, "#E8F0FF"], [24, 10, "#7BA3D1"],
-  [16, 11, "#7BA3D1"], [17, 11, "#E8F0FF"], [18, 11, "#2C3E50"], [19, 11, "#FFD700"], [20, 11, "#E8F0FF"], [21, 11, "#2C3E50"], [22, 11, "#FFD700"], [23, 11, "#E8F0FF"], [24, 11, "#7BA3D1"],
-  // Smile
-  [16, 12, "#7BA3D1"], [17, 12, "#E8F0FF"], [18, 12, "#E8F0FF"], [19, 12, "#5B7DAE"], [20, 12, "#5B7DAE"], [21, 12, "#5B7DAE"], [22, 12, "#E8F0FF"], [23, 12, "#E8F0FF"], [24, 12, "#7BA3D1"],
-  [16, 13, "#7BA3D1"], [17, 13, "#E8F0FF"], [18, 13, "#5B7DAE"], [19, 13, "#E8F0FF"], [20, 13, "#E8F0FF"], [21, 13, "#E8F0FF"], [22, 13, "#5B7DAE"], [23, 13, "#E8F0FF"], [24, 13, "#7BA3D1"],
-  // Head bottom
-  [16, 14, "#7BA3D1"], [17, 14, "#7BA3D1"], [18, 14, "#7BA3D1"], [19, 14, "#7BA3D1"], [20, 14, "#7BA3D1"], [21, 14, "#7BA3D1"], [22, 14, "#7BA3D1"], [23, 14, "#7BA3D1"], [24, 14, "#7BA3D1"],
-  // Left ear
-  [14, 9, "#FFB4C8"], [15, 9, "#FFB4C8"],
-  [14, 10, "#FFB4C8"], [15, 10, "#FFC8DC"],
-  [14, 11, "#FFB4C8"], [15, 11, "#FFB4C8"],
-  [13, 10, "#FFD700"],
-  // Right ear
-  [25, 9, "#FFB4C8"], [26, 9, "#FFB4C8"],
-  [25, 10, "#FFC8DC"], [26, 10, "#FFB4C8"],
-  [25, 11, "#FFB4C8"], [26, 11, "#FFB4C8"],
-  [27, 10, "#FFD700"],
-  // Neck
-  [19, 15, "#6B8DB8"], [20, 15, "#6B8DB8"], [21, 15, "#6B8DB8"],
-  // Body top
-  [17, 16, "#7BA3D1"], [18, 16, "#7BA3D1"], [19, 16, "#7BA3D1"], [20, 16, "#7BA3D1"], [21, 16, "#7BA3D1"], [22, 16, "#7BA3D1"], [23, 16, "#7BA3D1"],
-  // Body with heart
-  [16, 17, "#7BA3D1"], [17, 17, "#7BA3D1"], [18, 17, "#7BA3D1"], [19, 17, "#7BA3D1"], [20, 17, "#7BA3D1"], [21, 17, "#7BA3D1"], [22, 17, "#7BA3D1"], [23, 17, "#7BA3D1"], [24, 17, "#7BA3D1"],
-  [16, 18, "#7BA3D1"], [17, 18, "#7BA3D1"], [18, 18, "#FFD700"], [19, 18, "#FFC850"], [20, 18, "#7BA3D1"], [21, 18, "#FFD700"], [22, 18, "#FFC850"], [23, 18, "#7BA3D1"], [24, 18, "#7BA3D1"],
-  [16, 19, "#7BA3D1"], [17, 19, "#7BA3D1"], [18, 19, "#FFC850"], [19, 19, "#FFD700"], [20, 19, "#FFC850"], [21, 19, "#FFC850"], [22, 19, "#FFD700"], [23, 19, "#7BA3D1"], [24, 19, "#7BA3D1"],
-  [16, 20, "#7BA3D1"], [17, 20, "#7BA3D1"], [18, 20, "#FFD700"], [19, 20, "#FFC850"], [20, 20, "#FFD700"], [21, 20, "#FFD700"], [22, 20, "#FFC850"], [23, 20, "#7BA3D1"], [24, 20, "#7BA3D1"],
-  [16, 21, "#7BA3D1"], [17, 21, "#7BA3D1"], [18, 21, "#7BA3D1"], [19, 21, "#FFD700"], [20, 21, "#FFC850"], [21, 21, "#FFD700"], [22, 21, "#7BA3D1"], [23, 21, "#7BA3D1"], [24, 21, "#7BA3D1"],
-  [16, 22, "#7BA3D1"], [17, 22, "#7BA3D1"], [18, 22, "#7BA3D1"], [19, 22, "#7BA3D1"], [20, 22, "#FFD700"], [21, 22, "#7BA3D1"], [22, 22, "#7BA3D1"], [23, 22, "#7BA3D1"], [24, 22, "#7BA3D1"],
-  // Body bottom
-  [17, 23, "#7BA3D1"], [18, 23, "#7BA3D1"], [19, 23, "#7BA3D1"], [20, 23, "#7BA3D1"], [21, 23, "#7BA3D1"], [22, 23, "#7BA3D1"], [23, 23, "#7BA3D1"],
-  [17, 24, "#6B8DB8"], [18, 24, "#6B8DB8"], [19, 24, "#6B8DB8"], [20, 24, "#6B8DB8"], [21, 24, "#6B8DB8"], [22, 24, "#6B8DB8"], [23, 24, "#6B8DB8"],
-  // Left arm
-  [11, 18, "#7BA3D1"], [12, 18, "#7BA3D1"],
-  [11, 19, "#7BA3D1"], [12, 19, "#7BA3D1"],
-  [11, 20, "#7BA3D1"], [12, 20, "#6B8DB8"],
-  [10, 21, "#7BA3D1"], [11, 21, "#7BA3D1"], [12, 21, "#6B8DB8"],
-  [9, 22, "#7BA3D1"], [10, 22, "#7BA3D1"], [11, 22, "#7BA3D1"],
-  [9, 23, "#7BA3D1"], [10, 23, "#6B8DB8"], [11, 23, "#6B8DB8"],
-  // Right arm
-  [28, 18, "#7BA3D1"], [29, 18, "#7BA3D1"],
-  [28, 19, "#7BA3D1"], [29, 19, "#7BA3D1"],
-  [28, 20, "#6B8DB8"], [29, 20, "#7BA3D1"],
-  [28, 21, "#6B8DB8"], [29, 21, "#7BA3D1"], [30, 21, "#7BA3D1"],
-  [29, 22, "#7BA3D1"], [30, 22, "#7BA3D1"], [31, 22, "#7BA3D1"],
-  [29, 23, "#6B8DB8"], [30, 23, "#6B8DB8"], [31, 23, "#7BA3D1"],
-  // Left leg
-  [17, 25, "#7BA3D1"], [18, 25, "#7BA3D1"], [19, 25, "#7BA3D1"],
-  [17, 26, "#7BA3D1"], [18, 26, "#7BA3D1"], [19, 26, "#7BA3D1"],
-  [17, 27, "#7BA3D1"], [18, 27, "#6B8DB8"], [19, 27, "#7BA3D1"],
-  [17, 28, "#7BA3D1"], [18, 28, "#6B8DB8"], [19, 28, "#7BA3D1"],
-  [17, 29, "#FFD700"],
-  [17, 29, "#6B8DB8"], [18, 29, "#6B8DB8"], [19, 29, "#6B8DB8"],
-  [16, 30, "#6B8DB8"], [17, 30, "#6B8DB8"], [18, 30, "#5B7DAE"], [19, 30, "#6B8DB8"], [20, 30, "#6B8DB8"],
-  // Right leg
-  [21, 25, "#7BA3D1"], [22, 25, "#7BA3D1"], [23, 25, "#7BA3D1"],
-  [21, 26, "#7BA3D1"], [22, 26, "#7BA3D1"], [23, 26, "#7BA3D1"],
-  [21, 27, "#7BA3D1"], [22, 27, "#6B8DB8"], [23, 27, "#7BA3D1"],
-  [21, 28, "#7BA3D1"], [22, 28, "#6B8DB8"], [23, 28, "#7BA3D1"],
-  [21, 29, "#6B8DB8"], [22, 29, "#6B8DB8"], [23, 29, "#6B8DB8"],
-  [20, 30, "#6B8DB8"], [21, 30, "#6B8DB8"], [22, 30, "#5B7DAE"], [23, 30, "#6B8DB8"], [24, 30, "#6B8DB8"],
-  [23, 29, "#FFD700"],
-];
+// ─── Framer Motion Variants ───────────────────────────────────────────────────
  
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+const floatVariants: Variants = {
+  idle: {
+    y: [0, -10, 0],
+    transition: {
+      duration: 3.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+  wave: {
+    y: [0, -6, 0],
+    transition: {
+      duration: 1.8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+  dance: {
+    x: [-8, 8, -8],
+    y: [0, -5, 0],
+    transition: {
+      duration: 0.7,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+  jump: {
+    y: [0, -30, 0],
+    transition: {
+      duration: 0.6,
+      repeat: 3,
+      ease: [0.2, 0, 0.8, 1],
+    },
+  },
+  spin: {
+    rotate: [0, 360],
+    transition: {
+      duration: 1.2,
+      repeat: 2,
+      ease: "easeInOut",
+    },
+  },
+  excited: {
+    y: [0, -8, 0, -8, 0],
+    x: [-3, 3, -3, 3, 0],
+    transition: {
+      duration: 0.4,
+      repeat: 4,
+      ease: "easeInOut",
+    },
+  },
+};
  
-const isLeftArm = (x: number, y: number) => x >= 9 && x <= 12 && y >= 18 && y <= 23;
-const isRightArm = (x: number, y: number) => x >= 28 && x <= 31 && y >= 18 && y <= 23;
-const isLeg = (x: number, y: number) =>
-  (x >= 17 && x <= 19 && y >= 25 && y <= 30) ||
-  (x >= 21 && x <= 23 && y >= 25 && y <= 30);
-const isHeart = (c: string) => c === "#FFD700" || c === "#FFC850";
+const leftArmVariants: Variants = {
+  idle: {
+    rotate: 0,
+    y: 0,
+    transition: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+  },
+  wave: {
+    rotate: [-10, -50, -10],
+    y: [-5, -15, -5],
+    transition: { duration: 0.5, repeat: 6, ease: "easeInOut" },
+  },
+  dance: {
+    rotate: [-20, 20, -20],
+    transition: { duration: 0.7, repeat: Infinity, ease: "easeInOut" },
+  },
+  jump: { rotate: -30, y: -5, transition: { duration: 0.3 } },
+  spin: { rotate: 0, y: 0 },
+  excited: {
+    rotate: [-40, 40, -40],
+    y: [-10, 0, -10],
+    transition: { duration: 0.4, repeat: 5, ease: "easeInOut" },
+  },
+};
  
-// ─── Pixel Transform ──────────────────────────────────────────────────────────
+const rightArmVariants: Variants = {
+  idle: { rotate: 0, y: 0 },
+  wave: { rotate: 0, y: 0 },
+  dance: {
+    rotate: [20, -20, 20],
+    transition: {
+      duration: 0.7,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 0.35,
+    },
+  },
+  jump: { rotate: 30, y: -5, transition: { duration: 0.3 } },
+  spin: { rotate: 0, y: 0 },
+  excited: {
+    rotate: [40, -40, 40],
+    y: [-10, 0, -10],
+    transition: {
+      duration: 0.4,
+      repeat: 5,
+      ease: "easeInOut",
+      delay: 0.2,
+    },
+  },
+};
  
-function transformPixel(
-  bx: number,
-  by: number,
-  col: string,
-  anim: AnimationType,
-  t: number
-): PixelData {
-  let dx = 0;
-  let dy = 0;
-  let alpha = 1;
-  let color = col;
-  const cx = 20;
+const heartVariants: Variants = {
+  idle: {
+    scale: [1, 1.12, 1],
+    transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+  },
+  wave: {
+    scale: [1, 1.25, 1],
+    transition: { duration: 0.9, repeat: Infinity, ease: "easeInOut" },
+  },
+  dance: {
+    scale: [1, 1.3, 1],
+    transition: { duration: 0.7, repeat: Infinity, ease: "easeInOut" },
+  },
+  jump: {
+    scale: [1, 1.4, 1],
+    transition: { duration: 0.6, repeat: 3, ease: "easeInOut" },
+  },
+  spin: {
+    scale: [1, 1.2, 1],
+    transition: { duration: 1.2, repeat: 2, ease: "easeInOut" },
+  },
+  excited: {
+    scale: [1, 1.5, 1, 1.5, 1],
+    transition: { duration: 0.4, repeat: 4 },
+  },
+};
  
-  if (anim === "Wave") {
-    if (isLeftArm(bx, by)) {
-      dy = -Math.sin(t * Math.PI * 2) * 3;
-      dx = Math.cos(t * Math.PI * 2) * 1.5;
-    }
-    if (isRightArm(bx, by)) {
-      dy = Math.sin(t * Math.PI * 2 + Math.PI) * 2;
-    }
-  } else if (anim === "Dance") {
-    dx = Math.sin(t * Math.PI * 4) * 1.5;
-    if (isLeftArm(bx, by)) {
-      dy = -Math.abs(Math.sin(t * Math.PI * 4)) * 4;
-      dx += -1;
-    }
-    if (isRightArm(bx, by)) {
-      dy = -Math.abs(Math.sin(t * Math.PI * 4 + Math.PI)) * 4;
-      dx += 1;
-    }
-    if (isLeg(bx, by)) {
-      dy = Math.sin(t * Math.PI * 4 + (bx < 20 ? 0 : Math.PI)) * 2;
-    }
-  } else if (anim === "Jump") {
-    const jumpY = -Math.abs(Math.sin(t * Math.PI)) * 6;
-    dy = jumpY;
-    if (jumpY > -1) {
-      const squash = 0.15 * (1 - Math.abs(jumpY) / 6);
-      dx = (bx - cx) * squash;
-      dy += (by - 17) * (-squash * 0.5);
-    }
-  } else if (anim === "Spin") {
-    const angle = t * Math.PI * 2;
-    const rx = (bx - cx) * Math.cos(angle);
-    dx = rx - (bx - cx);
-    dy = (bx - cx) * Math.sin(angle) * 0.3;
-    alpha = 0.6 + Math.abs(Math.cos(angle)) * 0.4;
-  } else if (anim === "Excited") {
-    dx = Math.sin(t * Math.PI * 8) * 0.8;
-    dy = Math.cos(t * Math.PI * 8) * 0.8;
-    if (isLeftArm(bx, by) || isRightArm(bx, by)) {
-      dy -= Math.abs(Math.sin(t * Math.PI)) * 3;
-    }
-    if (isHeart(col)) {
-      color = t % 0.5 < 0.25 ? "#FFD700" : "#FF8C00";
-    }
-  }
+const glowVariants: Variants = {
+  idle: {
+    opacity: [0.25, 0.45, 0.25],
+    scale: [0.95, 1.05, 0.95],
+    transition: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+  },
+  wave: {
+    opacity: [0.35, 0.6, 0.35],
+    scale: [0.98, 1.1, 0.98],
+    transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+  },
+  dance: {
+    opacity: [0.4, 0.7, 0.4],
+    scale: [1, 1.15, 1],
+    transition: { duration: 0.7, repeat: Infinity, ease: "easeInOut" },
+  },
+  jump: {
+    opacity: [0.5, 0.8, 0.5],
+    scale: [1, 1.2, 1],
+    transition: { duration: 0.6, repeat: 3 },
+  },
+  spin: {
+    opacity: [0.4, 0.8, 0.4],
+    scale: [0.9, 1.2, 0.9],
+    transition: { duration: 1.2, repeat: 2 },
+  },
+  excited: {
+    opacity: [0.5, 0.9, 0.5],
+    scale: [1, 1.25, 1],
+    transition: { duration: 0.4, repeat: 4 },
+  },
+};
  
-  return {
-    x: Math.round((bx + dx) * PIXEL_SIZE),
-    y: Math.round((by + dy) * PIXEL_SIZE),
-    color,
-    opacity: alpha,
-  };
-}
+// ─── Sub-components ───────────────────────────────────────────────────────────
  
-// ─── Canvas Renderer ──────────────────────────────────────────────────────────
+const BlinkingEyes: React.FC<{ isActive: boolean }> = ({ isActive }) => {
+  const [blink, setBlink] = useState(false);
  
-function renderFrame(
-  ctx: CanvasRenderingContext2D,
-  anim: AnimationType,
-  t: number
-) {
-  ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
-  for (const [bx, by, col] of BASE_ROBOT) {
-    const px = transformPixel(bx, by, col, anim, t);
-    ctx.globalAlpha = px.opacity;
-    ctx.fillStyle = px.color;
-    ctx.fillRect(px.x, px.y, PIXEL_SIZE, PIXEL_SIZE);
-  }
-  ctx.globalAlpha = 1;
-}
+  useEffect(() => {
+    const scheduleBlink = () => {
+      const delay = isActive
+        ? 1500 + Math.random() * 1500
+        : 2500 + Math.random() * 3000;
+      return setTimeout(() => {
+        setBlink(true);
+        setTimeout(() => {
+          setBlink(false);
+          scheduleRef.current = scheduleBlink();
+        }, 130);
+      }, delay);
+    };
+ 
+    const scheduleRef = { current: scheduleBlink() };
+    return () => clearTimeout(scheduleRef.current);
+  }, [isActive]);
+ 
+  const eyeScaleY = blink ? 0.07 : 1;
+ 
+  return (
+    <g>
+      {/* Left eye */}
+      <motion.g
+        animate={{ scaleY: eyeScaleY }}
+        transition={{ duration: 0.06 }}
+        style={{ transformOrigin: "148px 155px" }}
+      >
+        <ellipse cx="148" cy="155" rx="22" ry="24" fill={COLORS.eyeGlowOuter} opacity="0.3" />
+        <ellipse cx="148" cy="155" rx="18" ry="20" fill="#2C3E50" />
+        <ellipse cx="148" cy="155" rx="12" ry="14" fill={COLORS.eyeGlow} />
+        <ellipse cx="148" cy="155" rx="6" ry="7" fill="#FFF8E0" opacity="0.9" />
+        <ellipse cx="143" cy="150" rx="3" ry="3" fill={COLORS.white} opacity="0.7" />
+      </motion.g>
+ 
+      {/* Right eye */}
+      <motion.g
+        animate={{ scaleY: eyeScaleY }}
+        transition={{ duration: 0.06 }}
+        style={{ transformOrigin: "222px 155px" }}
+      >
+        <ellipse cx="222" cy="155" rx="22" ry="24" fill={COLORS.eyeGlowOuter} opacity="0.3" />
+        <ellipse cx="222" cy="155" rx="18" ry="20" fill="#2C3E50" />
+        <ellipse cx="222" cy="155" rx="12" ry="14" fill={COLORS.eyeGlow} />
+        <ellipse cx="222" cy="155" rx="6" ry="7" fill="#FFF8E0" opacity="0.9" />
+        <ellipse cx="217" cy="150" rx="3" ry="3" fill={COLORS.white} opacity="0.7" />
+      </motion.g>
+    </g>
+  );
+};
+ 
+const HeartChest: React.FC<{ animState: AnimationState }> = ({ animState }) => {
+  const isExcited = animState === "excited";
+  const heartColor = isExcited ? COLORS.heartOrange : COLORS.heartGold;
+ 
+  return (
+    <motion.g variants={heartVariants} animate={animState} initial="idle">
+      {/* Heart glow */}
+      <ellipse cx="185" cy="335" rx="35" ry="28" fill={heartColor} opacity="0.25" />
+      {/* Heart shape */}
+      <path
+        d="M185 350 C185 350 155 330 155 315 C155 305 163 298 172 298 C177 298 182 301 185 305 C188 301 193 298 198 298 C207 298 215 305 215 315 C215 330 185 350 185 350Z"
+        fill={heartColor}
+        opacity="0.95"
+      />
+      {/* Heart inner highlight */}
+      <path
+        d="M178 308 C178 308 168 318 168 324"
+        stroke={COLORS.white}
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.5"
+      />
+    </motion.g>
+  );
+};
+ 
+const Sparkles: React.FC<{ visible: boolean }> = ({ visible }) => {
+  const positions = [
+    { x: 60, y: 120, delay: 0, size: 8 },
+    { x: 310, y: 95, delay: 0.3, size: 6 },
+    { x: 45, y: 280, delay: 0.6, size: 5 },
+    { x: 320, y: 320, delay: 0.9, size: 7 },
+    { x: 180, y: 50, delay: 0.2, size: 5 },
+    { x: 280, y: 200, delay: 0.7, size: 6 },
+  ];
+ 
+  return (
+    <AnimatePresence>
+      {visible &&
+        positions.map((pos, i) => (
+          <motion.g
+            key={i}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1.2, 0],
+              y: [0, -15, -30],
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 1.5,
+              delay: pos.delay,
+              repeat: Infinity,
+              repeatDelay: 0.5,
+            }}
+            style={{ transformOrigin: `${pos.x}px ${pos.y}px` }}
+          >
+            <path
+              d={`M${pos.x} ${pos.y - pos.size} L${pos.x + 1.5} ${pos.y - 1.5} L${pos.x + pos.size} ${pos.y} L${pos.x + 1.5} ${pos.y + 1.5} L${pos.x} ${pos.y + pos.size} L${pos.x - 1.5} ${pos.y + 1.5} L${pos.x - pos.size} ${pos.y} L${pos.x - 1.5} ${pos.y - 1.5} Z`}
+              fill={i % 2 === 0 ? COLORS.eyeGlow : COLORS.antennaOrb}
+              opacity="0.85"
+            />
+          </motion.g>
+        ))}
+    </AnimatePresence>
+  );
+};
+ 
+// ─── Main Robot SVG ───────────────────────────────────────────────────────────
+ 
+const RobotSVG: React.FC<{ animState: AnimationState }> = ({ animState }) => {
+  return (
+    <svg
+      viewBox="0 0 370 520"
+      width="100%"
+      style={{ maxWidth: 340, overflow: "visible" }}
+      aria-label="Lumi the robot mascot"
+    >
+      <defs>
+        {/* Body gradient */}
+        <radialGradient id="bodyGrad" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stopColor={COLORS.bodyBlueLight} />
+          <stop offset="55%" stopColor={COLORS.bodyBlue} />
+          <stop offset="100%" stopColor={COLORS.bodyBlueDark} />
+        </radialGradient>
+ 
+        {/* Head gradient */}
+        <radialGradient id="headGrad" cx="38%" cy="30%" r="68%">
+          <stop offset="0%" stopColor={COLORS.bodyBluePale} />
+          <stop offset="45%" stopColor={COLORS.bodyBlueLight} />
+          <stop offset="100%" stopColor={COLORS.bodyBlueDark} />
+        </radialGradient>
+ 
+        {/* Face screen gradient */}
+        <radialGradient id="faceGrad" cx="45%" cy="40%" r="60%">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="60%" stopColor={COLORS.screenBg} />
+          <stop offset="100%" stopColor="#C8DCFA" />
+        </radialGradient>
+ 
+        {/* Ear gradient */}
+        <radialGradient id="earGrad" cx="40%" cy="40%" r="65%">
+          <stop offset="0%" stopColor={COLORS.earPinkLight} />
+          <stop offset="100%" stopColor={COLORS.earPink} />
+        </radialGradient>
+ 
+        {/* Antenna orb gradient */}
+        <radialGradient id="orbGrad" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#FFFAE0" />
+          <stop offset="50%" stopColor={COLORS.antennaOrb} />
+          <stop offset="100%" stopColor={COLORS.antennaOrbGlow} />
+        </radialGradient>
+ 
+        {/* Limb gradient */}
+        <linearGradient id="limbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={COLORS.bodyBlueLight} />
+          <stop offset="100%" stopColor={COLORS.bodyBlueDark} />
+        </linearGradient>
+ 
+        {/* Shadow gradient */}
+        <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={COLORS.shadowBase} stopOpacity="0.35" />
+          <stop offset="100%" stopColor={COLORS.shadowBase} stopOpacity="0" />
+        </radialGradient>
+ 
+        {/* Foot gradient */}
+        <linearGradient id="footGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={COLORS.bodyBlue} />
+          <stop offset="100%" stopColor={COLORS.footDark} />
+        </linearGradient>
+      </defs>
+ 
+      {/* Sparkles */}
+      <Sparkles visible={animState !== "idle"} />
+ 
+      {/* ── Floating shadow ── */}
+      <motion.ellipse
+        cx="185"
+        cy="510"
+        rx="80"
+        ry="10"
+        fill="url(#shadowGrad)"
+        animate={
+          animState === "jump"
+            ? { rx: 100, ry: 7, opacity: 0.5 }
+            : { rx: 80, ry: 10, opacity: 1 }
+        }
+        transition={{ duration: 0.3 }}
+      />
+ 
+      {/* ── Right arm (behind body) ── */}
+      <motion.g
+        variants={rightArmVariants}
+        animate={animState}
+        initial="idle"
+        style={{ transformOrigin: "270px 310px" }}
+      >
+        {/* Upper right arm */}
+        <rect x="265" y="290" width="42" height="65" rx="21" fill="url(#bodyGrad)" />
+        {/* Right elbow joint */}
+        <ellipse cx="286" cy="355" rx="22" ry="18" fill={COLORS.bodyBlue} />
+        <ellipse cx="286" cy="355" rx="16" ry="12" fill={COLORS.bodyBlueDark} />
+        {/* Lower right arm */}
+        <rect x="268" y="350" width="36" height="60" rx="18" fill="url(#limbGrad)" />
+        {/* Right hand */}
+        <ellipse cx="286" cy="418" rx="24" ry="20" fill="url(#bodyGrad)" />
+        {/* Right hand knuckle highlight */}
+        <ellipse cx="293" cy="412" rx="6" ry="5" fill={COLORS.bodyBluePale} opacity="0.4" />
+        {/* Blue dot on right arm */}
+        <ellipse cx="286" cy="370" rx="8" ry="7" fill={COLORS.screenBg} opacity="0.6" />
+      </motion.g>
+ 
+      {/* ── Left leg ── */}
+      <rect x="118" y="400" width="58" height="75" rx="22" fill="url(#bodyGrad)" />
+      {/* Left knee joint */}
+      <ellipse cx="147" cy="465" rx="28" ry="20" fill={COLORS.bodyBlueDark} opacity="0.5" />
+      {/* Left foot */}
+      <ellipse cx="143" cy="488" rx="38" ry="22" fill="url(#footGrad)" />
+      <ellipse cx="143" cy="488" rx="30" ry="16" fill={COLORS.bodyBlue} opacity="0.4" />
+      {/* Left foot glow dot */}
+      <ellipse cx="143" cy="493" rx="10" ry="6" fill={COLORS.eyeGlow} opacity="0.7" />
+ 
+      {/* ── Right leg ── */}
+      <rect x="194" y="400" width="58" height="75" rx="22" fill="url(#bodyGrad)" />
+      {/* Right knee joint */}
+      <ellipse cx="223" cy="465" rx="28" ry="20" fill={COLORS.bodyBlueDark} opacity="0.5" />
+      {/* Right foot */}
+      <ellipse cx="227" cy="488" rx="38" ry="22" fill="url(#footGrad)" />
+      <ellipse cx="227" cy="488" rx="30" ry="16" fill={COLORS.bodyBlue} opacity="0.4" />
+      {/* Right foot glow dot */}
+      <ellipse cx="227" cy="493" rx="10" ry="6" fill={COLORS.eyeGlow} opacity="0.7" />
+ 
+      {/* ── Body ── */}
+      <rect x="105" y="270" width="160" height="145" rx="45" fill="url(#bodyGrad)" />
+ 
+      {/* Body shoulder curve top */}
+      <ellipse cx="185" cy="270" rx="80" ry="25" fill="url(#bodyGrad)" />
+ 
+      {/* Body waist band */}
+      <rect x="108" y="390" width="154" height="20" rx="10" fill={COLORS.neckDark} opacity="0.35" />
+ 
+      {/* Body highlight */}
+      <ellipse cx="155" cy="295" rx="30" ry="20" fill={COLORS.bodyBluePale} opacity="0.25" />
+ 
+      {/* Heart chest */}
+      <HeartChest animState={animState} />
+ 
+      {/* ── Left arm (waving, in front) ── */}
+      <motion.g
+        variants={leftArmVariants}
+        animate={animState}
+        initial="idle"
+        style={{ transformOrigin: "100px 310px" }}
+      >
+        {/* Upper left arm */}
+        <rect x="62" y="290" width="42" height="65" rx="21" fill="url(#bodyGrad)" />
+        {/* Left elbow joint */}
+        <ellipse cx="83" cy="355" rx="22" ry="18" fill={COLORS.bodyBlue} />
+        <ellipse cx="83" cy="355" rx="16" ry="12" fill={COLORS.bodyBlueDark} />
+        {/* Lower left arm */}
+        <rect x="65" y="350" width="36" height="60" rx="18" fill="url(#limbGrad)" />
+        {/* Left hand */}
+        <ellipse cx="83" cy="418" rx="24" ry="20" fill="url(#bodyGrad)" />
+        {/* Left hand knuckle highlight */}
+        <ellipse cx="76" cy="412" rx="6" ry="5" fill={COLORS.bodyBluePale} opacity="0.4" />
+ 
+        {/* Waving fingers (subtle) */}
+        <motion.g
+          animate={
+            animState === "wave" || animState === "excited"
+              ? { rotate: [-15, 15, -15], transition: { duration: 0.3, repeat: Infinity } }
+              : { rotate: 0 }
+          }
+          style={{ transformOrigin: "83px 410px" }}
+        >
+          <ellipse cx="70" cy="403" rx="7" ry="10" rx2="7" fill="url(#bodyGrad)" />
+          <ellipse cx="83" cy="400" rx="7" ry="11" fill="url(#bodyGrad)" />
+          <ellipse cx="96" cy="403" rx="7" ry="10" fill="url(#bodyGrad)" />
+        </motion.g>
+      </motion.g>
+ 
+      {/* ── Neck ── */}
+      <rect x="163" y="248" width="44" height="30" rx="14" fill={COLORS.neckDark} />
+      <ellipse cx="185" cy="248" rx="22" ry="10" fill={COLORS.bodyBlue} opacity="0.6" />
+ 
+      {/* ── Head ── */}
+      <ellipse cx="185" cy="170" rx="105" ry="110" fill="url(#headGrad)" />
+ 
+      {/* Head highlight */}
+      <ellipse cx="145" cy="95" rx="35" ry="22" fill={COLORS.white} opacity="0.12" />
+ 
+      {/* ── Left ear ── */}
+      <ellipse cx="80" cy="168" rx="28" ry="32" fill="url(#earGrad)" />
+      <ellipse cx="80" cy="168" rx="18" ry="22" fill={COLORS.earPink} opacity="0.5" />
+      {/* Ear glow ring */}
+      <ellipse cx="80" cy="168" rx="12" ry="15" fill={COLORS.eyeGlow} opacity="0.2" />
+      <ellipse cx="80" cy="168" rx="7" ry="9" fill={COLORS.eyeGlow} opacity="0.5" />
+ 
+      {/* ── Right ear ── */}
+      <ellipse cx="290" cy="168" rx="28" ry="32" fill="url(#earGrad)" />
+      <ellipse cx="290" cy="168" rx="18" ry="22" fill={COLORS.earPink} opacity="0.5" />
+      {/* Ear glow ring */}
+      <ellipse cx="290" cy="168" rx="12" ry="15" fill={COLORS.eyeGlow} opacity="0.2" />
+      <ellipse cx="290" cy="168" rx="7" ry="9" fill={COLORS.eyeGlow} opacity="0.5" />
+ 
+      {/* ── Face screen ── */}
+      <ellipse cx="185" cy="172" rx="82" ry="88" fill="url(#faceGrad)" />
+      {/* Screen rim */}
+      <ellipse cx="185" cy="172" rx="82" ry="88" fill="none" stroke={COLORS.bodyBlueDark} strokeWidth="3" opacity="0.3" />
+ 
+      {/* ── Eyes ── */}
+      <BlinkingEyes isActive={animState !== "idle"} />
+ 
+      {/* ── Smile ── */}
+      <path
+        d="M162 195 Q185 215 208 195"
+        fill="none"
+        stroke={COLORS.bodyBlueDark}
+        strokeWidth="5"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      {/* Cheek blush left */}
+      <ellipse cx="142" cy="200" rx="16" ry="10" fill={COLORS.earPink} opacity="0.35" />
+      {/* Cheek blush right */}
+      <ellipse cx="228" cy="200" rx="16" ry="10" fill={COLORS.earPink} opacity="0.35" />
+ 
+      {/* ── Antenna ── */}
+      {/* Antenna stem */}
+      <rect x="181" y="55" width="8" height="38" rx="4" fill={COLORS.bodyBlueDark} />
+      {/* Antenna orb glow ring */}
+      <motion.ellipse
+        cx="185"
+        cy="46"
+        rx="22"
+        ry="22"
+        fill={COLORS.antennaOrbGlow}
+        animate={{
+          opacity: [0.2, 0.5, 0.2],
+          r: [18, 22, 18],
+        }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Antenna orb */}
+      <circle cx="185" cy="46" r="16" fill="url(#orbGrad)" />
+      <circle cx="179" cy="41" r="5" fill={COLORS.white} opacity="0.5" />
+    </svg>
+  );
+};
+ 
+// ─── Speech Bubble ─────────────────────────────────────────────────────────────
+ 
+const SpeechBubble: React.FC<{
+  text: string;
+  color: string;
+  visible: boolean;
+}> = ({ text, color, visible }) => (
+  <AnimatePresence mode="wait">
+    {visible && (
+      <motion.div
+        key={text}
+        initial={{ opacity: 0, scale: 0.75, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.75, y: 10 }}
+        transition={{ type: "spring", stiffness: 280, damping: 22 }}
+        style={{
+          position: "absolute",
+          top: -10,
+          left: "50%",
+          transform: "translateX(-50%)",
+          backgroundColor: "rgba(255,255,255,0.97)",
+          backdropFilter: "blur(12px)",
+          border: `2px solid ${color}`,
+          borderRadius: 16,
+          padding: "10px 20px",
+          fontSize: 14,
+          fontWeight: 600,
+          fontFamily: "'DM Sans', 'Nunito', system-ui, sans-serif",
+          color: "#1E2A3A",
+          whiteSpace: "nowrap",
+          zIndex: 20,
+          boxShadow: `0 4px 24px ${color}44, 0 2px 8px rgba(0,0,0,0.1)`,
+          letterSpacing: "0.01em",
+        }}
+      >
+        {text}
+        {/* Tail */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: -11,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 0,
+            height: 0,
+            borderLeft: "10px solid transparent",
+            borderRight: "10px solid transparent",
+            borderTop: `12px solid ${color}`,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: -8,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 0,
+            height: 0,
+            borderLeft: "8px solid transparent",
+            borderRight: "8px solid transparent",
+            borderTop: "10px solid rgba(255,255,255,0.97)",
+          }}
+        />
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
  
 // ─── HeroCreature ─────────────────────────────────────────────────────────────
  
 const HeroCreature: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const frameTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const endTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-
-  window.addEventListener("resize", handleResize);
-
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
-}, []); 
- 
-  const [hoverCount, setHoverCount] = useState(0);
+  const [animState, setAnimState] = useState<AnimationState>("idle");
+  const [messageIndex, setMessageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [bubbleText, setBubbleText] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
+  const animIndexRef = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
  
-  // Draw idle state on mount
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    renderFrame(ctx, null, 0);
+  const clearTimer = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+  };
+ 
+  const resetToIdle = useCallback(() => {
+    setAnimState("idle");
+    setIsAnimating(false);
   }, []);
  
-  const stopAnim = () => {
-    if (frameTimerRef.current) clearInterval(frameTimerRef.current);
-    if (endTimerRef.current) clearTimeout(endTimerRef.current);
-    setIsAnimating(false);
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext("2d");
-      if (ctx) renderFrame(ctx, null, 0);
-    }
-  };
+  const handleHover = useCallback(() => {
+    clearTimer();
  
-  const handleHover = () => {
-    // Stop any running animation first
-    if (frameTimerRef.current) clearInterval(frameTimerRef.current);
-    if (endTimerRef.current) clearTimeout(endTimerRef.current);
+    const nextIndex = animIndexRef.current % ANIMATION_SEQUENCES.length;
+    animIndexRef.current += 1;
  
-    const nextCount = hoverCount + 1;
-    setHoverCount(nextCount);
+    const newAnim = ANIMATION_SEQUENCE[nextIndex];
+    const newMsgIndex = nextIndex % MESSAGES.length;
  
-    const animDef = pixelAnimations[nextCount % pixelAnimations.length];
-    const animType = ANIMATION_TYPES[nextCount % ANIMATION_TYPES.length];
-    const totalFrames = animDef.frames;
-    const frameDuration = 140;
-    const totalDuration = totalFrames * frameDuration + 400;
- 
-    setBubbleText(animDef.name);
+    setAnimState(newAnim);
+    setMessageIndex(newMsgIndex);
     setIsAnimating(true);
  
-    let frame = 0;
-    frameTimerRef.current = setInterval(() => {
-      frame = (frame + 1) % totalFrames;
-      const canvas = canvasRef.current;
-      if (canvas) {
-        const ctx = canvas.getContext("2d");
-        if (ctx) renderFrame(ctx, animType, frame / totalFrames);
-      }
-    }, frameDuration);
- 
-    endTimerRef.current = setTimeout(stopAnim, totalDuration);
-  };
- 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      if (frameTimerRef.current) clearInterval(frameTimerRef.current);
-      if (endTimerRef.current) clearTimeout(endTimerRef.current);
+    const durations: Record<AnimationState, number> = {
+      idle: 0,
+      wave: 3000,
+      dance: 3200,
+      jump: 2500,
+      spin: 2800,
+      excited: 2600,
     };
-  }, []);
+ 
+    timerRef.current = setTimeout(resetToIdle, durations[newAnim]);
+  }, [resetToIdle]);
+ 
+  useEffect(() => () => clearTimer(), []);
+ 
+  const currentMessage = MESSAGES[messageIndex];
  
   return (
     <div
       style={{
+        display: "inline-flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         position: "relative",
-        display: "inline-block",
         cursor: "pointer",
-        padding: "60px",
+        userSelect: "none",
+        padding: "60px 40px 30px",
       }}
-      onMouseEnter={handleHover}
-    >
-      {/* Speech Bubble */}
-<AnimatePresence>
-  {isAnimating && (
-    <motion.div
-      key={bubbleText}
-      initial={{ opacity: 0, scale: 0.7, y: 20 }}
-      animate={{ opacity: 1, scale: 1, y: -10 }}
-      exit={{ opacity: 0, scale: 0.7, y: 20 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
-      style={{
-        position: "absolute",
-
-        // MOBILE vs DESKTOP positioning
-        top: isMobile ? "-48px" : "8%",
-        left: isMobile ? "50%" : "75%",
-        transform: isMobile ? "translateX(-50%)" : "none",
-
-        backgroundColor: "white",
-        color: "#1a1a1a",
-        padding: isMobile ? "12px 18px" : "16px 24px",
-
-        border: "4px solid #2C3E50",
-        borderRadius: "4px",
-        boxShadow: "6px 6px 0px rgba(44, 62, 80, 0.4)",
-
-        fontWeight: "bold",
-        fontFamily: '"Courier New", monospace',
-
-        // Responsive text
-        fontSize: isMobile ? "0.5rem" : "0.6rem",
-
-        zIndex: 10,
-        whiteSpace: "nowrap",
+      onMouseEnter={() => {
+        setIsHovered(true);
+        handleHover();
       }}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleHover}
     >
-      {bubbleText}
-
-      {/* Speech bubble tail */}
-      <div
+      {/* Speech bubble */}
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+        <SpeechBubble
+          text={currentMessage.text}
+          color={currentMessage.emotionColor}
+          visible={isAnimating}
+        />
+      </div>
+ 
+      {/* Ambient glow behind robot */}
+      <motion.div
+        variants={glowVariants}
+        animate={animState}
+        initial="idle"
         style={{
           position: "absolute",
-          bottom: "-16px",
-          left: isMobile ? "50%" : "20px",
-          transform: isMobile ? "translateX(-50%)" : "none",
-
-          width: 0,
-          height: 0,
-          borderLeft: "12px solid transparent",
-          borderRight: "12px solid transparent",
-          borderTop: "16px solid white",
-
-          filter: "drop-shadow(2px 4px 0px rgba(44, 62, 80, 0.3))",
+          inset: 0,
+          borderRadius: "50%",
+          background: `radial-gradient(ellipse at 50% 55%, ${COLORS.bodyBlueLight}55 0%, ${COLORS.eyeGlow}22 40%, transparent 70%)`,
+          filter: "blur(28px)",
+          pointerEvents: "none",
+          zIndex: 0,
         }}
       />
-    </motion.div>
-  )}
-</AnimatePresence>
  
-      {/* Pixel Robot Canvas */}
-      <div
-        style={{
-          position: "relative",
-          width: `${CANVAS_W}px`,
-          height: `${CANVAS_H}px`,
+      {/* Secondary warm glow */}
+      <motion.div
+        animate={{
+          opacity: isAnimating ? [0.3, 0.6, 0.3] : [0.1, 0.2, 0.1],
+          scale: isAnimating ? [0.9, 1.1, 0.9] : [0.95, 1.05, 0.95],
         }}
-      >
-        <canvas
-          ref={canvasRef}
-          width={CANVAS_W}
-          height={CANVAS_H}
-          style={{ imageRendering: "pixelated", display: "block" }}
-        />
+        transition={{ duration: isAnimating ? 1.2 : 3, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          position: "absolute",
+          width: "60%",
+          height: "50%",
+          top: "30%",
+          left: "20%",
+          background: `radial-gradient(ellipse, ${COLORS.eyeGlow}30 0%, transparent 70%)`,
+          filter: "blur(20px)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
  
-        {/* Glow effects during animation */}
-        <AnimatePresence>
-          {isAnimating && (
-            <>
-              <motion.div
-                key="glow1"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0.2, 0.5, 0.2], scale: [0.9, 1.2, 0.9] }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "300px",
-                  height: "300px",
-                  background:
-                    "radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%)",
-                  filter: "blur(40px)",
-                  zIndex: -1,
-                  pointerEvents: "none",
-                }}
-              />
-              <motion.div
-                key="glow2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.15, 1] }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "280px",
-                  height: "280px",
-                  background:
-                    "radial-gradient(circle, rgba(119,89,253,0.3) 0%, transparent 70%)",
-                  filter: "blur(30px)",
-                  zIndex: -2,
-                  pointerEvents: "none",
-                }}
-              />
-            </>
-          )}
-        </AnimatePresence>
-      </div>
+      {/* Hover scale wrapper + floating */}
+      <motion.div
+        animate={animState}
+        variants={floatVariants}
+        initial="idle"
+        whileHover={{ scale: 1.03 }}
+        transition={{ scale: { duration: 0.2 } }}
+        style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 340 }}
+      >
+        <RobotSVG animState={animState} />
+      </motion.div>
     </div>
   );
 };
+ 
+// Fix for ANIMATION_SEQUENCES reference
+const ANIMATION_SEQUENCES = ANIMATION_SEQUENCE;
+
 
 const Hero: React.FC = () => {
   const [index, setIndex] = useState(0);
