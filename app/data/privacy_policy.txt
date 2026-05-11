@@ -1,0 +1,107 @@
+Privacy Policy for Elinity
+Last Updated: 11th August, 2024
+Introduction
+Welcome to Elinity, the innovative social connection and relationship platform. At Elinity, we are committed to revolutionizing how people find partners and build meaningful relationships. Our commitment extends to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines our practices concerning the collection, use, and protection of your data as you use our AI-powered platform.
+Information We Collect
+2.1 Personal Information
+Basic Details: Name, date of birth, gender, sexual orientation
+Contact Information: Email address, phone number, physical address
+Professional Information: Occupation, education, career history
+Physical Attributes: Height, weight, eye color, hair color, ethnicity
+Photos and Videos: Any media you choose to upload to your profile
+2.2 Relationship Information
+Relationship History: Past relationships, duration, reasons for ending
+Relationship Goals: What you're looking for in a partner, long-term objectives
+Lifestyle Preferences: Desires regarding children, marriage, living arrangements
+2.3 Behavioral Data
+App Usage: How you interact with the app, features you use most
+Communication Patterns: How you communicate with matches
+Preferences: Who you like, dislike, or match with
+2.4 Additional Information
+Interests and Hobbies
+Personality Assessments: Results from any in-app quizzes or tests
+User-Generated Content: Any additional information you provide in your profile or communications
+2.5 Technical Data
+Device Information: Type of device, operating system, unique device identifiers
+Location Data: GPS location (if permitted)
+Log Data: IP address, browser type, pages visited, time and date of visits
+How We Use Your Information
+3.1 Core Functionalities
+To power our AI matching algorithms and find your optimal matches
+To create and maintain your user profile
+To facilitate communication between users
+3.2 Personalization and Improvement
+To tailor your experience and provide personalized recommendations
+To analyze user behavior and improve our services
+To develop new features and functionalities
+3.3 Communication
+To send you service-related notifications
+To provide customer support
+To send promotional materials (with your consent)
+3.4 Legal and Security
+To verify your identity and prevent fraud
+To ensure compliance with our terms of service
+To protect the rights and safety of our users and third parties
+Our AI Technology
+4.1 AI Models We use proprietary AI models designed to:
+Analyze user data comprehensively
+Predict compatibility between users
+Provide insights for relationship growth
+4.2 Machine Learning Our systems continuously learn from user interactions to:
+Improve matching accuracy
+Enhance relationship advice
+Optimize user experience
+4.3 Data Processing All AI processing is done in compliance with applicable data protection laws. We do not use AI to make fully automated decisions that significantly affect users without human oversight.
+Data Sharing and Disclosure
+5.1 With Other Users
+Information you choose to include in your profile
+Communication you initiate with other users
+5.2 Service Providers We may share data with third-party service providers who help us:
+Host our servers
+Analyze data
+Process payments
+Provide customer support
+These providers are contractually obligated to use the data solely for providing services to Elinity.
+5.3 Legal Requirements We may disclose information if required by law, court order, or governmental authority.
+5.4 Business Transfers In the event of a merger, acquisition, or sale of assets, user data may be transferred as part of the transaction.
+Data Protection and Security
+6.1 Security Measures We implement industry-standard technical and organizational measures to protect your data, including:
+Encryption of data in transit and at rest
+Regular security audits and penetration testing
+Access controls and authentication procedures
+6.2 Data Retention We retain your data for as long as your account is active or as needed to provide you services. You may request deletion of your data at any time.
+6.3 International Data Transfers Your data may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers.
+Your Rights and Choices
+7.1 Access and Control You have the right to:
+Access your personal data
+Correct inaccurate data
+Request deletion of your data
+Object to or restrict certain data processing
+7.2 Account Settings You can control your privacy settings within the app, including:
+Profile visibility
+Matching preferences
+Communication settings
+7.3 Marketing Communications You can opt-out of marketing communications at any time.
+Children's Privacy
+Elinity is not intended for use by individuals under the age of 18. We do not knowingly collect data from children.
+Changes to This Policy
+We may update this policy periodically. We will notify you of any significant changes via email or through the app.
+Contact Us
+If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Data Protection Officer at:
+Email: privacy@elinity.com Address: [Insert Physical Address]
+Governing Law and Dispute Resolution
+This Privacy Policy is governed by the laws of [Insert Applicable Jurisdiction]. Any disputes arising from this policy will be resolved through arbitration in accordance with [Insert Applicable Arbitration Rules].
+By using Elinity, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
+
+
+
+
+~~~
+Terms of Service
+Below is a production-ready Terms of Service for Elinity, written to:
+• pass Apple App Store and Google Play Store reviews
+• work for both consumers and enterprises
+• cover AI features, subscriptions, content, and responsibility boundaries
+• align with Elinity’s philosophy without sounding ideological
+• be legally sober, not hostile
+This is suitable to publish as-is, with only company address and dates to fill in.
