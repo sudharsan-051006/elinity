@@ -5,14 +5,13 @@ interface Message {
   text: string;
 }
 
-export default  function FloatingChat() {
+export default function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to the latest message
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
@@ -33,7 +32,6 @@ export default  function FloatingChat() {
       });
 
       const data = await response.json();
-      // Adjust data.response based on your specific backend JSON structure
       const aiMsg: Message = { 
         sender: 'ai', 
         text: data.response || data.message || "I couldn't process that." 
@@ -48,9 +46,8 @@ export default  function FloatingChat() {
 
   return (
     <div style={containerStyle}>
-      {/* Expanded Chat Interface */}
       {isOpen && (
-        <div style={cardStyle}>
+        <div className="chat-card" style={cardStyle}>
           <div style={headerStyle}>
             <span style={{ fontWeight: 600 }}>Lumi AI</span>
             <button onClick={() => setIsOpen(false)} style={closeBtnStyle}>✕</button>
@@ -64,16 +61,16 @@ export default  function FloatingChat() {
                   ...bubbleBase,
                   alignSelf: msg.sender === 'user' ? 'flex-end' : 'flex-start',
                   background: msg.sender === 'user' 
-                    ? 'linear-gradient(135deg, #6e8efb, #a777e3)' 
-                    : 'rgba(255, 255, 255, 0.2)',
+                    ? 'linear-gradient(135deg, #7c3aed, #a78bfa)' 
+                    : 'rgba(0, 0, 0, 0.05)',
                   color: msg.sender === 'user' ? '#fff' : '#000',
-                  borderRadius: msg.sender === 'user' ? '15px 15px 2px 15px' : '15px 15px 15px 2px',
+                  borderRadius: msg.sender === 'user' ? '18px 18px 2px 18px' : '18px 18px 18px 2px',
                 }}
               >
                 {msg.text}
               </div>
             ))}
-            {isTyping && <div style={typingStyle}>AI is thinking...</div>}
+            {isTyping && <div style={typingStyle}>Lumi is thinking...</div>}
             <div ref={chatEndRef} />
           </div>
 
@@ -83,24 +80,33 @@ export default  function FloatingChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Ask Lumi..."
+              placeholder="Ask anything..."
             />
             <button onClick={handleSend} style={sendBtnStyle}>Send</button>
           </div>
         </div>
       )}
 
-      {/* Floating Bubble Trigger */}
       {!isOpen && (
         <button 
           onClick={() => setIsOpen(true)} 
           style={bubbleTriggerStyle}
-          onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-          onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
           ✨
         </button>
       )}
+
+      {/* Mobile-specific adjustments */}
+      <style>{`
+        @media (max-width: 480px) {
+          .chat-card {
+            width: calc(100vw - 40px) !important;
+            height: 70vh !important;
+            bottom: 80px !important;
+            right: 0px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
@@ -109,58 +115,57 @@ export default  function FloatingChat() {
 
 const containerStyle: React.CSSProperties = {
   position: 'fixed',
-  bottom: '25px',
-  right: '25px',
-  zIndex: 1000,
-  fontFamily: 'Inter, system-ui, sans-serif',
+  bottom: '20px',
+  right: '20px',
+  zIndex: 9999,
+  fontFamily: 'Inter, sans-serif',
 };
 
 const bubbleTriggerStyle: React.CSSProperties = {
-  width: '60px',
-  height: '60px',
+  width: '56px',
+  height: '56px',
   borderRadius: '50%',
   border: 'none',
-  background: 'linear-gradient(135deg, #6e8efb, #a777e3)',
+  background: 'linear-gradient(135deg, #7c3aed, #a78bfa)',
   fontSize: '24px',
   cursor: 'pointer',
-  boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
-  transition: 'transform 0.2s ease',
+  boxShadow: '0 4px 20px rgba(124, 58, 237, 0.3)',
 };
 
 const cardStyle: React.CSSProperties = {
-  width: '320px',
-  height: '450px',
-  background: 'rgba(255, 255, 255, 0.7)',
-  backdropFilter: 'blur(12px)',
-  WebkitBackdropFilter: 'blur(12px)',
+  width: '350px',
+  height: '500px',
+  background: 'rgba(255, 255, 255, 0.95)',
+  backdropFilter: 'blur(10px)',
   borderRadius: '24px',
-  boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
+  boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
   display: 'flex',
   flexDirection: 'column',
   overflow: 'hidden',
-  border: '1px solid rgba(255, 255, 255, 0.3)',
+  border: '1px solid rgba(0,0,0,0.05)',
+  marginBottom: '10px',
 };
 
 const headerStyle: React.CSSProperties = {
-  padding: '16px',
-  background: 'rgba(255, 255, 255, 0.2)',
+  padding: '16px 20px',
+  background: '#fff',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  borderBottom: '1px solid rgba(0,0,0,0.05)',
+  borderBottom: '1px solid #f0f0f0',
 };
 
 const closeBtnStyle: React.CSSProperties = {
   background: 'none',
   border: 'none',
   cursor: 'pointer',
-  fontSize: '16px',
-  opacity: 0.6,
+  fontSize: '18px',
+  padding: '5px',
 };
 
 const messageAreaStyle: React.CSSProperties = {
   flex: 1,
-  padding: '16px',
+  padding: '20px',
   overflowY: 'auto',
   display: 'flex',
   flexDirection: 'column',
@@ -168,42 +173,41 @@ const messageAreaStyle: React.CSSProperties = {
 };
 
 const bubbleBase: React.CSSProperties = {
-  padding: '10px 14px',
+  padding: '12px 16px',
   maxWidth: '85%',
   fontSize: '14px',
-  lineHeight: '1.4',
-  boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+  lineHeight: '1.5',
 };
 
 const typingStyle: React.CSSProperties = {
   fontSize: '12px',
-  color: '#666',
-  fontStyle: 'italic',
+  color: '#999',
+  marginLeft: '5px',
 };
 
 const inputAreaStyle: React.CSSProperties = {
   padding: '16px',
   display: 'flex',
-  gap: '8px',
-  borderTop: '1px solid rgba(0,0,0,0.05)',
+  gap: '10px',
+  background: '#fff',
+  borderTop: '1px solid #f0f0f0',
 };
 
 const inputStyle: React.CSSProperties = {
   flex: 1,
-  padding: '10px',
+  padding: '12px',
   borderRadius: '12px',
-  border: '1px solid rgba(0,0,0,0.1)',
+  border: '1px solid #e5e7eb',
   outline: 'none',
-  fontSize: '14px',
+  fontSize: '16px', // Prevents iOS auto-zoom
 };
 
 const sendBtnStyle: React.CSSProperties = {
-  background: '#000',
+  background: '#7c3aed',
   color: '#fff',
   border: 'none',
-  padding: '8px 12px',
-  borderRadius: '10px',
+  padding: '0 16px',
+  borderRadius: '12px',
   cursor: 'pointer',
-  fontSize: '13px',
-  fontWeight: 500,
+  fontWeight: 600,
 };

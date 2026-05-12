@@ -12,8 +12,24 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   const [index, setIndex] = useState(0);
   const [showQR, setShowQR] = useState(false);
   const [mouse, setMouse] = useState({ x: 5, y: 5 });
+  const [currentImage, setCurrentImage] = useState(0);
 
+  const images = [
+  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/main_yrw4jo.png",
+  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/second_qqci1a.png",
+  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/fourth_tm9t5c.png",
+  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571697/fivth_mna64t.png",
+];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % 4);
+    }, 10000); // changes every 10 sec
+
+    return () => clearInterval(interval);
+  }, []);
   const [isMobile, setIsMobile] = useState(false);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
@@ -21,16 +37,19 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     return () => clearInterval(interval);
   }, []);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 640);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+
 
   handleResize(); // MUST
 
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
   return (
     /* Changed overflow-hidden to overflow-visible to ensure smooth scroll isn't blocked */
     <section className="relative bg-[#0f0225] min-h-screen w-screen overflow-visible group"
@@ -57,29 +76,34 @@ useEffect(() => {
         {/* MOBILE → Normal Image */}
         {isMobile ? (
           <img
-            src="/hero1.jpeg"
-            alt="Hero"
-            className="w-full h-full object-cover rounded-b-3xl"
-          />
+      src={images[currentImage]}
+      loading="lazy"
+      alt="Hero Color"
+      className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+    />
         ) : (
-          <>
-            {/* B/W Base */}
-            <img
-              src="/hero1.jpeg"
-              alt="Hero"
-              className="w-full h-full object-cover rounded-b-3xl grayscale"
-            />
-            <img
-  src="https://res.cloudinary.com/dvdgx9x0b/image/upload/v1776441530/hero1_pdidyl.jpg"
-  loading="lazy"
-                alt="Hero Color"
-              className="w-full h-full object-cover rounded-b-3xl absolute top-0 left-0 pointer-events-none"
-              style={{
-                WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-                maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-              }}
-/>
-          </>
+<>
+  {/* Base Image (changes together) */}
+  <img
+    src={images[currentImage]}
+    alt="Hero"
+    className="w-full h-full object-cover rounded-b-3xl grayscale"
+  />
+
+  {/* Colored Reveal */}
+  <div className="absolute inset-0 rounded-b-3xl overflow-hidden pointer-events-none">
+    <img
+      src={images[currentImage]}
+      loading="lazy"
+      alt="Hero Color"
+      className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+      style={{
+        WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+        maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
+      }}
+    />
+  </div>
+</>
         )}
       </div>
 
@@ -89,12 +113,27 @@ useEffect(() => {
 
       <div className="relative z-10 h-full flex items-center pt-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h1 className="text-white text-4xl md:text-5xl mb-2" style={{paddingTop:'30px'}}>
-            find your person, your tribe,
-          </h1>
-          <h1 className="text-white text-2xl md:text-3xl mb-8">
-            and build <span className="text-indigo-400">the most incredible relationships</span>
-          </h1>
+          <h1
+  className="text-white text-4xl md:text-5xl mb-2"
+  style={{
+    paddingTop: "30px",
+    textShadow: "0 0 20px rgba(168, 85, 247, 0.8)",
+  }}
+>
+  find your person, your tribe,
+</h1>
+
+<h1
+  className="text-white text-2xl md:text-3xl mb-8"
+  style={{
+    textShadow: "0 0 18px rgba(168, 85, 247, 0.7)",
+  }}
+>
+  and build{" "}
+  <span className="text-indigo-400">
+    the most incredible relationships
+  </span>
+</h1>
           
 
           <h1
