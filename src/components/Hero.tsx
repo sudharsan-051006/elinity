@@ -143,6 +143,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
               color: "white",
               textAlign: "center",
               lineHeight: "1.1",
+              textShadow: "0 0 20px rgba(168, 85, 247, 0.8)",
             }}
           >
             elinity is designed to help you actualize your potential, across love, leisure,
