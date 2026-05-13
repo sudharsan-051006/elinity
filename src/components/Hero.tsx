@@ -114,9 +114,10 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     and build{" "}
     <span
       style={{
-        background: "linear-gradient(to right, #d9d3fe, #7759fd)",
+background: "linear-gradient(to right, #7B3FE4, #3B82F6, #00D2FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
+        letterSpacing: "0.01em",
       }}
     >
       the most incredible relationships
@@ -140,7 +141,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     leisure, and collaboration, with lumi, your{" "}
     <span
       style={{
-        background: "linear-gradient(to right, #d9d3fe, #7759fd)",
+background: "linear-gradient(to right, #7B3FE4, #3B82F6, #00D2FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         transition: "all 0.5s ease-in-out",

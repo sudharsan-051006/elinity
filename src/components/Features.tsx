@@ -2,8 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function FeaturesPage() {
+  const brandColors = {
+    indigo: "#7B3FE4",
+    royalBlue: "#3B82F6",
+    brightCyan: "#00D2FF",
+    darkBg: "#03000a"
+  };
+
   const backgroundGradient = {
-    background: 'linear-gradient(to bottom, #060014, #0c0024)',
+    background: `radial-gradient(circle at 50% 0%, rgba(123, 63, 228, 0.15) 0%, transparent 50%), 
+                 linear-gradient(to bottom, #03000a, #06001a)`,
   };
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -232,18 +240,14 @@ const renderFeatureBlock = (text, idx) => {
     <div key={idx} className="flex gap-3">
       
       {/* Dot */}
-      <div className="mt-[6px] w-2 h-2 rounded-full bg-fuchsia-500 shrink-0" />
+      <div className="mt-[6px] w-2 h-2 rounded-full bg-[#00D2FF] shrink-0 shadow-[0_0_8px_rgba(0,210,255,0.6)]" />
 
       {/* Text block */}
       <div className="space-y-2">
         {lines.map((line, i) => (
           <p
             key={i}
-            className={`text-sm leading-relaxed font-light ${
-              i === 0
-                ? "text-indigo-100/95"
-                : "text-indigo-100/95"
-            }`}
+            className="text-sm leading-relaxed font-light text-blue-50/80"
           >
             {line.trim()}
           </p>
@@ -254,44 +258,47 @@ const renderFeatureBlock = (text, idx) => {
 };
   
   return (
-    <div style={backgroundGradient} className="min-h-screen text-white px-6 py-20">
+    <div style={backgroundGradient} className="min-h-screen text-white px-6 py-20 lowercase">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white via-fuchsia-300 to-purple-500 text-transparent bg-clip-text">
+            <span style={{
+              background: "linear-gradient(to right, #fff, #3B82F6, #7B3FE4)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
+            }}>
               how we help you live your best social life
             </span>
           </h1>
-<p className="text-slate-400 text-lg">
-  some core experiences, modes, and features of{" "}
-  <span className="bg-gradient-to-r from-white via-fuchsia-300 to-purple-500 text-transparent bg-clip-text font-medium">
-    elinity v1.0
-  </span>
-</p>
+          <p className="text-neutral-500 text-lg">
+            some core experiences, modes, and features of{" "}
+            <span className="text-white font-medium">
+              elinity v1.0
+            </span>
+          </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {visibleCards.map((card, index) => (
             <AnimatedCard key={index} index={index}>
-              <div className="h-[450px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl hover:bg-white/[0.06] hover:border-fuchsia-500/40 transition-all duration-500 flex flex-col p-7 shadow-xl">
+              <div className="h-[450px] rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-2xl hover:bg-white/[0.04] hover:border-[#3B82F6]/40 transition-all duration-500 flex flex-col p-7 shadow-2xl">
 
                 <div className="flex justify-between items-start mb-5">
-                  <h2 className="text-[18px]  text-fuchsia-300 lowercase">
+                  <h2 className="text-[18px] font-semibold text-[#3B82F6]">
                     {card.title}
                   </h2>
-                  {/* <ChevronRight size={18} className="text-fuchsia-500" /> */}
                 </div>
 
-                <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-2">
+                <div className="flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-6">
                   {card.features.map((feature, fIdx) =>
                     renderFeatureBlock(feature, fIdx)
                   )}
                 </div>
 
-                <div className="h-16 bg-gradient-to-t from-[#0c0024] to-transparent pointer-events-none" />
+                <div className="h-16 bg-gradient-to-t from-[#06001a] to-transparent pointer-events-none" />
               </div>
             </AnimatedCard>
           ))}
@@ -301,9 +308,9 @@ const renderFeatureBlock = (text, idx) => {
         <div className="mt-20 flex justify-center">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-fuchsia-500/50 hover:scale-105 transition-all duration-500"
+            className="flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#00D2FF]/50 hover:scale-105 transition-all duration-500"
           >
-            <span className="text-xs font-bold tracking-widest uppercase text-fuchsia-200">
+            <span className="text-xs font-bold tracking-widest uppercase text-blue-100">
               {isExpanded ? 'collapse' : 'explore all experiences'}
             </span>
             {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -313,7 +320,7 @@ const renderFeatureBlock = (text, idx) => {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(217, 70, 239, 0.3); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.2); border-radius: 10px; }
       `}} />
     </div>
   );

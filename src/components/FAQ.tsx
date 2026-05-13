@@ -4,12 +4,13 @@ import { ChevronDown } from 'lucide-react';
 
 export default function ElinityFAQ() {
   const [openFAQ, setOpenFAQ] = useState(null);
-    const scrollToTop = () => {
+  
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const bluishGradient = {
-   background: 'linear-gradient(to bottom, #060014, #140035)'
+  const deepSpaceGradient = {
+    background: 'radial-gradient(circle at top, #0A001F 0%, #03000a 100%)',
   };
 
   const faqs = [
@@ -60,58 +61,65 @@ export default function ElinityFAQ() {
   };
 
   return (
-    <div style={bluishGradient} className="min-h-screen text-white px-6 md:px-16 py-20">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <div style={deepSpaceGradient} className="min-h-screen text-white px-6 md:px-16 py-20 lowercase relative overflow-hidden">
+      {/* Ambient BG Glows */}
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3B82F6]/5 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start relative z-10">
         {/* Left Section */}
-        <div className="flex flex-col justify-start space-y-6">
-          <h1 className="text-5xl font-bold">FAQs</h1>
-          <p className="text-gray-400 text-lg max-w-md">
-            elinity is where you find your people those you truly vibe with and build extraordinary, joyful, and fulfilling relationships.
+        <div className="flex flex-col justify-start space-y-8">
+          <h1 className="text-6xl font-bold tracking-tighter">
+            <span style={{ background: "linear-gradient(to right, #3B82F6, #7B3FE4, #00D2FF)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              FAQs
+            </span>
+          </h1>
+          <p className="text-neutral-400 text-lg max-w-md leading-relaxed font-light">
+            elinity is where you find your people—those you truly vibe with—to build extraordinary, joyful, and fulfilling relationships.
           </p>
 
           <div className="flex items-center space-x-4 mt-4">
             <div className="flex -space-x-3">
-              <img src="/userlogo.png" alt="User 1" className="w-10 h-10 rounded-full border-2 border-purple-700" />
-              <img src="/userphoto.png" alt="User 2" className="w-10 h-10 rounded-full border-2 border-purple-700" />
-              <img src="/userphoto2.png" alt="User 3" className="w-10 h-10 rounded-full border-2 border-purple-700" />
+              <img src="/userlogo.png" alt="User 1" className="w-10 h-10 rounded-full border-2 border-[#3B82F6]/30 bg-[#03000a]" />
+              <img src="/userphoto.png" alt="User 2" className="w-10 h-10 rounded-full border-2 border-[#3B82F6]/30 bg-[#03000a]" />
+              <img src="/userphoto2.png" alt="User 3" className="w-10 h-10 rounded-full border-2 border-[#3B82F6]/30 bg-[#03000a]" />
             </div>
             <div>
-              <p className="font-semibold leading-tight">40+ Users Registered</p>
-              <p className="text-sm text-gray-400 leading-tight">Last Week</p>
+              <p className="font-semibold leading-tight text-white">40+ Users Registered</p>
+              <p className="text-sm text-neutral-500 leading-tight">Last Week</p>
             </div>
           </div>
 
-          <Link to={"/get-started"} onClick={scrollToTop} className=" text-sm block">
-          <button className="bg-gradient-to-r from-purple-600 to-fuchsia-500 px-9 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
-            
-                        Get Started
-
-          </button>
-            </Link>
+          <Link to={"/get-started"} onClick={scrollToTop} className="text-sm block pt-4">
+            <button className="bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4] px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all shadow-[0_10px_30px_rgba(59,130,246,0.2)]">
+              Get Started
+            </button>
+          </Link>
         </div>
 
         {/* Right Section - FAQs */}
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="bg-gradient-to-br from-[#1a1033] to-[#13072b] border border-gray-700 rounded-xl px-5 py-4 transition-all duration-300"
+              className="bg-white/[0.01] backdrop-blur-3xl border border-white/5 rounded-2xl px-6 py-5 transition-all duration-300 hover:border-[#3B82F6]/30"
             >
               <button
                 className="w-full flex items-center justify-between text-left"
                 onClick={() => toggleFAQ(index)}
               >
-                <h3 className="text-base md:text-lg font-medium text-white">{faq.question}</h3>
+                <h3 className="text-base md:text-lg font-medium text-neutral-200 tracking-tight">{faq.question}</h3>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-[#3B82F6] transition-transform duration-500 ${
                     openFAQ === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {openFAQ === index && (
-                <div className="mt-3">
-                  <p className="text-gray-300 text-sm whitespace-pre-line">{faq.answer}</p>
+                <div className="mt-4 border-t border-white/5 pt-4">
+                  <p className="text-neutral-400 text-sm md:text-base leading-relaxed whitespace-pre-line font-light">
+                    {faq.answer}
+                  </p>
                 </div>
               )}
             </div>
@@ -120,41 +128,31 @@ export default function ElinityFAQ() {
       </div>
 
       {/* Tagline Section */}
-      <div className="mt-32 text-center relative">
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-1/2 h-32 bg-gradient-to-t from-fuchsia-600/40 to-transparent blur-2xl rounded-full z-0"></div>
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text z-10 relative">
-          elinity is your life long relationship flourishing buddy 
-        </h2>
-        <h2 className="text-4xl font-bold mt-2 bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text z-10 relative">
-          enter the lumiverse to explore more!
-        </h2>
+      <div className="mt-48 text-center relative">
+        <div className="absolute left-1/2 -translate-x-1/2 top-[-100px] w-3/4 h-[300px] bg-[#3B82F6]/10 blur-[150px] rounded-full pointer-events-none"></div>
+        
+        <div className="space-y-4 relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                elinity is your life long relationship flourishing buddy
+            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ background: "linear-gradient(to right, #3B82F6, #7B3FE4, #00D2FF)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                enter the lumiverse to explore more!
+            </h2>
+        </div>
 
-        <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4 z-10 relative">
-          <Link to={"/get-started"} onClick={scrollToTop} className=" text-sm block">
-          <button className="bg-gradient-to-r from-purple-600 to-fuchsia-500 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
-            
-                        Sign Up
-
-          </button>
-            </Link>
-<Link to={"/contact"} onClick={scrollToTop} className="text-sm block">
-  <button
-    className="
-      px-8 py-3 rounded-full font-semibold 
-      text-white
-      bg-white/10 
-      backdrop-blur-lg 
-      border border-white/20
-      shadow-lg
-      hover:bg-white/20 
-      hover:shadow-xl
-      transition-all duration-300
-    "
-  >
-    Talk To Us
-  </button>
-</Link>
-
+        <div className="mt-16 flex flex-col sm:flex-row justify-center gap-6 z-10 relative">
+          <Link to={"/get-started"} onClick={scrollToTop} className="text-sm block">
+            <button className="bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4] px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all shadow-[0_10px_30px_rgba(59,130,246,0.2)]">
+              Sign Up
+            </button>
+          </Link>
+          <Link to={"/contact"} onClick={scrollToTop} className="text-sm block">
+            <button
+              className="px-10 py-4 rounded-full font-bold text-white bg-white/[0.03] backdrop-blur-2xl border border-white/10 shadow-xl hover:bg-white/[0.08] transition-all duration-300"
+            >
+              Talk To Us
+            </button>
+          </Link>
         </div>
       </div>
     </div>

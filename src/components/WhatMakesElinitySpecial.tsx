@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useEffect, useRef } from "react";
 
-const purpleGradient = {
-  background: `
-    radial-gradient(circle at 15% 20%, #1a0033 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, #22004a 0%, transparent 40%),
-    linear-gradient(to bottom, #020008, #060014 40%, #020008)
-  `,
+const brandColors = {
+  indigo: "#7B3FE4",
+  royalBlue: "#3B82F6",
+  brightCyan: "#00D2FF",
+  darkBg: "#03000a"
 };
 
 function useReveal() {
@@ -24,12 +23,10 @@ function useReveal() {
         const scrollingDown = currentScrollY > lastScrollY.current;
         lastScrollY.current = currentScrollY;
 
-        // animate only when scrolling down
         if (entry.isIntersecting && scrollingDown) {
           setShow(true);
         }
 
-        // reset when leaving viewport so animation can run again
         if (!entry.isIntersecting) {
           setShow(false);
         }
@@ -49,19 +46,26 @@ function useReveal() {
 
 export default function ElinityScreen() {
   return (
-    <div style={{border:'1px solid rgba(168,85,247,0.25)',borderRadius:"0px", boxShadow:"0 10px 40px rgba(139,92,246,0.25)",
-        background: `
-    radial-gradient(circle at 15% 20%, #1a0033 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, #22004a 0%, transparent 40%),
-    linear-gradient(to bottom, #020008, #060014 40%, #020008)
-  `,
+    <div style={{
+      border:'1px solid rgba(123, 63, 228, 0.15)',
+      borderRadius:"0px", 
+      boxShadow:"0 10px 40px rgba(0, 0, 0, 0.5)",
+      background: `
+        radial-gradient(circle at 15% 20%, #0a001f 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, #030014 0%, transparent 40%),
+        linear-gradient(to bottom, #03000a, #05001a 40%, #03000a)
+      `,
     }}  className="min-h-screen text-white p-8 lowercase">
       <div className="max-w-7xl mx-auto">
         {/* heading */}
         <center>
         <h1 className="text-5xl font-bold mb-16 mt-8">
           what makes{' '}
-          <span className="bg-gradient-to-r from-fuchsia-400 to-violet-400 bg-clip-text text-transparent">
+          <span style={{
+            background: "linear-gradient(180deg, #fff 30%, #3B82F6 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent"
+          }}>
             elinity
           </span>
           <br />
@@ -75,27 +79,28 @@ export default function ElinityScreen() {
               padding: "28px",
               position: "relative",
               background: `
-                linear-gradient(145deg, rgba(88,28,135,0.25), rgba(15,0,35,0.65)),
-                radial-gradient(circle at top left, rgba(236,72,153,0.18), transparent 45%)
+                linear-gradient(145deg, rgba(123, 63, 228, 0.08), rgba(3, 0, 10, 0.65)),
+                radial-gradient(circle at top left, rgba(0, 210, 255, 0.05), transparent 45%)
               `,
-              backdropFilter: "blur(18px)",
-              WebkitBackdropFilter: "blur(18px)",
-              border: "1px solid rgba(168,85,247,0.25)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              border: "1px solid rgba(123, 63, 228, 0.15)",
               boxShadow: `
-                0 10px 40px rgba(139,92,246,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.08)
+                0 20px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.03)
               `,
               transition: "all .4s ease"
             }}
           >
-          <p className="text-xl text-neutral-500 max-w-3xl leading-relaxed mb-12">
+          <p className="text-xl text-neutral-400 max-w-3xl leading-relaxed mb-12">
             elinity exists because connection is not a single problem to be solved.
             it’s a lifelong practice. finding the right person is only the beginning.
             the real magic happens when people have the tools, self-awareness, emotional skill, and shared joy to build something lasting.
             that belief shapes everything we’ve built.
           </p>
         </div>
-</center>
+        </center>
+
         {/* first row of cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <FeatureCard
@@ -103,13 +108,13 @@ export default function ElinityScreen() {
             title="one platform for every kind of connection."
             content={
               <>
-                <div className=" max-w-lg mx-auto p-6 bg-neutral-900/40 rounded-2xl border border-white/5 text-neutral-300">
+                <div className=" max-w-lg mx-auto p-6 bg-black/40 rounded-2xl border border-white/5 text-neutral-300">
                   <p className="text-sm mb-4 leading-relaxed">
                     most platforms slice your life into categories. one app for dating. 
                     another for friends. another for work. another for growth. <span className="text-white font-medium">real life doesn’t work that way.</span>
                   </p>
 
-                  <div className="space-y-4 border-l border-fuchsia-500/50 pl-4">
+                  <div className="space-y-4 border-l border-[#3B82F6]/50 pl-4">
                     <p className="text-sm text-neutral-200">
                       elinity brings romantic connections, social, and leisure relationships and purposeful collaborations into 
                       <span className="text-white"> one unified experience.</span>
@@ -139,7 +144,7 @@ export default function ElinityScreen() {
             title="deep matching, not shallow sorting"
             content={
               <>
-                <div className="max-w-lg mx-auto p-6 bg-neutral-900/40 rounded-2xl border border-white/5 text-neutral-300">
+                <div className="max-w-lg mx-auto p-6 bg-black/40 rounded-2xl border border-white/5 text-neutral-300">
                   <p className="text-sm font-bold text-white mb-2">Elinity doesn’t match you on surface traits or swipe-friendly summaries.<br></br>
                    it learns how you think, feel, relate, and move through the world.
                    <br></br> 
@@ -148,19 +153,19 @@ export default function ElinityScreen() {
 
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
+                      <div className="w-1 h-1 bg-[#00D2FF] rounded-full" />
                       <span>values and goals</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
+                      <div className="w-1 h-1 bg-[#00D2FF] rounded-full" />
                       <span>communication and attachment</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
+                      <div className="w-1 h-1 bg-[#00D2FF] rounded-full" />
                       <span>relational needs and attachment dynamics</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-fuchsia-500 rounded-full" />
+                      <div className="w-1 h-1 bg-[#00D2FF] rounded-full" />
                       <span>energy, rhythm, and intent</span>
                     </li>
                   </ul>
@@ -179,15 +184,15 @@ export default function ElinityScreen() {
         </div>
 
         {/* second row of cards */}
-<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <FeatureCard
             number="🤖"
             title="emotionally intelligent, personalized ai"
             content={
               <>
-                <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
+                <div className="max-w-md mx-auto p-5 bg-black/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="mb-4">
-                    <p className="text-[11px] text-fuchsia-400 font-medium">
+                    <p className="text-[11px] text-[#00D2FF] font-medium">
                       elinity’s ai, lumi, is here to amplify human connection.
                     </p>
                   </div>
@@ -223,7 +228,7 @@ export default function ElinityScreen() {
             title="tools for both finding and flourishing"
             content={
               <>
-                <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
+                <div className="max-w-md mx-auto p-5 bg-black/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="mb-4">
                     <p className="text-xs text-neutral-500 bold">
                       most platforms stop at the introduction.(and what do you know, they suck at that too).
@@ -237,7 +242,7 @@ export default function ElinityScreen() {
                     </p>
                   </div>
 
-                  <div className="space-y-2 border-l border-fuchsia-500/30 pl-3 mb-4">
+                  <div className="space-y-2 border-l border-[#7B3FE4]/30 pl-3 mb-4">
                     <p className="text-[10px] text-neutral-500 tracking-widest font-semibold uppercase">elinity gives you a rich suite of connection tools:</p>
                     <ul className="text-[12px] space-y-1 text-neutral-200">
                       <li>• playful and deep connection games</li>
@@ -264,14 +269,14 @@ export default function ElinityScreen() {
             title="designed for real humans, not algorithms or npcs"
             content={
               <>
-                <div className="max-w-md mx-auto p-5 bg-neutral-900/40 rounded-xl border border-white/5 text-neutral-300">
+                <div className="max-w-md mx-auto p-5 bg-black/40 rounded-xl border border-white/5 text-neutral-300">
                   <div className="space-y-4">
                     <p className="text-xs leading-relaxed text-neutral-400">
                       elinity is not optimized for endless scrolling, shallow dopamine, or algorithmic noise. 
                       it’s designed for people who care about depth. about presence. about meaning.
                     </p>
 
-                    <div className="space-y-1 text-[11px] leading-relaxed border-l border-fuchsia-500/30 pl-3">
+                    <div className="space-y-1 text-[11px] leading-relaxed border-l border-[#3B82F6]/30 pl-3">
                       <p>we are building more than an app.</p>
                       <p className="text-neutral-200">we’re building a culture of connection, a vehicle for transformation.</p>
                     </div>
@@ -309,12 +314,12 @@ function FeatureCard({ number, title, content }) {
       className="rounded-xl p-6 h-full text-white flex flex-col"
       style={{
         background: `
-          linear-gradient(145deg, rgba(139,92,246,0.25), rgba(30,0,60,0.65)),
-          radial-gradient(circle at bottom, rgba(226, 168, 197, 0.25), transparent 40%)
+          linear-gradient(145deg, rgba(123, 63, 228, 0.05), rgba(3, 0, 20, 0.85)),
+          radial-gradient(circle at bottom, rgba(59, 130, 246, 0.05), transparent 40%)
         `,
-        backdropFilter: "blur(18px)",
-        border: "1px solid rgba(168,85,247,0.25)",
-        boxShadow: "0 10px 40px rgba(139,92,246,0.25)",
+        backdropFilter: "blur(24px)",
+        border: "1px solid rgba(123, 63, 228, 0.12)",
+        boxShadow: "0 20px 60px rgba(0, 0, 0, 0.4)",
         opacity: 1,  
         transform: show
     ? "translateY(0px) scale(1)"
@@ -326,13 +331,13 @@ function FeatureCard({ number, title, content }) {
       <div>
         <h2
           className="text-xl font-bold mb-4"
-          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+          style={{ display: "flex", alignItems: "center", gap: "12px" }}
         >
-          <span style={{ fontSize: "22px" }}>{number}</span>
+          <span style={{ fontSize: "22px", filter: "drop-shadow(0 0 8px rgba(123, 63, 228, 0.4))" }}>{number}</span>
 
           <span
             style={{
-              background: "linear-gradient(to right,#f472b6,#d946ef,#a78bfa)",
+              background: "linear-gradient(to right, #fff, #3B82F6, #00D2FF)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}

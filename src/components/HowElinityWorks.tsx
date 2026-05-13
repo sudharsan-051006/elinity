@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from "framer-motion";
- 
+
 function useReveal() {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
@@ -18,10 +18,8 @@ function useReveal() {
         lastScrollY.current = currentScrollY;
 
         if (entry.isIntersecting && scrollingDown) {
-          setShow(true);   // animate when scrolling down
+          setShow(true);
         }
-
-        // reset animation flag but don't hide card
         if (!entry.isIntersecting) {
           setShow(false);
         }
@@ -43,50 +41,49 @@ function AnimatedStep({ step, index, isLast }) {
     <div
       ref={ref}
       className="space-y-8"
-style={{
-  opacity: 1,
-  transform: show
-    ? "translateY(0px) scale(1)"
-    : "translateY(60px) scale(.98)",
-  transition: "all .8s cubic-bezier(.23,1,.32,1)",
-}}
+      style={{
+        opacity: 1,
+        transform: show
+          ? "translateY(0px) scale(1)"
+          : "translateY(60px) scale(.98)",
+        transition: "all .8s cubic-bezier(.23,1,.32,1)",
+      }}
     >
-      <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl bg-gradient-to-r from-[#1a0040]/90 via-[#0d003f]/85 to-[#001a4d]/80 backdrop-blur-xl border border-gray-700">
+      <div className="flex flex-col md:flex-row rounded-[2rem] overflow-hidden shadow-2xl bg-white/[0.02] backdrop-blur-2xl border border-white/10">
         
-        <div className="md:w-1/2 p-4 md:p-6 lg:p-8 flex items-center justify-center">
+        <div className="md:w-1/2 p-4 md:p-6 lg:p-8 flex items-center justify-center bg-black/20">
           <img
             src={step.image}
             alt={`step ${step.number}`}
-            className="rounded-xl w-[90%] max-h-[400px] object-contain"
+            className="rounded-2xl w-[90%] max-h-[400px] object-contain shadow-2xl"
           />
         </div>
 
-        <div className="md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
-          <div className="text-lg text-white mb-2 font-semibold">
+        <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+          <div className="text-xs font-mono text-[#00D2FF] mb-4 tracking-[0.2em] border border-[#00D2FF]/30 w-fit px-3 py-1 rounded-full">
             {step.number}
           </div>
 
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+          <h3 className="text-2xl md:text-4xl font-bold mb-6 text-white tracking-tight">
             {step.title}
           </h3>
 
-          <p className="text-sm md:text-base text-gray-300 whitespace-pre-line">
-            {step.description}
+          <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-light whitespace-pre-line">
+            {step.content || step.description}
           </p>
         </div>
       </div>
 
       {!isLast && (
-        <div className="border-t border-gray-600 w-full" />
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent w-full" />
       )}
     </div>
   );
 }
 
-
 export default function ElinityWorks() {
-  const purpleGradient = {
-    background: 'linear-gradient(to bottom, #060014, #140035)',
+  const brandGradient = {
+    background: 'radial-gradient(circle at top, #0A001F 0%, #03000a 100%)',
   };
 
   const steps = [
@@ -217,16 +214,11 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     { title: "It’s a Match!", description: "Two paths just aligned.Take the first step and begin something real.", image: "/23.jpeg" },
   ];
 
-  const slides = [...tourSteps, tourSteps[0]];
-
   const [infoRef, infoShow] = useReveal();
-
-
   const scrollRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Sync active dot with scroll position
   const handleScrollSync = () => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
@@ -243,15 +235,12 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     return () => scrollEl?.removeEventListener('scroll', handleScrollSync);
   }, []);
 
-  // Auto-scroll
   useEffect(() => {
     if (isPaused) return;
-
     const interval = setInterval(() => {
       if (scrollRef.current) {
         const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
         const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 20;
-        
         if (isAtEnd) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -259,12 +248,9 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
         }
       }
     }, 4000);
-
     return () => clearInterval(interval);
   }, [isPaused]);
 
-
-  
   const scrollManual = (direction) => {
     if (scrollRef.current) {
       const { clientWidth } = scrollRef.current;
@@ -273,50 +259,44 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
     }
   };
 
-  console.log(tourSteps.length)
   const scrollToIndex = (index) => {
     if (scrollRef.current) {
       const { clientWidth } = scrollRef.current;
-      scrollRef.current.scrollTo({
-        left: index * clientWidth,
-        behavior: 'smooth'
-      });
+      scrollRef.current.scrollTo({ left: index * clientWidth, behavior: 'smooth' });
     }
   };
 
   return (
     <div
-      className="min-h-screen text-white py-20 px-4 md:px-12 lg:px-20 lowercase"
-      style={purpleGradient}
+      className="min-h-screen text-white py-20 px-4 md:px-12 lg:px-20 lowercase relative overflow-hidden"
+      style={brandGradient}
     >
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#3B82F6]/5 blur-[120px] pointer-events-none" />
+
       {/* header */}
-      <motion.div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      <motion.div className="text-center mb-24 relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
           <span className="text-white">how </span>
-          <span className="bg-gradient-to-r from-purple-400 via-violet-500 to-fuchsia-500 text-transparent bg-clip-text">
+          <span style={{ background: "linear-gradient(to right, #3B82F6, #7B3FE4, #00D2FF)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             elinity works
           </span>
         </h1>
-        <div className="text-sm md:text-base max-w-3xl mx-auto text-gray-300">
+        <div className="max-w-3xl mx-auto text-neutral-400 font-light text-lg space-y-6">
           <p>
             from finding your purpose or your people, to building boundless relationships 
-            that actually grows, elinity is designed to move with you through every phase of connection.
+            that actually grow, elinity is designed to move with you through every phase of connection.
           </p>
-          <div className="max-w-md mx-auto p-5">
-            <p style={{ color: "white", fontSize: "20px", fontWeight: "600", letterSpacing: "1px", marginBottom: "8px" }}> not in a rush.</p>
-            <p style={{ color: "#e0e0e0", fontSize: "20px", fontWeight: "600", letterSpacing: "1px", marginBottom: "8px" }}> not randomly.</p>
-            <p style={{ color: "#ffffff", fontSize: "22px", fontWeight: "700", letterSpacing: "1.2px", marginTop: "10px" }}>and never below your bar.</p>
+          <div className="space-y-2">
+            <p className="text-white font-medium text-xl">not in a rush.</p>
+            <p className="text-neutral-500 font-medium text-xl">not randomly.</p>
+            <p className="text-[#3B82F6] font-bold text-2xl mt-4">and never below your bar.</p>
           </div>
-          <p style={{paddingRight:'0px', color: "#e0e0e0", fontSize: "18px", fontWeight: "500", letterSpacing: "0.5px"}}>
-            here's how it works, end to end.
-          </p>
+          <p className="text-neutral-500 pt-8 italic">here's how it works, end to end.</p>
         </div>
       </motion.div>
 
       {/* steps cards */}
-       <motion.div
-        
-       className="max-w-6xl mx-auto space-y-16">
+      <div className="max-w-6xl mx-auto space-y-24 relative z-10">
         {steps.map((step, index) => (
           <AnimatedStep
             key={index}
@@ -325,63 +305,48 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
             isLast={index === steps.length - 1}
           />
         ))}
-      </motion.div>
-
-      <div className="pt-16"></div>
+      </div>
 
       {/* -------- INFO SECTION -------- */}
       <div
         ref={infoRef}
-        className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-[#07071c] to-[#0f1030] text-white overflow-hidden"
+        className="relative py-24 px-6 md:px-16 mt-32 bg-white/[0.01] backdrop-blur-3xl border border-white/5 overflow-hidden"
         style={{
-          borderRadius: "24px",
-          opacity:1,
-          transform: infoShow
-            ? "translateY(0px)"
-            : "translateY(120px)",
+          borderRadius: "3rem",
+          opacity: 1,
+          transform: infoShow ? "translateY(0px)" : "translateY(120px)",
           transition: "all 1s cubic-bezier(.23,1,.32,1)",
         }}
       >
-        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full"></div>
+        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-[#3B82F6]/10 blur-[150px] pointer-events-none"></div>
 
         <div className="max-w-5xl mx-auto relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-6">
-            Quick tour - inside <span className="text-purple-400">Elinity</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
+            quick tour - inside <span className="text-[#3B82F6]">elinity</span>
           </h1>
 
-          <p className="text-center text-gray-300 text-lg mb-14">
-            Curious what it actually looks like inside?
-            Here’s a little peek behind the curtain.
-          </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <h2 className="text-xl font-semibold text-[#00D2FF] tracking-wider text-sm">What you’ll find inside</h2>
+              <ul className="space-y-4 text-neutral-400 font-light">
+                {["Intentional profiles that go deeper", "Dynamic compatibility insights", "Warm conversation prompts", "Rituals and shared goals", "Weekly reflection moments", "Playful connection games", "Visual intention tracking", "AI-guided conversations"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
-            <h2 className="text-2xl font-bold text-purple-300 mb-6">
-              What you’ll find inside the app
-            </h2>
-
-            <ul className="grid md:grid-cols-2 gap-4 text-gray-200 mb-10">
-              <li>• Intentional profiles that go deeper than surface-level stats</li>
-              <li>• Dynamic compatibility insights powered by real psychology</li>
-              <li>• Warm conversation prompts that never feel awkward</li>
-              <li>• Rituals and shared goals that grow with your relationship</li>
-              <li>• Weekly reflection moments that make you think</li>
-              <li>• Playful connection games that are surprisingly deep</li>
-              <li>• Visual intention tracking that evolves over time</li>
-              <li>• AI-guided conversations for clarity and growth</li>
-            </ul>
-
-            <div className="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent my-8"></div>
-
-            <h2 className="text-2xl font-bold text-purple-300 mb-6">
-              What it feels like
-            </h2>
-
-            <div className="space-y-3 text-lg text-gray-200">
-              <p>It feels intentional, not noisy.</p>
-              <p>It feels human, not transactional.</p>
-              <p className="text-white font-semibold">
-                It feels like building something, not browsing or swiping something.
-              </p>
+            <div className="space-y-8">
+              <h2 className="text-xl font-semibold text-[#00D2FF] tracking-wider text-sm">What it feels like</h2>
+              <div className="space-y-6 text-xl text-neutral-300 font-light">
+                <p>It feels intentional, not noisy.</p>
+                <p>It feels human, not transactional.</p>
+                <p className="text-white font-medium border-l-2 border-[#3B82F6] pl-6 py-2">
+                  It feels like building something, not browsing or swiping.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -389,8 +354,7 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
 
       {/* Carousel Section */}
       <div 
-        className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-[#07071c] to-[#0f1030] text-white overflow-hidden mt-12 group" 
-        style={{ borderRadius: '24px' }}
+        className="relative py-32 px-6 md:px-16 mt-24 group" 
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -399,26 +363,24 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
           .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         `}</style>
         
-        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full"></div>
-
         <div className="max-w-[1500px] mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="text-gray-400 text-lg">Hover to pause, scroll to explore.</p>
+            {/* <p className="text-neutral-500 font-light">Hover to pause, scroll to explore.</p> */}
           </div>
 
           {/* Nav Arrows */}
           <button 
             onClick={() => scrollManual('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex hover:bg-white/10 active:scale-95"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all hidden md:flex hover:bg-[#3B82F6]/20 hover:border-[#3B82F6]/40"
           >
-            <ChevronLeft className="w-8 h-8 text-purple-400" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </button>
 
           <button 
             onClick={() => scrollManual('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex hover:bg-white/10 active:scale-95"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-5 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all hidden md:flex hover:bg-[#3B82F6]/20 hover:border-[#3B82F6]/40"
           >
-            <ChevronRight className="w-8 h-8 text-purple-400" />
+            <ChevronRight className="w-6 h-6 text-white" />
           </button>
 
           {/* Carousel */}
@@ -429,59 +391,43 @@ it’s about becoming the kind of person who builds beautiful relationships, aga
             {tourSteps.map((step, index) => (
               <div 
                 key={index} 
-                className="min-w-[70%] md:min-w-[70%] lg:min-w-[800px] snap-center shrink-0"
+                className="min-w-[85%] md:min-w-[70%] lg:min-w-[900px] snap-center shrink-0"
               >
-                <div className="flex flex-col md:flex-row backdrop-blur-xl bg-white/5 border border-white/10 rounded-[40px] overflow-hidden shadow-2xl mx-2 md:mx-4">
-                  <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 bg-black/20">
+                <div className="flex flex-col md:flex-row bg-white/[0.02] backdrop-blur-3xl border border-white/5 rounded-[3rem] overflow-hidden shadow-2xl mx-2">
+                  <div className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-black/40">
                     <img 
                       src={step.image} 
                       alt={step.title}
-                      className="w-[240px] md:w-[320px] h-auto rounded-[3rem] shadow-2xl border-[8px] border-black object-contain bg-slate-900"
+                      className="w-[260px] md:w-[340px] h-auto rounded-[3.5rem] shadow-[0_0_50px_rgba(59,130,246,0.15)] border-[10px] border-[#03000a] object-contain"
                     />
                   </div>
 
-                  <div className="hidden md:flex md:w-1/2 p-8 md:p-12 flex-col justify-center text-left">
-                    <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight" style={{ background: 'linear-gradient(90deg, #a855f7, #ec4899)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
-                      {step.title} <span className="text-purple-400"></span>
+                  {/* Hide content on mobile to focus on image */}
+                  <div className="hidden md:flex md:w-1/2 p-12 flex-col justify-center text-left">
+                    <h2 className="text-3xl font-bold mb-6 tracking-tight leading-tight" style={{ background: 'linear-gradient(90deg, #fff, #3B82F6)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+                      {step.title}
                     </h2>
-                    <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                      <div 
-                      className="flex-shrink-0 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50"
-                      style={{ display: 'inline-flex', marginRight: '8px' }}>
-                            <span className="text-purple-400 text-[10px] font-bold">✓</span>
-                      </div>
+                    <p className="text-neutral-400 text-lg leading-relaxed font-light">
+                      <span className="inline-flex mr-3 w-6 h-6 rounded-full bg-[#3B82F6]/10 items-center justify-center border border-[#3B82F6]/30 text-[#3B82F6] text-[10px] font-bold">✓</span>
                       {step.description}
                     </p>
-                    <div className="space-y-4">
-                      {[].map((feature, fIdx) => (
-                        <div key={fIdx} className="flex gap-3 items-center">
-                          <div className="flex-shrink-0 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50">
-                            <span className="text-purple-400 text-[10px] font-bold">✓</span>
-                          </div>
-                          <span className="text-gray-200 text-sm font-medium">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Navigatable Dots */}
-          <div className="flex justify-center gap-3 mt-4">
-          {tourSteps.slice(0, 10).map((_, idx) => (
-            <button 
-              key={idx}
-              onClick={() => scrollToIndex(idx)}
-              className={`transition-all duration-300 rounded-full h-2 ${
-                activeIndex === idx
-                  ? "w-8 bg-purple-400"
-                  : "w-2 bg-white/20 hover:bg-white/40"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {tourSteps.map((_, idx) => (
+              <button 
+                key={idx}
+                onClick={() => scrollToIndex(idx)}
+                className={`transition-all duration-500 rounded-full h-1 ${
+                  activeIndex === idx ? "w-12 bg-[#3B82F6]" : "w-2 bg-white/10 hover:bg-white/30"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

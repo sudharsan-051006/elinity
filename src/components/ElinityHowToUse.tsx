@@ -10,10 +10,10 @@ const AnimatedBlock = ({ children, delay = 0 }) => {
         if (entry.isIntersecting) {
           setShow(true);
         } else {
-          setShow(false); // reset when leaving
+          setShow(false);
         }
       },
-      { threshold: 0 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -27,7 +27,7 @@ const AnimatedBlock = ({ children, delay = 0 }) => {
         opacity: 1,
         transform: show
           ? "translateY(0px)"
-          : "translateY(70px)",
+          : "translateY(50px)",
         transition: `all 0.9s cubic-bezier(.23,1,.32,1) ${delay}s`
       }}
     >
@@ -74,16 +74,20 @@ they improve when you do.`,
   ];
 
   return (
-    <div className="bg-[#0a0a0a] text-neutral-300 py-24 px-6 font-sans antialiased lowercase">
-      <div className="max-w-4xl mx-auto">
+    <div className="bg-[#03000a] text-neutral-300 py-24 px-6 font-sans antialiased lowercase relative overflow-hidden">
+      
+      {/* Subtle Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#3B82F6]/5 blur-[120px] pointer-events-none" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         
         {/* header */}
         <AnimatedBlock>
-          <header className="mb-24 border-b border-neutral-800 pb-12">
+          <header className="mb-24 border-b border-white/5 pb-12">
             <h1
-              className="text-4xl md:text-5xl font-medium tracking-tight mb-6"
+              className="text-4xl md:text-6xl font-bold tracking-tight mb-8"
               style={{
-                backgroundImage: 'linear-gradient(to right, #e352c1, #0000ff)',
+                background: "linear-gradient(to right, #fff, #3B82F6, #7B3FE4)",
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
@@ -91,35 +95,39 @@ they improve when you do.`,
               how people use elinity
             </h1>
 
-            <p className="text-xl text-neutral-500 max-w-2xl leading-relaxed">
+            <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed font-light">
               elinity isn’t a single-use app. <br/>
               it’s a relationship platform you grow into. 
-              most people use it in four core ways.
+              most people use it in <span className="text-white">four core ways</span>.
             </p>
           </header>
         </AnimatedBlock>
 
-        {/* use cases */}
+        {/* use cases container */}
         <AnimatedBlock delay={0.1}>
-          <div style={{
-            border:'1px solid pink',
-            borderRadius:'10px',
-            padding:'40px',
-            boxShadow:'5px 5px 10px rgba(204, 116, 223, 0.5)'
-          }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div 
+            style={{
+              background: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(20px)",
+              border: "1px solid rgba(59, 130, 246, 0.1)",
+              borderRadius: "2rem",
+              padding: "3rem",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
               {useCases.map((item, idx) => (
-                <AnimatedBlock key={item.id} delay={idx * 0.08}>
-                  <div className="space-y-4">
+                <AnimatedBlock key={item.id} delay={idx * 0.1}>
+                  <div className="space-y-5 group">
                     <div className="flex items-center gap-4">
-                      <span className="text-xs font-mono text-fuchsia-500 border border-fuchsia-500/20 px-2 py-0.5 rounded">
+                      <span className="text-[10px] font-mono text-[#00D2FF] border border-[#00D2FF]/30 px-2 py-0.5 rounded tracking-widest uppercase">
                         {item.id}
                       </span>
-                      <h2 className="text-xl font-semibold text-white tracking-tight">
+                      <h2 className="text-xl font-semibold text-white tracking-tight group-hover:text-[#3B82F6] transition-colors duration-300">
                         {item.title}
                       </h2>
                     </div>
-                    <p className="text-neutral-400 leading-relaxed whitespace-pre-line">
+                    <p className="text-neutral-400 leading-relaxed font-light whitespace-pre-line text-sm md:text-base">
                       {item.content}
                     </p>
                   </div>
@@ -130,16 +138,20 @@ they improve when you do.`,
         </AnimatedBlock>
 
         {/* footer */}
-        <AnimatedBlock delay={0.15}>
-          <footer className="mt-32 pt-16 border-t border-neutral-800">
+        <AnimatedBlock delay={0.2}>
+          <footer className="mt-32 pt-16 border-t border-white/5">
             <div className="max-w-2xl">
-              <p className="text-lg text-neutral-400 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-neutral-400 leading-relaxed mb-10 font-light">
                 elinity is not for everyone. and that’s intentional. it’s for people who take connection 
                 <span className="text-white italic"> seriously</span>, 
                 <span className="text-white italic"> and playfully</span>, and 
                 <span className="text-white italic"> with heart</span>.
               </p>
-              <h2 className="text-2xl font-bold text-white tracking-tighter">
+              <h2 className="text-3xl font-bold tracking-tighter" style={{
+                background: "linear-gradient(to right, #fff, #3B82F6)",
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
                 welcome to elinity.
               </h2>
             </div>

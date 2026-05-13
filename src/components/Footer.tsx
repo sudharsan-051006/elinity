@@ -1,68 +1,70 @@
-  import React from "react";
-import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart, MapPin, Mail } from "lucide-react";
+import React from "react";
+import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../../public/elogo.png";
-import { purpleGradient } from "../theme";
 
 const Footer = ({ className = '' }: { className?: string }) => {
   const currentYear = new Date().getFullYear();
 
-  // Premium Scroll-to-Top Logic
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Brand-aligned Deep Space Gradient
+  const deepSpaceGradient = {
+    background: 'radial-gradient(circle at bottom right, #0A001F 0%, #03000a 100%)',
+  };
+
   return (
     <footer 
-      style={purpleGradient} 
-      className={`relative text-white pt-20 pb-10 px-6 md:px-16 overflow-hidden border-t border-white/10 ${className}`}
+      style={deepSpaceGradient} 
+      className={`relative text-white pt-24 pb-12 px-6 md:px-16 overflow-hidden border-t border-white/5 lowercase ${className}`}
     >
-      {/* Dynamic Background Elements */}
+      {/* Premium Ambient Glows */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] -mr-64 -mt-64" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] -ml-48 -mb-48" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#3B82F6]/5 rounded-full blur-[140px] -mr-80 -mt-80" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#7B3FE4]/5 rounded-full blur-[120px] -ml-64 -mb-64" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Top Tier: Brand & Social Bento */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           
-          {/* Brand Card */}
-          <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col justify-between">
-            <div className="space-y-6">
+          {/* Brand Card - Enhanced Glassmorphism */}
+          <div className="lg:col-span-7 bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-10 backdrop-blur-3xl flex flex-col justify-between hover:border-white/10 transition-colors duration-500">
+            <div className="space-y-8">
               <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3 w-max group">
-                <img src="https://res.cloudinary.com/dge1qccxs/image/upload/v1778672008/04235931-ebaa-4506-8551-d59bd86b6b26-removebg-preview_vyqdqe.png" alt="Elinity" className="h-16 w-auto transition-transform duration-700 group-hover:rotate-[540deg]" />
+                <img 
+                  src="https://res.cloudinary.com/dge1qccxs/image/upload/v1778672008/04235931-ebaa-4506-8551-d59bd86b6b26-removebg-preview_vyqdqe.png" 
+                  alt="elinity" 
+                  className="h-14 w-auto transition-all duration-700 group-hover:scale-110" 
+                />
               </Link>
-              <h2 className="text-2xl md:text-2xl font-light leading-tight max-w-xl text-white tracking-wide">
-                Where{" "}
-                <span className="bg-gradient-to-r from-[#d9d3fe] to-[#7759fd] 
-                                bg-clip-text text-transparent font-semibold italic"
-                      style={{paddingRight:'1px'}}>
-                  Amplifying Intelligence 
-                  {/* bg-gradient-to-r from-  bg-clip-text */}
+              <h2 className="text-3xl md:text-4xl font-light leading-tight max-w-xl text-neutral-200 tracking-tight">
+                where{" "}
+                <span className="bg-gradient-to-r from-[#3B82F6] to-[#00D2FF] bg-clip-text text-transparent font-semibold italic">
+                  amplifying intelligence 
                 </span>{" "}
-                 meets{" "}
-                <span className="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-400 
-                                bg-clip-text text-transparent font-semibold italic">
+                meets{" "}
+                <span className="bg-gradient-to-r from-[#7B3FE4] to-[#3B82F6] bg-clip-text text-transparent font-semibold italic">
                   human connection
                 </span>
               </h2>
-              <p className="text-purple-100/60 text-sm max-w-md">
-                Find your most resonant people with Lumi, your social matchmaker, that understands the whole of you.
+              <p className="text-neutral-500 text-base max-w-md leading-relaxed">
+                find your most resonant people with lumi, your social matchmaker, that understands the whole of you.
               </p>
             </div>
           </div>
 
           {/* Connect Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-purple-500/10 to-transparent border border-white/10 rounded-3xl p-8 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#3B82F6]/5 to-transparent border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between hover:border-[#3B82F6]/20 transition-all duration-500">
             <div>
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                Join the Circle <Sparkles size={18} className="text-yellow-400" />
+              <h3 className="text-2xl font-semibold mb-3 flex items-center gap-3">
+                join the circle <Sparkles size={20} className="text-[#3B82F6]" />
               </h3>
-              <p className="text-purple-100/60 text-sm">Follow our journey in shaping human flourishing with emotionally intelligent buddies.</p>
+              <p className="text-neutral-500 text-base leading-relaxed">follow our journey in shaping human flourishing with emotionally intelligent buddies.</p>
             </div>
             
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-4 mt-8">
               {[
                 { icon: <Instagram size={22} />, href: "https://www.instagram.com/elinityai/" },
                 { icon: <Linkedin size={22} />, href: "https://www.linkedin.com/company/elinity/" },
@@ -73,7 +75,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-400/50 hover:-translate-y-1 transition-all duration-300"
+                  className="h-16 w-16 flex items-center justify-center rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-[#3B82F6]/10 hover:border-[#3B82F6]/30 hover:-translate-y-1.5 transition-all duration-500 text-neutral-400 hover:text-white"
                 >
                   {social.icon}
                 </a>
@@ -82,22 +84,19 @@ const Footer = ({ className = '' }: { className?: string }) => {
           </div>
         </div>
 
-        {/* Middle Tier: Navigation Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 px-4">
-          
-          <div className="space-y-6">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Explore</h4>
-            <ul className="space-y-3">
+        {/* Middle Tier: Links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 px-4">
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#3B82F6]">explore</h4>
+            <ul className="space-y-4">
               {[
-                { n: "Home", p: "/" }, { n: "About Us", p: "/about" }, 
-                { n: "Contact Us", p: "/contact" }, { n: "Join Us", p: "/join-us" },
-                { n: "LeaderBoard", p: "#" },
-                { n: "Community", p: "#" }, { n: "Manifesto", p: "#" },
-                { n: "Enterprise", p: "/enterprise" }, 
-                {n: "AB", p: "/ab" },
+                { n: "home", p: "/" }, { n: "about us", p: "/about" }, 
+                { n: "contact us", p: "/contact" }, { n: "join us", p: "/join-us" },
+                { n: "leaderboard", p: "#" }, { n: "manifesto", p: "#" },
+                { n: "enterprise", p: "/enterprise" }, 
               ].map((link) => (
                 <li key={link.n}>
-                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                  <Link to={link.p} onClick={scrollToTop} className="text-neutral-500 hover:text-[#3B82F6] transition-colors text-sm block font-light">
                     {link.n}
                   </Link>
                 </li>
@@ -105,17 +104,17 @@ const Footer = ({ className = '' }: { className?: string }) => {
             </ul>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Legal & Trust</h4>
-            <ul className="space-y-3">
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#3B82F6]">legal</h4>
+            <ul className="space-y-4">
               {[
-                { n: "Subscriptions", p: "/get-started" }, 
-                { n: "Legal Center", p: "/legal" },
-                { n: "Sitemap", p: "/sitemap" },
-                { n: "Privacy Policy", p: "/privacypolicy" }
+                { n: "subscriptions", p: "/get-started" }, 
+                { n: "legal center", p: "/legal" },
+                { n: "sitemap", p: "/sitemap" },
+                { n: "privacy policy", p: "/privacypolicy" }
               ].map((link) => (
                 <li key={link.n}>
-                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                  <Link to={link.p} onClick={scrollToTop} className="text-neutral-500 hover:text-[#3B82F6] transition-colors text-sm block font-light">
                     {link.n}
                   </Link>
                 </li>
@@ -123,15 +122,15 @@ const Footer = ({ className = '' }: { className?: string }) => {
             </ul>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Learn more</h4>
-            <ul className="space-y-3">
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#3B82F6]">learn</h4>
+            <ul className="space-y-4">
               {[
-                { n: "Blogs", p: "/blog" }, { n: "ElinityPodcast", p: "/pod" },
-                 { n: "Stories", p: "/stories" },
+                { n: "blogs", p: "/blog" }, { n: "elinity podcast", p: "/pod" },
+                 { n: "stories", p: "/stories" },
               ].map((link) => (
                 <li key={link.n}>
-                  <Link to={link.p} onClick={scrollToTop} className="text-purple-100/40 hover:text-white transition-colors text-sm block">
+                  <Link to={link.p} onClick={scrollToTop} className="text-neutral-500 hover:text-[#3B82F6] transition-colors text-sm block font-light">
                     {link.n}
                   </Link>
                 </li>
@@ -139,25 +138,25 @@ const Footer = ({ className = '' }: { className?: string }) => {
             </ul>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-purple-400">Platforms</h4>
-            <div className="grid gap-3">
-              {['Android App', 'iOS App'].map((app) => (
-                <a key={app} href="#" className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 transition-all group">
-                  <span className="text-xs font-semibold tracking-wide">{app}</span>
-                  <ArrowUpRight size={14} className="text-purple-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#3B82F6]">platforms</h4>
+            <div className="grid gap-4">
+              {['android app', 'ios app'].map((app) => (
+                <a key={app} href="#" className="flex items-center justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#3B82F6]/30 hover:bg-[#3B82F6]/5 transition-all group">
+                  <span className="text-xs font-semibold tracking-wider text-neutral-300">{app}</span>
+                  <ArrowUpRight size={16} className="text-[#3B82F6] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Tier: Copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] tracking-[0.15em] font-medium text-purple-200/30 uppercase">
-          <p>© {currentYear} Elinity • 128 City Road, London, EC1V 2NX</p>
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 transition-colors hover:text-purple-200 cursor-default">
-              Crafted with <Heart size={10} className="fill-purple-500/50 text-purple-500 animate-pulse" /> for human soul
+        {/* Bottom Tier */}
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[11px] tracking-[0.2em] font-medium text-neutral-600 uppercase">
+          <p>© {currentYear} elinity • 128 city road, london</p>
+          <div className="flex items-center gap-8">
+            <span className="flex items-center gap-2 transition-colors hover:text-neutral-400 cursor-default group">
+              crafted with <Heart size={12} className="fill-[#3B82F6]/30 text-[#3B82F6] animate-pulse group-hover:scale-125 transition-transform" /> for human soul
             </span>
           </div>
         </div>

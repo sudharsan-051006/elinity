@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Send } from 'lucide-react';
+import { Send, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 /* =========================
@@ -93,181 +93,192 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div>
-<div className="relative pt-32 pb-24 overflow-hidden bg-[#050510]">
+    <div className="lowercase">
+      <div className="relative pt-32 pb-24 overflow-hidden bg-[#03000a]">
 
-  {/* Brand Glow */}
-  <div className="absolute w-[600px] h-[600px] bg-[#a855f7]/20 blur-[160px] rounded-full top-[-250px] left-1/2 -translate-x-1/2" />
+        {/* Brand Glow */}
+        <div className="absolute w-[600px] h-[600px] bg-[#3B82F6]/15 blur-[160px] rounded-full top-[-250px] left-1/2 -translate-x-1/2" />
 
-  <motion.div
-    initial={{ opacity: 0, y: 60 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    viewport={{ once: true, amount: 0.4 }}
-    className="relative text-center max-w-3xl mx-auto px-6"
-  >
-    <p className="text-[#a855f7] tracking-[0.3em] text-sm mb-6">
-      CONTACT ELINITY
-    </p>
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.4 }}
+          className="relative text-center max-w-3xl mx-auto px-6"
+        >
+          <p className="text-[#3B82F6] tracking-[0.4em] text-[10px] font-bold mb-6 uppercase">
+            CONTACT ELINITY
+          </p>
 
-    <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-white">
-      Let’s Start a{" "}
-      <span className="text-[#a855f7]">
-        Conversation
-      </span>
-    </h1>
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white tracking-tighter">
+            Let’s Start a{" "}
+            <span style={{ background: "linear-gradient(to right, #3B82F6, #7B3FE4, #00D2FF)", WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Conversation
+            </span>
+          </h1>
 
-    <p className="text-gray-400 mt-6 text-lg leading-relaxed">
-      We love hearing from you whether it's feedback, ideas, creative sparks,
-      bugs you've noticed, feature suggestions, or simply your experience
-      with Elinity.
-    </p>
+          <p className="text-neutral-400 mt-8 text-lg leading-relaxed font-light">
+            We love hearing from you whether it's feedback, ideas, creative sparks,
+            bugs you've noticed, feature suggestions, or simply your experience
+            with Elinity.
+          </p>
 
-    <p className="text-gray-400 mt-6 text-lg leading-relaxed">
-      Every message helps us grow, improve, and create more beautiful,
-      meaningful experiences.
-    </p>
-  </motion.div>
-</div>
-      <div className="relative min-h-screen bg-[#050510] text-white flex items-center justify-center px-6 py-28 overflow-hidden">
+          <p className="text-neutral-400 mt-6 text-lg leading-relaxed font-light">
+            Every message helps us grow, improve, and create more beautiful,
+            meaningful experiences.
+          </p>
+        </motion.div>
+      </div>
 
-  {/* ===== Ambient Background ===== */}
-  <div className="absolute inset-0 pointer-events-none">
-    <div className="absolute w-[700px] h-[700px] bg-[#a855f7]/20 blur-[200px] rounded-full top-[-250px] left-[-250px]" />
-    <div className="absolute w-[600px] h-[600px] bg-[#7c3aed]/15 blur-[180px] rounded-full bottom-[-250px] right-[-250px]" />
-  </div>
+      <div className="relative min-h-screen bg-[#03000a] text-white flex items-center justify-center px-6 py-28 overflow-hidden">
 
-  <div className="relative w-full max-w-6xl">
+        {/* ===== Ambient Background ===== */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute w-[700px] h-[700px] bg-[#3B82F6]/5 blur-[200px] rounded-full top-[-250px] left-[-250px]" />
+          <div className="absolute w-[600px] h-[600px] bg-[#7B3FE4]/5 blur-[180px] rounded-full bottom-[-250px] right-[-250px]" />
+        </div>
 
-    {/* ===== HEADER ===== */}
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="text-center mb-20"
-    >
-      <h1 className="text-4xl md:text-6xl font-semibold leading-tight bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-        Questions, ideas, partnerships, or feedback we’d love to hear from you.
-      </h1>
-    </motion.div>
+        <div className="relative w-full max-w-6xl">
 
-<motion.div
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  animate={{
-    backgroundPosition: ["0% 0%", "100% 100%"]
-  }}
-  whileHover={{
-    backgroundPosition: "50% 50%"
-  }}
-  transition={{
-    duration: 0.9, // for entry animation
-    backgroundPosition: {
-      duration: 4,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "linear"
-    }
-  }}
-  className="relative rounded-3xl p-[1px]
-             bg-[linear-gradient(135deg,#7c3aed,transparent,#7c3aed)]
-             bg-[length:300%_300%]"
->
-      {/* Inner Glass */}
-      <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 shadow-[0_0_80px_rgba(168,85,247,0.18)]">
+          {/* ===== HEADER ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-24"
+          >
+            <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-neutral-200 tracking-tight max-w-4xl mx-auto">
+              Questions, ideas, partnerships, or feedback we’d love to hear from you.
+            </h1>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            animate={{
+              backgroundPosition: ["0% 0%", "100% 100%"]
+            }}
+            whileHover={{
+              backgroundPosition: "50% 50%"
+            }}
+            transition={{
+              duration: 0.9, 
+              backgroundPosition: {
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear"
+              }
+            }}
+            className="relative rounded-[2.5rem] p-[1px]
+                       bg-[linear-gradient(135deg,#3B82F6,transparent,#7B3FE4)]
+                       bg-[length:300%_300%]"
+          >
+            {/* Inner Glass */}
+            <div className="backdrop-blur-3xl bg-white/[0.01] border border-white/5 rounded-[2.5rem] p-10 md:p-20 shadow-2xl">
 
-          {/* LEFT SIDE */}
-          <div className="space-y-10">
-            <h2 className="text-2xl font-semibold">Reach us directly</h2>
+              <div className="grid md:grid-cols-2 gap-20">
 
-            <div className="space-y-8 text-lg">
+                {/* LEFT SIDE */}
+                <div className="space-y-12">
+                  <h2 className="text-2xl font-semibold flex items-center gap-3">
+                    Reach us directly <Sparkles size={20} className="text-[#3B82F6]" />
+                  </h2>
 
-              <div>
-                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Email</p>
-                <p className="font-medium">team@elinity.ai</p>
+                  <div className="space-y-10">
+
+                    <div>
+                      <p className="text-[#3B82F6] text-[10px] font-bold uppercase tracking-[0.3em] mb-3">Email</p>
+                      <p className="text-xl font-light text-neutral-200">team@elinity.ai</p>
+                    </div>
+
+                    <div>
+                      <p className="text-[#3B82F6] text-[10px] font-bold uppercase tracking-[0.3em] mb-3">Partnerships</p>
+                      <p className="text-xl font-light text-neutral-200">partners@elinity.ai</p>
+                    </div>
+
+                    <div>
+                      <p className="text-[#3B82F6] text-[10px] font-bold uppercase tracking-[0.3em] mb-3">Location</p>
+                      <p className="text-xl font-light text-neutral-200">London</p>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE FORM */}
+                <div className="relative">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <input
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="First name"
+                        className="px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/5 focus:border-[#3B82F6]/50 focus:bg-[#3B82F6]/5 outline-none transition-all duration-300 placeholder:text-neutral-600"
+                      />
+                      <input
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Last name"
+                        className="px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/5 focus:border-[#3B82F6]/50 focus:bg-[#3B82F6]/5 outline-none transition-all duration-300 placeholder:text-neutral-600"
+                      />
+                    </div>
+
+                    <input
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Email"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/5 focus:border-[#3B82F6]/50 focus:bg-[#3B82F6]/5 outline-none transition-all duration-300 placeholder:text-neutral-600"
+                    />
+
+                    <input
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone"
+                      className="w-full px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/5 focus:border-[#3B82F6]/50 focus:bg-[#3B82F6]/5 outline-none transition-all duration-300 placeholder:text-neutral-600"
+                    />
+
+                    <textarea
+                      name="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Your message..."
+                      className="w-full px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/5 focus:border-[#3B82F6]/50 focus:bg-[#3B82F6]/5 outline-none transition-all duration-300 resize-none placeholder:text-neutral-600"
+                    />
+
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full py-4 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4] font-bold text-white shadow-lg shadow-[#3B82F6]/20 hover:shadow-[#3B82F6]/40 transition-all duration-500"
+                    >
+                      Send Message
+                    </motion.button>
+
+                    {formStatus.submitted && (
+                      <motion.p 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className={`mt-4 text-center text-sm ${formStatus.success ? 'text-cyan-400' : 'text-rose-500'}`}
+                      >
+                        {formStatus.message}
+                      </motion.p>
+                    )}
+
+                  </form>
+                </div>
+
               </div>
-
-              <div>
-                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Partnerships</p>
-                <p className="font-medium">partners@elinity.ai</p>
-              </div>
-
-              <div>
-                <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Location</p>
-                <p className="font-medium">London</p>
-
-              </div>
-
             </div>
-          </div>
-
-          {/* RIGHT SIDE FORM */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="First name"
-                  className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
-                />
-                <input
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Last name"
-                  className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
-                />
-              </div>
-
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
-              />
-
-              <input
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone"
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition"
-              />
-
-              <textarea
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your message..."
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7] outline-none transition resize-none"
-              />
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#a855f7] to-[#7c3aed] hover:opacity-90 transition font-semibold shadow-lg shadow-[#a855f7]/30"
-              >
-                Send Message
-              </motion.button>
-
-            </form>
-          </div>
-
+          </motion.div>
         </div>
       </div>
-    </motion.div>
-
-  </div>
-</div>
     </div>
   );
 };
