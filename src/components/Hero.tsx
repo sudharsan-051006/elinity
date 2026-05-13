@@ -92,6 +92,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
       alt="Hero Color"
       className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
     />
+    <div className="absolute inset-0 bg-black/40" />
   </div>
 </>
         )}
@@ -104,43 +105,54 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
       <div className="relative z-10 h-full flex items-center pt-16">
         <div className="max-w-4xl mx-auto text-center px-4">
 <div className="flex flex-col items-center text-center px-4">
+  {/* Section 1 */}
   <h1 className="text-white text-4xl md:text-6xl font-bold tracking-tight mb-2 pt-8 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
     find your person, your tribe,
   </h1>
 
   <h2 className="text-gray-200 text-2xl md:text-4xl font-medium tracking-wide">
     and build{" "}
-    <span className="text-indigo-400 drop-shadow-[0_0_15px_rgba(129,140,248,0.6)]">
+    <span
+      style={{
+        background: "linear-gradient(to right, #d9d3fe, #7759fd)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >
       the most incredible relationships
     </span>
   </h2>
+
+  {/* Section 2 - Updated with matching shadow logic */}
+  <h1
+    style={{
+      fontSize: "20px",
+      fontWeight: "800",
+      color: "white",
+      textAlign: "center",
+      lineHeight: "1.1",
+      marginTop: "2rem",
+      /* Combining white glow with a dark outline for "White and Black" effect */
+      textShadow: "0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 0, 0, 0.8)",
+    }}
+  >
+    elinity is designed to help you actualize your potential, across love,
+    leisure, and collaboration, with lumi, your{" "}
+    <span
+      style={{
+        background: "linear-gradient(to right, #d9d3fe, #7759fd)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        transition: "all 0.5s ease-in-out",
+        display: "inline-block",
+        width: "180px",
+        textAlign: "left",
+      }}
+    >
+      {words[index]}
+    </span>
+  </h1>
 </div>
-          <h1
-            style={{
-              fontSize: "20px",
-              fontWeight: "800",
-              color: "white",
-              textAlign: "center",
-              lineHeight: "1.1",
-              textShadow: "0 0 20px rgba(168, 85, 247, 0.8)",
-            }}
-          >
-            elinity is designed to help you actualize your potential, across love, leisure,
-            and collaboration, with lumi, your{" "}
-            <span
-              style={{
-                background: "linear-gradient(to right, #d9d3fe, #7759fd)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                transition: "all 0.5s ease-in-out",
-                display: "inline-block",
-                width:'180px',
-                textAlign:'left',
-              }}
-            >
-              {words[index]}
-            </span>
-          </h1>
           
           {/* Main Hero Buttons */}
           <div className="flex flex-col md:flex-row items-center justify-center mt-20 gap-10">

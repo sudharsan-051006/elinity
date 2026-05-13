@@ -255,7 +255,7 @@ export default function FloatingChat() {
                       Ask me anything - I'm here to help you out.
                     </div>
                     <div style={{ display: 'flex', gap: 8, marginTop: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
-                      {['What is elinity?', 'Tell me a fun fact about elinity', 'what are elinity\'s features?'].map((s, i) => (
+                      {['How is Elinity different from dating apps?', 'Tell me a fun fact about elinity', 'what are elinity\'s features?'].map((s, i) => (
                         <button
                           key={i}
                           onClick={() => setInput(s)}

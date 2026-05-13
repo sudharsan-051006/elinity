@@ -31,7 +31,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
           <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col justify-between">
             <div className="space-y-6">
               <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3 w-max group">
-                <img src={logo} alt="Elinity" className="h-16 w-auto transition-transform duration-700 group-hover:rotate-[540deg]" />
+                <img src="https://res.cloudinary.com/dge1qccxs/image/upload/v1778672008/04235931-ebaa-4506-8551-d59bd86b6b26-removebg-preview_vyqdqe.png" alt="Elinity" className="h-16 w-auto transition-transform duration-700 group-hover:rotate-[540deg]" />
               </Link>
               <h2 className="text-2xl md:text-2xl font-light leading-tight max-w-xl text-white tracking-wide">
                 Where{" "}

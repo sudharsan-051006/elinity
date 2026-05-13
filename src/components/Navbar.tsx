@@ -79,10 +79,23 @@ const Navbar = () => {
 
       <nav className="relative z-10 flex items-center justify-between h-full px-2 md:px-4">
         {/* Logo */}
-        <div onClick={() => handleNavClick({ name: 'Home', path: '/' })} className="flex items-center cursor-pointer">
-          <img src="https://res.cloudinary.com/dge1qccxs/image/upload/v1776592232/elogo_behrsq.png" alt="Elinity Logo" className="h-20 md:h-16 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]" width="125" height="110"/>
-        </div>
 
+<div
+  onClick={() => handleNavClick({ name: 'Home', path: '/' })}
+  className="flex items-center cursor-pointer"
+>
+  <img
+    src={
+      location.pathname === "/ellaris"
+        ? "https://res.cloudinary.com/dge1qccxs/image/upload/v1778684434/c1f8ea4f-c0a7-47b5-8d9b-7763b7468f7c-removebg-preview_dlnxyk.png"
+        : "https://res.cloudinary.com/dge1qccxs/image/upload/v1778672008/04235931-ebaa-4506-8551-d59bd86b6b26-removebg-preview_vyqdqe.png"
+    }
+    alt="Elinity Logo"
+    className="h-20 md:h-20 -mr-2 md:-mr-4 drop-shadow-[0_0_4px_#ff00ff40]"
+    width="125"
+    height="110"
+  />
+</div>
 
 
         {/* Mobile menu button */}
