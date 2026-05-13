@@ -252,7 +252,7 @@ export default function FloatingChat() {
                       marginBottom: 8,
                     }}>Hey, I'm Lumi</div>
                     <div style={{ fontSize: 14, color: '#9ca3af', lineHeight: 1.6, maxWidth: 220 }}>
-                      Ask me anything — I'm here to help you out.
+                      Ask me anything - I'm here to help you out.
                     </div>
                     <div style={{ display: 'flex', gap: 8, marginTop: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
                       {['What is elinity?', 'Tell me a fun fact about elinity', 'what are elinity\'s features?'].map((s, i) => (

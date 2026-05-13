@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { QRCodeCanvas } from "qrcode.react";
-import heroimg from "../../public/hero1.jpg";
-
 // Define props to receive the scroll function from App.tsx
 interface HeroProps {
   onJoinClick: (e: React.MouseEvent) => void;
@@ -84,11 +82,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
         ) : (
 <>
   {/* Base Image (changes together) */}
-  <img
-    src={images[currentImage]}
-    alt="Hero"
-    className="w-full h-full object-cover rounded-b-3xl grayscale"
-  />
+  
 
   {/* Colored Reveal */}
   <div className="absolute inset-0 rounded-b-3xl overflow-hidden pointer-events-none">
@@ -97,10 +91,6 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
       loading="lazy"
       alt="Hero Color"
       className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
-      style={{
-        WebkitMaskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-        maskImage: `radial-gradient(circle 750px at ${mouse.x}px ${mouse.y}px, white 0%, transparent 80%)`,
-      }}
     />
   </div>
 </>
@@ -113,29 +103,18 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
 
       <div className="relative z-10 h-full flex items-center pt-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h1
-  className="text-white text-4xl md:text-5xl mb-2"
-  style={{
-    paddingTop: "30px",
-    textShadow: "0 0 20px rgba(168, 85, 247, 0.8)",
-  }}
->
-  find your person, your tribe,
-</h1>
+<div className="flex flex-col items-center text-center px-4">
+  <h1 className="text-white text-4xl md:text-6xl font-bold tracking-tight mb-2 pt-8 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+    find your person, your tribe,
+  </h1>
 
-<h1
-  className="text-white text-2xl md:text-3xl mb-8"
-  style={{
-    textShadow: "0 0 18px rgba(168, 85, 247, 0.7)",
-  }}
->
-  and build{" "}
-  <span className="text-indigo-400">
-    the most incredible relationships
-  </span>
-</h1>
-          
-
+  <h2 className="text-gray-200 text-2xl md:text-4xl font-medium tracking-wide">
+    and build{" "}
+    <span className="text-indigo-400 drop-shadow-[0_0_15px_rgba(129,140,248,0.6)]">
+      the most incredible relationships
+    </span>
+  </h2>
+</div>
           <h1
             style={{
               fontSize: "20px",
