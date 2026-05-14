@@ -224,24 +224,26 @@ const roles = [
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
         
         {/* HEADLINE */}
-        <motion.h1 
+<motion.h1 
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} // Updated to a smoother "premium" expo ease
           style={{ 
             fontSize: 'clamp(36px, 5vw, 64px)', 
             fontWeight: '800', 
-            letterSpacing: '-0.04em', 
+            letterSpacing: '-0.05em', // Slightly tighter for a more modern look
             lineHeight: '1.1', 
             marginBottom: '60px',
-            background: 'linear-gradient(to right, #ffffff, #7759fd)',
+            // Elinity Brand: White to Royal Blue/Electric Indigo blend
+            background: 'linear-gradient(to right, #ffffff 20%, #3B82F6 60%, #7B3FE4 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            textShadow: '0 0 10px rgba(0, 0, 0, 0.5)'
+            textShadow: '0 10px 30px rgba(59, 130, 246, 0.2)', // Soft brand-colored glow
+            textTransform: 'lowercase' // Aligning with the "elinity" lowercase brand standard
           }}
         >
-          Less a company, More a vehicle.
+          less a company, more a vehicle.
         </motion.h1>
 
         {/* FLEX CONTAINER */}
@@ -1074,20 +1076,24 @@ const roles = [
           className="section-header"
         >
 
-          <motion.h1
+<motion.h1
             className="Label"
-            initial={{ opacity:0, scale:0.96, filter:"blur(6px)" }}
-            whileInView={{ opacity:1, scale:1, filter:"blur(0px)" }}
-            transition={{ duration:1 }}
+            initial={{ opacity: 0, scale: 0.96, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              background:'linear-gradient(to right,#e0dded,#b066fe)',
-              WebkitBackgroundClip:'text',
-              WebkitTextFillColor:'transparent',
-              backgroundClip:'text',
-              display:'inline-block'
+              // Elinity Brand: Silver-White to Royal Blue/Electric Indigo
+              background: 'linear-gradient(to right, #f5f5f7, #3B82F6, #7B3FE4)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              display: 'inline-block',
+              textTransform: 'lowercase', // Standard for Elinity branding
+              fontWeight: '700',
+              letterSpacing: '-0.02em'
             }}
           >
-            The Team We Are Building Next
+            the team we are building next
           </motion.h1>
 
           <center>
@@ -1281,213 +1287,221 @@ const roles = [
 
       </section>
 
-      <section className="manifesto-section container" style={{ 
-            padding: 'clamp(40px, 8vw, 100px) 12px',
-            color: '#fff',
-            overflowX: 'hidden',
-            boxSizing: 'border-box'
+<section className="manifesto-section container" style={{ 
+    padding: 'clamp(40px, 8vw, 100px) 12px',
+    color: '#fff',
+    overflowX: 'hidden',
+    boxSizing: 'border-box'
+}}>
+
+    <span className="label" style={{
+        fontSize: 'clamp(30px, 8vw, 60px)',
+        // Updated: White to Royal Blue and Electric Indigo
+        background: 'linear-gradient(135deg, #ffffff 0%, #3B82F6 50%, #7B3FE4 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        display: 'block',
+        textAlign: 'center',
+        fontWeight: '800',
+        marginBottom: '1rem',
+        letterSpacing: '-0.04em',
+        textTransform: 'lowercase', 
+        width: '100%'
+    }}>
+        the first four
+    </span>
+
+    <p style={{
+        opacity: 0.8,
+        maxWidth: '100%', 
+        width: '700px',   
+        margin: '0 auto 3rem auto',
+        fontSize: 'clamp(15px, 3.5vw, 18px)',
+        lineHeight: '1.7',
+        textAlign: 'center',
+        fontWeight: '300',
+        padding: '0 10px'
+    }}>
+        For the next twelve months, we are being intentionally narrow and disciplined about who we bring into this mission. We are only hiring for four core roles. These are not silos. They are four deeply intertwined domains that together form the engine of Elinity: sharing stories, crafting experiences, building systems, and research-previewing the future.
+        <br /><br />
+        If you join us in one of these roles, you will not be “doing your part” in isolation. You will be shaping the whole. These are founding roles in every sense of the word.
+    </p>
+
+    <div className="roles-interface" style={{ width: '100%', maxWidth: '1050px', margin: '0 auto', border:'none'}}>
+
+        {/* RESPONSIVE TABS - Updated with Blue/Indigo active states */}
+        <div className="roles-tab s" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            gap: '12px',
+            marginBottom: '24px',
+            width: '100%'
         }}>
+            {roles.map((role) => (
+                <button 
+                    key={role.id}
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '20px 24px',
+                        fontSize: 'clamp(12px, 3vw, 14px)',
+                        borderRadius: '14px',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        // Active state: Using Indigo with low opacity
+                        background: activeRole === role.id ? 'rgba(123, 63, 228, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                        // Border: Blue for active
+                        border: activeRole === role.id ? '1px solid rgba(59, 130, 246, 0.5)' : '1px solid rgba(255, 255, 255, 0.08)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        color: activeRole === role.id ? '#fff' : 'rgba(255, 255, 255, 0.4)',
+                        textAlign: 'center',
+                        boxSizing: 'border-box'
+                    }}
+                    onClick={() => setActiveRole(role.id)}
+                >
+                    <span style={{ fontSize: '10px', opacity: 0.5, marginBottom: '4px', fontWeight: '700' }}>
+                        0{role.id}
+                    </span>
+                    <span style={{ fontWeight: '600' }}>
+                        {role.subtitle.split(',')[0].toLowerCase()}
+                    </span>
+                </button>
+            ))}
+        </div>
 
-            <span className="label" style={{
-                fontSize: 'clamp(30px, 8vw, 60px)',
-                background: 'linear-gradient(135deg, #fff 0%, #b066fe 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                display: 'block',
-                textAlign: 'center',
-                fontWeight: '800',
-                marginBottom: '1rem',
-                letterSpacing: '-0.02em',
-                width: '100%'
+        {/* ROLE CONTENT */}
+        {roles.map((role) => role.id === activeRole && (
+            <div key={role.id} style={{
+                padding: 'clamp(20px, 5vw, 45px)',
+                borderRadius: '24px',
+                background: 'linear-gradient(165deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(25px)',
+                WebkitBackdropFilter: 'blur(25px)',
+                width: '100%',
+                boxSizing: 'border-box'
             }}>
-                The First Four
-            </span>
 
-            <p style={{
-                opacity: 0.8,
-                maxWidth: '100%', 
-                width: '700px',   
-                margin: '0 auto 3rem auto',
-                fontSize: 'clamp(15px, 3.5vw, 18px)',
-                lineHeight: '1.7',
-                textAlign: 'center',
-                fontWeight: '300',
-                padding: '0 10px'
-            }}>
-                For the next twelve months, we are being intentionally narrow and disciplined about who we bring into this mission. We are only hiring for four core roles. These are not silos. They are four deeply intertwined domains that together form the engine of Elinity: sharing stories, crafting experiences, building systems, and research-previewing the future.
-                <br /><br />
-                If you join us in one of these roles, you will not be “doing your part” in isolation. You will be shaping the whole. These are founding roles in every sense of the word.
-            </p>
-
-            <div className="roles-interface" style={{ width: '100%', maxWidth: '1050px', margin: '0 auto', border:'none'}}>
-
-                {/* RESPONSIVE TABS - Added internal padding to buttons */}
-                <div className="roles-tab s" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                    gap: '12px',
-                    marginBottom: '24px',
-                    width: '100%'
-                }}>
-                    {roles.map((role) => (
-                        <button 
-                            key={role.id}
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                padding: '20px 24px', // Increased padding for a better nav feel
-                                fontSize: 'clamp(12px, 3vw, 14px)',
-                                borderRadius: '14px',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                background: activeRole === role.id ? 'rgba(176, 102, 254, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                                border: activeRole === role.id ? '1px solid rgba(176, 102, 254, 0.5)' : '1px solid rgba(255, 255, 255, 0.08)',
-                                backdropFilter: 'blur(10px)',
-                                WebkitBackdropFilter: 'blur(10px)',
-                                color: activeRole === role.id ? '#fff' : 'rgba(255, 255, 255, 0.4)',
-                                textAlign: 'center',
-                                boxSizing: 'border-box'
-                            }}
-                            onClick={() => setActiveRole(role.id)}
-                        >
-                            <span style={{ fontSize: '10px', opacity: 0.5, marginBottom: '4px', fontWeight: '700' }}>
-                                0{role.id}
-                            </span>
-                            <span style={{ fontWeight: '600' }}>
-                                {role.subtitle.split(',')[0]}
-                            </span>
-                        </button>
-                    ))}
+                <div style={{ marginBottom: '2rem' }}>
+                    {/* Updated to Electric Indigo */}
+                    <span style={{ color: '#7B3FE4', fontWeight: '700', fontSize: '11px', textTransform: 'lowercase', letterSpacing: '1.5px' }}>
+                        {role.subtitle}
+                    </span>
+                    <h3 style={{ fontSize: 'clamp(24px, 5vw, 36px)', marginTop: '8px', fontWeight: '700', textTransform: 'lowercase' }}>
+                        {role.title}
+                    </h3>
                 </div>
 
-                {/* ROLE CONTENT */}
-                {roles.map((role) => role.id === activeRole && (
-                    <div key={role.id} style={{
-                        padding: 'clamp(20px, 5vw, 45px)',
-                        borderRadius: '24px',
-                        background: 'linear-gradient(165deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        backdropFilter: 'blur(25px)',
-                        WebkitBackdropFilter: 'blur(25px)',
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                    gap: '30px',
+                    justifyContent: 'center'
+                }}>
+                    
+                    <div style={{ width: '100%' }}>
+                        <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: '#f5f5f7', fontWeight: '600', textTransform: 'lowercase' }}>
+                            what this role is about
+                        </h4>
+                        <p style={{ opacity: 0.75, lineHeight: '1.7', fontSize: '15px' }}>{role.about}</p>
+
+                        <h4 style={{ marginTop: '2rem', fontSize: '1.1rem', marginBottom: '1rem', color: '#f5f5f7', fontWeight: '600', textTransform: 'lowercase' }}>
+                            who you are
+                        </h4>
+                        <p style={{ opacity: 0.75, lineHeight: '1.7', fontSize: '15px' }}>{role.who}</p>
+                    </div>
+
+                    <div style={{
+                        background: 'rgba(255, 255, 255, 0.02)',
+                        padding: '24px',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(255, 255, 255, 0.05)',
+                        boxSizing: 'border-box',
                         width: '100%',
+                        margin: '0 auto'
+                    }}>
+                        <h4 style={{ fontSize: '1rem', marginBottom: '1.2rem', fontWeight: '600', textTransform: 'lowercase' }}>
+                            what you'll do
+                        </h4>
+
+                        <ul style={{ listStyle: 'none', padding: 0 }}>
+                            {role.do.map((task, idx) => (
+                                <li key={idx} style={{
+                                    marginBottom: '14px',
+                                    fontSize: '14px',
+                                    lineHeight: '1.5',
+                                    opacity: 0.85,
+                                    display: 'flex',
+                                    gap: '12px'
+                                }}>
+                                    {/* Bullet point updated to Royal Blue */}
+                                    <span style={{ color: '#3B82F6' }}>●</span>
+                                    <span>{task}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
+                {role.philosopherVariant && (
+                    <div style={{
+                        marginTop: '3rem',
+                        padding: '24px',
+                        borderRadius: '20px',
+                        // Updated to Royal Blue / Dark gradient
+                        background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0,0,0,0.2))',
+                        border: '1px solid rgba(59, 130, 246, 0.2)',
+                        backdropFilter: 'blur(10px)',
                         boxSizing: 'border-box'
                     }}>
-
-                        <div style={{ marginBottom: '2rem' }}>
-                            <span style={{ color: '#b066fe', fontWeight: '700', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
-                                {role.subtitle}
-                            </span>
-                            <h3 style={{ fontSize: 'clamp(24px, 5vw, 36px)', marginTop: '8px', fontWeight: '700' }}>
-                                {role.title}
-                            </h3>
-                        </div>
-
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', // Prevents off-center lean
-                            gap: '30px',
-                            justifyContent: 'center' // Centers the grid items
-                        }}>
-                            
-                            <div style={{ width: '100%' }}>
-                                <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: '#e0dded', fontWeight: '600' }}>
-                                    What this role is about
-                                </h4>
-                                <p style={{ opacity: 0.75, lineHeight: '1.7', fontSize: '15px' }}>{role.about}</p>
-
-                                <h4 style={{ marginTop: '2rem', fontSize: '1.1rem', marginBottom: '1rem', color: '#e0dded', fontWeight: '600' }}>
-                                    Who you are
-                                </h4>
-                                <p style={{ opacity: 0.75, lineHeight: '1.7', fontSize: '15px' }}>{role.who}</p>
-                            </div>
-
-                            <div style={{
-                                background: 'rgba(255, 255, 255, 0.02)',
-                                padding: '24px',
-                                borderRadius: '20px',
-                                border: '1px solid rgba(255, 255, 255, 0.05)',
-                                boxSizing: 'border-box',
-                                width: '100%', // Ensures it fills the centered column
-                                margin: '0 auto'
-                            }}>
-                                <h4 style={{ fontSize: '1rem', marginBottom: '1.2rem', fontWeight: '600' }}>
-                                    What you'll do
-                                </h4>
-
-                                <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    {role.do.map((task, idx) => (
-                                        <li key={idx} style={{
-                                            marginBottom: '14px',
-                                            fontSize: '14px',
-                                            lineHeight: '1.5',
-                                            opacity: 0.85,
-                                            display: 'flex',
-                                            gap: '12px'
-                                        }}>
-                                            <span style={{ color: '#b066fe' }}>●</span>
-                                            <span>{task}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-
-                        {role.philosopherVariant && (
-                            <div style={{
-                                marginTop: '3rem',
-                                padding: '24px',
-                                borderRadius: '20px',
-                                background: 'linear-gradient(135deg, rgba(176, 102, 254, 0.12), rgba(0,0,0,0.2))',
-                                border: '1px solid rgba(176, 102, 254, 0.25)',
-                                backdropFilter: 'blur(10px)',
-                                boxSizing: 'border-box'
-                            }}>
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: '#d8b4fe', fontWeight: '700' }}>
-                                    Resident Philosopher Variant
-                                </h3>
-                                <p style={{ opacity: 0.9, lineHeight: '1.7', marginBottom: '1.2rem', fontSize: '15px' }}>
-                                    We are also open to a Resident Philosopher, or a combined Philosopher and Growth Flourishing Head, whose primary role is to think and communicate.
-                                </p>
-                                <ul style={{ paddingLeft: '4px', lineHeight: '1.8', listStyle: 'none', fontSize: '14px' }}>
-                                    {['Background in philosophy is required.', 'Background in psychology or neuroscience is strongly preferred.', 'You will help shape AI personality, product philosophy, content, culture, and long-term vision.', 'Work across teams influencing how Elinity thinks, speaks, and evolves.'].map((text, i) => (
-                                        <li key={i} style={{ display: 'flex', gap: '8px', marginBottom: '6px' }}>
-                                            <span style={{ color: '#b066fe' }}>✦</span> <span>{text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+                        <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: '#3B82F6', fontWeight: '700', textTransform: 'lowercase' }}>
+                            resident philosopher variant
+                        </h3>
+                        <p style={{ opacity: 0.9, lineHeight: '1.7', marginBottom: '1.2rem', fontSize: '15px' }}>
+                            We are also open to a Resident Philosopher, or a combined Philosopher and Growth Flourishing Head, whose primary role is to think and communicate.
+                        </p>
+                        <ul style={{ paddingLeft: '4px', lineHeight: '1.8', listStyle: 'none', fontSize: '14px' }}>
+                            {['Background in philosophy is required.', 'Background in psychology or neuroscience is strongly preferred.', 'You will help shape AI personality, product philosophy, content, culture, and long-term vision.', 'Work across teams influencing how Elinity thinks, speaks, and evolves.'].map((text, i) => (
+                                <li key={i} style={{ display: 'flex', gap: '8px', marginBottom: '6px' }}>
+                                    <span style={{ color: '#3B82F6' }}>✦</span> <span>{text}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                ))}
+                )}
             </div>
+        ))}
+    </div>
 
-            <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', width: '100%' }}>
-                <div style={{
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    padding: 'clamp(24px, 6vw, 40px)',
-                    borderRadius: '24px',
-                    borderBottomRightRadius: 'clamp(24px, 10vw, 60px)',
-                    backdropFilter: 'blur(12px)',
-                    maxWidth: '800px',
-                    width: '100%',
-                    boxSizing: 'border-box'
-                }}>
-                    <h3 style={{ fontSize: '1rem', color: '#fff', opacity: 0.9, marginBottom: '1rem', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
-                        A Quick Note on These Roles
-                    </h3>
-                    <p style={{ color: '#d1d5db', fontSize: '16px', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                        We do not believe small teams are a limitation. AI can compress years of progress into months for people with strong learning curves. We believe small, deeply aligned teams can build things once thought impossible.
-                    </p>
-                    <p style={{ color: '#fff', fontSize: '16px', lineHeight: '1.7', fontWeight: '500', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
-                        If one of these roles feels less like a job description and more like a mirror, that is intentional.
-                    </p>
-                </div>
-            </div>
-        </section>
+    {/* Bottom Note Section */}
+    <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <div style={{
+            background: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            padding: 'clamp(24px, 6vw, 40px)',
+            borderRadius: '24px',
+            borderBottomRightRadius: 'clamp(24px, 10vw, 60px)',
+            backdropFilter: 'blur(12px)',
+            maxWidth: '800px',
+            width: '100%',
+            boxSizing: 'border-box'
+        }}>
+            <h3 style={{ fontSize: '1rem', color: '#fff', opacity: 0.9, marginBottom: '1rem', letterSpacing: '1.5px', textTransform: 'lowercase' }}>
+                a quick note on these roles
+            </h3>
+            <p style={{ color: '#d1d5db', fontSize: '16px', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                We do not believe small teams are a limitation. AI can compress years of progress into months for people with strong learning curves. We believe small, deeply aligned teams can build things once thought impossible.
+            </p>
+            <p style={{ color: '#fff', fontSize: '16px', lineHeight: '1.7', fontWeight: '500', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
+                If one of these roles feels less like a job description and more like a mirror, that is intentional.
+            </p>
+        </div>
+    </div>
+</section>
           {/* 23. Final Word */}
         <section
   className="final-manifesto"

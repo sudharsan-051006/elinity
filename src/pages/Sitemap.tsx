@@ -140,7 +140,8 @@ const SitemapLink = ({ name, href }: { name: string, href: string }) => (
     variants={fadeUp}
     whileHover={{ x: 6 }}
   >
-    <a href={href} className="text-gray-300 hover:text-purple-300 transition-colors text-sm">
+    {/* Updated hover color to brand Royal Blue */}
+    <a href={href} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
       {name}
     </a>
   </motion.li>
@@ -153,7 +154,8 @@ const SitemapSection = ({ title, links }: { title: string; links: any[] }) => (
     whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}
   >
-    <h3 className="text-lg font-medium mb-3 text-purple-300">{title}</h3>
+    {/* Updated section title to brand Royal Blue */}
+    <h3 className="text-lg font-medium mb-3 text-blue-400">{title}</h3>
 
     <motion.ul variants={stagger} className="space-y-2">
 
@@ -169,7 +171,7 @@ const SitemapSection = ({ title, links }: { title: string; links: any[] }) => (
 
         if (item.type === "bottom") {
           return (
-            <motion.p variants={fadeUp} key={index} className="text-xs text-purple-400 mt-2">
+            <motion.p variants={fadeUp} key={index} className="text-xs text-blue-400/80 mt-2">
               {item.text}
             </motion.p>
           );
@@ -186,7 +188,7 @@ const SitemapSection = ({ title, links }: { title: string; links: any[] }) => (
 
 const Sitemap = () => {
   return (
-    <div style={{background: "linear-gradient(to bottom, #0a0a23, #1a1a40)"}}>
+    <div style={{background: "linear-gradient(to bottom, #030014, #0a0a23)"}}>
       <div className='pt-32'></div>
 
       {/* Intro card */}
@@ -196,12 +198,14 @@ const Sitemap = () => {
         viewport={{once:true}}
         transition={{duration:0.8}}
         style={{ maxWidth: "800px", margin: "0px auto", padding: "50px 20px", 
-          color: "white", background: "linear-gradient(to bottom, #0a0a23, #1a1a40)",
+          color: "white", background: "rgba(255, 255, 255, 0.03)", 
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.5)", backdropFilter: "blur(10px)", 
+          border: "1px solid rgba(59, 130, 246, 0.1)", // Blue border tint
           borderRadius: "12px", marginTop: "40px", marginBottom: "40px" }}>
 
         <div style={{ marginBottom: "20px" }}>
-          <h1 style={{ fontSize: "40px", fontWeight: "700", marginBottom: "16px", background: "linear-gradient(to right, #d9d3fe, #7759fd)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          {/* Updated gradient to Royal Blue and Indigo */}
+          <h1 style={{ fontSize: "40px", fontWeight: "700", marginBottom: "16px", background: "linear-gradient(to right, #ffffff, #3B82F6, #7B3FE4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Welcome to the Elinity Universe
           </h1>
         </div>
@@ -218,7 +222,7 @@ const Sitemap = () => {
       </motion.div>
 
       {/* Sitemap grid */}
-      <div className="bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white py-16 px-4 md:px-16 pt-32">
+      <div className="bg-transparent text-white py-16 px-4 md:px-16 pt-32">
         <div className="max-w-7xl mx-auto">
 
           <motion.h1
@@ -228,7 +232,7 @@ const Sitemap = () => {
             transition={{duration:0.7}}
             className="text-4xl md:text-5xl font-extrabold text-white text-center mb-12"
           >
-            Site<span className="text-purple-400">map</span>
+            Site<span className="text-blue-500">map</span>
           </motion.h1>
 
           <motion.div

@@ -60,136 +60,141 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0B0A12] px-0 pb-16 space-y-16 overflow-x-hidden">
       {/* About Us Card */}
+ <div 
+    className="w-full relative overflow-hidden text-center shadow-xl"
+    style={{ 
+      padding: 'clamp(60px, 12vw, 120px) 24px',
+      // Updated: Deep Space to Royal Blue/Indigo transition
+      background: 'radial-gradient(ellipse at 80% 0%, #3B82F6 0%, #1D4ED8 15%, #1E1B4B 40%, #030014 80%)',
+      borderRadius: '0px'
+    }}
+>
+  {/* Twinkling Stars Background */}
+  <div className="absolute inset-0 pointer-events-none">
+    {stars.map((star, index) => (
       <div 
-          className="w-full relative overflow-hidden text-center shadow-xl"
-          style={{ 
-            padding: 'clamp(60px, 12vw, 120px) 24px',
-            background: 'radial-gradient(ellipse at 80% 0%, #d946ef 0%, #9d1bb2 15%, #43167a 40%, #0f0a1e 80%)',
-            borderRadius: '0px'
-          }}
-      >
-        {/* Twinkling Stars Background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {stars.map((star, index) => (
-            <div 
-              key={index}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              style={{ 
-                top: star.top, 
-                left: star.left, 
-                opacity: star.opacity,
-                animation: `twinkle ${2 + star.delay}s infinite ease-in-out`
-              }}
-            />
-          ))}
-        </div>
+        key={index}
+        className="absolute w-1 h-1 bg-white rounded-full"
+        style={{ 
+          top: star.top, 
+          left: star.left, 
+          opacity: star.opacity,
+          animation: `twinkle ${2 + star.delay}s infinite ease-in-out`
+        }}
+      />
+    ))}
+  </div>
 <br></br>
-  <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25 }}
-        variants={stagger}
-        className="relative z-10 max-w-4xl mx-auto"
-      >
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.25 }}
+  variants={stagger}
+  className="relative z-10 max-w-4xl mx-auto"
+>
 
-        {/* Main Title */}
-        <motion.h1
-          variants={fadeUp}
-          className="text-5xl sm:text-7xl font-bold text-white mb-8 tracking-tight"
-        >
-          About Us
-        </motion.h1>
+  {/* Main Title */}
+  <motion.h1
+    variants={fadeUp}
+    className="text-5xl sm:text-7xl font-bold text-white mb-8 tracking-tight"
+    style={{  }} // Consistent with Elinity brand
+  >
+    About us
+  </motion.h1>
 
-        {/* Intro */}
-        <motion.div variants={fadeUp} className="mb-12">
-          <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
-            The Future of Connection. Rooted in Who We Are,
-          </p>
-          <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
-            And Who We Are Becoming.
-          </p>
-        </motion.div>
+  {/* Intro */}
+  <motion.div variants={fadeUp} className="mb-12">
+    <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
+      The Future of Connection. Rooted in Who We Are,
+    </p>
+    <p className="text-xl sm:text-3xl text-white font-medium leading-tight">
+      And Who We Are Becoming.
+    </p>
+  </motion.div>
 
-        <div className="max-w-2xl mx-auto">
+  <div className="max-w-2xl mx-auto">
 
-          {/* Primary Narrative */}
-          <motion.p
-            variants={fadeUp}
-            className="text-white text-lg sm:text-xl font-light leading-relaxed mb-8"
-          >
-            At <strong>Elinity</strong>, we believe that the most important thing in life is{" "}
-            <strong className="font-semibold text-white">
-              who we walk it with.
-            </strong>
-          </motion.p>
+    {/* Primary Narrative */}
+    <motion.p
+      variants={fadeUp}
+      className="text-white text-lg sm:text-xl font-light leading-relaxed mb-8"
+    >
+      At <strong>Elinity</strong>, we believe that the most important thing in life is{" "}
+      <strong className="font-semibold text-white">
+        who we walk it with.
+      </strong>
+    </motion.p>
 
-          {/* Structured List */}
-          <motion.div
-            variants={fadeUp}
-            className="text-white/90 text-base sm:text-lg mb-10 space-y-2"
-          >
-            <p>The people we love.</p>
-            <p style={{ paddingLeft: "15px" }}>The people we grow alongside.</p>
-            <p style={{ paddingLeft: "15px" }}>
-              The people we create with, struggle with, and build with.
-            </p>
-            <p className="italic text-white" style={{ paddingLeft: "15px" }}>
-              The people who see us clearly, and choose us anyway.
-            </p>
-          </motion.div>
+    {/* Structured List */}
+    <motion.div
+      variants={fadeUp}
+      className="text-white/90 text-base sm:text-lg mb-10 space-y-2"
+    >
+      <p>The people we love.</p>
+      <p style={{ paddingLeft: "15px" }}>The people we grow alongside.</p>
+      <p style={{ paddingLeft: "15px" }}>
+        The people we create with, struggle with, and build with.
+      </p>
+      <p className="italic text-white" style={{ paddingLeft: "15px" }}>
+        The people who see us clearly, and choose us anyway.
+      </p>
+    </motion.div>
 
-          {/* Context */}
-          <motion.p
-            variants={fadeUp}
-            className="text-gray-400 text-base leading-relaxed mb-12"
-          >
-            And yet, despite how central relationships are to a good life, most of
-            us are left to chance, when it comes to finding them, nurturing them,
-            and sustaining them. We rely on luck, proximity, outdated social
-            structures, and tools that optimize for{" "}
-            <span className="text-white">engagement rather than outcomes</span>.
-            The result is a world that is more connected on the surface, and more
-            fragmented underneath.
-          </motion.p>
+    {/* Context */}
+    <motion.p
+      variants={fadeUp}
+      className="text-gray-400 text-base leading-relaxed mb-12"
+    >
+      And yet, despite how central relationships are to a good life, most of
+      us are left to chance, when it comes to finding them, nurturing them,
+      and sustaining them. We rely on luck, proximity, outdated social
+      structures, and tools that optimize for{" "}
+      <span className="text-white">engagement rather than outcomes</span>.
+      The result is a world that is more connected on the surface, and more
+      fragmented underneath.
+    </motion.p>
 
-          {/* Gradient Punch */}
-          <motion.p
-            variants={fadeUp}
-            className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-12"
-            style={{
-              background: "linear-gradient(to right, #7759fd, #d946ef)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
-            }}
-          >
-            Elinity exists to change that.
-          </motion.p>
+    {/* Gradient Punch - Updated to Royal Blue / Indigo */}
+    <motion.p
+      variants={fadeUp}
+      className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-12"
+      style={{
+        background: "linear-gradient(to right, #3B82F6, #7B3FE4)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent"
+      }}
+    >
+      Elinity exists to change that.
+    </motion.p>
 
-          {/* Highlight Box */}
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            className="p-8 border border-white/10 bg-white/5 rounded-2xl"
-            style={{ backdropFilter: "blur(10px)" }}
-          >
-            <p className="text-white text-lg leading-relaxed font-medium mb-2">
-              We are building Elinity{" "}
-              <span className="text-[#7759fd]">for your people.</span>
-            </p>
-            <p className="text-gray-300">For the ones you are meant to find.</p>
-            <p className="text-gray-300">For the ones you already have.</p>
-            <p className="text-gray-500 italic mt-4 text-sm">
-              And for the version of you that is still unfolding.
-            </p>
-          </motion.div>
+    {/* Highlight Box - Updated Border/Glow to Indigo */}
+    <motion.div
+      variants={fadeUp}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+      className="p-8 border border-white/10 bg-white/5 rounded-2xl"
+      style={{ 
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(123, 63, 228, 0.2)" // Indigo border
+      }}
+    >
+      <p className="text-white text-lg leading-relaxed font-medium mb-2">
+        We are building Elinity{" "}
+        <span className="text-[#3B82F6]">for your people.</span>
+      </p>
+      <p className="text-gray-300">For the ones you are meant to find.</p>
+      <p className="text-gray-300">For the ones you already have.</p>
+      <p className="text-gray-500 italic mt-4 text-sm">
+        And for the version of you that is still unfolding.
+      </p>
+    </motion.div>
 
-        </div>
-      </motion.div>
+  </div>
+</motion.div>
 
-      </div>
+</div>
 
-    <section style={{ padding: '60px 0', overflow: 'hidden' }}>
+<section style={{ padding: '60px 0', overflow: 'hidden' }}>
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -205,7 +210,7 @@ export default function AboutUs() {
         }}
       >
         
-        {/* TITLE */}
+        {/* TITLE - Updated with Royal Blue to Electric Indigo Gradient */}
         <motion.h2 
           variants={fadeUp}
           style={{ 
@@ -214,13 +219,14 @@ export default function AboutUs() {
             letterSpacing: '-0.04em', 
             marginBottom: '32px',
             lineHeight: '1.1',
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            textAlign: 'left'
+            textAlign: 'left',
+            textTransform: 'lowercase' 
           }}
         >
-          What Elinity Is
+          what elinity is
         </motion.h2>
 
         {/* DEFINITION CARD */}
@@ -244,7 +250,7 @@ export default function AboutUs() {
             color: 'rgba(255,255,255,0.9)',
             fontWeight: '400'
           }}>
-            Elinity is not just a matchmaking app. It is a <span style={{ color: '#7759fd', fontWeight: '600' }}>lifelong social connection ecosystem</span>, 
+            Elinity is not just a matchmaking app. It is a <span style={{ color: '#3B82F6', fontWeight: '600' }}>lifelong social connection ecosystem</span>, 
             designed to help you build the best relationships of your life across romance, friendship, collaboration, and shared purpose.
           </p>
         </motion.div>
@@ -263,7 +269,7 @@ export default function AboutUs() {
           At its core, Elinity is powered by emotionally intelligent, deeply personalized AI that learns who you are, what you value, how you relate, and where you are headed. It helps you find people who are aligned with you at a deeper level, and then helps you <span style={{ color: '#ffffff', fontWeight: '500' }}>actually build something real with them over time.</span>
         </motion.p>
 
-        {/* FOUR IDENTITIES */}
+        {/* FOUR IDENTITIES - Updated with Electric Indigo Accents */}
         <motion.div 
           variants={stagger}
           style={{ 
@@ -286,12 +292,12 @@ export default function AboutUs() {
               transition={{ duration: 0.25 }}
               style={{
                 padding: '20px',
-                background: 'rgba(119, 89, 253, 0.05)',
-                borderLeft: '3px solid #7759fd',
+                background: 'rgba(123, 63, 228, 0.05)',
+                borderLeft: '3px solid #7B3FE4',
                 borderRadius: '4px 16px 16px 4px'
               }}
             >
-              <p style={{ margin: 0, fontSize: '17px', fontWeight: '700', color: '#ffffff' }}>
+              <p style={{ margin: 0, fontSize: '17px', fontWeight: '700', color: '#ffffff', textTransform: 'lowercase' }}>
                 {item.label}
               </p>
               <p style={{ margin: '4px 0 0 0', fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>
@@ -301,7 +307,7 @@ export default function AboutUs() {
           ))}
         </motion.div>
 
-        {/* FOOTER */}
+        {/* FOOTER - Updated with Royal Blue Accent */}
         <motion.div
           variants={fadeUp}
           style={{
@@ -318,7 +324,7 @@ export default function AboutUs() {
             margin: 0
           }}>
             We believe technology should not replace human connection. <br />
-            It should <span style={{ color: '#7759fd', fontWeight: '700' }}>amplify it</span>, protect it, and help it flourish.
+            It should <span style={{ color: '#3B82F6', fontWeight: '700' }}>amplify it</span>, protect it, and help it flourish.
           </p>
         </motion.div>
 
@@ -335,12 +341,12 @@ export default function AboutUs() {
       <motion.div
         variants={fadeUp}
         className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/10"
-        style={{ backgroundColor: '#140d29' }}
+        style={{ backgroundColor: '#030014' }} // Deepened for better contrast with brand colors
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.35 }}
       >
 
-        {/* Glow orb animation */}
+        {/* Glow orb animation - Updated to Electric Indigo */}
         <motion.div
           animate={{
             scale: [1, 1.15, 1],
@@ -348,19 +354,21 @@ export default function AboutUs() {
           }}
           transition={{ duration: 6, repeat: Infinity }}
           className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[100px]"
-          style={{ backgroundColor: '#d946ef' }}
+          style={{ backgroundColor: '#7B3FE4' }}
         />
 
         <div className="relative z-10 p-8 sm:p-16">
 
-          {/* Header */}
+          {/* Header - Updated to Royal Blue to Indigo Gradient */}
           <motion.div variants={fadeUp} className="mb-10">
             <h1
               className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight"
               style={{
-                background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+                background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
                 WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
+                WebkitTextFillColor: 'transparent',
+                // textTransform: 'lowercase'
+                lineHeight: '1.1'
               }}
             >
               Why We Exist
@@ -388,7 +396,8 @@ export default function AboutUs() {
                 communication, repair, growth, or the long arc of being close to another human being.
               </p>
 
-              <p className="italic border-l-2 border-fuchsia-500/40 pl-6 py-2">
+              {/* Updated Border to Royal Blue */}
+              <p className="italic border-l-2 border-blue-500/40 pl-6 py-2">
                 At the same time, loneliness, relational burnout, and disconnection are quietly
                 becoming the default state for millions.
               </p>
@@ -410,7 +419,8 @@ export default function AboutUs() {
                 transition={{ duration: 4, repeat: Infinity }}
                 className="text-3xl sm:text-4xl font-black text-white tracking-tighter"
               >
-                We believe it is a <span className="text-[#7759fd]">design failure.</span>
+                {/* Updated Span to Royal Blue */}
+                We believe it is a <span className="text-[#3B82F6]">design failure.</span>
               </motion.p>
             </motion.div>
 
@@ -439,31 +449,33 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left sm:text-left"
       style={{
         padding: 'clamp(24px, 5vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Deep navy base for the new brand contrast
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)', // Royal Blue subtle border
         margin: '0 12px'
       }}
     >
-      {/* subtle glow animation */}
+      {/* Subtle glow animation - Updated to Electric Indigo */}
       <motion.div
-        animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.15, 1] }}
+        animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.1, 1] }}
         transition={{ duration: 7, repeat: Infinity }}
         className="absolute -top-24 -right-24 w-72 h-72 rounded-full blur-[110px]"
-        style={{ background: '#7c3aed' }}
+        style={{ background: '#7B3FE4' }}
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Blue-Indigo Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
           }}
         >
           Our Mission
@@ -485,10 +497,10 @@ export default function AboutUs() {
           That means helping people:
         </motion.p>
 
-        {/* Bullet points */}
+        {/* Bullet points - Custom marker styling */}
         <motion.ul
           variants={stagger}
-          className="text-gray-300 text-base sm:text-lg leading-relaxed space-y-3 mb-10 sm:mb-12 list-disc pl-5"
+          className="text-gray-300 text-base sm:text-lg leading-relaxed space-y-4 mb-10 sm:mb-12 list-none"
         >
           {[
             "Find partners, friends, and collaborators who truly fit them",
@@ -500,24 +512,27 @@ export default function AboutUs() {
             <motion.li
               key={i}
               variants={fadeUp}
-              whileHover={{ x: 6 }}
+              whileHover={{ x: 6, color: '#ffffff' }}
               transition={{ duration: 0.2 }}
+              className="flex items-start group"
             >
+              {/* Royal Blue Glow Marker */}
+              <span className="mr-4 mt-2 h-2 w-2 rounded-full bg-[#3B82F6] shadow-[0_0_10px_#3B82F6] flex-shrink-0 transition-transform group-hover:scale-125" />
               {text}
             </motion.li>
           ))}
         </motion.ul>
 
-        {/* Final box */}
+        {/* Final box - Indigo Border Accent */}
         <motion.div
           variants={fadeUp}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(123, 63, 228, 0.2)' // Electric Indigo accent
           }}
         >
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
@@ -540,31 +555,33 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left"
       style={{
         padding: 'clamp(24px, 6vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Deep navy to midnight indigo
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)',
         margin: '0 12px'
       }}
     >
-      {/* ambient glow */}
+      {/* Ambient glow - Updated to Electric Indigo */}
       <motion.div
         animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.2, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -top-24 -right-24 w-72 h-72 rounded-full blur-[120px]"
-        style={{ background: '#9333ea' }}
+        style={{ background: '#7B3FE4' }}
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Blue-Indigo Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
           }}
         >
           Our Vision
@@ -587,11 +604,11 @@ export default function AboutUs() {
           Where people are seen in their full complexity, not reduced to profiles or metrics.
         </motion.p>
 
-        {/* Accent block */}
+        {/* Accent block - Updated to Royal Blue */}
         <motion.div
           variants={fadeUp}
           whileHover={{ x: 6 }}
-          className="border-l-2 border-[#a855f7]/40 pl-4 sm:pl-6 mb-10 sm:mb-12"
+          className="border-l-2 border-[#3B82F6]/40 pl-4 sm:pl-6 mb-10 sm:mb-12"
         >
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
             Our long-term vision is an ecosystem of AI-powered relationship tools that walk with you through the seasons of your life. From finding love and building friendships to navigating the everyday realities of being close to someone.
@@ -605,13 +622,13 @@ export default function AboutUs() {
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8 mb-10 sm:mb-12"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(59, 130, 246, 0.15)'
           }}
         >
           <p className="text-gray-400 text-sm sm:text-lg mb-4">
-            A world where everyone has access to emotionally attuned guidesAI companions, coaches, and guides that help them:
+            A world where everyone has access to emotionally attuned guides—AI companions, coaches, and guides that help them:
           </p>
 
           <motion.div
@@ -623,11 +640,12 @@ export default function AboutUs() {
               <motion.span
                 key={i}
                 variants={fadeUp}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 className="flex items-center"
               >
-                <span className={i % 2 === 0 ? "text-white" : "text-[#7759fd]"}>
-                  {item}
+                {/* Alternate between White and Royal Blue */}
+                <span className={i % 2 === 0 ? "text-white" : "text-[#3B82F6]"}>
+                  {item.toLowerCase()}
                 </span>
 
                 {i !== arr.length - 1 && (
@@ -667,31 +685,34 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left"
       style={{
         padding: 'clamp(24px, 6vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Midnight Navy theme
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)',
         margin: '0 12px'
       }}
     >
-      {/* Ambient animated glow */}
+      {/* Ambient animated glow - Updated to Royal Blue */}
       <motion.div
-        animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.15, 1] }}
+        animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.2, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -top-24 -right-24 w-72 h-72 rounded-full blur-[120px]"
-        style={{ background: '#9333ea' }}
+        style={{ background: '#3B82F6' }}
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Blue-Indigo Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
+            lineHeight: '1.2'
           }}
         >
           Our Philosophy on AI
@@ -713,14 +734,14 @@ export default function AboutUs() {
           At Elinity, we believe AI is at its best when it amplifies the human spirit rather than replacing it. When it supports our drives to connect, create, learn, grow, and explore. When it helps us become more conscious, not more distracted.
         </motion.p>
 
-        {/* Accent block */}
+        {/* Accent block - Updated to Royal Blue */}
         <motion.div
           variants={fadeUp}
           whileHover={{ x: 6 }}
-          className="border-l-2 border-[#a855f7]/40 pl-4 sm:pl-6 mb-10 sm:mb-12"
+          className="border-l-2 border-[#3B82F6]/40 pl-4 sm:pl-6 mb-10 sm:mb-12"
         >
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            One of our core meta-directives to accomplish our goals is building aligned AI that is,
+            One of our core meta-directives to accomplish our goals is building aligned AI that is
             focused on long-term wellbeing, and designed for depth rather than dependency.
           </p>
         </motion.div>
@@ -728,7 +749,7 @@ export default function AboutUs() {
         {/* Divider */}
         <motion.hr variants={fadeUp} className="border-white/10 mb-8 sm:mb-10" />
 
-        {/* Grid list */}
+        {/* Grid list - Updated indicators to Blue */}
         <motion.div
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
@@ -743,9 +764,9 @@ export default function AboutUs() {
               key={i}
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="flex items-start gap-3"
+              className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#3B82F6]/30 transition-colors"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#a855f7] mt-2 shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6] mt-2 shrink-0" />
               <p className="text-gray-300 text-sm sm:text-base leading-snug">
                 {text}
               </p>
@@ -753,16 +774,16 @@ export default function AboutUs() {
           ))}
         </motion.div>
 
-        {/* Highlight card */}
+        {/* Highlight card - Updated to Electric Indigo theme */}
         <motion.div
           variants={fadeUp}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8 mb-10 sm:mb-12 mt-10"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(123, 63, 228, 0.2)'
           }}
         >
           <p className="text-gray-400 text-sm sm:text-lg mb-2 sm:mb-4">
@@ -774,7 +795,7 @@ export default function AboutUs() {
             transition={{ duration: 4, repeat: Infinity }}
             className="text-xl sm:text-3xl font-bold text-white leading-tight"
           >
-            It is <span className="text-[#7759fd]">scaffolding</span> for better, deeper human-to-human connection.
+            It is <span className="text-[#3B82F6]">scaffolding</span> for better, deeper human-to-human connection.
           </motion.h3>
         </motion.div>
 
@@ -782,6 +803,7 @@ export default function AboutUs() {
     </motion.div>
 
 <div className='pt-16'></div>
+
 <motion.div
       initial="hidden"
       whileInView="visible"
@@ -790,31 +812,34 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left"
       style={{
         padding: 'clamp(40px, 8vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Midnight Navy base
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)',
         margin: '0 12px'
       }}
     >
-      {/* ambient glow */}
+      {/* Ambient glow - Updated to Electric Indigo */}
       <motion.div
         animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.18, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -top-28 -right-28 w-80 h-80 rounded-full blur-[120px]"
-        style={{ background: '#7c3aed' }}
+        style={{ background: '#7B3FE4' }}
       />
 
       <div className="max-w-3xl relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Blue-Indigo Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-4xl sm:text-5xl font-bold text-white mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
+            lineHeight: '1.2'
           }}
         >
           What We’re Building Toward
@@ -836,21 +861,21 @@ export default function AboutUs() {
           We are not optimizing for quick wins or surface-level engagement. We are building relationship infrastructure for the future, with the belief that strong relationships are the foundation of individual flourishing and collective wellbeing.
         </motion.p>
 
-        {/* Belief card */}
+        {/* Belief card - Updated Border to Indigo */}
         <motion.div
           variants={fadeUp}
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.3 }}
           className="p-8 mb-12"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(123, 63, 228, 0.2)'
           }}
         >
-          <p className="text-gray-300 text-lg mb-6">We believe:</p>
+          <p className="text-gray-400 text-lg mb-6">We believe:</p>
 
-          <motion.div variants={stagger} className="space-y-4">
+          <motion.div variants={stagger} className="space-y-6">
             {[
               "Everyone deserves to find their people",
               "Everyone deserves to be understood",
@@ -860,9 +885,11 @@ export default function AboutUs() {
                 key={i}
                 variants={fadeUp}
                 whileHover={{ x: 6 }}
-                className="flex items-start gap-4"
+                className="flex items-center gap-4 group"
               >
-                <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed">
+                {/* Royal Blue Glow Dot */}
+                <div className="w-2 h-2 rounded-full bg-[#3B82F6] shadow-[0_0_10px_#3B82F6] shrink-0" />
+                <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed group-hover:text-[#3B82F6] transition-colors">
                   {text}
                 </p>
               </motion.div>
@@ -876,13 +903,13 @@ export default function AboutUs() {
           className="border-white/10 mb-10"
         />
 
-        {/* Footer */}
+        {/* Footer - Updated Accent to Royal Blue */}
         <motion.p
           variants={fadeUp}
           className="text-white text-lg font-medium leading-relaxed"
         >
-          And we believe that Connecting the right people, at the right time, with the right support, is{" "}
-          <span className="text-[#a855f7]">one of the greatest unlocks</span> available to humanity.
+          And we believe that connecting the right people, at the right time, with the right support, is{" "}
+          <span className="text-[#3B82F6] drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">one of the greatest unlocks</span> available to humanity.
         </motion.p>
 
       </div>
@@ -890,7 +917,7 @@ export default function AboutUs() {
 
 <div className='pt-16'></div>
 
-    <motion.div
+<motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.25 }}
@@ -898,35 +925,37 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left"
       style={{
         padding: 'clamp(24px, 6vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Deep navy to midnight indigo base
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)',
         margin: '0 12px'
       }}
     >
 
-      {/* subtle animated glow */}
+      {/* Subtle animated glow - Updated to Electric Indigo */}
       <motion.div
         animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.18, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -top-28 -right-28 w-72 h-72 rounded-full blur-[120px]"
-        style={{ background: '#9333ea' }}
+        style={{ background: '#7B3FE4' }}
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Royal Blue Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
           }}
         >
-          Who We’re For
+          Who we’re for
         </motion.h2>
 
         {/* Bold statement */}
@@ -949,16 +978,16 @@ export default function AboutUs() {
           People who believe relationships are a craft worth learning, not a gamble to endure.
         </motion.p>
 
-        {/* Card */}
+        {/* Card - Updated to subtle Indigo/Blue accents */}
         <motion.div
           variants={fadeUp}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8 mb-10 sm:mb-12"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(123, 63, 228, 0.2)'
           }}
         >
           <motion.p
@@ -968,16 +997,21 @@ export default function AboutUs() {
             It is for:
           </motion.p>
 
-          {/* Role tags */}
+          {/* Role tags - Updated to Royal Blue hover effects */}
           <motion.div variants={stagger} className="flex flex-wrap gap-2 sm:gap-3">
             {["Users", "Builders", "Researchers", "Designers", "Investors"].map((role, i) => (
               <motion.span
                 key={i}
                 variants={fadeUp}
-                whileHover={{ y: -3, scale: 1.05 }}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/10 text-white text-xs sm:text-sm font-medium bg-white/5"
+                whileHover={{ 
+                  y: -3, 
+                  scale: 1.05, 
+                  borderColor: 'rgba(59, 130, 246, 0.5)',
+                  backgroundColor: 'rgba(59, 130, 246, 0.1)' 
+                }}
+                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/10 text-white text-xs sm:text-sm font-medium bg-white/5 transition-colors cursor-default"
               >
-                {role}
+                {role.toLowerCase()}
               </motion.span>
             ))}
           </motion.div>
@@ -989,7 +1023,7 @@ export default function AboutUs() {
             className="text-lg sm:text-2xl font-bold text-white mt-6 sm:mt-8 leading-tight"
           >
             Who believe technology can still be used to make us{" "}
-            <span className="text-[#7759fd]">more human</span>, not less.
+            <span className="text-[#3B82F6] drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]">more human</span>, not less.
           </motion.h3>
         </motion.div>
 
@@ -1012,34 +1046,37 @@ export default function AboutUs() {
       className="relative overflow-hidden text-left"
       style={{
         padding: 'clamp(24px, 6vw, 64px)',
-        background: 'linear-gradient(135deg, #0f0a1e 0%, #150a2e 100%)',
+        // Updated: Midnight Navy base
+        background: 'linear-gradient(135deg, #030014 0%, #0c0a25 100%)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         borderRadius: '24px',
-        border: '1px solid rgba(255, 255, 255, 0.05)',
+        border: '1px solid rgba(59, 130, 246, 0.1)',
         margin: '0 12px'
       }}
     >
-      {/* Ambient glow */}
+      {/* Ambient glow - Updated to Electric Indigo */}
       <motion.div
         animate={{ opacity: [0.15, 0.35, 0.15], scale: [1, 1.15, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -top-28 -right-28 w-80 h-80 rounded-full blur-[120px]"
-        style={{ background: '#8b5cf6' }}
+        style={{ background: '#7B3FE4' }}
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
 
-        {/* Title */}
+        {/* Title - Updated to Blue-Indigo Gradient */}
         <motion.h2
           variants={fadeUp}
           className="text-3xl sm:text-5xl font-bold text-white mb-6 sm:mb-10 tracking-tight"
           style={{
-            background: 'linear-gradient(to bottom, #ffffff, #b0a2f1)',
+            background: 'linear-gradient(to bottom, #ffffff, #3B82F6, #7B3FE4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
+            // textTransform: 'lowercase'
+            lineHeight: '1.2'
           }}
         >
-          Where We’re Going
+          Where we’re going
         </motion.h2>
 
         {/* Bold line */}
@@ -1058,16 +1095,16 @@ export default function AboutUs() {
           We are building something that will take time, care, and courage. Something that will evolve as people evolve. Something that aims to last decades, not cycles.
         </motion.p>
 
-        {/* Highlight card */}
+        {/* Highlight card - Updated Border to Indigo */}
         <motion.div
           variants={fadeUp}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
           className="p-5 sm:p-8 mb-10 sm:mb-12"
           style={{
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(255, 255, 255, 0.02)',
             borderRadius: '16px',
-            border: '1px solid rgba(255, 255, 255, 0.05)'
+            border: '1px solid rgba(123, 63, 228, 0.2)'
           }}
         >
           <motion.h3
@@ -1075,7 +1112,7 @@ export default function AboutUs() {
             className="text-xl sm:text-3xl font-bold text-white leading-tight mb-4"
           >
             Elinity is our attempt to contribute to a{" "}
-            <span className="text-[#7759fd]">better relational future.</span>
+            <span className="text-[#3B82F6] drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]">better relational future.</span>
           </motion.h3>
 
           <motion.p
@@ -1089,7 +1126,7 @@ export default function AboutUs() {
         {/* Divider */}
         <motion.hr variants={fadeUp} className="border-white/10 mb-8 sm:mb-10" />
 
-        {/* Footer */}
+        {/* Footer - Updated Accent to Royal Blue */}
         <motion.div variants={stagger} className="space-y-4">
           <motion.p
             variants={fadeUp}
@@ -1102,10 +1139,10 @@ export default function AboutUs() {
             variants={fadeUp}
             className="flex flex-col sm:flex-row sm:items-center sm:gap-6 space-y-1 sm:space-y-0"
           >
-            <p className="text-[#a855f7] font-semibold tracking-wide text-sm sm:text-base">
+            <p className="text-[#3B82F6] font-semibold tracking-wide text-sm sm:text-base">
               Rooted in who we are.
             </p>
-            <p className="text-gray-400 font-light italic text-sm sm:text-base">
+            <p className="text-gray-500 font-light italic text-sm sm:text-base">
               Guided by who we are becoming.
             </p>
           </motion.div>

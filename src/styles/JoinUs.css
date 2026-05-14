@@ -10,9 +10,31 @@
 }
 
 .joinus-page {
-  background-color: #161122;  color: whitesmoke;  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;   padding: 0 1.5rem;  background-image: radial-gradient(circle at 50% -20%, #de139a 0%, transparent 50%);
+  /* Deep Space Navy background */
+  background-color: #03000a; 
+  color: #f5f5f5; 
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6; 
+  padding: 0 1.5rem; 
+  
+  /* Brand-aligned Electric Indigo glow */
+  background-image: radial-gradient(
+    circle at 50% -20%, 
+    rgba(59, 130, 246, 0.15) 0%,   /* Royal Blue tint */
+    rgba(123, 63, 228, 0.1) 25%,   /* Electric Indigo tint */
+    transparent 70%
+  );
+  
   background-attachment: fixed;
+  
+  /* Ensure a smooth transition if used in React/Framer Motion */
+  transition: background-color 0.5s ease;
+}
+
+/* Optional: Selection color to match the brand indigo */
+.joinus-page ::selection {
+  background: rgba(123, 63, 228, 0.3);
+  color: white;
 }
 
 /* ---------- Hero ---------- */
@@ -702,23 +724,51 @@ h2::after {
 
 /* next twevele months*/
 .domain-card {
-  background: rgba(255, 255, 255, 0.02);
+  /* Deep Space base with very subtle transparency */
+  background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 12px; /* Softened for a more modern, premium feel */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .domain-card:hover {
-  border-color: #a855f7;
-  background: rgba(168, 85, 247, 0.02);
+  /* Elinity Brand: Royal Blue border */
+  border-color: rgba(59, 130, 246, 0.5);
+  /* Subtle Indigo ambient glow */
+  background: rgba(123, 63, 228, 0.03);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .domain-num {
-  font-family: monospace;
-  color: #a855f7;
+  font-family: 'JetBrains Mono', monospace; /* Using a more 'tech' focused monospace */
+  /* Electric Indigo for the accent numbering */
+  color: #7B3FE4;
   display: block;
   margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+/* Optional: Add a subtle gradient accent on hover */
+.domain-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3B82F6, #7B3FE4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.domain-card:hover::before {
+  opacity: 1;
 }
 
 .hiring-deep-dive {
@@ -799,11 +849,14 @@ h2::after {
 }
 
 /* FIRST ROW (1, 2, 3) - Expands UP */
+/* FIRST ROW (1, 2, 3) - Expands UP */
 .value-card:nth-child(-n+3):hover .card-reveal {
   top: auto;
   bottom: 0; /* Anchor to bottom */
   height: 150%; /* Expand upwards */
-  background: linear-gradient(45deg, #8b5cf6, #de139a);
+  /* Elinity Brand: Royal Blue to Electric Indigo */
+  background: linear-gradient(45deg, #3B82F6, #7B3FE4);
+  backdrop-filter: blur(12px);
 }
 
 /* SECOND ROW (4, 5, 6) - Expands DOWN */
@@ -811,7 +864,16 @@ h2::after {
   top: 0; /* Anchor to top */
   bottom: auto;
   height: 130%; /* Expand downwards */
-  background: linear-gradient(135deg, #de139a, #f472b6);
+  /* Elinity Brand: Electric Indigo to Cyan/Bright Blue */
+  background: linear-gradient(135deg, #7B3FE4, #00D2FF);
+  backdrop-filter: blur(12px);
+}
+
+/* Optional: Subtle border glow on hover to match the brand */
+.value-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 30px rgba(123, 63, 228, 0.15);
+  transition: all 0.4s ease;
 }
 
 /* Mobile check: ensure it stacks correctly on small screens */

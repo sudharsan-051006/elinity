@@ -39,11 +39,11 @@ interface NavItem {
 
 /* ─── Nav items ───────────────────────────────────────────────── */
 const NAV_ITEMS: NavItem[] = [
-  { href: "#privacy-policy",     label: "Privacy Policy" },
-  { href: "#terms-of-service",   label: "Terms of Service" },
-  { href: "#security-compliance",label: "Security & Compliance" },
-  { href: "#data-processing",    label: "Data Processing Addendum" },
-  { href: "#business-associate", label: "Business Associate Agreement" },
+  { href: "#privacy-policy",      label: "Privacy Policy" },
+  { href: "#terms-of-service",    label: "Terms of Service" },
+  { href: "#security-compliance", label: "Security & Compliance" },
+  { href: "#data-processing",     label: "Data Processing Addendum" },
+  { href: "#business-associate",  label: "Business Associate Agreement" },
 ];
 
 /* ─── Reusable animated bullet list ──────────────────────────── */
@@ -68,8 +68,9 @@ const Divider: React.FC = () => (
   <motion.div
     className="my-8 h-px"
     style={{
+      // Updated: Blue to Indigo gradient
       background:
-        "linear-gradient(90deg, rgba(139,92,246,0.4), rgba(139,92,246,0.05))",
+        "linear-gradient(90deg, rgba(59,130,246,0.4), rgba(123,63,228,0.05))",
         marginTop: "2rem",
         marginBottom: "2rem",
     }}
@@ -127,8 +128,8 @@ const MobileNav: React.FC<{
           key="drawer"
           className="fixed top-0 left-0 z-50 h-full w-72 flex flex-col"
           style={{
-            background: "#0f0f2e",
-            borderRight: "1px solid rgba(139,92,246,0.2)",
+            background: "#030014", // Updated dark background
+            borderRight: "1px solid rgba(59,130,246,0.2)", // Updated blue border
           }}
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
@@ -160,11 +161,11 @@ const MobileNav: React.FC<{
                   color: activeHref === item.href ? "#fff" : "#9ca3af",
                   background:
                     activeHref === item.href
-                      ? "rgba(139,92,246,0.15)"
+                      ? "rgba(59,130,246,0.15)" // Updated blue background
                       : "transparent",
                   borderLeft:
                     activeHref === item.href
-                      ? "2px solid #a78bfa"
+                      ? "2px solid #3B82F6" // Updated blue border
                       : "2px solid transparent",
                 }}
               >
@@ -224,14 +225,14 @@ const PrivacyPolicy: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white relative overflow-x-hidden"
+      className="min-h-screen bg-[#030014] text-white relative overflow-x-hidden"
     >
       {/* ── Scroll progress bar ── */}
       <motion.div
         className="fixed top-0 left-0 right-0 z-50 h-[3px] origin-left"
         style={{
           scaleX,
-          background: "linear-gradient(90deg, #7c3aed, #a78bfa, #c4b5fd)",
+          background: "linear-gradient(90deg, #3B82F6, #7B3FE4, #6366f1)", // Updated blue/indigo gradient
         }}
       />
 
@@ -239,14 +240,14 @@ const PrivacyPolicy: React.FC = () => {
       <div
         className="pointer-events-none fixed top-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full opacity-20"
         style={{
-          background: "radial-gradient(circle, #7c3aed 0%, transparent 70%)",
+          background: "radial-gradient(circle, #3B82F6 0%, transparent 70%)", // Updated blue glow
           filter: "blur(90px)",
         }}
       />
       <div
         className="pointer-events-none fixed bottom-[5%] left-[-120px] w-[400px] h-[400px] rounded-full opacity-10"
         style={{
-          background: "radial-gradient(circle, #4c1d95 0%, transparent 70%)",
+          background: "radial-gradient(circle, #7B3FE4 0%, transparent 70%)", // Updated indigo glow
           filter: "blur(90px)",
         }}
       />
@@ -255,7 +256,7 @@ const PrivacyPolicy: React.FC = () => {
       <div
         className="md:hidden fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 py-4"
         style={{
-          background: "rgba(10,10,35,0.88)",
+          background: "rgba(3,0,20,0.88)",
           backdropFilter: "blur(14px)",
           borderBottom: "1px solid rgba(255,255,255,0.05)",
         }}
@@ -270,7 +271,7 @@ const PrivacyPolicy: React.FC = () => {
             <span
               key={i}
               className="block w-5 h-0.5 rounded"
-              style={{ background: "#a78bfa" }}
+              style={{ background: "#3B82F6" }} // Updated blue burger
             />
           ))}
         </button>
@@ -296,14 +297,14 @@ const PrivacyPolicy: React.FC = () => {
         >
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl font-extrabold mb-4"
+            className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent"
           >
             Privacy Policy
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-purple-200 max-w-4xl"
+            className="text-lg text-blue-100/70 max-w-4xl"
           >
             We want to empower you to make the best decisions about the
             information that you share with us. This Privacy Policy ("Policy")
@@ -325,7 +326,7 @@ const PrivacyPolicy: React.FC = () => {
             className="mt-8 h-px"
             style={{
               background:
-                "linear-gradient(90deg, rgba(139,92,246,0.7), rgba(139,92,246,0.05))",
+                "linear-gradient(90deg, rgba(59,130,246,0.7), rgba(123,63,228,0.05))",
             }}
             initial={{ scaleX: 0, originX: 0 }}
             animate={{ scaleX: 1 }}
@@ -359,11 +360,11 @@ const PrivacyPolicy: React.FC = () => {
                             activeHref === item.href ? "#fff" : "#9ca3af",
                           borderLeft:
                             activeHref === item.href
-                              ? "2px solid #a78bfa"
+                              ? "2px solid #3B82F6"
                               : "2px solid transparent",
                           background:
                             activeHref === item.href
-                              ? "rgba(139,92,246,0.08)"
+                              ? "rgba(59,130,246,0.08)"
                               : "transparent",
                         }}
                       >
@@ -410,7 +411,7 @@ const PrivacyPolicy: React.FC = () => {
             <Section id="data-collection" title="Data Collection">
               <motion.h3
                 variants={fadeInUp}
-                className="text-xl font-semibold mb-3 text-purple-300"
+                className="text-xl font-semibold mb-3 text-blue-400"
               >
                 Customer-Provided Information
               </motion.h3>
@@ -423,7 +424,7 @@ const PrivacyPolicy: React.FC = () => {
 
               <motion.h3
                 variants={fadeInUp}
-                className="text-xl font-semibold mb-3 text-purple-300 mt-6"
+                className="text-xl font-semibold mb-3 text-blue-400 mt-6"
               >
                 Personal Information in Content
               </motion.h3>
@@ -435,7 +436,7 @@ const PrivacyPolicy: React.FC = () => {
 
               <motion.h3
                 variants={fadeInUp}
-                className="text-xl font-semibold mb-3 text-purple-300 mt-6"
+                className="text-xl font-semibold mb-3 text-blue-400 mt-6"
               >
                 Session Records
               </motion.h3>
@@ -454,7 +455,7 @@ const PrivacyPolicy: React.FC = () => {
 
               <motion.h3
                 variants={fadeInUp}
-                className="text-xl font-semibold mb-3 text-purple-300 mt-6"
+                className="text-xl font-semibold mb-3 text-blue-400 mt-6"
               >
                 Cookies
               </motion.h3>
@@ -516,8 +517,8 @@ const PrivacyPolicy: React.FC = () => {
                 variants={fadeInUp}
                 className="rounded-2xl p-5 md:p-6"
                 style={{
-                  background: "rgba(139,92,246,0.07)",
-                  border: "1px solid rgba(139,92,246,0.2)",
+                  background: "rgba(59,130,246,0.07)",
+                  border: "1px solid rgba(59,130,246,0.2)",
                 }}
               >
                 <p className="text-gray-300 leading-relaxed">

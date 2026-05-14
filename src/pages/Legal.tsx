@@ -23,22 +23,24 @@ const LegalPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-[#07071c] to-[#111133] text-white py-20 px-6 md:px-16">
+    <div className="bg-gradient-to-b from-[#030014] to-[#0a0a23] text-white py-20 px-6 md:px-16">
       <div className="pt-24"></div>
 
       <motion.div
         variants={stagger}
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true }}
         style={{
-          border: "1px solid #333",
+          border: "1px solid rgba(59, 130, 246, 0.2)", // Subtle Blue border
           padding: "40px",
-          borderRadius: "16px",
-          background: "rgba(255, 255, 255, 0.05)",
-          width: "fit-content",
+          borderRadius: "24px",
+          background: "rgba(255, 255, 255, 0.02)",
+          backdropFilter: "blur(12px)",
+          width: "100%",
           margin: "0px auto"
         }}
-        className="max-w-4xl mx-auto leading-8"
+        className="max-w-4xl mx-auto leading-8 shadow-2xl shadow-blue-900/10"
       >
         {/* Title */}
         <motion.h1
@@ -46,7 +48,7 @@ const LegalPage: React.FC = () => {
           className="text-4xl md:text-5xl font-extrabold mb-6 text-center"
         >
           Legal Information for{" "}
-          <span className="text-purple-400">Elinity</span>
+          <span className="text-blue-500">Elinity</span>
         </motion.h1>
 
         <motion.p
@@ -103,7 +105,7 @@ const LegalPage: React.FC = () => {
         <AnimatedSection title="Privacy Policy">
           <p>
             Our Privacy Policy, available at <a href="https://elinity.ai/privacypolicy" target="_blank" rel="noopener noreferrer"
-            className="underline">here</a>, describes how we collect, use, and share information about you when you use our services. By using Elinity, you agree to our collection, use, and sharing of information as described in the Privacy Policy.
+            className="underline text-blue-400 hover:text-blue-300 transition-colors">here</a>, describes how we collect, use, and share information about you when you use our services. By using Elinity, you agree to our collection, use, and sharing of information as described in the Privacy Policy.
           </p>
         </AnimatedSection>
 
@@ -158,8 +160,8 @@ We reserve the right, at our sole discretion, to modify or replace these Terms a
         <AnimatedSection title="Contact Information">
           If you have any questions about these Terms, please contact us at:
 
-          <p>Email: legal@elinity.com</p>
-          <p>Address:  128 City Road, London, EC1V 2NX</p>
+          <p className="mt-4"><span className="text-blue-400 font-medium">Email:</span> legal@elinity.com</p>
+          <p><span className="text-blue-400 font-medium">Address:</span> 128 City Road, London, EC1V 2NX</p>
         </AnimatedSection>
 
         <AnimatedSection title="Dispute Resolution">
@@ -185,7 +187,7 @@ You agree that any arbitration will be conducted on an individual basis and not 
           <p>
             These Terms, our Privacy Policy, and any other legal notices published by us on the Service, shall constitute the entire agreement between you and Elinity concerning the Service.
           </p>
-          <p>
+          <p className="pt-6 font-semibold text-blue-100">
             By using Elinity, you acknowledge that you have read and understood these legal terms and agree to be bound by them.
           </p>
         </AnimatedSection>
@@ -208,11 +210,12 @@ const AnimatedSection: React.FC<{ title: string; children: React.ReactNode }> = 
     viewport={{ once: true, margin: "-60px" }}
     className="mb-10"
   >
-    <h2 className="text-2xl font-bold text-purple-300 mb-3">{title}</h2>
+    {/* Updated Title Color to Electric Indigo */}
+    <h2 className="text-2xl font-bold text-[#7B3FE4] mb-3">{title}</h2>
     <div className="text-gray-200 space-y-3">{children}</div>
   </motion.div>
 );
 
 const SubTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <h3 className="text-lg font-semibold text-white mt-4">{children}</h3>
+  <h3 className="text-lg font-semibold text-white mt-4 border-l-2 border-blue-500 pl-3">{children}</h3>
 );

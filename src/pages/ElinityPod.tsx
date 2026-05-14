@@ -9,11 +9,11 @@ document.head.appendChild(fontLink);
 
 // ─── Brand Tokens ─────────────────────────────────────────────────────────────
 const B = {
-  primary:   "#a855f7",
-  accent:    "#7759fd",
-  deep:      "#7c3aed",
-  soft:      "#c084fc",
-  bg:        "#050510",
+  primary:   "#3B82F6",
+  accent:    "#7B3FE4",
+  deep:      "#5B21B6",
+  soft:      "#60A5FA",
+  bg:        "#030014",
   bgDark:    "#0a0a23",
   bgMid:     "#181848",
   textLight: "#ede9ff",
@@ -48,8 +48,8 @@ const injectStyles = () => {
       50%      { transform: translateY(18px) scale(0.97); }
     }
     @keyframes borderGlow {
-      0%,100% { box-shadow: 0 0 0 rgba(168,85,247,0); }
-      50%      { box-shadow: 0 0 40px rgba(168,85,247,0.38); }
+      0%,100% { box-shadow: 0 0 0 rgba(59,130,246,0); }
+      50%      { box-shadow: 0 0 40px rgba(59,130,246,0.38); }
     }
     .float-blob  { animation: floatBlob  8s ease-in-out infinite; }
     .float-blob2 { animation: floatBlob2 10s ease-in-out infinite; }
@@ -59,38 +59,38 @@ const injectStyles = () => {
     }
     .hover-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 48px rgba(168,85,247,0.18);
-      border-color: rgba(168,85,247,0.35) !important;
+      box-shadow: 0 16px 48px rgba(59,130,246,0.18);
+      border-color: rgba(59,130,246,0.35) !important;
     }
     .theme-cell { transition: background 0.25s ease; cursor: default; }
-    .theme-cell:hover { background: rgba(168,85,247,0.06); }
+    .theme-cell:hover { background: rgba(59,130,246,0.06); }
     .reason-cell { transition: background 0.22s ease; }
     .reason-cell:hover { background: #0f0f2e !important; }
     .email-btn { transition: all 0.3s cubic-bezier(0.22,1,0.36,1); }
     .email-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 52px rgba(168,85,247,0.44) !important;
-      border-color: #a855f7 !important;
-      background: rgba(168,85,247,0.22) !important;
+      box-shadow: 0 0 52px rgba(59,130,246,0.44) !important;
+      border-color: #3B82F6 !important;
+      background: rgba(59,130,246,0.22) !important;
     }
     .cta-btn { transition: all 0.26s ease; }
     .cta-btn:hover {
-      background: rgba(168,85,247,0.14) !important;
-      border-color: #a855f7 !important;
-      box-shadow: 0 0 32px rgba(168,85,247,0.3) !important;
+      background: rgba(59,130,246,0.14) !important;
+      border-color: #3B82F6 !important;
+      box-shadow: 0 0 32px rgba(59,130,246,0.3) !important;
       transform: translateY(-2px);
     }
     .format-row { transition: border-bottom-color 0.22s ease; }
-    .format-row:hover { border-bottom-color: rgba(168,85,247,0.3) !important; }
+    .format-row:hover { border-bottom-color: rgba(59,130,246,0.3) !important; }
     .guest-row {
       transition: border-left-color 0.22s ease, color 0.22s ease;
     }
     .guest-row:hover {
-      border-left-color: rgba(168,85,247,0.7) !important;
-      color: #c084fc !important;
+      border-left-color: rgba(59,130,246,0.7) !important;
+      color: #60A5FA !important;
     }
     .email-inline { transition: color 0.2s ease; }
-    .email-inline:hover { color: #c084fc !important; }
+    .email-inline:hover { color: #60A5FA !important; }
   `;
   document.head.appendChild(s);
 };
@@ -219,10 +219,10 @@ export default function ElinityPodcast() {
   backdropFilter: "blur(18px)",             // main glass blur
   WebkitBackdropFilter: "blur(18px)",
 
-  border: "1px solid rgba(168, 85, 247, 0.18)", // brand purple border
+  border: "1px solid rgba(59, 130, 246, 0.18)", // brand blue border
 
   boxShadow: `
-    0 10px 40px rgba(168, 85, 247, 0.15),
+    0 10px 40px rgba(59, 130, 246, 0.15),
     inset 0 1px 0 rgba(255,255,255,0.06)
   `,
 
@@ -239,7 +239,7 @@ export default function ElinityPodcast() {
     gap: "16px",
   });
 
-  const labelLine = { flex: 1, height: "1px", background: "rgba(168,85,247,0.15)", maxWidth: "200px" };
+  const labelLine = { flex: 1, height: "1px", background: "rgba(59,130,246,0.15)", maxWidth: "200px" };
 
   const h2Style = (extra = {}) => ({
     fontSize: isMobile ? "clamp(24px,7vw,34px)" : isTablet ? "clamp(28px,5vw,42px)" : "clamp(30px,3.8vw,48px)",
@@ -258,7 +258,7 @@ export default function ElinityPodcast() {
 
   const divider = {
     height: "1px", margin: `0 ${px}`,
-    background: "linear-gradient(90deg, transparent, rgba(168,85,247,0.22) 35%, rgba(119,89,253,0.22) 65%, transparent)",
+    background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.22) 35%, rgba(123,63,228,0.22) 65%, transparent)",
   };
 
   return (
@@ -266,8 +266,8 @@ export default function ElinityPodcast() {
 
       {/* Fixed ambient glow */}
       <div style={{ position:"fixed", inset:0, pointerEvents:"none", zIndex:0,
-        background:`radial-gradient(ellipse 80% 55% at 75% 8%, rgba(168,85,247,0.09) 0%, transparent 65%),
-                   radial-gradient(ellipse 55% 45% at 15% 85%, rgba(119,89,253,0.07) 0%, transparent 65%)` }} />
+        background:`radial-gradient(ellipse 80% 55% at 75% 8%, rgba(59,130,246,0.09) 0%, transparent 65%),
+                   radial-gradient(ellipse 55% 45% at 15% 85%, rgba(123,63,228,0.07) 0%, transparent 65%)` }} />
 
       {/* ══ HERO ══ */}
       <div
@@ -296,7 +296,7 @@ export default function ElinityPodcast() {
       width: isMobile ? "280px" : isTablet ? "460px" : "700px",
       height: isMobile ? "280px" : isTablet ? "460px" : "700px",
       background:
-        "radial-gradient(ellipse, rgba(168,85,247,0.13) 0%, rgba(119,89,253,0.06) 40%, transparent 70%)",
+        "radial-gradient(ellipse, rgba(59,130,246,0.13) 0%, rgba(123,63,228,0.06) 40%, transparent 70%)",
       pointerEvents: "none",
       zIndex: 0,
     }}
@@ -311,7 +311,7 @@ export default function ElinityPodcast() {
       width: "280px",
       height: "280px",
       background:
-        "radial-gradient(ellipse, rgba(119,89,253,0.08) 0%, transparent 70%)",
+        "radial-gradient(ellipse, rgba(123,63,228,0.08) 0%, transparent 70%)",
       pointerEvents: "none",
       zIndex: 0,
     }}
@@ -426,7 +426,7 @@ export default function ElinityPodcast() {
           alignItems: "center",
           gap: "10px",
           padding: isMobile ? "12px 28px" : "15px 40px",
-          border: "1px solid rgba(168,85,247,0.42)",
+          border: "1px solid rgba(59,130,246,0.42)",
           color: B.primary,
           fontSize: "11px",
           letterSpacing: "0.24em",
@@ -435,7 +435,7 @@ export default function ElinityPodcast() {
           fontWeight: 600,
           cursor: "pointer",
           textDecoration: "none",
-          background: "rgba(168,85,247,0.05)",
+          background: "rgba(59,130,246,0.05)",
         }}
       >
         Become a Guest <span style={{ fontSize: "16px" }}>→</span>
@@ -456,7 +456,7 @@ export default function ElinityPodcast() {
       width: "420px",
       height: "420px",
       background:
-        "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)",
+        "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
       top: "-120px",
       right: "-120px",
       filter: "blur(60px)",
@@ -546,10 +546,10 @@ export default function ElinityPodcast() {
             Why We're Doing This
           </h2>
         </Reveal>
-        <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:"2px", background:"rgba(168,85,247,0.07)", border:"1px solid rgba(168,85,247,0.1)" }}>
+        <div style={{ display:"grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap:"2px", background:"rgba(59,130,246,0.07)", border:"1px solid rgba(59,130,246,0.1)" }}>
           {reasons.map((r, i) => (
             <Reveal key={r.num} delay={50 + i * 55}>
-              <div className="reason-cell" style={{ background:B.bgDark, padding: isMobile ? "28px 22px" : "38px 34px", borderBottom:"1px solid rgba(168,85,247,0.07)", height:"100%", boxSizing:"border-box" }}>
+              <div className="reason-cell" style={{ background:B.bgDark, padding: isMobile ? "28px 22px" : "38px 34px", borderBottom:"1px solid rgba(59,130,246,0.07)", height:"100%", boxSizing:"border-box" }}>
                 <span style={{ fontSize:"10px", letterSpacing:"0.24em", color:B.accent, fontFamily:F, fontWeight:600, marginBottom:"14px", display:"block" }}>{r.num}</span>
                 <div style={{ fontSize:"16px", fontFamily:F, color:B.soft, marginBottom:"10px", fontWeight:500 }}>{r.title}</div>
                 <div style={{ fontSize:"14px", lineHeight:1.78, color:"white", fontFamily:F, fontWeight:300 }}>{r.body}</div>
@@ -567,12 +567,12 @@ export default function ElinityPodcast() {
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
 
-          border: "1px solid rgba(168,85,247,0.12)",
+          border: "1px solid rgba(59,130,246,0.12)",
           borderRadius: "24px",
           margin:'32px',
 
           boxShadow: `
-            0 20px 60px rgba(168,85,247,0.12),
+            0 20px 60px rgba(59,130,246,0.12),
             inset 0 1px 0 rgba(255,255,255,0.05)
           `,
 
@@ -588,7 +588,7 @@ export default function ElinityPodcast() {
             width: "500px",
             height: "500px",
             background:
-              "radial-gradient(circle at center, rgba(168,85,247,0.25) 0%, transparent 70%)",
+              "radial-gradient(circle at center, rgba(59,130,246,0.25) 0%, transparent 70%)",
             top: "-200px",
             left: "-150px",
             filter: "blur(70px)",
@@ -639,7 +639,7 @@ export default function ElinityPodcast() {
           {/* grid */}
           <div
             style={{
-              borderTop: "1px solid rgba(168,85,247,0.1)",
+              borderTop: "1px solid rgba(59,130,246,0.1)",
               display: "grid",
               gridTemplateColumns: isMobile
                 ? "1fr"
@@ -658,11 +658,11 @@ export default function ElinityPodcast() {
                     className="theme-cell"
                     style={{
                       padding: isMobile ? "28px 0" : "24px",
-                      borderBottom: "1px solid rgba(168,85,247,0.1)",
+                      borderBottom: "1px solid rgba(59,130,246,0.1)",
                       borderRight:
                         lastInRow || isMobile
                           ? "none"
-                          : "1px solid rgba(168,85,247,0.1)",
+                          : "1px solid rgba(59,130,246,0.1)",
                     }}
                   >
                     <div
@@ -779,7 +779,7 @@ export default function ElinityPodcast() {
             width: "500px",
             height: "500px",
             background:
-              "radial-gradient(circle, rgba(168,85,247,0.18) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)",
             top: "-200px",
             right: "-120px",
             filter: "blur(80px)",
@@ -836,7 +836,7 @@ export default function ElinityPodcast() {
           textAlign: "center",
 
           background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(168,85,247,0.15)",
+          border: "1px solid rgba(59,130,246,0.15)",
           borderRadius: "16px",
           padding: isMobile ? "18px 20px" : "22px 24px",
 
@@ -879,7 +879,7 @@ export default function ElinityPodcast() {
 <section
   style={{
     padding: isMobile ? "80px 20px" : "120px 40px",
-    background: "linear-gradient(180deg,#0b0b1a,#050510)",
+    background: "linear-gradient(180deg,#0b0b1a,#030014)",
     color: "white",
     position: "relative"
   }}
@@ -919,7 +919,7 @@ export default function ElinityPodcast() {
             borderRadius: "18px",
             background:
               "linear-gradient(145deg, rgba(20,20,45,0.9), rgba(12,12,30,0.7))",
-            border: "1px solid rgba(168,85,247,0.18)",
+            border: "1px solid rgba(59,130,246,0.18)",
             transition: "all 0.3s ease",
             height: "100%",
             display: "flex",
@@ -932,7 +932,7 @@ export default function ElinityPodcast() {
             style={{
               fontSize: "52px",
               fontWeight: 300,
-              color: "rgba(168,85,247,0.25)",
+              color: "rgba(59,130,246,0.25)",
               fontStyle: "italic",
               lineHeight: 1
             }}
@@ -978,7 +978,7 @@ export default function ElinityPodcast() {
         borderRadius: "20px",
         background:
           "linear-gradient(145deg, rgba(20,20,45,0.8), rgba(10,10,25,0.6))",
-        border: "1px solid rgba(168,85,247,0.18)"
+        border: "1px solid rgba(59,130,246,0.18)"
       }}
     >
       In the spirit of Elinity, which is fundamentally about enabling deeper
@@ -988,7 +988,7 @@ export default function ElinityPodcast() {
   </Reveal>
 </section>
       {/* ══ WHY THIS MATTERS ══ */}
-      <div style={{ background:B.bgMid, borderTop:"1px solid rgba(168,85,247,0.1)", borderBottom:"1px solid rgba(168,85,247,0.1)", padding:`${sY} 0` }}>
+      <div style={{ background:B.bgMid, borderTop:"1px solid rgba(59,130,246,0.1)", borderBottom:"1px solid rgba(59,130,246,0.1)", padding:`${sY} 0` }}>
         <div style={{ maxWidth:"740px", margin:"0 auto", padding:`0 ${px}` }}>
           <Reveal><div style={{
             color:'white',
@@ -1012,10 +1012,10 @@ export default function ElinityPodcast() {
           <p style={bodyStyle({ maxWidth:"460px", margin:"0 auto 40px" })}>Tell us about yourself and what you'd like to discuss.</p>
         </Reveal>
         <Reveal delay={100}>
-          <div style={{ background:B.bgDark, border:"1px solid rgba(168,85,247,0.14)", padding: isMobile ? "40px 24px" : "58px 52px", textAlign:"center", boxShadow:"0 0 80px rgba(168,85,247,0.07)" }}>
+          <div style={{ background:B.bgDark, border:"1px solid rgba(59,130,246,0.14)", padding: isMobile ? "40px 24px" : "58px 52px", textAlign:"center", boxShadow:"0 0 80px rgba(59,130,246,0.07)" }}>
 
             {/* Glowing icon */}
-            <div style={{ width:"58px", height:"58px", margin:"0 auto 28px", border:"1px solid rgba(168,85,247,0.32)", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", background:"rgba(168,85,247,0.07)", fontSize:"22px", animation:"borderGlow 3.5s ease-in-out infinite" }}>✉</div>            <p style={{ fontSize:"13px", color:B.textDim, fontFamily:F, fontWeight:300, marginBottom:"36px" }}>
+            <div style={{ width:"58px", height:"58px", margin:"0 auto 28px", border:"1px solid rgba(59,130,246,0.32)", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", background:"rgba(59,130,246,0.07)", fontSize:"22px", animation:"borderGlow 3.5s ease-in-out infinite" }}>✉</div>            <p style={{ fontSize:"13px", color:B.textDim, fontFamily:F, fontWeight:300, marginBottom:"36px" }}>
               We read every message and respond to those that are a good fit.
             </p>
 
@@ -1026,8 +1026,8 @@ export default function ElinityPodcast() {
               style={{
                 display:"inline-flex", alignItems:"center", justifyContent:"center", gap:"12px",
                 width:"100%", padding: isMobile ? "16px 20px" : "18px 28px",
-                border:"1px solid rgba(168,85,247,0.44)",
-                background:"rgba(168,85,247,0.09)",
+                border:"1px solid rgba(59,130,246,0.44)",
+                background:"rgba(59,130,246,0.09)",
                 color:B.textLight, fontSize: isMobile ? "14px" : "15px",
                 fontFamily:F, fontWeight:500,
                 cursor:"pointer", textDecoration:"none",

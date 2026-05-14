@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ElinityEnterprise: React.FC = () => {
 
@@ -47,9 +47,9 @@ const ElinityEnterprise: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     background: `
-      radial-gradient(circle at 10% 20%, rgba(119, 89, 253, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(182, 33, 147, 0.15) 0%, transparent 50%),
-      linear-gradient(180deg, #060014 0%, #0c0024 100%)
+      radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(123, 63, 228, 0.15) 0%, transparent 50%),
+      linear-gradient(180deg, #030014 0%, #0a0a23 100%)
     `,
     backgroundAttachment: 'fixed',
     color: '#ffffff',
@@ -62,7 +62,7 @@ const ElinityEnterprise: React.FC = () => {
   };
 
   const glassStyle: React.CSSProperties = {
-    background: 'rgba(182, 33, 147, 0.03)',
+    background: 'rgba(123, 63, 228, 0.03)',
     backdropFilter: 'blur(20px)',
     WebkitBackdropFilter: 'blur(20px)',
     border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -70,7 +70,7 @@ const ElinityEnterprise: React.FC = () => {
     padding: isPhone ? '24px 16px' : '60px 40px',
     maxWidth: '1100px',
     margin: '0 auto 40px auto',
-    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(222, 60, 190, 0.15) inset',
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(123, 63, 228, 0.15) inset',
     boxSizing: 'border-box' as const,
     width: '100%',
   };
@@ -80,7 +80,7 @@ const ElinityEnterprise: React.FC = () => {
     fontWeight: 900,
     letterSpacing: '-0.04em',
     marginBottom: '0.5rem',
-    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     lineHeight: '1.1',
@@ -107,8 +107,8 @@ const ElinityEnterprise: React.FC = () => {
     margin: '0 auto',
     padding: isPhone ? '20px 16px' : '40px',
     borderRadius: isPhone ? '16px' : '24px',
-    background: 'rgba(119, 89, 253, 0.04)',
-    border: '1px solid rgba(119, 89, 253, 0.12)',
+    background: 'rgba(59, 130, 246, 0.04)',
+    border: '1px solid rgba(59, 130, 246, 0.12)',
     backdropFilter: 'blur(20px)',
     boxShadow: '0 10px 40px rgba(0,0,0,0.4)',
     boxSizing: 'border-box' as const,
@@ -118,8 +118,8 @@ const ElinityEnterprise: React.FC = () => {
   const pillStyle: React.CSSProperties = {
     padding: isPhone ? '8px 14px' : '10px 20px',
     borderRadius: '999px',
-    border: '1px solid rgba(119, 89, 253, 0.2)',
-    background: 'rgba(119, 89, 253, 0.06)',
+    border: '1px solid rgba(59, 130, 246, 0.2)',
+    background: 'rgba(59, 130, 246, 0.06)',
     fontSize: isPhone ? '0.85rem' : '0.95rem',
     color: '#d1d1d1',
   };
@@ -127,15 +127,15 @@ const ElinityEnterprise: React.FC = () => {
   const smallPillStyle: React.CSSProperties = {
     padding: isPhone ? '7px 12px' : '9px 18px',
     borderRadius: '999px',
-    border: '1px solid rgba(119, 89, 253, 0.15)',
-    background: 'rgba(119, 89, 253, 0.05)',
+    border: '1px solid rgba(59, 130, 246, 0.15)',
+    background: 'rgba(59, 130, 246, 0.05)',
     color: '#d1d1d1',
     fontSize: isPhone ? '0.82rem' : '0.92rem',
   };
 
   const divider: React.CSSProperties = {
     height: '1px',
-    background: 'rgba(119, 89, 253, 0.15)',
+    background: 'rgba(59, 130, 246, 0.15)',
     margin: isPhone ? '24px 0' : '32px 0',
   };
 
@@ -162,7 +162,7 @@ const ElinityEnterprise: React.FC = () => {
           width: isPhone ? 150 : 300,
           height: isPhone ? 150 : 300,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(119,89,253,0.25), transparent 70%)",
+          background: "radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%)",
           filter: "blur(80px)",
           pointerEvents: "none"
         }}
@@ -256,9 +256,9 @@ const ElinityEnterprise: React.FC = () => {
 <style>
         {`
           @keyframes glowPulse {
-            0% { filter: drop-shadow(0px 4px 8px rgba(119, 89, 253, 0.3)); }
-            50% { filter: drop-shadow(0px 4px 20px rgba(119, 89, 253, 0.6)); }
-            100% { filter: drop-shadow(0px 4px 8px rgba(119, 89, 253, 0.3)); }
+            0% { filter: drop-shadow(0px 4px 8px rgba(59, 130, 246, 0.3)); }
+            50% { filter: drop-shadow(0px 4px 20px rgba(59, 130, 246, 0.6)); }
+            100% { filter: drop-shadow(0px 4px 8px rgba(59, 130, 246, 0.3)); }
           },
 .pill-hover {
   /* Hardware acceleration & smooth rendering */
@@ -280,12 +280,12 @@ const ElinityEnterprise: React.FC = () => {
   /* scale(1.05) is smoother than 1.1; it feels less "jumpy" */
   transform: scale(1.05) translateY(-3px);
   
-  background: rgba(119, 89, 253, 0.18) !important;
+  background: rgba(59, 130, 246, 0.18) !important;
   
   /* Soft, layered shadow for a more natural depth */
   box-shadow: 
-    0 10px 20px rgba(119, 89, 253, 0.15),
-    0 4px 6px rgba(119, 89, 253, 0.05);
+    0 10px 20px rgba(59, 130, 246, 0.15),
+    0 4px 6px rgba(59, 130, 246, 0.05);
 }
 
 /* Optional: Smoothly return to state when mouse leaves */
@@ -300,7 +300,7 @@ const ElinityEnterprise: React.FC = () => {
           fontSize: isPhone ? '2.2rem' : '3.5rem',
           fontWeight: 800,
           letterSpacing: '-0.02em',
-          background: 'linear-gradient(135deg, #ffffff 30%, #7759fd 100%)',
+          background: 'linear-gradient(135deg, #ffffff 30%, #3B82F6 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           textAlign: 'center',
@@ -322,7 +322,7 @@ const ElinityEnterprise: React.FC = () => {
         style={glassStyle}
       >
         <h2 style={{...offeringHeaderStyle,
-                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -343,7 +343,7 @@ const ElinityEnterprise: React.FC = () => {
         </p>
 
         <h3 style={{ color: '#fff', fontSize: isPhone ? '1.1rem' : '1.25rem', marginBottom: '8px' ,
-          background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
+          background: 'linear-gradient(to right, #ffffff, #3B82F6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
         }}>
           What is Ellaris?
         </h3>
@@ -379,16 +379,16 @@ const ElinityEnterprise: React.FC = () => {
                 width: isPhone ? '100%' : '200px',
                 padding: isPhone ? '12px 16px' : '20px',
                 borderRadius: '20px',
-                background: 'rgba(119, 89, 253, 0.05)',
-                border: '1px solid rgba(119, 89, 253, 0.1)',
+                background: 'rgba(59, 130, 246, 0.05)',
+                border: '1px solid rgba(59, 130, 246, 0.1)',
                 textAlign: 'center',
                 boxSizing: 'border-box',
                 cursor: 'pointer',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', // Smooth "pop"
     transform: hoveredIndex === trait ? 'scale(1.08)' : 'scale(1)',
-    backgroundColor: hoveredIndex === trait ? 'rgba(119, 89, 253, 0.12)' : 'rgba(119, 89, 253, 0.05)',
+    backgroundColor: hoveredIndex === trait ? 'rgba(59, 130, 246, 0.12)' : 'rgba(59, 130, 246, 0.05)',
     boxShadow: hoveredIndex === trait 
-      ? '0 10px 30px -10px rgba(119, 89, 253, 0.4)' 
+      ? '0 10px 30px -10px rgba(59, 130, 246, 0.4)' 
       : '0 0px 0px rgba(0,0,0,0)',
     zIndex: hoveredIndex === trait ? 2 : 1, // Ensures it stays on top of neighbors
               }}
@@ -401,8 +401,8 @@ const ElinityEnterprise: React.FC = () => {
         <p style={{
           padding: isPhone ? '14px' : '20px',
           borderRadius: '20px',
-          background: 'rgba(119, 89, 253, 0.05)',
-          border: '1px solid rgba(119, 89, 253, 0.1)',
+          background: 'rgba(59, 130, 246, 0.05)',
+          border: '1px solid rgba(59, 130, 246, 0.1)',
           textAlign: 'center',
           margin: '20px 0',
           fontSize: isPhone ? '0.9rem' : 'inherit',
@@ -436,13 +436,13 @@ const ElinityEnterprise: React.FC = () => {
                 'Founders → founding team members',
                 'Companies → high-conviction operators',
                 'Mission-driven orgs → deeply aligned talent',
-                'ambitious, culture shaping company’s → talent that fits right at home'
+                'ambitious, culture shaping company\'s → talent that fits right at home'
               ].map((item, i) => (
                 <li key={i} style={{
                   padding: isPhone ? '10px 14px' : '14px 18px',
                   borderRadius: '14px',
-                  background: 'rgba(119, 89, 253, 0.04)',
-                  border: '1px solid rgba(119, 89, 253, 0.08)',
+                  background: 'rgba(59, 130, 246, 0.04)',
+                  border: '1px solid rgba(59, 130, 246, 0.08)',
                 }}>
                   {item}
                 </li>
@@ -500,7 +500,7 @@ const ElinityEnterprise: React.FC = () => {
         style={glassStyle}
       >
         <h2 style={{...offeringHeaderStyle,
-                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -524,7 +524,7 @@ const ElinityEnterprise: React.FC = () => {
           textAlign: 'center',
         }}>
           <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '20px', letterSpacing: '-0.01em',
-                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -539,9 +539,9 @@ const ElinityEnterprise: React.FC = () => {
                 cursor: 'pointer',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: hoveredIndex === i ? 'scale(1.08)' : 'scale(1)',
-                backgroundColor: hoveredIndex === i ? 'rgba(119, 89, 253, 0.12)' : 'rgba(119, 89, 253, 0.05)',
+                backgroundColor: hoveredIndex === i ? 'rgba(59, 130, 246, 0.12)' : 'rgba(59, 130, 246, 0.05)',
                 boxShadow: hoveredIndex === i 
-                  ? '0 10px 30px -10px rgba(119, 89, 253, 0.4)' 
+                  ? '0 10px 30px -10px rgba(59, 130, 246, 0.4)' 
                   : '0 0px 0px rgba(0,0,0,0)',
                 zIndex: hoveredIndex === i ? 2 : 1,
               }} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}
@@ -566,7 +566,7 @@ const ElinityEnterprise: React.FC = () => {
           
         }}>
           <h2 style={{ fontSize: isPhone ? '1.3rem' : '1.8rem', fontWeight: 700, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em' ,
-                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -595,7 +595,7 @@ const ElinityEnterprise: React.FC = () => {
           </div>
           <div style={divider} />
           <h3 style={{ fontSize: isPhone ? '1.1rem' : '1.4rem', color: '#fff', fontWeight: 600, marginBottom: '12px',
-                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      background: 'linear-gradient(to right, #ffffff, #3B82F6)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       lineHeight: '1.1',
@@ -640,7 +640,7 @@ const ElinityEnterprise: React.FC = () => {
           textAlign: 'left',
         }}>
           <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em',
-                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -651,7 +651,7 @@ const ElinityEnterprise: React.FC = () => {
 
           {/* STEP 1 */}
           <div style={{ marginBottom: '36px' }}>
-            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px', background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1' }}>Step 1: Enterprise Package</h3>
+            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px', background: 'linear-gradient(to right, #ffffff, #3B82F6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1' }}>Step 1: Enterprise Package</h3>
             <p style={{ color: '#d1d1d1', marginBottom: '16px', lineHeight: '1.8', fontSize: isPhone ? '0.9rem' : 'inherit' }}>
               You choose an Elinity Enterprise package tailored to your team size and goals.<br />This includes access to:
             </p>
@@ -666,7 +666,7 @@ const ElinityEnterprise: React.FC = () => {
 
           {/* STEP 2 */}
           <div style={{ marginBottom: '36px' }}>
-            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px',           background: 'linear-gradient(to right, #ffffff, #7759fd)',
+            <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px',           background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -694,7 +694,7 @@ const ElinityEnterprise: React.FC = () => {
           {/* STEP 3 */}
           <div>
             <h3 style={{ color: '#fff', fontSize: isPhone ? '1rem' : '1.25rem', marginBottom: '10px',
-                        background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                        background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -738,7 +738,7 @@ const ElinityEnterprise: React.FC = () => {
         }}
       >
         <h2 style={{ fontSize: isPhone ? '1.5rem' : '2rem', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: '32px', letterSpacing: '-0.01em',
-                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -752,14 +752,14 @@ const ElinityEnterprise: React.FC = () => {
           <p>Because culture is not a poster - it's a lived system.</p>
           <p>Because in a world where AI levels the technical playing field,</p>
           <p style={{ color: '#fff', fontWeight: 500,
-            background: 'linear-gradient(to right, #ffffff, #7759fd)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
+            background: 'linear-gradient(to right, #ffffff, #3B82F6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: '1.1',
            }}>human connection becomes the differentiator.</p>
         </div>
 
-        <div style={{ height: '1px', background: 'rgba(119, 89, 253, 0.2)', margin: isPhone ? '24px auto' : '50px auto', maxWidth: '700px' }} />
+        <div style={{ height: '1px', background: 'rgba(59, 130, 246, 0.2)', margin: isPhone ? '24px auto' : '50px auto', maxWidth: '700px' }} />
 
         <h3 style={{ fontSize: isPhone ? '1.2rem' : '1.5rem', color: '#fff', textAlign: 'center', marginBottom: '16px', fontWeight: 600,
-                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -794,7 +794,7 @@ const ElinityEnterprise: React.FC = () => {
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto', lineHeight: '1.9', fontSize: isPhone ? '0.95rem' : '1.08rem', color: '#d1d1d1' }}>
           <p>We built Ellaris and the team OS together with that future in mind.</p>
           <p style={{ marginTop: '16px', color: '#fff', fontWeight: 600,
-                      background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                      background: 'linear-gradient(to right, #ffffff, #3B82F6)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           lineHeight: '1.1',
@@ -813,7 +813,7 @@ const ElinityEnterprise: React.FC = () => {
         style={{ textAlign: 'center', padding: isPhone ? '40px 0 20px 0' : '80px 20px' }}
       >
         <h2 style={{ fontSize: isPhone ? '1.8rem' : '2.5rem', fontWeight: 800, marginBottom: '20px', lineHeight: '1.2',
-                    background: 'linear-gradient(to right, #ffffff, #7759fd)',
+                    background: 'linear-gradient(to right, #ffffff, #3B82F6)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
          }}>
@@ -831,20 +831,20 @@ const ElinityEnterprise: React.FC = () => {
         </p>
 
         <motion.a
-          whileHover={isPhone ? undefined : { scale: 1.08, boxShadow: '0 0 45px rgba(119, 89, 253, 0.7)' }}
+          whileHover={isPhone ? undefined : { scale: 1.08, boxShadow: '0 0 45px rgba(59, 130, 246, 0.7)' }}
           animate={{
             boxShadow: [
-              '0 0 0px rgba(119,89,253,0)',
-              '0 0 25px rgba(119,89,253,0.6)',
-              '0 0 0px rgba(119,89,253,0)'
+              '0 0 0px rgba(59,130,246,0)',
+              '0 0 25px rgba(59,130,246,0.6)',
+              '0 0 0px rgba(59,130,246,0)'
             ]
           }}
           transition={{ duration: 3, repeat: Infinity }}
           whileTap={{ scale: 0.95 }}
           href="mailto:enterprise@elinity.ai"
           style={{
-            background: 'linear-gradient(to right, #ffffff, #7759fd)',
-            color: '#060014',
+            background: 'linear-gradient(to right, #ffffff, #3B82F6)',
+            color: '#030014',
             padding: isPhone ? '14px 32px' : '20px 60px',
             borderRadius: '100px',
             textDecoration: 'none',

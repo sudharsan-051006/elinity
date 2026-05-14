@@ -106,9 +106,6 @@ const Contact: React.FC = () => {
           viewport={{ once: true, amount: 0.4 }}
           className="relative text-center max-w-3xl mx-auto px-6"
         >
-          <p className="text-[#3B82F6] tracking-[0.4em] text-[10px] font-bold mb-6 uppercase">
-            CONTACT ELINITY
-          </p>
 
           <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white tracking-tighter">
             Let’s Start a{" "}
