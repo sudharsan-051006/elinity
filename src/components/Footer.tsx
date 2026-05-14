@@ -90,12 +90,12 @@ const Footer = ({ className = '' }: { className?: string }) => {
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#3B82F6]">explore</h4>
             <ul className="space-y-4">
               {[
-                { n: "home", p: "/" }, { n: "about us", p: "/about" }, 
-                { n: "contact us", p: "/contact" }, { n: "join us", p: "/join-us" },
-                { n: "leaderboard", p: "#" }, { n: "manifesto", p: "#" },
-                { n: "enterprise", p: "/enterprise" }, 
+                { n: "Home", p: "/" }, { n: "About Us", p: "/about" }, 
+                { n: "Contact Us", p: "/contact" }, { n: "Join Us", p: "/join-us" },
+                { n: "Leaderboard", p: "#" }, { n: "Manifesto", p: "#" },
+                { n: "Enterprise", p: "/enterprise" }, { n: "AB", p: "/ab" }
               ].map((link) => (
-                <li key={link.n}>
+                <li key={link.n} className="titlecase">
                   <Link to={link.p} onClick={scrollToTop} className="text-neutral-500 hover:text-[#3B82F6] transition-colors text-sm block font-light">
                     {link.n}
                   </Link>
