@@ -113,7 +113,7 @@ function AppContent({ waitlistRef, handleScrollToWaitlist }) {
 
       <div className="flex-grow">
         <Routes>
-          <Route path="/" element={
+          <Route path="/ab" element={
             <main className="flex flex-col">
               <Hero onJoinClick={handleScrollToWaitlist} />
               <WhatIsElinity />
@@ -149,7 +149,7 @@ function AppContent({ waitlistRef, handleScrollToWaitlist }) {
           <Route path='/software' element={<Software />} />
           <Route path='/designhead' element={<DesignHead />} />
           <Route path='/headai' element={<AIResearch />} />
-          <Route path='/ab' element={<ElinityLanding />} />
+          <Route path='/' element={<ElinityLanding />} />
         </Routes>
       </div>
       
