@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send } from 'lucide-react';
+import { Send, Github } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -66,28 +66,28 @@ const LoginSignup: React.FC = () => {
   const handleGithub = () => window.open(GITHUB_URL, '_blank');
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#0a0a23] p-2 md:p-4 overflow-hidden relative">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#030014] p-2 md:p-4 overflow-hidden relative">
 
-      {/* ambient glow */}
-      <div className="absolute w-[500px] h-[500px] bg-[#a855f7]/20 blur-[140px] rounded-full top-[-150px] left-[-150px]" />
-      <div className="absolute w-[500px] h-[500px] bg-[#a855f7]/10 blur-[120px] rounded-full bottom-[-150px] right-[-150px]" />
+      {/* Brand ambient glows (Blue and Indigo) */}
+      <div className="absolute w-[500px] h-[500px] bg-[#3B82F6]/10 blur-[140px] rounded-full top-[-150px] left-[-150px]" />
+      <div className="absolute w-[500px] h-[500px] bg-[#7B3FE4]/10 blur-[120px] rounded-full bottom-[-150px] right-[-150px]" />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="w-full max-w-5xl mx-auto flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl"
-        style={{ boxShadow: '0 8px 40px 0 rgba(168,85,247,0.25)' }}
+        className="w-full max-w-5xl mx-auto flex flex-col md:flex-row rounded-[32px] overflow-hidden shadow-2xl"
+        style={{ boxShadow: '0 8px 40px 0 rgba(59,130,246,0.15)', border: '1px solid rgba(255,255,255,0.05)' }}
       >
 
-        {/* LEFT SIDE */}
+        {/* LEFT SIDE - Brand Gradient */}
         <motion.div
           variants={float}
           animate="animate"
           className="flex-1 flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-10 relative"
-          style={{ minHeight: 480, background: 'radial-gradient(circle at 50% 30%, #b983ff 0%, #a855f7 40%, #3a185a 80%, #181848 100%)' }}
+          style={{ minHeight: 480, background: 'radial-gradient(circle at 50% 30%, #3B82F6 0%, #2563EB 40%, #1E40AF 70%, #0a0a23 100%)' }}
         >
-          <div className="absolute inset-0 opacity-80" />
+          <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
           <motion.div
             variants={stagger}
@@ -101,7 +101,7 @@ const LoginSignup: React.FC = () => {
               Welcome Back!
             </motion.h2>
 
-            <motion.p variants={fadeUp} className="text-purple-100 mb-8 text-center max-w-xs text-base">
+            <motion.p variants={fadeUp} className="text-blue-100 mb-8 text-center max-w-xs text-base">
               Sign in to your account or create a new one to get started with Elinity&apos;s smart features.
             </motion.p>
 
@@ -113,25 +113,25 @@ const LoginSignup: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE - Content */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex-1 bg-[#181848] flex flex-col justify-center px-4 md:px-8 py-8 md:py-10"
+          className="flex-1 bg-[#0a0a23] flex flex-col justify-center px-4 md:px-8 py-8 md:py-10"
         >
           <div className="max-w-md w-full mx-auto">
 
-            {/* tabs */}
-            <div className="flex gap-2 mb-8">
+            {/* Tabs (Brand Royal Blue Gradient) */}
+            <div className="flex gap-2 mb-8 bg-[#111133] p-1.5 rounded-full">
               {['login','signup'].map((t:any)=>(
                 <motion.button
                   key={t}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`flex-1 py-2 rounded-full font-semibold ${
-                    tab===t ? 'bg-gradient-to-r from-[#a855f7] to-[#7c4dff] text-white'
-                    :'bg-[#23235b] text-purple-200'
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`flex-1 py-2.5 rounded-full font-semibold transition-all duration-300 ${
+                    tab===t ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white shadow-lg shadow-blue-500/20'
+                    :'text-blue-200/60 hover:text-white'
                   }`}
                   onClick={()=>setTab(t)}
                 >
@@ -140,65 +140,76 @@ const LoginSignup: React.FC = () => {
               ))}
             </div>
 
-            {/* social buttons */}
+            {/* Social Buttons */}
             <div className="flex gap-4 mb-8">
-              <motion.button whileHover={{scale:1.05}} onClick={handleGoogleLogin}
-                className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full border border-[#33336b] text-white">
+              <motion.button whileHover={{scale:1.02, backgroundColor: 'rgba(255,255,255,0.05)'}} onClick={handleGoogleLogin}
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white text-sm transition-colors">
                 {GOOGLE_LOGO} Google
               </motion.button>
 
-              <motion.button whileHover={{scale:1.05}} onClick={handleGithub}
-                className="flex-1 flex items-center justify-center gap-2 py-2 rounded-full border border-[#33336b] text-white">
-                Github
+              <motion.button whileHover={{scale:1.02, backgroundColor: 'rgba(255,255,255,0.05)'}} onClick={handleGithub}
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white text-sm transition-colors">
+                <Github size={18}/> Github
               </motion.button>
             </div>
 
-            {/* form */}
+            {/* Divider */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-[1px] flex-1 bg-white/10" />
+              <span className="text-xs text-white/30 uppercase tracking-widest">or email</span>
+              <div className="h-[1px] flex-1 bg-white/10" />
+            </div>
+
+            {/* Form */}
             <AnimatePresence mode="wait">
             <motion.form
               key={tab}
-              initial={{opacity:0,y:20}}
+              initial={{opacity:0,y:10}}
               animate={{opacity:1,y:0}}
-              exit={{opacity:0,y:-20}}
-              transition={{duration:0.35}}
+              exit={{opacity:0,y:-10}}
+              transition={{duration:0.3}}
               onSubmit={handleSubmit}
             >
 
               {tab==='signup' && (
                 <motion.div initial={{opacity:0}} animate={{opacity:1}} className="mb-4">
-                  <label className="text-sm text-purple-200">Name</label>
+                  <label className="text-xs font-medium text-blue-200/70 mb-1.5 block ml-1">Name</label>
                   <input name="name" value={formData.name} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white focus:ring-2 focus:ring-purple-500"/>
+                    placeholder="Enter your name"
+                    className="w-full px-4 py-3 rounded-xl bg-[#111133] text-white border border-white/5 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"/>
                 </motion.div>
               )}
 
               <div className="mb-4">
-                <label className="text-sm text-purple-200">Email</label>
+                <label className="text-xs font-medium text-blue-200/70 mb-1.5 block ml-1">Email Address</label>
                 <input name="email" value={formData.email} onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white focus:ring-2 focus:ring-purple-500"/>
+                  placeholder="name@example.com"
+                  className="w-full px-4 py-3 rounded-xl bg-[#111133] text-white border border-white/5 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"/>
               </div>
 
-              <div className="mb-4">
-                <label className="text-sm text-purple-200">Password</label>
+              <div className="mb-6">
+                <label className="text-xs font-medium text-blue-200/70 mb-1.5 block ml-1">Password</label>
                 <input type="password" name="password" value={formData.password} onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white focus:ring-2 focus:ring-purple-500"/>
+                  placeholder="••••••••"
+                  className="w-full px-4 py-3 rounded-xl bg-[#111133] text-white border border-white/5 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"/>
               </div>
 
               {tab==='signup' && (
-                <motion.div initial={{opacity:0}} animate={{opacity:1}} className="mb-4">
-                  <label className="text-sm text-purple-200">Confirm Password</label>
+                <motion.div initial={{opacity:0}} animate={{opacity:1}} className="mb-6">
+                  <label className="text-xs font-medium text-blue-200/70 mb-1.5 block ml-1">Confirm Password</label>
                   <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-[#23235b] text-white focus:ring-2 focus:ring-purple-500"/>
+                    placeholder="••••••••"
+                    className="w-full px-4 py-3 rounded-xl bg-[#111133] text-white border border-white/5 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"/>
                 </motion.div>
               )}
 
               <motion.button
-                whileHover={{scale:1.06}}
-                whileTap={{scale:0.95}}
+                whileHover={{scale:1.02}}
+                whileTap={{scale:0.98}}
                 type="submit"
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#a855f7] to-[#7c4dff] text-white font-bold text-lg flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white font-bold text-sm tracking-wide flex items-center justify-center gap-2 shadow-xl shadow-blue-500/20"
               >
-                {tab === 'login' ? 'LOGIN' : 'SIGN UP'} <Send size={18}/>
+                {tab === 'login' ? 'SIGN IN' : 'CREATE ACCOUNT'} <Send size={16}/>
               </motion.button>
 
             </motion.form>
