@@ -1622,137 +1622,6 @@ const SpeechBubble: React.FC<{
   </AnimatePresence>
 );
  
-// // ─── HeroCreature ─────────────────────────────────────────────────────────────
- 
-// const HeroCreature: React.FC = () => {
-//   const [animState, setAnimState] = useState<AnimationState>("idle");
-//   const [messageIndex, setMessageIndex] = useState(0);
-//   const [isAnimating, setIsAnimating] = useState(false);
-//   const [isHovered, setIsHovered] = useState(false);
-//   const animIndexRef = useRef(0);
-//   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
- 
-//   const clearTimer = () => {
-//     if (timerRef.current) clearTimeout(timerRef.current);
-//   };
- 
-//   const resetToIdle = useCallback(() => {
-//     setAnimState("idle");
-//     setIsAnimating(false);
-//   }, []);
- 
-//   const handleHover = useCallback(() => {
-//     clearTimer();
- 
-//     const nextIndex = animIndexRef.current % ANIMATION_SEQUENCES.length;
-//     animIndexRef.current += 1;
- 
-//     const newAnim = ANIMATION_SEQUENCE[nextIndex];
-//     const newMsgIndex = nextIndex % MESSAGES.length;
- 
-//     setAnimState(newAnim);
-//     setMessageIndex(newMsgIndex);
-//     setIsAnimating(true);
- 
-//     const durations: Record<AnimationState, number> = {
-//       idle: 0,
-//       wave: 3000,
-//       dance: 3200,
-//       jump: 2500,
-//       spin: 2800,
-//       excited: 2600,
-//     };
- 
-//     timerRef.current = setTimeout(resetToIdle, durations[newAnim]);
-//   }, [resetToIdle]);
- 
-//   useEffect(() => () => clearTimer(), []);
- 
-//   const currentMessage = MESSAGES[messageIndex];
- 
-//   return (
-//     <div
-//       style={{
-//         display: "inline-flex",
-//         flexDirection: "column",
-//         alignItems: "center",
-//         justifyContent: "center",
-//         position: "relative",
-//         cursor: "pointer",
-//         userSelect: "none",
-//         padding: "60px 40px 30px",
-//       }}
-//       onMouseEnter={() => {
-//         setIsHovered(true);
-//         handleHover();
-//       }}
-//       onMouseLeave={() => setIsHovered(false)}
-//       onClick={handleHover}
-//     >
-//       {/* Speech bubble */}
-//       <div style={{ position: "absolute", top: 0, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-//         <SpeechBubble
-//           text={currentMessage.text}
-//           color={currentMessage.emotionColor}
-//           visible={isAnimating}
-//         />
-//       </div>
- 
-//       {/* Ambient glow behind robot */}
-//       <motion.div
-//         variants={glowVariants}
-//         animate={animState}
-//         initial="idle"
-//         style={{
-//           position: "absolute",
-//           inset: 0,
-//           borderRadius: "50%",
-//           background: `radial-gradient(ellipse at 50% 55%, ${COLORS.bodyBlueLight}55 0%, ${COLORS.eyeGlow}22 40%, transparent 70%)`,
-//           filter: "blur(28px)",
-//           pointerEvents: "none",
-//           zIndex: 0,
-//         }}
-//       />
- 
-//       {/* Secondary warm glow */}
-//       <motion.div
-//         animate={{
-//           opacity: isAnimating ? [0.3, 0.6, 0.3] : [0.1, 0.2, 0.1],
-//           scale: isAnimating ? [0.9, 1.1, 0.9] : [0.95, 1.05, 0.95],
-//         }}
-//         transition={{ duration: isAnimating ? 1.2 : 3, repeat: Infinity, ease: "easeInOut" }}
-//         style={{
-//           position: "absolute",
-//           width: "60%",
-//           height: "50%",
-//           top: "30%",
-//           left: "20%",
-//           background: `radial-gradient(ellipse, ${COLORS.eyeGlow}30 0%, transparent 70%)`,
-//           filter: "blur(20px)",
-//           pointerEvents: "none",
-//           zIndex: 0,
-//         }}
-//       />
- 
-//       {/* Hover scale wrapper + floating */}
-//       <motion.div
-//         animate={animState}
-//         variants={floatVariants}
-//         initial="idle"
-//         whileHover={{ scale: 1.03 }}
-//         transition={{ scale: { duration: 0.2 } }}
-//         style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 340 }}
-//       >
-//         <RobotSVG animState={animState} />
-//       </motion.div>
-//     </div>
-//   );
-// };
- 
-// Fix for ANIMATION_SEQUENCES reference
-const ANIMATION_SEQUENCES = ANIMATION_SEQUENCE;
-
-
 const Hero: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -1768,6 +1637,9 @@ const Hero: React.FC = () => {
     };
   }, []);
 
+  // Primary brand gradient combination (Blue to Indigo)
+  const brandGradient = "linear-gradient(to bottom right, #3B82F6, #7B3FE4)";
+
   return (
     <section
       style={{
@@ -1776,23 +1648,24 @@ const Hero: React.FC = () => {
         alignItems: "center",
         justifyContent: "space-between",
         minHeight: "100vh",
-        padding: isMobile ? "160px 20px 140px" : "180px 8% 140px", // More bottom padding for pixel ground
-        backgroundColor: "#050510",
-        backgroundImage: "radial-gradient(circle at 50% -20%, #1a1a3a 0%, #050510 60%)",
+        padding: isMobile ? "160px 20px 140px" : "180px 8% 140px",
+        // Updated: Deeper Navy/Indigo base for premium contrast
+        backgroundColor: "#030014",
+        backgroundImage: "radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030014 60%)",
         color: "white",
         overflowX: "hidden", 
         position: "relative",
         boxSizing: "border-box"
       }}
     >
-      {/* Background Glow */}
+      {/* Background Glow - Updated to Royal Blue */}
       <div style={{ 
         position: "absolute", 
         top: "10%", 
         left: "5%", 
         width: isMobile ? "200px" : "400px", 
         height: isMobile ? "200px" : "400px", 
-        background: "rgba(168, 85, 247, 0.15)", 
+        background: "rgba(59, 130, 246, 0.15)", // Blue glow
         filter: "blur(120px)", 
         borderRadius: "50%", 
         pointerEvents: "none" 
@@ -1829,15 +1702,15 @@ const Hero: React.FC = () => {
               margin: "0 0 1.5rem 0", 
               letterSpacing: "-0.02em" 
             }}>
-              find your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>person,</span>
+              find your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>person,</span>
               <br />
-              your <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>tribe.</span>
+              your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>tribe.</span>
               <br />
-              build <span style={{ background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.25)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
+              build <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
             </h1>
             <p style={{ 
               fontSize: isMobile ? "1.05rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
-              color: "#a0a0c0", 
+              color: "#a0a0c0", // Softer cool-gray
               lineHeight: "1.6", 
               margin: "0 auto", 
               maxWidth: isMobile ? "100%" : "540px" 
@@ -1851,7 +1724,8 @@ const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }} 
                     exit={{ opacity: 0, y: -10 }} 
                     transition={{ duration: 0.4 }}
-                    style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #9b7bff, #d9d3fe)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                    // Updated: soft text gradient
+                    style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #ffffff, #3B82F6, #7B3FE4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     {words[index]}.
                   </motion.span>
@@ -1884,7 +1758,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* --- MOBILE-READY BUTTON ROW --- */}
+      {/* --- BUTTON ROW --- */}
       <div
         style={{
           width: "100%",
@@ -1921,13 +1795,15 @@ const Hero: React.FC = () => {
               justifyContent: "center",
               boxSizing: "border-box",
               transition: "all 0.3s ease",
-              border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
-              backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.05)" : "transparent",
-              backgroundImage: btn.type === "solid" ? "linear-gradient(to right, #ff0080, #c026d3)" : "none",
+              // Updated borders and background for ghost buttons
+              border: btn.type === "ghost" ? "1px solid rgba(59, 130, 246, 0.2)" : "none",
+              backgroundColor: btn.type === "ghost" ? "rgba(59, 130, 246, 0.05)" : "transparent",
+              // Updated solid gradient and box-shadow for premium blue glow
+              backgroundImage: btn.type === "solid" ? brandGradient : "none",
               color: "white",
               flex: isMobile ? "none" : "1", 
               width: "100%",
-              boxShadow: btn.type === "solid" ? "0 4px 20px rgba(255, 0, 128, 0.3)" : "none",
+              boxShadow: btn.type === "solid" ? "0 4px 20px rgba(59, 130, 246, 0.3)" : "none",
             }}
           >
             {btn.label}
@@ -1938,38 +1814,52 @@ const Hero: React.FC = () => {
   );
 };
 
+
 const Statement: React.FC = () => {
   const ref = useFadeIn();
-  // Using a simple state or media query hook is ideal, 
-  // but we can achieve great results with standard flex-wrap and clamp.
 
   return (
     <section 
       ref={ref}
       style={{ 
         padding: "clamp(60px, 10vh, 100px) 6%", 
-        backgroundColor: "#0a0a1a", 
+        // Updated: Deep brand navy/black base
+        backgroundColor: "#030014", 
         minHeight: "70vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        overflow: "hidden"
+        overflow: "hidden",
+        position: "relative"
       }}
     >
+      {/* Subtle background accent glow */}
+      <div style={{
+        position: "absolute",
+        width: "30vw",
+        height: "30vw",
+        background: "rgba(59, 130, 246, 0.03)",
+        filter: "blur(100px)",
+        borderRadius: "50%",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        pointerEvents: "none"
+      }} />
+
       <div style={{ 
         display: "flex", 
-        // flexWrap ensures it stacks on mobile
         flexWrap: "wrap",
-        // alignItems: "flex-end" works for desktop, but we'll use a gap for mobile
         alignItems: "flex-end", 
         gap: "clamp(30px, 5vw, 80px)",
         maxWidth: "1200px",
-        width: "100%"
+        width: "100%",
+        zIndex: 1
       }}>
         
         {/* Left Side: Large Display Text */}
         <div style={{ 
-          flex: "1 1 500px", // Allows growing and shrinking, sets a base width
+          flex: "1 1 500px", 
           minWidth: "300px" 
         }}>
           <h2 style={{ 
@@ -1983,8 +1873,12 @@ const Statement: React.FC = () => {
           }}>
             say<br />
             <span style={{ 
-              color: "#d9d3fe", 
-              textShadow: "0 0 40px rgba(119, 89, 253, 0.4)" 
+              // Updated: Royal Blue glow effect
+              color: "#3B82F6", 
+              textShadow: "0 0 40px rgba(59, 130, 246, 0.4)",
+              background: "linear-gradient(to right, #3B82F6, #7B3FE4)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent"
             }}>
               hello
             </span><br />
@@ -1996,13 +1890,12 @@ const Statement: React.FC = () => {
         <div style={{ 
           flex: "1 1 350px", 
           paddingBottom: "clamp(0px, 2vw, 25px)",
-          // Ensures it feels aligned with the start of the text on mobile
           display: "flex",
           justifyContent: "flex-start"
         }}>
           <p style={{ 
             fontSize: "clamp(1rem, 1.5vw, 1.2rem)", 
-            color: "#b0b0d1", 
+            color: "#94a3b8", // Updated to cool slate-blue
             lineHeight: "1.6", 
             maxWidth: "440px", 
             margin: 0,
@@ -2010,7 +1903,10 @@ const Statement: React.FC = () => {
             letterSpacing: "0.01em"
           }}>
             modern connection is broken - lost in endless swipes and shallow voids. 
-            <strong style={{ color: "white", fontWeight: 600 }}> elinity fixes the glitch. </strong> 
+            <strong style={{ 
+              color: "#3B82F6", // Royal Blue emphasis
+              fontWeight: 600 
+            }}> elinity fixes the glitch. </strong> 
             we are a holistic ecosystem built to find your "best-fit" humans and turn 
             initial sparks into lifelong, legendary bonds.
           </p>
@@ -2020,12 +1916,16 @@ const Statement: React.FC = () => {
     </section>
   );
 };
+
 const Features: React.FC = () => {
+  // Brand gradient (Royal Blue to Electric Indigo)
+  const brandGradient = 'linear-gradient(to bottom right, #3B82F6, #7B3FE4)';
+
   return (
     <section 
       style={{ 
-        backgroundColor: "#030005", 
-        padding: "80px 6vw", // Reduced padding for mobile top/bottom
+        backgroundColor: "#030014", // Updated to Space Black
+        padding: "80px 6vw", 
         color: "white",
         fontFamily: "Inter, 'Space Grotesk', sans-serif",
         overflow: "hidden"
@@ -2034,54 +1934,53 @@ const Features: React.FC = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
         
         {/* BIG STATEMENT HEADER */}
-<header style={{ maxWidth: '100%', marginBottom: '40px' }}>
-  <h2 style={{ 
-    fontSize: "clamp(44px, 10vw, 160px)", // Slightly smaller floor for the longer text
-    fontWeight: 900, 
-    lineHeight: "0.82", // Tighter lead-in for that "Swiss" look
-    margin: 0,
-    letterSpacing: "-0.07em",
-    textTransform: 'lowercase',
-    wordBreak: 'break-word', // Prevents overflow on tiny screens
-  }}>
-    the core <br /> 
-    features and <br />
-    <span style={{ 
-      WebkitTextStroke: "1px rgba(255,255,255,0.25)",
-      WebkitTextFillColor: "transparent",
-      display: "block", // Ensures the stroke effect stands out on its own line
-      marginTop: "4px",
-      background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
-      backgroundClip: 'text',
-      WebkitBackgroundClip: 'text',
-    }}>
-      experience.
-    </span>
-  </h2>
-</header>
+        <header style={{ maxWidth: '100%', marginBottom: '40px' }}>
+          <h2 style={{ 
+            fontSize: "clamp(44px, 10vw, 160px)", 
+            fontWeight: 900, 
+            lineHeight: "0.82", 
+            margin: 0,
+            letterSpacing: "-0.07em",
+            textTransform: 'lowercase',
+            wordBreak: 'break-word',
+          }}>
+            the core <br /> 
+            features and <br />
+            <span style={{ 
+              WebkitTextStroke: "1px rgba(59, 130, 246, 0.25)", // Updated to subtle Blue stroke
+              WebkitTextFillColor: "transparent",
+              display: "block", 
+              marginTop: "4px",
+              background: brandGradient, // Updated to brand gradient
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+            }}>
+              experience.
+            </span>
+          </h2>
+        </header>
 
         {/* BRUTALIST FEATURE GRID */}
         <div style={{ 
           display: 'grid', 
-          // 280px ensures it fits even small devices like iPhone SE
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1px', 
-          backgroundColor: 'rgba(255,255,255,0.1)', 
-          border: '1px solid rgba(255,255,255,0.1)'
+          backgroundColor: 'rgba(59, 130, 246, 0.1)', // Updated to Blue tint
+          border: '1px solid rgba(59, 130, 246, 0.1)'
         }}>
           {[...FEATURES_ROW1, ...FEATURES_ROW2].map((f, i) => (
             <motion.div
               key={i}
               whileHover="hover"
-              whileTap="hover" // Mobile compatibility: trigger animation on tap
+              whileTap="hover"
               style={{
-                backgroundColor: "#030005", 
-                padding: '60px 30px', // Slightly tighter padding for mobile
+                backgroundColor: "#030014", 
+                padding: '60px 30px', 
                 position: 'relative',
                 overflow: 'hidden'
               }}
             >
-              {/* Animated Accent Background - Pink/Violet Palette */}
+              {/* Animated Accent Background - Royal Blue to Indigo Palette */}
               <motion.div 
                 variants={{
                   hover: { x: '0%' }
@@ -2091,7 +1990,7 @@ const Features: React.FC = () => {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(135deg, #ff0080 0%, #7928ca 100%)', 
+                  background: 'linear-gradient(135deg, #3B82F6 0%, #7B3FE4 100%)', 
                   zIndex: 1
                 }}
               />
@@ -2108,7 +2007,7 @@ const Features: React.FC = () => {
                 </span>
 
                 <h3 style={{ 
-                  fontSize: '2.2rem', // Adjusted for mobile readability
+                  fontSize: '2.2rem', 
                   fontWeight: 800, 
                   letterSpacing: '-0.04em',
                   marginBottom: '15px',
@@ -2148,10 +2047,13 @@ const Features: React.FC = () => {
 };
 
 const Beliefs: React.FC = () => {
+  // Brand gradient (Royal Blue to Electric Indigo)
+  const brandGradient = 'linear-gradient(to bottom right, #3B82F6, #7B3FE4)';
+
   return (
     <section 
       style={{ 
-        backgroundColor: "#030005", 
+        backgroundColor: "#030014", // Updated to Space Black
         padding: "100px 6vw", 
         color: "white",
         fontFamily: "Inter, sans-serif"
@@ -2167,7 +2069,7 @@ const Beliefs: React.FC = () => {
           textTransform: "lowercase"
         }}>
           the elinity <span style={{ 
-                  background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+                  background: brandGradient, // Updated to brand gradient
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   color: 'transparent',
@@ -2196,7 +2098,7 @@ const Beliefs: React.FC = () => {
               backgroundColor: "rgba(255, 255, 255, 0.02)",
               borderRadius: "24px",
               padding: "40px",
-              border: "1px solid rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(59, 130, 246, 0.1)", // Subtle Royal Blue border
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -2210,11 +2112,12 @@ const Beliefs: React.FC = () => {
                 width: "40px", 
                 height: "40px", 
                 borderRadius: "12px", 
-                background: "linear-gradient(135deg, #7928ca 0%, #ff0080 100%)",
+                background: brandGradient, // Updated Icon background
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "1.2rem"
+                fontSize: "1.2rem",
+                boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)"
               }}>
                 ✦
               </div>
@@ -2233,7 +2136,7 @@ const Beliefs: React.FC = () => {
               <p style={{ 
                 fontSize: "1rem", 
                 lineHeight: "1.6", 
-                color: "rgba(255,255,255,0.5)",
+                color: "rgba(148, 163, 184, 0.7)", // Muted slate-blue
                 margin: 0,
                 fontWeight: 300
               }}>
@@ -2241,14 +2144,14 @@ const Beliefs: React.FC = () => {
               </p>
             </div>
 
-            {/* Decorative Corner Glow */}
+            {/* Decorative Corner Glow - Updated to Royal Blue */}
             <div style={{ 
               position: "absolute", 
               bottom: "-20px", 
               right: "-20px", 
               width: "100px", 
               height: "100px", 
-              background: "radial-gradient(circle, rgba(121, 40, 202, 0.15) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
               zIndex: 0
             }} />
           </motion.div>
@@ -2271,7 +2174,7 @@ const Tribes: React.FC = () => {
 
   return (
     <section style={{ 
-      backgroundColor: "#030005", 
+      backgroundColor: "#030014", // Updated: Space Black
       minHeight: "100vh", 
       width: "100%",
       display: "flex", 
@@ -2292,7 +2195,8 @@ const Tribes: React.FC = () => {
             fontWeight: 900, 
             letterSpacing: '-0.05em', 
             lineHeight: '1.1',
-            background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+            // Updated: Royal Blue to Electric Indigo Gradient
+            background: 'linear-gradient(to bottom right, #3B82F6, #7B3FE4)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
@@ -2303,7 +2207,7 @@ const Tribes: React.FC = () => {
         </motion.h2>
         <p style={{ 
           fontSize: '1.1rem', 
-          color: 'rgba(255,255,255,0.4)', 
+          color: 'rgba(148, 163, 184, 0.5)', // Updated: Muted cool-blue
           marginTop: '20px', 
           maxWidth: '600px',
           fontWeight: 300 
@@ -2313,7 +2217,7 @@ const Tribes: React.FC = () => {
       </div>
 
       {/* INTERACTIVE LIST */}
-      <div style={{ width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', gap: '1px', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+      <div style={{ width: '100%', maxWidth: '1100px', display: 'flex', flexDirection: 'column', gap: '1px', backgroundColor: 'rgba(59, 130, 246, 0.1)' }}>
         {tribeData.map((tribe, i) => (
           <div 
             key={i}
@@ -2321,10 +2225,10 @@ const Tribes: React.FC = () => {
             onMouseLeave={() => setExpandedIndex(null)}
             onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
             style={{
-              backgroundColor: "#030005",
+              backgroundColor: "#030014",
               cursor: "pointer",
               overflow: "hidden",
-              borderBottom: "1px solid rgba(255,255,255,0.05)",
+              borderBottom: "1px solid rgba(59, 130, 246, 0.05)",
               transition: "background-color 0.3s ease"
             }}
           >
@@ -2345,7 +2249,8 @@ const Tribes: React.FC = () => {
                 <span style={{ 
                   fontFamily: "monospace", 
                   fontSize: "0.8rem", 
-                  color: expandedIndex === i ? "#ff0080" : "rgba(255,255,255,0.2)",
+                  // Updated: Royal Blue accent
+                  color: expandedIndex === i ? "#3B82F6" : "rgba(255,255,255,0.2)",
                   width: "30px"
                 }}>
                   0{i + 1}
@@ -2375,7 +2280,7 @@ const Tribes: React.FC = () => {
                       padding: "20px 0 0 60px", 
                       fontSize: "clamp(1rem, 2vw, 1.2rem)", 
                       lineHeight: "1.6", 
-                      color: "rgba(255,255,255,0.6)", 
+                      color: "rgba(148, 163, 184, 0.8)", // Updated: Clearer slate text
                       maxWidth: "700px",
                       fontWeight: 300,
                       margin: 0
@@ -2391,7 +2296,7 @@ const Tribes: React.FC = () => {
       </div>
     </section>
   );
-};  
+};
 
 const WhyItExists: React.FC = () => {
   const pillars = [
@@ -2424,7 +2329,7 @@ const WhyItExists: React.FC = () => {
 
   return (
     <section style={{ 
-      backgroundColor: "#030005", 
+      backgroundColor: "#030014", // Updated: Space Black
       padding: "100px 6vw", 
       color: "white",
       fontFamily: "Inter, sans-serif"
@@ -2436,7 +2341,7 @@ const WhyItExists: React.FC = () => {
       }}>
         
         {/* LARGE STICKY-STYLE HEADING */}
-        <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "40px" }}>
+        <div style={{ borderBottom: "1px solid rgba(59, 130, 246, 0.1)", paddingBottom: "40px" }}>
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -2449,7 +2354,13 @@ const WhyItExists: React.FC = () => {
               textTransform: "lowercase"
             }}
           >
-            why it <span style={{       background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)', backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}>exists.</span>
+            why it <span style={{ 
+              // Updated: Royal Blue to Electric Indigo Gradient
+              background: 'linear-gradient(to bottom right, #3B82F6, #7B3FE4)', 
+              backgroundClip: 'text', 
+              WebkitBackgroundClip: 'text', 
+              color: 'transparent' 
+            }}>exists.</span>
           </motion.h2>
         </div>
 
@@ -2465,7 +2376,7 @@ const WhyItExists: React.FC = () => {
               fontSize: "1.5rem", 
               lineHeight: "1.4", 
               fontWeight: 300, 
-              color: "rgba(255,255,255,0.8)",
+              color: "rgba(148, 163, 184, 0.8)", // Updated: Muted cool-blue
               margin: 0
             }}>
               connection isn’t a mere one-step problem to solve; it’s a <span style={{ color: "white", fontWeight: 600 }}>holistic journey</span>. 
@@ -2483,11 +2394,12 @@ const WhyItExists: React.FC = () => {
             {pillars.map((p) => (
               <div key={p.id} style={{ display: "flex", gap: "24px" }}>
                 <span style={{ 
-                  color: "#ff0080", 
+                  color: "#3B82F6", // Updated: Royal Blue
                   fontFamily: "monospace", 
                   fontSize: "0.9rem", 
                   paddingTop: "6px" 
                 }}>
+                  {p.id}
                 </span>
                 <div>
                   <h4 style={{ 
@@ -2501,7 +2413,7 @@ const WhyItExists: React.FC = () => {
                   <p style={{ 
                     fontSize: "0.95rem", 
                     lineHeight: "1.6", 
-                    color: "rgba(255,255,255,0.4)", 
+                    color: "rgba(148, 163, 184, 0.5)", // Updated: Clearer secondary text
                     fontWeight: 300, 
                     margin: 0 
                   }}>
@@ -2522,14 +2434,14 @@ const Steps: React.FC = () => {
   return (
     <section 
       style={{ 
-        backgroundColor: "#030005", 
+        backgroundColor: "#030014", // Updated: Space Black
         padding: "100px 8vw", 
         color: "white",
         fontFamily: "Inter, sans-serif"
       }}
     >
       {/* MINIMALIST HEADER */}
-      <div style={{ marginBottom: "100px", borderLeft: "4px solid #ff0080", paddingLeft: "30px" }}>
+      <div style={{ marginBottom: "100px", borderLeft: "4px solid #3B82F6", paddingLeft: "30px" }}>
         <h2 style={{ 
           fontSize: "clamp(40px, 8vw, 80px)", 
           fontWeight: 900, 
@@ -2537,7 +2449,7 @@ const Steps: React.FC = () => {
           margin: 0,
           lineHeight: 1
         }}>
-          how it <br /><span style={{ color: "rgba(255,255,255,0.3)" }}>works.</span>
+          how it <br /><span style={{ color: "rgba(148, 163, 184, 0.2)" }}>works.</span>
         </h2>
       </div>
 
@@ -2550,7 +2462,8 @@ const Steps: React.FC = () => {
           top: "0", 
           bottom: "0", 
           width: "1px", 
-          background: "linear-gradient(to bottom, #ff0080 0%, #7928ca 50%, rgba(255,255,255,0.1) 100%)" 
+          // Updated Gradient: Royal Blue to Electric Indigo
+          background: "linear-gradient(to bottom, #3B82F6 0%, #7B3FE4 50%, rgba(59, 130, 246, 0.05) 100%)" 
         }} />
 
         {STEPS.map((s, i) => (
@@ -2570,21 +2483,21 @@ const Steps: React.FC = () => {
             {/* PULSING NODE */}
             <div style={{ zIndex: 2 }}>
               <motion.div 
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
+                animate={{ scale: [1, 1.15, 1], borderColor: ["#3B82F6", "#7B3FE4", "#3B82F6"] }}
+                transition={{ duration: 4, repeat: Infinity, delay: i * 0.5 }}
                 style={{
                   width: "40px",
                   height: "40px",
                   borderRadius: "50%",
-                  background: "#030005",
-                  border: "2px solid #ff0080",
+                  background: "#030014",
+                  border: "2px solid #3B82F6", // Updated: Royal Blue
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.8rem",
                   fontWeight: 800,
-                  color: "#ff0080",
-                  boxShadow: "0 0 15px rgba(255, 0, 128, 0.3)"
+                  color: "white",
+                  boxShadow: "0 0 20px rgba(59, 130, 246, 0.2)"
                 }}
               >
                 {i + 1}
@@ -2607,19 +2520,19 @@ const Steps: React.FC = () => {
               <p style={{ 
                 fontSize: "1.1rem", 
                 lineHeight: "1.6", 
-                color: "rgba(255,255,255,0.5)", 
+                color: "rgba(148, 163, 184, 0.6)", // Updated: Muted Slate-Blue
                 fontWeight: 300,
                 maxWidth: "600px"
               }}>
                 {s.desc}
               </p>
 
-              {/* INTERACTIVE DETAIL - Appears on Mobile/Hover */}
+              {/* INTERACTIVE DETAIL */}
               <div style={{ 
                 marginTop: "20px", 
                 height: "1px", 
                 width: "40px", 
-                background: "rgba(255,255,255,0.2)" 
+                background: "rgba(59, 130, 246, 0.3)" 
               }} />
             </div>
           </motion.div>
@@ -2638,12 +2551,11 @@ const LumiSection: React.FC = () => {
         width: '100%',
         display: 'flex',
         flexDirection: 'column', 
-        backgroundColor: '#030005',
+        backgroundColor: '#030014', // Updated: Space Black
         color: 'white',
-        // CRITICAL: Prevent horizontal scroll from blurs and absolute divs
         overflowX: 'hidden', 
         overflowY: 'auto',
-        fontFamily: 'sans-serif',
+        fontFamily: 'Inter, sans-serif',
       }}
       className="lumi-container"
     >
@@ -2653,31 +2565,33 @@ const LumiSection: React.FC = () => {
         
         @media (min-width: 1024px) {
           .lumi-container { flex-direction: row !important; }
-          .panel-left { width: 60% !important; padding: 0 6vw !important; border-right: 1px solid rgba(255,255,255,0.05); }
+          .panel-left { width: 60% !important; padding: 0 6vw !important; border-right: 1px solid rgba(59, 130, 246, 0.05); }
           .panel-right { width: 40% !important; padding: 0 6vw !important; }
         }
       `}</style>
 
-      {/* BACKGROUND ELEMENTS - Wrapped in a container that clips overflow */}
+      {/* BACKGROUND ELEMENTS */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, overflow: 'hidden' }}>
         <motion.div 
-          animate={{ opacity: [0.05, 0.15, 0.05] }}
-          transition={{ duration: 4, repeat: Infinity }}
+          animate={{ opacity: [0.05, 0.12, 0.05] }}
+          transition={{ duration: 6, repeat: Infinity }}
           style={{
             position: 'absolute', top: '-10%', left: '-10%',
             width: '70vw', height: '70vw',
-            backgroundColor: '#9333ea', borderRadius: '50%',
-            filter: 'blur(100px)', opacity: 0.1
+            backgroundColor: '#3B82F6', // Updated: Royal Blue
+            borderRadius: '50%',
+            filter: 'blur(120px)', opacity: 0.1
           }} 
         />
         <div style={{
           position: 'absolute', bottom: '-10%', right: '-10%',
           width: '60vw', height: '60vw',
-          backgroundColor: '#db2777', borderRadius: '50%',
-          filter: 'blur(100px)', opacity: 0.1
+          backgroundColor: '#7B3FE4', // Updated: Electric Indigo
+          borderRadius: '50%',
+          filter: 'blur(120px)', opacity: 0.08
         }} />
         <div style={{
-          position: 'absolute', inset: 0, opacity: 0.03,
+          position: 'absolute', inset: 0, opacity: 0.02,
           backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')",
         }} />
       </div>
@@ -2695,14 +2609,14 @@ const LumiSection: React.FC = () => {
           }}>
             the <br />
             <span style={{
-              background: 'linear-gradient(to bottom right, #ff0080, #c084fc, #c026d3)',
+              // Updated: Royal Blue to Electric Indigo Gradient
+              background: 'linear-gradient(to bottom right, #3B82F6, #7B3FE4, #6366F1)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              // FIXED: Changed from 110% to max-content to prevent overflow
               width: 'max-content',
               maxWidth: '100%',
               display: 'inline-block',
-              textShadow: '0 0 40px rgba(192, 132, 252, 0.4)'
+              textShadow: '0 0 40px rgba(59, 130, 246, 0.3)'
             }}>
               resonance
             </span> <br />
@@ -2711,7 +2625,8 @@ const LumiSection: React.FC = () => {
 
           <p style={{
             maxWidth: '560px', fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', 
-            color: 'rgba(233, 213, 255, 0.6)', fontWeight: 300,
+            color: 'rgba(148, 163, 184, 0.6)', // Updated: Muted Slate-Blue
+            fontWeight: 300,
             lineHeight: '1.6', margin: 0
           }}>
             skip the swipe. our ai models your values and quirks to find resonant matches for love, play, or projects.
@@ -2731,33 +2646,43 @@ const LumiSection: React.FC = () => {
       }}>
         <motion.div whileHover="hover" style={{ position: 'relative', width: '100%' }}>
           <motion.div 
-            variants={{ hover: { backgroundColor: 'rgba(255,255,255,0.05)', borderColor: 'rgba(168, 85, 247, 0.3)' } }}
+            variants={{ hover: { backgroundColor: 'rgba(59, 130, 246, 0.05)', borderColor: 'rgba(123, 63, 228, 0.3)' } }}
             style={{
               position: 'relative', zIndex: 10,
-              backgroundColor: 'rgba(255,255,255,0.03)',
+              backgroundColor: 'rgba(255,255,255,0.02)',
               backdropFilter: 'blur(40px)',
-              border: '1px solid rgba(255,255,255,0.1)',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '32px', padding: 'clamp(2rem, 5vw, 3.5rem)',
               transition: 'all 0.7s ease'
             }}
           >
             <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem' }}>
-              <motion.div variants={{ hover: { rotate: 45 } }} style={{ width: '2.5rem', height: '2.5rem', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7' }}>✦</motion.div>
+              <motion.div 
+                variants={{ hover: { rotate: 45, color: '#3B82F6' } }} 
+                style={{ 
+                  width: '2.5rem', height: '2.5rem', borderRadius: '50%', 
+                  border: '1px solid rgba(255,255,255,0.1)', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', 
+                  color: '#7B3FE4' 
+                }}
+              >
+                ✦
+              </motion.div>
             </div>
             <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight:'1.1' }}>
               the <br /> flourishing suite.
             </h3>
-            <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(233, 213, 255, 0.5)', lineHeight: '1.6' }}>
+            <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(148, 163, 184, 0.5)', lineHeight: '1.6' }}>
               once you meet, the magic grows. access relationship coaching, a shared "life book," whimsy-filled games, a noise-free walled garden f&f network and much more.
             </p>
           </motion.div>
           
-          {/* Glow effect clipped by the parent overflow-x */}
+          {/* Hover Glow */}
           <motion.div 
             variants={{ hover: { opacity: 1 } }}
             style={{
               position: 'absolute', inset: '-1rem',
-              background: 'linear-gradient(to top right, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2))',
+              background: 'linear-gradient(to top right, rgba(59, 130, 246, 0.15), rgba(123, 63, 228, 0.15))',
               borderRadius: '40px', filter: 'blur(24px)',
               opacity: 0, transition: 'opacity 0.7s'
             }}
@@ -2771,8 +2696,8 @@ const LumiSection: React.FC = () => {
 const Closing: React.FC = () => {
   return (
     <section style={{ 
-      backgroundColor: "#030005", 
-      padding: "50px 6vw", 
+      backgroundColor: "#030014", // Updated: Space Black
+      padding: "100px 6vw", 
       textAlign: "center",
       position: "relative",
       overflow: "hidden",
@@ -2786,7 +2711,8 @@ const Closing: React.FC = () => {
         transform: 'translateX(-50%)',
         width: '80vw',
         height: '400px',
-        background: 'radial-gradient(circle, rgba(255, 0, 128, 0.08) 0%, transparent 70%)',
+        // Updated: Royal Blue glow
+        background: 'radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%)',
         filter: 'blur(80px)',
         zIndex: 0
       }} />
@@ -2798,11 +2724,12 @@ const Closing: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           style={{ 
-            fontSize: "2rem", 
+            fontSize: "clamp(1rem, 2vw, 2rem)", 
             letterSpacing: "0.1em", 
-            color: "rgba(255,255,255,0.4)",
+            color: "rgba(148, 163, 184, 0.4)", // Updated: Slate
             display: "block",
-            marginBottom: "40px"
+            marginBottom: "40px",
+            textTransform: "lowercase"
           }}
         >
           inside the app
@@ -2812,11 +2739,11 @@ const Closing: React.FC = () => {
         <div style={{ 
           display: "flex", 
           flexDirection: "column", 
-          gap: "24px", 
+          gap: "32px", 
           marginBottom: "80px" 
         }}>
           <div>
-            <span style={{ color: "#ff0080", fontSize: "0.9rem", fontWeight: 600, display: "block", marginBottom: "8px" }}>
+            <span style={{ color: "#3B82F6", fontSize: "0.9rem", fontWeight: 600, display: "block", marginBottom: "8px" }}>
               what you’ll find:
             </span>
             <p style={{ fontSize: "1.2rem", fontWeight: 300, color: "white", margin: 0 }}>
@@ -2825,10 +2752,10 @@ const Closing: React.FC = () => {
           </div>
 
           <div>
-            <span style={{ color: "#7928ca", fontSize: "0.9rem", fontWeight: 600, display: "block", marginBottom: "8px" }}>
+            <span style={{ color: "#7B3FE4", fontSize: "0.9rem", fontWeight: 600, display: "block", marginBottom: "8px" }}>
               what it feels like:
             </span>
-            <p style={{ fontSize: "1.2rem", fontWeight: 300, color: "rgba(255,255,255,0.6)", margin: 0 }}>
+            <p style={{ fontSize: "1.2rem", fontWeight: 300, color: "rgba(148, 163, 184, 0.6)", margin: 0 }}>
               it feels human, not transactional; like building something meaningful rather than just browsing.
             </p>
           </div>
@@ -2840,13 +2767,13 @@ const Closing: React.FC = () => {
           fontWeight: 900, 
           letterSpacing: "-0.07em", 
           lineHeight: 0.8,
-          // lineD
           marginBottom: "60px",
           color: "white"
         }}>
           welcome to <br />
           <span style={{ 
-            background: "linear-gradient(135deg, #ff0080 0%, #7928ca 100%)", 
+            // Updated: Royal Blue to Electric Indigo Gradient
+            background: "linear-gradient(135deg, #3B82F6 0%, #7B3FE4 100%)", 
             WebkitBackgroundClip: "text", 
             WebkitTextFillColor: "transparent",
             backgroundClip: "text"
@@ -2863,25 +2790,25 @@ const Closing: React.FC = () => {
           flexWrap: "wrap"
         }}>
           <motion.button 
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)" }}
             whileTap={{ scale: 0.95 }}
             style={{
               padding: "18px 40px",
               borderRadius: "100px",
               border: "none",
               background: "white",
-              color: "black",
+              color: "#030014",
               fontWeight: 700,
               fontSize: "1rem",
               cursor: "pointer",
-              boxShadow: "0 10px 30px rgba(255, 255, 255, 0.1)"
+              transition: "box-shadow 0.3s ease"
             }}
           >
             Join the Waitlist
           </motion.button>
           
           <motion.button 
-            whileHover={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+            whileHover={{ backgroundColor: "rgba(59, 130, 246, 0.05)", borderColor: "rgba(59, 130, 246, 0.3)" }}
             style={{
               padding: "18px 40px",
               borderRadius: "100px",
@@ -2890,7 +2817,8 @@ const Closing: React.FC = () => {
               color: "white",
               fontWeight: 600,
               fontSize: "1rem",
-              cursor: "pointer"
+              cursor: "pointer",
+              transition: "all 0.3s ease"
             }}
           >
             Learn More
