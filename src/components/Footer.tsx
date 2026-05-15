@@ -1,6 +1,7 @@
 import React from "react";
-import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart, Mail } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Sparkles, ArrowUpRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = ({ className = '' }: { className?: string }) => {
   const currentYear = new Date().getFullYear();
@@ -12,6 +13,21 @@ const Footer = ({ className = '' }: { className?: string }) => {
   // Brand-aligned Deep Space Gradient
   const deepSpaceGradient = {
     background: 'radial-gradient(circle at bottom right, #0A001F 0%, #03000a 100%)',
+  };
+
+  // Silver Streak Animation Variant
+  const shineVariants = {
+    initial: { x: '-100%', opacity: 0 },
+    animate: { 
+      x: '200%', 
+      opacity: [0, 0.5, 0],
+      transition: { 
+        repeat: Infinity, 
+        duration: 3, 
+        ease: "linear",
+        repeatDelay: 2 
+      } 
+    }
   };
 
   return (
@@ -29,8 +45,16 @@ const Footer = ({ className = '' }: { className?: string }) => {
         {/* Top Tier: Brand & Social Bento */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           
-          {/* Brand Card - Enhanced Glassmorphism */}
-          <div className="lg:col-span-7 bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-10 backdrop-blur-3xl flex flex-col justify-between hover:border-white/10 transition-colors duration-500">
+          {/* Brand Card - Enhanced Glassmorphism with Shine */}
+          <div className="lg:col-span-7 relative overflow-hidden bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-10 backdrop-blur-3xl flex flex-col justify-between hover:border-white/10 transition-colors duration-500">
+            {/* The Silver Streak */}
+            <motion.div 
+              variants={shineVariants}
+              initial="initial"
+              animate="animate"
+              className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/[0.05] to-transparent -skew-x-12 pointer-events-none"
+            />
+
             <div className="space-y-8">
               <Link to="/" onClick={scrollToTop} className="flex items-center space-x-3 w-max group">
                 <img 
@@ -55,8 +79,16 @@ const Footer = ({ className = '' }: { className?: string }) => {
             </div>
           </div>
 
-          {/* Connect Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#3B82F6]/5 to-transparent border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between hover:border-[#3B82F6]/20 transition-all duration-500">
+          {/* Connect Card with Shine */}
+          <div className="lg:col-span-5 relative overflow-hidden bg-gradient-to-br from-[#3B82F6]/5 to-transparent border border-white/5 rounded-[2.5rem] p-10 flex flex-col justify-between hover:border-[#3B82F6]/20 transition-all duration-500">
+            {/* The Silver Streak */}
+            <motion.div 
+              variants={shineVariants}
+              initial="initial"
+              animate="animate"
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -skew-x-12 pointer-events-none"
+            />
+
             <div>
               <h3 className="text-2xl font-semibold mb-3 flex items-center gap-3">
                 join the circle <Sparkles size={20} className="text-[#3B82F6]" />
@@ -95,7 +127,7 @@ const Footer = ({ className = '' }: { className?: string }) => {
                 { n: "Leaderboard", p: "#" }, { n: "Manifesto", p: "#" },
                 { n: "Enterprise", p: "/enterprise" }, { n: "AB", p: "/ab" }
               ].map((link) => (
-                <li key={link.n} className="titlecase">
+                <li key={link.n} >
                   <Link to={link.p} onClick={scrollToTop} className="text-neutral-500 hover:text-[#3B82F6] transition-colors text-sm block font-light">
                     {link.n}
                   </Link>

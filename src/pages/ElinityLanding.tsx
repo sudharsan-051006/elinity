@@ -1,7 +1,11 @@
 import { useEffect, useState, useRef, FC } from "react";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { button } from "framer-motion/m";
+import React, {  forwardRef } from "react";
+import { Link } from "react-router-dom";
 
+
+import { supabase } from "../lib/supabase";
 // ─── Brand Tokens ─────────────────────────────────────────────────────────────
 
 const brand = {
@@ -99,12 +103,12 @@ const FEATURES_ROW2: FeatureItem[] = [
 ];
 
 const BELIEFS: BeliefItem[] = [
-  { num: "01 - Philosophy", title: "rich, deep profiles:", body: "deep representations of real humans, inspired by story cafes, not reducing people to photos and labels." },
-  { num: "02 - Matching", title: "threshold-based", body: "you only see high-fit connections; we never waste your time. we want to minimize the time you spend looking." },
-  { num: "03 - AI", title: "multi-dimensional", body: "matching based on values and goals, character and personality, not just 'vibes' or surface-level attributes." },
-  { num: "04 - Journey", title: "proactive support", body: "lumi helps you flourish before problems arise, as your relationship ally, and as your reflection companion." },
-  { num: "05 - Design", title: "meaningful play", body: "curiosity and novelty built into the core, as the foundation for relational flourishing." },
-  { num: "06 - Vision", title: "story assistant", body: "lumi helps you craft an honest, sparkling profile, that helps you bring your story to the fore." },
+  { num: "01 - Philosophy", emoji: "💎", title: "rich, deep profiles:", body: "deep representations of real humans, inspired by story cafes, not reducing people to photos and labels." },
+  { num: "02 - Matching", emoji: "🧿", title: "threshold-based", body: "you only see high-fit connections; we never waste your time. we want to minimize the time you spend looking." },
+  { num: "03 - AI", emoji: "🧬", title: "multi-dimensional", body: "matching based on values and goals, character and personality, not just 'vibes' or surface-level attributes." },
+  { num: "04 - Journey", emoji: "🏹", title: "proactive support", body: "lumi helps you flourish before problems arise, as your relationship ally, and as your reflection companion." },
+  { num: "05 - Design", emoji: "🎨", title: "meaningful play", body: "curiosity and novelty built into the core, as the foundation for relational flourishing." },
+  { num: "06 - Vision", emoji: "✨", title: "story assistant", body: "lumi helps you craft an honest, sparkling profile, that helps you bring your story to the fore." },
 ];
 
 const TRIBES: TribeItem[] = [
@@ -243,10 +247,10 @@ const GLOBAL_CSS = `
   nav {
     display: flex; justify-content: space-between; align-items: center;
     padding: 24px 40px;
-    border-bottom: 1px solid var(--border);
+    // border-bottom: 1px solid var(--border);
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,35,0.92);
-    backdrop-filter: blur(12px);
+    // background: rgba(10,10,35,0.92);
+    backdrop-filter: blur(0px);
   }
   .nav-logo {
     font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 2px;
@@ -1621,8 +1625,33 @@ const SpeechBubble: React.FC<{
     )}
   </AnimatePresence>
 );
- 
-const Hero: React.FC = () => {
+
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setShow(true);
+        else setShow(false);
+      },
+      { threshold: 0.25 }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return [ref, show] as const;
+}
+
+// --- COMPONENTS ---
+
+const Hero = ({ onJoinWaitlist }) => {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -1637,7 +1666,6 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Primary brand gradient combination (Blue to Indigo)
   const brandGradient = "linear-gradient(to bottom right, #3B82F6, #7B3FE4)";
 
   return (
@@ -1649,138 +1677,94 @@ const Hero: React.FC = () => {
         justifyContent: "space-between",
         minHeight: "100vh",
         padding: isMobile ? "160px 20px 140px" : "180px 8% 140px",
-        // Updated: Deeper Navy/Indigo base for premium contrast
         backgroundColor: "#030014",
         backgroundImage: "radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030014 60%)",
         color: "white",
-        overflowX: "hidden", 
+        overflowX: "hidden",
         position: "relative",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
       }}
     >
-      {/* Background Glow - Updated to Royal Blue */}
       <div style={{ 
-        position: "absolute", 
-        top: "10%", 
-        left: "5%", 
-        width: isMobile ? "200px" : "400px", 
-        height: isMobile ? "200px" : "400px", 
-        background: "rgba(59, 130, 246, 0.15)", // Blue glow
-        filter: "blur(120px)", 
-        borderRadius: "50%", 
-        pointerEvents: "none" 
+        position: "absolute", top: "10%", left: "5%", 
+        width: isMobile ? "200px" : "400px", height: isMobile ? "200px" : "400px", 
+        background: "rgba(59, 130, 246, 0.15)", filter: "blur(120px)", 
+        borderRadius: "50%", pointerEvents: "none" 
       }} />
 
-      {/* --- TOP CONTENT AREA --- */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: isMobile ? "column" : "row",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          maxWidth: "1250px",
-          zIndex: 2,
-          gap: isMobile ? "40px" : "60px",
-          flex: 1,
-        }}
-      >
-        <div style={{ 
-          flex: isMobile ? "none" : "1.2", 
-          width: "100%", 
-          textAlign: isMobile ? "center" : "left" 
-        }}>
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.8 }}
-          >
-            <h1 style={{ 
-              fontSize: isMobile ? "2.5rem" : "clamp(2.8rem, 7vw, 5rem)", 
-              lineHeight: "1.1", 
-              fontWeight: 900, 
-              margin: "0 0 1.5rem 0", 
-              letterSpacing: "-0.02em" 
-            }}>
-              find your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>person,</span>
+      <div style={{
+        display: "flex", flexDirection: isMobile ? "column" : "row",
+        alignItems: "center", justifyContent: "center", width: "100%",
+        maxWidth: "1250px", zIndex: 2, gap: isMobile ? "40px" : "60px", flex: 1,
+      }}>
+        <div style={{ flex: isMobile ? "none" : "1.2", width: "100%", textAlign: isMobile ? "center" : "left" }}>
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <h1 style={{ fontSize: isMobile ? "2.5rem" : "clamp(2.8rem, 7vw, 5rem)", lineHeight: "1.1", fontWeight: 900, margin: "0 0 1.5rem 0", letterSpacing: "-0.02em" }}>
+              find your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>person,</span>
               <br />
-              your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>tribe.</span>
+              your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>tribe.</span>
               <br />
-              build <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextStroke: isMobile ? "0px" : "1px rgba(255,255,255,0.15)", WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
+              build <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
             </h1>
-            <p style={{ 
-              fontSize: isMobile ? "1.05rem" : "clamp(1.1rem, 2vw, 1.3rem)", 
-              color: "#a0a0c0", // Softer cool-gray
-              lineHeight: "1.6", 
-              margin: "0 auto", 
-              maxWidth: isMobile ? "100%" : "540px" 
-            }}>
+            <p style={{ fontSize: isMobile ? "1.05rem" : "clamp(1.1rem, 2vw, 1.3rem)", color: "#a0a0c0", lineHeight: "1.6", margin: "0 auto", maxWidth: isMobile ? "100%" : "540px" }}>
               find your people across love, leisure, and collaborations with lumi, your ai {" "}
               <span style={{ display: "inline-grid", minWidth: isMobile ? "90px" : "120px" }}>
                 <AnimatePresence mode="wait">
-                  <motion.span
-                    key={words[index]}
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }} 
-                    transition={{ duration: 0.4 }}
-                    // Updated: soft text gradient
-                    style={{ gridArea: "1 / 1", fontWeight: "700", background: "linear-gradient(to right, #ffffff, #3B82F6, #7B3FE4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-                  >
-                    {words[index]}.
-                  </motion.span>
+                <motion.span
+  key={words[index]}
+  initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+  exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
+  transition={{ 
+    duration: 0.6, 
+    ease: [0.16, 1, 0.3, 1] 
+  }}
+  style={{
+    gridArea: "1 / 1",
+    fontWeight: 800,
+    // Exact colors from your logo: Indigo -> Royal Blue -> Cyan
+    background: "linear-gradient(110deg, #7B3FE4 0%, #3B82F6 50%, #00D2FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    display: "inline-block",
+    letterSpacing: "-0.03em",
+    // Adding a subtle glow to mimic the logo's vibrancy
+    textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
+  }}
+>
+  {words[index]}.
+</motion.span>
                 </AnimatePresence>
               </span>
             </p>
           </motion.div>
         </div>
 
-        {/* Creature Container */}
-        <div style={{ 
-          flex: isMobile ? "none" : "1", 
-          display: "flex", 
-          justifyContent: "center", 
-          position: "relative",
-          width: "100%"
-        }}>
-          <motion.div 
-            animate={{ y: [0, -10, 0] }} 
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} 
-            style={{ zIndex: 2 }}
-          >
-            <div style={{ 
-              transform: isMobile ? "scale(0.85)" : "scale(1.1)", 
-              transformOrigin: "center" 
-            }}>
+        <div style={{ flex: isMobile ? "none" : "1", display: "flex", justifyContent: "center", position: "relative", width: "100%" }}>
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
+            <div style={{ transform: isMobile ? "scale(0.85)" : "scale(1.1)", transformOrigin: "center" }}>
+              {/* Replace with your <HeroCreature /> component */}
               <HeroCreature />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* --- BUTTON ROW --- */}
-      <div
-        style={{
-          width: "100%",
-          maxWidth: isMobile ? "100%" : "700px", 
-          padding: isMobile ? "0" : "20px 0",
-          display: "flex",
-          flexDirection: isMobile ? "column" : "row", 
-          justifyContent: "center",
-          alignItems: "stretch", 
-          gap: isMobile ? "12px" : "16px",
-          zIndex: 10,
-        }}
-      >
+      <div style={{
+        width: "100%", maxWidth: isMobile ? "100%" : "700px", padding: isMobile ? "0" : "20px 0",
+        display: "flex", flexDirection: isMobile ? "column" : "row",
+        justifyContent: "center", alignItems: "stretch", gap: isMobile ? "12px" : "16px", zIndex: 10,
+      }}>
         {[
           { label: "Download On Android", type: "ghost" },
           { label: "Download On iOS", type: "ghost" },
-          { label: "Join Waitlist", type: "solid" }
+          { label: "Join Waitlist", type: "solid", action: onJoinWaitlist }
         ].map((btn, i) => (
           <motion.button
             key={i}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={btn.action}
             style={{
               all: "unset",
               height: isMobile ? "52px" : "56px",
@@ -1795,13 +1779,11 @@ const Hero: React.FC = () => {
               justifyContent: "center",
               boxSizing: "border-box",
               transition: "all 0.3s ease",
-              // Updated borders and background for ghost buttons
               border: btn.type === "ghost" ? "1px solid rgba(59, 130, 246, 0.2)" : "none",
               backgroundColor: btn.type === "ghost" ? "rgba(59, 130, 246, 0.05)" : "transparent",
-              // Updated solid gradient and box-shadow for premium blue glow
               backgroundImage: btn.type === "solid" ? brandGradient : "none",
               color: "white",
-              flex: isMobile ? "none" : "1", 
+              flex: isMobile ? "none" : "1",
               width: "100%",
               boxShadow: btn.type === "solid" ? "0 4px 20px rgba(59, 130, 246, 0.3)" : "none",
             }}
@@ -1814,6 +1796,161 @@ const Hero: React.FC = () => {
   );
 };
 
+const WaitlistSection = forwardRef<HTMLDivElement>((props, ref) => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [cardRef, show] = useReveal();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!name || !email) {
+      alert("Please fill all fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from("waitlist")
+        .insert([{ name: name.trim(), email: email.trim() }]);
+
+      if (!error) {
+        alert("You're on the waitlist 🚀");
+        setName("");
+        setEmail("");
+      } else if (error.code === "23505") {
+        // Unique violation code in Postgres
+        alert("You're already on the waitlist 🙂");
+      } else {
+        throw error;
+      }
+    } catch (err) {
+      console.error("Supabase Error:", err);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section
+      ref={ref}
+      className="relative w-full bg-[#03000a] py-32 px-6 overflow-hidden lowercase"
+    >
+      {/* Brand Ambient Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#3B82F6]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#7B3FE4]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#00D2FF]/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <motion.div
+        ref={cardRef}
+        initial={false}
+        animate={{ 
+          opacity: show ? 1 : 0, 
+          y: show ? 0 : 60,
+          scale: show ? 1 : 0.98 
+        }}
+        transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+        className="relative max-w-5xl mx-auto text-center z-10"
+      >
+        <div className="relative group overflow-hidden rounded-[3rem] border border-white/5 bg-white/[0.01] backdrop-blur-3xl p-8 md:p-20 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#3B82F6]/5 via-transparent to-[#00D2FF]/5 opacity-40" />
+          
+          <h2 className="text-4xl sm:text-7xl font-bold mb-12 tracking-tighter text-white leading-tight">
+            join the{" "}
+            <span style={{ 
+              background: "linear-gradient(to right, #3B82F6, #7B3FE4, #00D2FF)", 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent' 
+            }}>
+              elinity waitlist
+            </span>{" "}
+            ✨
+          </h2>
+
+          <div className="text-neutral-400 text-lg md:text-xl space-y-8 mb-16 leading-relaxed max-w-2xl mx-auto font-light">
+            <p>
+              we’re building something special, <br className="hidden sm:block" />
+              and we’re doing it carefully.
+            </p>
+            <p className="text-neutral-300">
+              we’re onboarding in small, thoughtful batches so every new member
+              gets the full <span className="text-[#3B82F6] font-medium">elinity experience</span>.
+            </p>
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col md:flex-row gap-3 max-w-3xl mx-auto mb-16 p-2.5 
+                       rounded-[2rem] bg-white/[0.02] border border-white/10 shadow-2xl backdrop-blur-2xl"
+          >
+            <div className="relative flex-1 group">
+              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#3B82F6] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <input
+                disabled={loading}
+                type="text"
+                placeholder="your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full bg-transparent border-none rounded-2xl pl-14 pr-4 py-5 text-white placeholder-white/10 outline-none focus:ring-0 transition-all font-light"
+              />
+            </div>
+
+            <div className="relative flex-[1.2] group border-t md:border-t-0 md:border-l border-white/5">
+              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#3B82F6] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <input
+                disabled={loading}
+                type="email"
+                placeholder="your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full bg-transparent border-none rounded-2xl pl-14 pr-4 py-5 text-white placeholder-white/10 outline-none focus:ring-0 transition-all font-light"
+              />
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit"
+              disabled={loading}
+              className="px-10 py-5 font-bold rounded-2xl text-white
+                         bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4]
+                         shadow-[0_10px_25px_rgba(59,130,246,0.2)]
+                         hover:shadow-[0_15px_35px_rgba(59,130,246,0.4)]
+                         transition-all disabled:opacity-50 whitespace-nowrap"
+            >
+              {loading ? "joining..." : "join now"}
+            </motion.button>
+          </form>
+
+          <div className="max-w-xl mx-auto border-t border-white/5 pt-12">
+            <p className="text-neutral-500 text-sm mb-6 tracking-wide font-light">
+              in the meantime, join our newsletter for behind-the-scenes updates.
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-transparent bg-gradient-to-r from-[#3B82F6] to-[#00D2FF] bg-clip-text font-medium italic">
+                good things grow best when they’re nurtured.
+              </span>
+              <span className="grayscale opacity-50">🌱</span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+});
+
+WaitlistSection.displayName = "WaitlistSection";
 
 const Statement: React.FC = () => {
   const ref = useFadeIn();
@@ -2046,17 +2183,89 @@ const Features: React.FC = () => {
   );
 };
 
+const Sparkle = ({ color, size, style }) => (
+  <svg
+    viewBox="0 0 160 160"
+    fill="none"
+    style={{
+      position: "absolute",
+      width: size,
+      height: size,
+      pointerEvents: "none",
+      zIndex: 1, 
+      ...style,
+    }}
+  >
+    <path
+      d="M80 0C80 0 84.2846 41.2925 101.481 58.5085C118.677 75.7244 160 80 160 80C160 80 118.677 84.2756 101.481 101.492C84.2846 118.708 80 160 80 160C80 160 75.7154 118.708 58.5186 101.492C41.322 84.2756 0 80 0 80C0 80 41.322 75.7244 58.5186 58.5085C75.7154 41.2925 80 0 80 0Z"
+      fill={color}
+    />
+  </svg>
+);
+
+const LocalSparkleField = () => {
+  const [sparkles, setSparkles] = useState([]);
+  const colors = ["#00D2FF", "#7B3FE4", "#3B82F6"];
+
+  useEffect(() => {
+    const createSparkle = () => ({
+      id: Math.random().toString(36).slice(2, 9),
+      x: `${Math.random() * 100}%`,
+      y: `${Math.random() * 100}%`,
+      size: Math.random() * 12 + 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    });
+
+    setSparkles(Array.from({ length: 3 }, createSparkle));
+
+    const intervalId = setInterval(() => {
+      setSparkles((prev) => {
+        const next = [...prev, createSparkle()];
+        return next.length > 10 ? next.slice(1) : next;
+      });
+    }, 2500);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <>
+      {sparkles.map((s) => (
+        <Sparkle
+          key={s.id}
+          color={s.color}
+          size={s.size}
+          style={{
+            left: s.x,
+            top: s.y,
+            transform: "translate(-50%, -50%)",
+            animation: "sparkle-pulse 2s ease-in-out infinite",
+          }}
+        />
+      ))}
+      <style>{`
+        @keyframes sparkle-pulse {
+          0%, 100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+          50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1) rotate(45deg); }
+        }
+      `}</style>
+    </>
+  );
+};
+
+// --- Main Component ---
+
 const Beliefs: React.FC = () => {
-  // Brand gradient (Royal Blue to Electric Indigo)
   const brandGradient = 'linear-gradient(to bottom right, #3B82F6, #7B3FE4)';
 
   return (
     <section 
       style={{ 
-        backgroundColor: "#030014", // Updated to Space Black
+        backgroundColor: "#030014", 
         padding: "100px 6vw", 
         color: "white",
-        fontFamily: "Inter, sans-serif"
+        fontFamily: "Inter, sans-serif",
+        position: "relative"
       }}
     >
       {/* SECTION HEADER */}
@@ -2069,7 +2278,7 @@ const Beliefs: React.FC = () => {
           textTransform: "lowercase"
         }}>
           the elinity <span style={{ 
-                  background: brandGradient, // Updated to brand gradient
+                  background: brandGradient, 
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   color: 'transparent',
@@ -2098,7 +2307,7 @@ const Beliefs: React.FC = () => {
               backgroundColor: "rgba(255, 255, 255, 0.02)",
               borderRadius: "24px",
               padding: "40px",
-              border: "1px solid rgba(59, 130, 246, 0.1)", // Subtle Royal Blue border
+              border: "1px solid rgba(59, 130, 246, 0.1)", 
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -2106,25 +2315,28 @@ const Beliefs: React.FC = () => {
               overflow: "hidden"
             }}
           >
+            {/* Sparkles added inside the card */}
+            <LocalSparkleField />
+
             {/* Top Row: Icon & Tag */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+            <div style={{ position: "relative", zIndex: 10, display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
               <div style={{ 
                 width: "40px", 
                 height: "40px", 
                 borderRadius: "12px", 
-                background: brandGradient, // Updated Icon background
+                background: brandGradient, 
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "1.2rem",
                 boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)"
               }}>
-                ✦
+                {b.emoji}
               </div>
             </div>
 
             {/* Content */}
-            <div style={{ marginTop: "40px" }}>
+            <div style={{ position: "relative", zIndex: 10, marginTop: "40px" }}>
               <h3 style={{ 
                 fontSize: "1.8rem", 
                 fontWeight: 700, 
@@ -2136,7 +2348,7 @@ const Beliefs: React.FC = () => {
               <p style={{ 
                 fontSize: "1rem", 
                 lineHeight: "1.6", 
-                color: "rgba(148, 163, 184, 0.7)", // Muted slate-blue
+                color: "rgba(148, 163, 184, 0.7)", 
                 margin: 0,
                 fontWeight: 300
               }}>
@@ -2144,7 +2356,7 @@ const Beliefs: React.FC = () => {
               </p>
             </div>
 
-            {/* Decorative Corner Glow - Updated to Royal Blue */}
+            {/* Decorative Corner Glow */}
             <div style={{ 
               position: "absolute", 
               bottom: "-20px", 
@@ -2832,21 +3044,42 @@ const Closing: React.FC = () => {
 
 // ─── Page Root ────────────────────────────────────────────────────────────────
 
-const ElinityLanding: FC = () => (
-  <>
-    <GlobalStyles />
-    <CustomCursor />
-    {/* <PixelGround />  */}
-    <Hero />
-    <Statement />
-        <LumiSection />
-    <Features />
-    <Beliefs />
-    <Tribes />
-    <WhyItExists />
-    <Steps />
-    <Closing />
-  </>
-);
+const ElinityLanding: FC = () => {
+  // 1. Create the reference for the waitlist section
+  const waitlistRef = useRef<HTMLDivElement>(null);
+
+  // 2. Define the smooth scroll function
+  const scrollToWaitlist = () => {
+    if (waitlistRef.current) {
+      waitlistRef.current.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+      });
+    }
+  };
+
+  return (
+    <>
+      <GlobalStyles />
+      <CustomCursor />
+      
+      {/* Pass the function to Hero so the button works */}
+      <Hero onJoinWaitlist={scrollToWaitlist} />
+      
+      <Statement />
+      <LumiSection />
+      <Features />
+      <Beliefs />
+      <Tribes />
+      <WhyItExists />
+      <Steps />
+      
+      {/* 3. Attach the ref to the WaitlistSection */}
+      <WaitlistSection ref={waitlistRef} />
+      
+      <Closing />
+    </>
+  );
+};
 
 export default ElinityLanding;
