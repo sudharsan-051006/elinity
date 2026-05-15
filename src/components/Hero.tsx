@@ -13,11 +13,11 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/main_yrw4jo.png",
-  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/second_qqci1a.png",
-  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/fourth_tm9t5c.png",
-  "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571697/fivth_mna64t.png",
-];
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/main_yrw4jo.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/second_qqci1a.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/fourth_tm9t5c.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571697/fivth_mna64t.png",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,10 +81,7 @@ export default function ElinityLandingPage({ onJoinClick }: HeroProps) {
     />
         ) : (
 <>
-  {/* Base Image (changes together) */}
-  
 
-  {/* Colored Reveal */}
   <div className="absolute inset-0 rounded-b-3xl overflow-hidden pointer-events-none">
     <img
       src={images[currentImage]}

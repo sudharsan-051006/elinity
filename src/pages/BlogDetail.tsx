@@ -51,38 +51,6 @@ const BlogDetail = () => {
     return () => clearInterval(interval);
   }, [blog]);
 
-  // /* ======================= */
-
-    // /* =======================
-    //     WORD BY WORD TYPING EFFECT
-    // ======================== */
-
-    //   const [displayedContent, setDisplayedContent] = useState('');
-    //   const typingIndex = useRef(0);
-
-    //   useEffect(() => {
-    //     if (!blog) return;
-
-    //     const words = blog.content.split(" "); // split text into words
-    //     typingIndex.current = 0;
-    //     setDisplayedContent('');
-
-    //     const speed = Math.random() * 60 + 60; 
-
-    //     const interval = setInterval(() => {
-    //       if (typingIndex.current < words.length) {
-    //         setDisplayedContent(prev => prev + words[typingIndex.current] + " ");
-    //         typingIndex.current += 1;
-    //       } else {
-    //         clearInterval(interval);
-    //       }
-    //     }, speed); // speed of typing
-
-    //     return () => clearInterval(interval);
-    //   }, [blog]);
-
-    //   /* ======================= */
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
@@ -114,24 +82,24 @@ const BlogDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#030014] to-[#0a0a2e] text-white">
       <br/>
       <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-20 pb-16 flex flex-col lg:flex-row gap-8">
         
         {/* Sidebar */}
         <aside className="lg:w-16 flex lg:flex-col items-center justify-between lg:justify-start gap-4 lg:pt-20">
-<Link
-  to="/blog"
-  className="flex items-center gap-2 bg-[#23235b] text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-purple-700 transition"
->
-  <ChevronLeft size={20} />
-  <span className="sm:hidden">Back</span>
-  <span className="hidden sm:inline">Back</span>
-</Link>
+          <Link
+            to="/blog"
+            className="flex items-center gap-2 bg-[#1e1e4a] text-white px-4 py-2 rounded-full text-xs font-medium hover:bg-blue-600 transition"
+          >
+            <ChevronLeft size={20} />
+            <span className="sm:hidden">Back</span>
+            <span className="hidden sm:inline">Back</span>
+          </Link>
           <div className="flex lg:flex-col gap-3">
-            <button className="bg-[#23235b] hover:bg-purple-700 p-2.5 rounded-full transition" onClick={() => handleShare('twitter')}><XIcon size={16} /></button>
-            <button className="bg-[#23235b] hover:bg-purple-700 p-2.5 rounded-full transition" onClick={() => handleShare('facebook')}><Facebook size={16} /></button>
-            <button className="bg-[#23235b] hover:bg-purple-700 p-2.5 rounded-full transition" onClick={() => handleShare('linkedin')}><Linkedin size={16} /></button>
+            <button className="bg-[#1e1e4a] hover:bg-blue-600 p-2.5 rounded-full transition" onClick={() => handleShare('twitter')}><XIcon size={16} /></button>
+            <button className="bg-[#1e1e4a] hover:bg-blue-600 p-2.5 rounded-full transition" onClick={() => handleShare('facebook')}><Facebook size={16} /></button>
+            <button className="bg-[#1e1e4a] hover:bg-blue-600 p-2.5 rounded-full transition" onClick={() => handleShare('linkedin')}><Linkedin size={16} /></button>
           </div>
         </aside>
 
@@ -144,7 +112,7 @@ const BlogDetail = () => {
               <button
                 key={tab.label}
                 onClick={() => navigate(tab.href)}
-                className="px-5 py-2 rounded-lg font-semibold transition-all text-xs sm:text-sm bg-transparent border border-purple-700 text-purple-200 hover:bg-purple-900/30"
+                className="px-5 py-2 rounded-lg font-semibold transition-all text-xs sm:text-sm bg-transparent border border-blue-800 text-blue-200 hover:bg-blue-900/30"
               >
                 {tab.label}
               </button>
@@ -158,8 +126,8 @@ const BlogDetail = () => {
                 }}
                 className={`flex items-center gap-2 px-5 py-2 rounded-lg font-semibold transition-all text-xs sm:text-sm border outline-none ${
                   isResourcesOpen
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white border-transparent'
-                    : 'bg-transparent border-purple-700 text-purple-200'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent'
+                    : 'bg-transparent border-blue-800 text-blue-200'
                 }`}
               >
                 Resources
@@ -167,8 +135,8 @@ const BlogDetail = () => {
               </button>
 
               {isResourcesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#1a1a40] border border-purple-700 rounded-xl shadow-2xl z-[999] overflow-hidden">
-                  <Link to="/privacypolicy" className="block px-4 py-3 text-sm font-medium text-purple-100 hover:bg-purple-600/30 transition-colors">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0a0a2e] border border-blue-800 rounded-xl shadow-2xl z-[999] overflow-hidden">
+                  <Link to="/privacypolicy" className="block px-4 py-3 text-sm font-medium text-blue-100 hover:bg-blue-600/30 transition-colors">
                     Privacy Policy
                   </Link>
                 </div>
@@ -180,10 +148,10 @@ const BlogDetail = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight"
           style={{
             fontSize:'32px',
-            letterSpacing:'2px',
+            letterSpacing:'1px',
             marginBottom:'40px',
             fontWeight:600,
-            background:'linear-gradient(to right, #e0dded, #b066fe)',
+            background:'linear-gradient(to right, #ffffff, #3B82F6)',
             WebkitBackgroundClip:'text',
             WebkitTextFillColor:'transparent'
           }}>
@@ -192,28 +160,28 @@ const BlogDetail = () => {
 
           {/* Author */}
           <div className="flex items-center gap-3 mb-8">
-            <img src='/p.jpeg' alt={blog.author} className="w-10 h-10 rounded-full border-2 border-purple-400 object-cover" />
+            <img src='/p.jpeg' alt={blog.author} className="w-10 h-10 rounded-full border-2 border-blue-500 object-cover" />
             <div>
               <p className="text-white font-semibold text-sm">{blog.author}</p>
-              <p className="text-xs text-purple-200">{blog.date} • {blog.time}</p>
+              <p className="text-xs text-blue-200">{blog.date} • {blog.time}</p>
             </div>
           </div>
 
-          <img src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover rounded-2xl shadow-2xl mb-8"/>
+          <img src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover rounded-2xl shadow-2xl mb-8 border border-white/10"/>
 
           {/* ✨ CHATGPT TYPING CONTENT */}
           <article
-            className="prose prose-invert max-w-none mb-16 text-base sm:text-lg leading-relaxed"
+            className="prose prose-invert max-w-none mb-16 text-base sm:text-lg leading-relaxed text-slate-300"
             dangerouslySetInnerHTML={{ __html: displayedContent }}
           />
 
-          {/* Related */}
+          {/* Related Articles */}
           <h2 className="text-xl sm:text-2xl font-bold mb-6">Related Articles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {relatedArticles.map((article: any) => (
-              <Link to={`/blog/${article.id}`} key={article.id} className="bg-[#181848] rounded-2xl overflow-hidden border border-purple-700/40 p-4">
+              <Link to={`/blog/${article.id}`} key={article.id} className="bg-[#0a0a2e] hover:bg-[#1e1e4a] transition-all rounded-2xl overflow-hidden border border-blue-900/40 p-4">
                 <span className="text-sm font-bold block mb-2">{article.title}</span>
-                <span className="text-[10px] text-purple-300">{article.date}</span>
+                <span className="text-[10px] text-blue-400">{article.date}</span>
               </Link>
             ))}
           </div>

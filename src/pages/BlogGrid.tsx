@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import BlogCard from './BlogCard';
 import { blogs } from '../constants/blogs';
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 
 const INITIAL_COUNT = 6;
 
@@ -17,11 +17,9 @@ const fadeUp = {
 
 /**
  * A wrapper component that applies 3D tilt based on the card's column position.
- * The column is calculated by checking the ref's offsetLeft against the parent grid.
  */
 const TiltWrapper = ({ children, isVisible }) => {
   const cardRef = useRef(null);
-  const containerRef = useRef(null);
   
   // Create motion values to store the rotation angles
   const xRotate = useMotionValue(0);
@@ -34,41 +32,35 @@ const TiltWrapper = ({ children, isVisible }) => {
   const smoothY = useSpring(yRotate, springConfig);
   const smoothZ = useSpring(zPop, springConfig);
 
-  const calculateTilt = (event) => {
+  const calculateTilt = () => {
     const card = cardRef.current;
     if (!card) return;
 
     const parent = card.closest('.grid');
     if (!parent) return;
 
-    // --- Core Logic: Determine Column ---
     const parentWidth = parent.offsetWidth;
-    // How far this specific card is from the left edge of the grid
     const leftOffset = card.offsetLeft; 
     
-    // Divide grid into thirds
     const colWidth = parentWidth / 3; 
     
-    // Column thresholds (accounting for gaps)
     const middleStart = colWidth - 50; 
     const middleEnd = (colWidth * 2) + 50;
 
-    // --- Apply Specific Tilts ---
     if (leftOffset < middleStart) {
-      // LEFT COLUMN: Tilt RIGHT (RotateY is positive)
+      // LEFT COLUMN: Tilt RIGHT
       yRotate.set(8);
       xRotate.set(0);
     } else if (leftOffset > middleEnd) {
-      // RIGHT COLUMN: Tilt LEFT (RotateY is negative)
+      // RIGHT COLUMN: Tilt LEFT
       yRotate.set(-8);
       xRotate.set(0);
     } else {
-      // CENTER COLUMN: Tilt UP (RotateX is negative)
+      // CENTER COLUMN: Tilt UP
       xRotate.set(5);
       yRotate.set(0);
     }
     
-    // Pop the card slightly forward in 3D space
     zPop.set(40);
   };
 
@@ -87,29 +79,29 @@ const TiltWrapper = ({ children, isVisible }) => {
       exit={{ opacity: 0, scale: 0.95 }}
       layout
       style={{
-        perspective: "1200px", // Enables the 3D depth
+        perspective: "1200px",
         transformStyle: "preserve-3d"
       }}
       className="relative group h-full cursor-pointer"
       onMouseEnter={calculateTilt}
       onMouseLeave={resetTilt}
     >
-      {/* Dynamic Glow Background */}
+      {/* Dynamic Glow Background - Updated to Royal Blue */}
       <motion.div
-        className="absolute inset-0 rounded-[20px] bg-purple-500/15 blur-2xl z-0 transition-opacity"
+        className="absolute inset-0 rounded-[20px] bg-blue-500/10 blur-2xl z-0 transition-opacity"
         initial={{ opacity: 0 }}
-        animate={{ opacity: (smoothX.get() < 0 || smoothY.get() !== 0) ? 1 : 0 }}
+        animate={{ opacity: (smoothX.get() !== 0 || smoothY.get() !== 0) ? 1 : 0 }}
       />
 
-      {/* The Actual Card (with 3D transformation) */}
+      {/* The Actual Card - Updated to Space Black */}
       <motion.div
         style={{
           rotateX: smoothX,
           rotateY: smoothY,
           z: smoothZ,
-          transformStyle: "preserve-3d", // Keeps children 3D
+          transformStyle: "preserve-3d",
         }}
-        className="relative z-10 w-full h-full bg-[#0d0d0d] rounded-[20px] overflow-hidden border border-white/10 shadow-2xl shadow-black/30"
+        className="relative z-10 w-full h-full bg-[#030014] rounded-[20px] overflow-hidden border border-white/5 shadow-2xl shadow-black/50"
       >
         {children}
       </motion.div>
@@ -152,13 +144,13 @@ const BlogContainer = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* BUTTON */}
+      {/* BUTTON - Updated to Royal Blue/Electric Indigo Gradient */}
       {blogs.length > INITIAL_COUNT && (
         <div className="flex justify-center mt-16 mb-16 px-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-14 py-4 overflow-hidden rounded-xl bg-black text-white font-bold transition-all border border-purple-500/30 shadow-xl shadow-purple-500/10"
+            className="group relative px-14 py-4 overflow-hidden rounded-xl bg-black text-white font-bold transition-all border border-blue-500/20 shadow-xl shadow-blue-500/5"
             onClick={() => {
               if (showAll) {
                 const element = document.getElementById('blog-start');
@@ -167,8 +159,9 @@ const BlogContainer = () => {
               setShowAll(prev => !prev);
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-pink-600/80 group-hover:opacity-100 transition-opacity" />
-            <span className="relative z-10 text-xs sm:text-sm">
+            {/* Elinity Brand Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4] opacity-80 group-hover:opacity-100 transition-opacity" />
+            <span className="relative z-10 text-xs sm:text-sm tracking-wider">
               {showAll ? 'show less' : 'explore more'}
             </span>
           </motion.button>

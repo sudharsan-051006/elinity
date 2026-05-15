@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { blogs } from "../constants/blogs";
 import { Link } from "react-router-dom";
 
-const targetIndices = [0,  2, 3, 4, 5];
+const targetIndices = [0, 2, 3, 4, 5];
 
 const featuredBlogs = blogs
   .filter((_, i) => targetIndices.includes(i))
@@ -131,24 +131,25 @@ const FeaturedBlogCarousel = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
+                  {/* Overlay updated to deeper black/indigo */}
                   <div
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2))",
+                        "linear-gradient(to top, rgba(3,0,20,.9), rgba(3,0,20,.2))",
                     }}
                   />
 
                   <div className="absolute bottom-4 left-4 text-white pr-6">
 
-                    <p className="text-xs opacity-60 mb-1">{b.date}</p>
+                    <p className="text-xs text-blue-400 opacity-80 mb-1">{b.date}</p>
 
                     <h2 className="text-lg font-bold leading-tight mb-2">
                       {b.title}
                     </h2>
 
-                    {/* Read More */}
-                    <div className="flex items-center gap-1 text-sm font-semibold text-white/80 group-hover:text-white transition">
+                    {/* Read More - Updated color to Royal Blue */}
+                    <div className="flex items-center gap-1 text-sm font-semibold text-blue-300 group-hover:text-white transition">
                       <span>Read more</span>
 
                       <svg
@@ -177,8 +178,7 @@ const FeaturedBlogCarousel = () => {
           </div>
         </div>
 
-        {/* arrows */}
-        {/* Left Arrow */}
+        {/* Left Arrow - Updated Gradient to Elinity Blue/Indigo */}
         <button
           onClick={prev}
           aria-label="Previous"
@@ -186,16 +186,16 @@ const FeaturedBlogCarousel = () => {
           w-9 h-9 sm:w-10 sm:h-10
           flex items-center justify-center
           rounded-full
-          bg-white/95 backdrop-blur-md
-          shadow-lg hover:shadow-xl
+          backdrop-blur-md
+          shadow-lg hover:shadow-blue-500/20
           hover:scale-110
           transition-all duration-300
-          bg-gradient-to-l from-[#0a0a23] to-[#4A0E4E] hover:from-[#1a1a40] hover:to-[#3a3a80] transition-all duration-300"
+          bg-gradient-to-l from-[#0a0a2e] to-[#3B82F6] hover:from-[#1e1e4a] hover:to-[#60a5fa]"
         >
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
             <path
               d="M9 2L4 7l5 5"
-              stroke="#111"
+              stroke="white"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -203,7 +203,7 @@ const FeaturedBlogCarousel = () => {
           </svg>
         </button>
 
-        {/* Right Arrow */}
+        {/* Right Arrow - Updated Gradient to Elinity Blue/Indigo */}
         <button
           onClick={next}
           aria-label="Next"
@@ -211,27 +211,26 @@ const FeaturedBlogCarousel = () => {
           w-9 h-9 sm:w-10 sm:h-10
           flex items-center justify-center
           rounded-full
-          bg-white/95 backdrop-blur-md
-          shadow-lg hover:shadow-xl
+          backdrop-blur-md
+          shadow-lg hover:shadow-blue-500/20
           hover:scale-110
           transition-all duration-300
-          bg-gradient-to-l from-[#0a0a23] to-[#4A0E4E] hover:from-[#1a1a40] hover:to-[#3a3a80] transition-all duration-300"
+          bg-gradient-to-l from-[#0a0a2e] to-[#3B82F6] hover:from-[#1e1e4a] hover:to-[#60a5fa]"
         >
-          
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
             <path
               d="M5 2l5 5-5 5"
-              stroke="#111"
+              stroke="white"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
-</button>
+        </button>
 
       </div>
 
-      {/* dots */}
+      {/* dots - Updated to Royal Blue / Space Blue */}
       <div className="flex gap-2 mt-4">
         {featuredBlogs.map((_, i) => (
           <div
@@ -241,7 +240,7 @@ const FeaturedBlogCarousel = () => {
             style={{
               width: dotIndex === i ? 24 : 8,
               height: 4,
-              background: dotIndex === i ? "#3a3a80" : "#1a1a40",
+              background: dotIndex === i ? "#3B82F6" : "#1e1e4a",
             }}
           />
         ))}

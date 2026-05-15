@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import BlogCategoryTabs from './BlogCategoryTabs';
 import FeaturedBlogCarousel from './FeaturedBlogCarousel';
 import BlogGrid from './BlogGrid';
-// import { useEffect } from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -22,7 +21,8 @@ const stagger = {
 
 const BlogList = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a23] to-[#1a1a40] text-white flex flex-col">
+    /* Updated Background: Space Black to Deep Indigo */
+    <div className="min-h-screen bg-gradient-to-b from-[#030014] to-[#0a0a2e] text-white flex flex-col">
       
       <Navbar />
       
@@ -43,7 +43,7 @@ const BlogList = () => {
           <BlogCategoryTabs />
         </motion.div>
         
-<br></br>
+        <br />
 
         {/* Featured Section */}
         <motion.section
@@ -54,9 +54,9 @@ const BlogList = () => {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-2xl md:text-4xl font-bold mb-6 text-left text-white"
+            className="text-2xl md:text-4xl font-bold mb-6 text-left text-white tracking-tight"
           >
-            Featured <span className="text-purple-400">Blogs</span>
+            Featured <span className="text-[#3B82F6]">Blogs</span> {/* Updated: Royal Blue */}
           </motion.h1>
 
           <motion.div
@@ -75,9 +75,9 @@ const BlogList = () => {
         >
           <motion.h2
             variants={fadeUp}
-            className="text-xl md:text-3xl font-bold mb-8 text-left text-white"
+            className="text-xl md:text-3xl font-bold mb-8 text-left text-white tracking-tight"
           >
-            Stay Updated with <span className="text-purple-400">Elinity</span>
+            Stay Updated with <span className="text-[#3B82F6]">Elinity</span> {/* Updated: Royal Blue */}
           </motion.h2>
 
           <motion.div

@@ -226,23 +226,59 @@ const GLOBAL_CSS = `
   }
 
   /* ── Cursor ── */
-  .cursor {
-    width: 12px; height: 12px;
-    background: var(--primary-main);
-    border-radius: 50%;
-    position: fixed; pointer-events: none; z-index: 9999;
-    transition: transform 0.1s ease;
-    transform: translate(-50%, -50%);
-  }
-  .cursor-ring {
-    width: 36px; height: 36px;
-    border: 1px solid rgba(168,85,247,0.5);
-    border-radius: 50%;
-    position: fixed; pointer-events: none; z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s ease, height 0.25s ease;
-  }
+:root {
+  /* Elinity Brand Colors extracted from your logo */
+  --elinity-indigo: #7B3FE4;
+  --elinity-blue: #3B82F6;
+  --elinity-cyan: #00D2FF;
+  --elinity-glow: rgba(59, 130, 246, 0.4);
+}
 
+.cursor {
+  width: 10px; 
+  height: 10px;
+  /* Radiant gradient to mimic the "Lumi" energy */
+  background: linear-gradient(135deg, var(--elinity-blue), var(--elinity-cyan));
+  border-radius: 50%;
+  position: fixed; 
+  pointer-events: none; 
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+  /* Subtle outer glow */
+  box-shadow: 0 0 10px var(--elinity-glow);
+}
+
+.cursor-ring {
+  width: 40px; 
+  height: 40px;
+  /* Matching the Indigo-Purple vibe for the outer ring */
+  border: 1.5px solid var(--elinity-indigo);
+  opacity: 0.5;
+  border-radius: 50%;
+  position: fixed; 
+  pointer-events: none; 
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  /* Smooth expansion transition */
+  transition: 
+    width 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+    height 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+    border-color 0.3s ease;
+}
+
+/* Hover State: When user interacts with links/buttons */
+.cursor-hover .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: var(--elinity-cyan);
+}
+
+.cursor-hover .cursor-ring {
+  width: 60px;
+  height: 60px;
+  border-color: var(--elinity-cyan);
+  background: rgba(0, 210, 255, 0.05); /* Very faint fill on hover */
+}
   /* ── Nav ── */
   nav {
     display: flex; justify-content: space-between; align-items: center;
@@ -1653,15 +1689,30 @@ function useReveal() {
 
 const Hero = ({ onJoinWaitlist }) => {
   const [index, setIndex] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  const images = [
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/main_yrw4jo.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/second_qqci1a.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571696/fourth_tm9t5c.png",
+    "https://res.cloudinary.com/dge1qccxs/image/upload/v1778571697/fivth_mna64t.png",
+  ];
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 720);
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    const interval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
+
+    // Text cycler (3s)
+    const textInterval = setInterval(() => setIndex((prev) => (prev + 1) % words.length), 3000);
+    
+    // Image cycler (10s)
+    const imageInterval = setInterval(() => setCurrentImage((prev) => (prev + 1) % images.length), 10000);
+
     return () => {
-      clearInterval(interval);
+      clearInterval(textInterval);
+      clearInterval(imageInterval);
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
@@ -1674,123 +1725,170 @@ const Hero = ({ onJoinWaitlist }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         minHeight: "100vh",
-        padding: isMobile ? "160px 20px 140px" : "180px 8% 140px",
+        padding: isMobile ? "120px 20px" : "100px 8%",
         backgroundColor: "#030014",
-        backgroundImage: "radial-gradient(circle at 50% -20%, #1e1b4b 0%, #030014 60%)",
         color: "white",
         overflowX: "hidden",
         position: "relative",
         boxSizing: "border-box",
       }}
     >
-      <div style={{ 
-        position: "absolute", top: "10%", left: "5%", 
-        width: isMobile ? "200px" : "400px", height: isMobile ? "200px" : "400px", 
-        background: "rgba(59, 130, 246, 0.15)", filter: "blur(120px)", 
-        borderRadius: "50%", pointerEvents: "none" 
-      }} />
-
-      <div style={{
-        display: "flex", flexDirection: isMobile ? "column" : "row",
-        alignItems: "center", justifyContent: "center", width: "100%",
-        maxWidth: "1250px", zIndex: 2, gap: isMobile ? "40px" : "60px", flex: 1,
-      }}>
-        <div style={{ flex: isMobile ? "none" : "1.2", width: "100%", textAlign: isMobile ? "center" : "left" }}>
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <h1 style={{ fontSize: isMobile ? "2.5rem" : "clamp(2.8rem, 7vw, 5rem)", lineHeight: "1.1", fontWeight: 900, margin: "0 0 1.5rem 0", letterSpacing: "-0.02em" }}>
-              find your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>person,</span>
-              <br />
-              your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>tribe.</span>
-              <br />
-              build <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
-            </h1>
-            <p style={{ fontSize: isMobile ? "1.05rem" : "clamp(1.1rem, 2vw, 1.3rem)", color: "#a0a0c0", lineHeight: "1.6", margin: "0 auto", maxWidth: isMobile ? "100%" : "540px" }}>
-              find your people across love, leisure, and collaborations with lumi, your ai {" "}
-              <span style={{ display: "inline-grid", minWidth: isMobile ? "90px" : "120px" }}>
-                <AnimatePresence mode="wait">
-                <motion.span
-  key={words[index]}
-  initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-  exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-  transition={{ 
-    duration: 0.6, 
-    ease: [0.16, 1, 0.3, 1] 
-  }}
-  style={{
-    gridArea: "1 / 1",
-    fontWeight: 800,
-    // Exact colors from your logo: Indigo -> Royal Blue -> Cyan
-    background: "linear-gradient(110deg, #7B3FE4 0%, #3B82F6 50%, #00D2FF 100%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    display: "inline-block",
-    letterSpacing: "-0.03em",
-    // Adding a subtle glow to mimic the logo's vibrancy
-    textShadow: "0 0 20px rgba(59, 130, 246, 0.2)",
-  }}
->
-  {words[index]}.
-</motion.span>
-                </AnimatePresence>
-              </span>
-            </p>
-          </motion.div>
-        </div>
-
-        <div style={{ flex: isMobile ? "none" : "1", display: "flex", justifyContent: "center", position: "relative", width: "100%" }}>
-          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} style={{ zIndex: 2 }}>
-            <div style={{ transform: isMobile ? "scale(0.85)" : "scale(1.1)", transformOrigin: "center" }}>
-              {/* Replace with your <HeroCreature /> component */}
-              <HeroCreature />
-            </div>
-          </motion.div>
-        </div>
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImage}
+            src={images[currentImage]}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+            loading="lazy"
+            alt="Elinity Mood"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: isMobile ? "brightness(0.4)" : "brightness(0.3)", // Darkened for text legibility
+            }}
+          />
+        </AnimatePresence>
+        {/* Gradient Overlay for extra depth */}
+        <div 
+          style={{ 
+            position: "absolute", 
+            inset: 0, 
+            background: "radial-gradient(circle at center, transparent 0%, #030014 90%)" 
+          }} 
+        />
       </div>
 
-      <div style={{
-        width: "100%", maxWidth: isMobile ? "100%" : "700px", padding: isMobile ? "0" : "20px 0",
-        display: "flex", flexDirection: isMobile ? "column" : "row",
-        justifyContent: "center", alignItems: "stretch", gap: isMobile ? "12px" : "16px", zIndex: 10,
+      {/* Content Container */}
+      <div style={{ 
+        width: "100%", 
+        maxWidth: "1250px", 
+        zIndex: 2, 
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
       }}>
-        {[
-          { label: "Download On Android", type: "ghost" },
-          { label: "Download On iOS", type: "ghost" },
-          { label: "Join Waitlist", type: "solid", action: onJoinWaitlist }
-        ].map((btn, i) => (
-          <motion.button
-            key={i}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={btn.action}
-            style={{
-              all: "unset",
-              height: isMobile ? "52px" : "56px",
-              padding: "0 24px",
-              borderRadius: "12px",
-              cursor: "pointer",
-              fontSize: isMobile ? "0.95rem" : "1rem",
-              fontWeight: "600",
-              textAlign: "center",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxSizing: "border-box",
-              transition: "all 0.3s ease",
-              border: btn.type === "ghost" ? "1px solid rgba(59, 130, 246, 0.2)" : "none",
-              backgroundColor: btn.type === "ghost" ? "rgba(59, 130, 246, 0.05)" : "transparent",
-              backgroundImage: btn.type === "solid" ? brandGradient : "none",
-              color: "white",
-              flex: isMobile ? "none" : "1",
-              width: "100%",
-              boxShadow: btn.type === "solid" ? "0 4px 20px rgba(59, 130, 246, 0.3)" : "none",
-            }}
-          >
-            {btn.label}
-          </motion.button>
-        ))}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8 }}
+        >
+          <h1 style={{ 
+            fontSize: isMobile ? "2.8rem" : "clamp(3.5rem, 8vw, 6rem)", 
+            lineHeight: "1", 
+            fontWeight: 900, 
+            margin: "0 0 2rem 0", 
+            letterSpacing: "-0.04em" 
+          }}>
+            find your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>person,</span>
+            <br />
+            your <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>tribe.</span>
+            <br />
+            build <span style={{ background: brandGradient, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: "transparent" }}>awesome</span> relationships.
+          </h1>
+          
+<p style={{ 
+  fontSize: isMobile ? "0.85rem" : "clamp(1.2rem, 2vw, 1.5rem)", 
+  color: "#d0d0e0", 
+  lineHeight: "1.6", 
+  marginBottom: "3rem",
+  maxWidth: "700px",
+  marginLeft: "auto",  // Ensures horizontal centering
+  marginRight: "auto", // Ensures horizontal centering
+  textAlign: "center"  // Centers the text lines
+}}>
+  find your people across love, leisure, and collaborations with lumi, your ai {" "}
+  <span style={{ 
+    display: "inline-grid", 
+    minWidth: isMobile ? "100px" : "140px",
+    verticalAlign: "middle", // Aligns the animated text with the baseline
+    justifyContent: "center" // Centers the motion.span within the grid
+  }}>
+    <AnimatePresence mode="wait">
+      <motion.span
+        key={words[index]}
+        initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          gridArea: "1 / 1",
+          fontWeight: 800,
+          background: "linear-gradient(110deg, #7B3FE4 0%, #3B82F6 50%, #00D2FF 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          // maxWidth : "320px",
+          textShadow: "0 0 30px rgba(59, 130, 246, 0.4)",
+                  width: "320px",
+        textAlign: "left", // Ensures the text inside the span is centered
+        }}
+      >
+        {words[index]}.
+      </motion.span>
+    </AnimatePresence>
+  </span>
+</p>
+        </motion.div>
+
+        {/* Buttons */}
+        <div style={{
+          width: "100%", 
+          maxWidth: isMobile ? "100%" : "800px",
+          display: "flex", 
+          flexDirection: isMobile ? "column" : "row",
+          justifyContent: "center", 
+          alignItems: "center", 
+          gap: "16px", 
+          zIndex: 10,
+        }}>
+          {[
+            { label: "Download On Android", type: "ghost" },
+            { label: "Download On iOS", type: "ghost" },
+            { label: "Join Waitlist", type: "solid", action: onJoinWaitlist }
+          ].map((btn, i) => (
+            <motion.button
+              key={i}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={btn.action}
+              style={{
+                all: "unset",
+                height: "58px",
+                padding: "0 32px",
+                borderRadius: "16px",
+                cursor: "pointer",
+                fontSize: "1rem",
+                fontWeight: "700",
+                textAlign: "center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxSizing: "border-box",
+                transition: "all 0.3s ease",
+                border: btn.type === "ghost" ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+                backgroundColor: btn.type === "ghost" ? "rgba(255, 255, 255, 0.03)" : "transparent",
+                backgroundImage: btn.type === "solid" ? brandGradient : "none",
+                color: "white",
+                backdropFilter: "blur(10px)",
+                width: isMobile ? "100%" : "auto",
+                minWidth: isMobile ? "none" : "220px",
+                boxShadow: btn.type === "solid" ? "0 10px 30px rgba(59, 130, 246, 0.4)" : "none",
+              }}
+            >
+              {btn.label}
+            </motion.button>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -2045,7 +2143,7 @@ const Statement: React.FC = () => {
               fontWeight: 600 
             }}> elinity fixes the glitch. </strong> 
             we are a holistic ecosystem built to find your "best-fit" humans and turn 
-            initial sparks into lifelong, legendary bonds.
+            initial sparks into lifelong, legendary bonds, across all the 3 core areas of your life - love, leisure, and collaboration.
           </p>
         </div>
 

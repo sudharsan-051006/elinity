@@ -1309,7 +1309,7 @@ const GetStarted: React.FC = () => {
       WebkitTextFillColor: "transparent"
     }}
   >
-    Built thoughtfully - prioritizing meaningful connection over unlimited usage.
+    we have designed the platform around intentional connection and use, rather than infinite engagement.
   </p>
 
 </motion.div>

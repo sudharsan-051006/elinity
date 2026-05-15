@@ -67,8 +67,10 @@ const BlogCategoryTabs = () => {
           }}
           className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold transition-all duration-200 text-xs sm:text-sm focus:outline-none ${
             activeTab === tab.label
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.4)]'
-              : 'bg-[#1a1a40]/50 border border-purple-700/50 text-purple-200 hover:bg-purple-900/30'
+              // Updated: Royal Blue to Electric Indigo Gradient
+              ? 'bg-gradient-to-r from-[#3B82F6] to-[#7B3FE4] text-white shadow-[0_0_15px_rgba(59,130,246,0.4)]'
+              // Updated: Space Black background with Royal Blue borders
+              : 'bg-[#030014]/50 border border-blue-900/50 text-blue-200 hover:bg-blue-900/30'
           }`}
         >
           {tab.label}
@@ -84,8 +86,8 @@ const BlogCategoryTabs = () => {
           onClick={() => setIsResourcesOpen(!isResourcesOpen)}
           className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl font-bold transition-all duration-200 text-xs sm:text-sm border focus:outline-none ${
             isResourcesOpen
-              ? 'bg-white text-[#0a0a23] border-white shadow-lg'
-              : 'bg-transparent border-purple-700 text-purple-200'
+              ? 'bg-white text-[#030014] border-white shadow-lg'
+              : 'bg-transparent border-blue-800 text-blue-200'
           }`}
         >
           Resources
@@ -105,7 +107,8 @@ const BlogCategoryTabs = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.96 }}
               transition={{ duration: 0.25 }}
-              className="absolute top-full left-0 mt-1 w-full min-w-[160px] bg-[#1a1a40] border border-purple-500/30 rounded-xl shadow-2xl z-[2000] overflow-hidden backdrop-blur-xl"
+              // Updated: Space Black backdrop with Blue indigo accents
+              className="absolute top-full left-0 mt-1 w-full min-w-[160px] bg-[#030014] border border-blue-500/30 rounded-xl shadow-2xl z-[2000] overflow-hidden backdrop-blur-xl"
             >
               <div className="py-1">
                 {resources.map((resource) => (
@@ -116,7 +119,8 @@ const BlogCategoryTabs = () => {
                   >
                     <Link
                       to={resource.href}
-                      className="flex items-center px-4 py-3 text-xs font-semibold text-purple-50 hover:bg-purple-500/20 active:bg-purple-500/40 transition-colors border-b border-purple-500/10 last:border-none"
+                      // Updated: Slate-blue text with Royal Blue hover states
+                      className="flex items-center px-4 py-3 text-xs font-semibold text-blue-50 hover:bg-blue-600/20 active:bg-blue-600/40 transition-colors border-b border-blue-500/10 last:border-none"
                       onClick={() => setIsResourcesOpen(false)}
                     >
                       {resource.label}
